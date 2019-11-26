@@ -1,0 +1,4 @@
+Django==2.2.0
+requests==2.22.0
+pandas==0.25.3
+feather-format==0.4.0
