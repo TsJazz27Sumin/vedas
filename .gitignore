@@ -1,0 +1,4 @@
+/viewer/db.sqlite3
+*.feather
+*.pkl
+.idea
