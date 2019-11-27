@@ -3,6 +3,7 @@ import os
 
 # http://127.0.0.1:8000/keith/analyzer/kick
 from keith.viewer.apps.analyzer.company.common import CorrectFunction
+from keith.viewer.apps.analyzer.company.kyuden import KyudenService
 
 
 def kick(request):
@@ -68,6 +69,27 @@ def kick(request):
     merged_feather_path = KepcoService.execute(kepco_urls, root_path, reflesh)
     merged_feather_paths.append(merged_feather_path)
 
+    # 九州電力
+    kyuden_urls = [
+        'http://www.kyuden.co.jp/var/rev0/0227/9764/area_jyukyu_jisseki_H28_1Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9765/area_jyukyu_jisseki_H28_2Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9766/area_jyukyu_jisseki_H28_3Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9767/area_jyukyu_jisseki_H28_4Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9768/area_jyukyu_jisseki_H29_1Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9769/area_jyukyu_jisseki_H29_2Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9770/area_jyukyu_jisseki_H29_3Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9771/area_jyukyu_jisseki_H29_4Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9772/area_jyukyu_jisseki_H30_1Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9773/area_jyukyu_jisseki_H30_2Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9774/area_jyukyu_jisseki_H30_3Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9775/area_jyukyu_jisseki_H30_4Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9776/area_jyukyu_jisseki_2019_1Q.csv',
+        'http://www.kyuden.co.jp/var/rev0/0227/9777/area_jyukyu_jisseki_2019_2Q.csv',
+    ]
+
+    merged_feather_path = KyudenService.execute(kyuden_urls, root_path, reflesh)
+    merged_feather_paths.append(merged_feather_path)
+
     elapsed_time = time.time() - start
 
     print(f'elapsed_time:{elapsed_time}[sec]')
@@ -75,11 +97,13 @@ def kick(request):
     hepco_count = HepcoService.count(root_path)
     tepco_count = TepcoService.count(root_path)
     kepco_count = KepcoService.count(root_path)
+    kyuden_count = KyudenService.count(root_path)
 
     data = {
         "message": "Success",
         "hepco_count": hepco_count,
         "tepco_count": tepco_count,
-        "kepco_count": kepco_count
+        "kepco_count": kepco_count,
+        "kyuden_count": kyuden_count,
     }
     return JsonResponse(data)

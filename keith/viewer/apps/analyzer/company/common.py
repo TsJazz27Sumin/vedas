@@ -91,6 +91,7 @@ class CorrectFunction(object):
 
     @classmethod
     def get_total_supply_capacity(cls, data_frame):
+
         sum_target_fields = [
             'Nuclear',
             'Thermal',
@@ -104,11 +105,8 @@ class CorrectFunction(object):
             'Pumping',
             'Interconnection'
         ]
-
-        total = 0
-        for sum_target in sum_target_fields:
-            total = data_frame[sum_target]
-        return total
+        data_frame['Total Supply Capacity'] = data_frame[sum_target_fields].sum(axis=1)
+        return data_frame['Total Supply Capacity']
 
     @classmethod
     def to_mwh(cls, data_frame):
