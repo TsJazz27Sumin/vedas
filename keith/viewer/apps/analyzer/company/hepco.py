@@ -43,10 +43,15 @@ class HepcoService(CorrectService):
         processed_feather_paths = []
 
         for url in urls:
-            feather_file_name = CorrectFunction.get_feather_file_name(url)
-            original_feather_path = cls.__correct_ex_data(root_path, feather_file_name, url, reflesh)
-            processed_feather_path = cls.__process_ex_data(original_feather_path, root_path, feather_file_name)
-            processed_feather_paths.append(processed_feather_path)
+            try:
+                feather_file_name = CorrectFunction.get_feather_file_name(url)
+                original_feather_path = cls.__correct_ex_data(root_path, feather_file_name, url, reflesh)
+                if original_feather_path is None:
+                    continue
+                processed_feather_path = cls.__process_ex_data(original_feather_path, root_path, feather_file_name)
+                processed_feather_paths.append(processed_feather_path)
+            except Exception as e:
+                print(f'{feather_file_name} => {e}')
 
         merged_feather_path = CorrectFunction.merge_ex_data(processed_feather_paths, root_path, cls.COMPANY_NAME)
         return merged_feather_path
@@ -57,14 +62,44 @@ class HepcoService(CorrectService):
                                                                           feather_file_name)
 
         if not reflesh and not os.path.exists(original_feather_path):
-            decoded_data = CorrectFunction.get_decoded_data(url)
-
-            # hepcoは、日時周りのフォーマットが他と違うので、csv読み込み前にデータ補正が必要。
-            hepco_csv = cls.__get_hepco_csv(decoded_data)
-            data_frame = cls.__parse(hepco_csv)
-            CorrectFunction.create_feather_file(original_feather_path, data_frame)
+            if '.xls' in url:
+                data_frame_from_xls = pandas.read_excel(url, header=None, index_col=None, skiprows=[0, 1, 2, 3])
+                hepco_csv = cls.__create_hepco_csv_from_xls(data_frame_from_xls.to_csv())
+                data_frame = cls.__parse_csv_from_xls(hepco_csv)
+                CorrectFunction.create_feather_file(original_feather_path, data_frame)
+            else:
+                decoded_data = CorrectFunction.get_decoded_data(url)
+                # hepcoは、日時周りのフォーマットが他と違うので、csv読み込み前にデータ補正が必要。
+                hepco_csv = cls.__get_hepco_csv(decoded_data)
+                data_frame = cls.__parse(hepco_csv)
+                CorrectFunction.create_feather_file(original_feather_path, data_frame)
 
         return original_feather_path
+
+    @classmethod
+    def __create_hepco_csv_from_xls(cls, decoded_data):
+        processed_data_list = []
+        target_date = ''
+
+        for i, data in enumerate(decoded_data.splitlines()):
+            data = data.replace(' ', '')
+            for k, v in cls.JIKOKU.items():
+                if k in data:
+                    data = data.replace(k, v)
+                    break
+
+            items = data.split(',')
+
+            if len(items[1]) != 0:
+                target_date = items[1]
+                data = ','.join(items[1:])
+            else:
+                data = target_date + ','.join(items[1:])
+
+            processed_data_list.append(data)
+
+        hepco_csv = '\r'.join(processed_data_list)
+        return hepco_csv
 
     @classmethod
     def __get_hepco_csv(cls, decoded_data):
@@ -86,7 +121,7 @@ class HepcoService(CorrectService):
                     data = target_date + data
 
                 processed_data_list.append(data)
-        hepco_csv = '\n'.join(processed_data_list)
+        hepco_csv = '\r'.join(processed_data_list)
         return hepco_csv
 
     @classmethod
@@ -97,12 +132,6 @@ class HepcoService(CorrectService):
         # DateとTimeで分割されているので結合した項目を作る。
         CorrectFunction.generate_data_time_field(data_frame)
         data_frame.set_index('Date Time')
-
-        # 2,500みたいなデータがあるので取り除く。
-        data_frame['Demand'] = data_frame['Demand'].astype(str).str.replace(',', '').astype(int)
-        data_frame['Total Supply Capacity'] = data_frame['Total Supply Capacity'].astype(str).str.replace(',',
-                                                                                                          '').astype(
-            int)
 
         processed_feather_path = CorrectFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME,
                                                                             feather_file_name)
@@ -115,6 +144,32 @@ class HepcoService(CorrectService):
         return pandas.read_csv(io.StringIO(content),
                                header=None,
                                skiprows=[0, 1, 2, 3, 4],
+                               lineterminator='\r',
+                               na_values=['-'],
+                               names=[
+                                   'Date',
+                                   'Time',
+                                   'Demand',
+                                   'Nuclear',
+                                   'Thermal',
+                                   'Hydro',
+                                   'Geothermal',
+                                   'Biomass',
+                                   'Solar',
+                                   'Solar output control',
+                                   'Wind',
+                                   'Wind output control',
+                                   'Pumping',
+                                   'Interconnection',
+                                   'Total Supply Capacity'
+                               ]
+                               )
+
+    @classmethod
+    def __parse_csv_from_xls(cls, csv_from_xls):
+        return pandas.read_csv(io.StringIO(csv_from_xls),
+                               header=None,
+                               skiprows=[0],
                                na_values=['-'],
                                names=[
                                    'Date',
