@@ -1,11 +1,11 @@
-class CorrectService(object):
+class Service(object):
 
     @classmethod
     def count(cls, root_path):
         raise NotImplementedError
 
     @classmethod
-    def execute(cls, urls, root_path, reflesh):
+    def correct_data(cls, urls, root_path, reflesh):
         raise NotImplementedError
 
     @classmethod

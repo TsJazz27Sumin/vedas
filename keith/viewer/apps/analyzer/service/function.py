@@ -3,7 +3,7 @@ import pathlib
 import pandas
 
 
-class CorrectFunction(object):
+class ServiceFunction(object):
 
     COMPANY_NAME_REPLACE_KEYWORD = '{COMPANY_NAME}'
     ORIGINAL_FOLDER = f'apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/original'
@@ -13,7 +13,7 @@ class CorrectFunction(object):
 
     @classmethod
     def count(cls, root_path, company_name):
-        merged_feather_path = CorrectFunction.get_merged_feather_path(
+        merged_feather_path = ServiceFunction.get_merged_feather_path(
             root_path,
             company_name
         )
@@ -32,18 +32,18 @@ class CorrectFunction(object):
         merged_data_frame = pandas.concat(data_frames).sort_values(by='Date Time', ascending=True).reset_index()
         del merged_data_frame['index']
 
-        merged_feather_path = CorrectFunction.get_merged_feather_path(
+        merged_feather_path = ServiceFunction.get_merged_feather_path(
             root_path,
             company_name
         )
 
-        merged_csv_path = CorrectFunction.get_merged_csv_path(
+        merged_csv_path = ServiceFunction.get_merged_csv_path(
             root_path,
             company_name
         )
 
         # print(df[(df['Date Time'] >= datetime(2019, 5, 3)) & (df['Date Time'] < datetime(2019, 5, 6))])
-        print(merged_data_frame[['Date', 'Time', 'Demand', 'company', 'Thermal', 'Solar', 'Total Supply Capacity']])
+        print(merged_data_frame[['Date', 'Time', 'Demand', 'service', 'Thermal', 'Solar', 'Total Supply Capacity']])
 
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。
         # TODO:バグが解消されたらfeatherに統一したい。
