@@ -1,7 +1,7 @@
 from django.urls import path
 
-from keith.viewer.apps.analyzer import views
+from keith.viewer.apps.analyzer import api
 
 urlpatterns = [
-    path('analyzer/kick', views.kick, name='kick'),
+    path('analyzer/kick', api.kick, name='kick'),
 ]

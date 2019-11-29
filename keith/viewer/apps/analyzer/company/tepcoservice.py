@@ -2,7 +2,8 @@ import io
 import pandas
 import os
 
-from keith.viewer.apps.analyzer.company.common import CorrectService, CorrectFunction
+from keith.viewer.apps.analyzer.company.correctfunction import CorrectFunction
+from keith.viewer.apps.analyzer.company.correctservice import CorrectService
 
 
 class TepcoService(CorrectService):
