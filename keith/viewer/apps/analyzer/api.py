@@ -6,6 +6,7 @@ import time
 from keith.viewer.apps.analyzer.controller.hepco import HepcoController
 from keith.viewer.apps.analyzer.controller.kepco import KepcoController
 from keith.viewer.apps.analyzer.controller.kyuden import KyudenController
+from keith.viewer.apps.analyzer.controller.okiden import OkidenController
 from keith.viewer.apps.analyzer.controller.tepco import TepcoController
 
 
@@ -21,6 +22,7 @@ def correct_data(request):
         "tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力
         "kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力
         "kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力
+        "okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
