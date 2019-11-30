@@ -1,6 +1,8 @@
 from keith.viewer.apps.analyzer.controller.controller import Controller
-from keith.viewer.apps.analyzer.controller.function import ControllerFunction
+
+from keith.viewer.apps.analyzer.function.file import FileFunction
 from keith.viewer.apps.analyzer.service.hepco import HepcoService
+from keith.viewer.apps.analyzer.service.query import QueryService
 
 
 class HepcoController(Controller):
@@ -9,7 +11,7 @@ class HepcoController(Controller):
 
     @classmethod
     def correct_data(cls, root_path, reflesh):
-        json = ControllerFunction.get_param_json(root_path, cls.COMPANY_NAME)
+        json = FileFunction.get_param_json(root_path, cls.COMPANY_NAME)
         HepcoService.correct_data(json['url'], root_path, reflesh)
-        count = HepcoService.count(root_path)
+        count = QueryService.count(root_path, cls.COMPANY_NAME)
         return count

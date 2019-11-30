@@ -2,7 +2,9 @@ import io
 import pandas
 import os
 
-from keith.viewer.apps.analyzer.service.function import ServiceFunction
+from keith.viewer.apps.analyzer.function.dataframe import DataFrameFunction
+from keith.viewer.apps.analyzer.function.file import FileFunction
+from keith.viewer.apps.analyzer.function.request import RequestFunction
 from keith.viewer.apps.analyzer.service.service import Service
 
 
@@ -36,16 +38,12 @@ class HepcoService(Service):
     }
 
     @classmethod
-    def count(cls, root_path):
-        return ServiceFunction.count(root_path, cls.COMPANY_NAME)
-
-    @classmethod
     def correct_data(cls, urls, root_path, reflesh):
         processed_feather_paths = []
 
         for url in urls:
             try:
-                feather_file_name = ServiceFunction.get_feather_file_name(url)
+                feather_file_name = FileFunction.get_feather_file_name(url)
                 original_feather_path = cls.__correct_ex_data(root_path, feather_file_name, url, reflesh)
                 if original_feather_path is None:
                     continue
@@ -54,12 +52,12 @@ class HepcoService(Service):
             except Exception as e:
                 print(f'{feather_file_name} => {e}')
 
-        merged_feather_path = ServiceFunction.merge_ex_data(processed_feather_paths, root_path, cls.COMPANY_NAME)
+        merged_feather_path = DataFrameFunction.merge_ex_data(processed_feather_paths, root_path, cls.COMPANY_NAME)
         return merged_feather_path
 
     @classmethod
     def __correct_ex_data(cls, root_path, feather_file_name, url, reflesh):
-        original_feather_path = ServiceFunction.get_original_feather_path(root_path, cls.COMPANY_NAME,
+        original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME,
                                                                           feather_file_name)
 
         if not reflesh and not os.path.exists(original_feather_path):
@@ -67,13 +65,13 @@ class HepcoService(Service):
                 data_frame_from_xls = pandas.read_excel(url, header=None, index_col=None, skiprows=[0, 1, 2, 3])
                 hepco_csv = cls.__create_hepco_csv_from_xls(data_frame_from_xls.to_csv())
                 data_frame = cls.__parse_csv_from_xls(hepco_csv)
-                ServiceFunction.create_feather_file(original_feather_path, data_frame)
+                FileFunction.create_feather_file(original_feather_path, data_frame)
             else:
-                decoded_data = ServiceFunction.get_decoded_data(url)
+                decoded_data = RequestFunction.get_decoded_data(url)
                 # hepcoは、日時周りのフォーマットが他と違うので、csv読み込み前にデータ補正が必要。
                 hepco_csv = cls.__get_hepco_csv(decoded_data)
                 data_frame = cls.__parse(hepco_csv)
-                ServiceFunction.create_feather_file(original_feather_path, data_frame)
+                FileFunction.create_feather_file(original_feather_path, data_frame)
 
         return original_feather_path
 
@@ -131,12 +129,12 @@ class HepcoService(Service):
         data_frame['service'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。
-        ServiceFunction.generate_data_time_field(data_frame)
+        DataFrameFunction.generate_data_time_field(data_frame)
         data_frame.set_index('Date Time')
 
-        processed_feather_path = ServiceFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME,
+        processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME,
                                                                             feather_file_name)
-        ServiceFunction.create_feather_file(processed_feather_path, data_frame)
+        FileFunction.create_feather_file(processed_feather_path, data_frame)
 
         return processed_feather_path
 

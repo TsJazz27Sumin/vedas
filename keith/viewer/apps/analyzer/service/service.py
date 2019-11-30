@@ -1,10 +1,6 @@
 class Service(object):
 
     @classmethod
-    def count(cls, root_path):
-        raise NotImplementedError
-
-    @classmethod
     def correct_data(cls, urls, root_path, reflesh):
         raise NotImplementedError
 
