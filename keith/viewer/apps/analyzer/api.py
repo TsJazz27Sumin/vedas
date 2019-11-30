@@ -2,6 +2,7 @@ from django.http import JsonResponse
 import os
 import time
 
+from keith.viewer.apps.analyzer.controller.chuden import ChudenController
 from keith.viewer.apps.analyzer.controller.energia import EnergiaController
 from keith.viewer.apps.analyzer.controller.hepco import HepcoController
 from keith.viewer.apps.analyzer.controller.kepco import KepcoController
@@ -23,14 +24,15 @@ def correct_data(request):
 
     data = {
         "message": "Success",
-        "hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力
-        "rikuden_count": RikudenController.correct_data(root_path, reflesh),  # 北陸電力
-        "tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力
-        "kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力
-        "energia_count": EnergiaController.correct_data(root_path, reflesh),  # 中国電力
-        "yonden_count": YondenController.correct_data(root_path, reflesh),  # 四国電力
-        "kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力
-        "okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力
+        "hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力 2016/4/1〜
+        "rikuden_count": RikudenController.correct_data(root_path, reflesh),  # 北陸電力 2016/4/1〜
+        "tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力 2016/4/1〜
+        "chuden_count": ChudenController.correct_data(root_path, reflesh),  # 中部電力 2016/4/1〜
+        "kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力 2016/4/1〜
+        "energia_count": EnergiaController.correct_data(root_path, reflesh),  # 中国電力 2016/11/1〜
+        "yonden_count": YondenController.correct_data(root_path, reflesh),  # 四国電力 2016/4/1〜
+        "kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力 2016/4/1〜
+        "okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力 2016/4/1〜
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
