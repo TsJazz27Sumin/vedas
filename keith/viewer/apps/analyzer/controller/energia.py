@@ -23,3 +23,7 @@ class EnergiaController(Controller):
         count = QueryService.count(root_path, cls.COMPANY_NAME)
         MeasurementFunction.rap(start)
         return count
+
+    @classmethod
+    def count(cls, root_path, reflesh):
+        return QueryService.count(root_path, cls.COMPANY_NAME)
