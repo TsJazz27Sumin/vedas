@@ -1,0 +1,20 @@
+{
+	"url": [
+		"http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2016_tohoku_1Q.csv",
+		"http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2016_tohoku_2Q.csv",
+		"http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2016_tohoku_3Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2016_tohoku_4Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2017_tohoku_1Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2017_tohoku_2Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2017_tohoku_3Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2017_tohoku_4Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2018_tohoku_1Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2018_tohoku_2Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2018_tohoku_3Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2018_tohoku_4Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_1Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_2Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_2Q.csv",
+        "http://setsuden.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_3Q.csv"
+    ]
+}
