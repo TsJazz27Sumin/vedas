@@ -1,6 +1,6 @@
 import io
-import pandas
 import os
+import pandas
 
 from keith.viewer.apps.analyzer.function.dataframe import DataFrameFunction
 from keith.viewer.apps.analyzer.function.file import FileFunction
@@ -8,9 +8,9 @@ from keith.viewer.apps.analyzer.function.request import RequestFunction
 from keith.viewer.apps.analyzer.service.service import Service
 
 
-class KyudenService(Service):
+class RikudenService(Service):
 
-    COMPANY_NAME = 'kyuden'
+    COMPANY_NAME = 'rikuden'
 
     @classmethod
     def correct_data(cls, urls, root_path, reflesh):
@@ -33,23 +33,41 @@ class KyudenService(Service):
     def __correct_ex_data(cls, root_path, feather_file_name, url, reflesh):
         original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
 
-        if reflesh or not os.path.exists(original_feather_path):
+        if url: # reflesh or not os.path.exists(original_feather_path):
             decoded_data = RequestFunction.get_decoded_data(url)
-            data_frame = cls.__parse(decoded_data)
+            # 末尾に余計な「,」が入っていることがあるので除去する。
+            # スキップすべき行が違うこともあるので対応する。
+            rikuden_csv = cls.__get_rikuden_csv(decoded_data)
+            data_frame = cls.__parse(rikuden_csv)
+            data_frame.reset_index()
             FileFunction.create_feather_file(original_feather_path, data_frame)
 
         return original_feather_path
+
+    @classmethod
+    def __get_rikuden_csv(cls, decoded_data):
+        processed_data_list = []
+        is_read_start = False
+
+        for i, data in enumerate(decoded_data.splitlines()):
+            if not is_read_start and '0:00' in data and '実績値' not in data:
+                is_read_start = True
+
+            if is_read_start:
+                if data[-1] == ',':
+                    data = data[:-1]
+                processed_data_list.append(data)
+        rikuden_csv = '\r'.join(processed_data_list)
+        return rikuden_csv
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = pandas.read_feather(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
-        # Kyudenは、日時で持っているのでTepcoに合わせて分割する。
-        DataFrameFunction.create_date_and_time_from_datetime(data_frame)
-
-        # Date型に変換しておく。
-        data_frame['Date Time'] = pandas.to_datetime(data_frame['Date Time'], format='%Y/%m/%d %H:%M')
+        # DateとTimeで分割されているので結合した項目を作る。
+        DataFrameFunction.generate_data_time_field(data_frame)
+        data_frame.set_index('Date Time')
 
         # TOTAL算出 Total Supply Capacity
         data_frame['Total Supply Capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
@@ -63,10 +81,11 @@ class KyudenService(Service):
     def __parse(cls, content):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
-                           skiprows=[0, 1],
+                           skiprows=[],
                            na_values=['-'],
                            names=[
-                               'Date Time',
+                               'Date',
+                               'Time',
                                'Demand',
                                'Nuclear',
                                'Thermal',

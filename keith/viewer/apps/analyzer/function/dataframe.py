@@ -32,6 +32,7 @@ class DataFrameFunction(object):
             company_name
         )
 
+        print(company_name)
         print(merged_data_frame[['Date', 'Time', 'Demand', 'Company', 'Thermal', 'Solar', 'Total Supply Capacity']])
 
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。

@@ -45,12 +45,11 @@ class HepcoService(Service):
             try:
                 feather_file_name = FileFunction.get_feather_file_name(url)
                 original_feather_path = cls.__correct_ex_data(root_path, feather_file_name, url, reflesh)
-                if original_feather_path is None:
-                    continue
                 processed_feather_path = cls.__process_ex_data(original_feather_path, root_path, feather_file_name)
                 processed_feather_paths.append(processed_feather_path)
             except Exception as e:
                 print(f'{feather_file_name} => {e}')
+                raise e
 
         merged_feather_path = DataFrameFunction.merge_ex_data(processed_feather_paths, root_path, cls.COMPANY_NAME)
         return merged_feather_path
@@ -142,7 +141,7 @@ class HepcoService(Service):
     def __parse(cls, content):
         return pandas.read_csv(io.StringIO(content),
                                header=None,
-                               skiprows=[0, 1, 2, 3, 4],
+                               skiprows=[],
                                lineterminator='\r',
                                na_values=['-'],
                                names=[
