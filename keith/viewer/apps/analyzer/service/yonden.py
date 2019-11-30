@@ -29,20 +29,35 @@ class YondenService(Service):
     def __correct_ex_data(cls, root_path, feather_file_name, url, reflesh):
         original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
 
-        if url: # not reflesh and not os.path.exists(original_feather_path):
+        if reflesh or not os.path.exists(original_feather_path):
             data_frame_from_xls = pandas.read_excel(url, header=None, index_col=None, skiprows=[0, 1, 2, 3, 4, 5, 6, 7, 8])
             # 最終行は不要なので削除する。
             data_frame_from_xls.drop(data_frame_from_xls.tail(1).index, inplace=True)
-            print(data_frame_from_xls)
-            data_frame = cls.__parse(data_frame_from_xls.to_csv())
+            # Excelから読み込みやすいフォーマットに加工する。
+            yonden_csv = cls.__create_yonden_csv_from_xls(data_frame_from_xls.to_csv())
+            data_frame = cls.__parse(yonden_csv)
             FileFunction.create_feather_file(original_feather_path, data_frame)
 
         return original_feather_path
 
     @classmethod
+    def __create_yonden_csv_from_xls(cls, decoded_data):
+        processed_data_list = []
+
+        for i, data in enumerate(decoded_data.splitlines()):
+            items = data.split(',')
+            items[1] = items[1].replace(' 00:00:00', '')
+            items[2] = items[2][:-3]
+            data = ','.join(items[1:])
+            processed_data_list.append(data)
+
+        yonden_csv = '\r'.join(processed_data_list)
+        return yonden_csv
+
+    @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = pandas.read_feather(original_feather_path)
-        data_frame['service'] = cls.COMPANY_NAME
+        data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。
         DataFrameFunction.generate_data_time_field(data_frame)
@@ -57,7 +72,7 @@ class YondenService(Service):
     def __parse(cls, content):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
-                           skiprows=[0, 1, 2],
+                           skiprows=[0],
                            na_values=['-'],
                            names=[
                                'Date',

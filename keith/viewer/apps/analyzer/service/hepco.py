@@ -60,7 +60,7 @@ class HepcoService(Service):
         original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME,
                                                                           feather_file_name)
 
-        if not reflesh and not os.path.exists(original_feather_path):
+        if reflesh or not os.path.exists(original_feather_path):
             if '.xls' in url:
                 data_frame_from_xls = pandas.read_excel(url, header=None, index_col=None, skiprows=[0, 1, 2, 3])
                 hepco_csv = cls.__create_hepco_csv_from_xls(data_frame_from_xls.to_csv())
@@ -126,7 +126,7 @@ class HepcoService(Service):
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = pandas.read_feather(original_feather_path)
-        data_frame['service'] = cls.COMPANY_NAME
+        data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。
         DataFrameFunction.generate_data_time_field(data_frame)

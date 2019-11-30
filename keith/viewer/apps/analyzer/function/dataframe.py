@@ -32,8 +32,7 @@ class DataFrameFunction(object):
             company_name
         )
 
-        # print(df[(df['Date Time'] >= datetime(2019, 5, 3)) & (df['Date Time'] < datetime(2019, 5, 6))])
-        print(merged_data_frame[['Date', 'Time', 'Demand', 'service', 'Thermal', 'Solar', 'Total Supply Capacity']])
+        print(merged_data_frame[['Date', 'Time', 'Demand', 'Company', 'Thermal', 'Solar', 'Total Supply Capacity']])
 
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。
         # TODO:バグが解消されたらfeatherに統一したい。
