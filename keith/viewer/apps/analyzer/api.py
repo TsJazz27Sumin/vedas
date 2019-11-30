@@ -9,6 +9,8 @@ from keith.viewer.apps.analyzer.controller.okiden import OkidenController
 from keith.viewer.apps.analyzer.controller.tepco import TepcoController
 
 # http://127.0.0.1:8000/keith/analyzer/correct_data
+from keith.viewer.apps.analyzer.controller.yonden import YondenController
+
 
 def correct_data(request):
     # TODO:場合によっては、redisの使用も考えてみる。
@@ -21,6 +23,7 @@ def correct_data(request):
         "hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力
         "tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力
         "kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力
+        "yonden_count": YondenController.correct_data(root_path, reflesh),  # 関西電力
         "kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力
         "okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力
     }
