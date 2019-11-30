@@ -2,6 +2,7 @@ from django.http import JsonResponse
 import os
 import time
 
+from keith.viewer.apps.analyzer.controller.energia import EnergiaController
 from keith.viewer.apps.analyzer.controller.hepco import HepcoController
 from keith.viewer.apps.analyzer.controller.kepco import KepcoController
 from keith.viewer.apps.analyzer.controller.kyuden import KyudenController
@@ -23,7 +24,8 @@ def correct_data(request):
         "hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力
         "tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力
         "kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力
-        "yonden_count": YondenController.correct_data(root_path, reflesh),  # 関西電力
+        "energia_count": EnergiaController.correct_data(root_path, reflesh),  # 中国電力
+        "yonden_count": YondenController.correct_data(root_path, reflesh),  # 四国電力
         "kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力
         "okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力
     }
