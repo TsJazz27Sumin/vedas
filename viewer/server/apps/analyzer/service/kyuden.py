@@ -4,7 +4,6 @@ import os
 
 from viewer.server.apps.analyzer.function.dataframe import DataFrameFunction
 from viewer.server.apps.analyzer.function.file import FileFunction
-from viewer.server.apps.analyzer.function.request import RequestFunction
 from viewer.server.apps.analyzer.service.service import Service
 
 
@@ -48,12 +47,16 @@ class KyudenService(Service):
         # Kyudenは、日時で持っているのでTepcoに合わせて分割する。
         DataFrameFunction.create_date_and_time_from_datetime(data_frame)
 
+        # 2,500みたいなデータがあるので取り除く。
+        data_frame['Demand'] = data_frame['Demand'].astype(str).str.replace(',', '').astype(float)
+
         # Date型に変換しておく。
         data_frame['Date Time'] = pandas.to_datetime(data_frame['Date Time'], format='%Y/%m/%d %H:%M')
 
         # TOTAL算出 Total Supply Capacity
         data_frame['Total Supply Capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
 
+        print(data_frame)
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
 

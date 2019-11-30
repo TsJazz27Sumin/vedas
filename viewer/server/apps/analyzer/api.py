@@ -85,12 +85,12 @@ def solar(request):
         # "02. tohokuepco_count": TohokuEpcoController.count(root_path),  # 東北電力 2016/4/1〜
         # "03. rikuden_count": RikudenController.count(root_path),  # 北陸電力 2016/4/1〜
         # "04. tepco_count": TepcoController.count(root_path),  # 東京電力 2016/4/1〜
-        "04. tepco_count": json.loads(TepcoController.solar(root_path)),  # 東京電力 2016/4/1〜
+        "tepco_solar": json.loads(TepcoController.solar(root_path)),  # 東京電力 2016/4/1〜
         # "05. chuden_count": ChudenController.count(root_path),  # 中部電力 2016/4/1〜
         # "06. kepco_count": KepcoController.count(root_path),  # 関西電力 2016/4/1〜
         # "07. energia_count": EnergiaController.count(root_path),  # 中国電力 2016/11/1〜
         # "08. yonden_count": YondenController.count(root_path),  # 四国電力 2016/4/1〜
-        # "09. kyuden_count": KyudenController.count(root_path),  # 九州電力 2016/4/1〜
+        "kyuden_solar": json.loads(KyudenController.solar(root_path))  # 九州電力 2016/4/1〜
         # "10. okiden_count": OkidenController.count(root_path),  # 沖縄電力 2016/4/1〜
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
