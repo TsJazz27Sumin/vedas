@@ -63,6 +63,9 @@ class YondenService(Service):
         DataFrameFunction.generate_data_time_field(data_frame)
         data_frame.set_index('Date Time')
 
+        # 他の電力に合わせて万kwからMWhに揃える。
+        DataFrameFunction.to_mwh(data_frame)
+
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
 
