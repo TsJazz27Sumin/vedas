@@ -60,7 +60,7 @@ class YondenService(Service):
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
-        data_frame = pandas.read_feather(original_feather_path)
+        data_frame = DataFrameFunction.get_data_frame(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。

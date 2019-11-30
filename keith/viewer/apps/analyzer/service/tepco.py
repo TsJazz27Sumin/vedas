@@ -34,7 +34,7 @@ class TepcoService(Service):
         original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
 
         if reflesh or not os.path.exists(original_feather_path):
-            decoded_data = RequestFunction.get_decoded_data(url)
+            decoded_data = FileFunction.get_decoded_data(url)
             data_frame = cls.__parse(decoded_data)
             FileFunction.create_feather_file(original_feather_path, data_frame)
 
@@ -42,7 +42,7 @@ class TepcoService(Service):
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
-        data_frame = pandas.read_feather(original_feather_path)
+        data_frame = DataFrameFunction.get_data_frame(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。

@@ -1,6 +1,10 @@
 import pathlib
+import pickle
 
+import redis
 import pandas
+
+from keith.viewer.apps.analyzer.function.request import RequestFunction
 
 
 class FileFunction(object):
@@ -48,3 +52,16 @@ class FileFunction(object):
         csv_file_name = split_urls[-1]
         # 北海道電力とかExcelもいるので対応しておく。
         return csv_file_name.replace('.csv', '.feather').replace('.xls', '.feather')
+
+
+    @classmethod
+    def get_decoded_data(cls, url):
+        redis_connection = redis.Redis(host='localhost', port=6379, db=0)
+        if redis_connection.exists(url):
+            decoded_data = pickle.loads(redis_connection.get(url))
+        else:
+            # CSV、もしくはExcelの元ネタを再読み込みする場合に、HPにアクセスしなくて済むようにRedisに格納している。
+            decoded_data = RequestFunction.get_decoded_data(url)
+            dumped = pickle.dumps(decoded_data, protocol=2)
+            redis_connection.set(url, dumped)
+        return decoded_data

@@ -34,7 +34,7 @@ class OkidenService(Service):
         original_feather_path = FileFunction.get_original_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
 
         if reflesh or not os.path.exists(original_feather_path):
-            decoded_data = RequestFunction.get_decoded_data(url)
+            decoded_data = FileFunction.get_decoded_data(url)
             # okidenは、空行が入っていたりするので、csv読み込み前にデータ補正が必要。
             okiden_csv = cls.__get_okiden_csv(decoded_data)
             data_frame = cls.__parse(okiden_csv)
@@ -56,7 +56,7 @@ class OkidenService(Service):
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
-        data_frame = pandas.read_feather(original_feather_path)
+        data_frame = DataFrameFunction.get_data_frame(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。

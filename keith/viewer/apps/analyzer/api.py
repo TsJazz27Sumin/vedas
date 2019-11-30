@@ -15,7 +15,8 @@ from keith.viewer.apps.analyzer.controller.yonden import YondenController
 
 
 def correct_data(request):
-    # TODO:場合によっては、redisの使用も考えてみる。
+    # redisのインストールは、こちらを参考に。
+    # https://qiita.com/sawa-@github/items/1f303626bdc219ea8fa1
     reflesh = False
     root_path = os.getcwd()
     start = time.time()

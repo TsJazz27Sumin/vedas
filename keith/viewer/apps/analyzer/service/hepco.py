@@ -66,7 +66,7 @@ class HepcoService(Service):
                 data_frame = cls.__parse_csv_from_xls(hepco_csv)
                 FileFunction.create_feather_file(original_feather_path, data_frame)
             else:
-                decoded_data = RequestFunction.get_decoded_data(url)
+                decoded_data = FileFunction.get_decoded_data(url)
                 # hepcoは、日時周りのフォーマットが他と違うので、csv読み込み前にデータ補正が必要。
                 hepco_csv = cls.__get_hepco_csv(decoded_data)
                 data_frame = cls.__parse(hepco_csv)
@@ -124,7 +124,7 @@ class HepcoService(Service):
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
-        data_frame = pandas.read_feather(original_feather_path)
+        data_frame = DataFrameFunction.get_data_frame(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。

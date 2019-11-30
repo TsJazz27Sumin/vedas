@@ -12,6 +12,10 @@ class DataFrameFunction(object):
     MERGED_CSV_FOLDER = f'apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged_csv'
 
     @classmethod
+    def get_data_frame(cls, original_feather_path):
+        return pandas.read_feather(original_feather_path)
+
+    @classmethod
     def merge_ex_data(cls, processed_feather_paths, root_path, company_name):
 
         data_frames = []
