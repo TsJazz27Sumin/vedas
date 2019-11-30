@@ -5,5 +5,5 @@ class Controller(object):
         raise NotImplementedError
 
     @classmethod
-    def count(cls, root_path, reflesh):
+    def count(cls, root_path):
         raise NotImplementedError

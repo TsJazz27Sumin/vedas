@@ -1,7 +1,6 @@
 import time
 
 from keith.viewer.apps.analyzer.controller.controller import Controller
-from keith.viewer.apps.analyzer.function import measurement
 
 from keith.viewer.apps.analyzer.function.file import FileFunction
 from keith.viewer.apps.analyzer.function.measurement import MeasurementFunction
@@ -25,5 +24,9 @@ class TepcoController(Controller):
         return count
 
     @classmethod
-    def count(cls, root_path, reflesh):
+    def count(cls, root_path):
         return QueryService.count(root_path, cls.COMPANY_NAME)
+
+    @classmethod
+    def solar(cls, root_path):
+        return QueryService.solar(root_path, cls.COMPANY_NAME)

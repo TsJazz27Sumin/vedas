@@ -4,7 +4,6 @@ import os
 
 from keith.viewer.apps.analyzer.function.dataframe import DataFrameFunction
 from keith.viewer.apps.analyzer.function.file import FileFunction
-from keith.viewer.apps.analyzer.function.request import RequestFunction
 from keith.viewer.apps.analyzer.service.service import Service
 
 
@@ -42,7 +41,7 @@ class TepcoService(Service):
 
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
-        data_frame = DataFrameFunction.get_data_frame(original_feather_path)
+        data_frame = DataFrameFunction.get_data_frame_from_feather(original_feather_path)
         data_frame['Company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。

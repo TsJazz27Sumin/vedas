@@ -25,5 +25,5 @@ class HepcoController(Controller):
         return count
 
     @classmethod
-    def count(cls, root_path, reflesh):
+    def count(cls, root_path):
         return QueryService.count(root_path, cls.COMPANY_NAME)

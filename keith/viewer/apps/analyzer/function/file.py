@@ -27,6 +27,10 @@ class FileFunction(object):
         return cls.__get_feather_path(cls.PROCESSED_FOLDER, root_path, company, feather_file_name)
 
     @classmethod
+    def get_merged_pkl_path(cls, root_path, company):
+        return cls.__get_feather_path(cls.MERGED_FOLDER, root_path, company, company + '.pkl')
+
+    @classmethod
     def get_merged_feather_path(cls, root_path, company):
         return cls.__get_feather_path(cls.MERGED_FOLDER, root_path, company, company + '.feather')
 

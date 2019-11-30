@@ -12,7 +12,16 @@ class DataFrameFunction(object):
     MERGED_CSV_FOLDER = f'apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged_csv'
 
     @classmethod
-    def get_data_frame(cls, original_feather_path):
+    def get_data_frame_from_pkl(cls, root_path, company_name):
+        merged_pkl_path = FileFunction.get_merged_pkl_path(
+            root_path,
+            company_name
+        )
+        data_frame = pandas.read_pickle(merged_pkl_path)
+        return data_frame
+
+    @classmethod
+    def get_data_frame_from_feather(cls, original_feather_path):
         return pandas.read_feather(original_feather_path)
 
     @classmethod
@@ -26,7 +35,7 @@ class DataFrameFunction(object):
         merged_data_frame = pandas.concat(data_frames).sort_values(by='Date Time', ascending=True).reset_index()
         del merged_data_frame['index']
 
-        merged_feather_path = FileFunction.get_merged_feather_path(
+        merged_pkl_path = FileFunction.get_merged_pkl_path(
             root_path,
             company_name
         )
@@ -39,14 +48,13 @@ class DataFrameFunction(object):
         print(company_name)
         print(merged_data_frame[['Date', 'Time', 'Demand', 'Company', 'Thermal', 'Solar', 'Total Supply Capacity']])
 
+        # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
+        merged_data_frame.set_index('Date Time', inplace=True)
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。
         # TODO:バグが解消されたらfeatherに統一したい。
-        pkl_file = merged_feather_path.replace('.feather', '.pkl')
-        merged_data_frame.to_pickle(pkl_file)
-        df = pandas.read_pickle(pkl_file)
-        # merged_data_frame.to_csv(merged_csv_path)
+        merged_data_frame.to_pickle(merged_pkl_path)
 
-        return pkl_file
+        return merged_pkl_path
 
     @classmethod
     def create_date_and_time_from_datetime(cls, data_frame):
