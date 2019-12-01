@@ -1,85 +1,67 @@
-import React from 'react'
-import {Checkbox} from '@shopify/polaris';
+import React from "react";
+import { Checkbox } from "@shopify/polaris";
 
-const JapanEnergyCheckboxes = (
-    { 
-        dict, 
-        hepcoChecked,
-        handleHepcoChange, 
-        tohokuepcoChecked, 
-        handleTohokuepcoChange,
-        rikudenChecked,
-        handleRikudenChange,
-        tepcoChecked,
-        handleTepcoChange,
-        chudenChecked,
-        handleChudenChange,        
-        kepcoChecked,
-        handleKepcoChange,
-        energiaChecked,
-        handleEnergiaChange,
-        yondenChecked,
-        handleYondenChange,
-        kyudenChecked,
-        handleKyudenChange,
-        okidenChecked,
-        handleOkidenChange
-}
-) => {
+const JapanEnergyCheckboxes = props => {
+  const dict = props.dict;
   return (
     <div>
-        <Checkbox
-            label={dict.hepco}
-            checked={hepcoChecked}
-            onChange={handleHepcoChange}
-          />
-          <Checkbox
-            label={dict.tohokuepco}
-            checked={tohokuepcoChecked}
-            onChange={handleTohokuepcoChange}
-          />
-          <Checkbox
-            label={dict.rikuden}
-            checked={rikudenChecked}
-            onChange={handleRikudenChange}
-          />
-          <Checkbox
-            label={dict.tepco}
-            checked={tepcoChecked}
-            onChange={handleTepcoChange}
-          />
-          <Checkbox
-            label={dict.chuden}
-            checked={chudenChecked}
-            onChange={handleChudenChange}
-          />
-          <Checkbox
-            label={dict.kepco}
-            checked={kepcoChecked}
-            onChange={handleKepcoChange}
-          />
-          <Checkbox
-            label={dict.energia}
-            checked={energiaChecked}
-            onChange={handleEnergiaChange}
-          />
-          <Checkbox
-            label={dict.yonden}
-            checked={yondenChecked}
-            onChange={handleYondenChange}
-          />
-          <Checkbox
-            label={dict.kyuden}
-            checked={kyudenChecked}
-            onChange={handleKyudenChange}
-          />
-          <Checkbox
-            label={dict.okiden}
-            checked={okidenChecked}
-            onChange={handleOkidenChange}
-          />
+      <Checkbox
+        label={dict.all}
+        checked={props.allChecked}
+        onChange={props.handleAllChange}
+      />
+      <Checkbox
+        label={dict.hepco}
+        checked={props.hepcoChecked}
+        onChange={props.handleHepcoChange}
+      />
+      <Checkbox
+        label={dict.tohokuepco}
+        checked={props.tohokuepcoChecked}
+        onChange={props.handleTohokuepcoChange}
+      />
+      <Checkbox
+        label={dict.rikuden}
+        checked={props.rikudenChecked}
+        onChange={props.handleRikudenChange}
+      />
+      <Checkbox
+        label={dict.tepco}
+        checked={props.tepcoChecked}
+        onChange={props.handleTepcoChange}
+      />
+      <Checkbox
+        label={dict.chuden}
+        checked={props.chudenChecked}
+        onChange={props.handleChudenChange}
+      />
+      <Checkbox
+        label={dict.kepco}
+        checked={props.kepcoChecked}
+        onChange={props.handleKepcoChange}
+      />
+      <Checkbox
+        label={dict.energia}
+        checked={props.energiaChecked}
+        onChange={props.handleEnergiaChange}
+      />
+      <Checkbox
+        label={dict.yonden}
+        checked={props.yondenChecked}
+        onChange={props.handleYondenChange}
+      />
+      <Checkbox
+        label={dict.kyuden}
+        checked={props.kyudenChecked}
+        onChange={props.handleKyudenChange}
+      />
+      <Checkbox
+        label={dict.okiden}
+        checked={props.okidenChecked}
+        onChange={props.handleOkidenChange}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default JapanEnergyCheckboxes
+export default JapanEnergyCheckboxes;

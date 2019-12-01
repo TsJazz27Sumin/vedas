@@ -23,7 +23,7 @@ from viewer.server.apps.analyzer.decorator.auth import authenticate
 
 
 @authenticate()
-def correct_data(request, reflesh=False):
+def correct_data(request, reflesh=True):
     # redisのインストールは、こちらを参考に。
     # redis-server
     # https://qiita.com/sawa-@github/items/1f303626bdc219ea8fa1

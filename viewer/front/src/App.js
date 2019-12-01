@@ -17,6 +17,23 @@ const App = () => {
   const handleSelectChange = useCallback((value) => setSelected(value), []);
 
   //checkbox
+  const [allChecked, setAllChecked] = useState(false);
+  //TODO:allの挙動が悩ましいが、いったんこれにしておく。
+  const handleAllChange = useCallback((newChecked) => {
+    setAllChecked(newChecked);
+    setHepcoChecked(newChecked);
+    setTohokuepcoChecked(newChecked);
+    setRikudenChecked(newChecked);
+    setTepcoChecked(newChecked);
+    setChudenChecked(newChecked);
+    setKepcoChecked(newChecked);
+    setEnergiaChecked(newChecked);
+    setYondenChecked(newChecked);
+    setKyudenChecked(newChecked);
+    setOkidenChecked(newChecked);
+  }, []);
+
+  //TODO:このstateがズラッと並んじゃうのどうにかならんか。
   const [hepcoChecked, setHepcoChecked] = useState(false);
   const handleHepcoChange = useCallback((newChecked) => setHepcoChecked(newChecked), []);
   const [tohokuepcoChecked, setTohokuepcoChecked] = useState(false);
@@ -67,6 +84,8 @@ const App = () => {
           />
           <JapanEnergyCheckboxes
             dict={dict} 
+            allChecked={allChecked}
+            handleAllChange={handleAllChange}
             hepcoChecked={hepcoChecked}
             handleHepcoChange={handleHepcoChange}
             tohokuepcoChecked={tohokuepcoChecked}
@@ -90,7 +109,7 @@ const App = () => {
           />
       </AppProvider>
       
-      <h1>Energy Charts</h1>
+      <h1>{dict.title}</h1>
       <ul>
         <JapanEnergyCharts 
           data={data}
