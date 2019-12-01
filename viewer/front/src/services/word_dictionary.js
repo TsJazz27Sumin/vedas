@@ -1,6 +1,16 @@
 const get_word_dictionary = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "demand": "需要",
+            "nuclear": "原発",
+            "thermal": "火力",
+            "hydro": "水力",
+            "geothermal": "地熱",
+            "biomass": "バイオマス",
+            "solar": "太陽光",
+            "wind": "風力",
+            "pumping": "揚水",
+            "interconnection": "連系線",
             "title" : "日本の需給実績チャート",
             "all" : "すべて",
             "hepco" : "北海道電力",
@@ -15,6 +25,16 @@ const get_word_dictionary = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
+            "demand": "demand",
+            "nuclear": "nuclear",
+            "thermal": "thermal",
+            "hydro": "hydro",
+            "geothermal": "geothermal",
+            "biomass": "biomass",
+            "solar": "solar",
+            "wind": "wind",
+            "pumping": "pumping",
+            "interconnection": "interconnection",
             "title" : "Japan Energy Charts",
             "all" : "All",
             "hepco" : "Hokkaido Electric Power",
@@ -29,6 +49,16 @@ const get_word_dictionary = (lang) => {
             "okiden" : "OKinawa Electric Power"
         },
         "ch" : {
+            "demand": "需求",
+            "nuclear": "核电站",
+            "thermal": "火力",
+            "hydro": "水电",
+            "geothermal": "地热",
+            "biomass": "生物质",
+            "solar": "太阳的",
+            "wind": "风",
+            "pumping": "抽水",
+            "interconnection": "互连线",
             "title" : "日本能源图表",
             "all" : "所有",
             "hepco" : "北海道电力",
@@ -41,16 +71,42 @@ const get_word_dictionary = (lang) => {
             "yonden" : "四国电力",
             "kyuden" : "九州电力",
             "okiden" : "冲绳电力"
+        },
+        "es" : {
+            "demand": "demanda",
+            "nuclear": "nuclear",
+            "thermal": "potencia de fuego",
+            "hydro": "hidro",
+            "geothermal": "Geotérmica",
+            "biomass": "biomasa",
+            "solar": "solar",
+            "wind": "viento",
+            "pumping": "bombeo",
+            "interconnection": "línea de interconexión",
+            "title": "Gráficos de energía de Japón",
+            "all": "Todos",
+            "hepco": "Energía eléctrica de Hokkaido",
+            "tohokuepco": "Energía eléctrica de Tohoku",
+            "rikuden": "Energía eléctrica de Hokuriku",
+            "tepco": "Energía eléctrica de Tokyo",
+            "chuden": "Energía eléctrica de Chubu",
+            "kepco": "Energía eléctrica de Kansai",
+            "energia": "Energía eléctrica de Chugoku",
+            "yonden": "Energía eléctrica Shikoku",
+            "kyuden": "Energía eléctrica de Kyushu",
+            "okiden": "Energía eléctrica de OKinawa"
         }
       };
 
     let dict = {};
     if (lang === 'en'){
-    dict = word_dictionary.en;
+        dict = word_dictionary.en;
     } else if (lang === 'jp'){
-    dict = word_dictionary.jp;
+        dict = word_dictionary.jp;
     } else if (lang === 'ch'){
-    dict = word_dictionary.ch;
+        dict = word_dictionary.ch;
+    } else if (lang === 'es'){
+        dict = word_dictionary.es;
     }
     return dict;
   }

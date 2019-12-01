@@ -64,7 +64,7 @@ class KepcoService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0, 1],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date_time',
                                'demand',

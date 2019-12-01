@@ -59,6 +59,7 @@ const App = () => {
     {label: '日本語', value: 'jp'},
     {label: 'English', value: 'en'},
     {label: 'China(Simplified)', value: 'ch'},
+    {label: 'Spanish', value: 'es'},
   ];
 
   let lang = selected;

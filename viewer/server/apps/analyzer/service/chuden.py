@@ -62,7 +62,7 @@ class ChudenService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0, 1, 2, 3, 4],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date',
                                'time',

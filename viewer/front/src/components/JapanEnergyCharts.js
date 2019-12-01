@@ -11,10 +11,15 @@ const JapanEnergyCharts = (props) => {
         volumeList.push({
           name: group,
           demand: companyData['demand'][group],
+          nuclear: companyData['nuclear'][group],
+          thermal: companyData['thermal'][group],
           hydro: companyData['hydro'][group],
+          geothermal: companyData['geothermal'][group],
           biomass: companyData['biomass'][group],
           solar: companyData['solar'][group],
           wind: companyData['wind'][group],
+          pumping: companyData['pumping'][group],
+          interconnection: companyData['interconnection'][group],
         });
       }
   
@@ -31,43 +36,43 @@ const JapanEnergyCharts = (props) => {
 
     if (props.hepcoChecked){
       list.push(<Note company_name={dict.hepco}/>);
-      list.push(<Chart energy_data={get_volumeList(data.hepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)}/>);
     }
     if (props.tohokuepcoChecked){
       list.push(<Note company_name={dict.tohokuepco}/>);
-      list.push(<Chart energy_data={get_volumeList(data.tohokuepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)}/>);
     }
     if (props.rikudenChecked){
       list.push(<Note company_name={dict.rikuden}/>);
-      list.push(<Chart energy_data={get_volumeList(data.rikuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)}/>);
     }
     if (props.tepcoChecked){
       list.push(<Note company_name={dict.tepco}/>);
-      list.push(<Chart energy_data={get_volumeList(data.tepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)}/>);
     }
     if (props.chudenChecked){
       list.push(<Note company_name={dict.chuden}/>);
-      list.push(<Chart energy_data={get_volumeList(data.chuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)}/>);
     }
     if (props.kepcoChecked){
       list.push(<Note company_name={dict.kepco}/>);
-      list.push(<Chart energy_data={get_volumeList(data.kepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)}/>);
     }
     if (props.energiaChecked){
       list.push(<Note company_name={dict.energia}/>);
-      list.push(<Chart energy_data={get_volumeList(data.energia)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)}/>);
     }
     if (props.yondenChecked){
       list.push(<Note company_name={dict.yonden}/>);
-      list.push(<Chart energy_data={get_volumeList(data.yonden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)}/>);
     }
     if (props.kyudenChecked){
       list.push(<Note company_name={dict.kyuden}/>);
-      list.push(<Chart energy_data={get_volumeList(data.kyuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)}/>);
     }
     if (props.okidenChecked){
       list.push(<Note company_name={dict.okiden}/>);
-      list.push(<Chart energy_data={get_volumeList(data.okiden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)}/>);
     }
 
   return (

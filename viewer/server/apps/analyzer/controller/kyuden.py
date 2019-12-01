@@ -1,7 +1,6 @@
 import time
 
 from viewer.server.apps.analyzer.controller.controller import Controller
-from viewer.server.apps.analyzer.function import measurement
 
 from viewer.server.apps.analyzer.function.file import FileFunction
 from viewer.server.apps.analyzer.function.measurement import MeasurementFunction

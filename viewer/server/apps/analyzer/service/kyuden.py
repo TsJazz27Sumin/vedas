@@ -50,13 +50,24 @@ class KyudenService(Service):
         # 2,500みたいなデータがあるので取り除く。
         data_frame['demand'] = data_frame['demand'].astype(str).str.replace(',', '').astype(float)
 
+        # 後続で計算できないのでfloatに変換している。
+        data_frame['nuclear'] = data_frame['nuclear'].astype(str).str.replace(',', '').astype(float)
+        data_frame['thermal'] = data_frame['thermal'].astype(str).str.replace(',', '').astype(float)
+        data_frame['pumping'] = data_frame['pumping'].astype(str).str.replace('None', '0')
+        data_frame['pumping'] = data_frame['pumping'].str.replace('nan', '0')
+        data_frame['pumping'] = data_frame['pumping'].str.replace(',', '')
+        data_frame['pumping'] = data_frame['pumping'].astype(float)
+        data_frame['interconnection'] = data_frame['interconnection'].astype(str).str.replace('None', '0')
+        data_frame['interconnection'] = data_frame['interconnection'].str.replace('nan', '0')
+        data_frame['interconnection'] = data_frame['interconnection'].str.replace(',', '')
+        data_frame['interconnection'] = data_frame['interconnection'].astype(float)
+
         # Date型に変換しておく。
         data_frame['date_time'] = pandas.to_datetime(data_frame['date_time'], format='%Y/%m/%d %H:%M')
 
         # TOTAL算出 Total Supply Capacity
         data_frame['total_supply_capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
 
-        print(data_frame)
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
 
@@ -67,7 +78,7 @@ class KyudenService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0, 1],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date_time',
                                'demand',

@@ -38,8 +38,9 @@ class YondenService(Service):
             # 最終行は不要なので削除する。
             data_frame_from_xls.drop(data_frame_from_xls.tail(1).index, inplace=True)
             # Excelから読み込みやすいフォーマットに加工する。
-            yonden_csv = cls.__create_yonden_csv_from_xls(data_frame_from_xls.to_csv())
+            yonden_csv = cls.__create_yonden_csv_from_xls(data_frame_from_xls.to_csv(index=False))
             data_frame = cls.__parse(yonden_csv)
+            print(data_frame)
             FileFunction.create_feather_file(original_feather_path, data_frame)
 
         return original_feather_path
@@ -50,9 +51,8 @@ class YondenService(Service):
 
         for i, data in enumerate(decoded_data.splitlines()):
             items = data.split(',')
-            items[1] = items[1].replace(' 00:00:00', '')
-            items[2] = items[2][:-3]
-            data = ','.join(items[1:])
+            items[0] = items[0].replace(' 00:00:00', '')
+            data = ','.join(items[0:])
             processed_data_list.append(data)
 
         yonden_csv = '\r'.join(processed_data_list)
@@ -67,6 +67,10 @@ class YondenService(Service):
         DataFrameFunction.generate_data_time_field(data_frame)
         data_frame.set_index('date_time')
 
+        # 後続で計算できないのでfloatに変換している。
+        # 地熱がハイフンなので0扱いにする。
+        data_frame['geothermal'] = data_frame['geothermal'].astype(str).str.replace('－', '0').astype(float)
+
         # 他の電力に合わせて万kwからMWhに揃える。
         DataFrameFunction.to_mwh(data_frame)
 
@@ -80,7 +84,7 @@ class YondenService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date',
                                'time',

@@ -62,7 +62,7 @@ class HepcoService(Service):
         if reflesh or not os.path.exists(original_feather_path):
             if '.xls' in url:
                 data_frame_from_xls = pandas.read_excel(url, header=None, index_col=None, skiprows=[0, 1, 2, 3])
-                hepco_csv = cls.__create_hepco_csv_from_xls(data_frame_from_xls.to_csv())
+                hepco_csv = cls.__create_hepco_csv_from_xls(data_frame_from_xls.to_csv(index=False))
                 data_frame = cls.__parse_csv_from_xls(hepco_csv)
                 FileFunction.create_feather_file(original_feather_path, data_frame)
             else:
@@ -80,21 +80,21 @@ class HepcoService(Service):
         target_date = ''
 
         for i, data in enumerate(decoded_data.splitlines()):
-            data = data.replace(' ', '')
-            for k, v in cls.JIKOKU.items():
-                if k in data:
-                    data = data.replace(k, v)
-                    break
+            if i > 0:
+                data = data.replace(' ', '')
+                for k, v in cls.JIKOKU.items():
+                    if k in data:
+                        data = data.replace(k, v)
+                        break
 
-            items = data.split(',')
+                items = data.split(',')
 
-            if len(items[1]) != 0:
-                target_date = items[1]
-                data = ','.join(items[1:])
-            else:
-                data = target_date + ','.join(items[1:])
-
-            processed_data_list.append(data)
+                if len(items[1]) != 0:
+                    target_date = items[1]
+                    data = ','.join(items[1:])
+                else:
+                    data = target_date + ','.join(items[1:])
+                processed_data_list.append(data)
 
         hepco_csv = '\r'.join(processed_data_list)
         return hepco_csv
@@ -143,7 +143,7 @@ class HepcoService(Service):
                                header=None,
                                skiprows=[],
                                lineterminator='\r',
-                               na_values=['-'],
+                               na_values=[0],
                                names=[
                                    'date',
                                    'time',
@@ -168,7 +168,7 @@ class HepcoService(Service):
         return pandas.read_csv(io.StringIO(csv_from_xls),
                                header=None,
                                skiprows=[0],
-                               na_values=['-'],
+                               na_values=[0],
                                names=[
                                    'date',
                                    'time',

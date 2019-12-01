@@ -82,7 +82,7 @@ class RikudenService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date',
                                'time',

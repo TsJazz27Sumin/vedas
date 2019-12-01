@@ -62,7 +62,7 @@ class EnergiaService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0, 1, 2],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date',
                                'time',

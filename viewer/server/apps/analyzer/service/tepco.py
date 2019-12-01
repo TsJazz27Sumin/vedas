@@ -52,6 +52,9 @@ class TepcoService(Service):
         data_frame['demand'] = data_frame['demand'].astype(str).str.replace(',', '').astype(int)
         data_frame['total_supply_capacity'] = data_frame['total_supply_capacity'].astype(str).str.replace(',', '').astype(int)
 
+        # 後続で計算できないのでfloatに変換している。
+        data_frame['thermal'] = data_frame['thermal'].astype(str).str.replace(',', '').astype(float)
+
         # 他の電力に合わせて万kwからMWhに揃える。
         DataFrameFunction.to_mwh(data_frame)
 
@@ -65,7 +68,7 @@ class TepcoService(Service):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
                            skiprows=[0, 1, 2],
-                           na_values=['-'],
+                           na_values=[0],
                            names=[
                                'date',
                                'time',

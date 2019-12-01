@@ -55,7 +55,7 @@ class FileFunction(object):
         split_urls = url.split('/')
         csv_file_name = split_urls[-1]
         # 北海道電力とかExcelもいるので対応しておく。
-        return csv_file_name.replace('.csv', '.feather').replace('.xls', '.feather')
+        return csv_file_name.replace('.csv', '.feather').replace('.xls', '.feather').replace('.xlsx', '.feather')
 
 
     @classmethod

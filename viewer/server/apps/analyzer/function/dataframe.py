@@ -40,11 +40,6 @@ class DataFrameFunction(object):
             company_name
         )
 
-        merged_csv_path = FileFunction.get_merged_csv_path(
-            root_path,
-            company_name
-        )
-
         print(company_name)
         print(merged_data_frame[['date', 'time', 'demand', 'company', 'thermal', 'solar', 'total_supply_capacity']])
 
