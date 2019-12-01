@@ -1,6 +1,7 @@
 const get_word_dictionary = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "green": "グリーン電力",
             "demand": "需要",
             "nuclear": "原発",
             "thermal": "火力",
@@ -27,6 +28,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
+            "green": "green power",
             "demand": "demand",
             "nuclear": "nuclear",
             "thermal": "thermal",
@@ -53,6 +55,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "OKinawa Electric Power"
         },
         "ch" : {
+            "green": "绿色力量",
             "demand": "需求",
             "nuclear": "核电站",
             "thermal": "火力",
@@ -79,6 +82,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "冲绳电力"
         },
         "es" : {
+            "green": "poder verde",
             "demand": "demanda",
             "nuclear": "nuclear",
             "thermal": "potencia de fuego",

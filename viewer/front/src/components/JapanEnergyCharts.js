@@ -38,43 +38,43 @@ const JapanEnergyCharts = (props) => {
 
     if (props.hepcoChecked){
       list.push(<Note company_name={dict.hepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.tohokuepcoChecked){
       list.push(<Note company_name={dict.tohokuepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.rikudenChecked){
       list.push(<Note company_name={dict.rikuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.tepcoChecked){
       list.push(<Note company_name={dict.tepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.chudenChecked){
       list.push(<Note company_name={dict.chuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.kepcoChecked){
       list.push(<Note company_name={dict.kepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.energiaChecked){
       list.push(<Note company_name={dict.energia}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.yondenChecked){
       list.push(<Note company_name={dict.yonden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.kyudenChecked){
       list.push(<Note company_name={dict.kyuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
     if (props.okidenChecked){
       list.push(<Note company_name={dict.okiden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
     }
 
   return (

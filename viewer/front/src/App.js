@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import {AppProvider, Select, Checkbox} from '@shopify/polaris';
+import {AppProvider, Select, Card, Stack, Badge, Checkbox} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
@@ -55,6 +55,15 @@ const App = () => {
   const [okidenChecked, setOkidenChecked] = useState(false);
   const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
 
+  const [nuclearChecked, setNuclearChecked] = useState(false);
+  const handleNuclearChange = useCallback((newChecked) => setNuclearChecked(newChecked), []);
+  const [thermalChecked, setThermalChecked] = useState(false);
+  const handleThermalChange = useCallback((newChecked) => setThermalChecked(newChecked), []);
+  const [greenChecked, setGreenChecked] = useState(false);
+  const handleGreenChange = useCallback((newChecked) => setGreenChecked(newChecked), []);
+  const [interconnectionChecked, setInterconnectionChecked] = useState(false);
+  const handleInterconnectionChange = useCallback((newChecked) => setInterconnectionChecked(newChecked), []);
+
   const options = [
     {label: '日本語', value: 'jp'},
     {label: 'English', value: 'en'},
@@ -83,6 +92,7 @@ const App = () => {
             onChange={handleSelectChange}
             value={selected}
           />
+          <Card title={dict.title} sectioned>
           <JapanEnergyCheckboxes
             dict={dict} 
             allChecked={allChecked}
@@ -108,9 +118,39 @@ const App = () => {
             okidenChecked={okidenChecked}
             handleOkidenChange={handleOkidenChange}
           />
+          <Stack>
+            <Badge>
+              <Checkbox
+                label={dict.nuclear}
+                checked={nuclearChecked}
+                onChange={handleNuclearChange}
+              />
+            </Badge>
+            <Badge>
+              <Checkbox
+                label={dict.thermal}
+                checked={thermalChecked}
+                onChange={handleThermalChange}
+              />
+            </Badge>
+            <Badge>
+              <Checkbox
+                label={dict.green}
+                checked={greenChecked}
+                onChange={handleGreenChange}
+              />
+            </Badge>
+            <Badge>
+              <Checkbox
+                label={dict.interconnection}
+                checked={interconnectionChecked}
+                onChange={handleInterconnectionChange}
+              />
+            </Badge>
+          </Stack>
+          </Card>
+          
       </AppProvider>
-      
-      <h1>{dict.title}</h1>
       <ul>
         <JapanEnergyCharts 
           data={data}
@@ -125,6 +165,10 @@ const App = () => {
           yondenChecked={yondenChecked}
           kyudenChecked={kyudenChecked}
           okidenChecked={okidenChecked}
+          nuclearChecked={nuclearChecked}
+          thermalChecked={thermalChecked}
+          greenChecked={greenChecked}
+          interconnectionChecked={interconnectionChecked}
         />
       </ul>
     </div>

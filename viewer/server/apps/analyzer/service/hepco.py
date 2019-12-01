@@ -143,6 +143,7 @@ class HepcoService(Service):
     @classmethod
     def merge_ex_data(cls, processed_pkl_paths, root_path, company_name):
         # 1個だけExcelがいるのでhepcoは、すべてpkl対応。
+        # TODO:そもそもindex問題があるのですべてpklに寄せるのもありかもしれない。
         data_frames = []
         for processed_pkl_path in processed_pkl_paths:
             data_frame = DataFrameFunction.get_data_frame_from_pkl(processed_pkl_path)
