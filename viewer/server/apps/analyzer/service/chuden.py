@@ -77,6 +77,6 @@ class ChudenService(Service):
                                'wind',
                                'wind_output_control',
                                'pumping',
-                               'Interconnection'
+                               'interconnection'
                            ]
                            )

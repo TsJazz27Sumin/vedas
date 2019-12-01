@@ -10,8 +10,11 @@ const Chart = ({energy_data}) => {
        <CartesianGrid strokeDasharray="3 3"/>
        <Tooltip/>
        <Legend />
-       <Line type="monotone" dataKey="demand" stroke="#8884d8" activeDot={{r: 8}}/>
-       <Line type="monotone" dataKey="solar" stroke="#82ca9d" />
+       <Line type="monotone" dataKey="demand" stroke="#637381" activeDot={{r: 8}}/>
+       <Line type="monotone" dataKey="hydro" stroke="#43467F" />
+       <Line type="monotone" dataKey="biomass" stroke="#E3D0FF" />
+       <Line type="monotone" dataKey="solar" stroke="#B3BCF5" />
+       <Line type="monotone" dataKey="wind" stroke="#B4E1FA" />
       </LineChart>
     );
   }

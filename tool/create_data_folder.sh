@@ -1,7 +1,7 @@
- #!/bin/sh
+#!/bin/sh
 
 cd ../
-cd viewer/viewer/apps/analyzer/
+cd viewer/server/apps/analyzer/
 mkdir data
 cd data
 # 北海道電力

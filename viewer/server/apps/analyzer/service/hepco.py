@@ -158,7 +158,7 @@ class HepcoService(Service):
                                    'wind',
                                    'wind_output_control',
                                    'pumping',
-                                   'Interconnection',
+                                   'interconnection',
                                    'total_supply_capacity'
                                ]
                                )
@@ -183,7 +183,7 @@ class HepcoService(Service):
                                    'wind',
                                    'wind_output_control',
                                    'pumping',
-                                   'Interconnection',
+                                   'interconnection',
                                    'total_supply_capacity'
                                ]
                                )

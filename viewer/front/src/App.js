@@ -3,7 +3,7 @@ import {AppProvider, Select, Checkbox} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
-import noteService from './services/notes' 
+import japanEnergyService from './services/japan_energy' 
 import wordDictionaryService from './services/word_dictionary' 
 
 //memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
@@ -68,8 +68,8 @@ const App = () => {
 
   //end
   useEffect(() => {
-    noteService
-      .getAll()
+    japanEnergyService
+      .get()
       .then(initialData => setData(initialData));
   }, [])
   

@@ -28,5 +28,5 @@ class TepcoController(Controller):
         return QueryService.count(root_path, cls.COMPANY_NAME)
 
     @classmethod
-    def solar(cls, root_path):
-        return QueryService.solar(root_path, cls.COMPANY_NAME)
+    def get(cls, root_path):
+        return QueryService.get(root_path, cls.COMPANY_NAME)

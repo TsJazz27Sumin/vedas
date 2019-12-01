@@ -7,3 +7,7 @@ class Controller(object):
     @classmethod
     def count(cls, root_path):
         raise NotImplementedError
+
+    @classmethod
+    def get(cls, root_path):
+        raise NotImplementedError

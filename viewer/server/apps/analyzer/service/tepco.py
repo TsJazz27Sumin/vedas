@@ -80,7 +80,7 @@ class TepcoService(Service):
                                'wind',
                                'wind_output_control',
                                'pumping',
-                               'Interconnection',
+                               'interconnection',
                                'total_supply_capacity'
                            ]
                            )

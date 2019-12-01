@@ -11,7 +11,10 @@ const JapanEnergyCharts = (props) => {
         volumeList.push({
           name: group,
           demand: companyData['demand'][group],
-          solar: companyData['solar'][group]
+          hydro: companyData['hydro'][group],
+          biomass: companyData['biomass'][group],
+          solar: companyData['solar'][group],
+          wind: companyData['wind'][group],
         });
       }
   

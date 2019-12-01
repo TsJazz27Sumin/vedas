@@ -77,7 +77,7 @@ class DataFrameFunction(object):
             'wind',
             'wind_output_control',
             'pumping',
-            'Interconnection'
+            'interconnection'
         ]
         data_frame['total_supply_capacity'] = data_frame[sum_target_fields].sum(axis=1)
         return data_frame['total_supply_capacity']
@@ -96,7 +96,7 @@ class DataFrameFunction(object):
             'wind',
             'wind_output_control',
             'pumping',
-            'Interconnection',
+            'interconnection',
             'total_supply_capacity'
         ]
         transform_value = 10

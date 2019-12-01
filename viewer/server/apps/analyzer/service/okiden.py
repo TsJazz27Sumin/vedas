@@ -67,7 +67,7 @@ class OkidenService(Service):
         data_frame['nuclear'] = 0
         data_frame['geothermal'] = 0
         data_frame['pumping'] = 0
-        data_frame['Interconnection'] = 0
+        data_frame['interconnection'] = 0
 
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
@@ -94,7 +94,7 @@ class OkidenService(Service):
                                'wind',
                                'wind_output_control',
                                # 'pumping', 沖縄は揚水がない。
-                               # 'Interconnection', 沖縄は連系線がない。
+                               # 'interconnection', 沖縄は連系線がない。
                                'total_supply_capacity'
                            ]
                            )

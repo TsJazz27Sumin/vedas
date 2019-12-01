@@ -88,6 +88,6 @@ class TohokuEpcoService(Service):
                                'geothermal',
                                'biomass',
                                'pumping',
-                               'Interconnection'
+                               'interconnection'
                            ]
                            )
