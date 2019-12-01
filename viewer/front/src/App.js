@@ -1,17 +1,42 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import {AppProvider, Select} from '@shopify/polaris';
+import {AppProvider, Select, Checkbox} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import Note from './components/Note'
-import Chart from './components/Chart'
+import JapanEnergyCharts from './components/JapanEnergyCharts'
+import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
 import noteService from './services/notes' 
 import wordDictionaryService from './services/word_dictionary' 
 
 //memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
+//https://polaris.shopify.com/components/
 const App = () => {
 
-  const [selected, setSelected] = useState('today');
+  //Polaris area
 
+  //select
+  const [selected, setSelected] = useState('en');
   const handleSelectChange = useCallback((value) => setSelected(value), []);
+
+  //checkbox
+  const [hepcoChecked, setHepcoChecked] = useState(false);
+  const handleHepcoChange = useCallback((newChecked) => setHepcoChecked(newChecked), []);
+  const [tohokuepcoChecked, setTohokuepcoChecked] = useState(false);
+  const handleTohokuepcoChange = useCallback((newChecked) => setTohokuepcoChecked(newChecked), []);
+  const [rikudenChecked, setRikudenChecked] = useState(false);
+  const handleRikudenChange = useCallback((newChecked) => setRikudenChecked(newChecked), []);
+  const [tepcoChecked, setTepcoChecked] = useState(false);
+  const handleTepcoChange = useCallback((newChecked) => setTepcoChecked(newChecked), []);
+  const [chudenChecked, setChudenChecked] = useState(false);
+  const handleChudenChange = useCallback((newChecked) => setChudenChecked(newChecked), []);
+  const [kepcoChecked, setKepcoChecked] = useState(false);
+  const handleKepcoChange = useCallback((newChecked) => setKepcoChecked(newChecked), []);
+  const [energiaChecked, setEnergiaChecked] = useState(false);
+  const handleEnergiaChange = useCallback((newChecked) => setEnergiaChecked(newChecked), []);
+  const [yondenChecked, setYondenChecked] = useState(false);
+  const handleYondenChange = useCallback((newChecked) => setYondenChecked(newChecked), []);
+  const [kyudenChecked, setKyudenChecked] = useState(false);
+  const handleKyudenChange = useCallback((newChecked) => setKyudenChecked(newChecked), []);
+  const [okidenChecked, setOkidenChecked] = useState(false);
+  const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
 
   const options = [
     {label: '日本語', value: 'jp'},
@@ -20,61 +45,16 @@ const App = () => {
   ];
 
   let lang = selected;
+  let dict = wordDictionaryService.get_word_dictionary(lang);
 
   const [data, setData] = useState([]) 
 
+  //end
   useEffect(() => {
     noteService
       .getAll()
       .then(initialData => setData(initialData));
   }, [])
-
-  const get_volumeList = (companyData) => {
-    let volumeList = []
-
-    for (const group in companyData['demand']) {
-      volumeList.push({
-        name: group,
-        demand: companyData['demand'][group],
-        solar: companyData['solar'][group]
-      });
-    }
-
-    return volumeList;
-  }
-
-  const get_charts = () => {
-    if(data.length === 0){
-      return;
-    }
-    
-    let dict = wordDictionaryService.get_word_dictionary(lang);
-
-    let list = []
-    list.push(<Note company_name={dict.hepco}/>);
-    list.push(<Chart energy_data={get_volumeList(data.hepco)}/>);
-    list.push(<Note company_name={dict.tohokuepco}/>);
-    list.push(<Chart energy_data={get_volumeList(data.tohokuepco)}/>);
-    list.push(<Note company_name={dict.rikuden}/>);
-    list.push(<Chart energy_data={get_volumeList(data.rikuden)}/>);
-    list.push(<Note company_name={dict.tepco}/>);
-    list.push(<Chart energy_data={get_volumeList(data.tepco)}/>);
-    list.push(<Note company_name={dict.chuden}/>);
-    list.push(<Chart energy_data={get_volumeList(data.chuden)}/>);
-    list.push(<Note company_name={dict.kepco}/>);
-    list.push(<Chart energy_data={get_volumeList(data.kepco)}/>);
-    list.push(<Note company_name={dict.energia}/>);
-    list.push(<Chart energy_data={get_volumeList(data.energia)}/>);
-    list.push(<Note company_name={dict.yonden}/>);
-    list.push(<Chart energy_data={get_volumeList(data.yonden)}/>);
-    list.push(<Note company_name={dict.kyuden}/>);
-    list.push(<Chart energy_data={get_volumeList(data.kyuden)}/>);
-    list.push(<Note company_name={dict.okiden}/>);
-    list.push(<Chart energy_data={get_volumeList(data.okiden)}/>);
-
-
-    return list
-  }
   
   return (
     <div>
@@ -85,11 +65,47 @@ const App = () => {
             onChange={handleSelectChange}
             value={selected}
           />
+          <JapanEnergyCheckboxes
+            dict={dict} 
+            hepcoChecked={hepcoChecked}
+            handleHepcoChange={handleHepcoChange}
+            tohokuepcoChecked={tohokuepcoChecked}
+            handleTohokuepcoChange={handleTohokuepcoChange}
+            rikudenChecked={rikudenChecked}
+            handleRikudenChange={handleRikudenChange}
+            tepcoChecked={tepcoChecked}
+            handleTepcoChange={handleTepcoChange}
+            chudenChecked={chudenChecked}
+            handleChudenChange={handleChudenChange}
+            kepcoChecked={kepcoChecked}
+            handleKepcoChange={handleKepcoChange}
+            energiaChecked={energiaChecked}
+            handleEnergiaChange={handleEnergiaChange}
+            yondenChecked={yondenChecked}
+            handleYondenChange={handleYondenChange}
+            kyudenChecked={kyudenChecked}
+            handleKyudenChange={handleKyudenChange}
+            okidenChecked={okidenChecked}
+            handleOkidenChange={handleOkidenChange}
+          />
       </AppProvider>
       
       <h1>Energy Charts</h1>
       <ul>
-        {get_charts()}
+        <JapanEnergyCharts 
+          data={data}
+          dict={dict}
+          hepcoChecked={hepcoChecked} 
+          tohokuepcoChecked={tohokuepcoChecked}
+          rikudenChecked={rikudenChecked}
+          tepcoChecked={tepcoChecked}
+          chudenChecked={chudenChecked}
+          kepcoChecked={kepcoChecked}
+          energiaChecked={energiaChecked}
+          yondenChecked={yondenChecked}
+          kyudenChecked={kyudenChecked}
+          okidenChecked={okidenChecked}
+        />
       </ul>
     </div>
   )
