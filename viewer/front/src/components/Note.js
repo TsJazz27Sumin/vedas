@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Note = ({ group, demand, solar }) => {
+const Note = ({ companyName}) => {
   return (
     <li>
-      {group.replace(',', '/').replace(']', '').replace('[', '')} : demand = {demand}
+      {companyName}
     </li>
   )
 }

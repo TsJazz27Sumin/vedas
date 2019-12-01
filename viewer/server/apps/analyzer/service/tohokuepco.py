@@ -44,16 +44,16 @@ class TohokuEpcoService(Service):
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = DataFrameFunction.get_data_frame_from_feather(original_feather_path)
-        data_frame['Company'] = cls.COMPANY_NAME
+        data_frame['company'] = cls.COMPANY_NAME
 
         # tohokuepcoは、日時で持っているのでTepcoに合わせて分割する。
         DataFrameFunction.create_date_and_time_from_datetime(data_frame)
 
         # Date型に変換しておく。
-        data_frame['Date Time'] = pandas.to_datetime(data_frame['Date Time'], format='%Y/%m/%d %H:%M')
+        data_frame['date_time'] = pandas.to_datetime(data_frame['date_time'], format='%Y/%m/%d %H:%M')
 
         # TOTAL算出 Total Supply Capacity
-        data_frame['Total Supply Capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
+        data_frame['total_supply_capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
 
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
@@ -76,18 +76,18 @@ class TohokuEpcoService(Service):
                            skiprows=[0, 1],
                            na_values=['-'],
                            names=[
-                               'Date Time',
-                               'Demand',
-                               'Hydro',
-                               'Thermal',
-                               'Nuclear',
-                               'Solar',
-                               'Solar output control',
-                               'Wind',
-                               'Wind output control',
-                               'Geothermal',
-                               'Biomass',
-                               'Pumping',
+                               'date_time',
+                               'demand',
+                               'hydro',
+                               'thermal',
+                               'nuclear',
+                               'solar',
+                               'solar_output_control',
+                               'wind',
+                               'wind_output_control',
+                               'geothermal',
+                               'biomass',
+                               'pumping',
                                'Interconnection'
                            ]
                            )

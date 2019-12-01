@@ -32,7 +32,7 @@ class DataFrameFunction(object):
             data_frame = pandas.read_feather(processed_feather_path)
             data_frames.append(data_frame)
 
-        merged_data_frame = pandas.concat(data_frames).sort_values(by='Date Time', ascending=True).reset_index()
+        merged_data_frame = pandas.concat(data_frames).sort_values(by='date_time', ascending=True).reset_index()
         del merged_data_frame['index']
 
         merged_pkl_path = FileFunction.get_merged_pkl_path(
@@ -46,10 +46,10 @@ class DataFrameFunction(object):
         )
 
         print(company_name)
-        print(merged_data_frame[['Date', 'Time', 'Demand', 'Company', 'Thermal', 'Solar', 'Total Supply Capacity']])
+        print(merged_data_frame[['date', 'time', 'demand', 'company', 'thermal', 'solar', 'total_supply_capacity']])
 
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
-        merged_data_frame.set_index('Date Time', inplace=True)
+        merged_data_frame.set_index('date_time', inplace=True)
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。
         # TODO:バグが解消されたらfeatherに統一したい。
         merged_data_frame.to_pickle(merged_pkl_path)
@@ -58,46 +58,46 @@ class DataFrameFunction(object):
 
     @classmethod
     def create_date_and_time_from_datetime(cls, data_frame):
-        data_frame["Split"] = data_frame["Date Time"].str.split(" ")
-        data_frame["Date"] = data_frame["Split"].str.get(0)
-        data_frame["Time"] = data_frame["Split"].str.get(1)
-        del data_frame["Split"]
+        data_frame["split"] = data_frame["date_time"].str.split(" ")
+        data_frame["date"] = data_frame["split"].str.get(0)
+        data_frame["time"] = data_frame["split"].str.get(1)
+        del data_frame["split"]
 
     @classmethod
     def get_total_supply_capacity(cls, data_frame):
 
         sum_target_fields = [
-            'Nuclear',
-            'Thermal',
-            'Hydro',
-            'Geothermal',
-            'Biomass',
-            'Solar',
-            'Solar output control',
-            'Wind',
-            'Wind output control',
-            'Pumping',
+            'nuclear',
+            'thermal',
+            'hydro',
+            'geothermal',
+            'biomass',
+            'solar',
+            'solar_output_control',
+            'wind',
+            'wind_output_control',
+            'pumping',
             'Interconnection'
         ]
-        data_frame['Total Supply Capacity'] = data_frame[sum_target_fields].sum(axis=1)
-        return data_frame['Total Supply Capacity']
+        data_frame['total_supply_capacity'] = data_frame[sum_target_fields].sum(axis=1)
+        return data_frame['total_supply_capacity']
 
     @classmethod
     def to_mwh(cls, data_frame):
         target_fields = [
-            'Demand',
-            'Nuclear',
-            'Thermal',
-            'Hydro',
-            'Geothermal',
-            'Biomass',
-            'Solar',
-            'Solar output control',
-            'Wind',
-            'Wind output control',
-            'Pumping',
+            'demand',
+            'nuclear',
+            'thermal',
+            'hydro',
+            'geothermal',
+            'biomass',
+            'solar',
+            'solar_output_control',
+            'wind',
+            'wind_output_control',
+            'pumping',
             'Interconnection',
-            'Total Supply Capacity'
+            'total_supply_capacity'
         ]
         transform_value = 10
         for target_field in target_fields:
@@ -105,6 +105,6 @@ class DataFrameFunction(object):
 
     @classmethod
     def generate_data_time_field(cls, data_frame):
-        data_frame['Date Time'] = data_frame['Date'] + ' ' + data_frame['Time']
-        data_frame['Date Time'] = data_frame['Date Time'].astype(str).str.replace('  ', ' ')
-        data_frame['Date Time'] = pandas.to_datetime(data_frame['Date Time'], format='%Y/%m/%d %H:%M')
+        data_frame['date_time'] = data_frame['date'] + ' ' + data_frame['time']
+        data_frame['date_time'] = data_frame['date_time'].astype(str).str.replace('  ', ' ')
+        data_frame['date_time'] = pandas.to_datetime(data_frame['date_time'], format='%Y/%m/%d %H:%M')

@@ -47,7 +47,7 @@ class FileFunction(object):
         pathlib.Path(feather_path)
 
         # Demandが欠損値のデータは使えないので削除しておく。
-        data_frame = data_frame.dropna(subset=['Demand'])
+        data_frame = data_frame.dropna(subset=['demand'])
         data_frame.to_feather(feather_path)
 
     @classmethod

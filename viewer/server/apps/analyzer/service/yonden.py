@@ -61,11 +61,11 @@ class YondenService(Service):
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = DataFrameFunction.get_data_frame_from_feather(original_feather_path)
-        data_frame['Company'] = cls.COMPANY_NAME
+        data_frame['company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。
         DataFrameFunction.generate_data_time_field(data_frame)
-        data_frame.set_index('Date Time')
+        data_frame.set_index('date_time')
 
         # 他の電力に合わせて万kwからMWhに揃える。
         DataFrameFunction.to_mwh(data_frame)
@@ -82,20 +82,20 @@ class YondenService(Service):
                            skiprows=[0],
                            na_values=['-'],
                            names=[
-                               'Date',
-                               'Time',
-                               'Demand',
-                               'Nuclear',
-                               'Thermal',
-                               'Hydro',
-                               'Geothermal',
-                               'Biomass',
-                               'Solar',
-                               'Solar output control',
-                               'Wind',
-                               'Wind output control',
-                               'Pumping',
+                               'date',
+                               'time',
+                               'demand',
+                               'nuclear',
+                               'thermal',
+                               'hydro',
+                               'geothermal',
+                               'biomass',
+                               'solar',
+                               'solar_output_control',
+                               'wind',
+                               'wind_output_control',
+                               'pumping',
                                'Interconnection',
-                               'Total Supply Capacity'
+                               'total_supply_capacity'
                            ]
                            )

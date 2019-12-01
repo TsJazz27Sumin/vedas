@@ -27,3 +27,7 @@ class YondenController(Controller):
     @classmethod
     def count(cls, root_path):
         return QueryService.count(root_path, cls.COMPANY_NAME)
+
+    @classmethod
+    def solar(cls, root_path):
+        return QueryService.solar(root_path, cls.COMPANY_NAME)

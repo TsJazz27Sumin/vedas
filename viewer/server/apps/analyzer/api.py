@@ -25,7 +25,7 @@ from viewer.server.apps.analyzer.decorator.auth import authenticate
 @authenticate()
 def correct_data(request, reflesh=False):
     # redisのインストールは、こちらを参考に。
-    # redis-viewer
+    # redis-server
     # https://qiita.com/sawa-@github/items/1f303626bdc219ea8fa1
     root_path = os.getcwd()
     start = time.time()
@@ -81,17 +81,16 @@ def solar(request):
 
     data = {
         "message": "Success",
-        # "01. hepco_count": HepcoController.count(root_path),  # 北海道電力 2016/4/1〜
-        # "02. tohokuepco_count": TohokuEpcoController.count(root_path),  # 東北電力 2016/4/1〜
-        # "03. rikuden_count": RikudenController.count(root_path),  # 北陸電力 2016/4/1〜
-        # "04. tepco_count": TepcoController.count(root_path),  # 東京電力 2016/4/1〜
-        "tepco_solar": json.loads(TepcoController.solar(root_path)),  # 東京電力 2016/4/1〜
-        # "05. chuden_count": ChudenController.count(root_path),  # 中部電力 2016/4/1〜
-        # "06. kepco_count": KepcoController.count(root_path),  # 関西電力 2016/4/1〜
-        # "07. energia_count": EnergiaController.count(root_path),  # 中国電力 2016/11/1〜
-        # "08. yonden_count": YondenController.count(root_path),  # 四国電力 2016/4/1〜
-        "kyuden_solar": json.loads(KyudenController.solar(root_path))  # 九州電力 2016/4/1〜
-        # "10. okiden_count": OkidenController.count(root_path),  # 沖縄電力 2016/4/1〜
+        "hepco": HepcoController.solar(root_path),  # 北海道電力 2016/4/1〜
+        "tohokuepco": TohokuEpcoController.solar(root_path),  # 東北電力 2016/4/1〜
+        "rikuden": RikudenController.solar(root_path),  # 北陸電力 2016/4/1〜
+        "tepco": TepcoController.solar(root_path),  # 東京電力 2016/4/1〜
+        "chuden": ChudenController.solar(root_path),  # 中部電力 2016/4/1〜
+        "kepco": KepcoController.solar(root_path),  # 関西電力 2016/4/1〜
+        "energia": EnergiaController.solar(root_path),  # 中国電力 2016/11/1〜
+        "yonden": YondenController.solar(root_path),  # 四国電力 2016/4/1〜
+        "kyuden": KyudenController.solar(root_path),  # 九州電力 2016/4/1〜
+        "okiden": OkidenController.solar(root_path)  # 沖縄電力 2016/4/1〜
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 

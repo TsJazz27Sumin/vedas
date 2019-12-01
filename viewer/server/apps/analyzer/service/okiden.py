@@ -57,16 +57,16 @@ class OkidenService(Service):
     @classmethod
     def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
         data_frame = DataFrameFunction.get_data_frame_from_feather(original_feather_path)
-        data_frame['Company'] = cls.COMPANY_NAME
+        data_frame['company'] = cls.COMPANY_NAME
 
         # DateとTimeで分割されているので結合した項目を作る。
         DataFrameFunction.generate_data_time_field(data_frame)
-        data_frame.set_index('Date Time')
+        data_frame.set_index('date_time')
 
         # 沖縄にない電力項目は0で埋める。
-        data_frame['Nuclear'] = 0
-        data_frame['Geothermal'] = 0
-        data_frame['Pumping'] = 0
+        data_frame['nuclear'] = 0
+        data_frame['geothermal'] = 0
+        data_frame['pumping'] = 0
         data_frame['Interconnection'] = 0
 
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
@@ -81,20 +81,20 @@ class OkidenService(Service):
                            skiprows=[],
                            na_values=['-'],
                            names=[
-                               'Date',
-                               'Time',
-                               'Demand',
-                               # 'Nuclear',  # 沖縄は原子力がない。
-                               'Thermal',
-                               'Hydro',
-                               # 'Geothermal', 沖縄は地熱がない。
-                               'Biomass',
-                               'Solar',
-                               'Solar output control',
-                               'Wind',
-                               'Wind output control',
-                               # 'Pumping', 沖縄は揚水がない。
+                               'date',
+                               'time',
+                               'demand',
+                               # 'nuclear',  # 沖縄は原子力がない。
+                               'thermal',
+                               'hydro',
+                               # 'geothermal', 沖縄は地熱がない。
+                               'biomass',
+                               'solar',
+                               'solar_output_control',
+                               'wind',
+                               'wind_output_control',
+                               # 'pumping', 沖縄は揚水がない。
                                # 'Interconnection', 沖縄は連系線がない。
-                               'Total Supply Capacity'
+                               'total_supply_capacity'
                            ]
                            )
