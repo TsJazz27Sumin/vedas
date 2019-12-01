@@ -1,9 +1,9 @@
 import React from 'react'
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
-const Chart = ({d}) => {
+const Chart = ({energy_data}) => {
     return (
-    	<LineChart width={1200} height={300} data={d}
+    	<LineChart width={1200} height={300} data={energy_data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
        <XAxis dataKey="name"/>
        <YAxis/>
