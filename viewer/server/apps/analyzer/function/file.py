@@ -51,6 +51,14 @@ class FileFunction(object):
         data_frame.to_feather(feather_path)
 
     @classmethod
+    def create_pkl_file(cls, pkl_path, data_frame):
+        pathlib.Path(pkl_path)
+
+        # Demandが欠損値のデータは使えないので削除しておく。
+        data_frame = data_frame.dropna(subset=['demand'])
+        data_frame.to_pickle(pkl_path)
+
+    @classmethod
     def get_feather_file_name(cls, url):
         split_urls = url.split('/')
         csv_file_name = split_urls[-1]

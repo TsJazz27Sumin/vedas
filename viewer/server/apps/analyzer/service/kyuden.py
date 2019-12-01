@@ -53,6 +53,10 @@ class KyudenService(Service):
         # 後続で計算できないのでfloatに変換している。
         data_frame['nuclear'] = data_frame['nuclear'].astype(str).str.replace(',', '').astype(float)
         data_frame['thermal'] = data_frame['thermal'].astype(str).str.replace(',', '').astype(float)
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].astype(str).str.replace('None', '0')
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].str.replace('nan', '0')
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].str.replace(',', '')
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].astype(float)
         data_frame['pumping'] = data_frame['pumping'].astype(str).str.replace('None', '0')
         data_frame['pumping'] = data_frame['pumping'].str.replace('nan', '0')
         data_frame['pumping'] = data_frame['pumping'].str.replace(',', '')

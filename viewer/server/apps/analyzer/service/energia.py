@@ -52,6 +52,14 @@ class EnergiaService(Service):
         # TOTAL算出 Total Supply Capacity
         data_frame['total_supply_capacity'] = DataFrameFunction.get_total_supply_capacity(data_frame)
 
+        # 後続で計算できないのでfloatに変換している。
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].astype(str).str.replace(',', '')
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].astype(str).str.replace('−', '0')
+        data_frame['solar_output_control'] = data_frame['solar_output_control'].astype(float)
+        data_frame['wind_output_control'] = data_frame['wind_output_control'].astype(str).str.replace(',', '')
+        data_frame['wind_output_control'] = data_frame['wind_output_control'].astype(str).str.replace('−', '0')
+        data_frame['wind_output_control'] = data_frame['wind_output_control'].astype(float)
+
         processed_feather_path = FileFunction.get_processed_feather_path(root_path, cls.COMPANY_NAME, feather_file_name)
         FileFunction.create_feather_file(processed_feather_path, data_frame)
 

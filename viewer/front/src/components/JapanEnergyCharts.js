@@ -16,8 +16,10 @@ const JapanEnergyCharts = (props) => {
           hydro: companyData['hydro'][group],
           geothermal: companyData['geothermal'][group],
           biomass: companyData['biomass'][group],
+          solar_output_control: companyData['solar_output_control'][group],
           solar: companyData['solar'][group],
           wind: companyData['wind'][group],
+          wind_output_control: companyData['wind_output_control'][group],
           pumping: companyData['pumping'][group],
           interconnection: companyData['interconnection'][group],
         });

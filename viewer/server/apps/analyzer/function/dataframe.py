@@ -12,13 +12,17 @@ class DataFrameFunction(object):
     MERGED_CSV_FOLDER = f'apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged_csv'
 
     @classmethod
-    def get_data_frame_from_pkl(cls, root_path, company_name):
+    def get_data_frame_from_merged_pkl(cls, root_path, company_name):
         merged_pkl_path = FileFunction.get_merged_pkl_path(
             root_path,
             company_name
         )
         data_frame = pandas.read_pickle(merged_pkl_path)
         return data_frame
+
+    @classmethod
+    def get_data_frame_from_pkl(cls, original_pkl_path):
+        return pandas.read_pickle(original_pkl_path)
 
     @classmethod
     def get_data_frame_from_feather(cls, original_feather_path):
