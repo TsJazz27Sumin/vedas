@@ -9,5 +9,5 @@ class Controller(object):
         raise NotImplementedError
 
     @classmethod
-    def get(cls, root_path):
+    def get(cls, root_path, term):
         raise NotImplementedError

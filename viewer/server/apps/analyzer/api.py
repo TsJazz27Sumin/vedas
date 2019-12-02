@@ -75,22 +75,22 @@ def count(request):
 # http://127.0.0.1:8000/viewer/analyzer/get
 @authenticate()
 def get(request):
-
+    term = request.GET.get(key="term", default="ym")
     root_path = os.getcwd()
     start = time.time()
 
     data = {
         "message": "Success",
-        "hepco": HepcoController.get(root_path),  # 北海道電力 2016/4/1〜
-        "tohokuepco": TohokuEpcoController.get(root_path),  # 東北電力 2016/4/1〜
-        "rikuden": RikudenController.get(root_path),  # 北陸電力 2016/4/1〜
-        "tepco": TepcoController.get(root_path),  # 東京電力 2016/4/1〜
-        "chuden": ChudenController.get(root_path),  # 中部電力 2016/4/1〜
-        "kepco": KepcoController.get(root_path),  # 関西電力 2016/4/1〜
-        "energia": EnergiaController.get(root_path),  # 中国電力 2016/11/1〜
-        "yonden": YondenController.get(root_path),  # 四国電力 2016/4/1〜
-        "kyuden": KyudenController.get(root_path),  # 九州電力 2016/4/1〜
-        "okiden": OkidenController.get(root_path)  # 沖縄電力 2016/4/1〜
+        "hepco": HepcoController.get(root_path, term),  # 北海道電力 2016/4/1〜
+        "tohokuepco": TohokuEpcoController.get(root_path, term),  # 東北電力 2016/4/1〜
+        "rikuden": RikudenController.get(root_path, term),  # 北陸電力 2016/4/1〜
+        "tepco": TepcoController.get(root_path, term),  # 東京電力 2016/4/1〜
+        "chuden": ChudenController.get(root_path, term),  # 中部電力 2016/4/1〜
+        "kepco": KepcoController.get(root_path, term),  # 関西電力 2016/4/1〜
+        "energia": EnergiaController.get(root_path, term),  # 中国電力 2016/11/1〜
+        "yonden": YondenController.get(root_path, term),  # 四国電力 2016/4/1〜
+        "kyuden": KyudenController.get(root_path, term),  # 九州電力 2016/4/1〜
+        "okiden": OkidenController.get(root_path, term)  # 沖縄電力 2016/4/1〜
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 

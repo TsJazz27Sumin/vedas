@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { AppProvider, Select, Card, Stack } from '@shopify/polaris';
+import React, { useState, useCallback } from 'react'
+import { AppProvider, Select, Card, Stack, RadioButton } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
@@ -12,6 +12,7 @@ import wordDictionaryService from './services/word_dictionary'
 const App = () => {
 
   //Polaris area
+  //TODO:各コンポーネントのID、Warning対応
 
   //select
   const [selected, setSelected] = useState('en');
@@ -121,12 +122,13 @@ const App = () => {
 
   const [data, setData] = useState([])
 
-  //end
-  useEffect(() => {
+  const [term, setTerm] = useState('');
+  const handleTermChange = useCallback((newTerm) => {
+    setTerm(newTerm);
     japanEnergyService
-      .get()
+      .get(newTerm)
       .then(initialData => setData(initialData));
-  }, [])
+  }, []);
 
   return (
     <div>
@@ -138,6 +140,22 @@ const App = () => {
           value={selected}
         />
         <Card title={dict.title} sectioned>
+          <Stack>
+            <RadioButton
+              label={dict.term_y}
+              checked={term === "y"}
+              id="term_y"
+              name="term"
+              onChange={() => handleTermChange("y")}
+            />
+            <RadioButton
+              label={dict.term_ym}
+              id="term_ym"
+              name="term"
+              checked={term === "ym"}
+              onChange={() => handleTermChange("ym")}
+            />
+          </Stack>
           <JapanEnergyCheckboxes
             dict={dict}
             allChecked={allChecked}
