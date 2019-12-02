@@ -6,8 +6,9 @@ const Chart = (props) => {
 
     let list = []
 
-    list.push(<Line type="monotone" name={dict.demand} dataKey="demand" stroke="#637381" activeDot={{r: 8}}/>);
-
+    if (props.demandChecked){
+      list.push(<Line type="monotone" name={dict.demand} dataKey="demand" stroke="#637381" activeDot={{r: 8}}/>);
+    }
     if (props.nuclearChecked){
       list.push(<Line type="monotone" name={dict.nuclear} dataKey="nuclear" stroke="#919EAB" />);
     }

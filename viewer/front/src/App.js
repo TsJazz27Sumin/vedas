@@ -55,6 +55,8 @@ const App = () => {
   const [okidenChecked, setOkidenChecked] = useState(false);
   const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
 
+  const [demandChecked, setDemandChecked] = useState(false);
+  const handleDemandChange = useCallback((newChecked) => setDemandChecked(newChecked), []);
   const [nuclearChecked, setNuclearChecked] = useState(false);
   const handleNuclearChange = useCallback((newChecked) => setNuclearChecked(newChecked), []);
   const [thermalChecked, setThermalChecked] = useState(false);
@@ -121,6 +123,13 @@ const App = () => {
           <Stack>
             <Badge>
               <Checkbox
+                label={dict.demand}
+                checked={demandChecked}
+                onChange={handleDemandChange}
+              />
+            </Badge>
+            <Badge>
+              <Checkbox
                 label={dict.nuclear}
                 checked={nuclearChecked}
                 onChange={handleNuclearChange}
@@ -165,6 +174,7 @@ const App = () => {
           yondenChecked={yondenChecked}
           kyudenChecked={kyudenChecked}
           okidenChecked={okidenChecked}
+          demandChecked={demandChecked}
           nuclearChecked={nuclearChecked}
           thermalChecked={thermalChecked}
           greenChecked={greenChecked}
