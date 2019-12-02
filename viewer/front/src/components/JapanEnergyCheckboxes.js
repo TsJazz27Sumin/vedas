@@ -3,6 +3,8 @@ import { Checkbox } from "@shopify/polaris";
 
 const JapanEnergyCheckboxes = props => {
   const dict = props.dict;
+  const electricPowersChecked = props.electricPowersChecked;
+  const handleElectricPowersChange = props.handleElectricPowersChange;
   return (
     <div>
       <Checkbox
@@ -12,53 +14,53 @@ const JapanEnergyCheckboxes = props => {
       />
       <Checkbox
         label={dict.hepco}
-        checked={props.hepcoChecked}
-        onChange={props.handleHepcoChange}
+        checked={electricPowersChecked.hepcoChecked}
+        onChange={handleElectricPowersChange.handleHepcoChange}
       />
       <Checkbox
         label={dict.tohokuepco}
-        checked={props.tohokuepcoChecked}
-        onChange={props.handleTohokuepcoChange}
+        checked={electricPowersChecked.tohokuepcoChecked}
+        onChange={handleElectricPowersChange.handleTohokuepcoChange}
       />
       <Checkbox
         label={dict.rikuden}
-        checked={props.rikudenChecked}
-        onChange={props.handleRikudenChange}
+        checked={electricPowersChecked.rikudenChecked}
+        onChange={handleElectricPowersChange.handleRikudenChange}
       />
       <Checkbox
         label={dict.tepco}
-        checked={props.tepcoChecked}
-        onChange={props.handleTepcoChange}
+        checked={electricPowersChecked.tepcoChecked}
+        onChange={handleElectricPowersChange.handleTepcoChange}
       />
       <Checkbox
         label={dict.chuden}
-        checked={props.chudenChecked}
-        onChange={props.handleChudenChange}
+        checked={electricPowersChecked.chudenChecked}
+        onChange={handleElectricPowersChange.handleChudenChange}
       />
       <Checkbox
         label={dict.kepco}
-        checked={props.kepcoChecked}
-        onChange={props.handleKepcoChange}
+        checked={electricPowersChecked.kepcoChecked}
+        onChange={handleElectricPowersChange.handleKepcoChange}
       />
       <Checkbox
         label={dict.energia}
-        checked={props.energiaChecked}
-        onChange={props.handleEnergiaChange}
+        checked={electricPowersChecked.energiaChecked}
+        onChange={handleElectricPowersChange.handleEnergiaChange}
       />
       <Checkbox
         label={dict.yonden}
-        checked={props.yondenChecked}
-        onChange={props.handleYondenChange}
+        checked={electricPowersChecked.yondenChecked}
+        onChange={handleElectricPowersChange.handleYondenChange}
       />
       <Checkbox
         label={dict.kyuden}
-        checked={props.kyudenChecked}
-        onChange={props.handleKyudenChange}
+        checked={electricPowersChecked.kyudenChecked}
+        onChange={handleElectricPowersChange.handleKyudenChange}
       />
       <Checkbox
         label={dict.okiden}
-        checked={props.okidenChecked}
-        onChange={props.handleOkidenChange}
+        checked={electricPowersChecked.okidenChecked}
+        onChange={handleElectricPowersChange.handleOkidenChange}
       />
     </div>
   );

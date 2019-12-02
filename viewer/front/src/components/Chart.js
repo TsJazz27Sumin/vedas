@@ -3,19 +3,20 @@ import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'rec
 
 const Chart = (props) => {
     const dict = props.dict;
+    const energyResoursesChecked = props.energyResoursesChecked;
 
     let list = []
 
-    if (props.demandChecked){
+    if (energyResoursesChecked.demandChecked){
       list.push(<Line type="monotone" name={dict.demand} dataKey="demand" stroke="#637381" activeDot={{r: 8}}/>);
     }
-    if (props.nuclearChecked){
+    if (energyResoursesChecked.nuclearChecked){
       list.push(<Line type="monotone" name={dict.nuclear} dataKey="nuclear" stroke="#919EAB" />);
     }
-    if (props.thermalChecked){
+    if (energyResoursesChecked.thermalChecked){
       list.push(<Line type="monotone" name={dict.thermal} dataKey="thermal" stroke="#BF0711" />);
     }
-    if (props.greenChecked){
+    if (energyResoursesChecked.greenChecked){
       list.push(<Line type="monotone" name={dict.hydro} dataKey="hydro" stroke="#43467F" />);
       list.push(<Line type="monotone" name={dict.geothermal} dataKey="geothermal" stroke="#50B83C" />);
       list.push(<Line type="monotone" name={dict.biomass} dataKey="biomass" stroke="#E3D0FF" />);
@@ -25,7 +26,7 @@ const Chart = (props) => {
       list.push(<Line type="monotone" name={dict.wind_output_control} dataKey="wind_output_control" stroke="#573B00" />);
       list.push(<Line type="monotone" name={dict.pumping} dataKey="pumping" stroke="#47C1BF" />);
     }
-    if (props.interconnectionChecked){
+    if (energyResoursesChecked.interconnectionChecked){
       list.push(<Line type="monotone" name={dict.interconnection} dataKey="interconnection" stroke="#B3BCF5" />);
     }
 

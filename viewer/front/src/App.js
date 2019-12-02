@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import {AppProvider, Select, Card, Stack, Badge, Checkbox} from '@shopify/polaris';
+import { AppProvider, Select, Card, Stack } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
-import japanEnergyService from './services/japan_energy' 
-import wordDictionaryService from './services/word_dictionary' 
+import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
+import japanEnergyService from './services/japan_energy'
+import wordDictionaryService from './services/word_dictionary'
 
 //memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
 //https://polaris.shopify.com/components/
@@ -66,17 +67,59 @@ const App = () => {
   const [interconnectionChecked, setInterconnectionChecked] = useState(false);
   const handleInterconnectionChange = useCallback((newChecked) => setInterconnectionChecked(newChecked), []);
 
+  const energyResoursesChecked = {
+    demandChecked: demandChecked,
+    nuclearChecked: nuclearChecked,
+    thermalChecked: thermalChecked,
+    greenChecked: greenChecked,
+    interconnectionChecked: interconnectionChecked,
+  }
+
+  const handleEnergyResoursesChange = {
+    handleDemandChange: handleDemandChange,
+    handleNuclearChange: handleNuclearChange,
+    handleThermalChange: handleThermalChange,
+    handleGreenChange: handleGreenChange,
+    handleInterconnectionChange: handleInterconnectionChange,
+  }
+
+  const electricPowersChecked = {
+    hepcoChecked: hepcoChecked,
+    tohokuepcoChecked: tohokuepcoChecked,
+    rikudenChecked: rikudenChecked,
+    tepcoChecked: tepcoChecked,
+    chudenChecked: chudenChecked,
+    kepcoChecked: kepcoChecked,
+    energiaChecked: energiaChecked,
+    yondenChecked: yondenChecked,
+    kyudenChecked: kyudenChecked,
+    okidenChecked: okidenChecked
+  }
+
+  const handleElectricPowersChange = {
+    handleHepcoChange: handleHepcoChange,
+    handleTohokuepcoChange: handleTohokuepcoChange,
+    handleRikudenChange: handleRikudenChange,
+    handleTepcoChange: handleTepcoChange,
+    handleChudenChange: handleChudenChange,
+    handleKepcoChange: handleKepcoChange,
+    handleEnergiaChange: handleEnergiaChange,
+    handleYondenChange: handleYondenChange,
+    handleKyudenChange: handleKyudenChange,
+    handleOkidenChange: handleOkidenChange
+  }
+
   const options = [
-    {label: '日本語', value: 'jp'},
-    {label: 'English', value: 'en'},
-    {label: 'China(Simplified)', value: 'ch'},
-    {label: 'Spanish', value: 'es'},
+    { label: '日本語', value: 'jp' },
+    { label: 'English', value: 'en' },
+    { label: 'China(Simplified)', value: 'ch' },
+    { label: 'Spanish', value: 'es' },
   ];
 
   let lang = selected;
   let dict = wordDictionaryService.get_word_dictionary(lang);
 
-  const [data, setData] = useState([]) 
+  const [data, setData] = useState([])
 
   //end
   useEffect(() => {
@@ -84,101 +127,40 @@ const App = () => {
       .get()
       .then(initialData => setData(initialData));
   }, [])
-  
+
   return (
     <div>
       <AppProvider>
-          <Select
-            label="Language"
-            options={options}
-            onChange={handleSelectChange}
-            value={selected}
-          />
-          <Card title={dict.title} sectioned>
+        <Select
+          label="Language"
+          options={options}
+          onChange={handleSelectChange}
+          value={selected}
+        />
+        <Card title={dict.title} sectioned>
           <JapanEnergyCheckboxes
-            dict={dict} 
+            dict={dict}
             allChecked={allChecked}
             handleAllChange={handleAllChange}
-            hepcoChecked={hepcoChecked}
-            handleHepcoChange={handleHepcoChange}
-            tohokuepcoChecked={tohokuepcoChecked}
-            handleTohokuepcoChange={handleTohokuepcoChange}
-            rikudenChecked={rikudenChecked}
-            handleRikudenChange={handleRikudenChange}
-            tepcoChecked={tepcoChecked}
-            handleTepcoChange={handleTepcoChange}
-            chudenChecked={chudenChecked}
-            handleChudenChange={handleChudenChange}
-            kepcoChecked={kepcoChecked}
-            handleKepcoChange={handleKepcoChange}
-            energiaChecked={energiaChecked}
-            handleEnergiaChange={handleEnergiaChange}
-            yondenChecked={yondenChecked}
-            handleYondenChange={handleYondenChange}
-            kyudenChecked={kyudenChecked}
-            handleKyudenChange={handleKyudenChange}
-            okidenChecked={okidenChecked}
-            handleOkidenChange={handleOkidenChange}
+            electricPowersChecked={electricPowersChecked}
+            handleElectricPowersChange={handleElectricPowersChange}
           />
           <Stack>
-            <Badge>
-              <Checkbox
-                label={dict.demand}
-                checked={demandChecked}
-                onChange={handleDemandChange}
-              />
-            </Badge>
-            <Badge>
-              <Checkbox
-                label={dict.nuclear}
-                checked={nuclearChecked}
-                onChange={handleNuclearChange}
-              />
-            </Badge>
-            <Badge>
-              <Checkbox
-                label={dict.thermal}
-                checked={thermalChecked}
-                onChange={handleThermalChange}
-              />
-            </Badge>
-            <Badge>
-              <Checkbox
-                label={dict.green}
-                checked={greenChecked}
-                onChange={handleGreenChange}
-              />
-            </Badge>
-            <Badge>
-              <Checkbox
-                label={dict.interconnection}
-                checked={interconnectionChecked}
-                onChange={handleInterconnectionChange}
-              />
-            </Badge>
+            <JapanEnergyResourseBadges
+              dict={dict}
+              energyResoursesChecked={energyResoursesChecked}
+              handleEnergyResoursesChange={handleEnergyResoursesChange}
+            />
           </Stack>
-          </Card>
-          
+        </Card>
+
       </AppProvider>
       <ul>
-        <JapanEnergyCharts 
+        <JapanEnergyCharts
           data={data}
           dict={dict}
-          hepcoChecked={hepcoChecked} 
-          tohokuepcoChecked={tohokuepcoChecked}
-          rikudenChecked={rikudenChecked}
-          tepcoChecked={tepcoChecked}
-          chudenChecked={chudenChecked}
-          kepcoChecked={kepcoChecked}
-          energiaChecked={energiaChecked}
-          yondenChecked={yondenChecked}
-          kyudenChecked={kyudenChecked}
-          okidenChecked={okidenChecked}
-          demandChecked={demandChecked}
-          nuclearChecked={nuclearChecked}
-          thermalChecked={thermalChecked}
-          greenChecked={greenChecked}
-          interconnectionChecked={interconnectionChecked}
+          electricPowersChecked={electricPowersChecked}
+          energyResoursesChecked={energyResoursesChecked}
         />
       </ul>
     </div>

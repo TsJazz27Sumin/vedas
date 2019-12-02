@@ -2,9 +2,9 @@ import React from 'react'
 import Note from './Note'
 import Chart from './Chart'
 
-const JapanEnergyCharts = (props) => {
+const JapanEnergyCharts = props => {
 
-    const get_volumeList = (companyData) => {
+    const get_volumeList = companyData => {
       let volumeList = []
   
       for (const group in companyData['demand']) {
@@ -35,46 +35,48 @@ const JapanEnergyCharts = (props) => {
     let list = []
     const dict = props.dict;
     const data = props.data;
+    const electricPowersChecked = props.electricPowersChecked;
+    const energyResoursesChecked = props.energyResoursesChecked;
 
-    if (props.hepcoChecked){
+    if (electricPowersChecked.hepcoChecked){
       list.push(<Note company_name={dict.hepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.tohokuepcoChecked){
+    if (electricPowersChecked.tohokuepcoChecked){
       list.push(<Note company_name={dict.tohokuepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.rikudenChecked){
+    if (electricPowersChecked.rikudenChecked){
       list.push(<Note company_name={dict.rikuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.tepcoChecked){
+    if (electricPowersChecked.tepcoChecked){
       list.push(<Note company_name={dict.tepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.chudenChecked){
+    if (electricPowersChecked.chudenChecked){
       list.push(<Note company_name={dict.chuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.kepcoChecked){
+    if (electricPowersChecked.kepcoChecked){
       list.push(<Note company_name={dict.kepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.energiaChecked){
+    if (electricPowersChecked.energiaChecked){
       list.push(<Note company_name={dict.energia}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.yondenChecked){
+    if (electricPowersChecked.yondenChecked){
       list.push(<Note company_name={dict.yonden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.kyudenChecked){
+    if (electricPowersChecked.kyudenChecked){
       list.push(<Note company_name={dict.kyuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)} energyResoursesChecked={energyResoursesChecked}/>);
     }
-    if (props.okidenChecked){
+    if (electricPowersChecked.okidenChecked){
       list.push(<Note company_name={dict.okiden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} demandChecked={props.demandChecked} nuclearChecked={props.nuclearChecked} thermalChecked={props.thermalChecked} greenChecked={props.greenChecked} interconnectionChecked={props.interconnectionChecked}/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} energyResoursesChecked={energyResoursesChecked}/>);
     }
 
   return (
