@@ -1,9 +1,10 @@
 const get_word_dictionary = (lang) => {
     const word_dictionary = {
         "jp" : {
-            "term_y": "年",
-            "term_ym": "月",
-            "term_ymd": "日",
+            "term": "期間",
+            "unit_y": "年",
+            "unit_ym": "月",
+            "unit_ymd": "日",
             "green": "グリーン電力",
             "demand": "需要",
             "nuclear": "原発",
@@ -31,9 +32,10 @@ const get_word_dictionary = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
-            "term_y": "Year",
-            "term_ym": "Month",
-            "term_ymd": "Date",
+            "term": "Term",
+            "unit_y": "Year",
+            "unit_ym": "Month",
+            "unit_ymd": "Date",
             "green": "green power",
             "demand": "demand",
             "nuclear": "nuclear",
@@ -61,9 +63,10 @@ const get_word_dictionary = (lang) => {
             "okiden" : "OKinawa Electric Power"
         },
         "ch" : {
-            "term_y": "年份",
-            "term_ym": "月份",
-            "term_ymd": "日期",
+            "term": "术语",
+            "unit_y": "年份",
+            "unit_ym": "月份",
+            "unit_ymd": "日期",
             "green": "绿色力量",
             "demand": "需求",
             "nuclear": "核电站",
@@ -91,6 +94,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "冲绳电力"
         },
         "es" : {
+            "term": "Término",
             "term_y": "Año",
             "term_ym": "Mes",
             "term_ymd": "Fecha",

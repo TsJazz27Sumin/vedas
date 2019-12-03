@@ -28,5 +28,5 @@ class KyudenController(Controller):
         return QueryService.count(root_path, cls.COMPANY_NAME)
 
     @classmethod
-    def get(cls, root_path, term):
-        return QueryService.get(root_path, cls.COMPANY_NAME, term)
+    def get(cls, root_path, unit, from_value, to_value):
+        return QueryService.get(root_path, cls.COMPANY_NAME, unit, from_value, to_value)

@@ -1,6 +1,8 @@
 import json
 from datetime import datetime
 
+from dateutil.relativedelta import relativedelta
+
 from viewer.server.apps.analyzer.function.dataframe import DataFrameFunction
 from viewer.server.apps.analyzer.function.file import FileFunction
 
@@ -13,23 +15,29 @@ class QueryService(object):
         return len(data_frame.index)
 
     @classmethod
-    def get(cls, root_path, company_name, term):
+    def get(cls, root_path, company_name, unit, from_value, to_value):
         data_frame = DataFrameFunction.get_data_frame_from_merged_pkl(root_path, company_name)
+        from_values = from_value.split('/')
+        to_values = to_value.split('/')
+        from_date = datetime(int(from_values[0]), int(from_values[1]), 1)
+        to_date = datetime(int(to_values[0]), int(to_values[1]), 1) + relativedelta(months=1, days=-1)
+        print(from_date)
+        print(to_date)
+        data_frame = data_frame[(from_date <= data_frame['date']) & (data_frame['date'] <= to_date)]
 
         result = None
 
-        if term == 'y':
+        if unit == 'y':
             result = cls.sum_group_by_year(data_frame)
-        elif term == 'ym':
+        elif unit == 'ym':
             result = cls.sum_group_by_year_and_month(data_frame)
-        elif term == 'ymd':
+        elif unit == 'ymd':
             result = cls.sum_group_by_year_and_month_and_date(data_frame)
 
         return json.loads(result)
 
     @classmethod
     def sum_group_by_year_and_month_and_date(cls, data_frame):
-        data_frame = data_frame[data_frame['date'] >= datetime(2019, 10, 1)]
         data_frame['date_string'] = data_frame['date'].dt.strftime('%Y/%m/%d')
         df_ymd = data_frame.set_index([data_frame.index.year, data_frame.index.month, data_frame.index.date])
         df_ymd.index.names = ['year', 'month', 'date_string']
