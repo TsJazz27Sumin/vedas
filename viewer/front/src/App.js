@@ -155,6 +155,13 @@ const App = () => {
               checked={term === "ym"}
               onChange={() => handleTermChange("ym")}
             />
+            <RadioButton
+              label={dict.term_ymd}
+              id="term_ymd"
+              name="term"
+              checked={term === "ymd"}
+              onChange={() => handleTermChange("ymd")}
+            />
           </Stack>
           <JapanEnergyCheckboxes
             dict={dict}

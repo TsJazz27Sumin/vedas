@@ -41,7 +41,7 @@ const JapanEnergyResourseBadges = props => {
                 <Checkbox
                     label={dict.interconnection}
                     checked={energyResoursesChecked.interconnectionChecked}
-                    onChange={handleEnergyResoursesChange.andleInterconnectionChange}
+                    onChange={handleEnergyResoursesChange.handleInterconnectionChange}
                 />
             </Badge>
         </div>

@@ -47,6 +47,8 @@ class DataFrameFunction(object):
         print(company_name)
         print(merged_data_frame[['date', 'time', 'demand', 'company', 'thermal', 'solar', 'total_supply_capacity']])
 
+        # 日付にしておいた方が使いやすいので変換する。
+        merged_data_frame['date'] = pandas.to_datetime(merged_data_frame['date'])
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
         merged_data_frame.set_index('date_time', inplace=True)
         # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。

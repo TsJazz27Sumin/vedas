@@ -2,7 +2,8 @@ const get_word_dictionary = (lang) => {
     const word_dictionary = {
         "jp" : {
             "term_y": "年",
-            "term_ym": "年月",
+            "term_ym": "月",
+            "term_ymd": "日",
             "green": "グリーン電力",
             "demand": "需要",
             "nuclear": "原発",
@@ -31,7 +32,8 @@ const get_word_dictionary = (lang) => {
         },
         "en" : {
             "term_y": "Year",
-            "term_ym": "Year and Month",
+            "term_ym": "Month",
+            "term_ymd": "Date",
             "green": "green power",
             "demand": "demand",
             "nuclear": "nuclear",
@@ -60,7 +62,8 @@ const get_word_dictionary = (lang) => {
         },
         "ch" : {
             "term_y": "年份",
-            "term_ym": "年份和月份",
+            "term_ym": "月份",
+            "term_ymd": "日期",
             "green": "绿色力量",
             "demand": "需求",
             "nuclear": "核电站",
@@ -89,7 +92,8 @@ const get_word_dictionary = (lang) => {
         },
         "es" : {
             "term_y": "Año",
-            "term_ym": "Año y mes",
+            "term_ym": "Mes",
+            "term_ymd": "Fecha",
             "green": "poder verde",
             "demand": "demanda",
             "nuclear": "nuclear",
