@@ -1,9 +1,6 @@
 from django.http import JsonResponse
 import os
 import time
-import json
-
-from requests import Response
 
 from viewer.server.apps.analyzer.controller.chuden import ChudenController
 from viewer.server.apps.analyzer.controller.energia import EnergiaController

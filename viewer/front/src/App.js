@@ -130,6 +130,9 @@ const App = () => {
       .then(initialData => setData(initialData));
   }, []);
 
+
+  //TODO: https://polaris.shopify.com/components/forms/range-slider#navigation
+  //Dual thumb range sliderを使えば良さそう。
   return (
     <div>
       <AppProvider>

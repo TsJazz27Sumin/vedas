@@ -1,8 +1,8 @@
 # django
 /viewer/db.sqlite3
-*.feather
-*.featherx
 *.pkl
+*.csv
+*.rdb
 .idea
 *.pyc
 *.sqlite3

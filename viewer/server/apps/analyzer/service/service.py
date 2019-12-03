@@ -5,15 +5,15 @@ class Service(object):
         raise NotImplementedError
 
     @classmethod
-    def __correct_ex_data(cls, root_path, feather_file_name, url, reflesh):
+    def __correct_ex_data(cls, root_path, pkl_file_name, url, reflesh):
         raise NotImplementedError
 
     @classmethod
-    def __process_ex_data(cls, original_feather_path, root_path, feather_file_name):
+    def __process_ex_data(cls, original_pkl_path, root_path, pkl_file_name):
         raise NotImplementedError
 
     @classmethod
-    def __merge_ex_data(cls, processed_feather_paths, root_path, feather_file_name):
+    def __merge_ex_data(cls, processed_pkl_paths, root_path, pkl_file_name):
         raise NotImplementedError
 
     @classmethod

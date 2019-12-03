@@ -19,45 +19,22 @@ class QueryService(object):
         result = None
 
         if term == 'y':
-            result = cls.sum_group_by_year(company_name, data_frame, root_path)
+            result = cls.sum_group_by_year(data_frame)
         elif term == 'ym':
-            result = cls.sum_group_by_year_and_month(company_name, data_frame, root_path)
+            result = cls.sum_group_by_year_and_month(data_frame)
         elif term == 'ymd':
-            result = cls.sum_group_by_year_and_month_and_date(company_name, data_frame, root_path)
-
+            result = cls.sum_group_by_year_and_month_and_date(data_frame)
 
         return json.loads(result)
 
     @classmethod
-    def sum_group_by_year_and_month_and_date(cls, company_name, data_frame, root_path):
+    def sum_group_by_year_and_month_and_date(cls, data_frame):
         data_frame = data_frame[data_frame['date'] >= datetime(2019, 10, 1)]
         data_frame['date_string'] = data_frame['date'].dt.strftime('%Y/%m/%d')
         df_ymd = data_frame.set_index([data_frame.index.year, data_frame.index.month, data_frame.index.date])
         df_ymd.index.names = ['year', 'month', 'date_string']
         df_ymd.sort_index(inplace=True)
-        merged_csv_path = FileFunction.get_merged_csv_path(
-            root_path,
-            company_name
-        )
-        print(df_ymd.sum(
-                level=['date_string']
-            )[
-                [
-                    'demand',
-                    'nuclear',
-                    'thermal',
-                    'hydro',
-                    'geothermal',
-                    'biomass',
-                    'solar',
-                    'solar_output_control',
-                    'wind',
-                    'wind_output_control',
-                    'pumping',
-                    'interconnection',
-                    'total_supply_capacity'
-                ]
-            ])
+
         try:
             result = df_ymd.sum(
                 level=['date_string']
@@ -79,19 +56,15 @@ class QueryService(object):
                 ]
             ].to_json(date_format='iso').replace('T00:00:00.000Z', '')
         except Exception as e:
-            df_ymd.to_csv(merged_csv_path)
             raise e
         return result
 
     @classmethod
-    def sum_group_by_year_and_month(cls, company_name, data_frame, root_path):
+    def sum_group_by_year_and_month(cls, data_frame):
         df_ym = data_frame.set_index([data_frame.index.year, data_frame.index.month])
         df_ym.index.names = ['year', 'month']
         df_ym.sort_index(inplace=True)
-        merged_csv_path = FileFunction.get_merged_csv_path(
-            root_path,
-            company_name
-        )
+
         try:
             result = df_ym.sum(
                 level=['year', 'month']
@@ -113,19 +86,15 @@ class QueryService(object):
                 ]
             ].to_json()
         except Exception as e:
-            df_ym.to_csv(merged_csv_path)
             raise e
         return result
 
     @classmethod
-    def sum_group_by_year(cls, company_name, data_frame, root_path):
+    def sum_group_by_year(cls, data_frame):
         df_y = data_frame.set_index([data_frame.index.year])
         df_y.index.names = ['year']
         df_y.sort_index(inplace=True)
-        merged_csv_path = FileFunction.get_merged_csv_path(
-            root_path,
-            company_name
-        )
+
         try:
             result = df_y.sum(
                 level=['year']
@@ -147,6 +116,5 @@ class QueryService(object):
                 ]
             ].to_json()
         except Exception as e:
-            df_ym.to_csv(merged_csv_path)
             raise e
         return result

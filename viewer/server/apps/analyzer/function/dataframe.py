@@ -25,15 +25,11 @@ class DataFrameFunction(object):
         return pandas.read_pickle(original_pkl_path)
 
     @classmethod
-    def get_data_frame_from_feather(cls, original_feather_path):
-        return pandas.read_feather(original_feather_path)
-
-    @classmethod
-    def merge_ex_data(cls, processed_feather_paths, root_path, company_name):
+    def merge_ex_data(cls, processed_pkl_paths, root_path, company_name):
 
         data_frames = []
-        for processed_feather_path in processed_feather_paths:
-            data_frame = pandas.read_feather(processed_feather_path)
+        for processed_pkl_path in processed_pkl_paths:
+            data_frame = pandas.read_pickle(processed_pkl_path)
             data_frames.append(data_frame)
 
         merged_data_frame = pandas.concat(data_frames).sort_values(by='date_time', ascending=True).reset_index()
@@ -51,8 +47,7 @@ class DataFrameFunction(object):
         merged_data_frame['date'] = pandas.to_datetime(merged_data_frame['date'])
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
         merged_data_frame.set_index('date_time', inplace=True)
-        # 中間成果物としてfeatherを使っているが、現状、一部バグがあり保存できないので、ここではpickleを使う。
-        # TODO:バグが解消されたらfeatherに統一したい。
+
         merged_data_frame.to_pickle(merged_pkl_path)
 
         return merged_pkl_path
