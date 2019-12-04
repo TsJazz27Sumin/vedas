@@ -1,9 +1,10 @@
 import React, { useState, useCallback } from 'react'
-import { AppProvider, Select, Card, Stack, RadioButton, RangeSlider, DisplayText } from '@shopify/polaris';
+import { AppProvider, Select, Card, Stack, RangeSlider, DisplayText } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
 import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
+import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRadioButtons'
 import japanEnergyService from './services/japan_energy'
 import wordDictionaryService from './services/word_dictionary'
 import yearAndMonthService from './services/year_and_month'
@@ -43,8 +44,8 @@ const App = () => {
 
     const handler = setTimeout(() => {
       japanEnergyService
-      .get(unit, from, to)
-      .then(initialData => setData(initialData));
+        .get(unit, from, to)
+        .then(initialData => setData(initialData));
     }, 100);
 
     return () => {
@@ -113,8 +114,22 @@ const App = () => {
   const handleNuclearChange = useCallback((newChecked) => setNuclearChecked(newChecked), []);
   const [thermalChecked, setThermalChecked] = useState(false);
   const handleThermalChange = useCallback((newChecked) => setThermalChecked(newChecked), []);
-  const [greenChecked, setGreenChecked] = useState(false);
-  const handleGreenChange = useCallback((newChecked) => setGreenChecked(newChecked), []);
+  const [hydroChecked, setHydroChecked] = useState(false);
+  const handleHydroChange = useCallback((newChecked) => setHydroChecked(newChecked), []);
+  const [geothermalChecked, setGeothermalChecked] = useState(false);
+  const handleGeothermalChange = useCallback((newChecked) => setGeothermalChecked(newChecked), []);
+  const [biomassChecked, setBiomassChecked] = useState(false);
+  const handleBiomassChange = useCallback((newChecked) => setBiomassChecked(newChecked), []);
+  const [solarChecked, setSolarChecked] = useState(false);
+  const handleSolarChange = useCallback((newChecked) => setSolarChecked(newChecked), []);
+  const [solarOutputControlChecked, setSolarOutputControlChecked] = useState(false);
+  const handleSolarOutputControlChange = useCallback((newChecked) => setSolarOutputControlChecked(newChecked), []);
+  const [windChecked, setWindChecked] = useState(false);
+  const handleWindChange = useCallback((newChecked) => setWindChecked(newChecked), []);
+  const [windOutputControlChecked, setWindOutputControlChecked] = useState(false);
+  const handleWindOutputControlChange = useCallback((newChecked) => setWindOutputControlChecked(newChecked), []);
+  const [pumpingChecked, setPumpingChecked] = useState(false);
+  const handlePumpingChange = useCallback((newChecked) => setPumpingChecked(newChecked), []);
   const [interconnectionChecked, setInterconnectionChecked] = useState(false);
   const handleInterconnectionChange = useCallback((newChecked) => setInterconnectionChecked(newChecked), []);
 
@@ -122,7 +137,14 @@ const App = () => {
     demandChecked: demandChecked,
     nuclearChecked: nuclearChecked,
     thermalChecked: thermalChecked,
-    greenChecked: greenChecked,
+    hydroChecked: hydroChecked,
+    geothermalChecked: geothermalChecked,
+    biomassChecked: biomassChecked,
+    solarOutputControlChecked: solarOutputControlChecked,
+    solarChecked: solarChecked,
+    windChecked: windChecked,
+    windOutputControlChecked: windOutputControlChecked,
+    pumpingChecked: pumpingChecked,
     interconnectionChecked: interconnectionChecked,
   }
 
@@ -130,7 +152,14 @@ const App = () => {
     handleDemandChange: handleDemandChange,
     handleNuclearChange: handleNuclearChange,
     handleThermalChange: handleThermalChange,
-    handleGreenChange: handleGreenChange,
+    handleHydroChange: handleHydroChange,
+    handleGeothermalChange: handleGeothermalChange,
+    handleBiomassChange: handleBiomassChange,
+    handleSolarOutputControlChange: handleSolarOutputControlChange,
+    handleSolarChange: handleSolarChange,
+    handleWindChange: handleWindChange,
+    handleWindOutputControlChange: handleWindOutputControlChange,
+    handlePumpingChange: handlePumpingChange,
     handleInterconnectionChange: handleInterconnectionChange,
   }
 
@@ -180,29 +209,14 @@ const App = () => {
           value={selected}
         />
         <Card title={dict.title} sectioned>
-          <Stack>
-            <RadioButton
-              label={dict.unit_y}
-              checked={unit === "y"}
-              id="unit_y"
-              name="unit"
-              onChange={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-            />
-            <RadioButton
-              label={dict.unit_ym}
-              id="unit_ym"
-              name="unit"
-              checked={unit === "ym"}
-              onChange={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-            />
-            <RadioButton
-              label={dict.unit_ymd}
-              id="unit_ymd"
-              name="unit"
-              checked={unit === "ymd"}
-              onChange={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-            />
-          </Stack>
+          <JapanEnergyResourseRadioButtons
+            dict={dict}
+            unit={unit}
+            year_and_month={year_and_month}
+            lowerTextFieldValue={lowerTextFieldValue}
+            upperTextFieldValue={upperTextFieldValue}
+            handleTermChange={handleTermChange}
+          />
           <JapanEnergyCheckboxes
             dict={dict}
             allChecked={allChecked}
@@ -210,16 +224,13 @@ const App = () => {
             electricPowersChecked={electricPowersChecked}
             handleElectricPowersChange={handleElectricPowersChange}
           />
-          <Stack>
-            <JapanEnergyResourseBadges
-              dict={dict}
-              energyResoursesChecked={energyResoursesChecked}
-              handleEnergyResoursesChange={handleEnergyResoursesChange}
-            />
-          </Stack>
+          <JapanEnergyResourseBadges
+            dict={dict}
+            energyResoursesChecked={energyResoursesChecked}
+            handleEnergyResoursesChange={handleEnergyResoursesChange}
+          />
         </Card>
         <Card sectioned title={dict.term}>
-          <div>
             <RangeSlider
               value={rangeValue}
               prefix={prefix}
@@ -232,7 +243,6 @@ const App = () => {
               <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
               <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
             </Stack>
-          </div>
         </Card>
       </AppProvider>
       <ul>
@@ -243,7 +253,7 @@ const App = () => {
           energyResoursesChecked={energyResoursesChecked}
         />
       </ul>
-    </div>
+    </div >
   )
 }
 

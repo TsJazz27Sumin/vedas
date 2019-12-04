@@ -16,14 +16,28 @@ const Chart = (props) => {
     if (energyResoursesChecked.thermalChecked){
       list.push(<Line type="monotone" name={dict.thermal} dataKey="thermal" stroke="#BF0711" />);
     }
-    if (energyResoursesChecked.greenChecked){
+    if (energyResoursesChecked.hydroChecked){
       list.push(<Line type="monotone" name={dict.hydro} dataKey="hydro" stroke="#43467F" />);
+    }
+    if (energyResoursesChecked.geothermalChecked){
       list.push(<Line type="monotone" name={dict.geothermal} dataKey="geothermal" stroke="#50B83C" />);
+    }
+    if (energyResoursesChecked.biomassChecked){
       list.push(<Line type="monotone" name={dict.biomass} dataKey="biomass" stroke="#E3D0FF" />);
+    }
+    if (energyResoursesChecked.solarChecked){
       list.push(<Line type="monotone" name={dict.solar} dataKey="solar" stroke="#F49342" />);
+    }
+    if (energyResoursesChecked.solarOutputControlChecked){
       list.push(<Line type="monotone" name={dict.solar_output_control} dataKey="solar_output_control" stroke="#8A6116" />);
+    }
+    if (energyResoursesChecked.windChecked){
       list.push(<Line type="monotone" name={dict.wind} dataKey="wind" stroke="#B4E1FA" />);
+    }
+    if (energyResoursesChecked.windOutputControlChecked){
       list.push(<Line type="monotone" name={dict.wind_output_control} dataKey="wind_output_control" stroke="#573B00" />);
+    }
+    if (energyResoursesChecked.pumpingChecked){
       list.push(<Line type="monotone" name={dict.pumping} dataKey="pumping" stroke="#47C1BF" />);
     }
     if (energyResoursesChecked.interconnectionChecked){

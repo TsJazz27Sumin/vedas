@@ -8,21 +8,48 @@ const JapanEnergyCharts = props => {
       let volumeList = []
   
       for (const group in companyData['demand']) {
-        volumeList.push({
-          name: group,
-          demand: companyData['demand'][group],
-          nuclear: companyData['nuclear'][group],
-          thermal: companyData['thermal'][group],
-          hydro: companyData['hydro'][group],
-          geothermal: companyData['geothermal'][group],
-          biomass: companyData['biomass'][group],
-          solar_output_control: companyData['solar_output_control'][group],
-          solar: companyData['solar'][group],
-          wind: companyData['wind'][group],
-          wind_output_control: companyData['wind_output_control'][group],
-          pumping: companyData['pumping'][group],
-          interconnection: companyData['interconnection'][group],
-        });
+
+        let volumeDict = {};
+        volumeDict['name'] = group;
+
+        if (energyResoursesChecked.demandChecked){
+          volumeDict['demand'] = companyData['demand'][group];
+        }
+        if (energyResoursesChecked.nuclearChecked){
+          volumeDict['nuclear'] = companyData['nuclear'][group];
+        }
+        if (energyResoursesChecked.thermalChecked){
+          volumeDict['thermal'] = companyData['thermal'][group];
+        }
+        if (energyResoursesChecked.hydroChecked){
+          volumeDict['hydro'] = companyData['hydro'][group];
+        }
+        if (energyResoursesChecked.geothermalChecked){
+          volumeDict['geothermal'] = companyData['geothermal'][group];
+        }
+        if (energyResoursesChecked.biomassChecked){
+          volumeDict['biomass'] = companyData['biomass'][group];
+        }
+        if (energyResoursesChecked.solarChecked){
+          volumeDict['solar'] = companyData['solar'][group];
+        }
+        if (energyResoursesChecked.solarOutputControlChecked){
+          volumeDict['solar_output_control'] = companyData['solar_output_control'][group];
+        }
+        if (energyResoursesChecked.windChecked){
+          volumeDict['wind'] = companyData['wind'][group];
+        }
+        if (energyResoursesChecked.windOutputControlChecked){
+          volumeDict['wind_output_control'] = companyData['wind_output_control'][group];
+        }
+        if (energyResoursesChecked.pumpingChecked){
+          volumeDict['pumping'] = companyData['pumping'][group];
+        }
+        if (energyResoursesChecked.interconnectionChecked){
+          volumeDict['interconnection'] = companyData['interconnection'][group];
+        }
+
+        volumeList.push(volumeDict);
       }
   
       return volumeList;
