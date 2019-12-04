@@ -21,8 +21,6 @@ class QueryService(object):
         to_values = to_value.split('/')
         from_date = datetime(int(from_values[0]), int(from_values[1]), 1)
         to_date = datetime(int(to_values[0]), int(to_values[1]), 1) + relativedelta(months=1, days=-1)
-        print(from_date)
-        print(to_date)
         data_frame = data_frame[(from_date <= data_frame['date']) & (data_frame['date'] <= to_date)]
 
         result = None

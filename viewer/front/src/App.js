@@ -40,9 +40,16 @@ const App = () => {
   const handleRangeSliderChange = useCallback((value, unit, from, to) => {
     setRangeValue(value);
     setIntermediateTextFieldValue(value);
-    japanEnergyService
+
+    const handler = setTimeout(() => {
+      japanEnergyService
       .get(unit, from, to)
       .then(initialData => setData(initialData));
+    }, 100);
+
+    return () => {
+      clearTimeout(handler);
+    };
   }, []);
 
   const lowerTextFieldValue =
