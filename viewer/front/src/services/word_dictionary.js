@@ -99,9 +99,9 @@ const get = (lang) => {
         "es" : {
             "step1_help": "Seleccionar unidad de agregación",
             "term": "Término",
-            "term_y": "Año",
-            "term_ym": "Mes",
-            "term_ymd": "Fecha",
+            "unit_y": "Año",
+            "unit_ym": "Mes",
+            "unit_ymd": "Fecha",
             "green": "poder verde",
             "demand": "demanda",
             "nuclear": "nuclear",

@@ -15,6 +15,9 @@ import rangeSliderHook from './custom_hooks/electoric_power_data'
 //https://polaris.shopify.com/components/
 const App = () => {
 
+  //TODO:Pie Chart実装
+  //http://recharts.org/en-US/examples/CustomActiveShapePieChart
+
   //電力データをCallするためのパラメータや処理
   const range_slider_hook = rangeSliderHook.useElectoricPowerData()
   const year_and_month = range_slider_hook.year_and_month;
