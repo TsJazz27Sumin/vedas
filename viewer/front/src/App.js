@@ -30,8 +30,6 @@ const App = () => {
   const lowerTextFieldValue = range_slider_hook.lowerTextFieldValue;
   const upperTextFieldValue = range_slider_hook.upperTextFieldValue;
 
-  //TODO:各コンポーネントのID、Warning対応
-
   //言語選択
   const [selected, setSelected] = useState('en');
   const handleSelectChange = useCallback((value) => setSelected(value), []);
