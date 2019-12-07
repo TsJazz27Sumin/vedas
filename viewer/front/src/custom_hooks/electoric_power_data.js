@@ -4,15 +4,20 @@ import yearAndMonthService from '../services/year_and_month'
 
 const useElectoricPowerData = () => {
 
+    const [is_loading, setIsLoading] = useState(false)
     const year_and_month = yearAndMonthService.get();
     const initialValue = [year_and_month.length - 12, year_and_month.length];
     const [data, setData] = useState([])
     const [unit, setUnit] = useState('ym');
     const handleTermChange = useCallback((newUnit, from, to) => {
         setUnit(newUnit);
+        setIsLoading(true);
         japanEnergyService
             .get(newUnit, from, to)
-            .then(initialData => setData(initialData));
+            .then(initialData => {
+                setData(initialData);
+                setIsLoading(false);
+            });
     }, []);
 
     const prefix = '';
@@ -30,9 +35,13 @@ const useElectoricPowerData = () => {
         setIntermediateTextFieldValue(value);
 
         const handler = setTimeout(() => {
+            setIsLoading(true);
             japanEnergyService
                 .get(unit, from, to)
-                .then(initialData => setData(initialData));
+                .then(initialData => {
+                    setData(initialData);
+                    setIsLoading(false);
+                });
         }, 100);
 
         return () => {
@@ -50,7 +59,7 @@ const useElectoricPowerData = () => {
             ? rangeValue[1]
             : intermediateTextFieldValue[1];
 
-    return { year_and_month, data, unit, handleTermChange, prefix, min, max, step, rangeValue, handleRangeSliderChange, lowerTextFieldValue, upperTextFieldValue }
+    return { is_loading, year_and_month, data, unit, handleTermChange, prefix, min, max, step, rangeValue, handleRangeSliderChange, lowerTextFieldValue, upperTextFieldValue }
 };
 
 export default { useElectoricPowerData }

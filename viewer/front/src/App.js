@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { AppProvider, Select, Card, Stack, RangeSlider, DisplayText } from '@shopify/polaris';
+import { AppProvider, Select, Card, Stack, RangeSlider, DisplayText, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
@@ -19,19 +19,20 @@ const App = () => {
   //http://recharts.org/en-US/examples/CustomActiveShapePieChart
 
   //電力データをCallするためのパラメータや処理
-  const range_slider_hook = rangeSliderHook.useElectoricPowerData()
-  const year_and_month = range_slider_hook.year_and_month;
-  const data = range_slider_hook.data;
-  const unit = range_slider_hook.unit;
-  const handleTermChange = range_slider_hook.handleTermChange;
-  const prefix = range_slider_hook.prefix;
-  const min = range_slider_hook.min;
-  const max = range_slider_hook.max;
-  const step = range_slider_hook.step;
-  const rangeValue = range_slider_hook.rangeValue;
-  const handleRangeSliderChange = range_slider_hook.handleRangeSliderChange;
-  const lowerTextFieldValue = range_slider_hook.lowerTextFieldValue;
-  const upperTextFieldValue = range_slider_hook.upperTextFieldValue;
+  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData()
+  const is_loading = electoric_power_data_hook.is_loading;
+  const year_and_month = electoric_power_data_hook.year_and_month;
+  const data = electoric_power_data_hook.data;
+  const unit = electoric_power_data_hook.unit;
+  const handleTermChange = electoric_power_data_hook.handleTermChange;
+  const prefix = electoric_power_data_hook.prefix;
+  const min = electoric_power_data_hook.min;
+  const max = electoric_power_data_hook.max;
+  const step = electoric_power_data_hook.step;
+  const rangeValue = electoric_power_data_hook.rangeValue;
+  const handleRangeSliderChange = electoric_power_data_hook.handleRangeSliderChange;
+  const lowerTextFieldValue = electoric_power_data_hook.lowerTextFieldValue;
+  const upperTextFieldValue = electoric_power_data_hook.upperTextFieldValue;
 
   //言語選択
   const [selected, setSelected] = useState('en');
@@ -98,14 +99,16 @@ const App = () => {
           </Stack>
         </Card>
       </AppProvider>
-      <ul>
-        <JapanEnergyCharts
-          data={data}
-          dict={dict}
-          electricPowersChecked={electricPowersChecked}
-          energyResoursesChecked={energyResoursesChecked}
-        />
-      </ul>
+      {
+        is_loading ? (<ul><AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider></ul>) :
+        (<ul>
+          <JapanEnergyCharts
+            data={data}
+            dict={dict}
+            electricPowersChecked={electricPowersChecked}
+            energyResoursesChecked={energyResoursesChecked}
+          />
+        </ul>)}
     </div >
   )
 }

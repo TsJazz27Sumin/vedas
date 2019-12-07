@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Note = ({ company_name}) => {
+const CompanyName = ({ company_name}) => {
   return (
     <li>
       {company_name}
@@ -8,4 +8,4 @@ const Note = ({ company_name}) => {
   )
 }
 
-export default Note
+export default CompanyName

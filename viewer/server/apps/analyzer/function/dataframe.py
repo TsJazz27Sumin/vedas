@@ -47,7 +47,6 @@ class DataFrameFunction(object):
         merged_data_frame['date'] = pandas.to_datetime(merged_data_frame['date'])
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
         merged_data_frame.set_index('date_time', inplace=True)
-
         merged_data_frame.to_pickle(merged_pkl_path)
 
         return merged_pkl_path

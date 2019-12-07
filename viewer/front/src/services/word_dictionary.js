@@ -62,7 +62,7 @@ const get = (lang) => {
             "energia" : "Chugoku Electric Power",
             "yonden" : "Shikoku Electric Power",
             "kyuden" : "Kyushu Electric Power",
-            "okiden" : "OKinawa Electric Power"
+            "okiden" : "Okinawa Electric Power"
         },
         "ch" : {
             "step1_help": "选择汇总单位",
