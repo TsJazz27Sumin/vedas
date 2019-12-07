@@ -5,87 +5,51 @@ import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
 import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
 import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRadioButtons'
-import japanEnergyService from './services/japan_energy'
 import wordDictionaryService from './services/word_dictionary'
 import languageOptionService from './services/language_option'
-import yearAndMonthService from './services/year_and_month'
 import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
+import rangeSliderHook from './custom_hooks/electoric_power_data'
 
 //memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
 //https://polaris.shopify.com/components/
 const App = () => {
 
-  const year_and_month = yearAndMonthService.get();
-  const initialValue = [year_and_month.length - 12, year_and_month.length];
-  const [data, setData] = useState([])
-  const [unit, setUnit] = useState('ym');
-  const handleTermChange = useCallback((newUnit, from, to) => {
-    setUnit(newUnit);
-    japanEnergyService
-      .get(newUnit, from, to)
-      .then(initialData => setData(initialData));
-  }, []);
-
-  //Polaris area
-
-  //Range slider
-  const prefix = '';
-  const min = 0;
-  const max = year_and_month.length - 1;
-  const step = 1;
-
-  //TODO:レンジスライダーは、ハンドリングが気になる。連続で動かすのは制御した方が良さそう。
-  const [intermediateTextFieldValue, setIntermediateTextFieldValue] = useState(
-    initialValue,
-  );
-  const [rangeValue, setRangeValue] = useState(initialValue);
-
-  const handleRangeSliderChange = useCallback((value, unit, from, to) => {
-    setRangeValue(value);
-    setIntermediateTextFieldValue(value);
-
-    const handler = setTimeout(() => {
-      japanEnergyService
-        .get(unit, from, to)
-        .then(initialData => setData(initialData));
-    }, 100);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, []);
-
-  const lowerTextFieldValue =
-    intermediateTextFieldValue[0] === rangeValue[0]
-      ? rangeValue[0]
-      : intermediateTextFieldValue[0];
-
-  const upperTextFieldValue =
-    intermediateTextFieldValue[1] === rangeValue[1]
-      ? rangeValue[1]
-      : intermediateTextFieldValue[1];
+  //電力データをCallするためのパラメータや処理
+  const range_slider_hook = rangeSliderHook.useElectoricPowerData()
+  const year_and_month = range_slider_hook.year_and_month;
+  const data = range_slider_hook.data;
+  const unit = range_slider_hook.unit;
+  const handleTermChange = range_slider_hook.handleTermChange;
+  const prefix = range_slider_hook.prefix;
+  const min = range_slider_hook.min;
+  const max = range_slider_hook.max;
+  const step = range_slider_hook.step;
+  const rangeValue = range_slider_hook.rangeValue;
+  const handleRangeSliderChange = range_slider_hook.handleRangeSliderChange;
+  const lowerTextFieldValue = range_slider_hook.lowerTextFieldValue;
+  const upperTextFieldValue = range_slider_hook.upperTextFieldValue;
 
   //TODO:各コンポーネントのID、Warning対応
 
-  //select
+  //言語選択
   const [selected, setSelected] = useState('en');
   const handleSelectChange = useCallback((value) => setSelected(value), []);
+  const options = languageOptionService.get();
+  let lang = selected;
+  let dict = wordDictionaryService.get(lang);
 
+  //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany();
   const allChecked = electoric_power_company.allChecked;
   const handleAllChange = electoric_power_company.handleAllChange;
   const electricPowersChecked = electoric_power_company.Checked;
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
+  //エネルギーリソースのチェックボックス
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse();
   const energyResoursesChecked = electoric_power_resource.Checked;
   const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
-
-  const options = languageOptionService.get();
-
-  let lang = selected;
-  let dict = wordDictionaryService.get(lang);
 
   return (
     <div>
