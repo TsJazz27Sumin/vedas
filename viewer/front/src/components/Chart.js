@@ -6,42 +6,43 @@ const Chart = (props) => {
     const energyResoursesChecked = props.energyResoursesChecked;
 
     let list = []
+    const unit_word = "MWh"
 
     if (energyResoursesChecked.demandChecked){
-      list.push(<Line type="monotone" name={dict.demand} dataKey="demand" stroke="#637381" activeDot={{r: 8}}/>);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.demand} dataKey="demand" stroke="#9C6ADE" activeDot={{r: 8}}/>);
     }
     if (energyResoursesChecked.nuclearChecked){
-      list.push(<Line type="monotone" name={dict.nuclear} dataKey="nuclear" stroke="#919EAB" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.nuclear} dataKey="nuclear" stroke="#330101" />);
     }
     if (energyResoursesChecked.thermalChecked){
-      list.push(<Line type="monotone" name={dict.thermal} dataKey="thermal" stroke="#BF0711" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.thermal} dataKey="thermal" stroke="#BF0711" />);
     }
     if (energyResoursesChecked.hydroChecked){
-      list.push(<Line type="monotone" name={dict.hydro} dataKey="hydro" stroke="#43467F" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.hydro} dataKey="hydro" stroke="#006FBB" />);
     }
     if (energyResoursesChecked.geothermalChecked){
-      list.push(<Line type="monotone" name={dict.geothermal} dataKey="geothermal" stroke="#50B83C" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.geothermal} dataKey="geothermal" stroke="#EEC200" />);
     }
     if (energyResoursesChecked.biomassChecked){
-      list.push(<Line type="monotone" name={dict.biomass} dataKey="biomass" stroke="#E3D0FF" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.biomass} dataKey="biomass" stroke="#50B83C" />);
     }
     if (energyResoursesChecked.solarChecked){
-      list.push(<Line type="monotone" name={dict.solar} dataKey="solar" stroke="#F49342" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.solar} dataKey="solar" stroke="#F49342" />);
     }
     if (energyResoursesChecked.solarOutputControlChecked){
-      list.push(<Line type="monotone" name={dict.solar_output_control} dataKey="solar_output_control" stroke="#8A6116" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.solar_output_control} dataKey="solar_output_control" stroke="#C05717" />);
     }
     if (energyResoursesChecked.windChecked){
-      list.push(<Line type="monotone" name={dict.wind} dataKey="wind" stroke="#B4E1FA" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.wind} dataKey="wind" stroke="#47C1BF" />);
     }
     if (energyResoursesChecked.windOutputControlChecked){
-      list.push(<Line type="monotone" name={dict.wind_output_control} dataKey="wind_output_control" stroke="#573B00" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.wind_output_control} dataKey="wind_output_control" stroke="#00848E" />);
     }
     if (energyResoursesChecked.pumpingChecked){
-      list.push(<Line type="monotone" name={dict.pumping} dataKey="pumping" stroke="#47C1BF" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.pumping} dataKey="pumping" stroke="#5C6AC4" />);
     }
     if (energyResoursesChecked.interconnectionChecked){
-      list.push(<Line type="monotone" name={dict.interconnection} dataKey="interconnection" stroke="#B3BCF5" />);
+      list.push(<Line unit={unit_word} type="monotone" name={dict.interconnection} dataKey="interconnection" stroke="#B3BCF5" />);
     }
 
     return (

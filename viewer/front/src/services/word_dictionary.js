@@ -1,6 +1,7 @@
-const get_word_dictionary = (lang) => {
+const get = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "step1_help": "STEP1 集計単位を選択",
             "term": "期間",
             "unit_y": "年",
             "unit_ym": "月",
@@ -32,6 +33,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
+            "step1_help": "STEP1 Select aggregation unit",
             "term": "Term",
             "unit_y": "Year",
             "unit_ym": "Month",
@@ -63,6 +65,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "OKinawa Electric Power"
         },
         "ch" : {
+            "step1_help": "选择汇总单位",
             "term": "术语",
             "unit_y": "年份",
             "unit_ym": "月份",
@@ -94,6 +97,7 @@ const get_word_dictionary = (lang) => {
             "okiden" : "冲绳电力"
         },
         "es" : {
+            "step1_help": "Seleccionar unidad de agregación",
             "term": "Término",
             "term_y": "Año",
             "term_ym": "Mes",
@@ -139,4 +143,4 @@ const get_word_dictionary = (lang) => {
     return dict;
   }
   
-  export default { get_word_dictionary }
+  export default { get }

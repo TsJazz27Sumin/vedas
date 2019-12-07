@@ -7,7 +7,10 @@ import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
 import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRadioButtons'
 import japanEnergyService from './services/japan_energy'
 import wordDictionaryService from './services/word_dictionary'
+import languageOptionService from './services/language_option'
 import yearAndMonthService from './services/year_and_month'
+import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
+import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
 
 //memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
 //https://polaris.shopify.com/components/
@@ -69,135 +72,20 @@ const App = () => {
   const [selected, setSelected] = useState('en');
   const handleSelectChange = useCallback((value) => setSelected(value), []);
 
-  //checkbox
-  const [allChecked, setAllChecked] = useState(false);
-  //TODO:allの挙動が悩ましいが、いったんこれにしておく。
-  const handleAllChange = useCallback((newChecked) => {
-    setAllChecked(newChecked);
-    setHepcoChecked(newChecked);
-    setTohokuepcoChecked(newChecked);
-    setRikudenChecked(newChecked);
-    setTepcoChecked(newChecked);
-    setChudenChecked(newChecked);
-    setKepcoChecked(newChecked);
-    setEnergiaChecked(newChecked);
-    setYondenChecked(newChecked);
-    setKyudenChecked(newChecked);
-    setOkidenChecked(newChecked);
-  }, []);
+  const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany();
+  const allChecked = electoric_power_company.allChecked;
+  const handleAllChange = electoric_power_company.handleAllChange;
+  const electricPowersChecked = electoric_power_company.Checked;
+  const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
-  //TODO:このstateがズラッと並んじゃうのどうにかならんか。
-  const [hepcoChecked, setHepcoChecked] = useState(false);
-  const handleHepcoChange = useCallback((newChecked) => setHepcoChecked(newChecked), []);
-  const [tohokuepcoChecked, setTohokuepcoChecked] = useState(false);
-  const handleTohokuepcoChange = useCallback((newChecked) => setTohokuepcoChecked(newChecked), []);
-  const [rikudenChecked, setRikudenChecked] = useState(false);
-  const handleRikudenChange = useCallback((newChecked) => setRikudenChecked(newChecked), []);
-  const [tepcoChecked, setTepcoChecked] = useState(false);
-  const handleTepcoChange = useCallback((newChecked) => setTepcoChecked(newChecked), []);
-  const [chudenChecked, setChudenChecked] = useState(false);
-  const handleChudenChange = useCallback((newChecked) => setChudenChecked(newChecked), []);
-  const [kepcoChecked, setKepcoChecked] = useState(false);
-  const handleKepcoChange = useCallback((newChecked) => setKepcoChecked(newChecked), []);
-  const [energiaChecked, setEnergiaChecked] = useState(false);
-  const handleEnergiaChange = useCallback((newChecked) => setEnergiaChecked(newChecked), []);
-  const [yondenChecked, setYondenChecked] = useState(false);
-  const handleYondenChange = useCallback((newChecked) => setYondenChecked(newChecked), []);
-  const [kyudenChecked, setKyudenChecked] = useState(false);
-  const handleKyudenChange = useCallback((newChecked) => setKyudenChecked(newChecked), []);
-  const [okidenChecked, setOkidenChecked] = useState(false);
-  const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
+  const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse();
+  const energyResoursesChecked = electoric_power_resource.Checked;
+  const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
-  const [demandChecked, setDemandChecked] = useState(false);
-  const handleDemandChange = useCallback((newChecked) => setDemandChecked(newChecked), []);
-  const [nuclearChecked, setNuclearChecked] = useState(false);
-  const handleNuclearChange = useCallback((newChecked) => setNuclearChecked(newChecked), []);
-  const [thermalChecked, setThermalChecked] = useState(false);
-  const handleThermalChange = useCallback((newChecked) => setThermalChecked(newChecked), []);
-  const [hydroChecked, setHydroChecked] = useState(false);
-  const handleHydroChange = useCallback((newChecked) => setHydroChecked(newChecked), []);
-  const [geothermalChecked, setGeothermalChecked] = useState(false);
-  const handleGeothermalChange = useCallback((newChecked) => setGeothermalChecked(newChecked), []);
-  const [biomassChecked, setBiomassChecked] = useState(false);
-  const handleBiomassChange = useCallback((newChecked) => setBiomassChecked(newChecked), []);
-  const [solarChecked, setSolarChecked] = useState(false);
-  const handleSolarChange = useCallback((newChecked) => setSolarChecked(newChecked), []);
-  const [solarOutputControlChecked, setSolarOutputControlChecked] = useState(false);
-  const handleSolarOutputControlChange = useCallback((newChecked) => setSolarOutputControlChecked(newChecked), []);
-  const [windChecked, setWindChecked] = useState(false);
-  const handleWindChange = useCallback((newChecked) => setWindChecked(newChecked), []);
-  const [windOutputControlChecked, setWindOutputControlChecked] = useState(false);
-  const handleWindOutputControlChange = useCallback((newChecked) => setWindOutputControlChecked(newChecked), []);
-  const [pumpingChecked, setPumpingChecked] = useState(false);
-  const handlePumpingChange = useCallback((newChecked) => setPumpingChecked(newChecked), []);
-  const [interconnectionChecked, setInterconnectionChecked] = useState(false);
-  const handleInterconnectionChange = useCallback((newChecked) => setInterconnectionChecked(newChecked), []);
-
-  const energyResoursesChecked = {
-    demandChecked: demandChecked,
-    nuclearChecked: nuclearChecked,
-    thermalChecked: thermalChecked,
-    hydroChecked: hydroChecked,
-    geothermalChecked: geothermalChecked,
-    biomassChecked: biomassChecked,
-    solarOutputControlChecked: solarOutputControlChecked,
-    solarChecked: solarChecked,
-    windChecked: windChecked,
-    windOutputControlChecked: windOutputControlChecked,
-    pumpingChecked: pumpingChecked,
-    interconnectionChecked: interconnectionChecked,
-  }
-
-  const handleEnergyResoursesChange = {
-    handleDemandChange: handleDemandChange,
-    handleNuclearChange: handleNuclearChange,
-    handleThermalChange: handleThermalChange,
-    handleHydroChange: handleHydroChange,
-    handleGeothermalChange: handleGeothermalChange,
-    handleBiomassChange: handleBiomassChange,
-    handleSolarOutputControlChange: handleSolarOutputControlChange,
-    handleSolarChange: handleSolarChange,
-    handleWindChange: handleWindChange,
-    handleWindOutputControlChange: handleWindOutputControlChange,
-    handlePumpingChange: handlePumpingChange,
-    handleInterconnectionChange: handleInterconnectionChange,
-  }
-
-  const electricPowersChecked = {
-    hepcoChecked: hepcoChecked,
-    tohokuepcoChecked: tohokuepcoChecked,
-    rikudenChecked: rikudenChecked,
-    tepcoChecked: tepcoChecked,
-    chudenChecked: chudenChecked,
-    kepcoChecked: kepcoChecked,
-    energiaChecked: energiaChecked,
-    yondenChecked: yondenChecked,
-    kyudenChecked: kyudenChecked,
-    okidenChecked: okidenChecked
-  }
-
-  const handleElectricPowersChange = {
-    handleHepcoChange: handleHepcoChange,
-    handleTohokuepcoChange: handleTohokuepcoChange,
-    handleRikudenChange: handleRikudenChange,
-    handleTepcoChange: handleTepcoChange,
-    handleChudenChange: handleChudenChange,
-    handleKepcoChange: handleKepcoChange,
-    handleEnergiaChange: handleEnergiaChange,
-    handleYondenChange: handleYondenChange,
-    handleKyudenChange: handleKyudenChange,
-    handleOkidenChange: handleOkidenChange
-  }
-
-  const options = [
-    { label: '日本語', value: 'jp' },
-    { label: 'English', value: 'en' },
-    { label: 'China(Simplified)', value: 'ch' },
-    { label: 'Spanish', value: 'es' },
-  ];
+  const options = languageOptionService.get();
 
   let lang = selected;
-  let dict = wordDictionaryService.get_word_dictionary(lang);
+  let dict = wordDictionaryService.get(lang);
 
   return (
     <div>
@@ -231,18 +119,18 @@ const App = () => {
           />
         </Card>
         <Card sectioned title={dict.term}>
-            <RangeSlider
-              value={rangeValue}
-              prefix={prefix}
-              min={min}
-              max={max}
-              step={step}
-              onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
-            />
-            <Stack distribution="equalSpacing" spacing="extraLoose">
-              <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
-              <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
-            </Stack>
+          <RangeSlider
+            value={rangeValue}
+            prefix={prefix}
+            min={min}
+            max={max}
+            step={step}
+            onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+          />
+          <Stack distribution="equalSpacing" spacing="extraLoose">
+            <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
+            <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
+          </Stack>
         </Card>
       </AppProvider>
       <ul>
