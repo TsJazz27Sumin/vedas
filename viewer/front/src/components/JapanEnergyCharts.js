@@ -66,44 +66,44 @@ const JapanEnergyCharts = props => {
     const energyResoursesChecked = props.energyResoursesChecked;
 
     if (electricPowersChecked.hepcoChecked){
-      list.push(<Note company_name={dict.hepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.hepco} key="hepco_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} key="hepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.tohokuepcoChecked){
-      list.push(<Note company_name={dict.tohokuepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.tohokuepco} key="tohokuepco_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tohokuepco)} key="tohokuepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.rikudenChecked){
-      list.push(<Note company_name={dict.rikuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.rikuden} key="rikuden_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.rikuden)} key="rikuden_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.tepcoChecked){
-      list.push(<Note company_name={dict.tepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.tepco} key="tepco_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.tepco)} key="tepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.chudenChecked){
-      list.push(<Note company_name={dict.chuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.chuden} key="chuden_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.chuden)} key="chuden_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.kepcoChecked){
-      list.push(<Note company_name={dict.kepco}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.kepco} key="kepco_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kepco)} key="kepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.energiaChecked){
-      list.push(<Note company_name={dict.energia}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.energia} key="energia_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.energia)} key="energia_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.yondenChecked){
-      list.push(<Note company_name={dict.yonden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.yonden} key="yonden_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.yonden)} key="yonden_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.kyudenChecked){
-      list.push(<Note company_name={dict.kyuden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.kyuden} key="kyuden_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.kyuden)} key="kyuden_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
     if (electricPowersChecked.okidenChecked){
-      list.push(<Note company_name={dict.okiden}/>);
-      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} energyResoursesChecked={energyResoursesChecked}/>);
+      list.push(<Note company_name={dict.okiden} key="okiden_note"/>);
+      list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} key="okiden_chart" energyResoursesChecked={energyResoursesChecked}/>);
     }
 
   return (
