@@ -11,3 +11,7 @@ class Controller(object):
     @classmethod
     def get(cls, root_path, term):
         raise NotImplementedError
+
+    @classmethod
+    def check_download_page(cls, root_path):
+        raise NotImplementedError

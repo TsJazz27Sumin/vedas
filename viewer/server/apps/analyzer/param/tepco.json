@@ -4,5 +4,8 @@
 		"http://www.tepco.co.jp/forecast/html/images/area-2017.csv",
 		"http://www.tepco.co.jp/forecast/html/images/area-2018.csv",
 		"http://www.tepco.co.jp/forecast/html/images/area-2019.csv"
+	],
+	"donwload_page_url": [
+		"http://www.tepco.co.jp/forecast/html/area_data-j.html"
 	]
 }
