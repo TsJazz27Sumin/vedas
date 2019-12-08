@@ -1,4 +1,5 @@
 from viewer.server.apps.analyzer.controller.controller import Controller
+from viewer.server.apps.analyzer.function.checker import CheckerFunction
 
 from viewer.server.apps.analyzer.function.file import FileFunction
 from viewer.server.apps.analyzer.service.query import QueryService
@@ -11,6 +12,11 @@ class EnergiaController(Controller):
 
     @classmethod
     def correct_data(cls, root_path, reflesh):
+        check_result, message = cls.check_download_page(root_path)
+
+        if check_result is False:
+            return message
+
         json = FileFunction.get_param_json(root_path, cls.COMPANY_NAME)
         EnergiaService.correct_data(json['url'], root_path, reflesh)
         count = QueryService.count(root_path, cls.COMPANY_NAME)
@@ -23,3 +29,7 @@ class EnergiaController(Controller):
     @classmethod
     def get(cls, root_path, unit, from_value, to_value):
         return QueryService.get(root_path, cls.COMPANY_NAME, unit, from_value, to_value)
+
+    @classmethod
+    def check_download_page(cls, root_path):
+        return CheckerFunction.check_download_page(root_path, cls.COMPANY_NAME)

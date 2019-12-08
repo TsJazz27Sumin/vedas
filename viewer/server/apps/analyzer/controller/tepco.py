@@ -1,7 +1,7 @@
 from viewer.server.apps.analyzer.controller.controller import Controller
+from viewer.server.apps.analyzer.function.checker import CheckerFunction
 
 from viewer.server.apps.analyzer.function.file import FileFunction
-from viewer.server.apps.analyzer.function.request import RequestFunction
 from viewer.server.apps.analyzer.service.query import QueryService
 from viewer.server.apps.analyzer.service.tepco import TepcoService
 
@@ -12,6 +12,11 @@ class TepcoController(Controller):
 
     @classmethod
     def correct_data(cls, root_path, reflesh):
+        check_result, message = cls.check_download_page(root_path)
+
+        if check_result is False:
+            return message
+
         json = FileFunction.get_param_json(root_path, cls.COMPANY_NAME)
         TepcoService.correct_data(json['url'], root_path, reflesh)
         count = QueryService.count(root_path, cls.COMPANY_NAME)
@@ -27,10 +32,4 @@ class TepcoController(Controller):
 
     @classmethod
     def check_download_page(cls, root_path):
-        # TODO:Slackでアラート飛ばすとかにしたい。
-        json = FileFunction.get_param_json(root_path, cls.COMPANY_NAME)
-        html = RequestFunction.get_html(json['donwload_page_url'][0])
-        FileFunction.create_current_html(root_path, cls.COMPANY_NAME, html)
-
-        # TODO:ファイルの内容チェック
-        return 'Current is the same as prev.'
+        return CheckerFunction.check_download_page(root_path, cls.COMPANY_NAME)

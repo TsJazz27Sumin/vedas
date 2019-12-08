@@ -4,5 +4,9 @@
 		"https://www.kepco.co.jp/energy_supply/supply/denkiyoho/csv/area_jyukyu_jisseki_2017.csv",
 		"https://www.kepco.co.jp/energy_supply/supply/denkiyoho/csv/area_jyukyu_jisseki_2018.csv",
 		"https://www.kepco.co.jp/energy_supply/supply/denkiyoho/csv/area_jyukyu_jisseki_2019.csv"
-	]
+	],
+	"download_page_url": {
+		"url": "https://www.kepco.co.jp/energy_supply/supply/denkiyoho/area_jisseki.html",
+		"codec": "utf-8"
+	}
 }

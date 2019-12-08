@@ -4,5 +4,9 @@
 		"https://www.okiden.co.jp/business-support/service/supply-and-demand/jukyu/csv/2017.csv",
 		"https://www.okiden.co.jp/business-support/service/supply-and-demand/jukyu/csv/2018.csv",
 		"https://www.okiden.co.jp/business-support/service/supply-and-demand/jukyu/csv/2019.csv"
-	]
+	],
+	"download_page_url": {
+		"url": "https://www.okiden.co.jp/business-support/service/supply-and-demand/index.html",
+		"codec": "utf-8"
+	}
 }

@@ -104,17 +104,16 @@ def check_download_page(request):
     start = time.time()
 
     data = {
-        "message": "Success",
-        # "01. hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力 2016/4/1〜
-        # "02. tohokuepco_count": TohokuEpcoController.correct_data(root_path, reflesh),  # 東北電力 2016/4/1〜
-        # "03. rikuden_count": RikudenController.correct_data(root_path, reflesh),  # 北陸電力 2016/4/1〜
+        "01. hepco_result": HepcoController.check_download_page(root_path),  # 北海道電力 2016/4/1〜
+        "02. tohokuepco_result": TohokuEpcoController.check_download_page(root_path),  # 東北電力 2016/4/1〜
+        "03. rikuden_result": RikudenController.check_download_page(root_path),  # 北陸電力 2016/4/1〜
         "04. tepco_result": TepcoController.check_download_page(root_path),  # 東京電力 2016/4/1〜
-        # "05. chuden_count": ChudenController.correct_data(root_path, reflesh),  # 中部電力 2016/4/1〜
-        # "06. kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力 2016/4/1〜
-        # "07. energia_count": EnergiaController.correct_data(root_path, reflesh),  # 中国電力 2016/11/1〜
-        # "08. yonden_count": YondenController.correct_data(root_path, reflesh),  # 四国電力 2016/4/1〜
-        # "09. kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力 2016/4/1〜
-        # "10. okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力 2016/4/1〜
+        "05. chuden_result": ChudenController.check_download_page(root_path),  # 中部電力 2016/4/1〜
+        "06. kepco_result": KepcoController.check_download_page(root_path),  # 関西電力 2016/4/1〜
+        "07. energia_result": EnergiaController.check_download_page(root_path),  # 中国電力 2016/11/1〜
+        "08. yonden_result": YondenController.check_download_page(root_path),  # 四国電力 2016/4/1〜
+        "09. kyuden_result": KyudenController.check_download_page(root_path),  # 九州電力 2016/4/1〜
+        "10. okiden_result": OkidenController.check_download_page(root_path),  # 沖縄電力 2016/4/1〜
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 

@@ -15,5 +15,9 @@
 		"https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/csv/sup_dem_results_2016_2q.csv",
 		"https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/csv/sup_dem_results_2016_3q.csv",
 		"https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/csv/sup_dem_results_2016_4q.csv"
-	]
+	],
+	"download_page_url": {
+		"url": "https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/supply_demand_results.html",
+		"codec": "utf-8"
+	}
 }

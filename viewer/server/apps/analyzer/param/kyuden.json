@@ -15,5 +15,9 @@
 		"http://www.kyuden.co.jp/var/rev0/0229/3046/area_jyukyu_jisseki_2019_1Q.csv",
 		"http://www.kyuden.co.jp/var/rev0/0229/3047/area_jyukyu_jisseki_2019_2Q.csv",
 		"http://www.kyuden.co.jp/var/rev0/0229/3048/area_jyukyu_jisseki_2019_10.csv"
-	]
+	],
+	"download_page_url": {
+		"url": "http://www.kyuden.co.jp/wheeling_disclosure.html",
+		"codec": "utf-8"
+	}
 }

@@ -19,14 +19,22 @@ class FileFunction(object):
 
     @classmethod
     def create_current_html(cls, root_path, company, html):
-        file_path = f'{root_path}/{cls.CURRENT_HTML_FOLDER.replace(cls.COMPANY_NAME_REPLACE_KEYWORD, company)}/{company}.html'
+        file_path = cls.get_current_html_path(root_path, company)
         with open(file_path, 'w') as f:
             f.write(html)
 
-        prev_file_path = f'{root_path}/{cls.PREV_HTML_FOLDER.replace(cls.COMPANY_NAME_REPLACE_KEYWORD, company)}/{company}.html'
+        prev_file_path = cls.get_prev_html_path(root_path, company)
         if os.path.exists(prev_file_path) is False:
             with open(prev_file_path, 'w') as f:
                 f.write(html)
+
+    @classmethod
+    def get_current_html_path(cls, root_path, company):
+        return f'{root_path}/{cls.CURRENT_HTML_FOLDER.replace(cls.COMPANY_NAME_REPLACE_KEYWORD, company)}/{company}.html'
+
+    @classmethod
+    def get_prev_html_path(cls, root_path, company):
+        return f'{root_path}/{cls.PREV_HTML_FOLDER.replace(cls.COMPANY_NAME_REPLACE_KEYWORD, company)}/{company}.html'
 
     @classmethod
     def get_param_json(cls, root_path, company):
@@ -67,7 +75,6 @@ class FileFunction(object):
         csv_file_name = split_urls[-1]
         # 北海道電力とかExcelもいるので対応しておく。
         return csv_file_name.replace('.csv', '.pkl').replace('.xlsx', '.pkl').replace('.xls', '.pkl')
-
 
     @classmethod
     def get_decoded_data(cls, url):

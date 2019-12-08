@@ -1,5 +1,9 @@
 {
 	"url": [
 		"https://denki-yoho.chuden.jp/denki_yoho_content_data/areabalance_current_term.csv"
-	]
+	],
+	"download_page_url": {
+		"url": "https://denki-yoho.chuden.jp/",
+		"codec": "utf-8"
+	}
 }
