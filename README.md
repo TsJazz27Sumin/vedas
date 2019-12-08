@@ -8,7 +8,7 @@
 
 # Description
 ## What is it?
-  - １０電力が公開している需給実績データをビジュアライズするアプリケーションです。
+  - 10電力が公開している需給実績データをビジュアライズするアプリケーションです。
 ## Why are you make it?
   - 需給実績がオープンデータとして公開されているけど、現在進行系で見やすくしているサイトがなかったようでしたので作ってみました。
   - 日本でもNPO法人である[ISEP](https://isep-energychart.com/graphics/)が四半期毎に公表はしています。
@@ -79,18 +79,23 @@
  - npm install recharts
  - https://github.com/Shopify/polaris-react#using-the-react-components
 
-# Usage ※TODO
-- Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+# Usage
+ 1. 集計の単位を選択してください。月を選んだ場合、月ごとに合算された数値でチャートが表示されます。期間は、下のスライドバーで指定できます。
+ 2. 表示させたい電力エリアを選択してください。すべてを選択した場合、10電力すべてが表示対象になります。
+ 3. 表示させたい電源リソースを選択してください。需要は、指定エリア内の総電力需要になります。１つずつ選択することが可能なので太陽光と風力の比較なども可能です。
 
-# Support ※TODO
-- Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+# Support
+- @Youhei.Hが作ったので何かあれば聞いてください。
 
-# Roadmap ※TODO
-- If you have ideas for releases in the future, it is a good idea to list them in the README.
+# Roadmap
+- Current
+  - 10電力が公開している需給実績データをビジュアライズする。
+- Next
+  - 太陽光と天気の関連が見たいので気象データと組み合わせて、ビジュアライズしたい。
 
-# Authors and acknowledgment ※TODO
-- Show your appreciation to those who have contributed to the project.
+# Authors and acknowledgment
+- @Youhei.H
 
-# Project status ※TODO
-- If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+# Project status
+- 開発中です！（><） from 2019/11/25
  
