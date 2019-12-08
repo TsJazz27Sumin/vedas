@@ -6,7 +6,7 @@ const get = () => {
 
   const year_and_month = [];
 
-  for(let month = 1; month <= 12; month++){
+  for(let month = 4; month <= 12; month++){
     year_and_month.push('2016/' + month);
   }
   for(let year = 2017; year < this_year; year++){
