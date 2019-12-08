@@ -1,6 +1,10 @@
-# VDAS
-- supply-and-demand-viewer
-- そのまま読むと長いので、単語の頭文字を後ろから読んでるだけです。（nickname=VDAS）
+# Nickname=VEDAS
+- リポジトリ名をそのまま読むと長いので、単語の頭文字を後ろから読んでる風にしています。
+- Supply-And-Demand-Energy-Viewer
+- S <= A <= D <= E <= V
+- Nickname=VEDAS
+- VDASは、そのまま使ってるシステムがあるようなので「Energy」を入れて回避しました。
+- Vedaは、インドの宗教経典なんかで「知識」の意味らしいです。
 
 # Description ※TODO
 - What is it?
