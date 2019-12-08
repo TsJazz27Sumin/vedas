@@ -11,8 +11,10 @@ import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
 import rangeSliderHook from './custom_hooks/electoric_power_data'
 
-//memo:cd ../supply-and-demand-viewer/viewer/front/ npm start
-//https://polaris.shopify.com/components/
+//memo:
+//cd ../supply-and-demand-viewer/viewer/front/
+//npm start
+//reference:https://polaris.shopify.com/components/
 const App = () => {
 
   //電力データをCallするためのパラメータや処理
