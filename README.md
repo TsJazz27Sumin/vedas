@@ -1,18 +1,54 @@
 # supply-and-demand-viewer
-１０電力が公開している需給実績データをビジュアライズするアプリケーション。
+- １０電力が公開している需給実績データをビジュアライズするアプリケーションです。
 
-TODO:ある程度出来たらちゃんと書く。
+## 需給実績データ
+### 出典
 
-## server
+ - [hepco / 北海道電力](https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/supply_demand_results.html)
+ - [tohoku_epco / 東北電力](http://setsuden.tohoku-epco.co.jp/download.html)
+ - [tepco / 東京電力](http://www.tepco.co.jp/forecast/html/area_data-j.html)
+ - [chuden / 中部電力](https://denki-yoho.chuden.jp/)
+ - [rikuden / 北陸電力](http://www.rikuden.co.jp/rule/area_jisseki.html)
+ - [kepco / 関西電力](https://www.kepco.co.jp/energy_supply/supply/denkiyoho/area_jisseki.html)
+ - [energia / 中国電力](http://www.energia.co.jp/retailer/eria_jyukyu.html)
+ - [yonden / 四国電力](https://www.yonden.co.jp/nw/renewable_energy/data/supply_demand.html)
+ - [kyuden / 九州電力](http://www.kyuden.co.jp/wheeling_disclosure.html)
+ - [okiden / 沖縄電力](https://www.okiden.co.jp/business-support/service/supply-and-demand/index.html)
+
+### 取り扱い項目
+
+  1. 月日
+  2. 時刻
+  3. エリア需要
+  4. 原子力
+  5. 火力
+  6. 水力
+  7. 地熱
+  8. バイオマス
+  9. 太陽光実績
+  10. 太陽光抑制量
+  11. 風力実績
+  12. 風力抑制量
+  13. 揚水
+  14. 連系線
+  15. 供給力合計
+   
+### 取り扱い単位
+ - 30分を1コマとして最小単位としてデータが公表されている。
+ - 1日は、48コマになる。
+
+## 技術要素
+### front
+ - Framework : React
+ - Language : javascript
+
+### server
 
  - Framework : Django
  - Language : Python
 
-## front
- - Framework : React
- - Language : javascript
  
-## setup
+## セットアップ　※TODO:ある程度出来たらちゃんと書く。
  - serverは、requirementsがあるのでこちらをpip。
  - redisのインストールは、[こちらを参考に。](https://qiita.com/sawa-@github/items/1f303626bdc219ea8fa1)
  - frontは、
