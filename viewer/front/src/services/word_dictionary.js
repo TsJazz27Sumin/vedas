@@ -1,7 +1,6 @@
 const get = (lang) => {
     const word_dictionary = {
         "jp" : {
-            "step1_help": "STEP1 集計単位を選択",
             "term": "期間",
             "unit_y": "年",
             "unit_ym": "月",
@@ -19,7 +18,7 @@ const get = (lang) => {
             "wind_output_control": "風力出力制御",
             "pumping": "揚水",
             "interconnection": "連系線",
-            "title" : "日本の需給実績チャート",
+            "title" : "VDAS：日本の需給実績チャート",
             "all" : "すべて",
             "hepco" : "北海道電力",
             "tohokuepco" : "東北電力",
@@ -33,7 +32,6 @@ const get = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
-            "step1_help": "STEP1 Select aggregation unit",
             "term": "Term",
             "unit_y": "Year",
             "unit_ym": "Month",
@@ -51,7 +49,7 @@ const get = (lang) => {
             "wind_output_control": "wind output control",
             "pumping": "pumping",
             "interconnection": "interconnection",
-            "title" : "Japan Energy Charts",
+            "title" : "VDAS：Japan Energy Charts",
             "all" : "All",
             "hepco" : "Hokkaido Electric Power",
             "tohokuepco" : "Tohoku Electric Power",
@@ -65,7 +63,6 @@ const get = (lang) => {
             "okiden" : "Okinawa Electric Power"
         },
         "ch" : {
-            "step1_help": "选择汇总单位",
             "term": "术语",
             "unit_y": "年份",
             "unit_ym": "月份",
@@ -83,7 +80,7 @@ const get = (lang) => {
             "wind_output_control": "风控制",
             "pumping": "抽水",
             "interconnection": "互连线",
-            "title" : "日本能源图表",
+            "title" : "VDAS：日本能源图表",
             "all" : "所有",
             "hepco" : "北海道电力",
             "tohokuepco" : "东北电力",
@@ -97,7 +94,6 @@ const get = (lang) => {
             "okiden" : "冲绳电力"
         },
         "es" : {
-            "step1_help": "Seleccionar unidad de agregación",
             "term": "Término",
             "unit_y": "Año",
             "unit_ym": "Mes",
@@ -115,7 +111,7 @@ const get = (lang) => {
             "wind_output_control": "control de salida de viento",
             "pumping": "bombeo",
             "interconnection": "línea de interconexión",
-            "title": "Gráficos de energía de Japón",
+            "title": "VDAS：Gráficos de energía de Japón",
             "all": "Todos",
             "hepco": "Energía eléctrica de Hokkaido",
             "tohokuepco": "Energía eléctrica de Tohoku",
