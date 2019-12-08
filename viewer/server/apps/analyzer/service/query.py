@@ -30,6 +30,8 @@ class QueryService(object):
             result = cls.sum_group_by_year_and_month(data_frame)
         elif unit == 'ymd':
             result = cls.sum_group_by_year_and_month_and_date(data_frame)
+        elif unit == '30':
+            result = cls.__to_float_and_round(data_frame).to_json(date_format='iso').replace('T', ' ').replace(':00.000Z', '')
 
         return json.loads(result)
 
