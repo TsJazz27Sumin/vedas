@@ -61,8 +61,9 @@
  - Framework : Django ※あとでバージョン書く。
  - Language : Python 3.8.0
 
-# Visuals ※TODO
-- Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+# Visuals
+
+<img src="https://github.com/panair-jp/supply-and-demand-viewer/blob/master/readme_img/screentshot_20191208.png" alt="ScreenShot">
 
 # Installation ※TODO
 - serverは、requirementsがあるのでこちらをpip。
