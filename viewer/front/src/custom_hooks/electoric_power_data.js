@@ -1,13 +1,14 @@
 import { useState, useCallback } from 'react';
+import { debounce } from "lodash";
 import japanEnergyService from '../services/japan_energy'
 import yearAndMonthService from '../services/year_and_month'
 
 const useElectoricPowerData = () => {
 
-    const [is_loading, setIsLoading] = useState(false)
+    const [is_loading, setIsLoading] = useState(false);
     const year_and_month = yearAndMonthService.get();
     const initialValue = [year_and_month.length - 12, year_and_month.length];
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     const [unit, setUnit] = useState('ym');
     const handleTermChange = useCallback((newUnit, from, to) => {
         setUnit(newUnit);
@@ -30,11 +31,8 @@ const useElectoricPowerData = () => {
     );
     const [rangeValue, setRangeValue] = useState(initialValue);
 
-    const handleRangeSliderChange = useCallback((value, unit, from, to) => {
-        setRangeValue(value);
-        setIntermediateTextFieldValue(value);
-
-        const handler = setTimeout(() => {
+    const debouncedHandleChange = debounce(
+        (unit, from, to) => {
             setIsLoading(true);
             japanEnergyService
                 .get(unit, from, to)
@@ -42,11 +40,15 @@ const useElectoricPowerData = () => {
                     setData(initialData);
                     setIsLoading(false);
                 });
-        }, 100);
+        },
+        500
+      );
 
-        return () => {
-            clearTimeout(handler);
-        };
+    const handleRangeSliderChange = useCallback((value, unit, from, to) => {
+        setRangeValue(value);
+        setIntermediateTextFieldValue(value);
+        debouncedHandleChange(unit, from, to);
+        // eslint-disable-next-line
     }, []);
 
     const lowerTextFieldValue =
