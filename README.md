@@ -39,13 +39,13 @@
 
 ## 技術要素
 ### front
- - Framework : React
- - Language : javascript
+ - Framework : React 16.11.0
+ - Language : javascript(es6)
 
 ### server
 
- - Framework : Django
- - Language : Python
+ - Framework : Django ※あとでバージョン書く。
+ - Language : Python 3.8.0
 
  
 ## セットアップ　※TODO:ある程度出来たらちゃんと書く。
