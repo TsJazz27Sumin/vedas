@@ -4,16 +4,16 @@
 ## 需給実績データ
 ### 出典
 
- - [hepco / 北海道電力](https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/supply_demand_results.html)
- - [tohoku_epco / 東北電力](http://setsuden.tohoku-epco.co.jp/download.html)
- - [tepco / 東京電力](http://www.tepco.co.jp/forecast/html/area_data-j.html)
- - [chuden / 中部電力](https://denki-yoho.chuden.jp/)
- - [rikuden / 北陸電力](http://www.rikuden.co.jp/rule/area_jisseki.html)
- - [kepco / 関西電力](https://www.kepco.co.jp/energy_supply/supply/denkiyoho/area_jisseki.html)
- - [energia / 中国電力](http://www.energia.co.jp/retailer/eria_jyukyu.html)
- - [yonden / 四国電力](https://www.yonden.co.jp/nw/renewable_energy/data/supply_demand.html)
- - [kyuden / 九州電力](http://www.kyuden.co.jp/wheeling_disclosure.html)
- - [okiden / 沖縄電力](https://www.okiden.co.jp/business-support/service/supply-and-demand/index.html)
+ - [hepco = 北海道電力 : 2016/4/1〜](https://www.hepco.co.jp/energy/recyclable_energy/fixedprice_purchase/supply_demand_results.html)
+ - [tohoku_epco = 東北電力 :  2016/4/1〜](http://setsuden.tohoku-epco.co.jp/download.html)
+ - [rikuden = 北陸電力 : 2016/4/1〜](http://www.rikuden.co.jp/rule/area_jisseki.html)
+ - [tepco = 東京電力 : 2016/4/1〜](http://www.tepco.co.jp/forecast/html/area_data-j.html)
+ - [chuden = 中部電力 : 2016/4/1〜](https://denki-yoho.chuden.jp/)
+ - [kepco = 関西電力 : 2016/4/1〜](https://www.kepco.co.jp/energy_supply/supply/denkiyoho/area_jisseki.html)
+ - [energia = 中国電力 : 2016/11/1〜](http://www.energia.co.jp/retailer/eria_jyukyu.html)
+ - [yonden = 四国電力 : 2016/4/1〜](https://www.yonden.co.jp/nw/renewable_energy/data/supply_demand.html)
+ - [kyuden = 九州電力 : 2016/4/1〜](http://www.kyuden.co.jp/wheeling_disclosure.html)
+ - [okiden = 沖縄電力 : 2016/4/1〜](https://www.okiden.co.jp/business-support/service/supply-and-demand/index.html)
 
 ### 取り扱い項目
 

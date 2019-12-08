@@ -30,16 +30,16 @@ def correct_data(request, reflesh=True):
 
     data = {
         "message": "Success",
-        "01. hepco_count": HepcoController.correct_data(root_path, reflesh),  # 北海道電力 2016/4/1〜
-        "02. tohokuepco_count": TohokuEpcoController.correct_data(root_path, reflesh),  # 東北電力 2016/4/1〜
-        "03. rikuden_count": RikudenController.correct_data(root_path, reflesh),  # 北陸電力 2016/4/1〜
-        "04. tepco_count": TepcoController.correct_data(root_path, reflesh),  # 東京電力 2016/4/1〜
-        "05. chuden_count": ChudenController.correct_data(root_path, reflesh),  # 中部電力 2016/4/1〜
-        "06. kepco_count": KepcoController.correct_data(root_path, reflesh),  # 関西電力 2016/4/1〜
-        "07. energia_count": EnergiaController.correct_data(root_path, reflesh),  # 中国電力 2016/11/1〜
-        "08. yonden_count": YondenController.correct_data(root_path, reflesh),  # 四国電力 2016/4/1〜
-        "09. kyuden_count": KyudenController.correct_data(root_path, reflesh),  # 九州電力 2016/4/1〜
-        "10. okiden_count": OkidenController.correct_data(root_path, reflesh),  # 沖縄電力 2016/4/1〜
+        "01. hepco_count": HepcoController.correct_data(root_path, reflesh),
+        "02. tohokuepco_count": TohokuEpcoController.correct_data(root_path, reflesh),
+        "03. rikuden_count": RikudenController.correct_data(root_path, reflesh),
+        "04. tepco_count": TepcoController.correct_data(root_path, reflesh),
+        "05. chuden_count": ChudenController.correct_data(root_path, reflesh),
+        "06. kepco_count": KepcoController.correct_data(root_path, reflesh),
+        "07. energia_count": EnergiaController.correct_data(root_path, reflesh),
+        "08. yonden_count": YondenController.correct_data(root_path, reflesh),
+        "09. kyuden_count": KyudenController.correct_data(root_path, reflesh),
+        "10. okiden_count": OkidenController.correct_data(root_path, reflesh),
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
@@ -55,16 +55,16 @@ def count(request):
 
     data = {
         "message": "Success",
-        "01. hepco_count": HepcoController.count(root_path),  # 北海道電力 2016/4/1〜
-        "02. tohokuepco_count": TohokuEpcoController.count(root_path),  # 東北電力 2016/4/1〜
-        "03. rikuden_count": RikudenController.count(root_path),  # 北陸電力 2016/4/1〜
-        "04. tepco_count": TepcoController.count(root_path),  # 東京電力 2016/4/1〜
-        "05. chuden_count": ChudenController.count(root_path),  # 中部電力 2016/4/1〜
-        "06. kepco_count": KepcoController.count(root_path),  # 関西電力 2016/4/1〜
-        "07. energia_count": EnergiaController.count(root_path),  # 中国電力 2016/11/1〜
-        "08. yonden_count": YondenController.count(root_path),  # 四国電力 2016/4/1〜
-        "09. kyuden_count": KyudenController.count(root_path),  # 九州電力 2016/4/1〜
-        "10. okiden_count": OkidenController.count(root_path),  # 沖縄電力 2016/4/1〜
+        "01. hepco_count": HepcoController.count(root_path),
+        "02. tohokuepco_count": TohokuEpcoController.count(root_path),
+        "03. rikuden_count": RikudenController.count(root_path),
+        "04. tepco_count": TepcoController.count(root_path),
+        "05. chuden_count": ChudenController.count(root_path),
+        "06. kepco_count": KepcoController.count(root_path),
+        "07. energia_count": EnergiaController.count(root_path),
+        "08. yonden_count": YondenController.count(root_path),
+        "09. kyuden_count": KyudenController.count(root_path),
+        "10. okiden_count": OkidenController.count(root_path),
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
@@ -81,16 +81,16 @@ def get(request):
 
     data = {
         "message": "Success",
-        "hepco": HepcoController.get(root_path, unit, from_value, to_value),  # 北海道電力 2016/4/1〜
-        "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),  # 東北電力 2016/4/1〜
-        "rikuden": RikudenController.get(root_path, unit, from_value, to_value),  # 北陸電力 2016/4/1〜
-        "tepco": TepcoController.get(root_path, unit, from_value, to_value),  # 東京電力 2016/4/1〜
-        "chuden": ChudenController.get(root_path, unit, from_value, to_value),  # 中部電力 2016/4/1〜
-        "kepco": KepcoController.get(root_path, unit, from_value, to_value),  # 関西電力 2016/4/1〜
-        "energia": EnergiaController.get(root_path, unit, from_value, to_value),  # 中国電力 2016/11/1〜
-        "yonden": YondenController.get(root_path, unit, from_value, to_value),  # 四国電力 2016/4/1〜
-        "kyuden": KyudenController.get(root_path, unit, from_value, to_value),  # 九州電力 2016/4/1〜
-        "okiden": OkidenController.get(root_path, unit, from_value, to_value)  # 沖縄電力 2016/4/1〜
+        "hepco": HepcoController.get(root_path, unit, from_value, to_value),
+        "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),
+        "rikuden": RikudenController.get(root_path, unit, from_value, to_value),
+        "tepco": TepcoController.get(root_path, unit, from_value, to_value),
+        "chuden": ChudenController.get(root_path, unit, from_value, to_value),
+        "kepco": KepcoController.get(root_path, unit, from_value, to_value),
+        "energia": EnergiaController.get(root_path, unit, from_value, to_value),
+        "yonden": YondenController.get(root_path, unit, from_value, to_value),
+        "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
+        "okiden": OkidenController.get(root_path, unit, from_value, to_value)
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
@@ -104,16 +104,16 @@ def check_download_page(request):
     start = time.time()
 
     data = {
-        "01. hepco_result": HepcoController.check_download_page(root_path),  # 北海道電力 2016/4/1〜
-        "02. tohokuepco_result": TohokuEpcoController.check_download_page(root_path),  # 東北電力 2016/4/1〜
-        "03. rikuden_result": RikudenController.check_download_page(root_path),  # 北陸電力 2016/4/1〜
-        "04. tepco_result": TepcoController.check_download_page(root_path),  # 東京電力 2016/4/1〜
-        "05. chuden_result": ChudenController.check_download_page(root_path),  # 中部電力 2016/4/1〜
-        "06. kepco_result": KepcoController.check_download_page(root_path),  # 関西電力 2016/4/1〜
-        "07. energia_result": EnergiaController.check_download_page(root_path),  # 中国電力 2016/11/1〜
-        "08. yonden_result": YondenController.check_download_page(root_path),  # 四国電力 2016/4/1〜
-        "09. kyuden_result": KyudenController.check_download_page(root_path),  # 九州電力 2016/4/1〜
-        "10. okiden_result": OkidenController.check_download_page(root_path),  # 沖縄電力 2016/4/1〜
+        "01. hepco_result": HepcoController.check_download_page(root_path),
+        "02. tohokuepco_result": TohokuEpcoController.check_download_page(root_path),
+        "03. rikuden_result": RikudenController.check_download_page(root_path),
+        "04. tepco_result": TepcoController.check_download_page(root_path),
+        "05. chuden_result": ChudenController.check_download_page(root_path),
+        "06. kepco_result": KepcoController.check_download_page(root_path),
+        "07. energia_result": EnergiaController.check_download_page(root_path),
+        "08. yonden_result": YondenController.check_download_page(root_path),
+        "09. kyuden_result": KyudenController.check_download_page(root_path),
+        "10. okiden_result": OkidenController.check_download_page(root_path),
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
