@@ -64,7 +64,7 @@
 ## 手段
  - アプリケーションの構築・運用。
  - 考察を加えたレポーティング活動。
-   - 個人的なイメージとしては、[Boston Consulting Group](https://www.bcg.com/ja-jp/featured-insights/how-to/corporate-citizenship-strategy.aspx)のような電力業界に特化したレポーティング。
+   - 個人的なイメージとしては、[Boston Consulting Group](https://www.bcg.com/ja-jp/featured-insights/how-to/corporate-citizenship-strategy.aspx)の電力業界版レポーティング。
 ## 費用
  - 必要経費（月3−4万程度、年間40万-50万想定）
    - アプリケーションの運用コスト
