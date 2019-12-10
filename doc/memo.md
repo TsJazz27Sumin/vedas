@@ -10,3 +10,15 @@
 - [AES EC2上でsshを使ってgit clone を成功させるまでの手順](https://qiita.com/konuma1022/items/986eb58d4b94bef0c0a5)
 - [ssh-add で Could not open a connection to your authentication agent が出るときの対処法](https://qiita.com/ytheta/items/cbbd0b833c19784dfa1e)
 - chmod 600 ~/.ssh/config
+- pip install -r requirements/general.txt
+- [redisの設定](https://blog.kotamiyake.me/tech/output-dump-rdb-to-current-directory/)
+- Djangoのサーバーを立てるところまで。
+- 2019/12/10作業ログ
+  - EC2インスタンスの作成
+  - セキュリティグループの設定
+  - ElasticIPの紐付け
+  - 自動停止ルールの設定
+  - SSHでの接続
+  - EC2上での必要なモジュール等のインストール
+  - Gitへの接続設定
+  - Djangoの起動チャレンジ
