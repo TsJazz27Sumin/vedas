@@ -10,6 +10,8 @@
 - [AES EC2上でsshを使ってgit clone を成功させるまでの手順](https://qiita.com/konuma1022/items/986eb58d4b94bef0c0a5)
 - [ssh-add で Could not open a connection to your authentication agent が出るときの対処法](https://qiita.com/ytheta/items/cbbd0b833c19784dfa1e)
 - chmod 600 ~/.ssh/config
+- pip3 install --upgrade pip
+- [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
 - pip install -r requirements/general.txt
 - [redisの設定](https://blog.kotamiyake.me/tech/output-dump-rdb-to-current-directory/)
 - Djangoのサーバーを立てるところまで。
