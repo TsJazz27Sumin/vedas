@@ -1,0 +1,1690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" />
+<link rel="stylesheet" type="text/css" href="/css/wheeling_disclosure.css" charset="UTF-8" />
+<meta name="keywords" content="SitePublisKey-0001384138,3.6.0 001" />
+<meta name="description" content="系統情報の公開についてのページです。" />
+
+<title>九州電力　系統情報の公開</title>
+<script type="text/javascript" src="/scripts/jquery-1.7.min.js"></script>
+			<script type="text/javascript" src="/scripts/compat.js"></script>
+<script type="text/javascript" src="/prototype.js"></script>
+<script type="text/javascript">
+<!--
+		var MenuInputButton_1582815 = Class.create();
+		MenuInputButton_1582815.prototype = {
+			initialize: function(className, cmd, parentElement) {
+				var elements = document.getElementsByClassName(className, parentElement);
+				for (var i = 0, len = elements.length; i < len; i++) {
+					Event.observe(elements[i], 'click', this.btnClickEvent.bindAsEventListener(this, cmd));
+					Event.observe(elements[i], 'keypress', this.btnClickEvent.bindAsEventListener(this, cmd));
+				}
+			},
+			btnClickEvent: function(event, cmd) {
+				var element = Event.element(event);
+				jsDoMenuBtn1582815(cmd);
+				Event.stop(event);
+			}
+		};
+
+		Event.observe(window, 'load', function () {
+			new MenuInputButton_1582815('pbSmartViewAllButtonText', 'viewAll');
+		});
+
+		function jsDoMenuBtn1582815(cmd) {
+			switch (cmd) {
+				case 'viewAll':
+					location.href="/wheeling_disclosure?viewAll=1";
+					return;
+			}
+		}
+	var pbGlobalAliasBase = '/';
+//-->
+</script>
+<script type="text/javascript" src="/public.js"></script>
+<!--<script type="text/javascript" src="/scripts/iui/iui.js"></script>-->
+<link rel="apple-touch-icon" href="/library/smt/webclip.png" />
+<link rel="stylesheet" type="text/css" href="/library/style.css" charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/library/css/enev/style_effort.css">
+
+<style type="text/css">
+<!--
+
+div#main-contents,
+div#main-contents p,
+div#main-contents td {
+  line-height:1.4;
+  font-size:100%;
+}
+
+div.box1 {
+margin-top:30px;
+border:#666 1px solid;
+padding:15px;
+width:550px;
+}
+
+span.renkeichui {
+
+display: block;
+text-indent: -2em;
+margin-left: 3em;
+margin-bottom: 5px;
+
+}
+
+table.csvtbl {
+margin: auto;
+margin-bottom : 0 !important;
+border-collapse: collapse;
+width: 580px;
+}
+
+table.csvtbl tr th {
+border:solid 1px #333;
+background:#ccc;
+padding:1em !important;
+text-align: center !important;
+color: #000 !important;
+}
+
+table.csvtbl tr td {
+border:solid 1px #333;
+padding:1em;
+text-align:center;
+}
+
+span.csvtxt {
+display: block;
+margin-top: 2px;
+margin-left: 10px;
+}
+-->
+</style>
+<meta property="og:title" content="九州電力　系統情報の公開" />
+<meta property="og:image" content="http://www.kyuden.co.jp/library/2017/images/common/fb.png" />
+<meta property="og:site_name" content="九州電力" />
+<meta property="og:description" content="系統情報の公開についてのページです。" />
+<meta property="og:url" content="http://www.kyuden.co.jp/wheeling_disclosure.html" />
+<meta property="og:type" content="article" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.kyuden.co.jp/wheeling_disclosure_smt.html" />
+<link rel="canonical" href="http://www.kyuden.co.jp/wheeling_disclosure.html" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJP4ZL');</script>
+<!-- End Google Tag Manager -->
+
+
+<link rel="stylesheet" type="text/css" href="/library/2017/css/fontsize.css" charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/library/2017/css/style.css" charset="UTF-8" />
+
+
+<script type="text/javascript" src="/library/2017/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/library/2017/js/fontsize.js"></script>
+<script type="text/javascript" src="/library/2017/js/baser.min.js"></script>
+
+<script type="text/javascript" src="/library/2017/js/script_common.js"></script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+<!--
+jQuery.noConflict();
+//-->
+//]]>
+</script>
+<script type="text/javascript" charset="UTF-8" src="http://search.kyuden.co.jp/common/js/sa/i_search_assist.js"></script>
+<script type="text/javascript" charset="UTF-8" src="http://search.kyuden.co.jp/common/js/search_tool.js"></script>
+<!--date=20191209-->
+	</head>
+<body>
+<noscript><p>このページではjavascriptを使用しています。</p></noscript>
+<div id="page" class="pbPage">
+<div id="areaWrapper1" class="pbAreaWrapper1"><div id="leftArea" class="pbLeftArea">
+	<div id="area2" class="pbArea ">
+		<div class="pbNested " >
+			<div class="pbNested pbNestedWrapper" id="pbBlock914578">
+<div class="pbBlock pbBlockBase">
+<div><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJP4ZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --></div>
+</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock914579">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_skipnav">
+<div class="n_skipnav_body"><a href="#mainArea"><img style="border-width: 0px;" alt="ナビゲーションをスキップして本文へ" src="/library/image/header/spacer.gif" width="1" height="1" /></a> <a href="#gnavi"><img style="border-width: 0px;" alt="グローバルナビゲーションへ" src="/library/image/header/spacer.gif" width="1" height="1" /></a> <a href="#utilMenu"><img style="border-width: 0px;" alt="ユーティリティナビゲーションへ" src="/library/image/header/spacer.gif" width="1" height="1" /></a> <a href="#footerMenu"><img style="border-width: 0px;" alt="フッターメニューへ" src="/library/image/header/spacer.gif" width="1" height="1" /></a></div>
+</div>
+<div id="utilMenu" class="n_header n_header_pc">
+<div class="n_header_global_logo"><a href="./"><img src="/library/2017/images/common/head_logo.png" alt="九州電力" /></a></div>
+<div class="n_header_low">
+<div class="n_side_nav">
+<div class="n_side_nav_upper">
+<ul>
+<li class="nav_element nav_element_power"><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/"><img src="/library/2017/images/common/head_info_icon01.png" alt="停電情報" width="18" /> <span>停電情報</span></a></li>
+<li class="nav_element nav_element_lightning"><a href="kaminari.html"><img src="/library/2017/images/common/head_info_icon02.png" alt="落雷情報" width="17" /> <span>落雷情報</span></a></li>
+<li class="nav_element_contactmail201807"><a href="http://www1.kyuden.co.jp/php/inquires/index.php/menu"><img src="/library/2017/images/common/head_menu_icon06.png" alt="お問い合わせ（お便りBOX）" width="22" /> <span>お問い合わせ<br />
+（お便りBOX）</span></a></li>
+<li><a href="/rate_reception_phone.html"><img src="/library/2017/images/common/head_menu_icon01.png" alt="営業所配電事業所" width="15" /> <span>営業所<br />
+配電事業所</span></a></li>
+<li><a href="/functions_inquire_faq_index.html"><img src="/library/2017/images/common/head_menu_icon02.png" alt="よくあるご質問" width="10" /> <span>よくある<br />
+ご質問</span></a></li>
+</ul>
+<!-- /.n_side_nav_upper --></div>
+<div class="n_side_nav_others">
+<ul>
+<li><a href="https://www.facebook.com/kyuden.jp" target="_blank"><img src="/library/2017/images/common/head_sns_icon01.png" alt="公式Facebook" width="34" /> <span>公式Facebook</span></a></li>
+<li><a href="https://twitter.com/Kyuden_official" target="_blank"><img src="/library/2017/images/common/head_sns_icon_tw.png" alt="公式Twitter" width="34" /> <span>公式Twitter</span></a></li>
+<li><a href="https://www.instagram.com/kyuden_official/" target="_blank"><img src="/library/2017/images/common/head_sns_icon03.png" alt="Instagram" width="34" /> <span>Instagram</span></a></li>
+<li><a href="https://www.youtube.com/user/Kyudenchannel" target="_blank"><img src="/library/2017/images/common/head_sns_icon02.png" alt="公式YouTube" width="33" /> <span>Kyuden Channel<br />
+（YouTube）</span></a></li>
+</ul>
+<!-- /.n_side_nav_others --></div>
+<!-- /.n_side_nav --></div>
+<div id="gnavi" class="n_globalnav">
+<ul class="n_globalnav_lv1">
+<li><a href="/user_index.html" class="link-pc-1">個人のお客さま <small>電気料金・各種手続きの<br />
+ご案内</small></a>
+<ul class="n_globalnav_lv2">
+<li class="n_globalnav_close_button"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_index.html" class="n_globalnav_lv2_link link-pc-1">個人のお客さま <small>電気料金・各種手続きのご案内</small></a></li>
+<li><a href="/user_results_index.html" class="link-pc-1-1">電気料金や使用量の実績を確認する<br />
+〜キレイライフプラス〜</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_results_index.html" class="link-pc-1-1">電気料金や使用量の実績を確認する<br />
+〜キレイライフプラス〜</a></li>
+<li><a href="user_results_index#internet" class="link-pc-1-1-1">インターネットで確認する</a></li>
+<li><a href="/rate_confirmation_index.html" class="link-pc-1-1-2">電話や書面で確認する</a></li>
+<li><a href="/rate_reception_oshirase_mikata.html" class="link-pc-1-1-3">「電気ご使用量のお知らせ」（検針票）で確認する</a></li>
+</ul>
+</li>
+<li><a href="/user_optimum_index.html" class="link-pc-1-2">最適な契約内容や電気・ガス料金を試算する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_optimum_index.html" class="link-pc-1-2">最適な契約内容や電気・ガス料金を<br />
+試算する</a></li>
+<li><a href="user_optimum_index#keiyaku" class="link-pc-1-2-1">現在の契約を確認する</a></li>
+<li><a href="user_optimum_index#menu1" class="link-pc-1-2-2">最適な料金プランを試算する</a></li>
+<li><a href="user_optimum_index#menu2" class="link-pc-1-2-3">最適なアンペア（契約容量）を試算する</a></li>
+<li><a href="/rate_simm_index.html" class="link-pc-1-2-4">ひと月の電気料金を試算する</a></li>
+<li><a href="user_optimum_index#menu3" class="link-pc-1-2-5">ひと月の電気・ガスセット料金を試算する</a></li>
+</ul>
+</li>
+<li><a href="/user_menu_index.html" class="link-pc-1-3">電気料金プラン・単価・電源構成を調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_menu_index.html" class="link-pc-1-3">電気料金プラン・単価・電源構成を<br />
+調べる</a></li>
+<li><a href="user_menu_index#keiyaku" class="link-pc-1-3-1">現在の契約を確認する</a></li>
+<li><a href="/menu_gaiyou.html" class="link-pc-1-3-2">料金プランの概要および料金単価を確認する</a></li>
+<li><a href="/rate_adj_power_composition_co2.html" class="link-pc-1-3-3">電源構成・CO2排出係数を確認する</a></li>
+<li><a href="user_menu_index#nenchou1" class="link-pc-1-3-4">燃料費調整単価を確認する</a></li>
+<li><a href="user_menu_index#universal" class="link-pc-1-3-7">離島ユニバーサルサービス調整単価を確認する</a></li>
+<li><a href="user_menu_index#nenchou2" class="link-pc-1-3-5">電気の契約条件等を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_imposition.html" class="link-pc-1-3-6">再生可能エネルギー発電促進賦課金単価を確認する</a></li>
+</ul>
+</li>
+<li><a href="/user_structure_index.html" class="link-pc-1-4">電気料金の仕組みを調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_structure_index.html" class="link-pc-1-4">電気料金の仕組みを調べる</a></li>
+<li><a href="/rate_adj_other_2.html" class="link-pc-1-4-1">燃料費調整制度を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_gaiyou.html" class="link-pc-1-4-2">再生可能エネルギーの固定価格買取制度を確認する</a></li>
+<li><a href="/user_wheeling_index.html" class="link-pc-1-4-3">託送料金相当額を確認する</a></li>
+<li><a href="/user_shushi_index.html" class="link-pc-1-4-4">部門別収支の算定結果を確認する</a></li>
+<li><a href="user_structure_index#topics" class="link-pc-1-4-5">電気料金に関するお知らせ</a></li>
+</ul>
+</li>
+<li><a href="/user_payment_index.html" class="link-pc-1-5">電気料金のお支払い方法を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_payment_index.html" class="link-pc-1-5">電気料金のお支払い方法を確認する</a></li>
+<li><a href="/user_payment_transfer.html" class="link-pc-1-5-1">口座振替でのお支払い</a></li>
+<li><a href="/user_payment_credit.html" class="link-pc-1-5-2">クレジットカードでのお支払い</a></li>
+<li><a href="/user_payment_paper.html" class="link-pc-1-5-3">振込用紙でのお支払い</a></li>
+<li><a href="/user_payment_overdue.html" class="link-pc-1-5-4">延滞利息制度を確認する</a></li>
+</ul>
+</li>
+<li><a href="/rate_reception_index.html" class="link-pc-1-6">インターネットからのお手続き・お申込み</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_reception_index.html" class="link-pc-1-6">インターネットからの<br />
+お手続きやお申し込み</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/stop/stop.php" class="link-pc-1-6-1">ご使用を停止する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/start/start.php" class="link-pc-1-6-2">ご使用を開始する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/switch/switch.php" class="link-pc-1-6-8">他社から九州電力へのご契約切替のお申込み</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/menu/menu.php" class="link-pc-1-6-3">料金プランを変更する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/change/change.php" class="link-pc-1-6-4">ご契約アンペアを変更する</a></li>
+<li><a href="/rate_reception_account.html" class="link-pc-1-6-5">口座振替払いのお申込み（新規・変更）</a></li>
+<li><a href="/rate_reception_creditcard.html" class="link-pc-1-6-6">クレジットカード払いのお申込み（新規・変更）</a></li>
+<li><a href="/rate_reception_rakuraku.html" class="link-pc-1-6-7">電気の新増設（低圧工事）のお申込み</a></li>
+</ul>
+</li>
+<li><a href="http://www.q-mirai.co.jp/review/" target="_blank" class="n_globalnav_lv2_link link-pc-1-7">関東エリアにお住まいのお客さまへ<br />
+（九電みらいエナジー）</a></li>
+<li><a href="/gas_index.html" class="link-pc-1-8">ガス販売（きゅうでんガス）について</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/gas_index.html" class="link-pc-1-8">ガス販売（きゅうでんガス）について</a></li>
+<li><a href="/gas_system.html" class="link-pc-1-8-1">九州電力のガス</a></li>
+<li><a href="/gas_plan_index.html" class="link-pc-1-8-2">料金プラン</a></li>
+<li><a href="/gas_flow.html" class="link-pc-1-8-3">ご契約までの流れ</a></li>
+<li><a href="/gas_payment.html" class="link-pc-1-8-4">お支払い方法について</a></li>
+<li><a href="https://www.gas.kyuden.co.jp/mierukaWeb/areaSentaku/" target="_blank" class="link-pc-1-8-5">お申込み（当社への切替、お支払方法の変更）</a></li>
+<li><a href="/gas_emergency.html" class="link-pc-1-8-6">緊急（ガス漏れ・地震など）の時は</a></li>
+<li><a href="/gas_plan_adj.html" class="link-pc-1-8-7">原料費調整制度</a></li>
+<li><a href="/gas_faq.html" class="link-pc-1-8-8">よくあるご質問</a></li>
+</ul>
+</li>
+<li><a href="/user_emergency_index.html" class="link-pc-1-9">停電や落雷に関する情報を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_emergency_index.html" class="link-pc-1-9">停電や落雷に関する情報を確認する</a></li>
+<li><a href="/em_mail.html" class="link-pc-1-9-1">携帯メールサービスで停電情報を確認する</a></li>
+<li><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/" class="link-pc-1-9-2">停電情報を確認する</a></li>
+<li><a href="/life_living_info_emergency.html" class="link-pc-1-9-3">非常時の停電にそなえて</a></li>
+<li><a href="/life_living_guide_a05.html" class="link-pc-1-9-4">電気がつかないときの確認方法</a></li>
+<li><a href="kaminari.html" class="link-pc-1-9-5">落雷情報</a></li>
+<li><a href="/life_living_safe_safe4.html" class="link-pc-1-9-6">雷が鳴っているときの対処方法</a></li>
+</ul>
+</li>
+<li><a href="/life_living_index.html" class="link-pc-1-10">便利で安全な電気の使い方を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/life_living_index.html" class="link-pc-1-10">便利で安全な電気の使い方を<br />
+確認する</a></li>
+<li><a href="/life_living_denkishittoku_index.html" class="link-pc-1-10-1">電気をご使用になる際の大切なこと</a></li>
+<li><a href="/life_living_guide_a01.html" class="link-pc-1-10-2">お引越しやご契約アンペア変更時のお願い</a></li>
+<li><a href="/life_living_safe_index.html" class="link-pc-1-10-3">安全な電気の使い方</a></li>
+<li><a href="/life_living_denji_index.html" class="link-pc-1-10-4">電磁界に関するQ&amp;A</a></li>
+<li><a href="/life_living_meter.html" class="link-pc-1-10-5">計量器（メーター）の見方</a></li>
+<li><a href="/rate_application_saving_energy_presentation.html" class="link-pc-1-10-6">節電・節約手法をご紹介します</a></li>
+<li><a href="/life_saving_index.html" class="link-pc-1-10-7">よくわかる電気の省エネ</a></li>
+<li><a href="/life_value_kakeibo_index.html" class="link-pc-1-10-8">みらいくんの環境家計簿</a></li>
+<li><a href="/life_living_info_inquire.html" class="link-pc-1-10-9">電気設備の安全調査のお知らせ</a></li>
+<li><a href="/rate_reception_law.html" class="link-pc-1-10-10">特定商取引法に基づく表記について</a></li>
+<li><a href="/life_value_index.html" class="link-pc-1-10-11">便利でお得な情報のご紹介</a></li>
+</ul>
+</li>
+<li><a href="/rate_purchase_index.html" class="link-pc-1-11">再生可能エネルギーからの電力購入について</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_purchase_index.html" class="link-pc-1-11">再生可能エネルギーからの<br />
+電力購入について</a></li>
+<li><a href="/rate_purchase_institution.html" class="link-pc-1-11-1">再生可能エネルギー固定価格買取制度について</a></li>
+<li><a href="/rate_purchase_control.html" class="link-pc-1-11-2">再生可能エネルギーの出力制御について</a></li>
+<li><a href="/rate_purchase_dbprocess.html" class="link-pc-1-11-3">電源接続案件募集プロセスのご案内</a></li>
+<li><a href="/rate_purchase_procedure.html" class="link-pc-1-11-4">ご契約手続きについてのご案内</a></li>
+<li><a href="/rate_purchase_afterfit.html" class="link-pc-1-11-8">買取制度期間満了後の買取について</a></li>
+<li><a href="/rate_purchase_topics.html" class="link-pc-1-11-5">重要なお知らせ</a></li>
+<li><a href="/functions_inquire_faq_recyclable-energy_index.html" class="link-pc-1-11-6">よくあるご質問</a></li>
+<li><a href="rate_purchase_index#reception" class="link-pc-1-11-7">お問い合わせ</a></li>
+</ul>
+</li>
+<li><a href="/rate_power_station_system.html" class="n_globalnav_lv2_link link-pc-1-12">自家発電や蓄電池を低圧電線路に<br />
+連系されるお客さま</a></li>
+<li><a href="/rate_electrical.html" class="link-pc-1-13">電気工事店の皆さま<br />
+（各種お願い・お申込み）</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_electrical.html" class="link-pc-1-13">電気工事店の皆さま<br />
+（各種お願い・お申込み）</a></li>
+<li><a href="/rate_electrical_submission.html" class="link-pc-1-13-1">早期お申込みのお願い</a></li>
+<li><a href="/rate_electrical_handbook.html" class="link-pc-1-13-2">お申込みにあたっての留意点<br />
+（冊子にてご覧いただけます）</a></li>
+<li><a href="/rate_reception_rakuraku.html" class="link-pc-1-13-3">「インターネット」（らくらくネット）でのお申込み方法</a></li>
+<li><a href="/rate_electrical_certificate.html" class="link-pc-1-13-4">「電気ご使用申込書」の記入方法</a></li>
+<li><a href="/rate_electrical_price.html" class="link-pc-1-13-5">工事費用（諸工料・臨時工事費の単価）</a></li>
+<li><a href="/rate_electrical_smartmeter.html" class="link-pc-1-13-7">スマートメーターの種類・配線方法</a></li>
+<li><a href="/rate_electrical_smartmeter_reverse.html" class="link-pc-1-13-8">双方向計量機能付スマートメーターの特徴（逆潮流）</a></li>
+</ul>
+</li>
+<li class="n_gnav_sub_menu"><a href="/rate_reception_phone.html" class="link-pc-1-14">営業所や配電事業所のお問い合わせ先一覧</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_reception_phone.html" class="link-pc-1-14">営業所や配電事業所の<br />
+お問い合わせ先一覧</a></li>
+<li><a href="/rate_reception_phone_kitakyushu_index.html" class="link-pc-1-14-1">福岡県（北九州地区）</a></li>
+<li><a href="/rate_reception_phone_fukuoka_index.html" class="link-pc-1-14-2">福岡県（福岡地区）</a></li>
+<li><a href="/rate_reception_phone_saga_index.html" class="link-pc-1-14-3">佐賀県</a></li>
+<li><a href="/rate_reception_phone_nagasaki_index.html" class="link-pc-1-14-4">長崎県</a></li>
+<li><a href="/rate_reception_phone_oita_index.html" class="link-pc-1-14-5">大分県</a></li>
+<li><a href="/rate_reception_phone_kumamoto_index.html" class="link-pc-1-14-6">熊本県</a></li>
+<li><a href="/rate_reception_phone_miyazaki_index.html" class="link-pc-1-14-7">宮崎県</a></li>
+<li><a href="/rate_reception_phone_kagoshima_index.html" class="link-pc-1-14-8">鹿児島県</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/business_index.html" class="link-pc-2">法人のお客さま <small>電気料金・各種サービスの<br />
+ご案内</small></a>
+<ul class="n_globalnav_lv2">
+<li class="n_globalnav_close_button"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_index.html" class="n_globalnav_lv2_link link-pc-2">法人のお客さま <small>電気料金・各種サービスのご案内</small></a></li>
+<li><a href="/business_menu_index.html" class="link-pc-2-1">電気料金メニュー・単価・電源構成を調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_menu_index.html" class="link-pc-2-1">電気料金メニュー・単価・電源構成を調べる</a></li>
+<li><a href="/business_menu_select.html" class="link-pc-2-1-1">料金メニューや単価を確認する</a></li>
+<li><a href="/agreement_clause_power_supply_index_h260401.html" class="link-pc-2-1-2">電気の契約条件等を確認する</a></li>
+<li><a href="/rate_adj_power_composition_co2.html" class="link-pc-2-1-3">電源構成・CO2排出係数を確認する</a></li>
+<li><a href="business_menu_index#information" class="link-pc-2-1-4">電気のご案内（ご契約のパンフレット）</a></li>
+<li><a href="business_menu_index#nenchou" class="link-pc-2-1-5">燃料費調整単価を確認する</a></li>
+<li><a href="business_menu_index#universal" class="link-pc-2-1-7">離島ユニバーサルサービス調整単価を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_imposition.html" class="link-pc-2-1-6">再生可能エネルギー発電促進賦課金単価を確認する</a></li>
+</ul>
+</li>
+<li><a href="/business_optimum_index.html" class="link-pc-2-2">最適な契約内容や料金を試算する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_optimum_index.html" class="link-pc-2-2">最適な契約内容や料金を試算する</a></li>
+<li><a href="business_optimum_index#keiyaku" class="link-pc-2-2-1">現在の契約を確認する</a></li>
+<li><a href="http://www1.kyuden.co.jp/php/ryokin_simulator/public/business/" class="link-pc-2-2-2">最適な料金メニューを試算する</a></li>
+<li><a href="business_optimum_index#menu2" class="link-pc-2-2-3">ひと月の電気料金を試算する</a></li>
+</ul>
+</li>
+<li><a href="/business_structure_index.html" class="link-pc-2-3">電気料金の仕組みを調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_structure_index.html" class="link-pc-2-3">電気料金の仕組みを調べる</a></li>
+<li><a href="/agreement_adj_h26_5.html" class="link-pc-2-3-1">燃料費調整制度を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_gaiyou.html" class="link-pc-2-3-2">再生可能エネルギーの固定価格買取制度を確認する</a></li>
+<li><a href="/user_shushi_index.html" class="link-pc-2-3-3">部門別収支の算定結果を確認する</a></li>
+<li><a href="business_structure_index#topics" class="link-pc-2-3-4">電気料金に関するお知らせ</a></li>
+</ul>
+</li>
+<li><a href="/business_results_index.html" class="link-pc-2-4">電気料金や使用量の実績を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_results_index.html" class="link-pc-2-4">電気料金や使用量の実績を確認する</a></li>
+<li><a href="business_results_index#seikyusho" class="link-pc-2-4-1">請求書で確認する</a></li>
+<li><a href="/functions_privacy_hojin.html" class="link-pc-2-4-2">実績を書面で確認する</a></li>
+</ul>
+</li>
+<li><a href="/business_payment_index.html" class="link-pc-2-5">電気料金のお支払い方法を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_payment_index.html" class="link-pc-2-5">電気料金のお支払い方法を確認する</a></li>
+<li><a href="/business_payment_transfer.html" class="link-pc-2-5-1">口座振替でのお支払い</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/account/phase1.php" class="link-pc-2-5-2">口座振替払い申込書のご請求</a></li>
+<li><a href="/business_payment_paper.html" class="link-pc-2-5-3">振込用紙でのお支払い</a></li>
+</ul>
+</li>
+<li><a href="/business_esco_index.html" class="link-pc-2-6">節電や省エネ手法のご紹介</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/business_esco_index.html" class="link-pc-2-6">節電や省エネ手法のご紹介</a></li>
+<li><a href="/service_esco_save-electricity_economy.html" class="link-pc-2-6-1">電気の省エネ（節電）手法のご紹介</a></li>
+<li><a href="/service_esco.html" class="link-pc-2-6-2">省エネ関連情報（導入事例等）のご紹介</a></li>
+</ul>
+</li>
+<li class="n_globalnav_lv2_link"><a href="http://www.q-mirai.co.jp/review" target="_blank" class="n_globalnav_lv2_link link-pc-2-7">関東エリアにお住まいのお客さまへ<br />
+（九電みらいエナジー）</a></li>
+<li class="n_globalnav_lv2_link"><a href="/rate_purchase_index.html" class="link-pc-2-8">再生可能エネルギーからの<br />
+電力購入について</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_purchase_index.html" class="link-pc-2-8">再生可能エネルギーからの<br />
+電力購入について</a></li>
+<li><a href="/rate_purchase_institution.html" class="link-pc-2-8-1">再生可能エネルギー固定価格買取制度について</a></li>
+<li><a href="/rate_purchase_control.html" class="link-pc-2-8-2">再生可能エネルギーの出力制御について</a></li>
+<li><a href="/rate_purchase_dbprocess.html" class="link-pc-2-8-3">電源接続案件募集プロセスのご案内</a></li>
+<li><a href="/rate_purchase_procedure.html" class="link-pc-2-8-4">ご契約手続きについてのご案内</a></li>
+<li><a href="/rate_purchase_afterfit.html" class="link-pc-2-8-8">買取制度期間満了後の買取について</a></li>
+<li><a href="/rate_purchase_topics.html" class="link-pc-2-8-5">重要なお知らせ</a></li>
+<li><a href="/functions_inquire_faq_recyclable-energy_index.html" class="link-pc-2-8-6">よくあるご質問</a></li>
+<li><a href="rate_purchase_index#reception" class="link-pc-2-8-7">お問い合わせ</a></li>
+</ul>
+</li>
+<li class="n_globalnav_lv2_link"><a href="/agreement_download.html" class="n_globalnav_lv2_link link-pc-2-9">高圧・特別高圧お客さまの<br />
+各種申込書ダウンロード</a></li>
+<li><a href="/service_index.html" class="link-pc-2-10">法人お客さまの各種サービスのご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/service_index.html" class="link-pc-2-10">法人お客さまの<br />
+各種サービスのご案内</a></li>
+<li><a href="/service_ask-pump-off.html" class="link-pc-2-10-1">自家発電設備連系の事前相談</a></li>
+<li><a href="/service_ipp_index.html" class="link-pc-2-10-2">最適なエネルギー供給システムや<br />
+運用方法のご提案（自家発電）</a></li>
+<li><a href="/service_kitchen_index.html" class="link-pc-2-10-3">電化厨房のご案内</a></li>
+<li><a href="/service_dhc_index.html" class="link-pc-2-10-4">環境に優しい電気と高効率な<br />
+電気式空調システムのご案内</a></li>
+<li><a href="/service_nouden_index.html" class="link-pc-2-10-5">農業電化での省エネ・省力化のご案内</a></li>
+<li><a href="/service_pole-tube_index.html" class="link-pc-2-10-6">電柱共架・管路等の利用のご案内</a></li>
+<li><a href="/service_transfer.html" class="link-pc-2-10-7">高圧一括受電化による供給設備の<br />
+譲渡のご案内</a></li>
+<li><a href="/wheeling_index.html" class="link-pc-2-10-8">電力託送供給等のご案内</a></li>
+</ul>
+</li>
+<li><a href="/user_emergency_index.html" class="link-pc-2-11">停電や落雷に関する情報を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/user_emergency_index.html" class="link-pc-2-11">停電や落雷に関する情報を確認する</a></li>
+<li><a href="/em_mail.html" class="link-pc-2-11-1">携帯メールサービスで停電情報を確認する</a></li>
+<li><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/" class="link-pc-2-11-2">停電情報を確認する</a></li>
+<li><a href="/life_living_info_emergency.html" class="link-pc-2-11-3">非常時の停電にそなえて</a></li>
+<li><a href="/life_living_guide_a05.html" class="link-pc-2-11-4">電気がつかないときの確認方法</a></li>
+<li><a href="kaminari.html" class="link-pc-2-11-5">落雷情報</a></li>
+<li><a href="/life_living_safe_safe4.html" class="link-pc-2-11-6">雷が鳴っているときの対処方法</a></li>
+</ul>
+</li>
+<li><a href="/company_tech_index.html" class="link-pc-2-12">当社の技術開発への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_tech_index.html" class="link-pc-2-12">当社の技術開発への取組み</a></li>
+<li><a href="/company_tech_outline_organization.html" class="link-pc-2-12-1">九州電力総合研究所の概要</a></li>
+<li><a href="/company_tech_news_index.html" class="link-pc-2-12-2">技術開発情報プレスリリース</a></li>
+<li><a href="/company_tech_index_robot.html" class="link-pc-2-12-3">配電作業の近代化</a></li>
+<li><a href="/service_tech_sales_index.html" class="link-pc-2-12-4">研究開発品のご紹介</a></li>
+<li><a href="/service_tech_rental_index.html" class="link-pc-2-12-5">研究設備のレンタルのご案内</a></li>
+<li><a href="/service_tech_consulting_index.html" class="link-pc-2-12-6">コンサルティング、受託研究のご案内</a></li>
+</ul>
+</li>
+<li><a href="/rate_reception_phone.html" class="link-pc-2-13">営業所や配電事業所のお問い合わせ先一覧</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/rate_reception_phone.html" class="link-pc-2-13">営業所や配電事業所の<br />
+お問い合わせ先一覧</a></li>
+<li><a href="/rate_reception_phone_kitakyushu_index.html" class="link-pc-2-13-1">福岡県（北九州地区）</a></li>
+<li><a href="/rate_reception_phone_fukuoka_index.html" class="link-pc-2-13-2">福岡県（福岡地区）</a></li>
+<li><a href="/rate_reception_phone_saga_index.html" class="link-pc-2-13-3">佐賀県</a></li>
+<li><a href="/rate_reception_phone_nagasaki_index.html" class="link-pc-2-13-4">長崎県</a></li>
+<li><a href="/rate_reception_phone_oita_index.html" class="link-pc-2-13-5">大分県</a></li>
+<li><a href="/rate_reception_phone_kumamoto_index.html" class="link-pc-2-13-6">熊本県</a></li>
+<li><a href="/rate_reception_phone_miyazaki_index.html" class="link-pc-2-13-7">宮崎県</a></li>
+<li><a href="/rate_reception_phone_kagoshima_index.html" class="link-pc-2-13-8">鹿児島県</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/company_index.html" class="link-pc-3">企業・IR情報 <small>企業情報・CSR・採用情報の<br />
+ご案内</small></a>
+<ul class="n_globalnav_lv2">
+<li class="n_globalnav_close_button"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_index.html" class="n_globalnav_lv2_link link-pc-3">企業・IR情報 <small>企業情報・CSR・採用情報のご案内</small></a></li>
+<li><a href="/company_information_index.html" class="link-pc-3-1">企業情報</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_information_index.html" class="link-pc-3-1">企業情報</a></li>
+<li><a href="/company_outline_index.html" class="link-pc-3-1-1">企業情報</a></li>
+<li><a href="/company_mission_index.html" class="link-pc-3-1-2">九電グループの思い</a></li>
+<li><a href="/company_information_vision.html" class="link-pc-3-1-5">グループ経営ビジョン・中期経営計画</a></li>
+<li><a href="/company_data_book.html" class="link-pc-3-1-3">九州電力データブック</a></li>
+<li><a href="/company_information_socialmedia_index.html" class="link-pc-3-1-4">ソーシャルメディア公式アカウント一覧</a></li>
+</ul>
+</li>
+<li><a href="/csr_index.html" class="link-pc-3-2">CSR・環境への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/csr_index.html" class="link-pc-3-2">CSR・環境への取組み</a></li>
+<li><a href="/csr_topmessage.html" class="link-pc-3-2-1">トップコミットメント</a></li>
+<li><a href="/csr_report_index.html" class="link-pc-3-2-2">九電グループサステナビリティ報告書</a></li>
+<li><a href="/csr_charter.html" class="link-pc-3-2-3">CSR基本方針</a></li>
+<li><a href="/csr_promotion_system_index.html" class="link-pc-3-2-4">CSR推進体系</a></li>
+<li><a href="/csr_management_index.html" class="link-pc-3-2-5">CSRマネジメント体制</a></li>
+<li><a href="/csr_hospitality_index.html" class="link-pc-3-2-6">お客さま満足の創造</a></li>
+<li><a href="/csr_safe.html" class="link-pc-3-2-7">安全・安心の追求</a></li>
+<li><a href="/csr_compliance_index.html" class="link-pc-3-2-8">誠実で公正な事業運営</a></li>
+<li><a href="/csr_disclosure.html" class="link-pc-3-2-9">社会との真摯なコミュニケーション</a></li>
+<li><a href="/environment_index.html" class="link-pc-3-2-10">環境にやさしい企業活動</a></li>
+<li><a href="/environment_booklet_index.html" class="link-pc-3-2-11">九電グループ環境データ集</a></li>
+<li><a href="/life_value_kakeibo_index.html" class="link-pc-3-2-12">みらいくんの環境家計簿</a></li>
+<li><a href="/company_local-social_index.html" class="link-pc-3-2-13">地域や社会と共に生きる</a></li>
+<li><a href="/company_local-social_actionplan_index.html" class="link-pc-3-2-14">地域振興への取組み</a></li>
+<li><a href="/firm-location_index.html" class="link-pc-3-2-15">九州への企業立地のご案内</a></li>
+<li><a href="/csr_employment-environment.html" class="link-pc-3-2-16">人権尊重・働きがいのある職場づくり</a></li>
+<li><a href="/diversity_index.html" class="link-pc-3-2-17">ダイバーシティ推進</a></li>
+</ul>
+</li>
+<li><a href="/ir_index.html" class="link-pc-3-3">IR情報（株主・投資家の皆さま）</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/ir_index.html" class="link-pc-3-3">IR情報（株主・投資家の皆さま）</a></li>
+<li><a href="/ir_policy.html" class="link-pc-3-3-1">IR方針</a></li>
+<li><a href="/ir_management.html" class="link-pc-3-3-2">経営方針・経営計画</a></li>
+<li><a href="/ir_library_index.html" class="link-pc-3-3-3">IR資料室</a></li>
+<li><a href="/ir_financial_index.html" class="link-pc-3-3-4">財務・業績情報</a></li>
+<li><a href="/ir_stock_index.html" class="link-pc-3-3-5">株式・社債情報</a></li>
+<li><a href="/ir_individual.html" class="link-pc-3-3-6">個人投資家の皆さまへ</a></li>
+<li><a href="/ir_calendar.html" class="link-pc-3-3-7">IRカレンダー</a></li>
+<li><a href="/ir_esg.html" class="link-pc-3-3-8">環境・社会・ガバナンス（ESG）情報</a></li>
+</ul>
+</li>
+<li><a href="/company_school_index.html" class="link-pc-3-4">エネルギー教育や文化活動</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_school_index.html" class="link-pc-3-4">エネルギー教育や文化活動</a></li>
+<li><a href="/mirai_index.html" class="link-pc-3-4-1">Qでん★みらいスクール</a></li>
+</ul>
+</li>
+<li><a href="/company_tech_index.html" class="link-pc-3-5">技術開発への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_tech_index.html" class="link-pc-3-5">技術開発への取組み</a></li>
+<li><a href="/company_tech_outline_organization.html" class="link-pc-3-5-1">九州電力総合研究所の概要</a></li>
+<li><a href="/company_tech_news_index.html" class="link-pc-3-5-2">技術開発情報プレスリリース</a></li>
+<li><a href="/company_tech_index_robot.html" class="link-pc-3-5-3">配電作業の近代化について</a></li>
+<li><a href="/service_tech_sales_index.html" class="link-pc-3-5-4">研究開発品のご紹介</a></li>
+<li><a href="/service_tech_rental_index.html" class="link-pc-3-5-5">研究設備レンタルのご紹介</a></li>
+<li><a href="/service_tech_consulting_index.html" class="link-pc-3-5-6">コンサルティングや受託研究のご紹介</a></li>
+</ul>
+</li>
+<li><a href="/company_procurement_shizai_index.html" class="n_globalnav_lv2_link link-pc-3-6">資材調達情報</a></li>
+<li><a href="/company_notice_index.html" class="n_globalnav_lv2_link link-pc-3-7">電子公告</a></li>
+<li><a href="/company_recruitment_index.html" class="n_globalnav_lv2_link link-pc-3-8">採用情報</a></li>
+<li><a href="/company_outline_groupinfo_index.html" class="n_globalnav_lv2_link link-pc-3-9">九電グループのご紹介</a></li>
+<li><a href="/company_pamphlet_book_index.html" class="link-pc-3-10">九州電力パンフレット</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/company_pamphlet_book_index.html" class="link-pc-3-10">九州電力パンフレット</a></li>
+<li><a href="/company_pamphlet_book_energy_index.html" class="link-pc-3-10-1">エネルギーや環境</a></li>
+<li><a href="/company_pamphlet_book_home_index.html" class="link-pc-3-10-2">家庭の電気</a></li>
+<li><a href="/company_pamphlet_book_plant_index.html" class="link-pc-3-10-3">発電施設</a></li>
+<li><a href="/company_pamphlet_book_pr_index.html" class="link-pc-3-10-4">見学施設</a></li>
+<li><a href="/company_pamphlet_book_area_index.html" class="link-pc-3-10-5">地域の情報</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/power_index.html" class="link-pc-4">発電 <small>原子力・火力・再生可能エネルギー</small></a>
+<ul class="n_globalnav_lv2">
+<li class="n_globalnav_close_button"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/power_index.html" class="n_globalnav_lv2_link link-pc-4">発電 <small>原子力・火力・再生可能エネルギー</small></a></li>
+<li><a href="/nuclear_index.html" class="link-pc-4-1">原子力発電</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/nuclear_index.html" class="link-pc-4-1">原子力発電</a></li>
+<li><a href="/genkai_index.html" class="link-pc-4-1-1">玄海原子力発電所</a></li>
+<li><a href="/sendai_index.html" class="link-pc-4-1-2">川内原子力発電所</a></li>
+<li><a href="/nuclear_index_8610.html" class="link-pc-4-1-3">当社の原子力発電</a></li>
+<li><a href="/nuclear_real.html" class="link-pc-4-1-4">原子力発電所リアルタイムデータ</a></li>
+<li><a href="/nuclear_notice_list.html" class="link-pc-4-1-5">地震関連情報</a></li>
+<li><a href="/torikumi_nuclear.html" class="link-pc-4-1-6">安全確保に向けた取組み</a></li>
+<li><a href="/nuclear_decommissioning_index.html" class="link-pc-4-1-7">廃止措置への取組み</a></li>
+</ul>
+</li>
+<li><a href="/effort_thirmal-power_index.html" class="link-pc-4-2">火力発電</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/effort_thirmal-power_index.html" class="link-pc-4-2">火力発電</a></li>
+<li><a href="/effort_thirmal_k_hatsuden_index.html" class="link-pc-4-2-1">火力発電所のご紹介</a></li>
+<li><a href="/effort_thirmal_new_index.html" class="link-pc-4-2-2">火力発電（石炭、石油、ガス）の仕組み</a></li>
+<li><a href="/effort_thirmal_n_hatsuden_index.html" class="link-pc-4-2-3">離島の内燃力発電所</a></li>
+<li><a href="/effort_thirmal_coal-ash.html" class="link-pc-4-2-4">石炭灰を有効活用する取組み</a></li>
+</ul>
+</li>
+<li><a href="/effort_renewable-energy_torikumi.html" class="link-pc-4-3">再生可能エネルギー</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/effort_renewable-energy_torikumi.html" class="link-pc-4-3">再生可能エネルギー</a></li>
+<li><a href="/effort_renewable-energy_application.html" class="link-pc-4-3-1">九州本土の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_ritou.html" class="link-pc-4-3-2">離島の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_geothermal.html" class="link-pc-4-3-3">地熱発電</a></li>
+<li><a href="/effort_renewable-energy_photovoltaic.html" class="link-pc-4-3-4">太陽光発電</a></li>
+<li><a href="/effort_renewable-energy_wind.html" class="link-pc-4-3-5">風力発電</a></li>
+<li><a href="/effort_renewable-energy_biomass.html" class="link-pc-4-3-6">バイオマス・廃棄物発電</a></li>
+<li><a href="/effort_water_index.html" class="link-pc-4-3-7">水力発電</a></li>
+<li><a href="/effort_renewable-energy_torikumi_smartgrid.html" class="link-pc-4-3-8">スマートグリッドへの取組み</a></li>
+<li><a href="/effort_renewable-energy_torikumi_island.html" class="link-pc-4-3-9">離島における取組み</a></li>
+<li><a href="/effort_renewable-energy_project.html" class="link-pc-4-3-10">太陽光発電の出力制御実証事業</a></li>
+</ul>
+</li>
+<li><a href="/effort_outline.html" class="n_globalnav_lv2_link link-pc-4-4">発電設備のご紹介</a></li>
+<li><a href="/enenavi_index.html" class="n_globalnav_lv2_link link-pc-4-5">エネなび</a></li>
+</ul>
+</li>
+<li><a href="/supply_index.html" class="link-pc-5">送配電 <small>2020年４月、送配電部門は<br />
+｢九州電力送配電株式会社｣へ</small></a>
+<ul class="n_globalnav_lv2">
+<li class="n_globalnav_close_button"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/supply_index.html" class="n_globalnav_lv2_link link-pc-5">送配電 <small>2020年４月、送配電部門は<br />
+｢九州電力送配電株式会社｣へ</small></a></li>
+<li><a href="/supply_sohaiden_index.html" class="link-pc-5-4">送配電部門は｢九州電力送配電株式会社｣へ</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/supply_sohaiden_index.html" class="link-pc-5-4">送配電部門は「九州電力送配電株式会社」へ</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_01" class="link-pc-5-4-1">法の改正により、送配電部門を分社化します</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_02" class="link-pc-5-4-2">ロゴマークが変わります</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_03" class="link-pc-5-4-3">分社後も、停電時は両社で連携して復旧対応します</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_04" class="link-pc-5-4-5">分社後も、離島への供給体制は変わりません</a></li>
+</ul>
+</li>
+<li><a href="/effort_index.html" class="link-pc-5-1">電力の安定供給への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/effort_index.html" class="link-pc-5-1">電力の安定供給への取組み</a></li>
+<li><a href="/effort_flow.html" class="link-pc-5-1-1">電気がお客さまに届くまで</a></li>
+<li><a href="/effort_stable_balance.html" class="link-pc-5-1-2">電気の生産と消費をバランスさせるために</a></li>
+<li><a href="/effort_restoration.html" class="link-pc-5-1-3">非常災害時の対応について</a></li>
+<li><a href="/effort_trouble_index.html" class="link-pc-5-1-4">事故停電実績</a></li>
+<li><a href="/effort_utility-pole.html" class="link-pc-5-1-5">電柱の番号や設備の名称について</a></li>
+</ul>
+</li>
+<li><a href="/wheeling_index.html" class="link-pc-5-2">電力託送供給等のご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/wheeling_index.html" class="link-pc-5-2">電力託送供給等のご案内</a></li>
+<li><a href="/wheeling_liberal.html" class="link-pc-5-2-1">託送供給等の概要</a></li>
+<li><a href="/wheeling_renewable-energy.html" class="link-pc-5-2-2">再生可能エネルギー電気卸供給</a></li>
+<li><a href="/wheeling_application.html" class="link-pc-5-2-3">各種お申し込み</a></li>
+<li><a href="/wheeling_imbalance.html" class="link-pc-5-2-4">インバランス料金単価</a></li>
+<li><a href="/wheeling_calendar.html" class="link-pc-5-2-5">年間検針日カレンダー</a></li>
+<li><a href="/wheeling_isolatedarea_index.html" class="link-pc-5-2-6">離島供給</a></li>
+<li><a href="/wheeling_security_index.html" class="link-pc-5-2-7">最終保障供給</a></li>
+<li><a href="/wheeling_stipulation.html" class="link-pc-5-2-8">約款、要綱等</a></li>
+<li><a href="/wheeling_rule.html" class="link-pc-5-2-9">送配電部門の行為規制、送配電ルール</a></li>
+<li><a href="/wheeling_disclosure.html" class="link-pc-5-2-10">系統情報の公開</a></li>
+<li><a href="/company_liberal_yutsu.html" class="link-pc-5-2-11">緊急的な供給力不足時の電力融通の<br />
+取引価格等の公表</a></li>
+<li><a href="/wheeling_sohaidenbumon-shushi.html" class="link-pc-5-2-12">送配電部門収支の算定結果</a></li>
+<li><a href="/wheeling_dbprocess.html" class="link-pc-5-2-13">電源接続案件募集プロセスの実施状況</a></li>
+<li><a href="/wheeling_callcenter.html" class="link-pc-5-2-14">送配電コールセンターのご案内</a></li>
+</ul>
+</li>
+<li><a href="/b-root-service_index.html" class="link-pc-5-3">スマートメーターのご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/b-root-service_index.html" class="link-pc-5-3">スマートメーターのご案内</a></li>
+<li><a href="/b-root-service_notice_smartmeter.html" class="link-pc-5-3-1">スマートメーターについて</a></li>
+<li><a href="/b-root_index.html" class="link-pc-5-3-2">電力メーター情報発信サービス<br />
+（低圧Bルートサービス）申込</a></li>
+<li><a href="/b-root-h_index.html" class="link-pc-5-3-3">電力メーター情報発信サービス<br />
+（高圧Bルートサービス）申込</a></li>
+</ul>
+</li>
+<li><a href="/supply_adjusting-power_index.html" class="link-pc-5-4">調整力の募集等のご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="n_globalnav_close_button_lv2"><button>CLOSE</button></li>
+<li class="nav_parent"><a href="/supply_adjusting-power_index.html" class="link-pc-5-4">調整力の募集等のご案内</a></li>
+<li><a href="/wheeling_adjusting-power.html" class="link-pc-5-4-1">調整力電源の募集について</a></li>
+<li><a href="/wheeling_demand-supply.html" class="link-pc-5-4-2">需給調整市場について</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!-- /.n_global_nav_lv1 --></ul>
+<!-- /.n_globalnav --></div>
+<div id="forecast-summary" class="n_header_banner">
+<div id="power-usage" class="n_head_elec_forecast"><a href="/power_usages/pc.html"><span class="ttl">でんき予報</span> <span id="usages" class="n_head_elec_forecast_box"><span id="power"><span id="date"><span id="forecast-summary-header" class="usages_head forecast_ttl"><span id="forecast-summary-date"></span>の予想使用率</span> <span class="n_percent"><span class="percentage"><span id="forecast-summary-usage-percentage"></span></span><span class="n_percent_v">%</span></span> <span><img id="forecast-summary-level" /></span></span></span></span> <span class="update n_forecast_caption"><span id="forecast-summary-time" class="usages_text"></span></span> <span class="update n_announce"><span id="forecast-summary-updatetime" class="usages_text"></span>発表</span></a> <!-- /.n_head_elec_forecas --></div>
+<!-- /.n_header_banner --></div>
+<script type="text/javascript" src="/power_usages/js/forecast_summary_addtime.js">
+</script> <script type="text/javascript">
+                //<![CDATA[
+                Event.observe(window, 'load', function(event) {  var options = {    id: 'forecast-summary',    xml_url: '/power_usages/xml/electric_power_summary.xml',    level_icon_url: '/library/2017/images/icon'  };  ForecastSummary.show(options);});
+                //]]>
+</script> <!-- /.n_header_low --></div>
+<!-- /.n_header --></div>
+<div class="n_header n_header_tab">
+<div class="n_header_global_logo"><a href="./"><img src="/library/2017/images/sp/common/head_logo.png" alt="九州電力" width="111" /></a></div>
+<div class="n_gnav_btn">
+<div class="toggle">
+<div class="toggle_bar"></div>
+<div class="toggle_bar"></div>
+<div class="toggle_bar"></div>
+<div class="toggle_text"><span class="open">MENU</span> <span class="close">CLOSE</span></div>
+</div>
+</div>
+<div class="n_globalnav">
+<ul class="n_globalnav_lv1">
+<li><a href="/user_index.html" class="link-tab-1">個人のお客さま</a>
+<ul class="n_globalnav_lv2">
+<li class="nav_parent"><a href="/user_index.html" class="n_globalnav_lv2_link link-tab-1">個人のお客さま&nbsp;トップ</a></li>
+<li><a href="/user_results_index.html" class="link-tab-1-1">電気料金や使用量の実績を確認する<br />
+〜キレイライフプラス〜</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_results_index.html" class="link-tab-1-1">電気料金や使用量の実績を確認する<br />
+〜キレイライフプラス〜&nbsp;トップ</a></li>
+<li><a href="user_results_index#internet" class="link-tab-1-1-1">インターネットで確認する</a></li>
+<li><a href="/rate_confirmation_index.html" class="link-tab-1-1-2">電話や書面で確認する</a></li>
+<li><a href="/rate_reception_oshirase_mikata.html" class="link-tab-1-1-3">「電気ご使用量のお知らせ」（検針票）で確認する</a></li>
+</ul>
+</li>
+<li><a href="/user_optimum_index.html" class="link-tab-1-2">最適な契約内容や電気・ガス料金を試算する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_optimum_index.html" class="link-tab-1-2">最適な契約内容や電気・ガス料金を試算する&nbsp;トップ</a></li>
+<li><a href="user_optimum_index#keiyaku" class="link-tab-1-2-1">現在の契約を確認する</a></li>
+<li><a href="user_optimum_index#menu1" class="link-tab-1-2-2">最適な料金プランを試算する</a></li>
+<li><a href="user_optimum_index#menu2" class="link-tab-1-2-3">最適なアンペア（契約容量）を試算する</a></li>
+<li><a href="/rate_simm_index.html" class="link-tab-1-2-4">ひと月の電気料金を試算する</a></li>
+<li><a href="user_optimum_index#menu3" class="link-tab-1-2-5">ひと月の電気・ガスセット料金を試算する</a></li>
+</ul>
+</li>
+<li><a href="/user_menu_index.html" class="link-tab-1-3">電気料金プラン・単価・電源構成を調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_menu_index.html" class="link-tab-1-3">電気料金プラン・単価・電源構成を調べる&nbsp;トップ</a></li>
+<li><a href="user_menu_index#keiyaku" class="link-tab-1-3-1">現在の契約を確認する</a></li>
+<li><a href="/menu_gaiyou.html" class="link-tab-1-3-2">料金プランの概要および料金単価を確認する</a></li>
+<li><a href="/rate_adj_power_composition_co2.html" class="link-tab-1-3-3">電源構成・CO2排出係数を確認する</a></li>
+<li><a href="user_menu_index#nenchou1" class="link-tab-1-3-4">燃料費調整単価を確認する</a></li>
+<li><a href="user_menu_index#universal" class="link-pc-1-3-7">離島ユニバーサルサービス調整単価を確認する</a></li>
+<li><a href="user_menu_index#nenchou2" class="link-tab-1-3-5">電気の契約条件等を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_imposition.html" class="link-tab-1-3-6">再生可能エネルギー発電促進賦課金単価を確認する</a></li>
+</ul>
+</li>
+<li><a href="/user_structure_index.html" class="link-tab-1-4">電気料金の仕組みを調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_structure_index.html" class="link-tab-1-4">電気料金の仕組みを調べる&nbsp;トップ</a></li>
+<li><a href="/rate_adj_other_2.html" class="link-tab-1-4-1">燃料費調整制度を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_gaiyou.html" class="link-tab-1-4-2">再生可能エネルギーの固定価格買取制度を確認する</a></li>
+<li><a href="/user_wheeling_index.html" class="link-tab-1-4-3">託送料金相当額を確認する</a></li>
+<li><a href="/user_shushi_index.html" class="link-tab-1-4-4">部門別収支の算定結果を確認する</a></li>
+<li><a href="user_structure_index#topics" class="link-tab-1-4-5">電気料金に関するお知らせ</a></li>
+</ul>
+</li>
+<li><a href="/user_payment_index.html" class="link-tab-1-5">電気料金のお支払い方法を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_payment_index.html" class="link-tab-1-5">電気料金のお支払い方法を確認する&nbsp;トップ</a></li>
+<li><a href="/user_payment_transfer.html" class="link-tab-1-5-1">口座振替でのお支払い</a></li>
+<li><a href="/user_payment_credit.html" class="link-tab-1-5-2">クレジットカードでのお支払い</a></li>
+<li><a href="/user_payment_paper.html" class="link-tab-1-5-3">振込用紙でのお支払い</a></li>
+<li><a href="/user_payment_overdue.html" class="link-tab-1-5-4">延滞利息制度を確認する</a></li>
+</ul>
+</li>
+<li><a href="/rate_reception_index.html" class="link-tab-1-6">インターネットからのお手続き・お申込み</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_reception_index.html" class="link-tab-1-6">インターネットからのお手続き・お申込み&nbsp;トップ</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/stop/stop.php" class="link-tab-1-6-1">ご使用を停止する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/start/start.php" class="link-tab-1-6-2">ご使用を開始する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/switch/switch.php" class="link-tab-1-6-8">他社から九州電力へのご契約切替のお申込み</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/menu/menu.php" class="link-tab-1-6-3">料金プランを変更する</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/change/change.php" class="link-tab-1-6-4">ご契約アンペアを変更する</a></li>
+<li><a href="/rate_reception_account.html" class="link-tab-1-6-5">口座振替払いのお申込み（新規・変更）</a></li>
+<li><a href="/rate_reception_creditcard.html" class="link-tab-1-6-6">クレジットカード払いのお申込み（新規・変更）</a></li>
+<li><a href="/rate_reception_rakuraku.html" class="link-tab-1-6-7">電気の新増設（低圧工事）のお申込み</a></li>
+</ul>
+</li>
+<li><a href="http://www.q-mirai.co.jp/review/" target="_blank" class="n_globalnav_lv2_link link-tab-1-7">関東エリアにお住まいのお客さまへ<br />
+（九電みらいエナジー）</a></li>
+<li><a href="/gas_index.html" class="link-tab-1-8">ガス販売（きゅうでんガス）について</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/gas_index.html" class="link-tab-1-8">ガス販売（きゅうでんガス）について&nbsp;トップ</a></li>
+<li><a href="/gas_system.html" class="link-tab-1-8-1">九州電力のガス</a></li>
+<li><a href="/gas_plan_index.html" class="link-tab-1-8-2">料金プラン</a></li>
+<li><a href="/gas_flow.html" class="link-tab-1-8-3">ご契約までの流れ</a></li>
+<li><a href="/gas_payment.html" class="link-tab-1-8-4">お支払い方法について</a></li>
+<li><a href="https://www.gas.kyuden.co.jp/mierukaWeb/areaSentaku/" target="_blank" class="link-tab-1-8-5">お申込み（当社への切替、お支払方法の変更）</a></li>
+<li><a href="/gas_emergency.html" class="link-tab-1-8-6">緊急（ガス漏れ・地震など）の時は</a></li>
+<li><a href="/gas_plan_adj.html" class="link-tab-1-8-7">原料費調整制度</a></li>
+<li><a href="/gas_faq.html" class="link-tab-1-8-8">よくあるご質問</a></li>
+</ul>
+</li>
+<li><a href="/user_emergency_index.html" class="link-tab-1-9">停電や落雷に関する情報を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_emergency_index.html" class="link-tab-1-9">停電や落雷に関する情報を確認する&nbsp;トップ</a></li>
+<li><a href="/em_mail.html" class="link-tab-1-9-1">携帯メールサービスで停電情報を確認する</a></li>
+<li><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/" class="link-tab-1-9-2">停電情報を確認する</a></li>
+<li><a href="/life_living_info_emergency.html" class="link-tab-1-9-3">非常時の停電にそなえて</a></li>
+<li><a href="/life_living_guide_a05.html" class="link-tab-1-9-4">電気がつかないときの確認方法</a></li>
+<li><a href="kaminari.html" class="link-tab-1-9-5">落雷情報</a></li>
+<li><a href="/life_living_safe_safe4.html" class="link-tab-1-6">雷が鳴っているときの対処方法</a></li>
+</ul>
+</li>
+<li><a href="/life_living_index.html" class="link-tab-1-10">便利で安全な電気の使い方を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/life_living_index.html" class="link-tab-1-10">便利で安全な電気の使い方を確認する&nbsp;トップ</a></li>
+<li><a href="/life_living_denkishittoku_index.html" class="link-tab-1-10-1">電気をご使用になる際の大切なこと</a></li>
+<li><a href="/life_living_guide_a01.html" class="link-tab-1-10-2">お引越しやご契約アンペア変更時のお願い</a></li>
+<li><a href="/life_living_safe_index.html" class="link-tab-1-10-3">安全な電気の使い方</a></li>
+<li><a href="/life_living_denji_index.html" class="link-tab-1-10-4">電磁界に関するQ&amp;A</a></li>
+<li><a href="/life_living_meter.html" class="link-tab-1-10-5">計量器（メーター）の見方</a></li>
+<li><a href="/rate_application_saving_energy_presentation.html" class="link-tab-1-10-6">節電・節約手法をご紹介します</a></li>
+<li><a href="/life_saving_index.html" class="link-tab-1-10-7">よくわかる電気の省エネ</a></li>
+<li><a href="/life_value_kakeibo_index.html" class="link-tab-1-10-8">みらいくんの環境家計簿</a></li>
+<li><a href="/life_living_info_inquire.html" class="link-tab-1-10-9">電気設備の安全調査のお知らせ</a></li>
+<li><a href="/rate_reception_law.html" class="link-tab-1-10-10">特定商取引法に基づく表記について</a></li>
+<li><a href="/life_value_index.html" class="link-tab-1-10-11">便利でお得な情報のご紹介</a></li>
+</ul>
+</li>
+<li><a href="/rate_purchase_index.html" class="link-tab-1-11">再生可能エネルギーからの電力購入について</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_purchase_index.html" class="link-tab-1-11">再生可能エネルギーからの電力購入について&nbsp;トップ</a></li>
+<li><a href="/rate_purchase_institution.html" class="link-tab-1-11-1">再生可能エネルギー固定価格買取制度について</a></li>
+<li><a href="/rate_purchase_control.html" class="link-tab-1-11-2">再生可能エネルギーの出力制御について</a></li>
+<li><a href="/rate_purchase_dbprocess.html" class="link-tab-1-11-3">電源接続案件募集プロセスのご案内</a></li>
+<li><a href="/rate_purchase_procedure.html" class="link-tab-1-11-4">ご契約手続きについてのご案内</a></li>
+<li><a href="/rate_purchase_afterfit.html" class="link-tab-1-11-8">買取制度期間満了後の買取について</a></li>
+<li><a href="/rate_purchase_topics.html" class="link-tab-1-11-5">重要なお知らせ</a></li>
+<li><a href="/functions_inquire_faq_recyclable-energy_index.html" class="link-tab-1-11-6">よくあるご質問</a></li>
+<li><a href="rate_purchase_index#reception" class="link-tab-1-11-7">お問い合わせ</a></li>
+</ul>
+</li>
+<li><a href="/rate_power_station_system.html" class="n_globalnav_lv2_link link-tab-1-12">自家発電や蓄電池を低圧電線路に連系されるお客さま</a></li>
+<li><a href="/rate_electrical.html" class="link-tab-1-13">電気工事店の皆さま（各種お願い・お申込み）</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_electrical.html" class="link-tab-1-13">電気工事店の皆さま（各種お願い・お申込み）&nbsp;トップ</a></li>
+<li><a href="/rate_electrical_submission.html" class="link-tab-1-13-1">早期お申込みのお願い</a></li>
+<li><a href="/rate_electrical_handbook.html" class="link-tab-1-13-2">お申込みにあたっての留意点<br />
+（冊子にてご覧いただけます）</a></li>
+<li><a href="/rate_reception_rakuraku.html" class="link-tab-1-13-3">「インターネット」（らくらくネット）でのお申込み方法</a></li>
+<li><a href="/rate_electrical_certificate.html" class="link-tab-1-13-4">「電気ご使用申込書」の記入方法</a></li>
+<li><a href="/rate_electrical_price.html" class="link-tab-1-13-5">工事費用（諸工料・臨時工事費の単価）</a></li>
+<li><a href="/rate_electrical_smartmeter.html" class="link-tab-1-13-7">スマートメーターの種類・配線方法</a></li>
+<li><a href="/rate_electrical_smartmeter_reverse.html" class="link-tab-1-13-8">双方向計量機能付スマートメーターの特徴（逆潮流）</a></li>
+</ul>
+</li>
+<li class="n_gnav_sub_menu"><a href="/rate_reception_phone.html" class="link-tab-1-14">営業所や配電事業所のお問い合わせ先一覧</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_reception_phone.html" class="link-tab-1-14">営業所や配電事業所のお問い合わせ先一覧&nbsp;トップ</a></li>
+<li><a href="/rate_reception_phone_kitakyushu_index.html" class="link-tab-1-14-1">福岡県（北九州地区）</a></li>
+<li><a href="/rate_reception_phone_fukuoka_index.html" class="link-tab-1-14-2">福岡県（福岡地区）</a></li>
+<li><a href="/rate_reception_phone_saga_index.html" class="link-tab-1-14-3">佐賀県</a></li>
+<li><a href="/rate_reception_phone_nagasaki_index.html" class="link-tab-1-14-4">長崎県</a></li>
+<li><a href="/rate_reception_phone_oita_index.html" class="link-tab-1-14-5">大分県</a></li>
+<li><a href="/rate_reception_phone_kumamoto_index.html" class="link-tab-1-14-6">熊本県</a></li>
+<li><a href="/rate_reception_phone_miyazaki_index.html" class="link-tab-1-14-7">宮崎県</a></li>
+<li><a href="/rate_reception_phone_kagoshima_index.html" class="link-tab-1-14-8">鹿児島県</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/business_index.html" class="link-tab-2">法人のお客さま</a>
+<ul class="n_globalnav_lv2">
+<li class="nav_parent"><a href="/business_index.html" class="n_globalnav_lv2_link link-tab-2">法人のお客さま&nbsp;トップ</a></li>
+<li><a href="/business_menu_index.html" class="link-tab-2-1">電気料金メニュー・単価・電源構成を調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_menu_index.html" class="link-tab-2-1">電気料金メニュー・単価・電源構成を調べる&nbsp;トップ</a></li>
+<li><a href="/business_menu_select.html" class="link-tab-2-1-1">料金メニューや単価を確認する</a></li>
+<li><a href="/agreement_clause_power_supply_index_h260401.html" class="link-tab-2-1-2">電気の契約条件等を確認する</a></li>
+<li><a href="/rate_adj_power_composition_co2.html" class="link-tab-2-1-3">電源構成・CO2排出係数を確認する</a></li>
+<li><a href="business_menu_index#information" class="link-tab-2-1-4">電気のご案内（ご契約のパンフレット）</a></li>
+<li><a href="business_menu_index#nenchou" class="link-tab-2-1-5">燃料費調整単価を確認する</a></li>
+<li><a href="business_menu_index#universal" class="link-pc-2-1-7">離島ユニバーサルサービス調整単価を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_imposition.html" class="link-tab-2-1-6">再生可能エネルギー発電促進賦課金単価を確認する</a></li>
+</ul>
+</li>
+<li><a href="/business_optimum_index.html" class="link-tab-2-2">最適な契約内容や料金を試算する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_optimum_index.html" class="link-tab-2-2">最適な契約内容や料金を試算する&nbsp;トップ</a></li>
+<li><a href="business_optimum_index#keiyaku" class="link-tab-2-2-1">現在の契約を確認する</a></li>
+<li><a href="http://www1.kyuden.co.jp/php/ryokin_simulator/public/business/" class="link-tab-2-2-2">最適な料金メニューを試算する</a></li>
+<li><a href="business_optimum_index#menu2" class="link-tab-2-2-3">ひと月の電気料金を試算する</a></li>
+</ul>
+</li>
+<li><a href="/business_structure_index.html" class="link-tab-2-3">電気料金の仕組みを調べる</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_structure_index.html" class="link-tab-2-3">電気料金の仕組みを調べる&nbsp;トップ</a></li>
+<li><a href="/agreement_adj_h26_5.html" class="link-tab-2-3-1">燃料費調整制度を確認する</a></li>
+<li><a href="/rate_purchase_recyclable_energy_gaiyou.html" class="link-tab-2-3-2">再生可能エネルギーの固定価格買取制度を確認する</a></li>
+<li><a href="/user_shushi_index.html" class="link-tab-2-3-3">部門別収支の算定結果を確認する</a></li>
+<li><a href="business_structure_index#topics" class="link-tab-2-3-4">電気料金に関するお知らせ</a></li>
+</ul>
+</li>
+<li><a href="/business_results_index.html" class="link-tab-2-4">電気料金や使用量の実績を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_results_index.html" class="link-tab-2-4">電気料金や使用量の実績を確認する&nbsp;トップ</a></li>
+<li><a href="business_results_index#seikyusho" class="link-tab-2-4-1">請求書で確認する</a></li>
+<li><a href="/functions_privacy_hojin.html" class="link-tab-2-4-2">実績を書面で確認する</a></li>
+</ul>
+</li>
+<li><a href="/business_payment_index.html" class="link-tab-2-5">電気料金のお支払い方法を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_payment_index.html" class="link-tab-2-5">電気料金のお支払い方法を確認する&nbsp;トップ</a></li>
+<li><a href="/business_payment_transfer.html" class="link-tab-2-5-1">口座振替でのお支払い</a></li>
+<li><a href="https://www1.kyuden.co.jp/php/keiyaku/account/phase1.php" class="link-tab-2-5-2">口座振替払い申込書のご請求</a></li>
+<li><a href="/business_payment_paper.html" class="link-tab-2-5-3">振込用紙でのお支払い</a></li>
+</ul>
+</li>
+<li><a href="/business_esco_index.html" class="link-tab-2-6">節電や省エネ手法のご紹介</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/business_esco_index.html" class="link-tab-2-6">節電や省エネ手法のご紹介&nbsp;トップ</a></li>
+<li><a href="/service_esco_save-electricity_economy.html" class="link-tab-2-6-1">電気の省エネ（節電）手法のご紹介</a></li>
+<li><a href="/service_esco.html" class="link-tab-2-6-2">省エネ関連情報（導入事例等）のご紹介</a></li>
+</ul>
+</li>
+<li class="n_globalnav_lv2_link"><a href="http://www.q-mirai.co.jp/review" target="_blank" class="n_globalnav_lv2_link link-tab-2-7">関東エリアにお住まいのお客さまへ<br />
+（九電みらいエナジー）</a></li>
+<li class="n_globalnav_lv2_link"><a href="/rate_purchase_index.html" class="link-tab-2-8">再生可能エネルギーからの電力購入について</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_purchase_index.html" class="link-tab-2-8">再生可能エネルギーからの電力購入について&nbsp;トップ</a></li>
+<li><a href="/rate_purchase_institution.html" class="link-tab-2-8-1">再生可能エネルギー固定価格買取制度について</a></li>
+<li><a href="/rate_purchase_control.html" class="link-tab-2-8-2">再生可能エネルギーの出力制御について</a></li>
+<li><a href="/rate_purchase_dbprocess.html" class="link-tab-2-8-3">電源接続案件募集プロセスのご案内</a></li>
+<li><a href="/rate_purchase_procedure.html" class="link-tab-2-8-4">ご契約手続きについてのご案内</a></li>
+<li><a href="/rate_purchase_afterfit.html" class="link-tab-2-8-8">買取制度期間満了後の買取について</a></li>
+<li><a href="/rate_purchase_topics.html" class="link-tab-2-8-5">重要なお知らせ</a></li>
+<li><a href="/functions_inquire_faq_recyclable-energy_index.html" class="link-tab-2-8-6">よくあるご質問</a></li>
+<li><a href="rate_purchase_index#reception" class="link-tab-2-8-7">お問い合わせ</a></li>
+</ul>
+</li>
+<li class="n_globalnav_lv2_link"><a href="/agreement_download.html" class="n_globalnav_lv2_link link-tab-2-9">高圧・特別高圧お客さまの各種申込書ダウンロード</a></li>
+<li><a href="/service_index.html" class="link-tab-2-10">法人お客さまの各種サービスのご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/service_index.html" class="link-tab-2-10">法人お客さまの各種サービスのご案内&nbsp;トップ</a></li>
+<li><a href="/service_ask-pump-off.html" class="link-tab-2-10-1">自家発電設備連系の事前相談</a></li>
+<li><a href="/service_ipp_index.html" class="link-tab-2-10-2">最適なエネルギー供給システムや<br />
+運用方法のご提案（自家発電）</a></li>
+<li><a href="/service_kitchen_index.html" class="link-tab-2-10-3">電化厨房のご案内</a></li>
+<li><a href="/service_dhc_index.html" class="link-tab-2-10-4">環境に優しい電気と高効率な<br />
+電気式空調システムのご案内</a></li>
+<li><a href="/service_nouden_index.html" class="link-tab-2-10-5">農業電化での省エネ・省力化のご案内</a></li>
+<li><a href="/service_pole-tube_index.html" class="link-tab-2-10-6">電柱共架・管路等の利用のご案内</a></li>
+<li><a href="/service_transfer.html" class="link-tab-2-10-7">高圧一括受電化による供給設備の<br />
+譲渡のご案内</a></li>
+<li><a href="/wheeling_index.html" class="link-tab-2-10-8">電力託送供給等のご案内</a></li>
+</ul>
+</li>
+<li><a href="/user_emergency_index.html" class="link-tab-2-11">停電や落雷に関する情報を確認する</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/user_emergency_index.html" class="link-tab-2-11">停電や落雷に関する情報を確認する&nbsp;トップ</a></li>
+<li><a href="/em_mail.html" class="link-tab-2-11-1">携帯メールサービスで停電情報を確認する</a></li>
+<li><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/" class="link-tab-2-11-2">停電情報を確認する</a></li>
+<li><a href="/life_living_info_emergency.html" class="link-tab-2-11-3">非常時の停電にそなえて</a></li>
+<li><a href="/life_living_guide_a05.html" class="link-tab-2-11-4">電気がつかないときの確認方法</a></li>
+<li><a href="kaminari.html" class="link-tab-2-11-5">落雷情報</a></li>
+<li><a href="/life_living_safe_safe4.html" class="link-tab-2-11-6">雷が鳴っているときの対処方法</a></li>
+</ul>
+</li>
+<li><a href="/company_tech_index.html" class="link-tab-2-12">当社の技術開発への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/company_tech_index.html" class="link-tab-2-12">当社の技術開発への取組み&nbsp;トップ</a></li>
+<li><a href="/company_tech_outline_organization.html" class="link-tab-2-12-1">九州電力総合研究所の概要</a></li>
+<li><a href="/company_tech_news_index.html" class="link-tab-2-12-2">技術開発情報プレスリリース</a></li>
+<li><a href="/company_tech_index_robot.html" class="link-tab-2-12-3">配電作業の近代化</a></li>
+<li><a href="/service_tech_sales_index.html" class="link-tab-2-12-4">研究開発品のご紹介</a></li>
+<li><a href="/service_tech_rental_index.html" class="link-tab-2-12-5">研究設備のレンタルのご案内</a></li>
+<li><a href="/service_tech_consulting_index.html" class="link-tab-2-12-6">コンサルティング、受託研究のご案内</a></li>
+</ul>
+</li>
+<li><a href="/rate_reception_phone.html" class="link-tab-2-13">営業所や配電事業所のお問い合わせ先一覧</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/rate_reception_phone.html" class="link-tab-2-13">営業所や配電事業所のお問い合わせ先一覧&nbsp;トップ</a></li>
+<li><a href="/rate_reception_phone_kitakyushu_index.html" class="link-tab-2-13-1">福岡県（北九州地区）</a></li>
+<li><a href="/rate_reception_phone_fukuoka_index.html" class="link-tab-2-13-2">福岡県（福岡地区）</a></li>
+<li><a href="/rate_reception_phone_saga_index.html" class="link-tab-2-13-3">佐賀県</a></li>
+<li><a href="/rate_reception_phone_nagasaki_index.html" class="link-tab-2-13-4">長崎県</a></li>
+<li><a href="/rate_reception_phone_oita_index.html" class="link-tab-2-13-5">大分県</a></li>
+<li><a href="/rate_reception_phone_kumamoto_index.html" class="link-tab-2-13-6">熊本県</a></li>
+<li><a href="/rate_reception_phone_miyazaki_index.html" class="link-tab-2-13-7">宮崎県</a></li>
+<li><a href="/rate_reception_phone_kagoshima_index.html" class="link-tab-2-13-8">鹿児島県</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/company_index.html" class="link-tab-3">企業・IR情報</a>
+<ul class="n_globalnav_lv2">
+<li class="nav_parent"><a href="/company_index.html" class="n_globalnav_lv2_link link-tab-3">企業・IR情報&nbsp;トップ</a></li>
+<li><a href="/company_information_index.html" class="link-tab-3-1">企業情報</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/company_information_index.html" class="link-tab-3-1">企業情報&nbsp;トップ</a></li>
+<li><a href="/company_outline_index.html" class="link-tab-3-1-1">企業情報</a></li>
+<li><a href="/company_mission_index.html" class="link-tab-3-1-2">九電グループの思い</a></li>
+<li><a href="/company_information_vision.html" class="link-tab-3-1-5">グループ経営ビジョン・中期経営計画</a></li>
+<li><a href="/company_data_book.html" class="link-tab-3-1-3">九州電力データブック</a></li>
+<li><a href="/company_information_socialmedia_index.html" class="link-tab-3-1-4">ソーシャルメディア公式アカウント一覧</a></li>
+</ul>
+</li>
+<li><a href="/csr_index.html" class="link-tab-3-2">CSR・環境への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/csr_index.html" class="link-tab-3-2">CSR・環境への取組み&nbsp;トップ</a></li>
+<li><a href="/csr_topmessage.html" class="link-tab-3-2-1">トップコミットメント</a></li>
+<li><a href="/csr_report_index.html" class="link-tab-3-2-2">九電グループサステナビリティ報告書</a></li>
+<li><a href="/csr_charter.html" class="link-tab-3-2-3">CSR基本方針</a></li>
+<li><a href="/csr_promotion_system_index.html" class="link-tab-3-2-4">CSR推進体系</a></li>
+<li><a href="/csr_management_index.html" class="link-tab-3-2-5">CSRマネジメント体制</a></li>
+<li><a href="/csr_hospitality_index.html" class="link-tab-3-2-6">お客さま満足の創造</a></li>
+<li><a href="/csr_safe.html" class="link-tab-3-2-7">安全・安心の追求</a></li>
+<li><a href="/csr_compliance_index.html" class="link-tab-3-2-8">誠実で公正な事業運営</a></li>
+<li><a href="/csr_disclosure.html" class="link-tab-3-2-9">社会との真摯なコミュニケーション</a></li>
+<li><a href="/environment_index.html" class="link-tab-3-2-10">環境にやさしい企業活動</a></li>
+<li><a href="/environment_booklet_index.html" class="link-tab-3-2-11">九電グループ環境データ集</a></li>
+<li><a href="/life_value_kakeibo_index.html" class="link-tab-3-2-12">みらいくんの環境家計簿</a></li>
+<li><a href="/company_local-social_index.html" class="link-tab-3-2-13">地域や社会と共に生きる</a></li>
+<li><a href="/company_local-social_actionplan_index.html" class="link-tab-3-2-14">地域振興への取組み</a></li>
+<li><a href="/firm-location_index.html" class="link-tab-3-2-15">九州への企業立地のご案内</a></li>
+<li><a href="/csr_employment-environment.html" class="link-tab-3-2-16">人権尊重・働きがいのある職場づくり</a></li>
+<li><a href="/diversity_index.html" class="link-tab-3-2-17">ダイバーシティ推進</a></li>
+</ul>
+</li>
+<li><a href="/ir_index.html" class="link-tab-3-3">IR情報（株主・投資家の皆さま）</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/ir_index.html" class="link-tab-3-3">IR情報（株主・投資家の皆さま）&nbsp;トップ</a></li>
+<li><a href="/ir_policy.html" class="link-tab-3-3-1">IR方針</a></li>
+<li><a href="/ir_management.html" class="link-tab-3-3-2">経営方針・経営計画</a></li>
+<li><a href="/ir_library_index.html" class="link-tab-3-3-3">IR資料室</a></li>
+<li><a href="/ir_financial_index.html" class="link-tab-3-3-4">財務・業績情報</a></li>
+<li><a href="/ir_stock_index.html" class="link-tab-3-3-5">株式・社債情報</a></li>
+<li><a href="/ir_individual.html" class="link-tab-3-3-6">個人投資家の皆さまへ</a></li>
+<li><a href="/ir_calendar.html" class="link-tab-3-3-7">IRカレンダー</a></li>
+<li><a href="/ir_esg.html" class="link-tab-3-3-8">環境・社会・ガバナンス（ESG）情報</a></li>
+</ul>
+</li>
+<li><a href="/company_school_index.html" class="link-tab-3-4">エネルギー教育や文化活動</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/company_school_index.html" class="link-tab-3-4">エネルギー教育や文化活動&nbsp;トップ</a></li>
+<li><a href="/mirai_index.html" class="link-tab-3-4-1">Qでん★みらいスクール</a></li>
+</ul>
+</li>
+<li><a href="/company_tech_index.html" class="link-tab-3-5">技術開発への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/company_tech_index.html" class="link-tab-3-5">技術開発への取組み&nbsp;トップ</a></li>
+<li><a href="/company_tech_outline_organization.html" class="link-tab-3-5-1">九州電力総合研究所の概要</a></li>
+<li><a href="/company_tech_news_index.html" class="link-tab-3-5-2">技術開発情報プレスリリース</a></li>
+<li><a href="/company_tech_index_robot.html" class="link-tab-3-5-3">配電作業の近代化について</a></li>
+<li><a href="/service_tech_sales_index.html" class="link-tab-3-5-4">研究開発品のご紹介</a></li>
+<li><a href="/service_tech_rental_index.html" class="link-tab-3-5-5">研究設備レンタルのご紹介</a></li>
+<li><a href="/service_tech_consulting_index.html" class="link-tab-3-5-6">コンサルティングや受託研究のご紹介</a></li>
+</ul>
+</li>
+<li><a href="/company_procurement_shizai_index.html" class="n_globalnav_lv2_link link-tab-3-6">資材調達情報</a></li>
+<li><a href="/company_notice_index.html" class="n_globalnav_lv2_link link-tab-3-7">電子公告</a></li>
+<li><a href="/company_recruitment_index.html" class="n_globalnav_lv2_link link-tab-3-8">採用情報</a></li>
+<li><a href="/company_outline_groupinfo_index.html" class="n_globalnav_lv2_link link-tab-3-9">九電グループのご紹介</a></li>
+<li><a href="/company_pamphlet_book_index.html" class="link-tab-3-10">九州電力パンフレット</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/company_pamphlet_book_index.html" class="link-tab-3-10">九州電力パンフレット&nbsp;トップ</a></li>
+<li><a href="/company_pamphlet_book_energy_index.html" class="link-tab-3-10-1">エネルギーや環境</a></li>
+<li><a href="/company_pamphlet_book_home_index.html" class="link-tab-3-10-2">家庭の電気</a></li>
+<li><a href="/company_pamphlet_book_plant_index.html" class="link-tab-3-10-3">発電施設</a></li>
+<li><a href="/company_pamphlet_book_pr_index.html" class="link-tab-3-10-4">見学施設</a></li>
+<li><a href="/company_pamphlet_book_area_index.html" class="link-tab-3-10-5">地域の情報</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/power_index.html" class="link-tab-4">発電</a>
+<ul class="n_globalnav_lv2">
+<li class="nav_parent"><a href="/power_index.html" class="n_globalnav_lv2_link link-tab-4">発電&nbsp;トップ</a></li>
+<li><a href="/nuclear_index.html" class="link-tab-4-1">原子力発電</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/nuclear_index.html" class="link-tab-4-1">原子力発電&nbsp;トップ</a></li>
+<li><a href="/genkai_index.html" class="link-tab-4-1-1">玄海原子力発電所</a></li>
+<li><a href="/sendai_index.html" class="link-tab-4-1-2">川内原子力発電所</a></li>
+<li><a href="/nuclear_index_8610.html" class="link-tab-4-1-3">当社の原子力発電</a></li>
+<li><a href="/nuclear_real.html" class="link-tab-4-1-4">原子力発電所リアルタイムデータ</a></li>
+<li><a href="/nuclear_notice_list.html" class="link-tab-4-1-5">地震関連情報</a></li>
+<li><a href="/torikumi_nuclear.html" class="link-tab-4-1-6">安全確保に向けた取組み</a></li>
+<li><a href="/nuclear_decommissioning_index.html" class="link-tab-4-1-7">廃止措置への取組み</a></li>
+</ul>
+</li>
+<li><a href="/effort_thirmal-power_index.html" class="link-tab-4-2">火力発電</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/effort_thirmal-power_index.html" class="link-tab-4-2">火力発電&nbsp;トップ</a></li>
+<li><a href="/effort_thirmal_k_hatsuden_index.html" class="link-tab-4-2-1">火力発電所のご紹介</a></li>
+<li><a href="/effort_thirmal_new_index.html" class="link-tab-4-2-2">火力発電（石炭、石油、ガス）の仕組み</a></li>
+<li><a href="/effort_thirmal_n_hatsuden_index.html" class="link-tab-4-2-3">離島の内燃力発電所</a></li>
+<li><a href="/effort_thirmal_coal-ash.html" class="link-tab-4-2-4">石炭灰を有効活用する取組み</a></li>
+</ul>
+</li>
+<li><a href="/effort_renewable-energy_torikumi.html" class="link-tab-4-3">再生可能エネルギー</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/effort_renewable-energy_torikumi.html" class="link-tab-4-3">再生可能エネルギー&nbsp;トップ</a></li>
+<li><a href="/effort_renewable-energy_application.html" class="link-tab-4-3-1">九州本土の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_ritou.html" class="link-tab-4-3-2">離島の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_geothermal.html" class="link-tab-4-3-3">地熱発電</a></li>
+<li><a href="/effort_renewable-energy_photovoltaic.html" class="link-tab-4-3-4">太陽光発電</a></li>
+<li><a href="/effort_renewable-energy_wind.html" class="link-tab-4-3-5">風力発電</a></li>
+<li><a href="/effort_renewable-energy_biomass.html" class="link-tab-4-3-6">バイオマス・廃棄物発電</a></li>
+<li><a href="/effort_water_index.html" class="link-tab-4-3-7">水力発電</a></li>
+<li><a href="/effort_renewable-energy_torikumi_smartgrid.html" class="link-tab-4-3-8">スマートグリッドへの取組み</a></li>
+<li><a href="/effort_renewable-energy_torikumi_island.html" class="link-tab-4-3-9">離島における取組み</a></li>
+<li><a href="/effort_renewable-energy_project.html" class="link-tab-4-3-10">太陽光発電の出力制御実証事業</a></li>
+</ul>
+</li>
+<li><a href="/effort_outline.html" class="n_globalnav_lv2_link link-tab-4-4">発電設備のご紹介</a></li>
+<li><a href="/enenavi_index.html" class="n_globalnav_lv2_link link-tab-4-5">エネなび</a></li>
+</ul>
+</li>
+<li><a href="/supply_index.html" class="link-tab-5">送配電</a>
+<ul class="n_globalnav_lv2">
+<li class="nav_parent"><a href="/supply_index.html" class="n_globalnav_lv2_link link-tab-5">送配電&nbsp;トップ</a></li>
+<li><a href="/supply_sohaiden_index.html" class="link-tab-5-4">送配電部門は「九州電力送配電株式会社」へ</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/supply_sohaiden_index.html" class="link-tab-5-4">送配電部門は「九州電力送配電株式会社」へ&nbsp;トップ</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_01" class="link-tab-5-4-2">法の改正により、送配電部門を分社化します</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_02" class="link-tab-5-4-3">ロゴマークが変わります</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_03" class="link-tab-5-4-4">分社後も、停電時は両社で連携して復旧対応します</a></li>
+<li><a href="supply_sohaiden_index#sohaiden_04" class="link-tab-5-4-5">分社後も、離島への供給体制は変わりません</a></li>
+</ul>
+</li>
+<li><a href="/effort_index.html" class="link-tab-5-1">電力の安定供給への取組み</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/effort_index.html" class="link-tab-5-1">電力の安定供給への取組み&nbsp;トップ</a></li>
+<li><a href="/effort_flow.html" class="link-tab-5-1-1">電気がお客さまに届くまで</a></li>
+<li><a href="/effort_stable_balance.html" class="link-tab-5-1-2">電気の生産と消費をバランスさせるために</a></li>
+<li><a href="/effort_restoration.html" class="link-tab-5-1-3">非常災害時の対応について</a></li>
+<li><a href="/effort_trouble_index.html" class="link-tab-5-1-4">事故停電実績</a></li>
+<li><a href="/effort_utility-pole.html" class="link-tab-5-1-5">電柱の番号や設備の名称について</a></li>
+</ul>
+</li>
+<li><a href="/wheeling_index.html" class="link-tab-5-2">電力託送供給等のご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/wheeling_index.html" class="link-tab-5-2">電力託送供給等のご案内&nbsp;トップ</a></li>
+<li><a href="/wheeling_liberal.html" class="link-tab-5-2-1">託送供給等の概要</a></li>
+<li><a href="/wheeling_renewable-energy.html" class="link-tab-5-2-2">再生可能エネルギー電気卸供給</a></li>
+<li><a href="/wheeling_application.html" class="link-tab-5-2-3">各種お申し込み</a></li>
+<li><a href="/wheeling_imbalance.html" class="link-tab-5-2-4">インバランス料金単価</a></li>
+<li><a href="/wheeling_calendar.html" class="link-tab-5-2-5">年間検針日カレンダー</a></li>
+<li><a href="/wheeling_isolatedarea_index.html" class="link-tab-5-2-6">離島供給</a></li>
+<li><a href="/wheeling_security_index.html" class="link-tab-5-2-7">最終保障供給</a></li>
+<li><a href="/wheeling_stipulation.html" class="link-tab-5-2-8">約款、要綱等</a></li>
+<li><a href="/wheeling_rule.html" class="link-tab-5-2-9">送配電部門の行為規制、送配電ルール</a></li>
+<li><a href="/wheeling_disclosure.html" class="link-tab-5-2-10">系統情報の公開</a></li>
+<li><a href="/company_liberal_yutsu.html" class="link-tab-5-2-11">緊急的な供給力不足時の電力融通の<br />
+取引価格等の公表</a></li>
+<li><a href="/wheeling_sohaidenbumon-shushi.html" class="link-tab-5-2-12">送配電部門収支の算定結果</a></li>
+<li><a href="/wheeling_dbprocess.html" class="link-tab-5-2-13">電源接続案件募集プロセスの実施状況</a></li>
+<li><a href="/wheeling_callcenter.html" class="link-tab-5-2-14">送配電コールセンターのご案内</a></li>
+</ul>
+</li>
+<li><a href="/b-root-service_index.html" class="link-tab-5-3">スマートメーターのご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/b-root-service_index.html" class="link-tab-5-3">スマートメーターのご案内&nbsp;トップ</a></li>
+<li><a href="/b-root-service_notice_smartmeter.html" class="link-tab-5-3-1">スマートメーターについて</a></li>
+<li><a href="/b-root_index.html" class="link-tab-5-3-2">電力メーター情報発信サービス<br />
+（低圧Bルートサービス）申込</a></li>
+<li><a href="/b-root-h_index.html" class="link-tab-5-3-3">電力メーター情報発信サービス<br />
+（高圧Bルートサービス）申込</a></li>
+</ul>
+</li>
+<li><a href="/supply_adjusting-power_index.html" class="link-tab-5-4">調整力の募集等のご案内</a>
+<ul class="n_globalnav_lv3">
+<li class="nav_parent"><a href="/supply_adjusting-power_index.html" class="link-tab-5-4">調整力の募集等のご案内&nbsp;トップ</a></li>
+<li><a href="/wheeling_adjusting-power.html" class="link-tab-5-4-1">調整力電源の募集について</a></li>
+<li><a href="/wheeling_demand-supply.html" class="link-tab-5-4-2">需給調整市場について</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!-- /.n_global_nav_lv1 --></ul>
+<div class="n_globalnav_lower">
+<div class="n_globalnav_quick_nav n_quick_nav">
+<ul>
+<li><a href="http://www.kyuden.co.jp/teiden_map/index.php/map/" class="nav01"><span class="nav_inner"><img src="/library/2017/images/sp/common/head_info_icon01.png" alt="停電情報" width="18" /><span>停電情報</span></span></a></li>
+<li><a href="kaminari.html" class="nav02"><span class="nav_inner"><img src="/library/2017/images/sp/common/head_info_icon02.png" alt="落雷情報" width="18" /><span>落雷情報</span></span></a></li>
+<li><a href="http://www1.kyuden.co.jp/php/inquires/index.php/menu" class="nav05 nav05_201807"><span class="nav_inner"><img src="/library/2017/images/sp/common/head_info_icon05.png" alt="お問い合わせ（お便りBOX）" width="22" /><span>お問い合わせ<br />
+(お便りBOX)</span></span></a></li>
+<li><a href="/rate_reception_phone.html" class="nav03"><span class="nav_inner"><img src="/library/2017/images/sp/common/head_info_icon03.png" alt="営業所配電事業所" width="16" /><span>営業所<br />
+配電事業所</span></span></a></li>
+<li><a href="/functions_inquire_faq_index.html" class="nav04"><span class="nav_inner"><img src="/library/2017/images/sp/common/head_info_icon04.png" alt="よくあるご質問" width="18" /><span>よくある<br />
+ご質問</span></span></a></li>
+</ul>
+<!-- /.n_globalnav_quick_nav --></div>
+<div class="n_head_menu">
+<ul>
+<li><a href="https://www.facebook.com/kyuden.jp" target="_blank" class="fb"><img src="/library/2017/images/sp/icon/icon_fb.png" alt="公式Facebook" width="30" /><span>公式Facebook</span></a></li>
+<li><a href="https://twitter.com/Kyuden_official" target="_blank" class="fb"><img src="/library/2017/images/sp/icon/icon_tw.png" alt="公式Twitter" width="30" /><span>公式Twitter</span></a></li>
+<li><a href="https://www.instagram.com/kyuden_official/" target="_blank" class="fb"><img src="/library/2017/images/sp/icon/icon_instagram.png" alt="Instagram" width="30" /><span>Instagram</span></a></li>
+<li style="width: 48%;"><a href="https://www.youtube.com/user/Kyudenchannel" target="_blank" class="youtube"><img src="/library/2017/images/sp/icon/icon_youtube.png" alt="公式Youtube" width="29" /><span>Kyuden Channel<br />
+（YouTube）</span></a></li>
+<li style="width: 98%;"><a href="/english_index.html" style="height: auto; text-align: center; padding: 16px 0px;">English home</a></li>
+</ul>
+</div>
+<!-- /.n_globalnav_lower --></div>
+<!-- /.n_global_nav --></div>
+<!-- /.n_header --></div>
+</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+</div><div id="areaWrapper2" class="pbAreaWrapper2"><div id="headerArea" class="pbHeaderArea">
+	<div id="area1" class="pbArea ">
+		<div class="pbNested " >
+			<div class="pbNested pbNestedWrapper" id="pbBlock884681">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_utility"><!--▽▽ サイト内検索 ▽▽ -->
+<div id="search-area">
+<form name="search_form" action="http://search.kyuden.co.jp/" method="get" onsubmit="return mysearch(this);" id="search_form"><input name="kw" id="i_search_input" class="iSearchAssist inputSize" onblur="if (this.value == '') { this.value = 'キーワードを入力してください';this.style.color='#919191'; }" onclick="if (this.value == 'キーワードを入力してください') { this.value = '';this.style.color='#'; }" value="キーワードを入力してください" type="text" /> <input name="ie" value="u" type="hidden" /> <input name="temp" value="pc" type="hidden" /> <input value="検索" class="button" alt="キーワードを入力してください" src="/library/2017/images/common/search_icon.png" width="22" type="image" height="22" align="absmiddle" /></form>
+<!-- /#search-area --></div>
+<!--△△ サイト内検索 △△-->
+<div class="n_utility_menu">
+<div class="fontSwitcher select_font_size n_utility_menu_element">
+<p>文字サイズ</p>
+<ul class="select_element">
+<li id="fontS"><span>小</span></li>
+<li id="fontM"><span>中</span></li>
+<li id="fontL"><span>大</span></li>
+</ul>
+<!-- /.fontSwitcher --></div>
+<div class="select_language n_utility_menu_element">
+<div class="select_button"><button>SELECT LANGUAGE</button></div>
+<ul class="select_element select_element_language">
+<li><a href="./">日本語</a></li>
+<li><a href="/english_index.html">English</a></li>
+</ul>
+<!-- /.fontSwitcher --></div>
+<!-- /.n_utility_menu --></div>
+<!-- /.n_utility --></div>
+</div>
+</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock884679">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_page_ttl">
+<p>送配電</p>
+</div>
+</div>
+</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock884680">
+<div class="pbBlock pbBlockNavigation breadcrumb2017"><a href="/index.html">ホーム</a> &gt; <a href="/supply_index.html">送配電</a> &gt; <a href="/wheeling_index.html">電力託送供給等のご案内</a> &gt; 系統情報の公開</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock960302">
+<div class="pbBlock pbBlockBase">
+<div>
+<ul class="n_sns_button_area">
+<li class="n_sns_fb"><a href="" target="_blank" onclick="window.open(this.href,'facebookwindow','width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><img src="/library/2017/images/common/n_btn_fb.png" alt="このリンクをシェア" width="71" /></a></li>
+<li class="n_sns_tw"><a href="" onclick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"><img src="/library/2017/images/common/n_btn_tweet.png" alt="ツイート" /></a></li>
+</ul>
+<div id="fb-root"></div>
+</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+</div><div id="mainArea" class="pbMainArea">
+	<div id="area0" class="pbArea ">
+		<div class="pbNested " >
+			<div class="pbNested pbNestedWrapper" id="pbBlock765631">
+<div style="width:100%;">						<div style="width:100%;margin:0px">
+							<div class="pbBlock pbTitleBlock headingl"><h1>系統情報の公開</h1></div>
+							
+							
+							
+						</div></div>
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock1549940">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_keepbox">
+<div id="main-contents">
+<h2>九州電力管内における発電機連系制約マップ<sup>（注）</sup></h2>
+<p>資源エネルギー庁が定める「系統情報の公表の考え方」（2015年11月６日改定）に基づき、当社の電力系統に発電機を連系するにあたり、熱容量面で制約が発生する地域及び系統毎の空き容量を下記のとおりお知らせします。</p>
+<table>
+<tbody>
+<tr>
+<td valign="top" nowrap="nowrap">（注）</td>
+<td valign="top">2018年９月26日に電力広域的運営推進機関が決定した「N‐１電制の先行適用」（2018年10月１日適用開始）に合わせ、予見性に関する情報として、N‐１電制が適用可能な系統およびN‐１電制適用可能量を追加する等、発電機連系制約マップを見直しております。</td>
+</tr>
+</tbody>
+</table>
+<div class="n_button_area n_block"><a class="n_text_link_button n_icon_external" href="https://www.occto.or.jp/access/oshirase/2018/180926_n-1densei_senkoutekiyou.html" target="_blank">参考サイト（電力広域的運営推進機関）<img class="n_icon" alt="別ウィンドウ" src="/library/2017/images/icon/icon_external.png" /></a></div>
+<p>〔留意事項〕</p>
+<ul>
+<li>「空き容量一覧表」は、熱容量を考慮した空き容量を記載しております。<br />
+その他の要因（短絡容量や電圧変動等）で、連系制約が発生する場合があります。</li>
+<li>また、熱容量面を考慮した空き容量は、系統毎に電源の並入状況等によって変動します。<br />
+今回、お知らせする空き容量は、電源の並入状況を一定の条件で算定したものです。<br />
+詳細については、別途、接続検討の申込みによる詳細検討（有料）が必要となります。</li>
+<li>社会的に影響を与えることが懸念される重要施設への供給系統に関する情報や、電力供給が特定できるような第三者情報などについては、公開しておりません。</li>
+</ul>
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/library/pdf/company/liberal/map/renkeimap_191209.pdf" target="_blank">九州電力管内における発電機連系制約マップ</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（574KB）</td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（2019年12月９日更新）</td>
+</tr>
+</table>
+<div class="n_block">
+<p class="n_fw_bold">【技術相談窓口】</p>
+<p class="n_fw_bold">（１）66kV以上の系統に連系をご希望のお客さま</p>
+<p>下表の当社送配電統括センター相談窓口（系統計画グループ）へご相談ください。</p>
+<div class="n_border_table_block n_scroll_table n_block">
+<table>
+<tbody>
+<tr>
+<th class="n_align_center n_black">送配電統括センター</th>
+<th class="n_align_center n_black">連絡先（代表）</th>
+</tr>
+<tr>
+<td class="n_align_center">北九州</td>
+<td class="n_align_center">093-531-1195</td>
+</tr>
+<tr>
+<td class="n_align_center">福岡</td>
+<td class="n_align_center">092-732-3510</td>
+</tr>
+<tr>
+<td class="n_align_center">佐賀</td>
+<td class="n_align_center">0952-33-1121</td>
+</tr>
+<tr>
+<td class="n_align_center">長崎</td>
+<td class="n_align_center">095-864-1808</td>
+</tr>
+<tr>
+<td class="n_align_center">大分</td>
+<td class="n_align_center">097-536-4150</td>
+</tr>
+<tr>
+<td class="n_align_center">熊本</td>
+<td class="n_align_center">096-386-2500</td>
+</tr>
+<tr>
+<td class="n_align_center">宮崎</td>
+<td class="n_align_center">0985-24-2141</td>
+</tr>
+<tr>
+<td class="n_align_center">鹿児島</td>
+<td class="n_align_center">099-253-1051</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="n_fw_bold">（２）6kVまたは22kVの系統に連系をご希望のお客さま</p>
+<p>当社配電事業所の相談窓口（系統アクセス担当）へご相談ください。</p>
+<div class="n_button_area n_block"><a class="n_text_link_button" href="/rate_reception_phone.html">営業所・配電事業所お問い合わせ先一覧</a></div>
+</div>
+<div class="box1" style="margin-bottom: 25px;">【参考】<br />
+風力または太陽光を九州電力管内66kV、110kVの特別高圧系統へ連系する場合に、電圧変動対策（SVC装置等）が必要となる可能性が高い地域はそれぞれ下記のとおりです。
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-top: 10px;" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6222/wind_h2910.pdf">風力連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" nowrap="nowrap" align="left">（118KB）（2017年10月23日更新）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6223/solar_h2910.pdf">太陽光連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" nowrap="nowrap" align="left">（119KB）（2017年10月23日更新）</td>
+</tr>
+</table>
+</div>
+<h2>地内基幹送電線に関する公開情報</h2>
+<ul>
+<li>「地内基幹送電線」とは最上位電圧から２階級（500、220kV）の送電線です。</li>
+<li>社会的に影響を与えることが懸念される重要施設への供給系統に関する情報や、電力供給が特定できるような第三者情報などについては、公開しておりません。</li>
+</ul>
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6224/koukai_jouhou190401.pdf">地内基幹送電線に関する公開情報</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（226KB）（2019年４月１日時点）</td>
+</tr>
+</table>
+<h2>需要・送配電に関する情報</h2>
+<div class="n_block">
+<p>〔留意事項〕</p>
+<p class="ml30">実績情報は伝送異常や通信作業によるデータ欠落等がある場合があります。データ欠損時は、実績を「０」として処理しています。</p>
+<p class="ml30">潮流実績については、個別需要が分かる専用線等や電源が１ユニットのみの電源線については、第三者情報性を排除するよう加工処理を実施しており、実際とは異なる場合があります。</p>
+<p class="ml30">潮流実績や作業計画は、過去に遡り修正させていただく場合があります。この場合、実績等修正のお知らせや修正前の実績の提供はいたしませんので、予めご了承ください。</p>
+</div>
+<div class="n_block">
+<ul>
+<li>地点別需要・系統潮流実績<br />
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6225/z757d0ba.pdf">系統構成（実績）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（331KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img src="/library/file-type/excel.gif" alt="Excelファイル" style="border-width: 0px; border-style: solid;" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6226/io3y1jqo.xls">潮流実績（送電線）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（10,615KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img src="/library/file-type/excel.gif" alt="Excelファイル" style="border-width: 0px; border-style: solid;" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6227/p2sfzoe8.xls">潮流実績（変圧器）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（8,425KB）</td>
+</tr>
+</table>
+</li>
+<li>系統構成、予想潮流（１年度目、５年度目）<br />
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6228/8jsg6e7o.pdf">系統構成</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（434KB）（2019年６月３日更新）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6229/bt9g9cr0.pdf">予想潮流</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（152KB）（2019年６月３日更新）</td>
+</tr>
+</table>
+</li>
+<li>送変電設備のインピーダンス<br />
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6230/2qby3vhw.pdf">送変電設備のインピーダンス</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（124KB）（2019年６月３日更新）</td>
+</tr>
+</table>
+</li>
+<li>送変電設備の投資・廃止計画<br />
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6231/j3h11x08.pdf">送変電設備の投資・廃止計画</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（363KB）（2019年６月３日更新）</td>
+</tr>
+</table>
+</li>
+<li>送変電設備の作業停止計画<br />
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6232/j6qx27sd.pdf">送変電設備の作業停止計画（2018年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（146KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6233/nk5oeza7.pdf">送変電設備の作業停止計画（2019年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（138KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6234/g3v1v525.pdf">送変電設備の作業停止計画（2020年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（129KB）</td>
+</tr>
+</table>
+</li>
+</ul>
+</div>
+<h2>流通設備建設計画</h2>
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0230/6235/a9yi68gc.pdf">主要送変電設備の整備計画（2019年度供給計画）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（97KB）</td>
+</tr>
+</table>
+<h2>需給関連情報</h2>
+<p style="margin-bottom: 0px;">＜エリア需給実績＞</p>
+<p style="margin-bottom: 0px; text-align: right;">（2019年11月30日更新）</p>
+<table class="csvtbl">
+<tbody>
+<tr>
+<th>年度</th>
+<th>４月～６月</th>
+<th>７月～９月</th>
+<th>10月～12月</th>
+<th>１月～３月</th>
+</tr>
+<tr>
+<td align="center">2016年度</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6236/area_jyukyu_jisseki_H28_1Q.csv">csvファイル</a><br />
+（134KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6237/area_jyukyu_jisseki_H28_2Q.csv">csvファイル</a><br />
+（136KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6238/area_jyukyu_jisseki_H28_3Q.csv">csvファイル</a><br />
+（135KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6239/area_jyukyu_jisseki_H28_4Q.csv">csvファイル</a><br />
+（132KB）</td>
+</tr>
+<tr>
+<td align="center">2017年度</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6240/area_jyukyu_jisseki_H29_1Q.csv">csvファイル</a><br />
+（134KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6241/area_jyukyu_jisseki_H29_2Q.csv">csvファイル</a><br />
+（136KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6242/area_jyukyu_jisseki_H29_3Q.csv">csvファイル</a><br />
+（136KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6243/area_jyukyu_jisseki_H29_4Q.csv">csvファイル</a><br />
+（134KB）</td>
+</tr>
+<tr>
+<td align="center">2018年度</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6244/area_jyukyu_jisseki_H30_1Q.csv">csvファイル</a><br />
+（133KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6245/area_jyukyu_jisseki_H30_2Q.csv">csvファイル</a><br />
+（137KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6246/area_jyukyu_jisseki_H30_3Q.csv">csvファイル</a><br />
+（141KB）</td>
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0230/6247/area_jyukyu_jisseki_H30_4Q.csv">csvファイル</a><br />
+（142KB）</td>
+</tr>
+<tr>
+<td align="center">2019年度</td>
+<td align="center"><a href="/var/rev0/0230/6248/area_jyukyu_jisseki_2019_1Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
+（138KB）</td>
+<td align="center"><a href="/var/rev0/0230/6249/area_jyukyu_jisseki_2019_2Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
+（141KB）</td>
+<td align="center"><a href="/var/rev0/0230/6250/area_jyukyu_jisseki_2019_10.csv" class="pbOpenNewWindow">csvファイル</a><br />
+（68KB）</td>
+<td align="center">―</td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 10px; margin-top: 2px;">
+<tbody>
+<tr>
+<td valign="top" nowrap="nowrap">（注）</td>
+<td valign="top">掲載データは速報値です（再生可能エネルギーの推計値などが含まれます）。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注）</td>
+<td valign="top">「エリア需要」および「太陽光」には、余剰買取による太陽光発電の自家消費分は含んでいません。（自家消費分は、エリア需要において需要の減少として表れています）</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注）</td>
+<td valign="top">2018年10月度実績より毎月更新に見直しております。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注）</td>
+<td valign="top" nowrap="nowrap"><a class="pbOpenNewWindow" href="/var/rev0/0230/6251/20191130jukyu.pdf">エリア需給実績（速報）</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+</div><div id="footerArea" class="pbFooterArea">
+	<div id="area4" class="pbArea ">
+		<div class="pbNested " >
+			<div class="pbNested pbNestedWrapper" id="pbBlock905337">
+		<div class="pbNested nlocalnav" >
+			<div class="pbNested pbNestedWrapper" id="pbBlock905338">
+					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_unification-reform.html" >送配電部門における仕様統一化と調達改革に向けた取組</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_efficiency.html" >送配電部門における効率化の取組状況</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_renewable-energy.html" >再生可能エネルギー電気卸供給</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_liberal.html" >託送供給等の概要</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_isolatedarea_index.html" >離島供給</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_security_index.html" >最終保障供給</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_calendar.html" >年間検針日カレンダー</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_stipulation.html" >約款、要綱等</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_application.html" >各種お申し込み</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_disclosure.html" >系統情報の公開</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_imbalance.html" >インバランス料金単価</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_callcenter.html" >送配電コールセンター</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_rule.html" >送配電部門の行為規制、送配電ルール</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/company_liberal_yutsu.html" >緊急的な供給力不足時の電力融通の取引価格等の公表</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_dbprocess.html" >電源接続案件募集プロセスの実施状況</a></span>
+					</div>					<div class="pbBlock pbBlockMenu nlocalnavlist">
+						<span><a href="/wheeling_sohaidenbumon-shushi.html" >送配電部門収支の算定結果</a></span>
+					</div>
+			</div>
+		</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock905336">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_footer_nav">
+<div class="footer_nav_ttl">送電線・配電線</div>
+<ul>
+<li><a href="/effort_index.html">電力の安定供給への取組み</a></li>
+<li><a href="/wheeling_index.html">電力託送供給等のご案内</a></li>
+<li><a href="/b-root-service_index.html">スマートメーターのご案内</a></li>
+<li><a href="/supply_adjusting-power_index.html">調整力の募集等のご案内</a></li>
+</ul>
+<!-- /.n_footer_nav --></div>
+</div>
+</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock905334">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_footer" id="footerMenu">
+<div class="n_footer_inner">
+<ul class="n_footer_link">
+<li><a href="/functions_privacy_index.html">個人情報の取扱いについて</a></li>
+<li><a href="/functions_sitepolicy.html">規約・免責事項</a></li>
+<li><a href="/functions_link_index.html">リンク集</a></li>
+<li><a href="/sitemap.html">サイトマップ</a></li>
+<!-- /.n_footer_link --></ul>
+<div class="page_top"><a href="#top">このページの上部へ</a></div>
+</div>
+<div class="n_copy">Copyright (c) KYUSHU ELECTRIC POWER CO., INC. All Rights Reserved.</div>
+</div>
+<div class="n_foot_sp_btn"><a href="/smt_index.html"><span>SP版 TOPへ</span></a></div>
+<script type="text/javascript">
+//<![CDATA[
+    (function() {
+     var da = document.createElement('script');
+     da.type = 'text/javascript'; da.async = true;
+     if ('https:' == document.location.protocol) {
+     da.src =  'https://rsv.dga.jp/s/kyuden/search_tool_n3.js';
+     } else {
+     da.src =  'http://cache.dga.jp/s/kyuden/search_tool_n3.js';
+     }
+     var sc  = document.getElementsByTagName('script')[0];
+     sc.parentNode.insertBefore(da, sc);
+     })();
+//]]>
+</script></div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+</div></div></div></div>
+</body>
+</html>
+
+<!-- static作成日時 2019/12/11 22:48:18 ,staticファイル名 wheeling_disclosure.html (from:php) --> 
