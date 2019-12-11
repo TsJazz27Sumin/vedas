@@ -96,7 +96,7 @@ def get(request):
 
     return JsonResponse(data)
 
-
+# http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page
 @authenticate()
 def check_download_page(request):

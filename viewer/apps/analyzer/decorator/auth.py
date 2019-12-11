@@ -8,10 +8,7 @@ def authenticate():
             request = getattr(args[0], 'request', args[0])
             remote_addr = request.META['REMOTE_ADDR']
 
-            # TODO: とりあえずローカル想定なので決め打ち。ゆくゆくは設定ファイルに逃したい。
-            # 特定IPアドレスしかアクセスを許可しない。
-            if '127.0.0.1' != remote_addr:
-                raise Http404()
+            # TODO:何もしない。
 
             return function(*args, **kwargs)
 
