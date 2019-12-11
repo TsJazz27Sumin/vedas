@@ -13,7 +13,13 @@
 - pip3 install --upgrade pip
 - [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
 - [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
+- [Python3.7入れる時に `No module named '_ctypes'` エラー](http://saruhei1989.hatenablog.com/entry/2019/04/06/090000)
+- [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
 - pip install -r requirements/general.txt
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+source ~/.bash_profile
 - [redisの設定](https://blog.kotamiyake.me/tech/output-dump-rdb-to-current-directory/)
 - Djangoのサーバーを立てるところまで。
 - 2019/12/10作業ログ
