@@ -12,6 +12,7 @@
 - chmod 600 ~/.ssh/config
 - pip3 install --upgrade pip
 - [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
+- [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
 - pip install -r requirements/general.txt
 - [redisの設定](https://blog.kotamiyake.me/tech/output-dump-rdb-to-current-directory/)
 - Djangoのサーバーを立てるところまで。
