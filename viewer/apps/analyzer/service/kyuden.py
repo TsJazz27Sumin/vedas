@@ -10,17 +10,22 @@ from viewer.apps.analyzer.service.service import Service
 class KyudenService(Service):
 
     COMPANY_NAME = 'kyuden'
+    ROOT_URL = 'http://www.kyuden.co.jp/var/rev0/0230/'
+    KEY_NUMBER = 6236
 
     @classmethod
     def correct_data(cls, urls, root_path, reflesh):
         processed_pkl_paths = []
+        number = cls.KEY_NUMBER
 
         for url in urls:
             try:
-                pkl_file_name = FileFunction.get_pkl_file_name(url)
-                original_pkl_path = cls.__correct_ex_data(root_path, pkl_file_name, url, reflesh)
+                target_url = f'{cls.ROOT_URL}{number}/{url}'
+                pkl_file_name = FileFunction.get_pkl_file_name(target_url)
+                original_pkl_path = cls.__correct_ex_data(root_path, pkl_file_name, target_url, reflesh)
                 processed_pkl_path = cls.__process_ex_data(original_pkl_path, root_path, pkl_file_name)
                 processed_pkl_paths.append(processed_pkl_path)
+                number = number + 1
             except Exception as e:
                 print(f'{pkl_file_name} => {e}')
                 raise e

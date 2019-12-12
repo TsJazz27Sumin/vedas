@@ -7,16 +7,16 @@ from viewer.apps.analyzer.function.request import RequestFunction
 class CheckerFunction(object):
 
     @classmethod
-    def check_download_page(cls, root_path, companyname):
+    def check_download_page(cls, root_path, companyname, omit_list):
         json = FileFunction.get_param_json(root_path, companyname)
         html = RequestFunction.get_html(json['download_page_url'])
         FileFunction.create_current_html(root_path, companyname, html)
-        check_result, message = cls.check_diff_current_and_prev_html(root_path, companyname)
+        check_result, message = cls.check_diff_current_and_prev_html(root_path, companyname, omit_list)
 
         return check_result, message
 
     @classmethod
-    def check_diff_current_and_prev_html(cls, root_path, company):
+    def check_diff_current_and_prev_html(cls, root_path, company, omit_list):
         current_html_path = FileFunction.get_current_html_path(root_path, company)
         with open(current_html_path) as current_html:
             current_html_lines = current_html.readlines()
@@ -31,7 +31,15 @@ class CheckerFunction(object):
                 prev_html_lines,
                 fromfile=current_html_path,
                 tofile=prev_html_path):
-            diff_lines.append(diff_line)
+
+            omit_result = False
+            for omit_word in omit_list:
+                if omit_word in diff_line:
+                    omit_result = True
+                    break
+
+            if omit_result is False:
+                diff_lines.append(diff_line)
 
         if len(diff_lines) > 0:
             # TODO:Slackでアラート飛ばすとかにしたい。

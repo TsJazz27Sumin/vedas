@@ -10,12 +10,14 @@ from viewer.apps.analyzer.function.request import RequestFunction
 
 class FileFunction(object):
     COMPANY_NAME_REPLACE_KEYWORD = '{COMPANY_NAME}'
-    ORIGINAL_FOLDER = f'viewer/apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/original'
-    PROCESSED_FOLDER = f'viewer/apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/processed'
-    MERGED_FOLDER = f'viewer/apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged'
-    MERGED_CSV_FOLDER = f'viewer/apps/analyzer/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged_csv'
-    CURRENT_HTML_FOLDER = f'viewer/apps/analyzer/html/{COMPANY_NAME_REPLACE_KEYWORD}/current'
-    PREV_HTML_FOLDER = f'viewer/apps/analyzer/html/{COMPANY_NAME_REPLACE_KEYWORD}/prev'
+    APL_FOLDER = 'viewer/apps/analyzer'
+    ORIGINAL_FOLDER = f'{APL_FOLDER}/data/{COMPANY_NAME_REPLACE_KEYWORD}/original'
+    PROCESSED_FOLDER = f'{APL_FOLDER}/data/{COMPANY_NAME_REPLACE_KEYWORD}/processed'
+    MERGED_FOLDER = f'{APL_FOLDER}/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged'
+    MERGED_CSV_FOLDER = f'{APL_FOLDER}/data/{COMPANY_NAME_REPLACE_KEYWORD}/merged_csv'
+    CURRENT_HTML_FOLDER = f'{APL_FOLDER}/html/{COMPANY_NAME_REPLACE_KEYWORD}/current'
+    PREV_HTML_FOLDER = f'{APL_FOLDER}/html/{COMPANY_NAME_REPLACE_KEYWORD}/prev'
+    JSON_FILE_FOLDER = f'{APL_FOLDER}/param'
 
     @classmethod
     def create_current_html(cls, root_path, company, html):
@@ -38,7 +40,7 @@ class FileFunction(object):
 
     @classmethod
     def get_param_json(cls, root_path, company):
-        with open(f'{root_path}/viewer/apps/analyzer/param/{company}.json', 'r') as f:
+        with open(f'{root_path}/{cls.JSON_FILE_FOLDER}/{company}.json', 'r') as f:
             return json.loads(f.read())
 
     @classmethod

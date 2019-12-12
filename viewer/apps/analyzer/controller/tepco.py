@@ -32,4 +32,4 @@ class TepcoController(Controller):
 
     @classmethod
     def check_download_page(cls, root_path):
-        return CheckerFunction.check_download_page(root_path, cls.COMPANY_NAME)
+        return CheckerFunction.check_download_page(root_path, cls.COMPANY_NAME, [])
