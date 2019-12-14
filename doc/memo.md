@@ -28,6 +28,8 @@
      3.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
      4.  [CodeBuildでStandard2.0のイメージを使用したらエラー出たときの対処](https://qiita.com/maruware/items/c3a6f6741220ef3e61f7)
      5.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
+ 12. WAFの設定
+     1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer

@@ -34,7 +34,7 @@ const App = () => {
   const upperTextFieldValue = electoric_power_data_hook.upperTextFieldValue;
 
   //言語選択
-  const [selected, setSelected] = useState('en');
+  const [selected, setSelected] = useState('jp');
   const handleSelectChange = useCallback((value) => setSelected(value), []);
   const options = languageOptionService.get();
   let lang = selected;
