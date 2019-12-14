@@ -15,7 +15,7 @@ from viewer.apps.analyzer.controller.tohokuepco import TohokuEpcoController
 from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import authenticate
 
-
+# http://d190d5rjx2yi3y.cloudfront.net/
 # http://52.196.187.98:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
 

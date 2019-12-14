@@ -27,13 +27,15 @@
      2.  [React.jsとcreate-react-appを使ってタダでAWS S3にイケてる動的サイトをサクッと作る方法（環境構築編）](https://goleiro.hatenablog.com/entry/2017/03/20/030018)
      3.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
      4.  [CodeBuildでStandard2.0のイメージを使用したらエラー出たときの対処](https://qiita.com/maruware/items/c3a6f6741220ef3e61f7)
+     5.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
 
 # よく使うコマンド
+ - cd /home/app-user/supply-and-demand-viewer
+ - source ~/.bashrc
  - ssh -i ~/.ssh/Vedas.pem ec2-user@52.196.187.98
  - ssh -i ~/.ssh/Vedas.pem app-user@52.196.187.98
  - sudo su app-user
- - cd /home/app-user/supply-and-demand-viewer
- - source ~/.bashrc
+ - sh init.sh
  - redis-server
  - python3 manage.py runserver 0:8000
  - git reset --hard origin/master
