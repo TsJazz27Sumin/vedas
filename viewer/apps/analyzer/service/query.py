@@ -40,7 +40,7 @@ class QueryService(object):
         data_frame = data_frame[(data_frame['date'] == target_date)]
 
         result = None
-        if unit == '30':
+        if unit == '1H':
             result = cls.__to_float_and_round(data_frame).to_json(date_format='iso').replace('T', ' ').replace(':00.000Z', '')
 
         return json.loads(result)

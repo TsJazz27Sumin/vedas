@@ -34,11 +34,11 @@ const JapanEnergyResourseRadioButtons = props => {
               onChange={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
             />
             <RadioButton
-              label={dict.unit_30}
-              id="unit_30"
+              label={dict.unit_1h}
+              id="unit_1h"
               name="unit"
-              checked={unit === "30"}
-              onChange={() => handleTermChange("30", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+              checked={unit === "1H"}
+              onChange={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
             />
         </Stack>
     )

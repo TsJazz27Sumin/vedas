@@ -51,39 +51,45 @@ const App = () => {
 
   const [yearSelected, setYearSelected] = useState(dateSelectContents.this_year);
   const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
-    setYearSelected(value);
+    setYearSelected(parseInt(value));
     japanEnergyService
     .get_daily_data(unit, value, monthSelected, dateSelected)
     .then(initialData => {
         setData(initialData);
         setIsLoading(false);
     });
-  }, []);
+  }, 
+  // eslint-disable-next-line
+  []);
   const year_options = dateSelectContents.year_map;
 
   const [monthSelected, setMonthSelected] = useState(dateSelectContents.prev_month);
   const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
-    setMonthSelected(value);
+    setMonthSelected(parseInt(value));
     japanEnergyService
     .get_daily_data(unit, yearSelected, value, dateSelected)
     .then(initialData => {
         setData(initialData);
         setIsLoading(false);
     });
-  }, []);
+  },
+  // eslint-disable-next-line
+  []);
   const month_options = dateSelectContents.month_map;
 
   const [dateSelected, setDateSelected] = useState(1);
   const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
-    setDateSelected(value);
+    setDateSelected(parseInt(value));
     japanEnergyService
     .get_daily_data(unit, yearSelected, monthSelected, value)
     .then(initialData => {
         setData(initialData);
         setIsLoading(false);
     });
-  }, []);
-  const date_options = dateSelectContents.month_map;
+  },
+  // eslint-disable-next-line
+  []);
+  const date_options = dateSelectContents.date_map;
 
   //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany();
@@ -149,18 +155,21 @@ const App = () => {
               <Card sectioned title={dict.term}>
                 <Stack>
                   <Select
+                    key="yearSelect"
                     label={dict.unit_y}
                     options={year_options}
                     onChange={(value) => handleYearSelectChange(unit, value, monthSelected, dateSelected)}
                     value={yearSelected}
                   />
                   <Select
+                    key="monthSelect"
                     label={dict.unit_ym}
                     options={month_options}
                     onChange={(value) => handleMonthSelectChange(unit, yearSelected, value, dateSelected)}
                     value={monthSelected}
                   />
                   <Select
+                    key="dateSelect"
                     label={dict.unit_ymd}
                     options={date_options}
                     onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}

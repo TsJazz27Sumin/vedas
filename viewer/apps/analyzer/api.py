@@ -77,9 +77,6 @@ def get(request):
     unit = request.GET.get(key="unit", default="ym")
     from_value = request.GET.get(key="from", default="2016/04")
     to_value = request.GET.get(key="to", default="2019/12")
-    year_value = request.GET.get(key="year", default="2019")
-    month_value = request.GET.get(key="month", default="11")
-    date_value = request.GET.get(key="date", default="1")
     root_path = os.getcwd()
     start = time.time()
 
@@ -100,7 +97,20 @@ def get(request):
         print(f'elapsed_time:{time.time() - start}[sec]')
 
         return JsonResponse(data)
-    elif unit == "30":
+
+    raise Http404()
+
+# http://127.0.0.1:8000/viewer/analyzer/get_daily_data
+@authenticate()
+def get_daily_data(request):
+    unit = request.GET.get(key="unit", default="ym")
+    year_value = request.GET.get(key="year", default="2019")
+    month_value = request.GET.get(key="month", default="11")
+    date_value = request.GET.get(key="date", default="1")
+    root_path = os.getcwd()
+    start = time.time()
+
+    if unit == "1H":
         data = {
             "message": "Success",
             "hepco": HepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
@@ -117,8 +127,8 @@ def get(request):
         print(f'elapsed_time:{time.time() - start}[sec]')
 
         return JsonResponse(data)
-    else:
-        raise Http404()
+
+    raise Http404()
 
 # http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page

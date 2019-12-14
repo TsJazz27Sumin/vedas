@@ -1,11 +1,12 @@
 const get = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "no_data": "対象期間のデータがありません。",
             "term": "期間",
             "unit_y": "年",
             "unit_ym": "月",
             "unit_ymd": "日",
-            "unit_30": "30分",
+            "unit_1h": "1時間",
             "green": "グリーン電力",
             "demand": "需要",
             "nuclear": "原発",
@@ -33,11 +34,12 @@ const get = (lang) => {
             "okiden" : "沖縄電力"
         },
         "en" : {
+            "no_data": "There is no data for the target period.",
             "term": "Term",
             "unit_y": "Year",
             "unit_ym": "Month",
             "unit_ymd": "Date",
-            "unit_30": "30 Minutes",
+            "unit_1h": "1 Hour",
             "green": "green power",
             "demand": "demand",
             "nuclear": "nuclear",
@@ -65,11 +67,12 @@ const get = (lang) => {
             "okiden" : "Okinawa Electric Power"
         },
         "ch" : {
+            "no_data": "该目标期间没有数据。",
             "term": "术语",
             "unit_y": "年份",
             "unit_ym": "月份",
             "unit_ymd": "日期",
-            "unit_30": "30分钟",
+            "unit_1h": "1小时",
             "green": "绿色力量",
             "demand": "需求",
             "nuclear": "核电站",
@@ -97,11 +100,12 @@ const get = (lang) => {
             "okiden" : "冲绳电力"
         },
         "es" : {
+            "no_data": "No hay datos para el período objetivo.",
             "term": "Término",
             "unit_y": "Año",
             "unit_ym": "Mes",
             "unit_ymd": "Fecha",
-            "unit_30": "30 minutos",
+            "unit_1h": "1 hora",
             "green": "poder verde",
             "demand": "demanda",
             "nuclear": "nuclear",

@@ -23,8 +23,20 @@ const useElectoricPowerData = () => {
                     setData(initialData);
                     setIsLoading(false);
                 });
-        } else if(newUnit==="30"){
+        } else if(newUnit==="1H"){
             setIsRangeSliderOpen(false);
+
+            const japanStandardTime = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+            const today = new Date(japanStandardTime);
+            const this_year = today.getFullYear();
+            const prev_month = today.getMonth();
+
+            japanEnergyService
+                .get_daily_data(newUnit, this_year, prev_month, 1)
+                .then(initialData => {
+                    setData(initialData);
+                    setIsLoading(false);
+                });
         }
     }, []);
 
