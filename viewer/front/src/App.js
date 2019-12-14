@@ -7,6 +7,8 @@ import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
 import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRadioButtons'
 import wordDictionaryService from './services/word_dictionary'
 import languageOptionService from './services/language_option'
+import dateSelectContentsService from './services/date_select_contents'
+import japanEnergyService from './services/japan_energy'
 import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
 import rangeSliderHook from './custom_hooks/electoric_power_data'
@@ -32,13 +34,56 @@ const App = () => {
   const handleRangeSliderChange = electoric_power_data_hook.handleRangeSliderChange;
   const lowerTextFieldValue = electoric_power_data_hook.lowerTextFieldValue;
   const upperTextFieldValue = electoric_power_data_hook.upperTextFieldValue;
+  const is_range_slider_open = electoric_power_data_hook.is_range_slider_open;
+  const setData = electoric_power_data_hook.setData;
+  const setIsLoading = electoric_power_data_hook.setIsLoading;
 
   //言語選択
-  const [selected, setSelected] = useState('jp');
-  const handleSelectChange = useCallback((value) => setSelected(value), []);
-  const options = languageOptionService.get();
-  let lang = selected;
+  const [languageSelected, setLanguageSelected] = useState('jp');
+  const handleLanguageSelectChange = useCallback((value) => setLanguageSelected(value), []);
+  const languageOptions = languageOptionService.get();
+  let lang = languageSelected;
   let dict = wordDictionaryService.get(lang);
+
+  //TODO:CustomHook作って集約したい。
+  //30分値指定の期間
+  const dateSelectContents = dateSelectContentsService.get();
+
+  const [yearSelected, setYearSelected] = useState(dateSelectContents.this_year);
+  const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
+    setYearSelected(value);
+    japanEnergyService
+    .get_daily_data(unit, value, monthSelected, dateSelected)
+    .then(initialData => {
+        setData(initialData);
+        setIsLoading(false);
+    });
+  }, []);
+  const year_options = dateSelectContents.year_map;
+
+  const [monthSelected, setMonthSelected] = useState(dateSelectContents.prev_month);
+  const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
+    setMonthSelected(value);
+    japanEnergyService
+    .get_daily_data(unit, yearSelected, value, dateSelected)
+    .then(initialData => {
+        setData(initialData);
+        setIsLoading(false);
+    });
+  }, []);
+  const month_options = dateSelectContents.month_map;
+
+  const [dateSelected, setDateSelected] = useState(1);
+  const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
+    setDateSelected(value);
+    japanEnergyService
+    .get_daily_data(unit, yearSelected, monthSelected, value)
+    .then(initialData => {
+        setData(initialData);
+        setIsLoading(false);
+    });
+  }, []);
+  const date_options = dateSelectContents.month_map;
 
   //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany();
@@ -56,10 +101,11 @@ const App = () => {
     <div>
       <AppProvider>
         <Select
+          key="languageSelect"
           label="Language"
-          options={options}
-          onChange={handleSelectChange}
-          value={selected}
+          options={languageOptions}
+          onChange={handleLanguageSelectChange}
+          value={languageSelected}
         />
         <Card title={dict.title} sectioned>
           <JapanEnergyResourseRadioButtons
@@ -83,31 +129,58 @@ const App = () => {
             handleEnergyResoursesChange={handleEnergyResoursesChange}
           />
         </Card>
-        <Card sectioned title={dict.term}>
-          <RangeSlider
-            value={rangeValue}
-            prefix={prefix}
-            min={min}
-            max={max}
-            step={step}
-            onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
-          />
-          <Stack distribution="equalSpacing" spacing="extraLoose">
-            <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
-            <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
-          </Stack>
-        </Card>
+        {
+
+          is_range_slider_open ?
+            (<Card sectioned title={dict.term}>
+              <RangeSlider
+                value={rangeValue}
+                prefix={prefix}
+                min={min}
+                max={max}
+                step={step}
+                onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+              />
+              <Stack distribution="equalSpacing" spacing="extraLoose">
+                <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
+                <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
+              </Stack>
+            </Card>) : (
+              <Card sectioned title={dict.term}>
+                <Stack>
+                  <Select
+                    label={dict.unit_y}
+                    options={year_options}
+                    onChange={(value) => handleYearSelectChange(unit, value, monthSelected, dateSelected)}
+                    value={yearSelected}
+                  />
+                  <Select
+                    label={dict.unit_ym}
+                    options={month_options}
+                    onChange={(value) => handleMonthSelectChange(unit, yearSelected, value, dateSelected)}
+                    value={monthSelected}
+                  />
+                  <Select
+                    label={dict.unit_ymd}
+                    options={date_options}
+                    onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}
+                    value={dateSelected}
+                  />
+                </Stack>
+              </Card>
+            )
+        }
       </AppProvider>
       {
         is_loading ? (<ul><AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider></ul>) :
-        (<ul>
-          <JapanEnergyCharts
-            data={data}
-            dict={dict}
-            electricPowersChecked={electricPowersChecked}
-            energyResoursesChecked={energyResoursesChecked}
-          />
-        </ul>)}
+          (<ul>
+            <JapanEnergyCharts
+              data={data}
+              dict={dict}
+              electricPowersChecked={electricPowersChecked}
+              energyResoursesChecked={energyResoursesChecked}
+            />
+          </ul>)}
     </div >
   )
 }

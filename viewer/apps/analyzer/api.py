@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 import os
 import time
 
@@ -77,25 +77,48 @@ def get(request):
     unit = request.GET.get(key="unit", default="ym")
     from_value = request.GET.get(key="from", default="2016/04")
     to_value = request.GET.get(key="to", default="2019/12")
+    year_value = request.GET.get(key="year", default="2019")
+    month_value = request.GET.get(key="month", default="11")
+    date_value = request.GET.get(key="date", default="1")
     root_path = os.getcwd()
     start = time.time()
 
-    data = {
-        "message": "Success",
-        "hepco": HepcoController.get(root_path, unit, from_value, to_value),
-        "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),
-        "rikuden": RikudenController.get(root_path, unit, from_value, to_value),
-        "tepco": TepcoController.get(root_path, unit, from_value, to_value),
-        "chuden": ChudenController.get(root_path, unit, from_value, to_value),
-        "kepco": KepcoController.get(root_path, unit, from_value, to_value),
-        "energia": EnergiaController.get(root_path, unit, from_value, to_value),
-        "yonden": YondenController.get(root_path, unit, from_value, to_value),
-        "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
-        "okiden": OkidenController.get(root_path, unit, from_value, to_value)
-    }
-    print(f'elapsed_time:{time.time() - start}[sec]')
+    if unit == "y" or unit == "ym" or unit == "ymd":
+        data = {
+            "message": "Success",
+            "hepco": HepcoController.get(root_path, unit, from_value, to_value),
+            "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),
+            "rikuden": RikudenController.get(root_path, unit, from_value, to_value),
+            "tepco": TepcoController.get(root_path, unit, from_value, to_value),
+            "chuden": ChudenController.get(root_path, unit, from_value, to_value),
+            "kepco": KepcoController.get(root_path, unit, from_value, to_value),
+            "energia": EnergiaController.get(root_path, unit, from_value, to_value),
+            "yonden": YondenController.get(root_path, unit, from_value, to_value),
+            "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
+            "okiden": OkidenController.get(root_path, unit, from_value, to_value)
+        }
+        print(f'elapsed_time:{time.time() - start}[sec]')
 
-    return JsonResponse(data)
+        return JsonResponse(data)
+    elif unit == "30":
+        data = {
+            "message": "Success",
+            "hepco": HepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "tohokuepco": TohokuEpcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "rikuden": RikudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "tepco": TepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "chuden": ChudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "kepco": KepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "energia": EnergiaController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "yonden": YondenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "kyuden": KyudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "okiden": OkidenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+        }
+        print(f'elapsed_time:{time.time() - start}[sec]')
+
+        return JsonResponse(data)
+    else:
+        raise Http404()
 
 # http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page

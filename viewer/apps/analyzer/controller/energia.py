@@ -31,5 +31,9 @@ class EnergiaController(Controller):
         return QueryService.get(root_path, cls.COMPANY_NAME, unit, from_value, to_value)
 
     @classmethod
+    def get_daily_data(cls, root_path, unit, year_value, month_value, date_value):
+        return QueryService.get_daily_data(root_path, cls.COMPANY_NAME, unit, year_value, month_value, date_value)
+
+    @classmethod
     def check_download_page(cls, root_path):
         return CheckerFunction.check_download_page(root_path, cls.COMPANY_NAME, [])
