@@ -15,6 +15,7 @@ phases:
   post_build:
     commands:
       - tar cf /tmp/node_modules.tar node_modules
+      - ls
       - cd ../
       - pwd
       - cd ../
@@ -22,7 +23,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+  base-directory: ./viewer/front/build
 cache:
   paths:
     - /tmp/node_modules.tar
