@@ -3,6 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - cd ./viewer/front
       - if [ -e /tmp/node_modules.tar ]; then tar xf /tmp/node_modules.tar; fi
       - npm install
   build:
@@ -11,6 +12,10 @@ phases:
   post_build:
     commands:
       - tar cf /tmp/node_modules.tar node_modules
+      - cd ../
+      - pwd
+      - cd ../
+      - pwd
 artifacts:
   files:
     - '**/*'

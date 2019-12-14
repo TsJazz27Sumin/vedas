@@ -22,7 +22,10 @@
      1.  [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
      2.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. [redisの設定](https://medium.com/@ss.shawnshi/how-to-install-redis-on-ec2-server-for-fast-in-memory-database-f30c3ef8c35e)
- 11. [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
+ 11. Reactのdeploy
+     1.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
+     2.  [React.jsとcreate-react-appを使ってタダでAWS S3にイケてる動的サイトをサクッと作る方法（環境構築編）](https://goleiro.hatenablog.com/entry/2017/03/20/030018)
+     3.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
 
 # よく使うコマンド
  - ssh -i ~/.ssh/Vedas.pem ec2-user@52.196.187.98
