@@ -30,6 +30,7 @@
      5.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
  12. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
+     2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
