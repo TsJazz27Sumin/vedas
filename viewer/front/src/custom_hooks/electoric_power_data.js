@@ -3,14 +3,14 @@ import { debounce } from "lodash";
 import japanEnergyService from '../services/japan_energy'
 import yearAndMonthService from '../services/year_and_month'
 
-const useElectoricPowerData = () => {
+const useElectoricPowerData = (unit_initialize) => {
 
     const [is_range_slider_open, setIsRangeSliderOpen] = useState(true);
     const [is_loading, setIsLoading] = useState(false);
     const year_and_month = yearAndMonthService.get();
     const initialValue = [year_and_month.length - 12, year_and_month.length];
     const [data, setData] = useState([]);
-    const [unit, setUnit] = useState('ym');
+    const [unit, setUnit] = useState(unit_initialize);
     const handleTermChange = useCallback((newUnit, from, to) => {
         setUnit(newUnit);
 

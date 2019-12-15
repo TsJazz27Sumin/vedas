@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-const useElectoricPowerCompany = () => {
+const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
 
     //checkbox
     const [allChecked, setAllChecked] = useState(false);
@@ -19,25 +19,27 @@ const useElectoricPowerCompany = () => {
         setOkidenChecked(newChecked);
     }, []);
 
-    const [hepcoChecked, setHepcoChecked] = useState(false);
+    const intialize = energy_power_company_initialize_params;
+
+    const [hepcoChecked, setHepcoChecked] = useState(intialize.hepcoChecked_initialize);
     const handleHepcoChange = useCallback((newChecked) => setHepcoChecked(newChecked), []);
-    const [tohokuepcoChecked, setTohokuepcoChecked] = useState(false);
+    const [tohokuepcoChecked, setTohokuepcoChecked] = useState(intialize.tohokuepcoChecked_initialize);
     const handleTohokuepcoChange = useCallback((newChecked) => setTohokuepcoChecked(newChecked), []);
-    const [rikudenChecked, setRikudenChecked] = useState(false);
+    const [rikudenChecked, setRikudenChecked] = useState(intialize.rikudenChecked_initialize);
     const handleRikudenChange = useCallback((newChecked) => setRikudenChecked(newChecked), []);
-    const [tepcoChecked, setTepcoChecked] = useState(true);
+    const [tepcoChecked, setTepcoChecked] = useState(intialize.tepcoChecked_initialize);
     const handleTepcoChange = useCallback((newChecked) => setTepcoChecked(newChecked), []);
-    const [chudenChecked, setChudenChecked] = useState(false);
+    const [chudenChecked, setChudenChecked] = useState(intialize.chudenChecked_initialize);
     const handleChudenChange = useCallback((newChecked) => setChudenChecked(newChecked), []);
-    const [kepcoChecked, setKepcoChecked] = useState(false);
+    const [kepcoChecked, setKepcoChecked] = useState(intialize.kepcoChecked_initialize);
     const handleKepcoChange = useCallback((newChecked) => setKepcoChecked(newChecked), []);
-    const [energiaChecked, setEnergiaChecked] = useState(false);
+    const [energiaChecked, setEnergiaChecked] = useState(intialize.energiaChecked_initialize);
     const handleEnergiaChange = useCallback((newChecked) => setEnergiaChecked(newChecked), []);
-    const [yondenChecked, setYondenChecked] = useState(false);
+    const [yondenChecked, setYondenChecked] = useState(intialize.yondenChecked_initialize);
     const handleYondenChange = useCallback((newChecked) => setYondenChecked(newChecked), []);
-    const [kyudenChecked, setKyudenChecked] = useState(false);
+    const [kyudenChecked, setKyudenChecked] = useState(intialize.kyudenChecked_initialize);
     const handleKyudenChange = useCallback((newChecked) => setKyudenChecked(newChecked), []);
-    const [okidenChecked, setOkidenChecked] = useState(false);
+    const [okidenChecked, setOkidenChecked] = useState(intialize.okidenChecked_initialize);
     const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
 
     const Checked = {

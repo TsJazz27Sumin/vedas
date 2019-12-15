@@ -17,10 +17,52 @@ import rangeSliderHook from './custom_hooks/electoric_power_data'
 //cd ../supply-and-demand-viewer/viewer/front/
 //npm start
 //reference:https://polaris.shopify.com/components/
-const App = () => {
+const App = (props) => {
+
+  //Query Param
+  const qs = props.qs;
+
+  //言語選択
+  const language_initialize = (qs.language_initialize === undefined) ? "jp" : qs.language_initialize;
+
+  //集計単位
+  const unit_initialize = (qs.unit_initialize === undefined) ? "ym" : qs.unit_initialize;
+
+  //電力会社
+  const toBoolean = (data) => data.toLowerCase() === 'true';
+  const energy_power_company_initialize_params = {
+    hepcoChecked_initialize: (qs.hepcoChecked_initialize === undefined) ? false : toBoolean(qs.hepcoChecked_initialize),
+    tohokuepcoChecked_initialize: (qs.tohokuepcoChecked_initialize === undefined) ? false : toBoolean(qs.tohokuepcoChecked_initialize),
+    rikudenChecked_initialize: (qs.rikudenChecked_initialize === undefined) ? false : toBoolean(qs.rikudenChecked_initialize),
+    //tepcoだけSampleでDefault is true.
+    tepcoChecked_initialize: (qs.tepcoChecked_initialize === undefined) ? true : toBoolean(qs.tepcoChecked_initialize),
+    chudenChecked_initialize: (qs.chudenChecked_initialize === undefined) ? false : toBoolean(qs.chudenChecked_initialize),
+    kepcoChecked_initialize: (qs.kepcoChecked_initialize === undefined) ? false : toBoolean(qs.kepcoChecked_initialize),
+    energiaChecked_initialize: (qs.energiaChecked_initialize === undefined) ? false : toBoolean(qs.energiaChecked_initialize),
+    yondenChecked_initialize: (qs.yondenChecked_initialize === undefined) ? false : toBoolean(qs.yondenChecked_initialize),
+    kyudenChecked_initialize: (qs.kyudenChecked_initialize === undefined) ? false : toBoolean(qs.kyudenChecked_initialize),
+    okidenChecked_initialize: (qs.okidenChecked_initialize === undefined) ? false : toBoolean(qs.okidenChecked_initialize),
+  };
+
+  //電源リソース
+  const electoric_power_resourse_initialize_params = {
+    //demandだけSampleでDefault is true.
+    demandChecked_initialize: (qs.demandChecked_initialize === undefined) ? true : toBoolean(qs.demandChecked_initialize),
+    nuclearChecked_initialize: (qs.nuclearChecked_initialize === undefined) ? false : toBoolean(qs.nuclearChecked_initialize),
+    thermalChecked_initialize: (qs.thermalChecked_initialize === undefined) ? false : toBoolean(qs.thermalChecked_initialize),
+    hydroChecked_initialize: (qs.hydroChecked_initialize === undefined) ? false : toBoolean(qs.hydroChecked_initialize),
+    geothermalChecked_initialize: (qs.geothermalChecked_initialize === undefined) ? false : toBoolean(qs.geothermalChecked_initialize),
+    biomassChecked_initialize: (qs.biomassChecked_initialize === undefined) ? false : toBoolean(qs.biomassChecked_initialize),
+    solarChecked_initialize: (qs.solarChecked_initialize === undefined) ? false : toBoolean(qs.solarChecked_initialize),
+    solarOutputControlChecked_initialize: (qs.solarOutputControlChecked_initialize === undefined) ? false : toBoolean(qs.solarOutputControlChecked_initialize),
+    windChecked_initialize: (qs.windChecked_initialize === undefined) ? false : toBoolean(qs.windChecked_initialize),
+    windOutputControlChecked_initialize: (qs.windOutputControlChecked_initialize === undefined) ? false : toBoolean(qs.windOutputControlChecked_initialize),
+    pumpingChecked_initialize: (qs.pumpingChecked_initialize === undefined) ? false : toBoolean(qs.pumpingChecked_initialize),
+    interconnectionChecked_initialize: (qs.interconnectionChecked_initialize === undefined) ? false : toBoolean(qs.interconnectionChecked_initialize),
+  };
 
   //電力データをCallするためのパラメータや処理
-  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData()
+  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData(unit_initialize)
   const is_loading = electoric_power_data_hook.is_loading;
   const year_and_month = electoric_power_data_hook.year_and_month;
   const data = electoric_power_data_hook.data;
@@ -39,7 +81,7 @@ const App = () => {
   const setIsLoading = electoric_power_data_hook.setIsLoading;
 
   //言語選択
-  const [languageSelected, setLanguageSelected] = useState('jp');
+  const [languageSelected, setLanguageSelected] = useState(language_initialize);
   const handleLanguageSelectChange = useCallback((value) => setLanguageSelected(value), []);
   const languageOptions = languageOptionService.get();
   let lang = languageSelected;
@@ -92,14 +134,14 @@ const App = () => {
   const date_options = dateSelectContents.date_map;
 
   //電力会社のチェックボックス
-  const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany();
+  const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(energy_power_company_initialize_params);
   const allChecked = electoric_power_company.allChecked;
   const handleAllChange = electoric_power_company.handleAllChange;
   const electricPowersChecked = electoric_power_company.Checked;
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   //エネルギーリソースのチェックボックス
-  const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse();
+  const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(electoric_power_resourse_initialize_params);
   const energyResoursesChecked = electoric_power_resource.Checked;
   const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
