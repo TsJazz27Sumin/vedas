@@ -61,37 +61,9 @@ const App = (props) => {
     electoric_power_data_initialize_params.year_initialize !== undefined
     ) ? parseInt(electoric_power_data_initialize_params.year_initialize) : dateSelectContents.this_year;
 
-  const [yearSelected, setYearSelected] = useState(year_initialize);
-  const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
-    setYearSelected(parseInt(value));
-    japanEnergyService
-      .get_daily_data(unit, value, monthSelected, dateSelected)
-      .then(initialData => {
-        setData(initialData);
-        setIsLoading(false);
-      });
-  },
-    // eslint-disable-next-line
-    []);
-  const year_options = dateSelectContents.year_map;
-
   const month_initialize = (
     electoric_power_data_initialize_params.month_initialize !== undefined
     ) ? parseInt(electoric_power_data_initialize_params.month_initialize) : dateSelectContents.prev_month;
-
-  const [monthSelected, setMonthSelected] = useState(month_initialize);
-  const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
-    setMonthSelected(parseInt(value));
-    japanEnergyService
-      .get_daily_data(unit, yearSelected, value, dateSelected)
-      .then(initialData => {
-        setData(initialData);
-        setIsLoading(false);
-      });
-  },
-    // eslint-disable-next-line
-    []);
-  const month_options = dateSelectContents.month_map;
 
   const date_initialize = (
     electoric_power_data_initialize_params.date_initialize !== undefined
@@ -99,6 +71,16 @@ const App = (props) => {
 
   const [dateSelected, setDateSelected] = useState(date_initialize);
   const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
+
+    const date = new Date(parseInt(yearSelected), parseInt(monthSelected-1), parseInt(value));
+    const month = date.getMonth() + 1;
+
+    if(monthSelected !== month){
+      date.setDate(1);
+      date.setDate(date.getDate() - 1);
+      value = date.getDate();
+    }
+
     setDateSelected(parseInt(value));
     japanEnergyService
       .get_daily_data(unit, yearSelected, monthSelected, value)
@@ -109,7 +91,60 @@ const App = (props) => {
   },
     // eslint-disable-next-line
     []);
-  const date_options = dateSelectContents.date_map;
+
+  const [monthSelected, setMonthSelected] = useState(month_initialize);
+  const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
+    const date = new Date(parseInt(yearSelected), parseInt(value - 1), parseInt(dateSelected));
+    const month = date.getMonth() + 1;
+
+    let target_date = dateSelected;
+    if(parseInt(value) !== month){
+      date.setDate(1);
+      date.setDate(date.getDate() - 1);
+      console.log(date);
+      setDateSelected(date.getDate());
+      target_date= date.getDate();
+    }
+
+    setMonthSelected(parseInt(value));
+    japanEnergyService
+      .get_daily_data(unit, yearSelected, value, target_date)
+      .then(initialData => {
+        setData(initialData);
+        setIsLoading(false);
+      });
+
+  },
+    // eslint-disable-next-line
+    []);
+  const month_options = dateSelectContents.month_map;
+
+  const [yearSelected, setYearSelected] = useState(year_initialize);
+  const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
+
+    const date = new Date(parseInt(value), parseInt(monthSelected - 1), parseInt(dateSelected));
+    const month = date.getMonth() + 1;
+
+    let target_date = dateSelected;
+    if(monthSelected !== month){
+      date.setDate(1);
+      date.setDate(date.getDate() - 1);
+      console.log(date);
+      setDateSelected(date.getDate());
+      target_date= date.getDate();
+    }
+
+    setYearSelected(parseInt(value));
+    japanEnergyService
+      .get_daily_data(unit, value, monthSelected, target_date)
+      .then(initialData => {
+        setData(initialData);
+        setIsLoading(false);
+      });
+  },
+    // eslint-disable-next-line
+    []);
+  const year_options = dateSelectContents.year_map;
 
   //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(energy_power_company_initialize_params);
@@ -199,7 +234,7 @@ const App = (props) => {
                     <Select
                       key="dateSelect"
                       label={dict.unit_ymd}
-                      options={date_options}
+                      options={dateSelectContentsService.get_date_map(yearSelected, monthSelected)}
                       onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}
                       value={dateSelected}
                     />

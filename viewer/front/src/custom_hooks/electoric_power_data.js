@@ -27,15 +27,17 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
 
     //QueryParamを指定して、1時間単位の集計の場合にイベントを初回発火させる必要がある。
     useEffect(() => {
-        japanEnergyService
+        if (unit === "1H") {
+            japanEnergyService
                 .get_daily_data(unit, year_initialize, month_initialize, date_initialize)
                 .then(initialData => {
                     setData(initialData);
                     setIsLoading(false);
                 });
-      },
-      // eslint-disable-next-line
-      []);
+        }
+    },
+        // eslint-disable-next-line
+        []);
 
     const handleTermChange = useCallback((newUnit, from, to) => {
         setUnit(newUnit);
