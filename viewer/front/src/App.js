@@ -1,13 +1,14 @@
 import React, { useState, useCallback } from 'react'
-import { AppProvider, Select, Card, Stack, RangeSlider, DisplayText, Spinner } from '@shopify/polaris';
+import { AppProvider, Select, Card, Stack, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
 import JapanEnergyResourseBadges from './components/JapanEnergyResourseBadges'
 import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRadioButtons'
+import DateSelect from './components/DateSelect'
+import RangeSelect from './components/RangeSelect'
 import wordDictionaryService from './services/word_dictionary'
 import languageOptionService from './services/language_option'
-import dateSelectContentsService from './services/date_select_contents'
 import queryParamPerserService from './services/query_param_perser'
 import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
@@ -110,53 +111,42 @@ const App = (props) => {
             />
           </Card.Section>
           {
-
             is_range_slider_open ?
               (<Card.Section>
-                <RangeSlider
-                  value={range_slider.rangeValue}
-                  prefix={range_slider.prefix}
-                  min={range_slider.min}
-                  max={range_slider.max}
-                  step={range_slider.step}
-                  onChange={(value) => range_slider.handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+                <RangeSelect
+                  range_slider={range_slider}
+                  unit={unit}
+                  year_and_month={year_and_month}
                 />
-                <Stack distribution="equalSpacing" spacing="extraLoose">
-                  <DisplayText size="small">{year_and_month[range_slider.lowerTextFieldValue]}</DisplayText>
-                  <DisplayText size="small">{year_and_month[range_slider.upperTextFieldValue]}</DisplayText>
-                </Stack>
               </Card.Section>) : (
                 <Card.Section>
-                  <Stack>
-                    <Select
-                      key="yearSelect"
-                      label={dict.unit_y}
-                      options={year_options}
-                      onChange={(value) => handleYearSelectChange(unit, value, monthSelected, dateSelected)}
-                      value={yearSelected}
-                    />
-                    <Select
-                      key="monthSelect"
-                      label={dict.unit_ym}
-                      options={month_options}
-                      onChange={(value) => handleMonthSelectChange(unit, yearSelected, value, dateSelected)}
-                      value={monthSelected}
-                    />
-                    <Select
-                      key="dateSelect"
-                      label={dict.unit_ymd}
-                      options={dateSelectContentsService.get_date_map(yearSelected, monthSelected)}
-                      onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}
-                      value={dateSelected}
-                    />
-                  </Stack>
+                  <DateSelect
+                    dict={dict}
+                    year_options={year_options}
+                    month_options={month_options}
+                    handleYearSelectChange={handleYearSelectChange}
+                    handleMonthSelectChange={handleMonthSelectChange}
+                    handleDateSelectChange={handleDateSelectChange}
+                    unit={unit}
+                    yearSelected={yearSelected}
+                    monthSelected={monthSelected}
+                    dateSelected={dateSelected}
+                  />
                 </Card.Section>
               )
           }
         </Card>
       </AppProvider>
       {
-        is_loading ? (<ul><AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider></ul>) :
+        is_loading ? 
+          (
+            <ul>
+              <AppProvider>
+                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
+                </AppProvider>
+            </ul>
+          ) 
+        :
           (<ul>
             <JapanEnergyCharts
               data={data}
@@ -164,7 +154,9 @@ const App = (props) => {
               electricPowersChecked={electricPowersChecked}
               energyResoursesChecked={energyResoursesChecked}
             />
-          </ul>)}
+          </ul>
+          )
+        }
     </div >
   )
 }

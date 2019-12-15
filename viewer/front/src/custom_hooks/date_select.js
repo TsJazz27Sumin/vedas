@@ -78,7 +78,6 @@ const useDateSelect = (electoric_power_data_initialize_params, setData, setIsLoa
         if (monthSelected !== month) {
             date.setDate(1);
             date.setDate(date.getDate() - 1);
-            console.log(date);
             setDateSelected(date.getDate());
             target_date = date.getDate();
         }
