@@ -1,5 +1,5 @@
 import React from 'react'
-import { DisplayText } from '@shopify/polaris';
+import { DisplayText, Spinner, AppProvider } from '@shopify/polaris';
 import CompanyName from './CompanyName'
 import Chart from './Chart'
 
@@ -60,7 +60,7 @@ const JapanEnergyCharts = props => {
     const data = props.data;
 
     if(props.data === undefined || props.data.length === 0){
-      return <DisplayText size="small">{dict.no_data}</DisplayText>;
+      return <AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider>;
     }
 
     let list = []
