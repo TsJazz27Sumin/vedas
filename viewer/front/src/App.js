@@ -26,8 +26,12 @@ const App = (props) => {
   const language_initialize = (qs.language_initialize === undefined) ? "jp" : qs.language_initialize;
 
   //集計単位
-  const unit_initialize = (qs.unit_initialize === undefined) ? "ym" : qs.unit_initialize;
-
+  const electoric_power_data_initialize_params = {
+    unit_initialize : (qs.unit_initialize === undefined) ? "ym" : qs.unit_initialize,
+    range_from_value_initialize : qs.range_from_value_initialize,
+    range_to_value_initialize : qs.range_to_value_initialize,
+  };
+  
   //電力会社
   const toBoolean = (data) => data.toLowerCase() === 'true';
   const energy_power_company_initialize_params = {
@@ -62,7 +66,7 @@ const App = (props) => {
   };
 
   //電力データをCallするためのパラメータや処理
-  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData(unit_initialize)
+  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData(electoric_power_data_initialize_params)
   const is_loading = electoric_power_data_hook.is_loading;
   const year_and_month = electoric_power_data_hook.year_and_month;
   const data = electoric_power_data_hook.data;
