@@ -1,10 +1,10 @@
 const get = () => {
 
     const options = [
-        { label: '日本語', value: 'jp' },
-        { label: 'English', value: 'en' },
-        { label: 'China(Simplified)', value: 'ch' },
-        { label: 'Spanish', value: 'es' },
+        { label: 'japanese', value: 'jp' },
+        { label: 'english', value: 'en' },
+        { label: 'china(simplified)', value: 'ch' },
+        { label: 'spanish', value: 'es' },
       ];
   
     return options

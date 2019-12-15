@@ -13,5 +13,9 @@ class Controller(object):
         raise NotImplementedError
 
     @classmethod
+    def get_daily_data(cls, root_path, unit, year_value, month_value, date_value):
+        raise NotImplementedError
+
+    @classmethod
     def check_download_page(cls, root_path):
         raise NotImplementedError

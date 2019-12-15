@@ -30,7 +30,17 @@ class QueryService(object):
             result = cls.sum_group_by_year_and_month(data_frame)
         elif unit == 'ymd':
             result = cls.sum_group_by_year_and_month_and_date(data_frame)
-        elif unit == '30':
+
+        return json.loads(result)
+
+    @classmethod
+    def get_daily_data(cls, root_path, company_name, unit, year_value, month_value, date_value):
+        data_frame = DataFrameFunction.get_data_frame_from_merged_pkl(root_path, company_name)
+        target_date = datetime(int(year_value), int(month_value), int(date_value))
+        data_frame = data_frame[(data_frame['date'] == target_date)]
+
+        result = None
+        if unit == '1H':
             result = cls.__to_float_and_round(data_frame).to_json(date_format='iso').replace('T', ' ').replace(':00.000Z', '')
 
         return json.loads(result)
