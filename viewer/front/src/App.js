@@ -8,10 +8,10 @@ import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRad
 import wordDictionaryService from './services/word_dictionary'
 import languageOptionService from './services/language_option'
 import dateSelectContentsService from './services/date_select_contents'
-import japanEnergyService from './services/japan_energy'
 import queryParamPerserService from './services/query_param_perser'
 import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
+import dateSelectHook from './custom_hooks/date_select'
 import rangeSliderHook from './custom_hooks/electoric_power_data'
 
 //memo:
@@ -34,14 +34,7 @@ const App = (props) => {
   const data = electoric_power_data_hook.data;
   const unit = electoric_power_data_hook.unit;
   const handleTermChange = electoric_power_data_hook.handleTermChange;
-  const prefix = electoric_power_data_hook.prefix;
-  const min = electoric_power_data_hook.min;
-  const max = electoric_power_data_hook.max;
-  const step = electoric_power_data_hook.step;
-  const rangeValue = electoric_power_data_hook.rangeValue;
-  const handleRangeSliderChange = electoric_power_data_hook.handleRangeSliderChange;
-  const lowerTextFieldValue = electoric_power_data_hook.lowerTextFieldValue;
-  const upperTextFieldValue = electoric_power_data_hook.upperTextFieldValue;
+  const range_slider = electoric_power_data_hook.range_slider;
   const is_range_slider_open = electoric_power_data_hook.is_range_slider_open;
   const setData = electoric_power_data_hook.setData;
   const setIsLoading = electoric_power_data_hook.setIsLoading;
@@ -53,98 +46,16 @@ const App = (props) => {
   let lang = languageSelected;
   let dict = wordDictionaryService.get(lang);
 
-  //TODO:CustomHook作って集約したい。
   //30分値指定の期間
-  const dateSelectContents = dateSelectContentsService.get();
-
-  const year_initialize = (
-    electoric_power_data_initialize_params.year_initialize !== undefined
-    ) ? parseInt(electoric_power_data_initialize_params.year_initialize) : dateSelectContents.this_year;
-
-  const month_initialize = (
-    electoric_power_data_initialize_params.month_initialize !== undefined
-    ) ? parseInt(electoric_power_data_initialize_params.month_initialize) : dateSelectContents.prev_month;
-
-  const date_initialize = (
-    electoric_power_data_initialize_params.date_initialize !== undefined
-    ) ? parseInt(electoric_power_data_initialize_params.date_initialize) : 1;
-
-  const [dateSelected, setDateSelected] = useState(date_initialize);
-  const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
-
-    const date = new Date(parseInt(yearSelected), parseInt(monthSelected-1), parseInt(value));
-    const month = date.getMonth() + 1;
-
-    if(monthSelected !== month){
-      date.setDate(1);
-      date.setDate(date.getDate() - 1);
-      value = date.getDate();
-    }
-
-    setDateSelected(parseInt(value));
-    japanEnergyService
-      .get_daily_data(unit, yearSelected, monthSelected, value)
-      .then(initialData => {
-        setData(initialData);
-        setIsLoading(false);
-      });
-  },
-    // eslint-disable-next-line
-    []);
-
-  const [monthSelected, setMonthSelected] = useState(month_initialize);
-  const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
-    const date = new Date(parseInt(yearSelected), parseInt(value - 1), parseInt(dateSelected));
-    const month = date.getMonth() + 1;
-
-    let target_date = dateSelected;
-    if(parseInt(value) !== month){
-      date.setDate(1);
-      date.setDate(date.getDate() - 1);
-      console.log(date);
-      setDateSelected(date.getDate());
-      target_date= date.getDate();
-    }
-
-    setMonthSelected(parseInt(value));
-    japanEnergyService
-      .get_daily_data(unit, yearSelected, value, target_date)
-      .then(initialData => {
-        setData(initialData);
-        setIsLoading(false);
-      });
-
-  },
-    // eslint-disable-next-line
-    []);
-  const month_options = dateSelectContents.month_map;
-
-  const [yearSelected, setYearSelected] = useState(year_initialize);
-  const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
-
-    const date = new Date(parseInt(value), parseInt(monthSelected - 1), parseInt(dateSelected));
-    const month = date.getMonth() + 1;
-
-    let target_date = dateSelected;
-    if(monthSelected !== month){
-      date.setDate(1);
-      date.setDate(date.getDate() - 1);
-      console.log(date);
-      setDateSelected(date.getDate());
-      target_date= date.getDate();
-    }
-
-    setYearSelected(parseInt(value));
-    japanEnergyService
-      .get_daily_data(unit, value, monthSelected, target_date)
-      .then(initialData => {
-        setData(initialData);
-        setIsLoading(false);
-      });
-  },
-    // eslint-disable-next-line
-    []);
-  const year_options = dateSelectContents.year_map;
+  const date_select = dateSelectHook.useDateSelect(electoric_power_data_initialize_params, setData, setIsLoading);
+  const dateSelected = date_select.dateSelected;
+  const handleDateSelectChange = date_select.handleDateSelectChange;
+  const monthSelected = date_select.monthSelected;
+  const handleMonthSelectChange = date_select.handleMonthSelectChange;
+  const month_options = date_select.month_options;
+  const yearSelected = date_select.yearSelected;
+  const handleYearSelectChange = date_select.handleYearSelectChange;
+  const year_options = date_select.year_options;
 
   //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(energy_power_company_initialize_params);
@@ -177,8 +88,8 @@ const App = (props) => {
               dict={dict}
               unit={unit}
               year_and_month={year_and_month}
-              lowerTextFieldValue={lowerTextFieldValue}
-              upperTextFieldValue={upperTextFieldValue}
+              lowerTextFieldValue={range_slider.lowerTextFieldValue}
+              upperTextFieldValue={range_slider.upperTextFieldValue}
               handleTermChange={handleTermChange}
             />
           </Card.Section>
@@ -203,16 +114,16 @@ const App = (props) => {
             is_range_slider_open ?
               (<Card.Section>
                 <RangeSlider
-                  value={rangeValue}
-                  prefix={prefix}
-                  min={min}
-                  max={max}
-                  step={step}
-                  onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+                  value={range_slider.rangeValue}
+                  prefix={range_slider.prefix}
+                  min={range_slider.min}
+                  max={range_slider.max}
+                  step={range_slider.step}
+                  onChange={(value) => range_slider.handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
                 />
                 <Stack distribution="equalSpacing" spacing="extraLoose">
-                  <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
-                  <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
+                  <DisplayText size="small">{year_and_month[range_slider.lowerTextFieldValue]}</DisplayText>
+                  <DisplayText size="small">{year_and_month[range_slider.upperTextFieldValue]}</DisplayText>
                 </Stack>
               </Card.Section>) : (
                 <Card.Section>
