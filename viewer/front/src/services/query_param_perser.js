@@ -19,7 +19,7 @@ const execute = (qs) => {
     year_initialize : qs.year_initialize,
     month_initialize : qs.month_initialize,
     date_initialize : qs.date_initialize,
-    is_range_slider_open : (qs.is_range_slider_open === undefined) ? false : toBoolean(qs.is_range_slider_open),
+    is_range_slider_open : (qs.is_range_slider_open === undefined) ? true : toBoolean(qs.is_range_slider_open),
   };
   
   //電力会社
