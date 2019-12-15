@@ -53,42 +53,42 @@ const App = () => {
   const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
     setYearSelected(parseInt(value));
     japanEnergyService
-    .get_daily_data(unit, value, monthSelected, dateSelected)
-    .then(initialData => {
+      .get_daily_data(unit, value, monthSelected, dateSelected)
+      .then(initialData => {
         setData(initialData);
         setIsLoading(false);
-    });
-  }, 
-  // eslint-disable-next-line
-  []);
+      });
+  },
+    // eslint-disable-next-line
+    []);
   const year_options = dateSelectContents.year_map;
 
   const [monthSelected, setMonthSelected] = useState(dateSelectContents.prev_month);
   const handleMonthSelectChange = useCallback((unit, yearSelected, value, dateSelected) => {
     setMonthSelected(parseInt(value));
     japanEnergyService
-    .get_daily_data(unit, yearSelected, value, dateSelected)
-    .then(initialData => {
+      .get_daily_data(unit, yearSelected, value, dateSelected)
+      .then(initialData => {
         setData(initialData);
         setIsLoading(false);
-    });
+      });
   },
-  // eslint-disable-next-line
-  []);
+    // eslint-disable-next-line
+    []);
   const month_options = dateSelectContents.month_map;
 
   const [dateSelected, setDateSelected] = useState(1);
   const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
     setDateSelected(parseInt(value));
     japanEnergyService
-    .get_daily_data(unit, yearSelected, monthSelected, value)
-    .then(initialData => {
+      .get_daily_data(unit, yearSelected, monthSelected, value)
+      .then(initialData => {
         setData(initialData);
         setIsLoading(false);
-    });
+      });
   },
-  // eslint-disable-next-line
-  []);
+    // eslint-disable-next-line
+    []);
   const date_options = dateSelectContents.date_map;
 
   //電力会社のチェックボックス
@@ -106,79 +106,88 @@ const App = () => {
   return (
     <div>
       <AppProvider>
-        <Select
-          key="languageSelect"
-          label="Language"
-          options={languageOptions}
-          onChange={handleLanguageSelectChange}
-          value={languageSelected}
-        />
+        <Stack>
+          <Select
+            label="Current language is "
+            labelInline
+            key="languageSelect"
+            options={languageOptions}
+            onChange={handleLanguageSelectChange}
+            value={languageSelected}
+          />
+        </Stack>
         <Card title={dict.title} sectioned>
-          <JapanEnergyResourseRadioButtons
-            dict={dict}
-            unit={unit}
-            year_and_month={year_and_month}
-            lowerTextFieldValue={lowerTextFieldValue}
-            upperTextFieldValue={upperTextFieldValue}
-            handleTermChange={handleTermChange}
-          />
-          <JapanEnergyCheckboxes
-            dict={dict}
-            allChecked={allChecked}
-            handleAllChange={handleAllChange}
-            electricPowersChecked={electricPowersChecked}
-            handleElectricPowersChange={handleElectricPowersChange}
-          />
-          <JapanEnergyResourseBadges
-            dict={dict}
-            energyResoursesChecked={energyResoursesChecked}
-            handleEnergyResoursesChange={handleEnergyResoursesChange}
-          />
-        </Card>
-        {
+          <Card.Section>
+            <JapanEnergyResourseRadioButtons
+              dict={dict}
+              unit={unit}
+              year_and_month={year_and_month}
+              lowerTextFieldValue={lowerTextFieldValue}
+              upperTextFieldValue={upperTextFieldValue}
+              handleTermChange={handleTermChange}
+            />
+          </Card.Section>
+          <Card.Section>
+            <JapanEnergyCheckboxes
+              dict={dict}
+              allChecked={allChecked}
+              handleAllChange={handleAllChange}
+              electricPowersChecked={electricPowersChecked}
+              handleElectricPowersChange={handleElectricPowersChange}
+            />
+          </Card.Section>
+          <Card.Section>
+            <JapanEnergyResourseBadges
+              dict={dict}
+              energyResoursesChecked={energyResoursesChecked}
+              handleEnergyResoursesChange={handleEnergyResoursesChange}
+            />
+          </Card.Section>
+          {
 
-          is_range_slider_open ?
-            (<Card sectioned title={dict.term}>
-              <RangeSlider
-                value={rangeValue}
-                prefix={prefix}
-                min={min}
-                max={max}
-                step={step}
-                onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
-              />
-              <Stack distribution="equalSpacing" spacing="extraLoose">
-                <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
-                <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
-              </Stack>
-            </Card>) : (
-              <Card sectioned title={dict.term}>
-                <Stack>
-                  <Select
-                    key="yearSelect"
-                    label={dict.unit_y}
-                    options={year_options}
-                    onChange={(value) => handleYearSelectChange(unit, value, monthSelected, dateSelected)}
-                    value={yearSelected}
-                  />
-                  <Select
-                    key="monthSelect"
-                    label={dict.unit_ym}
-                    options={month_options}
-                    onChange={(value) => handleMonthSelectChange(unit, yearSelected, value, dateSelected)}
-                    value={monthSelected}
-                  />
-                  <Select
-                    key="dateSelect"
-                    label={dict.unit_ymd}
-                    options={date_options}
-                    onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}
-                    value={dateSelected}
-                  />
+            is_range_slider_open ?
+              (<Card.Section>
+                <RangeSlider
+                  value={rangeValue}
+                  prefix={prefix}
+                  min={min}
+                  max={max}
+                  step={step}
+                  onChange={(value) => handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+                />
+                <Stack distribution="equalSpacing" spacing="extraLoose">
+                  <DisplayText size="small">{year_and_month[lowerTextFieldValue]}</DisplayText>
+                  <DisplayText size="small">{year_and_month[upperTextFieldValue]}</DisplayText>
                 </Stack>
-              </Card>
-            )
-        }
+              </Card.Section>) : (
+                <Card.Section>
+                  <Stack>
+                    <Select
+                      key="yearSelect"
+                      label={dict.unit_y}
+                      options={year_options}
+                      onChange={(value) => handleYearSelectChange(unit, value, monthSelected, dateSelected)}
+                      value={yearSelected}
+                    />
+                    <Select
+                      key="monthSelect"
+                      label={dict.unit_ym}
+                      options={month_options}
+                      onChange={(value) => handleMonthSelectChange(unit, yearSelected, value, dateSelected)}
+                      value={monthSelected}
+                    />
+                    <Select
+                      key="dateSelect"
+                      label={dict.unit_ymd}
+                      options={date_options}
+                      onChange={(value) => handleDateSelectChange(unit, yearSelected, monthSelected, value)}
+                      value={dateSelected}
+                    />
+                  </Stack>
+                </Card.Section>
+              )
+          }
+        </Card>
       </AppProvider>
       {
         is_loading ? (<ul><AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider></ul>) :
