@@ -1,7 +1,7 @@
 const convert_params = (qs) => {
 
     switch (qs.case) {
-        //日本全国の太陽光推移
+        //日本全国の太陽光出力推移
         case "1":
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
