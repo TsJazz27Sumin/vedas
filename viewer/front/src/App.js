@@ -49,14 +49,6 @@ const App = (props) => {
 
   //30分値指定の期間
   const date_select = dateSelectHook.useDateSelect(electoric_power_data_initialize_params, setData, setIsLoading);
-  const dateSelected = date_select.dateSelected;
-  const handleDateSelectChange = date_select.handleDateSelectChange;
-  const monthSelected = date_select.monthSelected;
-  const handleMonthSelectChange = date_select.handleMonthSelectChange;
-  const month_options = date_select.month_options;
-  const yearSelected = date_select.yearSelected;
-  const handleYearSelectChange = date_select.handleYearSelectChange;
-  const year_options = date_select.year_options;
 
   //電力会社のチェックボックス
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(energy_power_company_initialize_params);
@@ -122,15 +114,8 @@ const App = (props) => {
                 <Card.Section>
                   <DateSelect
                     dict={dict}
-                    year_options={year_options}
-                    month_options={month_options}
-                    handleYearSelectChange={handleYearSelectChange}
-                    handleMonthSelectChange={handleMonthSelectChange}
-                    handleDateSelectChange={handleDateSelectChange}
                     unit={unit}
-                    yearSelected={yearSelected}
-                    monthSelected={monthSelected}
-                    dateSelected={dateSelected}
+                    date_select={date_select}
                   />
                 </Card.Section>
               )

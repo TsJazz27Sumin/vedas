@@ -5,15 +5,15 @@ import dateSelectContentsService from '../services/date_select_contents'
 const DateSelect = (props) => {
 
   const dict = props.dict;
-  const year_options = props.year_options;
-  const month_options = props.month_options;
-  const handleYearSelectChange = props.handleYearSelectChange;
-  const handleMonthSelectChange = props.handleMonthSelectChange;
-  const handleDateSelectChange = props.handleDateSelectChange;
   const unit = props.unit;
-  const yearSelected = props.yearSelected;
-  const monthSelected = props.monthSelected;
-  const dateSelected = props.dateSelected;
+  const year_options = props.date_select.year_options;
+  const month_options = props.date_select.month_options;
+  const handleYearSelectChange = props.date_select.handleYearSelectChange;
+  const handleMonthSelectChange = props.date_select.handleMonthSelectChange;
+  const handleDateSelectChange = props.date_select.handleDateSelectChange;
+  const yearSelected = props.date_select.yearSelected;
+  const monthSelected = props.date_select.monthSelected;
+  const dateSelected = props.date_select.dateSelected;
 
   return (
     <Stack>
