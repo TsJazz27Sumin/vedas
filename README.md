@@ -66,7 +66,7 @@
 
 # Visuals
 
-<img src="https://github.com/panair-jp/supply-and-demand-viewer/blob/master/readme_img/screentshot_20191208.png" alt="ScreenShot">
+<img src="https://github.com/panair-jp/supply-and-demand-viewer/blob/master/readme_img/screenshot_20191215.png" alt="ScreenShot">
 
 # Installation ※TODO
 - serverは、requirementsがあるのでこちらをpip。
