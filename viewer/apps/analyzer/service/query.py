@@ -39,29 +39,13 @@ class QueryService(object):
         target_date = datetime(int(year_value), int(month_value), int(date_value))
         data_frame = data_frame[(data_frame['date'] == target_date)]
 
+        print(data_frame['solar'])
+
         result = None
         if unit == '1H':
-            result = cls.__to_float_and_round(data_frame).to_json(date_format='iso').replace('T', ' ').replace(':00.000Z', '')
+            result = data_frame.to_json(date_format='iso').replace('T', ' ').replace(':00.000Z', '')
 
         return json.loads(result)
-
-    @classmethod
-    def __to_float_and_round(cls, result):
-        # floatで統一してroundする。
-        result['demand'] = result['demand'].astype(float).round(1)
-        result['nuclear'] = result['nuclear'].astype(float).round(1)
-        result['thermal'] = result['thermal'].astype(float).round(1)
-        result['hydro'] = result['hydro'].astype(float).round(1)
-        result['geothermal'] = result['geothermal'].astype(float).round(1)
-        result['biomass'] = result['biomass'].astype(float).round(1)
-        result['solar'] = result['solar'].astype(float).round(1)
-        result['solar_output_control'] = result['solar_output_control'].astype(float).round(1)
-        result['wind'] = result['wind'].astype(float).round(1)
-        result['wind_output_control'] = result['wind_output_control'].astype(float).round(1)
-        result['pumping'] = result['pumping'].astype(float).round(1)
-        result['interconnection'] = result['interconnection'].astype(float).round(1)
-        result['total_supply_capacity'] = result['total_supply_capacity'].astype(float).round(1)
-        return result
 
     @classmethod
     def sum_group_by_year_and_month_and_date(cls, data_frame):
@@ -92,7 +76,7 @@ class QueryService(object):
             ]
         except Exception as e:
             raise e
-        return cls.__to_float_and_round(result).to_json(date_format='iso').replace('T00:00:00.000Z', '')
+        return result.to_json(date_format='iso').replace('T00:00:00.000Z', '')
 
     @classmethod
     def sum_group_by_year_and_month(cls, data_frame):
@@ -122,7 +106,7 @@ class QueryService(object):
             ]
         except Exception as e:
             raise e
-        return cls.__to_float_and_round(result).to_json()
+        return result.to_json()
 
     @classmethod
     def sum_group_by_year(cls, data_frame):
@@ -152,4 +136,4 @@ class QueryService(object):
             ]
         except Exception as e:
             raise e
-        return cls.__to_float_and_round(result).to_json()
+        return result.to_json()
