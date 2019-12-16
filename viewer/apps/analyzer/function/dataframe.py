@@ -45,11 +45,52 @@ class DataFrameFunction(object):
 
         # 日付にしておいた方が使いやすいので変換する。
         merged_data_frame['date'] = pandas.to_datetime(merged_data_frame['date'])
+
+        # NaNなどは、0扱いにする。
+        merged_data_frame = cls.__convert_null_value_to_zero(merged_data_frame)
+
+        # floatで統一してroundする。
+        merged_data_frame = cls.__to_float_and_round(merged_data_frame)
+
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
         merged_data_frame.set_index('date_time', inplace=True)
         merged_data_frame.to_pickle(merged_pkl_path)
 
         return merged_pkl_path
+
+    @classmethod
+    def __convert_null_value_to_zero(cls, result):
+        result['demand'] = result['demand'].astype(str).str.replace('nan', '0')
+        result['nuclear'] = result['nuclear'].astype(str).str.replace('nan', '0')
+        result['thermal'] = result['thermal'].astype(str).str.replace('nan', '0')
+        result['hydro'] = result['hydro'].astype(str).str.replace('nan', '0')
+        result['geothermal'] = result['geothermal'].astype(str).str.replace('nan', '0')
+        result['biomass'] = result['biomass'].astype(str).str.replace('nan', '0')
+        result['solar'] = result['solar'].astype(str).str.replace('nan', '0')
+        result['solar_output_control'] = result['solar_output_control'].astype(str).str.replace('nan', '0')
+        result['wind'] = result['wind'].astype(str).str.replace('nan', '0')
+        result['wind_output_control'] = result['wind_output_control'].astype(str).str.replace('nan', '0')
+        result['pumping'] = result['pumping'].astype(str).str.replace('nan', '0')
+        result['interconnection'] = result['interconnection'].astype(str).str.replace('nan', '0')
+        result['total_supply_capacity'] = result['total_supply_capacity'].astype(str).str.replace('nan', '0')
+        return result
+
+    @classmethod
+    def __to_float_and_round(cls, result):
+        result['demand'] = result['demand'].astype(float).round(1)
+        result['nuclear'] = result['nuclear'].astype(float).round(1)
+        result['thermal'] = result['thermal'].astype(float).round(1)
+        result['hydro'] = result['hydro'].astype(float).round(1)
+        result['geothermal'] = result['geothermal'].astype(float).round(1)
+        result['biomass'] = result['biomass'].astype(float).round(1)
+        result['solar'] = result['solar'].astype(float).round(1)
+        result['solar_output_control'] = result['solar_output_control'].astype(float).round(1)
+        result['wind'] = result['wind'].astype(float).round(1)
+        result['wind_output_control'] = result['wind_output_control'].astype(float).round(1)
+        result['pumping'] = result['pumping'].astype(float).round(1)
+        result['interconnection'] = result['interconnection'].astype(float).round(1)
+        result['total_supply_capacity'] = result['total_supply_capacity'].astype(float).round(1)
+        return result
 
     @classmethod
     def create_date_and_time_from_datetime(cls, data_frame):
