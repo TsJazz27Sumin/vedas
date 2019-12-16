@@ -20,6 +20,11 @@
           4. source ~/.bashrc
  9.  Djangoアプリケーションのデプロイ
      1.  [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
+         1.  nginx
+             1.  sudo amazon-linux-extras install nginx1.12
+             2.  [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
+                 1.  systemctl enable nginx
+         2.  gunicon
      2.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. [redisの設定](https://medium.com/@ss.shawnshi/how-to-install-redis-on-ec2-server-for-fast-in-memory-database-f30c3ef8c35e)
  11. Reactのdeploy
@@ -41,6 +46,8 @@
  - sh init.sh
  - redis-server
  - python3 manage.py runserver 0:8000
+ - gunicorn supply-and-demand-viewer.wsgi --bind=0.0.0.0:8000
+
  - git reset --hard origin/master
 - [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
 - chmod 600 ~/.ssh/config
@@ -50,4 +57,6 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
+### ワンライナーで簡単にDjangoを停止させる方法
+ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 
