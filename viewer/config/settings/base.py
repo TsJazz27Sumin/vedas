@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'viewer.config.wsgi.application'
+WSGI_APPLICATION = 'viewer.wsgi.application'
 
 
 # Database

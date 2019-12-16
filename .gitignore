@@ -6,7 +6,7 @@
 .idea
 *.pyc
 *.sqlite3
-*/venv/*
+*/vedas/*
 
 # dependencies
 /node_modules

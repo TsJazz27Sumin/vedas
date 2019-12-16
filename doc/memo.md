@@ -46,8 +46,8 @@
  - sh init.sh
  - redis-server
  - python3 manage.py runserver 0:8000
- - gunicorn supply-and-demand-viewer.wsgi --bind=0.0.0.0:8000
-
+ - gunicorn your_project.wsgi --bind=0.0.0.0:8000 -D
+   - -Dがデーモン化
  - git reset --hard origin/master
 - [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
 - chmod 600 ~/.ssh/config
