@@ -35,6 +35,7 @@ const execute = (qs) => {
     yondenChecked_initialize: (qs.yondenChecked_initialize === undefined) ? false : toBoolean(qs.yondenChecked_initialize),
     kyudenChecked_initialize: (qs.kyudenChecked_initialize === undefined) ? false : toBoolean(qs.kyudenChecked_initialize),
     okidenChecked_initialize: (qs.okidenChecked_initialize === undefined) ? false : toBoolean(qs.okidenChecked_initialize),
+    japanChecked_initialize: (qs.japanChecked_initialize === undefined) ? false : toBoolean(qs.japanChecked_initialize),
   };
 
   //電源リソース

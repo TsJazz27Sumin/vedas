@@ -17,6 +17,7 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         setYondenChecked(newChecked);
         setKyudenChecked(newChecked);
         setOkidenChecked(newChecked);
+        setJapanChecked(newChecked);
     }, []);
 
     const intialize = energy_power_company_initialize_params;
@@ -41,6 +42,8 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
     const handleKyudenChange = useCallback((newChecked) => setKyudenChecked(newChecked), []);
     const [okidenChecked, setOkidenChecked] = useState(intialize.okidenChecked_initialize);
     const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
+    const [japanChecked, setJapanChecked] = useState(intialize.japanChecked_initialize);
+    const handleJapanChange = useCallback((newChecked) => setJapanChecked(newChecked), []);
 
     const Checked = {
         hepcoChecked: hepcoChecked,
@@ -52,7 +55,8 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         energiaChecked: energiaChecked,
         yondenChecked: yondenChecked,
         kyudenChecked: kyudenChecked,
-        okidenChecked: okidenChecked
+        okidenChecked: okidenChecked,
+        japanChecked: japanChecked
     }
 
     const handleValueChange = {
@@ -65,7 +69,8 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         handleEnergiaChange: handleEnergiaChange,
         handleYondenChange: handleYondenChange,
         handleKyudenChange: handleKyudenChange,
-        handleOkidenChange: handleOkidenChange
+        handleOkidenChange: handleOkidenChange,
+        handleJapanChange: handleJapanChange
     }
 
     return { allChecked, handleAllChange, Checked, handleValueChange }

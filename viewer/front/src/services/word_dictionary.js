@@ -31,7 +31,8 @@ const get = (lang) => {
             "energia" : "中国電力",
             "yonden" : "四国電力",
             "kyuden" : "九州電力",
-            "okiden" : "沖縄電力"
+            "okiden" : "沖縄電力",
+            "japan" : "日本全国"
         },
         "en" : {
             "no_data": "There is no data for the target period.",
@@ -64,7 +65,8 @@ const get = (lang) => {
             "energia" : "Chugoku Electric Power",
             "yonden" : "Shikoku Electric Power",
             "kyuden" : "Kyushu Electric Power",
-            "okiden" : "Okinawa Electric Power"
+            "okiden" : "Okinawa Electric Power",
+            "japan" : "All Japan"
         },
         "ch" : {
             "no_data": "该目标期间没有数据。",
@@ -97,7 +99,8 @@ const get = (lang) => {
             "energia" : "中国电力",
             "yonden" : "四国电力",
             "kyuden" : "九州电力",
-            "okiden" : "冲绳电力"
+            "okiden" : "冲绳电力",
+            "japan" : "日本全国"
         },
         "es" : {
             "no_data": "No hay datos para el período objetivo.",
@@ -130,7 +133,8 @@ const get = (lang) => {
             "energia": "Energía eléctrica de Chugoku",
             "yonden": "Energía eléctrica Shikoku",
             "kyuden": "Energía eléctrica de Kyushu",
-            "okiden": "Energía eléctrica de OKinawa"
+            "okiden": "Energía eléctrica de OKinawa",
+            "japan" : "Todo japón"
         }
       };
 

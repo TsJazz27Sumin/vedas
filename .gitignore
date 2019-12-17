@@ -1,12 +1,10 @@
 # django
-/viewer/db.sqlite3
 *.pkl
 *.csv
 *.rdb
 .idea
 *.pyc
 *.sqlite3
-*/venv/*
 
 # dependencies
 /node_modules
@@ -32,3 +30,4 @@ yarn-error.log*
 
 
 viewer/front/node_modules/*
+vedas/*

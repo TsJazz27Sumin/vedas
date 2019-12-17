@@ -157,6 +157,15 @@ const JapanEnergyCharts = props => {
         list.push(<Chart dict={dict} energy_data={get_volumeList(data.okiden)} key="okiden_chart" energyResoursesChecked={energyResoursesChecked}/>);
       }
     }
+    if (electricPowersChecked.japanChecked){
+      list.push(<CompanyName company_name={dict.japan} key="japan_note"/>);
+
+      if(Object.values(data.japan['demand']).length === 0){
+        list.push(<DisplayText key="japan_no_data" size="small">{dict.no_data}</DisplayText>)
+      } else {
+        list.push(<Chart dict={dict} energy_data={get_volumeList(data.japan)} key="okiden_chart" energyResoursesChecked={energyResoursesChecked}/>);
+      }
+    }
 
   return (
     list

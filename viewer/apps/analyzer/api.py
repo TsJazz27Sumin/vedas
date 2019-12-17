@@ -5,6 +5,7 @@ import time
 from viewer.apps.analyzer.controller.chuden import ChudenController
 from viewer.apps.analyzer.controller.energia import EnergiaController
 from viewer.apps.analyzer.controller.hepco import HepcoController
+from viewer.apps.analyzer.controller.japan import JapanController
 from viewer.apps.analyzer.controller.kepco import KepcoController
 from viewer.apps.analyzer.controller.kyuden import KyudenController
 from viewer.apps.analyzer.controller.okiden import OkidenController
@@ -34,43 +35,45 @@ def correct_data(request, reflesh=True):
     root_path = os.getcwd()
     start = time.time()
 
+    hepco_count, hepco_merged_pkl_path = HepcoController.correct_data(root_path, reflesh)
+    tohokuepco_count, tohokuepco_merged_pkl_path = TohokuEpcoController.correct_data(root_path, reflesh)
+    rikuden_count, rikuden_merged_pkl_path = RikudenController.correct_data(root_path, reflesh)
+    tepco_count, tepco_merged_pkl_path = TepcoController.correct_data(root_path, reflesh)
+    chuden_count, chuden_merged_pkl_path = ChudenController.correct_data(root_path, reflesh)
+    kepco_count, kepco_merged_pkl_path = KepcoController.correct_data(root_path, reflesh)
+    energia_count, energia_merged_pkl_path = EnergiaController.correct_data(root_path, reflesh)
+    yonden_count, yonden_merged_pkl_path = YondenController.correct_data(root_path, reflesh)
+    kyuden_count, kyuden_merged_pkl_path = KyudenController.correct_data(root_path, reflesh)
+    okiden_count, okiden_merged_pkl_path = OkidenController.correct_data(root_path, reflesh)
+
+    path_list = [
+        hepco_merged_pkl_path,
+        tohokuepco_merged_pkl_path,
+        rikuden_merged_pkl_path,
+        tepco_merged_pkl_path,
+        chuden_merged_pkl_path,
+        kepco_merged_pkl_path,
+        energia_merged_pkl_path,
+        yonden_merged_pkl_path,
+        kyuden_merged_pkl_path,
+        okiden_merged_pkl_path
+    ]
+
+    japan_count = JapanController.correct_data(root_path, path_list) if None not in path_list else 0
+
     data = {
         "message": "Success",
-        "01. hepco_count": HepcoController.correct_data(root_path, reflesh),
-        "02. tohokuepco_count": TohokuEpcoController.correct_data(root_path, reflesh),
-        "03. rikuden_count": RikudenController.correct_data(root_path, reflesh),
-        "04. tepco_count": TepcoController.correct_data(root_path, reflesh),
-        "05. chuden_count": ChudenController.correct_data(root_path, reflesh),
-        "06. kepco_count": KepcoController.correct_data(root_path, reflesh),
-        "07. energia_count": EnergiaController.correct_data(root_path, reflesh),
-        "08. yonden_count": YondenController.correct_data(root_path, reflesh),
-        "09. kyuden_count": KyudenController.correct_data(root_path, reflesh),
-        "10. okiden_count": OkidenController.correct_data(root_path, reflesh),
-    }
-    print(f'elapsed_time:{time.time() - start}[sec]')
-
-    return JsonResponse(data)
-
-
-# http://127.0.0.1:8000/viewer/analyzer/count
-@authenticate()
-def count(request):
-
-    root_path = os.getcwd()
-    start = time.time()
-
-    data = {
-        "message": "Success",
-        "01. hepco_count": HepcoController.count(root_path),
-        "02. tohokuepco_count": TohokuEpcoController.count(root_path),
-        "03. rikuden_count": RikudenController.count(root_path),
-        "04. tepco_count": TepcoController.count(root_path),
-        "05. chuden_count": ChudenController.count(root_path),
-        "06. kepco_count": KepcoController.count(root_path),
-        "07. energia_count": EnergiaController.count(root_path),
-        "08. yonden_count": YondenController.count(root_path),
-        "09. kyuden_count": KyudenController.count(root_path),
-        "10. okiden_count": OkidenController.count(root_path),
+        "01. hepco_count": hepco_count,
+        "02. tohokuepco_count": tohokuepco_count,
+        "03. rikuden_count": rikuden_count,
+        "04. tepco_count": tepco_count,
+        "05. chuden_count": chuden_count,
+        "06. kepco_count": kepco_count,
+        "07. energia_count": energia_count,
+        "08. yonden_count": yonden_count,
+        "09. kyuden_count": kyuden_count,
+        "10. okiden_count": okiden_count,
+        "11. japan_count": japan_count,
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
@@ -97,7 +100,8 @@ def get(request):
             "energia": EnergiaController.get(root_path, unit, from_value, to_value),
             "yonden": YondenController.get(root_path, unit, from_value, to_value),
             "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
-            "okiden": OkidenController.get(root_path, unit, from_value, to_value)
+            "okiden": OkidenController.get(root_path, unit, from_value, to_value),
+            "japan": JapanController.get(root_path, unit, from_value, to_value),
         }
         print(f'elapsed_time:{time.time() - start}[sec]')
 
@@ -128,6 +132,7 @@ def get_daily_data(request):
             "yonden": YondenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
             "kyuden": KyudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
             "okiden": OkidenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            "japan": JapanController.get_daily_data(root_path, unit, year_value, month_value, date_value),
         }
         print(f'elapsed_time:{time.time() - start}[sec]')
 
