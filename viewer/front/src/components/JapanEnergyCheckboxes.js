@@ -74,6 +74,11 @@ const JapanEnergyCheckboxes = props => {
           checked={electricPowersChecked.okidenChecked}
           onChange={handleElectricPowersChange.handleOkidenChange}
         />
+        <Checkbox
+          label={dict.japan}
+          checked={electricPowersChecked.japanChecked}
+          onChange={handleElectricPowersChange.handleJapanChange}
+        />
       </Stack>
     </div>) :
     (<div>
@@ -134,6 +139,11 @@ const JapanEnergyCheckboxes = props => {
           label={dict.okiden}
           checked={electricPowersChecked.okidenChecked}
           onChange={handleElectricPowersChange.handleOkidenChange}
+        />
+        <Checkbox
+          label={dict.japan}
+          checked={electricPowersChecked.japanChecked}
+          onChange={handleElectricPowersChange.handleJapanChange}
         />
       </Stack>
     </div>)

@@ -27,7 +27,7 @@ from viewer.apps.analyzer.decorator.auth import authenticate
 
 
 @authenticate()
-def correct_data(request, reflesh=False):
+def correct_data(request, reflesh=True):
     # TODO:IPでアクセス制限するだけなので、どこかで認証を手厚くすることを検討。
     # redisのインストールは、こちらを参考に。
     # redis-server

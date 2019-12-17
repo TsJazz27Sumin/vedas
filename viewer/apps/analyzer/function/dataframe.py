@@ -34,6 +34,13 @@ class DataFrameFunction(object):
 
         merged_data_frame = pandas.concat(data_frames).sort_values(by='date_time', ascending=True).reset_index()
         merged_data_frame = merged_data_frame.groupby(['date_time']).sum()
+        merged_data_frame['date_time'] = merged_data_frame.index
+        # timeを落とすためにいったんdateにしている。
+        merged_data_frame['date'] = pandas.to_datetime(merged_data_frame['date_time'].dt.date, format='%Y/%m/%d %H:%M')
+        # floatで統一してroundする。
+        merged_data_frame = cls.to_float_and_round(merged_data_frame)
+        # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
+        merged_data_frame.set_index('date_time', inplace=True)
         print(merged_data_frame)
 
         merged_pkl_path = FileFunction.get_merged_pkl_path(
@@ -70,7 +77,7 @@ class DataFrameFunction(object):
         merged_data_frame = cls.__convert_null_value_to_zero(merged_data_frame)
 
         # floatで統一してroundする。
-        merged_data_frame = cls.__to_float_and_round(merged_data_frame)
+        merged_data_frame = cls.to_float_and_round(merged_data_frame)
 
         # 時系列データを処理する様々な機能を使えるようにするためDatetimeIndexにする。
         merged_data_frame.set_index('date_time', inplace=True)
@@ -96,7 +103,7 @@ class DataFrameFunction(object):
         return result
 
     @classmethod
-    def __to_float_and_round(cls, result):
+    def to_float_and_round(cls, result):
         result['demand'] = result['demand'].astype(float).round(1)
         result['nuclear'] = result['nuclear'].astype(float).round(1)
         result['thermal'] = result['thermal'].astype(float).round(1)
