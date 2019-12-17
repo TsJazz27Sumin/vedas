@@ -84,3 +84,8 @@ mkdir original
 mkdir processed
 mkdir merged_csv
 cd ../
+# 全国
+mkdir japan
+cd japan
+mkdir merged
+mkdir merged_csv

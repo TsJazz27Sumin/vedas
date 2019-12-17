@@ -15,13 +15,13 @@ class HepcoController(Controller):
         check_result, message = cls.check_download_page(root_path)
 
         if check_result is False:
-            return message
+            return message, None
 
         json = FileFunction.get_param_json(root_path, cls.COMPANY_NAME)
-        HepcoService.correct_data(json['url'], root_path, reflesh)
+        merged_pkl_path = HepcoService.correct_data(json['url'], root_path, reflesh)
         count = QueryService.count(root_path, cls.COMPANY_NAME)
 
-        return count
+        return count, merged_pkl_path
 
     @classmethod
     def count(cls, root_path):

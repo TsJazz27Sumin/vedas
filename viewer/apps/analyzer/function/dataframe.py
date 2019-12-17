@@ -25,6 +25,26 @@ class DataFrameFunction(object):
         return pandas.read_pickle(original_pkl_path)
 
     @classmethod
+    def merge_japan_data(cls, root_path, company_name, merged_pkl_path_list):
+
+        data_frames = []
+        for merged_pkl_path in merged_pkl_path_list:
+            data_frame = pandas.read_pickle(merged_pkl_path)
+            data_frames.append(data_frame)
+
+        merged_data_frame = pandas.concat(data_frames).sort_values(by='date_time', ascending=True).reset_index()
+        merged_data_frame = merged_data_frame.groupby(['date_time']).sum()
+        print(merged_data_frame)
+
+        merged_pkl_path = FileFunction.get_merged_pkl_path(
+            root_path,
+            company_name
+        )
+        merged_data_frame.to_pickle(merged_pkl_path)
+
+        return merged_pkl_path
+
+    @classmethod
     def merge_ex_data(cls, processed_pkl_paths, root_path, company_name):
 
         data_frames = []
