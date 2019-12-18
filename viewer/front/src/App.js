@@ -67,7 +67,7 @@ const App = (props) => {
       <AppProvider>
         <Stack>
           <Select
-            label="Current language is "
+            label="current language is "
             labelInline
             key="languageSelect"
             options={languageOptions}

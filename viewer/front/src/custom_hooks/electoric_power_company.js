@@ -4,7 +4,7 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
 
     //checkbox
     const [allChecked, setAllChecked] = useState(false);
-    //TODO:allの挙動が悩ましいが、いったんこれにしておく。
+
     const handleAllChange = useCallback((newChecked) => {
         setAllChecked(newChecked);
         setHepcoChecked(newChecked);
@@ -23,27 +23,82 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
     const intialize = energy_power_company_initialize_params;
 
     const [hepcoChecked, setHepcoChecked] = useState(intialize.hepcoChecked_initialize);
-    const handleHepcoChange = useCallback((newChecked) => setHepcoChecked(newChecked), []);
+    const handleHepcoChange = useCallback((newChecked) => {
+        setHepcoChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [tohokuepcoChecked, setTohokuepcoChecked] = useState(intialize.tohokuepcoChecked_initialize);
-    const handleTohokuepcoChange = useCallback((newChecked) => setTohokuepcoChecked(newChecked), []);
+    const handleTohokuepcoChange = useCallback((newChecked) => {
+        setTohokuepcoChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [rikudenChecked, setRikudenChecked] = useState(intialize.rikudenChecked_initialize);
-    const handleRikudenChange = useCallback((newChecked) => setRikudenChecked(newChecked), []);
+    const handleRikudenChange = useCallback((newChecked) => {
+        setRikudenChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [tepcoChecked, setTepcoChecked] = useState(intialize.tepcoChecked_initialize);
-    const handleTepcoChange = useCallback((newChecked) => setTepcoChecked(newChecked), []);
+    const handleTepcoChange = useCallback((newChecked) => {
+        setTepcoChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [chudenChecked, setChudenChecked] = useState(intialize.chudenChecked_initialize);
-    const handleChudenChange = useCallback((newChecked) => setChudenChecked(newChecked), []);
+    const handleChudenChange = useCallback((newChecked) => {
+        setChudenChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [kepcoChecked, setKepcoChecked] = useState(intialize.kepcoChecked_initialize);
-    const handleKepcoChange = useCallback((newChecked) => setKepcoChecked(newChecked), []);
+    const handleKepcoChange = useCallback((newChecked) => {
+        setKepcoChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [energiaChecked, setEnergiaChecked] = useState(intialize.energiaChecked_initialize);
-    const handleEnergiaChange = useCallback((newChecked) => setEnergiaChecked(newChecked), []);
+    const handleEnergiaChange = useCallback((newChecked) => {
+        setEnergiaChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [yondenChecked, setYondenChecked] = useState(intialize.yondenChecked_initialize);
-    const handleYondenChange = useCallback((newChecked) => setYondenChecked(newChecked), []);
+    const handleYondenChange = useCallback((newChecked) => {
+        setYondenChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [kyudenChecked, setKyudenChecked] = useState(intialize.kyudenChecked_initialize);
-    const handleKyudenChange = useCallback((newChecked) => setKyudenChecked(newChecked), []);
+    const handleKyudenChange = useCallback((newChecked) => {
+        setKyudenChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [okidenChecked, setOkidenChecked] = useState(intialize.okidenChecked_initialize);
-    const handleOkidenChange = useCallback((newChecked) => setOkidenChecked(newChecked), []);
+    const handleOkidenChange = useCallback((newChecked) => {
+        setOkidenChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
     const [japanChecked, setJapanChecked] = useState(intialize.japanChecked_initialize);
-    const handleJapanChange = useCallback((newChecked) => setJapanChecked(newChecked), []);
+    const handleJapanChange = useCallback((newChecked) => {
+        setJapanChecked(newChecked);
+        if (!newChecked){
+            setAllChecked(newChecked);
+        }
+    }, []);
 
     const Checked = {
         hepcoChecked: hepcoChecked,
