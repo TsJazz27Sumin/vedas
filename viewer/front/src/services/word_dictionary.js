@@ -1,6 +1,12 @@
 const get = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "watchout": "留意事項",
+            "watchout_info1": "当社は、本アプリケーションの利用者が、本アプリケーションに依拠し、",
+            "watchout_info2": "または本アプリケーションの情報を信頼して行った行動などにより被った、いかなる生命、身体、財産上の損失又は損害についても責任を負いかねます。",
+            "watchout_info3": "使用しているデータは、経済産業省 資源エネルギー庁の「系統情報の公表考え方」に基づき、一般送配電事業者が公表している需給実績となります。",
+            "watchout_info4": "データについての留意事項につきましては、各一般送配電事業者のホームページをご確認ください。",
+            "watchout_info5": " ",
             "no_data": "対象期間のデータがありません。",
             "term": "期間",
             "unit_y": "年",
@@ -35,6 +41,12 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "en" : {
+            "watchout": "Things to watch out for",
+            "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
+            "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
+            "watchout_info3": "The data used are the actual supply and demand results announced by general power transmission and distribution companies ",
+            "watchout_info4": "based on the “System Information Disclosure Concept” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry.",
+            "watchout_info5": "Please check the homepage of each general power transmission and distribution company for data considerations.",
             "no_data": "There is no data for the target period.",
             "term": "Term",
             "unit_y": "Year",
@@ -69,6 +81,12 @@ const get = (lang) => {
             "japan" : "All Japan"
         },
         "ch" : {
+            "watchout": "Things to watch out for",
+            "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
+            "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
+            "watchout_info3": "The data used are the actual supply and demand results announced by general power transmission and distribution companies ",
+            "watchout_info4": "based on the “System Information Disclosure Concept” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry.",
+            "watchout_info5": "Please check the homepage of each general power transmission and distribution company for data considerations.",
             "no_data": "该目标期间没有数据。",
             "term": "术语",
             "unit_y": "年份",
@@ -103,6 +121,12 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "es" : {
+            "watchout": "Things to watch out for",
+            "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
+            "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
+            "watchout_info3": "The data used are the actual supply and demand results announced by general power transmission and distribution companies ",
+            "watchout_info4": "based on the “System Information Disclosure Concept” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry.",
+            "watchout_info5": "Please check the homepage of each general power transmission and distribution company for data considerations.",
             "no_data": "No hay datos para el período objetivo.",
             "term": "Término",
             "unit_y": "Año",
