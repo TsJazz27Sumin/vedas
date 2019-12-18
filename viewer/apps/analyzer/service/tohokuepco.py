@@ -73,7 +73,7 @@ class TohokuEpcoService(Service):
     def __parse(cls, content):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
-                           skiprows=[0, 1],
+                           skiprows=[0],
                            na_values=[0],
                            names=[
                                'date_time',

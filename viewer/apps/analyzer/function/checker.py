@@ -32,6 +32,10 @@ class CheckerFunction(object):
                 fromfile=current_html_path,
                 tofile=prev_html_path):
 
+            diff_line = diff_line.replace(" ", "").replace("　", "")
+            if len(diff_line):
+                continue
+
             omit_result = False
             for omit_word in omit_list:
                 if omit_word in diff_line:

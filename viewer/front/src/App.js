@@ -67,7 +67,7 @@ const App = (props) => {
       <AppProvider>
         <Stack>
           <Select
-            label="Current language is "
+            label="current language is "
             labelInline
             key="languageSelect"
             options={languageOptions}
@@ -142,6 +142,16 @@ const App = (props) => {
           </ul>
           )
         }
+        <AppProvider>
+        <Card title={dict.watchout} sectioned>
+          <p>{dict.watchout_info1}</p>
+          <p>{dict.watchout_info2}</p>
+          <br/>
+          <p>{dict.watchout_info3}</p>
+          <p>{dict.watchout_info4}</p>
+          <p>{dict.watchout_info5}</p>
+        </Card>
+        </AppProvider>
     </div >
   )
 }
