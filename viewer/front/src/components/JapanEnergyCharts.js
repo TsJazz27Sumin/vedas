@@ -73,6 +73,7 @@ const JapanEnergyCharts = props => {
       if(Object.values(data.hepco['demand']).length === 0){
         list.push(<DisplayText key="hepco_no_data" size="small">{dict.no_data}</DisplayText>)
       } else {
+        console.log(electricPowersChecked.hepcoChecked);
         list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} key="hepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
       }
     }
@@ -163,7 +164,7 @@ const JapanEnergyCharts = props => {
       if(Object.values(data.japan['demand']).length === 0){
         list.push(<DisplayText key="japan_no_data" size="small">{dict.no_data}</DisplayText>)
       } else {
-        list.push(<Chart dict={dict} energy_data={get_volumeList(data.japan)} key="okiden_chart" energyResoursesChecked={energyResoursesChecked}/>);
+        list.push(<Chart dict={dict} energy_data={get_volumeList(data.japan)} key="japan_chart" energyResoursesChecked={energyResoursesChecked}/>);
       }
     }
 
