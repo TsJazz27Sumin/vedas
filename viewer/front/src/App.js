@@ -86,19 +86,19 @@ const App = (props) => {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: 'News' }],
+          items: [{ content: 'News', url: "" }],
         },
         {
-          items: [{ content: 'About' }],
+          items: [{ content: 'About', url: "" }],
         },
         {
-          items: [{ content: 'How to use' }],
+          items: [{ content: 'How to use', url: "" }],
         },
         {
-          items: [{ content: 'Go to Panair' }],
+          items: [{ content: 'Go to Panair', url: "https://corp.panair.jp/" }],
         },
         {
-          items: [{ content: 'Language setting' }],
+          items: [{ content: 'Language setting', url: "" }],
         }
       ]}
       name="Menu"
