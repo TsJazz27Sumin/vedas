@@ -99,6 +99,9 @@ const App = (props) => {
         {
           items: [{content: 'How to use'}],
         },
+        {
+          items: [{content: 'Go to Panair'}],
+        },
       ]}
       name="Menu"
       detail="touch me"
@@ -198,13 +201,12 @@ const App = (props) => {
           }
         </Card>
       </AppProvider>
+      <AppProvider>
       {
         is_loading ? 
           (
             <ul>
-              <AppProvider>
-                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
-                </AppProvider>
+              <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
             </ul>
           ) 
         :
@@ -218,7 +220,6 @@ const App = (props) => {
           </ul>
           )
         }
-        <AppProvider>
         <Card title={dict.watchout} sectioned>
           <p>{dict.watchout_info1}</p>
           <p>{dict.watchout_info2}</p>
