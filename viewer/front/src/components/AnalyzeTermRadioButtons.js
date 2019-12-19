@@ -1,7 +1,7 @@
 import React from 'react'
 import { RadioButton, Stack } from '@shopify/polaris';
 
-const JapanEnergyResourseRadioButtons = props => {
+const AnalyzeTermRadioButtons = props => {
 
     const dict = props.dict;
     const unit = props.unit;
@@ -43,4 +43,4 @@ const JapanEnergyResourseRadioButtons = props => {
         </Stack>
     )
 }
-export default JapanEnergyResourseRadioButtons
+export default AnalyzeTermRadioButtons
