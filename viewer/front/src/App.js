@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { AppProvider, Frame, TopBar, Select, Card, Stack, Spinner } from '@shopify/polaris';
+import { AppProvider, Frame, TopBar, Card, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
@@ -8,7 +8,6 @@ import JapanEnergyResourseRadioButtons from './components/JapanEnergyResourseRad
 import DateSelect from './components/DateSelect'
 import RangeSelect from './components/RangeSelect'
 import wordDictionaryService from './services/word_dictionary'
-import languageOptionService from './services/language_option'
 import queryParamPerserService from './services/query_param_perser'
 import electoricPowerResourseHook from './custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from './custom_hooks/electoric_power_company'
@@ -41,11 +40,7 @@ const App = (props) => {
   const setIsLoading = electoric_power_data_hook.setIsLoading;
 
   //言語選択
-  const [languageSelected, setLanguageSelected] = useState(language_initialize);
-  const handleLanguageSelectChange = useCallback((value) => setLanguageSelected(value), []);
-  const languageOptions = languageOptionService.get();
-  let lang = languageSelected;
-  let dict = wordDictionaryService.get(lang);
+  let dict = wordDictionaryService.get(language_initialize);
 
   //30分値指定の期間
   const date_select = dateSelectHook.useDateSelect(electoric_power_data_initialize_params, setData, setIsLoading);
@@ -91,17 +86,20 @@ const App = (props) => {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{content: 'News'}],
+          items: [{ content: 'News' }],
         },
         {
-          items: [{content: 'About'}],
+          items: [{ content: 'About' }],
         },
         {
-          items: [{content: 'How to use'}],
+          items: [{ content: 'How to use' }],
         },
         {
-          items: [{content: 'Go to Panair'}],
+          items: [{ content: 'Go to Panair' }],
         },
+        {
+          items: [{ content: 'Language setting' }],
+        }
       ]}
       name="Menu"
       detail="touch me"
@@ -121,40 +119,27 @@ const App = (props) => {
 
   return (
     <div>
-      <div style={{height: '50px'}}>
-      <AppProvider
-        theme={theme}
-        i18n={{
-          Polaris: {
-            Avatar: {
-              label: 'Avatar',
-              labelWithInitials: 'Avatar with initials {initials}',
+      <div style={{ height: '50px' }}>
+        <AppProvider
+          theme={theme}
+          i18n={{
+            Polaris: {
+              Avatar: {
+                label: 'Avatar',
+                labelWithInitials: 'Avatar with initials {initials}',
+              },
+              Frame: { skipToContent: 'Skip to content' },
+              TopBar: {
+                toggleMenuLabel: 'Toggle menu',
+              },
             },
-            Frame: {skipToContent: 'Skip to content'},
-            TopBar: {
-              toggleMenuLabel: 'Toggle menu',
-            },
-          },
-        }}
-      >
-        <Frame topBar={topBarMarkup} />
-      </AppProvider>
-    </div>
+          }}
+        >
+          <Frame topBar={topBarMarkup} />
+        </AppProvider>
+      </div>
       <AppProvider>
         <Card sectioned>
-          <Card.Section>
-          <Stack>
-          <Select
-            label="current language is "
-            labelInline
-            key="languageSelect"
-            options={languageOptions}
-            onChange={handleLanguageSelectChange}
-            value={languageSelected}
-          />
-        </Stack>
-          
-          </Card.Section>
           <Card.Section>
             <JapanEnergyResourseRadioButtons
               dict={dict}
@@ -202,33 +187,33 @@ const App = (props) => {
         </Card>
       </AppProvider>
       <AppProvider>
-      {
-        is_loading ? 
-          (
-            <ul>
-              <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
+        {
+          is_loading ?
+            (
+              <ul>
+                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
+              </ul>
+            )
+            :
+            (<ul>
+              <JapanEnergyCharts
+                data={data}
+                dict={dict}
+                electricPowersChecked={electricPowersChecked}
+                energyResoursesChecked={energyResoursesChecked}
+              />
             </ul>
-          ) 
-        :
-          (<ul>
-            <JapanEnergyCharts
-              data={data}
-              dict={dict}
-              electricPowersChecked={electricPowersChecked}
-              energyResoursesChecked={energyResoursesChecked}
-            />
-          </ul>
-          )
+            )
         }
         <Card title={dict.watchout} sectioned>
           <p>{dict.watchout_info1}</p>
           <p>{dict.watchout_info2}</p>
-          <br/>
+          <br />
           <p>{dict.watchout_info3}</p>
           <p>{dict.watchout_info4}</p>
           <p>{dict.watchout_info5}</p>
         </Card>
-        </AppProvider>
+      </AppProvider>
     </div >
   )
 }
