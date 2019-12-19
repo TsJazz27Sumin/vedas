@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { AppProvider, Select, Card, Stack, Spinner } from '@shopify/polaris';
+import { AppProvider, Frame, TopBar, Select, Card, Stack, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import JapanEnergyCharts from './components/JapanEnergyCharts'
 import JapanEnergyCheckboxes from './components/JapanEnergyCheckboxes'
@@ -62,10 +62,88 @@ const App = (props) => {
   const energyResoursesChecked = electoric_power_resource.Checked;
   const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const toggleIsUserMenuOpen = useCallback(
+    () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
+    [],
+  );
+
+  const handleNavigationToggle = useCallback(() => {
+    console.log('toggle navigation visibility');
+  }, []);
+
+  const theme = {
+    colors: {
+      topBar: {
+        background: '#ffff',
+      },
+    },
+    logo: {
+      width: 124,
+      topBarSource: process.env.PUBLIC_URL + '/panair-logo.png',
+      url: 'https://corp.panair.jp/',
+      accessibilityLabel: 'Panair',
+    },
+  };
+
+  const userMenuMarkup = (
+    <TopBar.UserMenu
+      actions={[
+        {
+          items: [{content: 'News'}],
+        },
+        {
+          items: [{content: 'About'}],
+        },
+        {
+          items: [{content: 'How to use'}],
+        },
+        {
+          items: [{content: 'Go to Panair'}],
+        },
+      ]}
+      name="Menu"
+      detail="touch me"
+      initials="M"
+      open={isUserMenuOpen}
+      onToggle={toggleIsUserMenuOpen}
+    />
+  );
+
+  const topBarMarkup = (
+    <TopBar
+      showNavigationToggle
+      userMenu={userMenuMarkup}
+      onNavigationToggle={handleNavigationToggle}
+    />
+  );
+
   return (
     <div>
+      <div style={{height: '50px'}}>
+      <AppProvider
+        theme={theme}
+        i18n={{
+          Polaris: {
+            Avatar: {
+              label: 'Avatar',
+              labelWithInitials: 'Avatar with initials {initials}',
+            },
+            Frame: {skipToContent: 'Skip to content'},
+            TopBar: {
+              toggleMenuLabel: 'Toggle menu',
+            },
+          },
+        }}
+      >
+        <Frame topBar={topBarMarkup} />
+      </AppProvider>
+    </div>
       <AppProvider>
-        <Stack>
+        <Card sectioned>
+          <Card.Section>
+          <Stack>
           <Select
             label="current language is "
             labelInline
@@ -75,7 +153,8 @@ const App = (props) => {
             value={languageSelected}
           />
         </Stack>
-        <Card title={dict.title} sectioned>
+          
+          </Card.Section>
           <Card.Section>
             <JapanEnergyResourseRadioButtons
               dict={dict}
@@ -122,13 +201,12 @@ const App = (props) => {
           }
         </Card>
       </AppProvider>
+      <AppProvider>
       {
         is_loading ? 
           (
             <ul>
-              <AppProvider>
-                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
-                </AppProvider>
+              <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
             </ul>
           ) 
         :
@@ -142,7 +220,6 @@ const App = (props) => {
           </ul>
           )
         }
-        <AppProvider>
         <Card title={dict.watchout} sectioned>
           <p>{dict.watchout_info1}</p>
           <p>{dict.watchout_info2}</p>
