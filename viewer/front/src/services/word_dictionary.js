@@ -1,6 +1,7 @@
 const get = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "jurisdiction": "管内",
             "watchout": "留意事項",
             "watchout_info1": "当社は、本アプリケーションの利用者が、本アプリケーションに依拠し、",
             "watchout_info2": "または本アプリケーションの情報を信頼して行った行動などにより被った、いかなる生命、身体、財産上の損失又は損害についても責任を負いかねます。",
@@ -41,6 +42,7 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "en" : {
+            "jurisdiction": "Jurisdiction",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
             "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
@@ -81,13 +83,14 @@ const get = (lang) => {
             "japan" : "All Japan"
         },
         "ch" : {
+            "jurisdiction": "的管辖权",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
             "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
             "watchout_info3": "The data used are the actual supply and demand results announced by general power transmission and distribution companies ",
             "watchout_info4": "based on the “System Information Disclosure Concept” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry.",
             "watchout_info5": "Please check the homepage of each general power transmission and distribution company for data considerations.",
-            "no_data": "该目标期间没有数据。",
+            "no_data": "没有数据",
             "term": "术语",
             "unit_y": "年份",
             "unit_ym": "月份",
@@ -121,6 +124,7 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "es" : {
+            "jurisdiction": "Jurisdicción",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
             "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",

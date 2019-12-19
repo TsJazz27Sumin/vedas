@@ -68,7 +68,7 @@ const JapanEnergyCharts = props => {
     const energyResoursesChecked = props.energyResoursesChecked;
 
     if (electricPowersChecked.hepcoChecked){
-      list.push(<CompanyName company_name={dict.hepco} key="hepco_note"/>);
+      list.push(<CompanyName company_name={dict.hepco} jurisdiction={dict.jurisdiction} key="hepco_note"/>);
 
       if(Object.values(data.hepco['demand']).length === 0){
         list.push(<DisplayText key="hepco_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -78,7 +78,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.tohokuepcoChecked){
-      list.push(<CompanyName company_name={dict.tohokuepco} key="tohokuepco_note"/>);
+      list.push(<CompanyName company_name={dict.tohokuepco} jurisdiction={dict.jurisdiction} key="tohokuepco_note"/>);
 
       if(Object.values(data.tohokuepco['demand']).length === 0){
         list.push(<DisplayText key="tohokuepco_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -87,7 +87,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.rikudenChecked){
-      list.push(<CompanyName company_name={dict.rikuden} key="rikuden_note"/>);
+      list.push(<CompanyName company_name={dict.rikuden} jurisdiction={dict.jurisdiction} key="rikuden_note"/>);
 
       if(Object.values(data.rikuden['demand']).length === 0){
         list.push(<DisplayText key="rikuden_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -96,7 +96,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.tepcoChecked){
-      list.push(<CompanyName company_name={dict.tepco} key="tepco_note"/>);
+      list.push(<CompanyName company_name={dict.tepco} jurisdiction={dict.jurisdiction} key="tepco_note"/>);
 
       if(Object.values(data.tepco['demand']).length === 0){
         list.push(<DisplayText key="tepco_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -105,7 +105,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.chudenChecked){
-      list.push(<CompanyName company_name={dict.chuden} key="chuden_note"/>);
+      list.push(<CompanyName company_name={dict.chuden} jurisdiction={dict.jurisdiction} key="chuden_note"/>);
 
       if(Object.values(data.chuden['demand']).length === 0){
         list.push(<DisplayText key="chuden_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -114,7 +114,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.kepcoChecked){
-      list.push(<CompanyName company_name={dict.kepco} key="kepco_note"/>);
+      list.push(<CompanyName company_name={dict.kepco} jurisdiction={dict.jurisdiction} key="kepco_note"/>);
 
       if(Object.values(data.kepco['demand']).length === 0){
         list.push(<DisplayText key="kepco_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -123,7 +123,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.energiaChecked){
-      list.push(<CompanyName company_name={dict.energia} key="energia_note"/>);
+      list.push(<CompanyName company_name={dict.energia} jurisdiction={dict.jurisdiction} key="energia_note"/>);
 
       if(Object.values(data.energia['demand']).length === 0){
         list.push(<DisplayText key="energia_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -132,7 +132,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.yondenChecked){
-      list.push(<CompanyName company_name={dict.yonden} key="yonden_note"/>);
+      list.push(<CompanyName company_name={dict.yonden} jurisdiction={dict.jurisdiction} key="yonden_note"/>);
 
       if(Object.values(data.yonden['demand']).length === 0){
         list.push(<DisplayText key="yonden_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -141,7 +141,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.kyudenChecked){
-      list.push(<CompanyName company_name={dict.kyuden} key="kyuden_note"/>);
+      list.push(<CompanyName company_name={dict.kyuden} jurisdiction={dict.jurisdiction} key="kyuden_note"/>);
 
       if(Object.values(data.kyuden['demand']).length === 0){
         list.push(<DisplayText key="kyuden_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -150,7 +150,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.okidenChecked){
-      list.push(<CompanyName company_name={dict.okiden} key="okiden_note"/>);
+      list.push(<CompanyName company_name={dict.okiden} jurisdiction={dict.jurisdiction} key="okiden_note"/>);
 
       if(Object.values(data.okiden['demand']).length === 0){
         list.push(<DisplayText key="okiden_no_data" size="small">{dict.no_data}</DisplayText>)
@@ -159,7 +159,7 @@ const JapanEnergyCharts = props => {
       }
     }
     if (electricPowersChecked.japanChecked){
-      list.push(<CompanyName company_name={dict.japan} key="japan_note"/>);
+      list.push(<CompanyName company_name={dict.japan} jurisdiction="" key="japan_note"/>);
 
       if(Object.values(data.japan['demand']).length === 0){
         list.push(<DisplayText key="japan_no_data" size="small">{dict.no_data}</DisplayText>)
