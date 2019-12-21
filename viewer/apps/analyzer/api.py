@@ -164,6 +164,10 @@ def check_download_page(request):
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
+    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+    json_data = json.dumps(data)
+    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+
     return JsonResponse(data)
 
 
