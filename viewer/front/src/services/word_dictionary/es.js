@@ -11,7 +11,7 @@ const get = () => {
         "contact_text5": "privacy policy",
         "contact_text6": ".",
         "contact_text7": "If you agree with the above, click the \"Agree and Confirm\" button.",
-        "contact_submit": "Agree and submit",
+        "contact_submit": "Agree and Confirm",
         "contact_complete": "Thank you for your inquiry.",
         "how_to_use_text1": "El primer lanzamiento es visualizar la estructura de la fuente de alimentación en todo Japón.",
         "how_to_use_text2": "Es muy simple y puede comenzar a usarlo de inmediato.",
