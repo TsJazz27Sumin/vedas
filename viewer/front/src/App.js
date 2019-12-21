@@ -1,6 +1,10 @@
 import React, { useState, useCallback } from 'react'
 import { AppProvider, Frame, TopBar} from '@shopify/polaris';
 import JapanEnergyChart from './apps/JapanEnergyChart'
+import News from './apps/News'
+import About from './apps/About'
+import HowToUse from './apps/HowToUse'
+import Contact from './apps/Contact'
 import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
@@ -44,7 +48,10 @@ const App = (props) => {
           items: [{ content: 'About', url: pathname + '?lang=' + lang + '&menu=about' }],
         },
         {
-          items: [{ content: 'How to use', url: pathname + '?lang=' + lang + '&menu=howtouse' }],
+          items: [{ content: 'HowToUse', url: pathname + '?lang=' + lang + '&menu=howtouse' }],
+        },
+        {
+          items: [{ content: 'Contact', url: pathname + '?lang=' + lang + '&menu=contact' }],
         },
         {
           items: [{ content: 'Language setting', url: pathname + '?lang=' + lang + '&menu=language_setting' }],
@@ -75,6 +82,18 @@ const App = (props) => {
   const menu = qs.menu;
 
   switch (menu){
+    case "news":
+      content = (<News query_param={props.qs} />);
+      break;
+    case "about":
+      content = (<About query_param={props.qs} />);
+      break;
+    case "howtouse":
+      content = (<HowToUse query_param={props.qs} />);
+      break;
+    case "contact":
+      content = (<Contact query_param={props.qs} />);
+      break;
     case "language_setting":
       content = (<LanguageSetting  query_param={props.qs} />);
       break;
