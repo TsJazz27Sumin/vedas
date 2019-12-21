@@ -14,37 +14,21 @@ const About = (props) => {
       <Layout>
         <Layout.Section>
           <TextContainer spacing="loose">
-            <p>
-              {dict.about_text1}
-            </p>
-            <p>
-              {dict.about_text2}
+            <p>{dict.about_text1}</p>
+            <p>{dict.about_text2}
             </p>
             <br/>
-            <p>
-              {dict.about_text3}
+            <p>{dict.about_text3}
             </p>
             <br/>
-            <p>
-              {dict.about_text4}
-            </p>
-            <p>
-              {dict.about_text5}
-            </p>
-            <p>
-              {dict.about_text6}
-            </p>
+            <p>{dict.about_text4}</p>
+            <p>{dict.about_text5}</p>
+            <p>{dict.about_text6}</p>
             <br/>
-            <p>
-              {dict.about_text7}
-            </p>
-            <p>
-              {dict.about_text8}
-            </p>
+            <p>{dict.about_text7}</p>
+            <p>{dict.about_text8}</p>
             <br/>
-            <p>
-              {dict.about_text9}
-            </p>
+            <p>{dict.about_text9}</p>
           </TextContainer>
         </Layout.Section>
       </Layout>

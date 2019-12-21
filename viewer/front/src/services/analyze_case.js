@@ -1,7 +1,7 @@
 const convert_params = (qs) => {
 
     switch (qs.case) {
-        //日本全国の太陽光出力推移
+        //日本全国の太陽光出力は上昇傾向にある。
         case "1":
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
@@ -59,8 +59,7 @@ const convert_params = (qs) => {
           qs.demandChecked_initialize = "true";
           qs.thermalChecked_initialize = "true";
           break;
-        //日本のグリーン電力（水力、地熱、バイオマス、太陽光、風力）の中では、水力と太陽光が２強。
-        //場所によっては、ダムが多いので水力が強かったり、沖縄はほぼダムがないので太陽光が一番強い。
+        //日本のグリーン電力（水力、地熱、バイオマス、太陽光、風力）の中では、水力と太陽光が強い。
         case "5":
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
