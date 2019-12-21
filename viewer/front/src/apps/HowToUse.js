@@ -5,13 +5,14 @@ import '@shopify/polaris/styles.css';
 import wordDictionaryService from '../services/word_dictionary'
 
 const HowToUse = (props) => {
+  const pathname = props.location.pathname;
   const qs = props.query_param;
-  const language_initialize = qs.lang;
-  const dict = wordDictionaryService.get(language_initialize);
+  const lang = qs.lang;
+  const dict = wordDictionaryService.get(lang);
   const public_url = process.env.PUBLIC_URL;
-  const step1_image = public_url + '/howtouse/step1_' + language_initialize + '.png';
-  const step2_image = public_url + '/howtouse/step2_' + language_initialize + '.png';
-  const step3_image = public_url + '/howtouse/step3_' + language_initialize + '.png';
+  const step1_image = public_url + '/howtouse/step1_' + lang + '.png';
+  const step2_image = public_url + '/howtouse/step2_' + lang + '.png';
+  const step3_image = public_url + '/howtouse/step3_' + lang + '.png';
 
   const howtouse = (
     <Page title="How to use">
@@ -43,11 +44,11 @@ const HowToUse = (props) => {
             <br/>
             <br/>
             <p>{dict.how_to_use_text13}</p>
-            <p>{dict.how_to_use_text14}</p>
-            <p>{dict.how_to_use_text15}</p>
-            <p>{dict.how_to_use_text16}</p>
-            <p>{dict.how_to_use_text17}</p>
-            <p>{dict.how_to_use_text18}</p>
+            <p><a href={pathname + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</a></p>
+            <p><a href={pathname + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text15}</a></p>
+            <p><a href={pathname + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text16}</a></p>
+            <p><a href={pathname + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text17}</a></p>
+            <p><a href={pathname + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text18}</a></p>
             <p>{dict.how_to_use_text19}</p>
             <br/>
           </TextContainer>
