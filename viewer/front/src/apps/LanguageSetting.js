@@ -18,7 +18,7 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusJp = isDirtyJp ? 'いいえ' : 'はい';
+  const contentStatusJp = isDirtyJp ? 'はい' : 'はい';
 
   const [isDirtyEn, setIsDirtyEn] = useState(language_initialize !== "en");
   const toggleIsDirtyEn = useCallback(
@@ -32,7 +32,7 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusEn = isDirtyEn ? 'No' : 'Yes';
+  const contentStatusEn = isDirtyEn ? 'Yes' : 'Yes';
 
   const [isDirtyCh, setIsDirtyCh] = useState(language_initialize !== "ch");
   const toggleIsDirtyCh = useCallback(
@@ -46,7 +46,7 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusCh = isDirtyCh ? '不是' : '是';
+  const contentStatusCh = isDirtyCh ? '是' : '是';
 
   const [isDirtyEs, setIsDirtyEs] = useState(language_initialize !== "es");
   const toggleIsDirtyEs = useCallback(
@@ -60,7 +60,7 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusEs = isDirtyEs ? 'No' : 'Sí';
+  const contentStatusEs = isDirtyEs ? 'Sí' : 'Sí';
 
   const pageMarkup = (
     <Page title="Language Setting">

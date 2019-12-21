@@ -48,13 +48,13 @@ const App = (props) => {
           items: [{ content: 'About', url: pathname + '?lang=' + lang + '&menu=about' }],
         },
         {
-          items: [{ content: 'HowToUse', url: pathname + '?lang=' + lang + '&menu=howtouse' }],
+          items: [{ content: 'How To Use', url: pathname + '?lang=' + lang + '&menu=howtouse' }],
         },
         {
           items: [{ content: 'Contact', url: pathname + '?lang=' + lang + '&menu=contact' }],
         },
         {
-          items: [{ content: 'Language setting', url: pathname + '?lang=' + lang + '&menu=language_setting' }],
+          items: [{ content: 'Language Setting', url: pathname + '?lang=' + lang + '&menu=language_setting' }],
         },
         {
           items: [{ content: 'Go to Panair HomePage', url: "https://corp.panair.jp/" }],
