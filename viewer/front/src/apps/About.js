@@ -2,10 +2,12 @@ import React from 'react'
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, TextContainer } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import wordDictionaryService from '../services/word_dictionary'
 
 const About = (props) => {
-  // const qs = props.query_param;
-  // const language_initialize = qs.lang;
+  const qs = props.query_param;
+  const language_initialize = qs.lang;
+  const dict = wordDictionaryService.get(language_initialize);
 
   const about = (
     <Page title="About">
@@ -13,35 +15,35 @@ const About = (props) => {
         <Layout.Section>
           <TextContainer spacing="loose">
             <p>
-              おもしろいものができそうだ。
+              {dict.about_text1}
             </p>
             <p>
-              一人のエンジニアのそんな思いからスタートしました。
-            </p>
-            <br/>
-            <p>
-              愛称はVedas。
+              {dict.about_text2}
             </p>
             <br/>
             <p>
-              日本の電力データを見える化してくれるプロダクトです。
-            </p>
-            <p>
-              はじめは、Supply And Demand Viewer の頭文字を後ろから読んで Vdas にしようかと思いましたが、 
-            </p>
-            <p>
-              すでに世にある製品で使用されていたので、Energy の E を入れて Vedas にしました。
+              {dict.about_text3}
             </p>
             <br/>
             <p>
-              Veda 自体は、古代インドで編纂されたとされるインド最古の文献です。
+              {dict.about_text4}
             </p>
             <p>
-              Veda という言葉には、知識という意味があります。
+              {dict.about_text5}
+            </p>
+            <p>
+              {dict.about_text6}
             </p>
             <br/>
             <p>
-              そこに複数形の意味を込めて、sをつけてVedasという語呂合わせです。
+              {dict.about_text7}
+            </p>
+            <p>
+              {dict.about_text8}
+            </p>
+            <br/>
+            <p>
+              {dict.about_text9}
             </p>
           </TextContainer>
         </Layout.Section>

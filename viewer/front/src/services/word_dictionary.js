@@ -1,6 +1,15 @@
 const get = (lang) => {
     const word_dictionary = {
         "jp" : {
+            "about_text1": "おもしろいものができそうだ。",
+            "about_text2": "一人のエンジニアのそんな思いからスタートしました。",
+            "about_text3": "愛称はVedas。",
+            "about_text4": "日本の電力データを見える化してくれるプロダクトです。",
+            "about_text5": "はじめは、Supply And Demand Viewer の頭文字を後ろから読んで Vdas にしようかと思いましたが、",
+            "about_text6": "すでに世にある製品で使用されていたので、Energy の E を入れて Vedas にしました。",
+            "about_text7": "Veda 自体は、古代インドで編纂されたとされるインド最古の文献です。",
+            "about_text8": "Veda という言葉には、知識という意味があります。",
+            "about_text9": "そこに複数形の意味を込めて、sをつけてVedasという語呂合わせです。",
             "jurisdiction": "管内",
             "watchout": "留意事項",
             "watchout_info1": "当社は、本アプリケーションの利用者が、本アプリケーションに依拠し、",
@@ -42,6 +51,15 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "en" : {
+            "about_text1": "It looks like something interesting can be done.",
+            "about_text2": "I started with one engineer thinking like that.",
+            "about_text3": "Nicknamed Vedas.",
+            "about_text4": "This product visualizes Japan's electricity data.",
+            "about_text5": "At first, I thought about reading the initials of Supply And Demand Viewer from the back and making it Vdas,",
+            "about_text6": "Since it was already used in products in the world, I put Energy E into Vedas.",
+            "about_text7": "Veda itself is India's oldest literature, allegedly compiled in ancient India.",
+            "about_text8": "The word Veda means knowledge.",
+            "about_text9": "With the meaning of the plural there, add s and it is Vedas.",
             "jurisdiction": "Jurisdiction",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
@@ -83,6 +101,15 @@ const get = (lang) => {
             "japan" : "All Japan"
         },
         "ch" : {
+            "about_text1": "看起来可以做一些有趣的事情。",
+            "about_text2": "我从一位工程师这样思考开始。",
+            "about_text3": "昵称是Vedas。",
+            "about_text4": "该产品可视化日本的电力数据。",
+            "about_text5": "起初，我想过从背面读取 Supply And Demand Viewer 的首字母，使其成为 Vdas，",
+            "about_text6": "由于它已经在世界各地的产品中使用，因此我将Energy E投入到Vedas中。",
+            "about_text7": "Veda本身是印度最古老的文学，据称是在古代印度汇编的。",
+            "about_text8": "Veda这个词意味着知识。",
+            "about_text9": "具有复数的含义，将s加起来就是吠陀经。",
             "jurisdiction": "的管辖权",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
@@ -124,6 +151,15 @@ const get = (lang) => {
             "japan" : "日本全国"
         },
         "es" : {
+            "about_text1": "Parece que se puede hacer algo interesante.",
+            "about_text2": "Comencé con un ingeniero pensando así.",
+            "about_text3": "El apodo es Vedas.",
+            "about_text4": "Este producto visualiza los datos de electricidad de Japón.",
+            "about_text5": "Al principio, pensé en leer las iniciales de Supply And Demand Viewer desde atrás para hacerlo Vdas,",
+            "about_text6": "Como ya se usaba en productos en el mundo, puse Energy E en Vedas.",
+            "about_text7": "Veda es la literatura más antigua de la India, supuestamente compilada en la antigua India.",
+            "about_text8": "La palabra Veda significa conocimiento.",
+            "about_text9": "Con el significado del plural allí, agregue sy es Vedas.",
             "jurisdiction": "Jurisdicción",
             "watchout": "Things to watch out for",
             "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
