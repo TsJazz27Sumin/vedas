@@ -6,8 +6,8 @@ import wordDictionaryService from '../services/word_dictionary'
 
 const About = (props) => {
   const qs = props.query_param;
-  const language_initialize = qs.lang;
-  const dict = wordDictionaryService.get(language_initialize);
+  const lang = qs.lang;
+  const dict = wordDictionaryService.get(lang);
 
   const about = (
     <Page title="About">

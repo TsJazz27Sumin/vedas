@@ -1,5 +1,17 @@
 const get = () => {
     const word_dictionary = {
+        "contact_text1": "Vedasについてお問い合わせなどがございましたら、必要な情報をご記入の上、お問い合わせください。",
+        "contact_text2": "お返事につきましては、内容により時間がかかったり、お返事しかねる場合がありますことを予めご了承ください。",
+        "contact_note": "日本語でのお問い合わせが難しい場合は、英語でご入力ください。それ以外の言語は受けつけかねます。",
+        "contact_item_name": "氏名",
+        "contact_item_mail": "メールアドレス",
+        "contact_item_input": "お問い合わせ内容",
+        "contact_text3": "個人情報の収集及び利用目的について",
+        "contact_text4": "当社の",
+        "contact_text5": "個人情報のお取り扱い方針",
+        "contact_text6": "についてご確認ください。",
+        "contact_text7": "上記にご同意頂ける方は「同意して確認画面へ」ボタンを押してください。",
+        "contact_submit": "同意して送信する",
         "how_to_use_text1": "ファーストリリースは、日本全国の電源構成を見える化してみよう、というものです。",
         "how_to_use_text2": "とても簡単で、すぐに使い始めることができます。",
         "how_to_use_text3": "まず、年・月・日・1時間から集計単位を選択しましょう。",

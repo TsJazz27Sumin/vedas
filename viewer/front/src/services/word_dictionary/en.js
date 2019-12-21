@@ -1,5 +1,17 @@
 const get = () => {
     const word_dictionary = {
+        "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",
+        "contact_text2": "Please note that your reply may take time or may not be possible depending on the content.",
+        "contact_note": "If you have difficulty inquiring in Japanese, please enter in English. Other languages cannot be accepted.",
+        "contact_item_name": "Full name",
+        "contact_item_mail": "Mail address",
+        "contact_item_input": "Content of inquiry",
+        "contact_text3": "Collection and use of personal information",
+        "contact_text4": "Please confirm our ",
+        "contact_text5": "privacy policy",
+        "contact_text6": ".",
+        "contact_text7": "If you agree with the above, click the \"Agree and Confirm\" button.",
+        "contact_submit": "Agree and submit",
         "how_to_use_text1": "The first release is to visualize the power supply structure throughout Japan.",
         "how_to_use_text2": "It's very simple and you can start using it right away.",
         "how_to_use_text3": "First, let's select the aggregation unit from year / month / day / hour.",
