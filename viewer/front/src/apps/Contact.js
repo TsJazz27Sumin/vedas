@@ -6,6 +6,7 @@ import axios from 'axios'
 import wordDictionaryService from '../services/word_dictionary'
 
 const Contact = (props) => {
+
   const qs = props.query_param;
   const lang = qs.lang;
   const dict = wordDictionaryService.get(lang);

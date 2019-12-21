@@ -8,6 +8,7 @@ import Contact from './apps/Contact'
 import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
+
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const toggleIsUserMenuOpen = useCallback(
