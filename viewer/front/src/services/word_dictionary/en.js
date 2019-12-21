@@ -12,6 +12,7 @@ const get = () => {
         "contact_text6": ".",
         "contact_text7": "If you agree with the above, click the \"Agree and Confirm\" button.",
         "contact_submit": "Agree and submit",
+        "contact_complete": "Thank you for your inquiry.",
         "how_to_use_text1": "The first release is to visualize the power supply structure throughout Japan.",
         "how_to_use_text2": "It's very simple and you can start using it right away.",
         "how_to_use_text3": "First, let's select the aggregation unit from year / month / day / hour.",

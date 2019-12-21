@@ -12,6 +12,7 @@ const get = () => {
         "contact_text6": ".",
         "contact_text7": "If you agree with the above, click the \"Agree and Confirm\" button.",
         "contact_submit": "Agree and submit",
+        "contact_complete": "Thank you for your inquiry.",
         "how_to_use_text1": "第一个版本是可视化整个日本的电源结构。",
         "how_to_use_text2": "这非常简单，您可以立即开始使用它。",
         "how_to_use_text3": "首先，让我们从年，月，日，1小时中选择聚合单位。",
