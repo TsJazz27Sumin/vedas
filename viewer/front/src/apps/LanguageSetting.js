@@ -18,7 +18,6 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusJp = isDirtyJp ? 'はい' : 'はい';
 
   const [isDirtyEn, setIsDirtyEn] = useState(language_initialize !== "en");
   const toggleIsDirtyEn = useCallback(
@@ -32,7 +31,6 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusEn = isDirtyEn ? 'Yes' : 'Yes';
 
   const [isDirtyCh, setIsDirtyCh] = useState(language_initialize !== "ch");
   const toggleIsDirtyCh = useCallback(
@@ -46,7 +44,6 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusCh = isDirtyCh ? '是' : '是';
 
   const [isDirtyEs, setIsDirtyEs] = useState(language_initialize !== "es");
   const toggleIsDirtyEs = useCallback(
@@ -60,7 +57,6 @@ const LanguageSetting = (props) => {
     // eslint-disable-next-line
     [],
   );
-  const contentStatusEs = isDirtyEs ? 'Sí' : 'Sí';
 
   const pageMarkup = (
     <Page title="Language Setting">
@@ -68,8 +64,9 @@ const LanguageSetting = (props) => {
         <Layout.Section>
           <SettingToggle
             action={{
-              content: contentStatusJp,
+              content: 'はい',
               onAction: toggleIsDirtyJp,
+              style: {padding:200}
             }}
             enabled={isDirtyJp}
           >
@@ -79,7 +76,7 @@ const LanguageSetting = (props) => {
         <Layout.Section>
           <SettingToggle
             action={{
-              content: contentStatusEn,
+              content: 'Yes',
               onAction: toggleIsDirtyEn,
             }}
             enabled={isDirtyEn}
@@ -90,7 +87,7 @@ const LanguageSetting = (props) => {
         <Layout.Section>
           <SettingToggle
             action={{
-              content: contentStatusCh,
+              content: '是',
               onAction: toggleIsDirtyCh,
             }}
             enabled={isDirtyCh}
@@ -101,7 +98,7 @@ const LanguageSetting = (props) => {
         <Layout.Section>
           <SettingToggle
             action={{
-              content: contentStatusEs,
+              content: 'Sí',
               onAction: toggleIsDirtyEs,
             }}
             enabled={isDirtyEs}
