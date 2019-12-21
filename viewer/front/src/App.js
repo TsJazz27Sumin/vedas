@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import { AppProvider, Frame, TopBar} from '@shopify/polaris';
 import JapanEnergyChart from './apps/JapanEnergyChart'
+import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
-
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const toggleIsUserMenuOpen = useCallback(
@@ -29,23 +29,28 @@ const App = (props) => {
     },
   };
 
+  const pathname = props.location.pathname;
+  const lang = props.qs.lang;
   const userMenuMarkup = (
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: 'News', url: "" }],
+          items: [{ content: 'Home', url: pathname + '?lang=' + lang + '&menu=home' }],
         },
         {
-          items: [{ content: 'About', url: "" }],
+          items: [{ content: 'News', url: pathname + '?lang=' + lang + '&menu=news' }],
         },
         {
-          items: [{ content: 'How to use', url: "" }],
+          items: [{ content: 'About', url: pathname + '?lang=' + lang + '&menu=about' }],
         },
         {
-          items: [{ content: 'Go to Panair', url: "https://corp.panair.jp/" }],
+          items: [{ content: 'How to use', url: pathname + '?lang=' + lang + '&menu=howtouse' }],
         },
         {
-          items: [{ content: 'Language setting', url: "" }],
+          items: [{ content: 'Language setting', url: pathname + '?lang=' + lang + '&menu=language_setting' }],
+        },
+        {
+          items: [{ content: 'Go to Panair HomePage', url: "https://corp.panair.jp/" }],
         }
       ]}
       name="Menu"
@@ -64,6 +69,20 @@ const App = (props) => {
     />
   );
 
+  const qs = props.qs;
+
+  let content = null;
+  const menu = qs.menu;
+
+  switch (menu){
+    case "language_setting":
+      content = (<LanguageSetting  query_param={props.qs} />);
+      break;
+    default:
+      content = (<JapanEnergyChart query_param={props.qs} />);
+      break;
+  };
+  
   return (
     <div>
       <div style={{ height: '50px' }}>
@@ -85,7 +104,9 @@ const App = (props) => {
           <Frame topBar={topBarMarkup} />
         </AppProvider>
       </div>
-      <JapanEnergyChart query_param={props.qs} />
+      {
+        content
+      }
     </div >
   )
 }

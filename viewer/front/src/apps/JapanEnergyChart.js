@@ -18,11 +18,11 @@ import rangeSliderHook from '../custom_hooks/electoric_power_data'
 //cd ../supply-and-demand-viewer/viewer/front/
 //npm start
 //reference:https://polaris.shopify.com/components/
-const JapanEnergyChart = (query_param) => {
+const JapanEnergyChart = (props) => {
 
   //クエリパラメータ
-  const qs = queryParamPerserService.execute(query_param);
-  const language_initialize = qs.language_initialize;
+  const qs = queryParamPerserService.execute(props.query_param);
+  const language_initialize = qs.lang;
   const electoric_power_data_initialize_params = qs.electoric_power_data_initialize_params;
   const energy_power_company_initialize_params = qs.energy_power_company_initialize_params;
   const electoric_power_resourse_initialize_params = qs.electoric_power_resourse_initialize_params;

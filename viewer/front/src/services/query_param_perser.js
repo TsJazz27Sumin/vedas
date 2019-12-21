@@ -1,7 +1,8 @@
 import analyzeCaseService from './analyze_case'
 
-const execute = (qs) => {
+const execute = (query_param) => {
 
+  const qs = query_param;
   const toBoolean = (data) => data.toLowerCase() === 'true';
 
   if(qs.case !== undefined){
@@ -9,7 +10,7 @@ const execute = (qs) => {
   }
 
   //言語選択
-  const language_initialize = (qs.language_initialize === undefined) ? "jp" : qs.language_initialize;
+  const lang = (qs.lang === undefined) ? "jp" : qs.lang;
 
   //集計単位
   const electoric_power_data_initialize_params = {
@@ -56,7 +57,7 @@ const execute = (qs) => {
   };
 
   return {
-    language_initialize, 
+    lang, 
     electoric_power_data_initialize_params, 
     energy_power_company_initialize_params, 
     electoric_power_resourse_initialize_params
