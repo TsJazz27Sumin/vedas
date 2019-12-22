@@ -8,7 +8,7 @@ ReactDOM.render(
   <Router>
       <Route render={ (props) => 
         <App 
-            qs={queryString.parse(props.location.search)}
+          location={props.location} qs={queryString.parse(props.location.search)}
         />
       }/>
     </Router>, 

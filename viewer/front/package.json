@@ -10,8 +10,10 @@
     "react": "^16.8.6",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.8.6",
+    "react-recaptcha-v3": "^1.1.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
+    "react-share": "^3.0.1",
     "recharts": "^1.8.5",
     "styled-components": "^4.4.1"
   },

@@ -11,14 +11,14 @@ const JapanEnergyResourseBadges = props => {
     return (isMobile ?
         (<div>
             <Stack>
-                <Badge status={energyResoursesChecked.demandChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.demandChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.demand}
                         checked={energyResoursesChecked.demandChecked}
                         onChange={handleEnergyResoursesChange.handleDemandChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.nuclearChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.nuclearChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.nuclear}
                         checked={energyResoursesChecked.nuclearChecked}
@@ -27,14 +27,14 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.thermalChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.thermalChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.thermal}
                         checked={energyResoursesChecked.thermalChecked}
                         onChange={handleEnergyResoursesChange.handleThermalChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.hydroChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.hydroChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.hydro}
                         checked={energyResoursesChecked.hydroChecked}
@@ -43,14 +43,14 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.geothermalChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.geothermalChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.geothermal}
                         checked={energyResoursesChecked.geothermalChecked}
                         onChange={handleEnergyResoursesChange.handleGeothermalChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.biomassChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.biomassChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.biomass}
                         checked={energyResoursesChecked.biomassChecked}
@@ -59,14 +59,14 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.solarChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.solarChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.solar}
                         checked={energyResoursesChecked.solarChecked}
                         onChange={handleEnergyResoursesChange.handleSolarChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.solarOutputControlChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.solarOutputControlChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.solar_output_control}
                         checked={energyResoursesChecked.solarOutputControlChecked}
@@ -75,14 +75,14 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.windChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.windChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.wind}
                         checked={energyResoursesChecked.windChecked}
                         onChange={handleEnergyResoursesChange.handleWindChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.windOutputControlChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.windOutputControlChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.wind_output_control}
                         checked={energyResoursesChecked.windOutputControlChecked}
@@ -91,14 +91,14 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.pumpingChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.pumpingChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.pumping}
                         checked={energyResoursesChecked.pumpingChecked}
                         onChange={handleEnergyResoursesChange.handlePumpingChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.interconnectionChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.interconnectionChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.interconnection}
                         checked={energyResoursesChecked.interconnectionChecked}
@@ -109,42 +109,42 @@ const JapanEnergyResourseBadges = props => {
         </div>) :
         (<div>
             <Stack>
-                <Badge status={energyResoursesChecked.demandChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.demandChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.demand}
                         checked={energyResoursesChecked.demandChecked}
                         onChange={handleEnergyResoursesChange.handleDemandChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.nuclearChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.nuclearChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.nuclear}
                         checked={energyResoursesChecked.nuclearChecked}
                         onChange={handleEnergyResoursesChange.handleNuclearChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.thermalChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.thermalChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.thermal}
                         checked={energyResoursesChecked.thermalChecked}
                         onChange={handleEnergyResoursesChange.handleThermalChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.hydroChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.hydroChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.hydro}
                         checked={energyResoursesChecked.hydroChecked}
                         onChange={handleEnergyResoursesChange.handleHydroChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.geothermalChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.geothermalChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.geothermal}
                         checked={energyResoursesChecked.geothermalChecked}
                         onChange={handleEnergyResoursesChange.handleGeothermalChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.biomassChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.biomassChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.biomass}
                         checked={energyResoursesChecked.biomassChecked}
@@ -153,42 +153,42 @@ const JapanEnergyResourseBadges = props => {
                 </Badge>
             </Stack>
             <Stack>
-                <Badge status={energyResoursesChecked.solarChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.solarChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.solar}
                         checked={energyResoursesChecked.solarChecked}
                         onChange={handleEnergyResoursesChange.handleSolarChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.solarOutputControlChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.solarOutputControlChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.solar_output_control}
                         checked={energyResoursesChecked.solarOutputControlChecked}
                         onChange={handleEnergyResoursesChange.handleSolarOutputControlChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.windChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.windChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.wind}
                         checked={energyResoursesChecked.windChecked}
                         onChange={handleEnergyResoursesChange.handleWindChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.windOutputControlChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.windOutputControlChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.wind_output_control}
                         checked={energyResoursesChecked.windOutputControlChecked}
                         onChange={handleEnergyResoursesChange.handleWindOutputControlChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.pumpingChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.pumpingChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.pumping}
                         checked={energyResoursesChecked.pumpingChecked}
                         onChange={handleEnergyResoursesChange.handlePumpingChange}
                     />
                 </Badge>
-                <Badge status={energyResoursesChecked.interconnectionChecked ? "success" : ""}>
+                <Badge status={energyResoursesChecked.interconnectionChecked ? "info" : ""}>
                     <Checkbox
                         label={dict.interconnection}
                         checked={energyResoursesChecked.interconnectionChecked}

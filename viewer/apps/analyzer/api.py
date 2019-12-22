@@ -1,3 +1,6 @@
+import json
+
+import slackweb
 from django.http import JsonResponse, Http404
 import os
 import time
@@ -161,4 +164,22 @@ def check_download_page(request):
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
+    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+    json_data = json.dumps(data)
+    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+
     return JsonResponse(data)
+
+
+# TODO:Reactからのリクエストしか受けないことを確認する。
+def contact(request):
+    datas = json.loads(request.body)
+    full_name = datas['full_name']
+    email = datas['email']
+    contact_information = datas['contact_information']
+    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+
+    text = f'full_name = {full_name} \nemail = {email} \ncontact_information = {contact_information}'
+    slack.notify(text=text)
+
+    return JsonResponse({"message": "success"})
