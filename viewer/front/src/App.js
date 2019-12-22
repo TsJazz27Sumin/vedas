@@ -23,7 +23,7 @@ const App = (props) => {
   const theme = {
     colors: {
       topBar: {
-        background: '#ffff',
+        background: '#fff',
       },
     },
     logo: {
