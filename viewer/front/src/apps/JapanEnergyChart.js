@@ -7,6 +7,7 @@ import EnergyResourseBadges from '../components/EnergyResourseBadges'
 import AnalyzeTermRadioButtons from '../components/AnalyzeTermRadioButtons'
 import DateSelect from '../components/DateSelect'
 import RangeSelect from '../components/RangeSelect'
+import ShareButtons from '../components/ShareButtons'
 import wordDictionaryService from '../services/word_dictionary'
 import queryParamPerserService from '../services/query_param_perser'
 import electoricPowerResourseHook from '../custom_hooks/electoric_power_resourse'
@@ -56,6 +57,8 @@ const JapanEnergyChart = (props) => {
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(electoric_power_resourse_initialize_params);
   const energyResoursesChecked = electoric_power_resource.Checked;
   const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
+
+  const current_url = window.location.href;
 
   return (
     <div>
@@ -127,12 +130,17 @@ const JapanEnergyChart = (props) => {
             )
         }
         <Card title={dict.watchout} sectioned>
-          <p>{dict.watchout_info1}</p>
-          <p>{dict.watchout_info2}</p>
-          <br />
-          <p>{dict.watchout_info3}</p>
-          <p>{dict.watchout_info4}</p>
-          <p>{dict.watchout_info5}</p>
+          <Card.Section>
+            <p>{dict.watchout_info1}</p>
+            <p>{dict.watchout_info2}</p>
+            <br/>
+            <p>{dict.watchout_info3}</p>
+            <p>{dict.watchout_info4}</p>
+            <p>{dict.watchout_info5}</p>
+          </Card.Section>
+          <Card.Section>
+            <ShareButtons current_url={current_url}/>
+          </Card.Section>
         </Card>
       </AppProvider>
     </div >
