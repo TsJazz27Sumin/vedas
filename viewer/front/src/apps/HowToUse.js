@@ -18,21 +18,21 @@ const HowToUse = (props) => {
     <Page title="How to use">
       <Layout>
         <Layout.Section>
-        <TextContainer spacing="loose">
+          <TextContainer spacing="loose">
             <p>{dict.how_to_use_text1}</p>
             <p>{dict.how_to_use_text2}</p>
             <br/>
             <p>{dict.how_to_use_text3}</p>
             <p>{dict.how_to_use_text4}</p>
             <br/>
-            <img width='500px' src={step1_image} alt="step1"/>
+            <img width='50%' src={step1_image} alt="step1"/>
             <br/>
             <p>{dict.how_to_use_text5}</p>
             <p>{dict.how_to_use_text6}</p>
             <p>{dict.how_to_use_text7}</p>
             <p>{dict.how_to_use_text8}</p>
             <br/>
-            <img width='1000px' src={step2_image} alt="step2"/>
+            <img width='80%' src={step2_image} alt="step2"/>
             <br/>
             <br/>
             <p>{dict.how_to_use_text9}</p>
@@ -40,7 +40,7 @@ const HowToUse = (props) => {
             <p>{dict.how_to_use_text11}</p>
             <p>{dict.how_to_use_text12}</p>
             <br/>
-            <img width='1000px' src={step3_image} alt="step3"/>
+            <img width='80%' src={step3_image} alt="step3"/>
             <br/>
             <br/>
             <p>{dict.how_to_use_text13}</p>

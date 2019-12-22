@@ -15,7 +15,7 @@ const News = (props) => {
       <Layout>
         <Layout.Section>
           <Card title="2020.01.xx Fri あけましておめでとうございます。Vedasをリリースしました。" sectioned>
-            <img width='800px' src={news202001xx_01_image} alt="news202001xx_01"/>
+            <img width='90%' src={news202001xx_01_image} alt="news202001xx_01"/>
             <br/>
             <p>一般送配電事業者が公表している需給実績データを見える化するサイトをオープンしました。</p>
             <p>対象データは、最大で2016/04から2019/12までのデータとなります。</p>
