@@ -5,8 +5,8 @@ import '@shopify/polaris/styles.css';
 
 const LanguageSetting = (props) => {
   const qs = props.query_param;
-  const language_initialize = qs.lang;
-  const [isDirtyJp, setIsDirtyJp] = useState(language_initialize !== "jp");
+  const lang = qs.lang;
+  const [isDirtyJp, setIsDirtyJp] = useState(lang !== "jp");
   const toggleIsDirtyJp = useCallback(
     () => {
       setIsDirtyEn(true);
@@ -19,7 +19,7 @@ const LanguageSetting = (props) => {
     [],
   );
 
-  const [isDirtyEn, setIsDirtyEn] = useState(language_initialize !== "en");
+  const [isDirtyEn, setIsDirtyEn] = useState(lang !== "en");
   const toggleIsDirtyEn = useCallback(
     () => {
       setIsDirtyJp(true);
@@ -32,7 +32,7 @@ const LanguageSetting = (props) => {
     [],
   );
 
-  const [isDirtyCh, setIsDirtyCh] = useState(language_initialize !== "ch");
+  const [isDirtyCh, setIsDirtyCh] = useState(lang !== "ch");
   const toggleIsDirtyCh = useCallback(
     () => {
       setIsDirtyJp(true);
@@ -45,7 +45,7 @@ const LanguageSetting = (props) => {
     [],
   );
 
-  const [isDirtyEs, setIsDirtyEs] = useState(language_initialize !== "es");
+  const [isDirtyEs, setIsDirtyEs] = useState(lang !== "es");
   const toggleIsDirtyEs = useCallback(
     () => {
       setIsDirtyJp(true);

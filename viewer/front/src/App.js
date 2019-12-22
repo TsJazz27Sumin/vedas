@@ -35,7 +35,7 @@ const App = (props) => {
   };
 
   const pathname = props.location.pathname;
-  const lang = props.qs.lang;
+  const lang = props.qs.lang === undefined ? "jp" : props.qs.lang;
   const userMenuMarkup = (
     <TopBar.UserMenu
       actions={[
