@@ -27,7 +27,7 @@ const App = (props) => {
       },
     },
     logo: {
-      width: 220,
+      width: 124,
       topBarSource: process.env.PUBLIC_URL + '/vedas-logo.png',
       url: 'https://corp.panair.jp/',
       accessibilityLabel: 'Vedas',
@@ -105,7 +105,7 @@ const App = (props) => {
   
   return (
     <div>
-      <div style={{ height: '145px' }}>
+      <div style={{ height: '80px' }}>
         <AppProvider
           theme={theme}
           i18n={{
