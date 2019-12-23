@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { AppProvider, Frame, TopBar} from '@shopify/polaris';
 import ReactGA from 'react-ga';
 import JapanEnergyChart from './apps/JapanEnergyChart'
@@ -10,11 +10,11 @@ import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
 
-  componentDidMount() {
-    const { pathname } = this.props.location;
+  useEffect(() => {
+    const { pathname } = props.location;
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
-  };
+  });
 
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
