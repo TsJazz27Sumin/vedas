@@ -4,3 +4,4 @@ pandas==0.25.3
 xlrd==1.2.0
 redis==3.3.11
 django-cors-headers==3.2.0
+slackweb=1.0.5

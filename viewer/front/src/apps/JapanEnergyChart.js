@@ -59,9 +59,12 @@ const JapanEnergyChart = (props) => {
   const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
   const current_url = window.location.href;
-
+  const public_url = process.env.PUBLIC_URL;
+  const vedas_title_image = public_url + '/vedas-title.png';
+  
   return (
     <div>
+      <img width="100%" src={vedas_title_image} alt="vedas title"/>
       <AppProvider>
         <Card sectioned>
           <Card.Section>

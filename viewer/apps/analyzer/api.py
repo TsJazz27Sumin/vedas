@@ -28,6 +28,8 @@ from viewer.apps.analyzer.decorator.auth import authenticate
 # http://52.196.187.98:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
 
+SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
+SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
 @authenticate()
 def correct_data(request, reflesh=True):
@@ -79,6 +81,10 @@ def correct_data(request, reflesh=True):
         "11. japan_count": japan_count,
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
+
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+    json_data = json.dumps(data)
+    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
     return JsonResponse(data)
 
@@ -164,7 +170,7 @@ def check_download_page(request):
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
 
-    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
     json_data = json.dumps(data)
     slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
@@ -177,9 +183,22 @@ def contact(request):
     full_name = datas['full_name']
     email = datas['email']
     contact_information = datas['contact_information']
-    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+    slack = slackweb.Slack(url=SLACK_URL_CONTACT)
 
     text = f'full_name = {full_name} \nemail = {email} \ncontact_information = {contact_information}'
+    slack.notify(text=text)
+
+    return JsonResponse({"message": "success"})
+
+
+# TODO:Reactからのリクエストしか受けないことを確認する。
+def share(request):
+    datas = json.loads(request.body)
+    type = datas['type']
+    url = datas['url']
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+
+    text = f'share by {type} \nurl is  {url}'
     slack.notify(text=text)
 
     return JsonResponse({"message": "success"})

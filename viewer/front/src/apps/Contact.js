@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { withRouter } from 'react-router';
-import { AppProvider, Page, Layout, Frame, Form, FormLayout, TextField, Button } from '@shopify/polaris';
+import { AppProvider, Page, Layout, Frame, Form, FormLayout, TextField, Button, Link } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import axios from 'axios'
 import wordDictionaryService from '../services/word_dictionary'
@@ -36,6 +36,8 @@ const Contact = (props) => {
     setComplete(true);
     window.scrollTo(0, 0);
   }, []);
+
+  const [is_privacy_link_click, setIsPrivacyLinkClick] = useState(false);
 
   const contact = (
     <Page title="Contact">
@@ -87,16 +89,20 @@ const Contact = (props) => {
                 </p>
                 <p>
                   {dict.contact_text4}
-                  <a href="https://corp.panair.jp/privacy_short" target="_blank"  rel="noopener noreferrer">
-                    {dict.contact_text5}
-                  </a>
+                  <Link 
+                    url="https://corp.panair.jp/privacy_short"
+                    external="true"
+                    onClick={() => setIsPrivacyLinkClick(true)}
+                    >
+                      {dict.contact_text5}
+                  </Link>
                   {dict.contact_text6}
                 </p>
                 <p>
                   {dict.contact_text7}
                 </p>
                 <br/>
-                <Button onClick={() => handleSubmit(fullName, email, contactInformation)}>{dict.contact_submit}</Button>
+                <Button disabled={is_privacy_link_click===false} onClick={() => handleSubmit(fullName, email, contactInformation)}>{dict.contact_submit}</Button>
                 <br/>
               </FormLayout>
             </Form>

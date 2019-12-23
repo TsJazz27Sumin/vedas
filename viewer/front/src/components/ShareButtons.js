@@ -17,6 +17,7 @@ import {
   LineIcon,
   EmailIcon,
 } from 'react-share';
+import axios from 'axios'
 
 const ShareButtons = ({ current_url }) => {
 
@@ -24,7 +25,12 @@ const ShareButtons = ({ current_url }) => {
   const weibo_icon = public_url + '/sns/weibo_32x32.png';
 
   const share_button_click = (type, current_url) => {
-    console.log('share by ' + type + ' / url is ' + current_url);
+    const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+    const data = { 
+      "type" : type, 
+      "url" : current_url,
+     };
+    axios.post(baseUrl + 'share', data);
   };
 
   return (
@@ -66,19 +72,19 @@ const ShareButtons = ({ current_url }) => {
         <LineIcon size={32} round />
       </LineShareButton>
 
-      <WeiboShareButton
-        url={current_url}
-        beforeOnClick={() => share_button_click('Weibo', current_url)}
-      >
-        <img width='100%' src={weibo_icon} alt="weibo_icon"/>
-      </WeiboShareButton>
-
       <EmailShareButton
         url={current_url}
         beforeOnClick={() => share_button_click('Email', current_url)}
       >
         <EmailIcon size={32} round />
       </EmailShareButton>
+
+      <WeiboShareButton
+        url={current_url}
+        beforeOnClick={() => share_button_click('Weibo', current_url)}
+      >
+        <img width='100%' src={weibo_icon} alt="weibo_icon"/>
+      </WeiboShareButton>
     </Stack>
   )
 }

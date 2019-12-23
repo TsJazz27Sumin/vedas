@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router';
-import { AppProvider, Page, Layout, Frame, TextContainer } from '@shopify/polaris';
+import { AppProvider, Page, Layout, Frame, TextContainer, Link } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import wordDictionaryService from '../services/word_dictionary'
 
@@ -44,11 +44,11 @@ const HowToUse = (props) => {
             <br/>
             <br/>
             <p>{dict.how_to_use_text13}</p>
-            <p><a href={pathname + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</a></p>
-            <p><a href={pathname + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text15}</a></p>
-            <p><a href={pathname + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text16}</a></p>
-            <p><a href={pathname + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text17}</a></p>
-            <p><a href={pathname + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text18}</a></p>
+            <p><Link id="case1" url={pathname + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</Link></p>
+            <p><Link id="case2" url={pathname + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text15}</Link></p>
+            <p><Link id="case3" url={pathname + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text16}</Link></p>
+            <p><Link id="case4" url={pathname + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text17}</Link></p>
+            <p><Link id="case5" url={pathname + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text18}</Link></p>
             <p>{dict.how_to_use_text19}</p>
             <br/>
           </TextContainer>

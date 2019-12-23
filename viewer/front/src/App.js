@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { AppProvider, Frame, TopBar} from '@shopify/polaris';
+import ReactGA from 'react-ga';
 import JapanEnergyChart from './apps/JapanEnergyChart'
 import News from './apps/News'
 import About from './apps/About'
@@ -8,6 +9,12 @@ import Contact from './apps/Contact'
 import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
+
+  useEffect(() => {
+    const { pathname } = props.location;
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
@@ -23,14 +30,14 @@ const App = (props) => {
   const theme = {
     colors: {
       topBar: {
-        background: '#fff',
+        //background: '#fff',
       },
     },
     logo: {
       width: 124,
-      topBarSource: process.env.PUBLIC_URL + '/panair-logo.png',
+      topBarSource: process.env.PUBLIC_URL + '/vedas-logo.png',
       url: 'https://corp.panair.jp/',
-      accessibilityLabel: 'Panair',
+      accessibilityLabel: 'Vedas',
     },
   };
 
@@ -105,7 +112,7 @@ const App = (props) => {
   
   return (
     <div>
-      <div style={{ height: '50px' }}>
+      <div style={{ height: '80px' }}>
         <AppProvider
           theme={theme}
           i18n={{
