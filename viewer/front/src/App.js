@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { AppProvider, Frame, TopBar} from '@shopify/polaris';
+import ReactGA from 'react-ga';
 import JapanEnergyChart from './apps/JapanEnergyChart'
 import News from './apps/News'
 import About from './apps/About'
@@ -8,6 +9,12 @@ import Contact from './apps/Contact'
 import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
+
+  componentDidMount() {
+    const { pathname } = this.props.location;
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  };
 
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
