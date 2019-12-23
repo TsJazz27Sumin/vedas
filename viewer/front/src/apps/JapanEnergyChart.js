@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { AppProvider, Card, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import CompanyEnergyCharts from '../components/CompanyEnergyCharts'
@@ -20,6 +20,12 @@ import rangeSliderHook from '../custom_hooks/electoric_power_data'
 //npm start
 //reference:https://polaris.shopify.com/components/
 const JapanEnergyChart = (props) => {
+
+  useEffect(() => {
+    if(props.query_param.case !== undefined){
+      window.scrollTo(0, 667);
+    }
+  });
 
   //クエリパラメータ
   const qs = queryParamPerserService.execute(props.query_param);
@@ -61,7 +67,7 @@ const JapanEnergyChart = (props) => {
   const current_url = window.location.href;
   const public_url = process.env.PUBLIC_URL;
   const vedas_title_image = public_url + '/vedas-title.png';
-  
+
   return (
     <div>
       <img width="100%" src={vedas_title_image} alt="vedas title"/>

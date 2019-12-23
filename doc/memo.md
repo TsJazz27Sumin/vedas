@@ -61,4 +61,6 @@ source ~/.bashrc
 ### ワンライナーで簡単にDjangoを停止させる方法
 ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 
+http://www.nendo.jp/
 https://www.moma.org/
+https://sansan-dsoc.com/
