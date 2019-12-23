@@ -23,14 +23,14 @@ const App = (props) => {
   const theme = {
     colors: {
       topBar: {
-        background: '#fff',
+        //background: '#fff',
       },
     },
     logo: {
-      width: 124,
-      topBarSource: process.env.PUBLIC_URL + '/panair-logo.png',
+      width: 220,
+      topBarSource: process.env.PUBLIC_URL + '/vedas-logo.png',
       url: 'https://corp.panair.jp/',
-      accessibilityLabel: 'Panair',
+      accessibilityLabel: 'Vedas',
     },
   };
 
@@ -105,7 +105,7 @@ const App = (props) => {
   
   return (
     <div>
-      <div style={{ height: '50px' }}>
+      <div style={{ height: '145px' }}>
         <AppProvider
           theme={theme}
           i18n={{
