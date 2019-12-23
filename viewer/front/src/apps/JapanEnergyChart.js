@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react'
-import { AppProvider, Card, Spinner } from '@shopify/polaris';
+import { AppProvider, Card, Spinner, Icon } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import {
+  CircleDownMajorMonotone
+} from '@shopify/polaris-icons';
 import CompanyEnergyCharts from '../components/CompanyEnergyCharts'
 import CompanyCheckBoxes from '../components/CompanyCheckBoxes'
 import EnergyResourseBadges from '../components/EnergyResourseBadges'
@@ -72,6 +75,7 @@ const JapanEnergyChart = (props) => {
     <div>
       <img width="100%" src={vedas_title_image} alt="vedas title"/>
       <AppProvider>
+        <Icon source={CircleDownMajorMonotone} />
         <Card sectioned>
           <Card.Section>
             <AnalyzeTermRadioButtons
