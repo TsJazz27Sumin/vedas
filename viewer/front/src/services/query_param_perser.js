@@ -1,6 +1,6 @@
 import analyzeCaseService from './analyze_case'
 
-const execute = (query_param) => {
+const execute = (query_param, language) => {
 
   const qs = query_param;
   const toBoolean = (data) => data.toLowerCase() === 'true';
@@ -10,7 +10,7 @@ const execute = (query_param) => {
   }
 
   //言語選択
-  const lang = (qs.lang === undefined) ? "jp" : qs.lang;
+  const lang = (language === undefined) ? "jp" : language;
   //1 1=jp 2=en 3=ch 4=es
 
   //集計単位

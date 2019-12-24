@@ -2,11 +2,11 @@ import React from 'react'
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Card } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import VedasTopBar from '../components/VedasTopBar'
 
 const News = (props) => {
-  //Newsが固まったら多言語対応
-  // const qs = props.query_param;
-  // const lang = qs.lang;
+  const qs = props.query_param;
+  const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
   const news202001xx_01_image = public_url + '/news/202001xx_01.png';
 
@@ -36,12 +36,15 @@ const News = (props) => {
   );
 
   return (
-    <div style={{ height: '250px' }}>
-      <AppProvider>
-        <Frame>
-          {news}
-        </Frame>
-      </AppProvider>
+    <div>
+      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
+      <div style={{ height: '250px' }}>
+        <AppProvider>
+          <Frame>
+            {news}
+          </Frame>
+        </AppProvider>
+      </div>
     </div>
   );
 }

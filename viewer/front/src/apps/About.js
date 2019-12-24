@@ -2,11 +2,12 @@ import React from 'react'
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, TextContainer } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import VedasTopBar from '../components/VedasTopBar'
 import wordDictionaryService from '../services/word_dictionary'
 
 const About = (props) => {
   const qs = props.query_param;
-  const lang = qs.lang;
+  const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
 
   const about = (
@@ -36,12 +37,15 @@ const About = (props) => {
   );
 
   return (
-    <div style={{ height: '250px' }}>
-      <AppProvider>
-        <Frame>
-          {about}
-        </Frame>
-      </AppProvider>
+    <div>
+      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
+      <div style={{ height: '250px' }}>
+        <AppProvider>
+          <Frame>
+            {about}
+          </Frame>
+        </AppProvider>
+      </div>
     </div>
   );
 }

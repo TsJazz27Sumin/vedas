@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+const baseUrl = process.env.REACT_APP_API_BASE_URL + 'viewer/analyzer/'
 
 const get = (unit, from, to) => {
   const request = axios.get(baseUrl + 'get?unit=' + unit + '&from=' + from + '&to=' + to)
