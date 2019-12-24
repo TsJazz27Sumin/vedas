@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 import queryString from 'query-string';
 import JapanEnergyChart from './apps/JapanEnergyChart'
 import News from './apps/News'
@@ -14,6 +14,12 @@ const App = (props) => {
     <div>
       <BrowserRouter>
         <div>
+          <Route 
+            exact path='/' 
+            render={ 
+              (props) => <Redirect to={'/jp/'}/>
+              } 
+          />
           <Route 
             exact path='/jp/' 
             render={ 
