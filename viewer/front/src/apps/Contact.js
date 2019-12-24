@@ -3,12 +3,13 @@ import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Form, FormLayout, TextField, Button, Link } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import axios from 'axios'
+import VedasTopBar from '../components/VedasTopBar'
 import wordDictionaryService from '../services/word_dictionary'
 
 const Contact = (props) => {
 
   const qs = props.query_param;
-  const lang = qs.lang;
+  const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
 
   const [complete, setComplete] = useState(false);
@@ -114,12 +115,15 @@ const Contact = (props) => {
   );
 
   return (
-    <div style={{ height: '250px' }}>
-      <AppProvider>
-        <Frame>
-          {contact}
-        </Frame>
-      </AppProvider>
+    <div>
+      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
+      <div style={{ height: '250px' }}>
+        <AppProvider>
+          <Frame>
+            {contact}
+          </Frame>
+        </AppProvider>
+      </div>
     </div>
   );
 }

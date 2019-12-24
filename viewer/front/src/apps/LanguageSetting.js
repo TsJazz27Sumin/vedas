@@ -2,10 +2,11 @@ import React, { useState, useCallback } from 'react'
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, SettingToggle, TextStyle, Frame } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import VedasTopBar from '../components/VedasTopBar'
 
 const LanguageSetting = (props) => {
   const qs = props.query_param;
-  const lang = qs.lang;
+  const lang = props.lang;
   const [isDirtyJp, setIsDirtyJp] = useState(lang !== "jp");
   const toggleIsDirtyJp = useCallback(
     () => {
@@ -13,7 +14,7 @@ const LanguageSetting = (props) => {
       setIsDirtyCh(true);
       setIsDirtyEs(true);
       setIsDirtyJp((isDirtyJp) => !isDirtyJp);
-      props.history.push('/?lang=jp');
+      props.history.push('/jp/');
     },
     // eslint-disable-next-line
     [],
@@ -26,7 +27,7 @@ const LanguageSetting = (props) => {
       setIsDirtyCh(true);
       setIsDirtyEs(true);
       setIsDirtyEn((isDirtyEn) => !isDirtyEn);
-      props.history.push('/?lang=en');
+      props.history.push('/en/');
     },
     // eslint-disable-next-line
     [],
@@ -39,7 +40,7 @@ const LanguageSetting = (props) => {
       setIsDirtyEn(true);
       setIsDirtyEs(true);
       setIsDirtyCh((isDirtyCh) => !isDirtyCh);
-      props.history.push('/?lang=ch');
+      props.history.push('/ch/');
     },
     // eslint-disable-next-line
     [],
@@ -52,7 +53,7 @@ const LanguageSetting = (props) => {
       setIsDirtyEn(true);
       setIsDirtyCh(true);
       setIsDirtyEs((isDirtyEs) => !isDirtyEs);
-      props.history.push('/?lang=es');
+      props.history.push('/es/');
     },
     // eslint-disable-next-line
     [],
@@ -111,12 +112,15 @@ const LanguageSetting = (props) => {
   );
 
   return (
-    <div style={{ height: '250px' }}>
-      <AppProvider>
-        <Frame>
-          {pageMarkup}
-        </Frame>
-      </AppProvider>
+    <div>
+      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
+      <div style={{ height: '250px' }}>
+        <AppProvider>
+          <Frame>
+            {pageMarkup}
+          </Frame>
+        </AppProvider>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import ReactGA from 'react-ga';
 import { AppProvider, Card, Spinner, Icon } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import {
@@ -11,6 +12,7 @@ import AnalyzeTermRadioButtons from '../components/AnalyzeTermRadioButtons'
 import DateSelect from '../components/DateSelect'
 import RangeSelect from '../components/RangeSelect'
 import ShareButtons from '../components/ShareButtons'
+import VedasTopBar from '../components/VedasTopBar'
 import wordDictionaryService from '../services/word_dictionary'
 import queryParamPerserService from '../services/query_param_perser'
 import electoricPowerResourseHook from '../custom_hooks/electoric_power_resourse'
@@ -23,15 +25,20 @@ import rangeSliderHook from '../custom_hooks/electoric_power_data'
 //npm start
 //reference:https://polaris.shopify.com/components/
 const JapanEnergyChart = (props) => {
-
+  
   useEffect(() => {
-    if(props.query_param.case !== undefined){
-      window.scrollTo(0, 667);
-    }
+    const { pathname } = props.location;
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+
+    // if(props.query_param.case !== undefined){
+    //   window.scrollTo(0, 667);
+    // }
   });
 
   //クエリパラメータ
-  const qs = queryParamPerserService.execute(props.query_param);
+  const lang = props.lang;
+  const qs = queryParamPerserService.execute(props.query_param, lang);
   const language_initialize = qs.lang;
   const electoric_power_data_initialize_params = qs.electoric_power_data_initialize_params;
   const energy_power_company_initialize_params = qs.energy_power_company_initialize_params;
@@ -73,6 +80,7 @@ const JapanEnergyChart = (props) => {
 
   return (
     <div>
+      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
       <img width="100%" src={vedas_title_image} alt="vedas title"/>
       <AppProvider>
         <Icon source={CircleDownMajorMonotone} />
