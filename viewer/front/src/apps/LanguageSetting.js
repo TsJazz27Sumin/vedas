@@ -14,7 +14,7 @@ const LanguageSetting = (props) => {
       setIsDirtyCh(true);
       setIsDirtyEs(true);
       setIsDirtyJp((isDirtyJp) => !isDirtyJp);
-      props.history.push('/jp/');
+      props.history.push('/jp/home/');
     },
     // eslint-disable-next-line
     [],
@@ -27,7 +27,7 @@ const LanguageSetting = (props) => {
       setIsDirtyCh(true);
       setIsDirtyEs(true);
       setIsDirtyEn((isDirtyEn) => !isDirtyEn);
-      props.history.push('/en/');
+      props.history.push('/en/home/');
     },
     // eslint-disable-next-line
     [],
@@ -40,7 +40,7 @@ const LanguageSetting = (props) => {
       setIsDirtyEn(true);
       setIsDirtyEs(true);
       setIsDirtyCh((isDirtyCh) => !isDirtyCh);
-      props.history.push('/ch/');
+      props.history.push('/ch/home/');
     },
     // eslint-disable-next-line
     [],
@@ -53,7 +53,7 @@ const LanguageSetting = (props) => {
       setIsDirtyEn(true);
       setIsDirtyCh(true);
       setIsDirtyEs((isDirtyEs) => !isDirtyEs);
-      props.history.push('/es/');
+      props.history.push('/es/home/');
     },
     // eslint-disable-next-line
     [],

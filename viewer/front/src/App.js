@@ -17,29 +17,29 @@ const App = (props) => {
           <Route 
             exact path='/' 
             render={ 
-              (props) => <Redirect to={'/jp/'}/>
+              (props) => <Redirect to={'/jp/home/'}/>
               } 
           />
           <Route 
-            exact path='/jp/' 
+            exact path='/jp/home' 
             render={ 
               (props) => <JapanEnergyChart lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
               } 
           />
           <Route 
-            exact path='/en/' 
+            exact path='/en/home' 
             render={ 
               (props) => <JapanEnergyChart lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
               } 
           />
           <Route 
-            exact path='/ch/' 
+            exact path='/ch/home' 
             render={ 
               (props) => <JapanEnergyChart lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
               } 
           />
           <Route 
-            exact path='/es/' 
+            exact path='/es/home' 
             render={ 
               (props) => <JapanEnergyChart lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
               } 
@@ -47,7 +47,7 @@ const App = (props) => {
           <Route 
             path='/jp/news'
             render={ 
-              (props) => <News lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
+              (props) => <News lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
               } 
           />
           <Route 

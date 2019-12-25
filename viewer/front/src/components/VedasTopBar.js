@@ -40,7 +40,7 @@ const VedasTopBar = (props) => {
 
   const lang = props.lang === undefined ? "jp" : props.lang;
 
-  const home_url = baseUrl + lang + '/';
+  const home_url = baseUrl + lang + '/home/';
   const news_url = baseUrl + lang + '/news/';
   const about_url = baseUrl + lang + '/about/';
   const howtouse_url = baseUrl + lang + '/howtouse/';

@@ -34,6 +34,8 @@
      4.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
      5.  [CodeBuildでStandard2.0のイメージを使用したらエラー出たときの対処](https://qiita.com/maruware/items/c3a6f6741220ef3e61f7)
      6.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
+     7.  [【AWS】CloudFront→S3の構成においてサブディレクトリへのアクセスでもindex.htmlの補完を有効化する方法](https://gadgeterkun.hatenablog.com/entry/20191120/1574211600)
+     8.  [できた！S3 オリジンへの直接アクセス制限と、インデックスドキュメント機能を共存させる方法](https://dev.classmethod.jp/cloud/aws/directory-indexes-in-s3-origin-backed-cloudfront/)
  12. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
      2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
