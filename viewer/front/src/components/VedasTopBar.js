@@ -32,7 +32,7 @@ const VedasTopBar = (props) => {
     },
     logo: {
       width: 124,
-      topBarSource: process.env.PUBLIC_URL + '/vedas-logo.png',
+      topBarSource: process.env.PUBLIC_URL + '/vedas_v1.png',
       url: 'https://corp.panair.jp/',
       accessibilityLabel: 'Vedas',
     },
