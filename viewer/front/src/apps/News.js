@@ -7,14 +7,15 @@ import VedasTopBar from '../components/VedasTopBar'
 
 const News = (props) => {
 
+  const qs = props.query_param;
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/news';
+    const pathname = '/' + lang + '/news';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
-  const qs = props.query_param;
-  const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
   const news202001xx_01_image = public_url + '/news/202001xx_01.png';
 

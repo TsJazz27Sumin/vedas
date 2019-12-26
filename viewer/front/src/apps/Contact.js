@@ -9,14 +9,15 @@ import wordDictionaryService from '../services/word_dictionary'
 
 const Contact = (props) => {
 
+  const qs = props.query_param;
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/contact';
+    const pathname = '/' + lang + '/contact';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
-  const qs = props.query_param;
-  const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
 
   const [complete, setComplete] = useState(false);

@@ -7,14 +7,15 @@ import VedasTopBar from '../components/VedasTopBar'
 
 const LanguageSetting = (props) => {
 
+  const qs = props.query_param;
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/language_setting';
+    const pathname = '/' + lang + '/language_setting';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
-  const qs = props.query_param;
-  const lang = props.lang;
   const [isDirtyJp, setIsDirtyJp] = useState(lang !== "jp");
   const toggleIsDirtyJp = useCallback(
     () => {

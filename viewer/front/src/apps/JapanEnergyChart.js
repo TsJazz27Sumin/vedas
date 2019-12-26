@@ -23,14 +23,15 @@ import rangeSliderHook from '../custom_hooks/electoric_power_data'
 //reference:https://polaris.shopify.com/components/
 const JapanEnergyChart = (props) => {
   
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/home';
+    const pathname = '/' + lang + '/home';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
   //クエリパラメータ
-  const lang = props.lang;
   const qs = queryParamPerserService.execute(props.query_param, lang);
   const language_initialize = qs.lang;
   const electoric_power_data_initialize_params = qs.electoric_power_data_initialize_params;

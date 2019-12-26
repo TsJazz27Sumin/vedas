@@ -8,14 +8,15 @@ import wordDictionaryService from '../services/word_dictionary'
 
 const About = (props) => {
 
+  const qs = props.query_param;
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/about';
+    const pathname = '/' + lang + '/about';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
-  const qs = props.query_param;
-  const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
 
   const about = (

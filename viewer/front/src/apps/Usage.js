@@ -10,14 +10,15 @@ const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
 const Usage = (props) => {
 
+  const qs = props.query_param;
+  const lang = props.lang;
+
   useEffect(() => {
-    const pathname = '/usage';
+    const pathname = '/' + lang + '/usage';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
 
-  const qs = props.query_param;
-  const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
   const public_url = process.env.PUBLIC_URL;
   const step1_image = public_url + '/usage/step1_' + lang + '.png';
