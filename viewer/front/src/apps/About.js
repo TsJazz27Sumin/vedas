@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, TextContainer } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
@@ -6,6 +7,13 @@ import VedasTopBar from '../components/VedasTopBar'
 import wordDictionaryService from '../services/word_dictionary'
 
 const About = (props) => {
+
+  useEffect(() => {
+    const pathname = '/about';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
+
   const qs = props.query_param;
   const lang = props.lang;
   const dict = wordDictionaryService.get(lang);

@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Form, FormLayout, TextField, Button, Link } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
@@ -7,6 +8,12 @@ import VedasTopBar from '../components/VedasTopBar'
 import wordDictionaryService from '../services/word_dictionary'
 
 const Contact = (props) => {
+
+  useEffect(() => {
+    const pathname = '/contact';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   const qs = props.query_param;
   const lang = props.lang;

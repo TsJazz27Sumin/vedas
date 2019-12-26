@@ -1,10 +1,18 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, SettingToggle, TextStyle, Frame } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import VedasTopBar from '../components/VedasTopBar'
 
 const LanguageSetting = (props) => {
+
+  useEffect(() => {
+    const pathname = '/language_setting';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
+
   const qs = props.query_param;
   const lang = props.lang;
   const [isDirtyJp, setIsDirtyJp] = useState(lang !== "jp");

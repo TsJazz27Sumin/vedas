@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import { AppProvider, Card, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
@@ -24,13 +24,9 @@ import rangeSliderHook from '../custom_hooks/electoric_power_data'
 const JapanEnergyChart = (props) => {
   
   useEffect(() => {
-    const { pathname } = props.location;
+    const pathname = '/home';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
-
-    // if(props.query_param.case !== undefined){
-    //   window.scrollTo(0, 667);
-    // }
   });
 
   //クエリパラメータ

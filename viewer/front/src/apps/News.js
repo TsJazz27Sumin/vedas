@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Card } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import VedasTopBar from '../components/VedasTopBar'
 
 const News = (props) => {
+
+  useEffect(() => {
+    const pathname = '/news';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
+
   const qs = props.query_param;
   const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
