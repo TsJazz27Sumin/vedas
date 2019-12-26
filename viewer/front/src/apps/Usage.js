@@ -7,17 +7,17 @@ import wordDictionaryService from '../services/word_dictionary'
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
-const HowToUse = (props) => {
+const Usage = (props) => {
   const qs = props.query_param;
   const lang = props.lang;
   const dict = wordDictionaryService.get(lang);
   const public_url = process.env.PUBLIC_URL;
-  const step1_image = public_url + '/howtouse/step1_' + lang + '.png';
-  const step2_image = public_url + '/howtouse/step2_' + lang + '.png';
-  const step3_image = public_url + '/howtouse/step3_' + lang + '.png';
+  const step1_image = public_url + '/usage/step1_' + lang + '.png';
+  const step2_image = public_url + '/usage/step2_' + lang + '.png';
+  const step3_image = public_url + '/usage/step3_' + lang + '.png';
 
   const howtouse = (
-    <Page title="How to use">
+    <Page title="Usage">
       <Layout>
         <Layout.Section>
           <TextContainer spacing="loose">
@@ -46,11 +46,11 @@ const HowToUse = (props) => {
             <br/>
             <br/>
             <p>{dict.how_to_use_text13}</p>
-            <p><Link id="case1" url={baseUrl + lang + '/?case=1'}>{dict.how_to_use_text14}</Link></p>
-            <p><Link id="case2" url={baseUrl + lang + '/?case=2'}>{dict.how_to_use_text15}</Link></p>
-            <p><Link id="case3" url={baseUrl + lang + '/?case=3'}>{dict.how_to_use_text16}</Link></p>
-            <p><Link id="case4" url={baseUrl + lang + '/?case=4'}>{dict.how_to_use_text17}</Link></p>
-            <p><Link id="case5" url={baseUrl + lang + '/?case=5'}>{dict.how_to_use_text18}</Link></p>
+            <p><Link id="case1" url={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</Link></p>
+            <p><Link id="case2" url={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text15}</Link></p>
+            <p><Link id="case3" url={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text16}</Link></p>
+            <p><Link id="case4" url={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text17}</Link></p>
+            <p><Link id="case5" url={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text18}</Link></p>
             <p>{dict.how_to_use_text19}</p>
             <br/>
           </TextContainer>
@@ -73,4 +73,4 @@ const HowToUse = (props) => {
   );
 }
 
-export default withRouter(HowToUse)
+export default withRouter(Usage)

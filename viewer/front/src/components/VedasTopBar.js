@@ -40,12 +40,12 @@ const VedasTopBar = (props) => {
 
   const lang = props.lang === undefined ? "jp" : props.lang;
 
-  const home_url = baseUrl + lang + '/home/';
-  const news_url = baseUrl + lang + '/news/';
-  const about_url = baseUrl + lang + '/about/';
-  const howtouse_url = baseUrl + lang + '/howtouse/';
-  const contact_url = baseUrl + lang + '/contact/';
-  const language_setting_url = baseUrl + lang + '/language_setting/';
+  const home_url = baseUrl + '?lang=' + lang + '&menu=home';
+  const news_url = baseUrl + '?lang=' + lang + '&menu=news';
+  const about_url = baseUrl + '?lang=' + lang + '&menu=about';
+  const usage_url = baseUrl  + '?lang=' + lang + '&menu=usage';
+  const contact_url = baseUrl + '?lang=' + lang + '&menu=contact';
+  const language_setting_url = baseUrl + '?lang=' + lang + '&menu=language_setting';
 
   const userMenuMarkup = (
     <TopBar.UserMenu
@@ -60,7 +60,7 @@ const VedasTopBar = (props) => {
           items: [{ content: 'About', url: about_url, icon: HeartMajorMonotone }],
         },
         {
-          items: [{ content: 'How To Use', url: howtouse_url, icon: HintMajorMonotone }],
+          items: [{ content: 'Usage', url: usage_url, icon: HintMajorMonotone }],
         },
         {
           items: [{ content: 'Contact', url: contact_url, icon: SmileyJoyMajorMonotone }],

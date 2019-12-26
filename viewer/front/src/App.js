@@ -1,171 +1,51 @@
 import React from 'react'
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
-import queryString from 'query-string';
 import JapanEnergyChart from './apps/JapanEnergyChart'
 import News from './apps/News'
 import About from './apps/About'
-import HowToUse from './apps/HowToUse'
+import Usage from './apps/Usage'
 import Contact from './apps/Contact'
 import LanguageSetting from './apps/LanguageSetting'
 
 const App = (props) => {
+
+  const menu = props.qs.menu === undefined ? 'home' : props.qs.menu;
+  const lang = props.qs.lang === undefined ? 'jp' : props.qs.lang;
+
+  let content = null;
+
+  switch(menu){
+    case "home":
+        content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+
+    case "news":
+        content = (<News lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+    
+    case "about":
+        content = (<About lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+    
+    case "usage":
+        content = (<Usage lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+    
+    case "contact":
+        content = (<Contact lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+
+    case "language_setting":
+        content = (<LanguageSetting lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+    
+    default:
+        content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
+        break;
+  }
  
   return (
     <div>
-      <BrowserRouter>
-        <div>
-          <Route 
-            exact path='/' 
-            render={ 
-              (props) => <Redirect to={'/jp/home/'}/>
-              } 
-          />
-          <Route 
-            exact path='/jp/home' 
-            render={ 
-              (props) => <JapanEnergyChart lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            exact path='/en/home' 
-            render={ 
-              (props) => <JapanEnergyChart lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            exact path='/ch/home' 
-            render={ 
-              (props) => <JapanEnergyChart lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            exact path='/es/home' 
-            render={ 
-              (props) => <JapanEnergyChart lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/jp/news'
-            render={ 
-              (props) => <News lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/en/news'
-            render={ 
-              (props) => <News lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/ch/news'
-            render={ 
-              (props) => <News lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/es/news'
-            render={ 
-              (props) => <News lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/jp/about'
-            render={ 
-            (props) => <About lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-            } 
-          />
-          <Route 
-            path='/en/about'
-            render={ 
-            (props) => <About lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-            } 
-          />
-          <Route 
-            path='/ch/about'
-            render={ 
-            (props) => <About lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-            } 
-          />
-          <Route 
-            path='/es/about'
-            render={ 
-            (props) => <About lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-            } 
-          />
-          <Route 
-            path='/jp/howtouse' 
-            render={ 
-              (props) => <HowToUse lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/en/howtouse' 
-            render={ 
-              (props) => <HowToUse lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/ch/howtouse' 
-            render={ 
-              (props) => <HowToUse lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/es/howtouse' 
-            render={ 
-              (props) => <HowToUse lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/jp/contact'
-            render={ 
-              (props) => <Contact lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/en/contact'
-            render={ 
-              (props) => <Contact lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/ch/contact'
-            render={ 
-              (props) => <Contact lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/es/contact'
-            render={ 
-              (props) => <Contact lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/jp/language_setting'
-            render={ 
-              (props) => <LanguageSetting lang="jp" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/en/language_setting'
-            render={ 
-              (props) => <LanguageSetting lang="en" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/ch/language_setting'
-            render={ 
-              (props) => <LanguageSetting lang="ch" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-          <Route 
-            path='/es/language_setting'
-            render={ 
-              (props) => <LanguageSetting lang="es" location={props.location} query_param={queryString.parse(props.location.search)} />
-              } 
-          />
-        </div>
-      </BrowserRouter>
+      {content}
     </div >
   )
 }
