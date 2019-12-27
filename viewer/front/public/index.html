@@ -124,8 +124,13 @@
     }
   }
 
+  .vedas-logo-top-bar{
+    padding-top: 1.5%;
+    padding-left: 3%;
+    padding-right: 83%;
+  }
+
   .vedas-logo{
-    width:100%;
     padding-left: 35%;
     padding-right: 35%;
     opacity: 0;
@@ -136,37 +141,39 @@
   }
 
   .main-title{
-    width:100%;
     padding-left: 25%;
     padding-right: 25%;
     opacity: 0;
     animation: appeare 1s ease 2s 1 normal forwards running;
     text-align: center;
-    top: 54.3%;
+    top: 56.3%;
     position:absolute;
   }
 
-  @media (max-width:480px) {
-    .vedas-logo{
-      width:100%;
-      padding-left: 30%;
-      padding-right: 40%;
-      opacity: 0;
-      animation: appeare 1s ease 4s 1 normal forwards running;
-      text-align: center;
-      top: 18.7%;
-      position:absolute;
-    }
-    .main-title{
-      width:100%;
-      padding-left: 30%;
-      padding-right: 40%;
-      opacity: 0;
-      animation: appeare 1s ease 2s 1 normal forwards running;
-      text-align: center;
-      top: 15.3%;
-      position:absolute;
-    } 
+  .menu-area{
+    position: absolute;
+    margin-left: 45%;
+    padding-left: 47%;
+    padding-right: 5%;
+    height: 19%;
+    top: 4%;
+
+    background: #EFEFEF;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+
+  .menu-item{
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+
+    color: #4E4E4E;
   }
 
   @keyframes appeare {

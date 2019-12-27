@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import '@shopify/polaris/styles.css';
-import VedasTopBar from '../../components/ver1/VedasTopBar'
-import queryParamPerserService from '../../services/query_param_perser'
+//import queryParamPerserService from '../../services/query_param_perser'
 
 //memo:
 //cd ../supply-and-demand-viewer/viewer/front/
@@ -19,15 +18,26 @@ const JapanEnergyChartDummy = (props) => {
   });
 
   //クエリパラメータ
-  const qs = queryParamPerserService.execute(props.query_param, lang);
+  //const qs = queryParamPerserService.execute(props.query_param, lang);
   
   const public_url = process.env.PUBLIC_URL;
   const main_title_image = public_url + '/main-title.png';
+  const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
   const vedas_logo_image = public_url + '/vedas.png';
 
   return (
     <div className="out-line">
-      <VedasTopBar location={props.location} qs={qs} lang={lang}/>
+      <div>
+        <div className="vedas-logo-top-bar">
+          <img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo"/>
+        </div>
+        <div className="menu-area">
+          <p className="menu-item">Usage</p>
+          <p className="menu-item">About</p>
+          <p className="menu-item">News</p>
+          <p className="menu-item">Contact</p>
+        </div>
+      </div>
       <svg className="start" width="100%" height="10%" viewBox="0 0 1440 347" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.6">
         <path className="st2" d="M-110 331.41C-92.712 331.41 26.9003 331.41 367.046 331.41C707.191 331.41 899.011 209.816 1005.33 173.824C1111.65 137.832 1219.98 137.832 1219.98 137.832H1449" stroke="#9B00E3" strokeWidth="10"/>
@@ -46,7 +56,7 @@ const JapanEnergyChartDummy = (props) => {
       <div className="vedas-logo">
         <img width="100%" src={vedas_logo_image} alt="vedas logo"/>
       </div>
-      <div className="analyze-area">
+      {/* <div className="analyze-area">
           <div>
             <p className="step1-text">1. 期間を選択してください。</p>
             <p>年</p>
@@ -60,7 +70,7 @@ const JapanEnergyChartDummy = (props) => {
           <div>
             <p>3. 調べたい発電の種類を選択してください。</p>
           </div>
-        </div>
+        </div> */}
     </div >
   )
 }
