@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import '@shopify/polaris/styles.css';
-import VedasTopBar from '../../components/Mobile/VedasTopBar'
+import VedasTopBar from '../../components/ver1/VedasTopBar'
 import queryParamPerserService from '../../services/query_param_perser'
 
 //memo:

@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Card } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import VedasTopBar from '../../components/Mobile/VedasTopBar'
+import VedasTopBar from '../../components/ver1/VedasTopBar'
 
 const News = (props) => {
 

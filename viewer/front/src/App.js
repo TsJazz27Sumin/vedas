@@ -1,21 +1,21 @@
 import React from 'react'
 import JapanEnergyChartDummy from './apps/Browzer/JapanEnergyChartDummy'
-import JapanEnergyChart from './apps/Mobile/JapanEnergyChart'
-import News from './apps/Mobile/News'
-import About from './apps/Mobile/About'
-import Usage from './apps/Mobile/Usage'
-import Contact from './apps/Mobile/Contact'
-import LanguageSetting from './apps/Mobile/LanguageSetting'
-import { isMobile, isTablet } from "react-device-detect";
+import JapanEnergyChart from './apps/ver1/JapanEnergyChart'
+import News from './apps/ver1/News'
+import About from './apps/ver1/About'
+import Usage from './apps/ver1/Usage'
+import Contact from './apps/ver1/Contact'
+import LanguageSetting from './apps/ver1/LanguageSetting'
 
 const App = (props) => {
 
   const menu = props.qs.menu === undefined ? 'home' : props.qs.menu;
   const lang = props.qs.lang === undefined ? 'jp' : props.qs.lang;
+  const version = props.qs.version === undefined ? '2' : props.qs.version;
 
   let content = null;
 
-  if (isMobile || isTablet){
+  if (version === "1"){
     switch(menu){
       case "home":
           content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);

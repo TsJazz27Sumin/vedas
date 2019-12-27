@@ -2,14 +2,14 @@ import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import { AppProvider, Card, Spinner } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import CompanyEnergyCharts from '../../components/Mobile/CompanyEnergyCharts'
-import CompanyCheckBoxes from '../../components/Mobile/CompanyCheckBoxes'
-import EnergyResourseBadges from '../../components/Mobile/EnergyResourseBadges'
-import AnalyzeTermRadioButtons from '../../components/Mobile/AnalyzeTermRadioButtons'
-import DateSelect from '../../components/Mobile/DateSelect'
-import RangeSelect from '../../components/Mobile/RangeSelect'
-import ShareButtons from '../../components/Mobile/ShareButtons'
-import VedasTopBar from '../../components/Mobile/VedasTopBar'
+import CompanyEnergyCharts from '../../components/ver1/CompanyEnergyCharts'
+import CompanyCheckBoxes from '../../components/ver1/CompanyCheckBoxes'
+import EnergyResourseBadges from '../../components/ver1/EnergyResourseBadges'
+import AnalyzeTermRadioButtons from '../../components/ver1/AnalyzeTermRadioButtons'
+import DateSelect from '../../components/ver1/DateSelect'
+import RangeSelect from '../../components/ver1/RangeSelect'
+import ShareButtons from '../../components/ver1/ShareButtons'
+import VedasTopBar from '../../components/ver1/VedasTopBar'
 import wordDictionaryService from '../../services/word_dictionary'
 import queryParamPerserService from '../../services/query_param_perser'
 import electoricPowerResourseHook from '../../custom_hooks/electoric_power_resourse'

@@ -40,12 +40,12 @@ const VedasTopBar = (props) => {
 
   const lang = props.lang === undefined ? "jp" : props.lang;
 
-  const home_url = baseUrl + '?lang=' + lang + '&menu=home';
-  const news_url = baseUrl + '?lang=' + lang + '&menu=news';
-  const about_url = baseUrl + '?lang=' + lang + '&menu=about';
-  const usage_url = baseUrl  + '?lang=' + lang + '&menu=usage';
-  const contact_url = baseUrl + '?lang=' + lang + '&menu=contact';
-  const language_setting_url = baseUrl + '?lang=' + lang + '&menu=language_setting';
+  const home_url = baseUrl + '?lang=' + lang + '&menu=home&version=1';
+  const news_url = baseUrl + '?lang=' + lang + '&menu=news&version=1';
+  const about_url = baseUrl + '?lang=' + lang + '&menu=about&version=1';
+  const usage_url = baseUrl  + '?lang=' + lang + '&menu=usage&version=1';
+  const contact_url = baseUrl + '?lang=' + lang + '&menu=contact&version=1';
+  const language_setting_url = baseUrl + '?lang=' + lang + '&menu=language_setting&version=1';
 
   const userMenuMarkup = (
     <TopBar.UserMenu
