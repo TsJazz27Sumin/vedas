@@ -4,8 +4,8 @@ import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Form, FormLayout, TextField, Button, Link } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import axios from 'axios'
-import VedasTopBar from '../components/VedasTopBar'
-import wordDictionaryService from '../services/word_dictionary'
+import VedasTopBar from '../../components/Mobile/VedasTopBar'
+import wordDictionaryService from '../../services/word_dictionary'
 
 const Contact = (props) => {
 

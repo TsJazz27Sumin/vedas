@@ -70,8 +70,16 @@
     }
   }
 
-  /* SVG関連 */
+  /* hari */
 
+  .out-line{
+    /* Desktop - 1 */
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+  }
   .st1{
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
@@ -117,11 +125,48 @@
   }
 
   .vedas-logo{
+    width:100%;
+    padding-left: 35%;
+    padding-right: 35%;
     opacity: 0;
     animation: appeare 1s ease 4s 1 normal forwards running;
     text-align: center;
-    top: 403px;
+    top: 93.7%;
     position:absolute;
+  }
+
+  .main-title{
+    width:100%;
+    padding-left: 25%;
+    padding-right: 25%;
+    opacity: 0;
+    animation: appeare 1s ease 2s 1 normal forwards running;
+    text-align: center;
+    top: 54.3%;
+    position:absolute;
+  }
+
+  @media (max-width:480px) {
+    .vedas-logo{
+      width:100%;
+      padding-left: 30%;
+      padding-right: 40%;
+      opacity: 0;
+      animation: appeare 1s ease 4s 1 normal forwards running;
+      text-align: center;
+      top: 18.7%;
+      position:absolute;
+    }
+    .main-title{
+      width:100%;
+      padding-left: 30%;
+      padding-right: 40%;
+      opacity: 0;
+      animation: appeare 1s ease 2s 1 normal forwards running;
+      text-align: center;
+      top: 15.3%;
+      position:absolute;
+    } 
   }
 
   @keyframes appeare {
@@ -133,41 +178,26 @@
     }
   }
 
-  .main-title{
-    /* でんきの「！」を見つける */
-    opacity: 0;
-    animation: appeare 1s ease 2.3s 1 normal forwards running;
-
+  .analyze-area{
+    /* Rectangle 2 */
     position: absolute;
-    left: 24.44%;
-    right: 17.36%;
-    top: 34.09%;
-    bottom: 89.38%;
-
+    left: 4.1%;
+    right: 4.1%;
+    top: 15.79%;
+    bottom: 10.65%;
+    background: #D8D8D8; 
+    opacity: 0.4;
+    border-radius: 54px;
+  }
+  .step1-text{
+    /* 1. 期間を選択してください。 */
+    position: absolute;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 62px;
-    line-height: 73px;
-
-    color: #000;
-    text-shadow: 
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff,
-      0 0 5px #fff;
-    
+    font-size: 22px;
+    line-height: 26px;
+    /* identical to box height */
+    color: #000000;
   }
 </style>

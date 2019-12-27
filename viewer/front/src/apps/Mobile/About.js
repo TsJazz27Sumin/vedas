@@ -3,8 +3,8 @@ import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, TextContainer } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import VedasTopBar from '../components/VedasTopBar'
-import wordDictionaryService from '../services/word_dictionary'
+import VedasTopBar from '../../components/Mobile/VedasTopBar'
+import wordDictionaryService from '../../services/word_dictionary'
 
 const About = (props) => {
 

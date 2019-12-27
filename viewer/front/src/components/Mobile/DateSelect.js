@@ -1,6 +1,6 @@
 import React from 'react'
 import { Select, Stack } from '@shopify/polaris';
-import dateSelectContentsService from '../services/date_select_contents'
+import dateSelectContentsService from '../../services/date_select_contents'
 
 const DateSelect = (props) => {
 

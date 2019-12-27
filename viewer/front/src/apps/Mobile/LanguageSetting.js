@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, SettingToggle, TextStyle, Frame } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import VedasTopBar from '../components/VedasTopBar'
+import VedasTopBar from '../../components/Mobile/VedasTopBar'
 
 const LanguageSetting = (props) => {
 
