@@ -2,37 +2,39 @@ import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 
-let Hero = styled.div`
-  padding-top: 10%;
-`;
-
-let MainTitle = styled.div`
-  padding-left: 25%;
-  padding-right: 25%;
-  opacity: 0;
-  animation: appeare 1s ease 2s 1 normal forwards running;
-  text-align: center;
-  position: absolute;
-`;
-
-const VedasLogo = styled.div`
-  padding-left: 35%;
-  padding-right: 35%;
-  opacity: 0;
-  animation: appeare 1s ease 4s 1 normal forwards running;
-  text-align: center;
-  top: 93.7%;
-  position: absolute;
-`;
-
 const HeroHeader = (props) => {
+
+  let Hero = styled.div``;
+
+  let MainTitle = styled.div`
+    padding-left: 25%;
+    padding-right: 25%;
+    opacity: 0;
+    animation: appeare 1s ease 2s 1 normal forwards running;
+    text-align: center;
+    position: absolute;
+  `;
+
+  const VedasLogo = styled.div`
+    padding-left: 35%;
+    padding-right: 35%;
+    opacity: 0;
+    animation: appeare 1s ease 4s 1 normal forwards running;
+    text-align: center;
+    top: 93.7%;
+    position: absolute;
+  `;
 
   const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
 
-  if(isMobile){
+  if (isMobile) {
     Hero = styled(Hero)`
       padding-top: 15%;
+  `;
+  } else {
+    Hero = styled(Hero)`
+      padding-top: 10%;
   `;
   }
 
