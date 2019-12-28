@@ -8,10 +8,10 @@ const HeroHeader = (props) => {
   let main_title_class_name = null
   let main_title_image = null
   if (lang === "jp"){
-    main_title_image = public_url + '/main-title.png';
+    main_title_image = public_url + '/hero/main-title.png';
     main_title_class_name = 'main-title';
   } else if (lang === "en"){
-    main_title_image = public_url + '/main-title-en.png';
+    main_title_image = public_url + '/hero/main-title-en.png';
     main_title_class_name = 'main-title-en';
   }
   const vedas_logo_image = public_url + '/vedas.png';
