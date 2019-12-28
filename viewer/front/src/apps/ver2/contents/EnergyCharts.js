@@ -1,22 +1,24 @@
 import React from 'react'
+import FooterVedasLogo from '../../../components/ver2/FooterVedasLogo'
+import FooterPanairLogo from '../../../components/ver2/FooterPanairLogo'
 
-const EnergyCharts = () => {
+const EnergyCharts = (props) => {
+
+  const handleMenuChange = props.handleMenuChange;
 
   return (
     <div className="analyze-area">
-      <div>
-        <p className="step1-text">1. 期間を選択してください。</p>
-        <p>年</p>
-        <p>月</p>
-        <p>日</p>
-        <p>1時間</p>
-      </div>
-      <div>
-        <p>2. 電力事業者を選択してください。</p>
-      </div>
-      <div>
-        <p>3. 調べたい発電の種類を選択してください。</p>
-      </div>
+      <div className="content">
+          <p>contact</p>
+        </div>
+        <div className="logo-area">
+          <div className="contact-vedas-logo">
+            <FooterVedasLogo handleMenuChange={handleMenuChange}/>
+          </div>
+          <div className="panair-vedas-logo">
+            <FooterPanairLogo/>
+          </div>
+        </div>
     </div>
   )
 }
