@@ -23,6 +23,7 @@
 
   a {
     text-decoration: none;
+    color: #4E4E4E;
   }
 
   .Polaris-TopBar-UserMenu__Name {
@@ -54,14 +55,19 @@
   }
 
   /* hari */
-
   .out-line {
-    /* Desktop - 1 */
     position: relative;
     width: 100%;
     height: 100%;
-
     background: #fff;
+  }
+
+  .top-bar-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
   }
 
   .st1 {
@@ -109,6 +115,10 @@
   }
 
   @media screen and (max-width: 1023px) {
+    .hero {
+      padding-top: 15%;
+    }
+
     .vedas-logo-top-bar {
       display: none;
     }
@@ -141,9 +151,10 @@
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
       border-radius: 12px;
+      background: #fff;
     }
 
-    .mobile-dropdown-content a {
+    .mobile-dropdown-content p {
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -151,6 +162,7 @@
       font-style: normal;
       font-weight: normal;
       font-size: 110%;
+      cursor: pointer;
     }
 
     .mobile-dropdown-content-open {
@@ -158,6 +170,8 @@
     }
 
     .vedas-logo {
+      /* TODO:Menuとかぶるのでとりあえずnone */
+      display: none;
       padding-left: 35%;
       padding-right: 35%;
       opacity: 0;
@@ -168,6 +182,8 @@
     }
 
     .main-title {
+      /* TODO:Menuとかぶるのでとりあえずnone */
+      display: none;
       padding-left: 25%;
       padding-right: 25%;
       opacity: 0;
@@ -240,11 +256,16 @@
   }
 
   @media screen and (min-width: 1024px) {
+    .hero {
+      padding-top: 10%;
+    }
+
     .vedas-logo-top-bar {
       padding-top: 1.5%;
       padding-left: 3%;
       padding-right: 83%;
       padding-bottom: 3%;
+      cursor: pointer;
     }
 
     .mobile-dropbtn {
@@ -289,8 +310,8 @@
       margin-left: 45%;
       padding-left: 3%;
       padding-right: 2%;
-      height: 17%;
-      top: 4%;
+      height: 56%;
+      top: 17%;
 
       background: #EFEFEF;
       border: 1px solid #fff;
@@ -308,7 +329,7 @@
       font-weight: normal;
       font-size: 140%;
       letter-spacing: 0.03em;
-
+      cursor: pointer;
       color: #4E4E4E;
     }
 
@@ -361,9 +382,10 @@
   .analyze-area {
     /* Rectangle 2 */
     position: absolute;
+    padding-top: 20%;
     left: 4.1%;
     right: 4.1%;
-    top: 15.79%;
+    top: 140%;
     bottom: 10.65%;
     background: #D8D8D8;
     opacity: 0.4;
@@ -380,5 +402,46 @@
     line-height: 26px;
     /* identical to box height */
     color: #000000;
+  }
+
+  .content-area {
+    /* Rectangle 2 */
+    height: 200%;
+    width: 91%;
+    position: absolute;
+    padding-top: 10%;
+    left: 4.1%;
+    right: 4.1%;
+    top: 100%;
+    bottom: 10.65%;
+    background: #D8D8D8;
+    opacity: 0.4;
+    border-radius: 54px;
+  }
+
+  .content-title {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 200%;
+    line-height: 54px;
+    /* color: #25282B; */
+  }
+
+  .content {
+    position: absolute;
+    width: 450%;
+    height: 200%;
+    left: -15%;
+    top: 100%;
+
+    background: #fff;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 16px;
+    transform: matrix(1, 0, 0, -1, 0, 0);
   }
 </style>

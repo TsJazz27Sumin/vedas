@@ -1,6 +1,6 @@
 import React from 'react'
-import JapanEnergyChart from './apps/ver2/JapanEnergyChart'
-import JapanEnergyChartVer1 from './apps/ver1/JapanEnergyChart'
+import Home from './apps/ver2/Home'
+import JapanEnergyChart from './apps/ver1/JapanEnergyChart'
 import News from './apps/ver1/News'
 import About from './apps/ver1/About'
 import Usage from './apps/ver1/Usage'
@@ -18,7 +18,7 @@ const App = (props) => {
   if (version === "1"){
     switch(menu){
       case "home":
-          content = (<JapanEnergyChartVer1 lang={lang} location={props.location} query_param={props.qs} />);
+          content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
           break;
   
       case "news":
@@ -46,7 +46,7 @@ const App = (props) => {
           break;
     }
   } else {
-    content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
+    content = (<Home lang={lang} location={props.location} query_param={props.qs} />);
   }
  
   return (
