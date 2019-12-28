@@ -1,10 +1,34 @@
 import React from 'react'
-import FooterVedasLogo from '../../../components/ver2/FooterVedasLogo'
-import FooterPanairLogo from '../../../components/ver2/FooterPanairLogo'
+import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import styled from 'styled-components';
 
 const Contact = (props) => {
 
   const handleMenuChange = props.handleMenuChange;
+
+  const LogoArea = styled.div`
+    position: absolute;
+    width: 60%;
+    height: 32%;
+  `;
+
+  const VedasLogo = styled.div`
+    position: absolute;
+    display: inline-block;
+    width: 30%;
+    top: 160%;
+    left: 48%;
+    cursor: pointer;
+  `;
+
+  const PanairLogo = styled.div`
+    position: absolute;
+    display: inline-block;
+    width: 30%;
+    top: 160%;
+    left: 92%;
+    cursor: pointer;
+  `;
 
   return (
     <div className="content-area">
@@ -16,14 +40,12 @@ const Contact = (props) => {
       <div className="content">
           <p>contact</p>
         </div>
-        <div className="logo-area">
-          <div className="contact-vedas-logo">
-            <FooterVedasLogo handleMenuChange={handleMenuChange}/>
-          </div>
-          <div className="panair-vedas-logo">
-            <FooterPanairLogo/>
-          </div>
-        </div>
+        <FooterLogoArea 
+          handleMenuChange={handleMenuChange}
+          LogoArea={LogoArea}
+          VedasLogo={VedasLogo}
+          PanairLogo={PanairLogo}
+        />
     </div>
   )
 }

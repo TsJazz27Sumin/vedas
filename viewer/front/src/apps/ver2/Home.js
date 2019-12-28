@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import ReactGA from 'react-ga';
-import '@shopify/polaris/styles.css';
+import styled from 'styled-components';
 import HeroHeader from '../../components/ver2/HeroHeader'
 import HeroWithoutTitle from '../../components/ver2/HeroWithoutTitle'
 import TopBar from '../../components/ver2/TopBar'
@@ -63,12 +63,19 @@ const Home = (props) => {
   //クエリパラメータ
   //const qs = queryParamPerserService.execute(props.query_param, lang);
 
+  const OutLine = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  `;
+
   return (
-    <div className="out-line">
+    <OutLine>
       <TopBar lang={lang} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
       {hero}
       {content}
-    </div >
+    </OutLine>
   )
 }
 

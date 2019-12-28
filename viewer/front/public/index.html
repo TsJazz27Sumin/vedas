@@ -26,6 +26,7 @@
     color: #4E4E4E;
   }
 
+  /* ver1のデザイン用 */
   .Polaris-TopBar-UserMenu__Name {
     color: #212B36;
   }
@@ -54,22 +55,8 @@
     box-shadow: none;
   }
 
-  /* hari */
-  .out-line {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-  }
-
-  .top-bar-area {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
-
+  /* ver2のデザイン用：desined by hari */
+  /* SVGアニメーション用 */
   .st1 {
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
@@ -111,6 +98,16 @@
 
     100% {
       stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes appeare {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 
@@ -217,16 +214,6 @@
     }
   }
 
-  @keyframes appeare {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
   @media screen and (min-width: 1024px) {
     .vedas-logo-top-bar {
       padding-top: 1.5%;
@@ -317,16 +304,6 @@
     }
   }
 
-  @keyframes appeare {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
   .analyze-area {
     /* Rectangle 2 */
     height: 200%;
@@ -378,29 +355,5 @@
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 16px;
-  }
-
-  .logo-area{
-    position: absolute;
-    width: 60%;
-    height: 32%;
-  }
-
-  .contact-vedas-logo{
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 150%;
-    left: 48%;
-    cursor: pointer;
-  }
-
-  .panair-vedas-logo{
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 150%;
-    left: 92%;
-    cursor: pointer;
   }
 </style>
