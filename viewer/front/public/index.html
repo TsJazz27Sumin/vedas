@@ -53,26 +53,9 @@
     box-shadow: none;
   }
 
-  @media (max-width:480px) {
-    p {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-
-    img {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-
-    .Polaris-FormLayout__Item {
-      margin-left: 3rem;
-      margin-right: 2rem;
-    }
-  }
-
   /* hari */
 
-  .out-line{
+  .out-line {
     /* Desktop - 1 */
     position: relative;
     width: 100%;
@@ -80,14 +63,15 @@
 
     background: #fff;
   }
-  .st1{
+
+  .st1 {
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
     -webkit-animation: st1_anime 2s ease-in 0s;
     animation: st1_anime 2s ease-in 0s;
   }
 
-  .st2{
+  .st2 {
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
     -webkit-animation: st2_anime 2s ease-in 0s;
@@ -124,118 +108,213 @@
     }
   }
 
-  .vedas-logo-top-bar{
-    padding-top: 1.5%;
-    padding-left: 3%;
-    padding-right: 83%;
-    padding-bottom: 3%;
-  }
+  @media screen and (max-width: 1023px) {
+    .vedas-logo-top-bar {
+      padding-top: 5.5%;
+      padding-left: 3%;
+      padding-right: 75%;
+      padding-bottom: 3%;
+    }
 
-  .vedas-logo{
-    padding-left: 35%;
-    padding-right: 35%;
-    opacity: 0;
-    animation: appeare 1s ease 4s 1 normal forwards running;
-    text-align: center;
-    top: 93.7%;
-    position:absolute;
-  }
+    .vedas-logo {
+      padding-left: 35%;
+      padding-right: 35%;
+      opacity: 0;
+      animation: appeare 1s ease 4s 1 normal forwards running;
+      text-align: center;
+      top: 93.7%;
+      position: absolute;
+    }
 
-  .main-title{
-    padding-left: 25%;
-    padding-right: 25%;
-    opacity: 0;
-    animation: appeare 1s ease 2s 1 normal forwards running;
-    text-align: center;
-    top: 56.3%;
-    position:absolute;
-  }
+    .main-title {
+      padding-left: 25%;
+      padding-right: 25%;
+      opacity: 0;
+      animation: appeare 1s ease 2s 1 normal forwards running;
+      text-align: center;
+      top: 56.3%;
+      position: absolute;
+    }
 
-  .menu-area{
-    position: absolute;
-    width: 53%;
-    margin-left: 45%;
-    padding-left: 3%;
-    padding-right: 2%;
-    height: 17%;
-    top: 4%;
+    .menu-area {
+      position: absolute;
+      width: 50%;
+      margin-left: 53%;
+      padding-left: 0%;
+      padding-right: 14%;
+      height: 33%;
+      top: 5%;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
 
-    background: #EFEFEF;
-    border: 1px solid #fff;
-    box-sizing: border-box;
-    border-radius: 12px;
-  }
+    .menu-item {
+      display: none;
+    }
 
-  .menu-item{
-    padding-left: 3.5%;
-    padding-right: 3%;
-    display: inline-block;
-    vertical-align: middle;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 140%;
-    letter-spacing: 0.03em;
+    .menu-item-dropdown-wrapper {
+      width: 100%;
+      padding-top: 2.5%;
+      padding-left: 18%;
+      padding-right: 3%;
+      display: inline-block;
+    }
 
-    color: #4E4E4E;
-  }
+    .menu-item-dropdown {
+      display: inline-block;
+      width: 130%;
+      vertical-align: middle;
+      position: relative;
+      border: 2px solid #efefef;
+      border-radius: 10px;
+      color: #4E4E4E;
+      -webkit-appearance: none;
+      background: #fff;
+    }
 
-  .menu-item-dropdown-wrapper{
-    width: 28%;
-    padding-top: 2.5%;
-    padding-left: 7%;
-    padding-right: 2%;
-    display: inline-block;
-  }
-
-  .menu-item-dropdown{
-    display: inline-block;
-    width: 130%;
-    vertical-align: middle;
-    position: relative;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    color: #4E4E4E;
-    -webkit-appearance: none;
-    background: #fff;
-  }
-
-  .menu-item-dropdown-inner{
-    position: relative;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 110%;
-    color: #4E4E4E;
-    -webkit-appearance: none;
-    padding: 5% 10% 5% 15%;
-    background: #fff;
-    cursor : pointer;
+    .menu-item-dropdown-inner {
+      position: relative;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 110%;
+      color: #4E4E4E;
+      -webkit-appearance: none;
+      padding: 5% 10% 5% 15%;
+      background: #fff;
+      cursor: pointer;
+    }
   }
 
   @keyframes appeare {
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
 
-  .analyze-area{
+  @media screen and (min-width: 1024px) {
+    .vedas-logo-top-bar {
+      padding-top: 1.5%;
+      padding-left: 3%;
+      padding-right: 83%;
+      padding-bottom: 3%;
+    }
+
+    .vedas-logo {
+      padding-left: 35%;
+      padding-right: 35%;
+      opacity: 0;
+      animation: appeare 1s ease 4s 1 normal forwards running;
+      text-align: center;
+      top: 93.7%;
+      position: absolute;
+    }
+
+    .main-title {
+      padding-left: 25%;
+      padding-right: 25%;
+      opacity: 0;
+      animation: appeare 1s ease 2s 1 normal forwards running;
+      text-align: center;
+      top: 56.3%;
+      position: absolute;
+    }
+
+    .menu-area {
+      position: absolute;
+      width: 53%;
+      margin-left: 45%;
+      padding-left: 3%;
+      padding-right: 2%;
+      height: 17%;
+      top: 4%;
+
+      background: #EFEFEF;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
+
+    .menu-item {
+      padding-left: 3%;
+      padding-right: 3%;
+      display: inline-block;
+      vertical-align: middle;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 140%;
+      letter-spacing: 0.03em;
+
+      color: #4E4E4E;
+    }
+
+    .menu-item-dropdown-wrapper {
+      width: 28%;
+      padding-top: 2.5%;
+      padding-left: 7%;
+      padding-right: 2%;
+      display: inline-block;
+    }
+
+    .menu-item-dropdown {
+      display: inline-block;
+      width: 130%;
+      vertical-align: middle;
+      position: relative;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      color: #4E4E4E;
+      -webkit-appearance: none;
+      background: #fff;
+    }
+
+    .menu-item-dropdown-inner {
+      position: relative;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 110%;
+      color: #4E4E4E;
+      -webkit-appearance: none;
+      padding: 5% 10% 5% 15%;
+      background: #fff;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes appeare {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .analyze-area {
     /* Rectangle 2 */
     position: absolute;
     left: 4.1%;
     right: 4.1%;
     top: 15.79%;
     bottom: 10.65%;
-    background: #D8D8D8; 
+    background: #D8D8D8;
     opacity: 0.4;
     border-radius: 54px;
   }
-  .step1-text{
+
+  .step1-text {
     /* 1. 期間を選択してください。 */
     position: absolute;
     font-family: Roboto;

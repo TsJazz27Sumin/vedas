@@ -25,10 +25,6 @@ const JapanEnergyChartDummy = (props) => {
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
   const vedas_logo_image = public_url + '/vedas.png';
 
-  const trigger_select = () => {
-    document.getElementById('id-menu-item-dropdown').open = true;
-  };
-
   return (
     <div className="out-line">
       <div>
@@ -48,7 +44,7 @@ const JapanEnergyChartDummy = (props) => {
           <div className="menu-item">
             <p>Contact</p>
           </div>
-          <div className="menu-item-dropdown-wrapper" onClick={() => trigger_select()}>
+          <div className="menu-item-dropdown-wrapper">
             <div className="menu-item-dropdown">
               <select id="id-menu-item-dropdown" className="menu-item-dropdown-inner" name="language">
                 <option value="jp">japanese</option>
