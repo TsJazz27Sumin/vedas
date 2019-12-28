@@ -38,19 +38,19 @@ const Home = (props) => {
 
   switch(menu){
     case "about":
-        content = (<About />);
+        content = (<About handleMenuChange={handleMenuChange}/>);
         break;
     case "news":
-        content = (<News />);
+        content = (<News handleMenuChange={handleMenuChange}/>);
         break;
     case "contact":
-        content = (<Contact />);
+        content = (<Contact handleMenuChange={handleMenuChange}/>);
         break;
     case "usage":
-        content = (<Usage />);
+        content = (<Usage handleMenuChange={handleMenuChange}/>);
         break;
     default:
-        content = (<EnergyCharts />);
+        content = (<EnergyCharts handleMenuChange={handleMenuChange}/>);
         break;
   }
 
