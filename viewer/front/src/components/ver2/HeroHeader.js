@@ -1,9 +1,19 @@
 import React from 'react'
 
-const HeroHeader = () => {
+const HeroHeader = (props) => {
   
+  const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
-  const main_title_image = public_url + '/main-title.png';
+
+  let main_title_class_name = null
+  let main_title_image = null
+  if (lang === "jp"){
+    main_title_image = public_url + '/main-title.png';
+    main_title_class_name = 'main-title';
+  } else if (lang === "en"){
+    main_title_image = public_url + '/main-title-en.png';
+    main_title_class_name = 'main-title-en';
+  }
   const vedas_logo_image = public_url + '/vedas.png';
 
   return (
@@ -20,7 +30,7 @@ const HeroHeader = () => {
           <path className="st2" d="M-146 269.658H381.406C473.956 269.658 683.08 263.618 773.076 289.595C932.281 335.549 1019.79 331.307 1113.23 331.307C1187.98 331.307 1328.74 331.307 1470 331.307" stroke="#6DDCFF" strokeWidth="10"/>
           </g>
         </svg>
-        <div className="main-title">
+        <div className={main_title_class_name}>
           <img width="100%" src={main_title_image} alt="main title"/>
         </div>
         <div className="vedas-logo">

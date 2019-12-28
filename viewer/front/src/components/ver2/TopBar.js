@@ -1,7 +1,12 @@
 import React from 'react'
 
-const TopBar = ({handleMenuChange}) => {
+const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
+const TopBar = (props) => {
+
+  const lang = props.lang;
+  const handleMenuChange = props.handleMenuChange;
+  const handleLangChange = props.handleLangChange;
   const public_url = process.env.PUBLIC_URL;
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
 
@@ -13,7 +18,7 @@ const TopBar = ({handleMenuChange}) => {
   return (
     <div className="top-bar-area">
       <div className="vedas-logo-top-bar">
-        <img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo" onClick={() => handleMenuChange('home')} />
+        <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo"/></a>
       </div>
       <div className="mobile-dropdown">
         <button onClick={() => toggle_mobile_menu()} className="mobile-dropbtn" >Menu</button>
@@ -40,11 +45,15 @@ const TopBar = ({handleMenuChange}) => {
         </div>
         <div className="menu-item-dropdown-wrapper">
           <div className="menu-item-dropdown">
-            <select id="id-menu-item-dropdown" className="menu-item-dropdown-inner" name="language">
+            <select 
+              id="id-menu-item-dropdown" 
+              className="menu-item-dropdown-inner" 
+              name="language" 
+              onChange={(event) => handleLangChange(event.target.value)}
+              value={lang}
+            >
               <option value="jp">japanese</option>
               <option value="en">english</option>
-              <option value="ch">china</option>
-              <option value="es">español</option>
             </select>
             <svg width="20" height="20" viewBox="0 -4 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 7.5L10 12.5L15 7.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

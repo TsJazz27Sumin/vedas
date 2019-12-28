@@ -13,7 +13,7 @@ import Usage from './contents/Usage'
 
 const Home = (props) => {
 
-  const lang = props.lang;
+  const initial_lang = props.lang;
 
   useEffect(() => {
     const pathname = '/' + lang + '/home';
@@ -26,10 +26,16 @@ const Home = (props) => {
     setMenu(newValue);
   }, []);
 
+  const [lang, setLang] = useState(initial_lang);
+  const handleLangChange = useCallback((newValue) => {
+    setLang(newValue);
+    console.log(newValue);
+  }, []);
+
   let hero = null;
 
   if (menu === "home"){
-    hero = (<HeroHeader/>);
+    hero = (<HeroHeader lang={lang}/>);
   } else {
     hero = (<HeroWithoutTitle/>);
   }
@@ -38,19 +44,19 @@ const Home = (props) => {
 
   switch(menu){
     case "about":
-        content = (<About handleMenuChange={handleMenuChange}/>);
+        content = (<About lang={lang} handleMenuChange={handleMenuChange}/>);
         break;
     case "news":
-        content = (<News handleMenuChange={handleMenuChange}/>);
+        content = (<News lang={lang} handleMenuChange={handleMenuChange}/>);
         break;
     case "contact":
-        content = (<Contact handleMenuChange={handleMenuChange}/>);
+        content = (<Contact lang={lang} handleMenuChange={handleMenuChange}/>);
         break;
     case "usage":
-        content = (<Usage handleMenuChange={handleMenuChange}/>);
+        content = (<Usage lang={lang} handleMenuChange={handleMenuChange}/>);
         break;
     default:
-        content = (<EnergyCharts handleMenuChange={handleMenuChange}/>);
+        content = (<EnergyCharts lang={lang} handleMenuChange={handleMenuChange}/>);
         break;
   }
 
@@ -59,7 +65,7 @@ const Home = (props) => {
 
   return (
     <div className="out-line">
-      <TopBar handleMenuChange={handleMenuChange}/>
+      <TopBar lang={lang} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
       {hero}
       {content}
     </div >
