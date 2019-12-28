@@ -6,6 +6,19 @@ const EnergyCharts = (props) => {
 
   const handleMenuChange = props.handleMenuChange;
 
+  const Content = styled.div`
+    position: absolute;
+    width: 56%;
+    height: 50%;
+    left: 23%;
+    top: 20%;
+
+    background: #fff;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 16px;
+  `;
+
   const LogoArea = styled.div`
     position: absolute;
     width: 60%;
@@ -32,15 +45,15 @@ const EnergyCharts = (props) => {
 
   return (
     <div className="analyze-area">
-      <div className="content">
-          <p>contact</p>
-        </div>
-        <FooterLogoArea 
-          handleMenuChange={handleMenuChange}
-          LogoArea={LogoArea}
-          VedasLogo={VedasLogo}
-          PanairLogo={PanairLogo}
-        />
+      <Content>
+        <p>contact</p>
+      </Content>
+      <FooterLogoArea
+        handleMenuChange={handleMenuChange}
+        LogoArea={LogoArea}
+        VedasLogo={VedasLogo}
+        PanairLogo={PanairLogo}
+      />
     </div>
   )
 }
