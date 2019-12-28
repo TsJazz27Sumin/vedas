@@ -25,6 +25,10 @@ const JapanEnergyChartDummy = (props) => {
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
   const vedas_logo_image = public_url + '/vedas.png';
 
+  const trigger_select = () => {
+    document.getElementById('id-menu-item-dropdown').open = true;
+  };
+
   return (
     <div className="out-line">
       <div>
@@ -32,10 +36,31 @@ const JapanEnergyChartDummy = (props) => {
           <img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo"/>
         </div>
         <div className="menu-area">
-          <p className="menu-item">Usage</p>
-          <p className="menu-item">About</p>
-          <p className="menu-item">News</p>
-          <p className="menu-item">Contact</p>
+          <div className="menu-item">
+            <p>Usage</p>
+          </div>
+          <div className="menu-item">
+            <p>About</p>
+          </div>
+          <div className="menu-item">
+            <p>News</p>
+          </div>
+          <div className="menu-item">
+            <p>Contact</p>
+          </div>
+          <div className="menu-item-dropdown-wrapper" onClick={() => trigger_select()}>
+            <div className="menu-item-dropdown">
+              <select id="id-menu-item-dropdown" className="menu-item-dropdown-inner" name="language">
+                <option value="jp">japanese</option>
+                <option value="en">english</option>
+                <option value="ch">china</option>
+                <option value="es">español</option>
+              </select>
+              <svg width="20" height="20" viewBox="0 -4 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
       <svg className="start" width="100%" height="10%" viewBox="0 0 1440 347" fill="none" xmlns="http://www.w3.org/2000/svg">

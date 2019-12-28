@@ -1,5 +1,5 @@
 import React from 'react'
-import JapanEnergyChartDummy from './apps/Browzer/JapanEnergyChartDummy'
+import JapanEnergyChartDummy from './apps/ver2/JapanEnergyChartDummy'
 import JapanEnergyChart from './apps/ver1/JapanEnergyChart'
 import News from './apps/ver1/News'
 import About from './apps/ver1/About'
