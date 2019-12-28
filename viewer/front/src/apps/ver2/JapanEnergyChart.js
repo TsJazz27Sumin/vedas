@@ -7,6 +7,9 @@ import '@shopify/polaris/styles.css';
 //cd ../supply-and-demand-viewer/viewer/front/
 //npm start
 //reference:https://polaris.shopify.com/components/
+
+const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
+
 const JapanEnergyChartDummy = (props) => {
   
   const lang = props.lang;
@@ -25,11 +28,26 @@ const JapanEnergyChartDummy = (props) => {
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
   const vedas_logo_image = public_url + '/vedas.png';
 
+  const toggle_mobile_menu = () => {
+    let element = document.getElementById('id-mobile-dropdown-content');
+    element.classList.toggle("mobile-dropdown-content-open");
+  };
+
   return (
     <div className="out-line">
       <div>
         <div className="vedas-logo-top-bar">
           <img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo"/>
+        </div>
+        <div class="mobile-dropdown">
+          <button onClick={()=> toggle_mobile_menu()} class="mobile-dropbtn" >Menu</button>
+          <div id="id-mobile-dropdown-content" class="mobile-dropdown-content">
+            <a href={baseUrl}>Home</a>
+            <a href={baseUrl}>Usage</a>
+            <a href={baseUrl}>About</a>
+            <a href={baseUrl}>News</a>
+            <a href={baseUrl}>Contact</a>
+          </div>
         </div>
         <div className="menu-area">
           <div className="menu-item">

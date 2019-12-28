@@ -110,10 +110,51 @@
 
   @media screen and (max-width: 1023px) {
     .vedas-logo-top-bar {
-      padding-top: 5.5%;
-      padding-left: 3%;
-      padding-right: 75%;
-      padding-bottom: 3%;
+      display: none;
+    }
+
+    .mobile-dropbtn {
+      padding-top: 20%;
+      padding-bottom: 20%;
+      padding-right: 30%;
+      padding-left: 30%;
+      border: none;
+      border-radius: 12px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 110%;
+      background: #fff;
+      border: 2px solid #efefef;
+    }
+
+    .mobile-dropdown {
+      margin: 1%;
+      position: relative;
+      display: inline-block;
+    }
+
+    .mobile-dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 12px;
+    }
+
+    .mobile-dropdown-content a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 110%;
+    }
+
+    .mobile-dropdown-content-open {
+      display: block;
     }
 
     .vedas-logo {
@@ -132,18 +173,17 @@
       opacity: 0;
       animation: appeare 1s ease 2s 1 normal forwards running;
       text-align: center;
-      top: 56.3%;
+      top: 64.3%;
       position: absolute;
     }
 
     .menu-area {
       position: absolute;
-      width: 50%;
+      width: 47%;
       margin-left: 53%;
       padding-left: 0%;
-      padding-right: 14%;
-      height: 33%;
-      top: 5%;
+      padding-right: 9%;
+      top: 0%;
       border: 1px solid #fff;
       box-sizing: border-box;
       border-radius: 12px;
@@ -205,6 +245,22 @@
       padding-left: 3%;
       padding-right: 83%;
       padding-bottom: 3%;
+    }
+
+    .mobile-dropbtn {
+      display: none;
+    }
+
+    .mobile-dropdown {
+      display: none;
+    }
+
+    .mobile-dropdown-content {
+      display: none;
+    }
+
+    .mobile-dropdown-content a {
+      display: none;
     }
 
     .vedas-logo {
