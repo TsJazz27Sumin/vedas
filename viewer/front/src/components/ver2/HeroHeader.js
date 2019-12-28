@@ -1,18 +1,41 @@
 import React from 'react'
+import styled from 'styled-components';
+
+let MainTitle = styled.div`
+  padding-left: 25%;
+  padding-right: 25%;
+  opacity: 0;
+  animation: appeare 1s ease 2s 1 normal forwards running;
+  text-align: center;
+  position: absolute;
+`;
+
+let VedasLogo = styled.div`
+  padding-left: 35%;
+  padding-right: 35%;
+  opacity: 0;
+  animation: appeare 1s ease 4s 1 normal forwards running;
+  text-align: center;
+  top: 93.7%;
+  position: absolute;
+`;
 
 const HeroHeader = (props) => {
   
   const lang = props.lang;
   const public_url = process.env.PUBLIC_URL;
 
-  let main_title_class_name = null
   let main_title_image = null
   if (lang === "jp"){
     main_title_image = public_url + '/hero/main-title.png';
-    main_title_class_name = 'main-title';
+    MainTitle = styled(MainTitle)`
+      top: 56.3%;
+    `;
   } else if (lang === "en"){
     main_title_image = public_url + '/hero/main-title-en.png';
-    main_title_class_name = 'main-title-en';
+    MainTitle = styled(MainTitle)`
+      top: 57.3%;
+    `;
   }
   const vedas_logo_image = public_url + '/vedas.png';
 
@@ -30,12 +53,12 @@ const HeroHeader = (props) => {
           <path className="st2" d="M-146 269.658H381.406C473.956 269.658 683.08 263.618 773.076 289.595C932.281 335.549 1019.79 331.307 1113.23 331.307C1187.98 331.307 1328.74 331.307 1470 331.307" stroke="#6DDCFF" strokeWidth="10"/>
           </g>
         </svg>
-        <div className={main_title_class_name}>
+        <MainTitle>
           <img width="100%" src={main_title_image} alt="main title"/>
-        </div>
-        <div className="vedas-logo">
+        </MainTitle>
+        <VedasLogo>
           <img width="100%" src={vedas_logo_image} alt="vedas logo"/>
-        </div>
+        </VedasLogo>
       </div>
   )
 }
