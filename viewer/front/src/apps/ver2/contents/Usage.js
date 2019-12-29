@@ -72,7 +72,7 @@ const Usage = (props) => {
     font-style: normal;
     font-weight: normal;
     font-size: 26px;
-    line-height: 20px;
+    line-height: 40px;
     border-radius: 54px;
     
     color: #000;
@@ -188,7 +188,15 @@ const Usage = (props) => {
         </UsageAreaOneTextArea3>
       </Content1>
       <Content2>
-
+        <Text1><p>{dict.how_to_use_text13}</p></Text1>
+        <Text1><p>{dict.how_to_use_text14}</p></Text1>
+        <Text1><p>{dict.how_to_use_text15}</p></Text1>
+        <Text1><p>{dict.how_to_use_text16}</p></Text1>
+        <Text1><p>{dict.how_to_use_text17}</p></Text1>
+        <Text1><p>{dict.how_to_use_text18}</p></Text1>
+        <Text1><p>{dict.how_to_use_text19}</p></Text1>
+        <Text1><p>{dict.how_to_use_text20}</p></Text1>
+        <Text1><p>{dict.how_to_use_text21}</p></Text1>
       </Content2>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
