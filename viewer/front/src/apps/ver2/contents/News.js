@@ -19,7 +19,7 @@ const News = (props) => {
 
   let ContentArea = styled.div`
     height: 700px;
-    width: 92%;
+    width: 91%;
     padding-left: 4%;
     padding-top: 2%;
     margin-left: 4%;
@@ -28,6 +28,8 @@ const News = (props) => {
   `;
 
   let ContentTitle = styled.div`
+  padding-left: 1.5%;
+  padding-bottom: 0.5%;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
@@ -37,7 +39,7 @@ const News = (props) => {
 `;
 
   let Content = styled.div`
-  width: 95%;
+  width: 96%;
   left: 4%;
 
   background: #fff;

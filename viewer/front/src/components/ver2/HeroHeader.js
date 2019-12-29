@@ -44,7 +44,7 @@ const HeroHeader = (props) => {
     MainTitle = styled(MainTitle)`
       top: 56.3%;
     `;
-  } else if (lang === "en") {
+  } else {
     main_title_image = public_url + '/hero/main-title-en.png';
     MainTitle = styled(MainTitle)`
       top: 57.3%;

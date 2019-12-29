@@ -100,8 +100,8 @@ const Contact = (props) => {
 
   let ContentTitle = styled.div`
     position: absolute;
-    left: 25%;
-    top: 10%;
+    left: 5%;
+    top: 3%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -112,10 +112,10 @@ const Contact = (props) => {
 
   let Content = styled.div`
     position: absolute;
-    width: 56%;
-    height: 68%;
-    left: 23%;
-    top: 20%;
+    width: 92%;
+    height: 73%;
+    left: 4%;
+    top: 9%;
 
     background: #fff;
     border: 1px solid #fff;
@@ -131,6 +131,12 @@ const Contact = (props) => {
     top: 5%;
     line-height: 22px;
     color: #000;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
   `;
 
   let InformationP = styled.p`
@@ -240,6 +246,12 @@ const Contact = (props) => {
     top: 63%
     line-height: 22px;
     color: #000;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
   `;
 
   let PrivacyAccept = styled.button`
@@ -265,7 +277,7 @@ const Contact = (props) => {
     position: absolute;
     width: 60%;
     height: 11%;
-    top: 73%;
+    top: 70%;
   `;
 
   let VedasLogo = styled.div`
