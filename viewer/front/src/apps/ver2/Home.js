@@ -23,6 +23,7 @@ const Home = (props) => {
   const [menu, setMenu] = useState('home');
   const handleMenuChange = useCallback((newValue) => {
     setMenu(newValue);
+    window.scrollTo(0, 0);
   }, []);
 
   const [lang, setLang] = useState(initial_lang);
