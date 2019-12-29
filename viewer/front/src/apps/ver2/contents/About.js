@@ -144,9 +144,9 @@ const About = (props) => {
 
   if(isMobile){
     ContentArea = styled(ContentArea)`
-      width: 100%;
+      width: 92%;
       height: 1300%;
-      left: 1%;
+      left: 4%;
     `;
     ContentTitle = styled(ContentTitle)`
       top: 3%;
