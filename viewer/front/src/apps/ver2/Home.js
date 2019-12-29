@@ -13,7 +13,12 @@ import Usage from './contents/Usage'
 
 const Home = (props) => {
 
-  const initial_lang = props.lang;
+  let initial_lang = props.lang;
+
+  //TODO:中国語、スペイン語対応。
+  if (initial_lang === "ch" || initial_lang === "es"){
+    initial_lang = "en";
+  }
 
   useEffect(() => {
     const pathname = '/' + lang + '/home';
@@ -29,7 +34,6 @@ const Home = (props) => {
   const [lang, setLang] = useState(initial_lang);
   const handleLangChange = useCallback((newValue) => {
     setLang(newValue);
-    console.log(newValue);
   }, []);
 
   let hero = null;

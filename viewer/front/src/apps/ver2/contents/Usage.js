@@ -7,6 +7,19 @@ const Usage = (props) => {
 
   const handleMenuChange = props.handleMenuChange;
 
+  const ContentArea = styled.div`
+    height: 200%;
+    width: 91%;
+    position: absolute;
+    padding-top: 10%;
+    left: 4.1%;
+    right: 4.1%;
+    top: 100%;
+    bottom: 10.65%;
+    background: #EFEFEF;
+    border-radius: 54px;
+  `;
+
   const Content = styled.div`
     position: absolute;
     width: 56%;
@@ -51,7 +64,7 @@ const Usage = (props) => {
   );
 
   return (
-    <div className="content-area">
+    <ContentArea>
       <ContentTitle Title={Title}/>
       <Content>
         <p>contact</p>
@@ -62,7 +75,7 @@ const Usage = (props) => {
         VedasLogo={VedasLogo}
         PanairLogo={PanairLogo}
       />
-    </div>
+    </ContentArea>
   )
 }
 
