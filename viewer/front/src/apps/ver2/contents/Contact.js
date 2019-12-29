@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import ReactGA from 'react-ga';
+import axios from 'axios'
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import ContentTitle from '../../../components/ver2/ContentTitle'
 import styled from 'styled-components';
+import wordDictionaryService from '../../../services/word_dictionary'
+
 
 const Contact = (props) => {
 
   const lang = props.lang;
+  const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
     const pathname = '/' + lang + '/contact';
@@ -14,10 +18,71 @@ const Contact = (props) => {
     ReactGA.pageview(pathname);
   });
 
-  const handleMenuChange = props.handleMenuChange;
+  const dict = wordDictionaryService.getV2(lang);
+
+  const [editItem, setEditItem] = useState('fullname');
+
+  useEffect(() => {
+    switch(editItem){
+      case "fullName":
+          inputFullNameRef.current.focus();
+        break;
+
+      case "email":
+        inputEmailNameRef.current.focus();
+        break;
+
+      case "contactInformation":
+        inputContactInformationNameRef.current.focus();
+        break;
+
+      default:
+        //nothing
+    }
+  });
+
+  const [complete, setComplete] = useState(false);
+
+  const [fullName, setFullName] = useState('');
+  const inputFullNameRef = useRef(null);
+  const handleFullNameChange = useCallback((event) => {
+    setFullName(event.target.value);
+    setEditItem('fullName');
+  }, []);
+
+  const [email, setEmail] = useState('');
+  const inputEmailNameRef = useRef(null);
+  const handleEmailChange = useCallback((event) => {
+    setEmail(event.target.value);
+    setEditItem('email');
+  }, []);
+
+  const [contactInformation, setContactInformation] = useState('');
+  const inputContactInformationNameRef = useRef(null);
+  const handleContactInformationChange = useCallback((event) => {
+    setContactInformation(event.target.value);
+    setEditItem('contactInformation');
+  }, []);
+
+  const handleSubmit = useCallback((fullName, email, contactInformation) => {
+    const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+    const data = {
+      "full_name": fullName,
+      "email": email,
+      "contact_information": contactInformation
+    };
+    axios.post(baseUrl + 'contact', data);
+    setFullName('');
+    setEmail('');
+    setContactInformation('');
+    setComplete(true);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [is_privacy_link_click, setIsPrivacyLinkClick] = useState(false);
 
   const ContentArea = styled.div`
-    height: 200%;
+    height: 344%;
     width: 91%;
     position: absolute;
     padding-top: 10%;
@@ -32,7 +97,7 @@ const Contact = (props) => {
   const Content = styled.div`
     position: absolute;
     width: 56%;
-    height: 50%;
+    height: 90%;
     left: 23%;
     top: 20%;
 
@@ -45,7 +110,8 @@ const Contact = (props) => {
   const LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 32%;
+    height: 11%;
+    top: 87%;
   `;
 
   const VedasLogo = styled.div`
@@ -74,9 +140,76 @@ const Contact = (props) => {
 
   return (
     <ContentArea>
-      <ContentTitle Title={Title}/>
+      <ContentTitle Title={Title} />
       <Content>
-        <p>contact</p>
+        {
+          complete ? (
+            <p>{dict.contact_complete}</p>
+          ) : (
+              <div>
+                <p>{dict.contact_text1}</p>
+                <p>{dict.contact_text2}</p>
+                <p>{dict.contact_note}</p>
+                <br/>
+                <label>{dict.contact_item_name}</label>
+                <input 
+                  id="id_full_name"
+                  value={fullName}
+                  onChange={handleFullNameChange}
+                  type="text"
+                  minLength="1"
+                  maxLength="100"
+                  placeholder={dict.contact_place_folder1}
+                  ref={inputFullNameRef} 
+                />
+                
+                <label>{dict.contact_item_mail}</label>
+                <input 
+                  id="id_email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  type="email"
+                  minLength="1"
+                  maxLength="254"
+                  placeholder={dict.contact_place_folder2}
+                  ref={inputEmailNameRef} 
+                  />
+                <br/>
+                <label>{dict.contact_item_input}</label>
+                <input 
+                  id="id_contact_information"
+                  value={contactInformation}
+                  onChange={handleContactInformationChange}
+                  minLength="1"
+                  maxLength="1000"
+                  ref={inputContactInformationNameRef} 
+                  />
+                <p>
+                  <strong>
+                    {dict.contact_text3}
+                  </strong>
+                </p>
+                <p>
+                  {dict.contact_text4}
+                  <a
+                    href="https://corp.panair.jp/privacy_short"
+                    external="true"
+                    onClick={() => setIsPrivacyLinkClick(true)}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {dict.contact_text5}
+                  </a>
+                  {dict.contact_text6}
+                </p>
+                <p>
+                  {dict.contact_text7}
+                </p>
+                <br/>
+                <button disabled={is_privacy_link_click === false} onClick={() => handleSubmit(fullName, email, contactInformation)}>{dict.contact_submit}</button>
+                <br/>
+              </div>
+            )}
       </Content>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}

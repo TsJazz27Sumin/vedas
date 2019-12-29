@@ -44,7 +44,8 @@ const News = (props) => {
   const LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 32%;
+    height: 11%;
+    top: 87%;
   `;
 
   const VedasLogo = styled.div`
