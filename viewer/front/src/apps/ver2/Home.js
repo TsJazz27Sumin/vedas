@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import ReactGA from 'react-ga';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import HeroHeader from '../../components/ver2/HeroHeader'
 import HeroWithoutTitle from '../../components/ver2/HeroWithoutTitle'
@@ -14,17 +13,12 @@ import Usage from './contents/Usage'
 const Home = (props) => {
 
   let initial_lang = props.lang;
+  const qs = props.qs;
 
   //TODO:中国語、スペイン語対応。
   if (initial_lang === "ch" || initial_lang === "es"){
     initial_lang = "en";
   }
-
-  useEffect(() => {
-    const pathname = '/' + lang + '/home';
-    ReactGA.set({ page: pathname });
-    ReactGA.pageview(pathname);
-  });
 
   const [menu, setMenu] = useState('home');
   const handleMenuChange = useCallback((newValue) => {
@@ -48,19 +42,19 @@ const Home = (props) => {
 
   switch(menu){
     case "about":
-        content = (<About lang={lang} handleMenuChange={handleMenuChange}/>);
+        content = (<About lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
     case "news":
-        content = (<News lang={lang} handleMenuChange={handleMenuChange}/>);
+        content = (<News lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
     case "contact":
-        content = (<Contact lang={lang} handleMenuChange={handleMenuChange}/>);
+        content = (<Contact lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
     case "usage":
-        content = (<Usage lang={lang} handleMenuChange={handleMenuChange}/>);
+        content = (<Usage lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
     default:
-        content = (<EnergyCharts lang={lang} handleMenuChange={handleMenuChange}/>);
+        content = (<EnergyCharts lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
   }
 

@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import ContentTitle from '../../../components/ver2/ContentTitle'
 import styled from 'styled-components';
 
 const Contact = (props) => {
+
+  const lang = props.lang;
+
+  useEffect(() => {
+    const pathname = '/' + lang + '/contact';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   const handleMenuChange = props.handleMenuChange;
 

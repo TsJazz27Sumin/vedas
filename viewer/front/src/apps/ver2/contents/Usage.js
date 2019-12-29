@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import ContentTitle from '../../../components/ver2/ContentTitle'
 import styled from 'styled-components';
 
 const Usage = (props) => {
 
+  const lang = props.lang;
   const handleMenuChange = props.handleMenuChange;
+
+  useEffect(() => {
+    const pathname = '/' + lang + '/usage';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   const ContentArea = styled.div`
     height: 200%;

@@ -46,7 +46,7 @@ const App = (props) => {
           break;
     }
   } else {
-    content = (<Home lang={lang} location={props.location} query_param={props.qs} />);
+    content = (<Home lang={lang} location={props.location} qs={props.qs} />);
   }
  
   return (

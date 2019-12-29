@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import styled from 'styled-components';
 
 const EnergyCharts = (props) => {
 
+  const lang = props.lang;
   const handleMenuChange = props.handleMenuChange;
+
+  useEffect(() => {
+    const pathname = '/' + lang + '/home';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   const AnalyzeArea = styled.div`
     height: 200%;
