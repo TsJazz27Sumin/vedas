@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import styled from 'styled-components';
+import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 
 const About = (props) => {
 
   const lang = props.lang;
+  const dict = wordDictionaryService.getV2(lang);
   const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const About = (props) => {
   });
 
   const ContentArea = styled.div`
-    height: 200%;
+    height: 450%;
     width: 91%;
     position: absolute;
     padding-top: 10%;
@@ -31,7 +33,7 @@ const About = (props) => {
   let ContentTitle = styled.div`
     position: absolute;
     left: 5%;
-    top: 10%;
+    top: 2%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -43,14 +45,78 @@ const About = (props) => {
   const Content = styled.div`
     position: absolute;
     width: 92%;
-    height: 50%;
+    height: 80%;
     left: 4%;
-    top: 20%;
+    top: 7%;
 
     background: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 16px;
+  `;
+
+  let Text1 = styled.div`
+    position: absolute;
+    top: 7.63%;
+    padding-left:3%;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 49px;
+    
+    color: #000;
+    
+    border: 8px solid #fff;
+  `;
+
+  let Text2 = styled.div`
+    position: absolute;
+    top: 17.63%;
+    padding-left:3.4%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    
+    color: #000;
+    
+    border: 8px solid #fff;
+  `;
+
+  let Text3 = styled.div`
+    position: absolute;
+    top: 32.63%;
+    padding-left:3%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    
+    color: #000;
+    
+    border: 8px solid #fff;
+  `;
+
+  let Text4 = styled.div`
+    position: absolute;
+    top: 50.63%;
+    padding-left:4%;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 32px;
+
+    color: #000;
   `;
 
   let LogoArea = styled.div`
@@ -94,7 +160,23 @@ const About = (props) => {
     <ContentArea>
       <ContentTitle>{Title}</ContentTitle>
       <Content>
-        <p>contact</p>
+        <Text1><p>{dict.about_text1}</p></Text1>
+        <Text2><p>{dict.about_text2}</p></Text2>
+        <Text3><p>{dict.about_text3}</p></Text3>
+        <Text4>
+          <p>{dict.about_text4}</p>
+          <br/>
+          <br/>
+          <p>{dict.about_text5}</p>
+          <p>{dict.about_text6}</p>
+          <br/>
+          <br/>
+          <p>{dict.about_text7}</p>
+          <p>{dict.about_text8}</p>
+          <br/>
+          <br/>
+          <p>{dict.about_text9}</p>
+        </Text4>
       </Content>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
