@@ -40,14 +40,14 @@ const EnergyCharts = (props) => {
     border-radius: 16px;
   `;
 
-  const LogoArea = styled.div`
+  let LogoArea = styled.div`
     position: absolute;
     width: 60%;
     height: 11%;
-    top: 87%;
+    top: 73%;
   `;
 
-  const VedasLogo = styled.div`
+  let VedasLogo = styled.div`
     position: absolute;
     display: inline-block;
     width: 30%;
@@ -56,7 +56,7 @@ const EnergyCharts = (props) => {
     cursor: pointer;
   `;
 
-  const PanairLogo = styled.div`
+  let PanairLogo = styled.div`
     position: absolute;
     display: inline-block;
     width: 30%;

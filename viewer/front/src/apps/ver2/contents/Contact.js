@@ -2,7 +2,6 @@ import React, { useRef, useState, useCallback, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import axios from 'axios'
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
-import ContentTitle from '../../../components/ver2/ContentTitle'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
@@ -97,6 +96,18 @@ const Contact = (props) => {
     bottom: 10.65%;
     background: #EFEFEF;
     border-radius: 54px;
+  `;
+
+  let ContentTitle = styled.div`
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 200%;
+    line-height: 54px;
+    color: #25282B;
   `;
 
   let Content = styled.div`
@@ -295,6 +306,10 @@ const Contact = (props) => {
       border-radius: 54px;
     `;
 
+    ContentTitle = styled(ContentTitle)`
+      top: 2%;
+    `;
+
     Content = styled(Content)`
       position: absolute;
       width: 93%;
@@ -357,7 +372,7 @@ const Contact = (props) => {
 
   return (
     <ContentArea>
-      <ContentTitle Title={Title} />
+      <ContentTitle>{Title}</ContentTitle>
       <Content>
         {
           complete ? (

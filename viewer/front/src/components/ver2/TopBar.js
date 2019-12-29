@@ -12,11 +12,11 @@ const TopBar = (props) => {
   const public_url = process.env.PUBLIC_URL;
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
 
-  const TopBarArea = styled.div`
+  let TopBarArea = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1440px;
     z-index: 999;
   `;
 
@@ -32,6 +32,9 @@ const TopBar = (props) => {
   let MenuItemDropdownSelect = styled.select``;
 
   if (isMobile){
+    TopBarArea = styled(TopBarArea)`
+      width:100%;
+    `;
     VedasLogoTopBar = styled(VedasLogoTopBar)`
       display: none;
     `;
@@ -203,7 +206,6 @@ const TopBar = (props) => {
   const toggle_mobile_menu = () => {
     let element = document.getElementById('id-mobile-dropdown-content');
     element.classList.toggle("display-block");
-    console.log('toggle');
   };
   
   return (

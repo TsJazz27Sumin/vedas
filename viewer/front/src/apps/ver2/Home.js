@@ -8,6 +8,7 @@ import About from './contents/About'
 import Contact from './contents/Contact'
 import News from './contents/News'
 import Usage from './contents/Usage'
+import { isMobile } from "react-device-detect";
 //import queryParamPerserService from '../../services/query_param_perser'
 
 const Home = (props) => {
@@ -62,12 +63,19 @@ const Home = (props) => {
   //クエリパラメータ
   //const qs = queryParamPerserService.execute(props.query_param, lang);
 
-  const OutLine = styled.div`
+  let OutLine = styled.div`
     position: relative;
-    width: 100%;
+    width: 1440px;
     height: 100%;
     background: #fff;
   `;
+
+  if (isMobile){
+    OutLine = styled(OutLine)`
+      width: 100%;
+      height: 100%;
+    `;
+  }
 
   return (
     <OutLine>

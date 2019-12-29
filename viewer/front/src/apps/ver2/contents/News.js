@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
-import ContentTitle from '../../../components/ver2/ContentTitle'
 import styled from 'styled-components';
+import { isMobile } from "react-device-detect";
 
 const News = (props) => {
 
@@ -28,6 +28,18 @@ const News = (props) => {
     border-radius: 54px;
   `;
 
+  let ContentTitle = styled.div`
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 200%;
+    line-height: 54px;
+    color: #25282B;
+  `;
+
   const Content = styled.div`
     position: absolute;
     width: 56%;
@@ -41,14 +53,14 @@ const News = (props) => {
     border-radius: 16px;
   `;
 
-  const LogoArea = styled.div`
+  let LogoArea = styled.div`
     position: absolute;
     width: 60%;
     height: 11%;
-    top: 87%;
+    top: 73%;
   `;
 
-  const VedasLogo = styled.div`
+  let VedasLogo = styled.div`
     position: absolute;
     display: inline-block;
     width: 30%;
@@ -57,7 +69,7 @@ const News = (props) => {
     cursor: pointer;
   `;
 
-  const PanairLogo = styled.div`
+  let PanairLogo = styled.div`
     position: absolute;
     display: inline-block;
     width: 30%;
@@ -72,9 +84,15 @@ const News = (props) => {
     </svg>
   );
 
+  if(isMobile){
+    ContentTitle = styled(ContentTitle)`
+      top: 2%;
+    `;
+  } 
+
   return (
     <ContentArea>
-      <ContentTitle Title={Title}/>
+      <ContentTitle>{Title}</ContentTitle>
       <Content>
         <p>contact</p>
       </Content>
