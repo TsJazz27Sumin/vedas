@@ -4,7 +4,7 @@ const get = () => {
         "contact_place_folder2": "contact@vedas.jp",
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",
         "contact_text2": "Please note that your reply may take time or may not be possible depending on the content.",
-        "contact_note": "If you have difficulty inquiring in Japanese, please enter in English. Other languages cannot be accepted.",
+        "contact_note": "※ Japanese is also available. ",
         "contact_item_name": "Full name",
         "contact_item_mail": "Mail address",
         "contact_item_input": "Content of inquiry",

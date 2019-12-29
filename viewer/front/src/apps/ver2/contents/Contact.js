@@ -25,7 +25,7 @@ const Contact = (props) => {
   useEffect(() => {
     switch(editItem){
       case "fullName":
-          inputFullNameRef.current.focus();
+        inputFullNameRef.current.focus();
         break;
 
       case "email":
@@ -42,6 +42,7 @@ const Contact = (props) => {
   });
 
   const [complete, setComplete] = useState(false);
+  const [is_compositioned, setIsCompositioned] = useState(true);
 
   const [fullName, setFullName] = useState('');
   const inputFullNameRef = useRef(null);
@@ -64,22 +65,25 @@ const Contact = (props) => {
     setEditItem('contactInformation');
   }, []);
 
+  const moveCaretEnd = (e) => {
+    const temp_value = e.target.value;
+    e.target.value = '';
+    e.target.value = temp_value;
+  };
+
   const handleSubmit = useCallback((fullName, email, contactInformation) => {
     const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+
     const data = {
-      "full_name": fullName,
-      "email": email,
-      "contact_information": contactInformation
+      "full_name": inputFullNameRef.current.value,
+      "email": inputEmailNameRef.current.value,
+      "contact_information": inputContactInformationNameRef.current.value
     };
     axios.post(baseUrl + 'contact', data);
-    setFullName('');
-    setEmail('');
-    setContactInformation('');
     setComplete(true);
+    setEditItem('');
     window.scrollTo(0, 0);
   }, []);
-
-  const [is_privacy_link_click, setIsPrivacyLinkClick] = useState(false);
 
   const ContentArea = styled.div`
     height: 344%;
@@ -105,6 +109,144 @@ const Contact = (props) => {
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 16px;
+  `;
+
+  const Information = styled.div`
+    position: absolute;
+    width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 5%;
+    line-height: 22px;
+    color: #000;
+  `;
+
+  const InformationP = styled.p`
+    color: #4e4e4e;
+  `;
+
+  const FullNameLabel = styled.label`
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: 6%;
+    top: 19%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #464646;
+  `; 
+
+  const FullNameInput = styled.input`
+    position: absolute;
+    width: 40%;
+    height: 5%;
+    left: 5%;
+    top: 22%;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.34);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 0 0 2%;
+  `;
+
+  const EmailLabel = styled.label`
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: 55%;
+    top: 19%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #464646;
+  `; 
+
+  const EmailInput = styled.input`
+    position: absolute;
+    width: 40%;
+    height: 5%;
+    left: 54%;
+    top: 22%;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.34);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 2% 2% 2% 2%;
+  `;
+
+  const ContactInformationLabel = styled.label`
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: 5%;
+    top: 30%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #464646;
+  `;
+
+  const ContactInformationTextArea = styled.textarea`
+    position: absolute;
+    width: 89%;
+    height: 10%;
+    left: 5%;
+    top: 35%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    padding: 2% 2% 2% 2%;
+  `;
+
+  const Privacy = styled.div`
+    position: absolute;
+    width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 48%
+    line-height: 22px;
+    color: #000;
+  `;
+
+  const PrivacyAccept = styled.button`
+    position: absolute;
+    width: 36%;
+    height: 6%;
+    left: 32%;
+    top: 61%;
+    background: #0084FF;
+    border-radius: 4px;
+  `;
+
+  const PrivacyAcceptP = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
   `;
 
   const LogoArea = styled.div`
@@ -147,54 +289,66 @@ const Contact = (props) => {
             <p>{dict.contact_complete}</p>
           ) : (
               <div>
-                <p>{dict.contact_text1}</p>
-                <p>{dict.contact_text2}</p>
-                <p>{dict.contact_note}</p>
+                <Information>
+                  <p>{dict.contact_text1}</p>
+                  <p>{dict.contact_text2}</p>
+                  <InformationP>{dict.contact_note}</InformationP>
+                </Information>
                 <br/>
-                <label>{dict.contact_item_name}</label>
-                <input 
+                <FullNameLabel>{dict.contact_item_name}</FullNameLabel>
+                <FullNameInput 
+                  key="key_full_name"
                   id="id_full_name"
-                  value={fullName}
-                  onChange={handleFullNameChange}
                   type="text"
+                  defaultValue={fullName}
+                  onCompositionStart={() => setIsCompositioned(true)}
+                  onCompositionEnd={(event) => handleFullNameChange(event)}
+                  onChange={(event) => {if (!is_compositioned) {handleFullNameChange(event)}}}
                   minLength="1"
                   maxLength="100"
                   placeholder={dict.contact_place_folder1}
                   ref={inputFullNameRef} 
-                />
-                
-                <label>{dict.contact_item_mail}</label>
-                <input 
+                /> 
+                <EmailLabel>{dict.contact_item_mail}</EmailLabel>
+                <EmailInput 
+                  key="key_email"
                   id="id_email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  type="email"
+                  defaultValue={email}
+                  onCompositionStart={() => setIsCompositioned(true)}
+                  onCompositionEnd={(event) => handleEmailChange(event)}
+                  onChange={(event) => {if (!is_compositioned) {handleEmailChange(event)}}}
+                  type="text"
                   minLength="1"
                   maxLength="254"
                   placeholder={dict.contact_place_folder2}
                   ref={inputEmailNameRef} 
                   />
                 <br/>
-                <label>{dict.contact_item_input}</label>
-                <input 
+                <ContactInformationLabel>{dict.contact_item_input}</ContactInformationLabel>
+                <ContactInformationTextArea 
+                  key="key_contact_information"
                   id="id_contact_information"
-                  value={contactInformation}
-                  onChange={handleContactInformationChange}
+                  defaultValue={contactInformation}
+                  onCompositionStart={() => setIsCompositioned(true)}
+                  onCompositionEnd={(event) => handleContactInformationChange(event)}
+                  onChange={(event) => {if (!is_compositioned) {handleContactInformationChange(event)}}}
+                  onFocus={(e) => {moveCaretEnd(e)}}
                   minLength="1"
                   maxLength="1000"
+                  cols="100"
+                  rows="10"
                   ref={inputContactInformationNameRef} 
                   />
+                <Privacy>
                 <p>
-                  <strong>
-                    {dict.contact_text3}
-                  </strong>
+                  {dict.contact_text3}
                 </p>
+                <br/>
                 <p>
                   {dict.contact_text4}
                   <a
                     href="https://corp.panair.jp/privacy_short"
                     external="true"
-                    onClick={() => setIsPrivacyLinkClick(true)}
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -205,8 +359,12 @@ const Contact = (props) => {
                 <p>
                   {dict.contact_text7}
                 </p>
+                </Privacy>
                 <br/>
-                <button disabled={is_privacy_link_click === false} onClick={() => handleSubmit(fullName, email, contactInformation)}>{dict.contact_submit}</button>
+                <PrivacyAccept
+                  onClick={() => handleSubmit(fullName, email, contactInformation)}>
+                  <PrivacyAcceptP>{dict.contact_submit}</PrivacyAcceptP>
+                </PrivacyAccept>
                 <br/>
               </div>
             )}
