@@ -23,7 +23,6 @@
 
   a {
     text-decoration: none;
-    color: #4E4E4E;
   }
 
   /* ver1のデザイン用 */
@@ -110,6 +109,25 @@
       opacity: 1;
     }
   }
+
+  @keyframes autoplay {
+    0% { transform: translateX(0); }
+    16% { transform: translateX(0); }
+    20% { transform: translateX(-100%); }
+    20.001% { transform: translateX(100%); }
+    96% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+  }
+
+  .slideContents section {
+    animation: autoplay 30s infinite;
+  }
+
+  .slideContents #slide1 { animation-delay: 0; }
+  .slideContents #slide2 { animation-delay: -24s; }
+  .slideContents #slide3 { animation-delay: -18s; }
+  .slideContents #slide4 { animation-delay: -12s; }
+  .slideContents #slide5 { animation-delay: -6s; }
 
   .display-block {
     display: block;
