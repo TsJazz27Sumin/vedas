@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import styled from 'styled-components';
+import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 
 const Usage = (props) => {
 
   const lang = props.lang;
+  const dict = wordDictionaryService.getV2(lang);
   const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
@@ -15,23 +17,19 @@ const Usage = (props) => {
     ReactGA.pageview(pathname);
   });
 
-  const ContentArea = styled.div`
-    height: 200%;
+  let ContentArea = styled.div`
+    height: 3000px;
     width: 91%;
-    position: absolute;
-    padding-top: 10%;
-    left: 4.1%;
-    right: 4.1%;
-    top: 100%;
-    bottom: 10.65%;
+    padding-left: 4%;
+    padding-top: 2%;
+    margin-left: 4%;
     background: #EFEFEF;
     border-radius: 54px;
   `;
 
   let ContentTitle = styled.div`
-    position: absolute;
-    left: 5%;
-    top: 10%;
+    padding-left: 1.5%;
+    padding-bottom: 0.5%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -40,17 +38,85 @@ const Usage = (props) => {
     color: #25282B;
   `;
 
-  const Content = styled.div`
-    position: absolute;
-    width: 56%;
-    height: 50%;
-    left: 23%;
-    top: 20%;
+  let Content1 = styled.div`
+    width: 96%;
+    height: 25%;
+    left: 4%;
 
     background: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 16px;
+    padding-bottom: 5%;
+    border-radius: 16px;
+  `;
+
+  let Content2 = styled.div`
+    width: 96%;
+    height: 80%;
+    left: 4%;
+    margin-top: 7%;
+
+    background: #fff;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding-bottom: 5%;
+    border-radius: 16px;
+  `;
+
+  let Text1 = styled.div`
+    padding-top: 3%;
+    padding-left: 3%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 20px;
+    border-radius: 54px;
+    
+    color: #000;
+    
+    border: 8px solid #fff;
+  `;
+
+  let Text2 = styled.div`
+    padding-left: 3.8%;
+    padding-top: 1%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #8C8C8C;
+  `;
+
+  let UsageAreaOneSvg = styled.div`
+    position: absolute;
+    padding-left: 3.8%;
+    padding-top: 5%;
+  `;
+
+  let UsageAreaOneTextArea1 = styled.div`
+    position: absolute;
+    padding-left: 6.8%;
+    padding-top: 2.5%;
+    width: 80%;
+  `;
+
+  let UsageAreaOneTextArea2 = styled.div`
+    position: absolute;
+    padding-left: 6.8%;
+    padding-top: 13%;
+    width: 80%;
+  `;
+
+  let UsageAreaOneTextArea3 = styled.div`
+    position: absolute;
+    padding-left: 6.8%;
+    padding-top: 25%;
+    width: 80%;
   `;
 
   let LogoArea = styled.div`
@@ -84,18 +150,46 @@ const Usage = (props) => {
     </svg>
   );
 
-  if(isMobile){
+  if (isMobile) {
     ContentTitle = styled(ContentTitle)`
       top: 2%;
     `;
-  } 
+  }
 
   return (
     <ContentArea>
       <ContentTitle>{Title}</ContentTitle>
-      <Content>
-        <p>contact</p>
-      </Content>
+      <Content1>
+        <Text1><p>{dict.how_to_use_text1}</p></Text1>
+        <Text1><p>{dict.how_to_use_text2}</p></Text1>
+        <UsageAreaOneSvg>
+          <svg width="33" height="354" viewBox="0 0 33 354" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M16.5 10C15.6716 10 15 10.6716 15 11.5L15 340.5C15 341.328 15.6716 342 16.5 342C17.3284 342 18 341.328 18 340.5L18 11.5C18 10.6716 17.3284 10 16.5 10Z" fill="#6DDCFF" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M31 16.5C31 8.49187 24.5081 2 16.5 2C8.49187 2 2 8.49187 2 16.5C2 24.5081 8.49187 31 16.5 31C24.5081 31 31 24.5081 31 16.5Z" fill="white" stroke="#6DDCFF" strokeWidth="3" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M31 165.5C31 157.492 24.5081 151 16.5 151C8.49187 151 2 157.492 2 165.5C2 173.508 8.49187 180 16.5 180C24.5081 180 31 173.508 31 165.5Z" fill="white" stroke="#6DDCFF" strokeWidth="3" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M31 337.5C31 329.492 24.5081 323 16.5 323C8.49187 323 2 329.492 2 337.5C2 345.508 8.49187 352 16.5 352C24.5081 352 31 345.508 31 337.5Z" fill="white" stroke="#6DDCFF" strokeWidth="3" />
+          </svg>
+        </UsageAreaOneSvg>
+        <UsageAreaOneTextArea1>
+          <Text1><p>{dict.how_to_use_text3}</p></Text1>
+          <Text2><p>{dict.how_to_use_text4}</p></Text2>
+        </UsageAreaOneTextArea1>
+        <UsageAreaOneTextArea2>
+          <Text1><p>{dict.how_to_use_text5}</p></Text1>
+          <Text2><p>{dict.how_to_use_text6}</p></Text2>
+          <Text2><p>{dict.how_to_use_text7}</p></Text2>
+          <Text2><p>{dict.how_to_use_text8}</p></Text2>
+        </UsageAreaOneTextArea2>
+        <UsageAreaOneTextArea3>
+          <Text1><p>{dict.how_to_use_text9}</p></Text1>
+          <Text2><p>{dict.how_to_use_text10}</p></Text2>
+          <Text2><p>{dict.how_to_use_text11}</p></Text2>
+          <Text2><p>{dict.how_to_use_text12}</p></Text2>
+        </UsageAreaOneTextArea3>
+      </Content1>
+      <Content2>
+
+      </Content2>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
         LogoArea={LogoArea}
