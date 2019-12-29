@@ -74,7 +74,7 @@ const About = (props) => {
   let Text2 = styled.div`
     position: absolute;
     top: 17.63%;
-    padding-left:3.4%;
+    padding-left:3.2%;
 
     font-family: Roboto;
     font-style: normal;
@@ -90,7 +90,7 @@ const About = (props) => {
   let Text3 = styled.div`
     position: absolute;
     top: 32.63%;
-    padding-left:3.4%;
+    padding-left:3.1%;
 
     font-family: Roboto;
     font-style: normal;
@@ -149,12 +149,13 @@ const About = (props) => {
       left: 4%;
     `;
     ContentTitle = styled(ContentTitle)`
-      top: 3%;
+      top: 2%;
+      left: 30%;
     `;
 
     Content = styled(Content)`
       height: 85%;
-      top: 9%;
+      top: 7%;
       left: 3%;
     `;
 

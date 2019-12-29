@@ -1,5 +1,7 @@
 const get = () => {
     const word_dictionary = {
+        "sample_news2": "(sample) January data has been updated.",
+        "sample_news1": "(sample) Happy New Year. Vedas has been released.",
         "contact_place_folder1": "Panair Taro",
         "contact_place_folder2": "contact@vedas.jp",
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",

@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
 import styled from 'styled-components';
+import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 
 const News = (props) => {
 
   const lang = props.lang;
+  const dict = wordDictionaryService.getV2(lang);
   const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
@@ -15,49 +17,72 @@ const News = (props) => {
     ReactGA.pageview(pathname);
   });
 
-  const ContentArea = styled.div`
-    height: 200%;
-    width: 91%;
-    position: absolute;
-    padding-top: 10%;
-    left: 4.1%;
-    right: 4.1%;
-    top: 100%;
-    bottom: 10.65%;
+  let ContentArea = styled.div`
+    height: 700px;
+    width: 92%;
+    padding-left: 4%;
+    padding-top: 2%;
+    margin-left: 4%;
     background: #EFEFEF;
     border-radius: 54px;
   `;
 
   let ContentTitle = styled.div`
-    position: absolute;
-    left: 5%;
-    top: 10%;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 200%;
-    line-height: 54px;
-    color: #25282B;
-  `;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 200%;
+  line-height: 54px;
+  color: #25282B;
+`;
 
-  const Content = styled.div`
-    position: absolute;
-    width: 56%;
-    height: 50%;
-    left: 23%;
-    top: 20%;
+  let Content = styled.div`
+  width: 95%;
+  left: 4%;
 
-    background: #fff;
-    border: 1px solid #fff;
-    box-sizing: border-box;
-    border-radius: 16px;
-  `;
+  background: #fff;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding-bottom: 5%;
+  border-radius: 16px;
+`;
+
+  let Text1 = styled.div`
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 30px;
+  border-radius: 54px;
+  
+  color: #000;
+  
+  border: 8px solid #fff;
+`;
+
+  let Text2 = styled.div`
+  padding-left: 3%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  border-radius: 54px;
+  
+  color: #000;
+  
+  border: 8px solid #fff;
+`;
 
   let LogoArea = styled.div`
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 11%;
-    top: 73%;
+    top: 70%;
   `;
 
   let VedasLogo = styled.div`
@@ -84,17 +109,30 @@ const News = (props) => {
     </svg>
   );
 
-  if(isMobile){
-    ContentTitle = styled(ContentTitle)`
-      top: 2%;
+  if (isMobile) {
+    ContentArea = styled(ContentArea)`
+    height: 609px;
     `;
-  } 
+    ContentTitle = styled(ContentTitle)`
+      padding-left: 33%;
+      margin-top: 3%;
+    `;
+    Content = styled(Content)`
+      margin-top: 4%;
+    `;
+    Text1 = styled(Text1)`
+      font-size: 26px;
+    `;
+  }
 
   return (
     <ContentArea>
       <ContentTitle>{Title}</ContentTitle>
       <Content>
-        <p>contact</p>
+        <Text1><p>2020/02/01</p></Text1>
+        <Text2><p>{dict.sample_news2}</p></Text2>
+        <Text1><p>2020/01/19</p></Text1>
+        <Text2><p>{dict.sample_news1}</p></Text2>
       </Content>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
