@@ -17,7 +17,7 @@ const About = (props) => {
     ReactGA.pageview(pathname);
   });
 
-  const ContentArea = styled.div`
+  let ContentArea = styled.div`
     height: 450%;
     width: 91%;
     position: absolute;
@@ -42,7 +42,7 @@ const About = (props) => {
     color: #25282B;
   `;
 
-  const Content = styled.div`
+  let Content = styled.div`
     position: absolute;
     width: 92%;
     height: 80%;
@@ -81,7 +81,6 @@ const About = (props) => {
     font-weight: normal;
     font-size: 22px;
     line-height: 26px;
-    text-align: center;
     
     color: #000;
     
@@ -91,14 +90,13 @@ const About = (props) => {
   let Text3 = styled.div`
     position: absolute;
     top: 32.63%;
-    padding-left:3%;
+    padding-left:3.4%;
 
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 56px;
-    text-align: center;
     
     color: #000;
     
@@ -145,9 +143,47 @@ const About = (props) => {
   `;
 
   if(isMobile){
-    ContentTitle = styled(ContentTitle)`
-      top: 2%;
+    ContentArea = styled(ContentArea)`
+      width: 100%;
+      height: 1300%;
+      left: 1%;
     `;
+    ContentTitle = styled(ContentTitle)`
+      top: 3%;
+    `;
+
+    Content = styled(Content)`
+      height: 85%;
+      top: 9%;
+      left: 3%;
+    `;
+
+    Text1 = styled(Text1)`
+      top: 3%;
+      left: 2%;
+      font-size: 28px;
+    `;
+
+    Text2 = styled(Text2)`
+      top: 17.63%;
+      left: 2%;
+    `;
+
+    Text3 = styled(Text3)`
+      top: 25.63%;
+      left: 2%;
+      font-size: 28px;
+    `;
+
+    Text4 = styled(Text4)`
+      top: 34.63%;
+      left: 2%;
+    `;
+
+    LogoArea = styled(LogoArea)`
+      top: 78.63%;
+    `;
+    
   } 
 
   const Title = (
