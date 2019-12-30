@@ -21,9 +21,9 @@ const Usage = (props) => {
 
   const dict = wordDictionaryService.get(lang);
   const public_url = process.env.PUBLIC_URL;
-  const step1_image = public_url + '/usage/step1_' + lang + '.png';
-  const step2_image = public_url + '/usage/step2_' + lang + '.png';
-  const step3_image = public_url + '/usage/step3_' + lang + '.png';
+  const step1_image = public_url + '/ver1/usage/step1_' + lang + '.png';
+  const step2_image = public_url + '/ver1/usage/step2_' + lang + '.png';
+  const step3_image = public_url + '/ver1/usage/step3_' + lang + '.png';
 
   const howtouse = (
     <Page title="Usage">

@@ -17,7 +17,7 @@ const News = (props) => {
   });
 
   const public_url = process.env.PUBLIC_URL;
-  const news202001xx_01_image = public_url + '/news/202001xx_01.png';
+  const news202001xx_01_image = public_url + '/ver1/news/202001xx_01.png';
 
   const news = (
     <Page title="News">
