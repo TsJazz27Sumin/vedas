@@ -109,18 +109,9 @@
       opacity: 1;
     }
   }
-
-  @keyframes autoplay {
-    0% { transform: translateX(0); }
-    16% { transform: translateX(0); }
-    20% { transform: translateX(-100%); }
-    20.001% { transform: translateX(100%); }
-    96% { transform: translateX(100%); }
-    100% { transform: translateX(0); }
-  }
-
+  
   .slideContents section {
-    animation: autoplay 30s infinite;
+    animation: autoPaging 30s infinite;
   }
 
   .slideContents #slide1 { animation-delay: 0; }

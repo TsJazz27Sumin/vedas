@@ -13,12 +13,13 @@ const SolarSampleImages = () => {
   let SolarSampleSection = styled.section`
   position: absolute;
   padding-right: 9%;
+  padding-top: 5%;
 `;
 
   let SolarSamplePagingSection = styled.section`
   position: absolute;
   padding-right: 9%;
-  top: 66%;
+  top: 50%;
   width: 91%;
 `;
 

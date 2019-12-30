@@ -14,6 +14,9 @@ const Usage = (props) => {
   const dict = wordDictionaryService.getV2(lang);
   const handleMenuChange = props.handleMenuChange;
 
+  const public_url = process.env.PUBLIC_URL;
+  const peak_sample = public_url + '/usage/peak_sample/peak_sample.png';
+
   useEffect(() => {
     const pathname = '/' + lang + '/usage';
     ReactGA.set({ page: pathname });
@@ -21,7 +24,7 @@ const Usage = (props) => {
   });
 
   let ContentArea = styled.div`
-    height: 3000px;
+    height: 4300px;
     width: 91%;
     padding-left: 4%;
     padding-top: 2%;
@@ -43,7 +46,7 @@ const Usage = (props) => {
 
   let Content1 = styled.div`
     width: 96%;
-    height: 26%;
+    height: 19%;
     left: 4%;
 
     background: #fff;
@@ -56,7 +59,7 @@ const Usage = (props) => {
 
   let Content2 = styled.div`
     width: 96%;
-    height: 80%;
+    height: 72%;
     left: 4%;
     margin-top: 7%;
 
@@ -128,17 +131,43 @@ const Usage = (props) => {
   `;
 
   let EnergyPeakSample = styled.div`
-    padding-left: 5%;
-    padding-top: 60%;
+    padding-top: 68%;
     padding-bottom: 3%;
     width: 95%;
+  `;
+
+  let EnergyPeakSampleImage = styled.div`
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+  `;
+
+  let OtherSample = styled.div`
+    padding-top: 4%;
+    padding-bottom: 3%;
+    width: 95%;
+  `;
+
+  let LetsFind = styled.div`
+    padding-top: 5%;
+    padding-left: 22%;
+    width: 95%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 49px;
+
+    color: #000;
   `;
 
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
     height: 11%;
-    top: 73%;
+    top: 79%;
   `;
 
   let VedasLogo = styled.div`
@@ -146,7 +175,7 @@ const Usage = (props) => {
     display: inline-block;
     width: 30%;
     top: 160%;
-    left: 48%;
+    left: 28%;
     cursor: pointer;
   `;
 
@@ -155,7 +184,7 @@ const Usage = (props) => {
     display: inline-block;
     width: 30%;
     top: 160%;
-    left: 92%;
+    left: 74%;
     cursor: pointer;
   `;
 
@@ -213,15 +242,18 @@ const Usage = (props) => {
           <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
           <Text1><p>{dict.how_to_use_text17}</p></Text1>
         </EnergyPeakSample>
-        
-        <EnergyPeakSample>
-          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text18}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
-        </EnergyPeakSample>
-        <EnergyPeakSample>
-          <Text1><p>{dict.how_to_use_text21}</p></Text1>
-        </EnergyPeakSample>
+        <EnergyPeakSampleImage>
+          <img width="100%" src={peak_sample} alt="peak sample" />
+        </EnergyPeakSampleImage>
+        <OtherSample>
+          <Text1><p>{dict.how_to_use_text18}</p></Text1>
+          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
+        </OtherSample>
+        <LetsFind>
+          <p>{dict.how_to_use_text22}</p>
+        </LetsFind>
       </Content2>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
