@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import ConditionDetailFirst from '../../../components/ver2/ConditionDetailFirst'
+import ConditionDetailSecond from '../../../components/ver2/ConditionDetailSecond'
+import ConditionDetailThird from '../../../components/ver2/ConditionDetailThird'
 import wordDictionaryService from '../../../services/word_dictionary'
 import styled from 'styled-components';
 
@@ -44,32 +47,12 @@ const EnergyCharts = (props) => {
   const ConditionArea = styled.div`
     height: 86%;
     width: 95%;
-    background: #fff;
 ` ;
-
-  const ConditionDetailArea1 = styled.div`
-    height: 15%;
-    margin-left: 5%;
-    background: #efefef;
-  ` ;
-
-  const ConditionDetailArea2 = styled.div`
-    height: 20%;
-    margin-left: 5%;
-    background: #efefef;
-  ` ;
-
-  const ConditionDetailArea3 = styled.div`
-    height: 20%;
-    margin-left: 5%;
-    background: #efefef;
-  ` ;
 
   const ConditionDetailTitle = styled.div`
     height: 4%;
     margin-top: 3%;
     margin-left: 5%;
-    background: #aaa;
 
     font-family: Roboto;
     font-style: normal;
@@ -109,28 +92,11 @@ const EnergyCharts = (props) => {
     <AnalyzeArea>
       <ConditionArea>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text1}</p></ConditionDetailTitle>
-        <ConditionDetailArea1>
-          <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </ConditionDetailArea1>
+        <ConditionDetailFirst dict={dict}/>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text2}</p></ConditionDetailTitle>
-        <ConditionDetailArea2>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
-        </ConditionDetailArea2>
+        <ConditionDetailSecond dict={dict}/>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text3}</p></ConditionDetailTitle>
-        <ConditionDetailArea3>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
-        </ConditionDetailArea3>
+        <ConditionDetailThird dict={dict}/>
       </ConditionArea>
       {/* <Content>
         <p>contact</p>
