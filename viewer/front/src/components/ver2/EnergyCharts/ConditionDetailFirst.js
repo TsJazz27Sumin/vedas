@@ -61,35 +61,14 @@ const ConditionDetailFirst = (props) => {
   cursor: pointer;
 ` ;
 
-  let ConditionDetailParamButtonY = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
-  let ConditionDetailParamButtonYM = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
-  let ConditionDetailParamButtonYMD = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
-  let ConditionDetailParamButton1H = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
+  const setBackGround = (is_target) => { 
+    return is_target ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
+  };
 
-  switch(unit){
-    case "y":
-        ConditionDetailParamButtonY = styled(ConditionDetailParamButton)`
-          background: #6DDCFF;
-        `;
-        break;
-    case "ym":
-        ConditionDetailParamButtonYM = styled(ConditionDetailParamButton)`
-          background: #6DDCFF;
-        `;
-        break;
-    case "ymd":
-        ConditionDetailParamButtonYMD = styled(ConditionDetailParamButton)`
-        background: #6DDCFF;
-        `;
-        break;
-    case "1H":
-        ConditionDetailParamButton1H = styled(ConditionDetailParamButton)`
-        background: #6DDCFF;
-        `;
-        break;
-    default:
-      //nothing
-  }
+  const ConditionDetailParamButtonY = setBackGround(unit === "y");
+  const ConditionDetailParamButtonYM = setBackGround(unit === "ym");
+  const ConditionDetailParamButtonYMD = setBackGround(unit === "ymd");
+  const ConditionDetailParamButton1H = setBackGround(unit === "1H");
 
   return (
     <div>

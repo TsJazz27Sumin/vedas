@@ -73,7 +73,6 @@ const JapanEnergyCharts = props => {
       if(Object.values(data.hepco['demand']).length === 0){
         list.push(<DisplayText key="hepco_no_data" size="small">{dict.no_data}</DisplayText>)
       } else {
-        console.log(electricPowersChecked.hepcoChecked);
         list.push(<Chart dict={dict} energy_data={get_volumeList(data.hepco)} key="hepco_chart" energyResoursesChecked={energyResoursesChecked}/>);
       }
     }
