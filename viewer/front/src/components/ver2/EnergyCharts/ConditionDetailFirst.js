@@ -4,6 +4,11 @@ import styled from 'styled-components';
 const ConditionDetailFirst = (props) => {
 
   const dict = props.dict;
+  const unit = props.electoric_power_data.unit;
+  const year_and_month = props.electoric_power_data.year_and_month;
+  const lowerTextFieldValue = props.electoric_power_data.range_slider.lowerTextFieldValue;
+  const upperTextFieldValue = props.electoric_power_data.range_slider.upperTextFieldValue;
+  const handleTermChange = props.electoric_power_data.handleTermChange;
 
   const ConditionDetailArea1 = styled.div`
   height: 5%;
@@ -49,48 +54,85 @@ const ConditionDetailFirst = (props) => {
   margin-left:60%;
 ` ;
 
-  const ConditionDetailParamButton = styled.button`
-  background: #6DDCFF;
+  let ConditionDetailParamButton = styled.button`
   width: 140%;
   padding-top: 100%;
   border-radius: 2px;
   cursor: pointer;
 ` ;
 
+  let ConditionDetailParamButtonY = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
+  let ConditionDetailParamButtonYM = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
+  let ConditionDetailParamButtonYMD = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
+  let ConditionDetailParamButton1H = styled(ConditionDetailParamButton)`background: #D8D8D8;`;
+
+  switch(unit){
+    case "y":
+        ConditionDetailParamButtonY = styled(ConditionDetailParamButton)`
+          background: #6DDCFF;
+        `;
+        break;
+    case "ym":
+        ConditionDetailParamButtonYM = styled(ConditionDetailParamButton)`
+          background: #6DDCFF;
+        `;
+        break;
+    case "ymd":
+        ConditionDetailParamButtonYMD = styled(ConditionDetailParamButton)`
+        background: #6DDCFF;
+        `;
+        break;
+    case "1H":
+        ConditionDetailParamButton1H = styled(ConditionDetailParamButton)`
+        background: #6DDCFF;
+        `;
+        break;
+    default:
+      //nothing
+  }
+
   return (
     <div>
       <ConditionDetailArea1>
         <ConditionDetailParamArea>
-          <ConditionDetailParamArea1>
+          <ConditionDetailParamArea1 
+            onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
             <ConditionDetailParamLabel>
               <p>{dict.unit_y}</p>
             </ConditionDetailParamLabel>
             <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButton />
+              <ConditionDetailParamButtonY />
             </ConditionDetailParamButtonDiv>
           </ConditionDetailParamArea1>
-          <ConditionDetailParamArea2>
+          <ConditionDetailParamArea2 
+            onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
             <ConditionDetailParamLabel>
               <p>{dict.unit_ym}</p>
             </ConditionDetailParamLabel>
             <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButton />
+              <ConditionDetailParamButtonYM />
             </ConditionDetailParamButtonDiv>
           </ConditionDetailParamArea2>
-          <ConditionDetailParamArea2>
+          <ConditionDetailParamArea2 
+            onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
             <ConditionDetailParamLabel>
               <p>{dict.unit_ymd}</p>
             </ConditionDetailParamLabel>
             <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButton />
+              <ConditionDetailParamButtonYMD />
             </ConditionDetailParamButtonDiv>
           </ConditionDetailParamArea2>
-          <ConditionDetailParamArea2>
+          <ConditionDetailParamArea2 
+            onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
             <ConditionDetailParamLabel>
               <p>{dict.unit_1h}</p>
             </ConditionDetailParamLabel>
             <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButton />
+              <ConditionDetailParamButton1H />
             </ConditionDetailParamButtonDiv>
           </ConditionDetailParamArea2>
         </ConditionDetailParamArea>

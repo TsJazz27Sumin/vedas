@@ -25,11 +25,27 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
         initialize.date_initialize !== undefined
     ) ? parseInt(initialize.date_initialize) : 1;
 
-    //QueryParamを指定して、1時間単位の集計の場合にイベントを初回発火させる必要がある。
+    const range_from_value_initialize = (
+        initialize.range_from_value_initialize !== undefined
+    ) ? parseInt(initialize.range_from_value_initialize) : (year_and_month.length - 12);
+
+    const range_to_value_initialize = (
+        initialize.range_to_value_initialize !== undefined
+    ) ? parseInt(initialize.range_to_value_initialize) : (year_and_month.length - 3);
+
+    //任意のパラメータの場合、イベントを初回発火させる必要がある。
     useEffect(() => {
         if (unit === "1H") {
             japanEnergyService
                 .get_daily_data(unit, year_initialize, month_initialize, date_initialize)
+                .then(initialData => {
+                    setData(initialData);
+                    setIsLoading(false);
+                });
+        }
+        if (unit === "y" || unit === "ym" || unit === "ymd") {
+            japanEnergyService
+                .get(unit, year_and_month[range_from_value_initialize], year_and_month[range_to_value_initialize])
                 .then(initialData => {
                     setData(initialData);
                     setIsLoading(false);
@@ -69,15 +85,7 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     const min = 0;
     const max = year_and_month.length - 1;
     const step = 1;
-
-    const range_from_value_initialize = (
-        initialize.range_from_value_initialize !== undefined
-    ) ? parseInt(initialize.range_from_value_initialize) : (year_and_month.length - 12);
-
-    const range_to_value_initialize = (
-        initialize.range_to_value_initialize !== undefined
-    ) ? parseInt(initialize.range_to_value_initialize) : (year_and_month.length);
-
+    
     const initialValue = [range_from_value_initialize, range_to_value_initialize];
     const [intermediateTextFieldValue, setIntermediateTextFieldValue] = useState(
         initialValue,
@@ -87,7 +95,6 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     const debouncedHandleChange = debounce(
         (unit, from, to) => {
             setIsLoading(true);
-
             if (unit === "y" || unit === "ym" || unit === "ymd") {
                 japanEnergyService
                     .get(unit, from, to)

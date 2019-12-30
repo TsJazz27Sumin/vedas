@@ -39,8 +39,7 @@ const execute = (query_param, language) => {
     //9 1=true 2=false
     rikudenChecked_initialize: (qs.rikudenChecked_initialize === undefined) ? false : toBoolean(qs.rikudenChecked_initialize),
     //10 1=true 2=false
-    //tepcoだけSampleでDefault is true.
-    tepcoChecked_initialize: (qs.tepcoChecked_initialize === undefined) ? true : toBoolean(qs.tepcoChecked_initialize),
+    tepcoChecked_initialize: (qs.tepcoChecked_initialize === undefined) ? false : toBoolean(qs.tepcoChecked_initialize),
     //11 1=true 2=false
     chudenChecked_initialize: (qs.chudenChecked_initialize === undefined) ? false : toBoolean(qs.chudenChecked_initialize),
     //12 1=true 2=false
@@ -54,7 +53,8 @@ const execute = (query_param, language) => {
     //16 1=true 2=false
     okidenChecked_initialize: (qs.okidenChecked_initialize === undefined) ? false : toBoolean(qs.okidenChecked_initialize),
     //17 1=true 2=false
-    japanChecked_initialize: (qs.japanChecked_initialize === undefined) ? false : toBoolean(qs.japanChecked_initialize),
+    //japanだけSampleでDefault is true.
+    japanChecked_initialize: (qs.japanChecked_initialize === undefined) ? true : toBoolean(qs.japanChecked_initialize),
     //18 1=true 2=false
   };
 
@@ -65,7 +65,8 @@ const execute = (query_param, language) => {
     //19 1=true 2=false
     nuclearChecked_initialize: (qs.nuclearChecked_initialize === undefined) ? false : toBoolean(qs.nuclearChecked_initialize),
     //20 1=true 2=false
-    thermalChecked_initialize: (qs.thermalChecked_initialize === undefined) ? false : toBoolean(qs.thermalChecked_initialize),
+    //thermalだけSampleでDefault is true.
+    thermalChecked_initialize: (qs.thermalChecked_initialize === undefined) ? true : toBoolean(qs.thermalChecked_initialize),
     //21 1=true 2=false
     hydroChecked_initialize: (qs.hydroChecked_initialize === undefined) ? false : toBoolean(qs.hydroChecked_initialize),
     //22 1=true 2=false

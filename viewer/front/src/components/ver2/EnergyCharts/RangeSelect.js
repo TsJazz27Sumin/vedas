@@ -1,5 +1,5 @@
 import React from 'react'
-import { RangeSlider, DisplayText, Stack } from '@shopify/polaris';
+import { AppProvider, RangeSlider, DisplayText, Stack } from '@shopify/polaris';
 
 const RangeSelect = (props) => {
 
@@ -9,18 +9,20 @@ const RangeSelect = (props) => {
 
   return (
     <div>
-      <RangeSlider
-        value={range_slider.rangeValue}
-        prefix={range_slider.prefix}
-        min={range_slider.min}
-        max={range_slider.max}
-        step={range_slider.step}
-        onChange={(value) => range_slider.handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
-      />
-      <Stack distribution="equalSpacing" spacing="extraLoose">
-        <DisplayText size="small">{year_and_month[range_slider.lowerTextFieldValue]}</DisplayText>
-        <DisplayText size="small">{year_and_month[range_slider.upperTextFieldValue]}</DisplayText>
-      </Stack>
+      <AppProvider>
+        <RangeSlider
+          value={range_slider.rangeValue}
+          prefix={range_slider.prefix}
+          min={range_slider.min}
+          max={range_slider.max}
+          step={range_slider.step}
+          onChange={(value) => range_slider.handleRangeSliderChange(value, unit, year_and_month[value[0]], year_and_month[value[1]])}
+        />
+        <Stack distribution="equalSpacing" spacing="extraLoose">
+          <DisplayText size="small">{year_and_month[range_slider.lowerTextFieldValue]}</DisplayText>
+          <DisplayText size="small">{year_and_month[range_slider.upperTextFieldValue]}</DisplayText>
+        </Stack>
+      </AppProvider>
     </div>
   )
 }
