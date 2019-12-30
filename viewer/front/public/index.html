@@ -129,6 +129,24 @@
   .slideContents #slide4 { animation-delay: -12s; }
   .slideContents #slide5 { animation-delay: -6s; }
 
+  @keyframes autoPaging {
+    0%{ opacity: 0;}
+    8%{ opacity: 1;}
+    12%{ opacity: 1;}
+    35%{ opacity: 0;}
+    100%{ opacity: 0;}
+  }
+
+  .slidePagings section {
+    animation: autoPaging 30s infinite;
+  }
+
+  .slidePagings #page1 { animation-delay: 0; }
+  .slidePagings #page2 { animation-delay: -24s; }
+  .slidePagings #page3 { animation-delay: -18s; }
+  .slidePagings #page4 { animation-delay: -12s; }
+  .slidePagings #page5 { animation-delay: -6s; }
+
   .display-block {
     display: block;
   }
