@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { AppProvider, Select } from '@shopify/polaris';
 import { isMobile } from "react-device-detect";
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
@@ -28,8 +29,6 @@ const TopBar = (props) => {
   let MenuArea = styled.div``;
   let MenuItem = styled.div``;
   let MenuItemDropdownWrapper = styled.div``;
-  let MenuItemDropdown = styled.div``;
-  let MenuItemDropdownSelect = styled.select``;
 
   if (isMobile){
     TopBarArea = styled(TopBarArea)`
@@ -81,7 +80,7 @@ const TopBar = (props) => {
       width: 47%;
       margin-left: 53%;
       padding-left: 0%;
-      padding-right: 9%;
+      padding-right: 0%;
       top: 0%;
       border: 1px solid #fff;
       box-sizing: border-box;
@@ -94,33 +93,8 @@ const TopBar = (props) => {
       width: 100%;
       padding-top: 2.5%;
       padding-left: 18%;
-      padding-right: 3%;
+      padding-right: 0%;
       display: inline-block;
-    `;
-    MenuItemDropdown = styled(MenuItemDropdown)`
-      display: inline-block;
-      width: 130%;
-      vertical-align: middle;
-      position: relative;
-      border: 2px solid #efefef;
-      border-radius: 10px;
-      color: #4E4E4E;
-      -webkit-appearance: none;
-      background: #fff;
-    `;
-    MenuItemDropdownSelect = styled(MenuItemDropdownSelect)`
-      position: relative;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 110%;
-      color: #4E4E4E;
-      -webkit-appearance: none;
-      padding: 5% 10% 5% 15%;
-      background: #fff;
-      cursor: pointer;
     `;
   } else {
     VedasLogoTopBar = styled(VedasLogoTopBar)`
@@ -176,31 +150,6 @@ const TopBar = (props) => {
       padding-right: 2%;
       display: inline-block;
     `;
-    MenuItemDropdown = styled(MenuItemDropdown)`
-      display: inline-block;
-      width: 130%;
-      vertical-align: middle;
-      position: relative;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      color: #4E4E4E;
-      -webkit-appearance: none;
-      background: #fff;
-    `;
-    MenuItemDropdownSelect = styled(MenuItemDropdownSelect)`
-      position: relative;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 110%;
-      color: #4E4E4E;
-      -webkit-appearance: none;
-      padding: 5% 10% 5% 15%;
-      background: #fff;
-      cursor: pointer;
-    `;
   }
 
   const toggle_mobile_menu = () => {
@@ -237,7 +186,15 @@ const TopBar = (props) => {
           <p onClick={() => handleMenuChange('contact')}>Contact</p>
         </MenuItem>
         <MenuItemDropdownWrapper>
-          <MenuItemDropdown>
+          <AppProvider>
+          <Select
+            key="id-menu-item-dropdown"
+            options={[{value:"jp", label:"japanese"}, {value:"en", label:"english"}]}
+            onChange={(value) => handleLangChange(value)}
+            value={lang}
+          />
+          </AppProvider>
+          {/* <MenuItemDropdown>
             <MenuItemDropdownSelect 
               id="id-menu-item-dropdown"
               name="language" 
@@ -250,7 +207,7 @@ const TopBar = (props) => {
             <svg width="20" height="20" viewBox="0 -4 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 7.5L10 12.5L15 7.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </MenuItemDropdown>
+          </MenuItemDropdown> */}
         </MenuItemDropdownWrapper>
       </MenuArea>
     </TopBarArea>
