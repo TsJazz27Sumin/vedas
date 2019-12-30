@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const ConditionDetailThird = (props) => {
 
   const dict = props.dict;
+  const energyResoursesChecked = props.electoric_power_resource.Checked;
+  const handleEnergyResoursesChange = props.electoric_power_resource.handleValueChange;
 
   const ConditionDetailArea3 = styled.div`
     height: 14%;
@@ -53,95 +55,112 @@ const ConditionDetailThird = (props) => {
   border-radius: 12px;
 ` ;
 
+  const setBackGround = (checked) => { 
+    return checked ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
+  };
+
+  const ConditionDetailParamButtonDemand = setBackGround(energyResoursesChecked.demandChecked);
+  const ConditionDetailParamButtonNuclear = setBackGround(energyResoursesChecked.nuclearChecked);
+  const ConditionDetailParamButtonThermal = setBackGround(energyResoursesChecked.thermalChecked);
+  const ConditionDetailParamButtonHydro = setBackGround(energyResoursesChecked.hydroChecked);
+  const ConditionDetailParamButtonGeothermal = setBackGround(energyResoursesChecked.geothermalChecked);
+  const ConditionDetailParamButtonBiomass = setBackGround(energyResoursesChecked.biomassChecked);
+  const ConditionDetailParamButtonSolar = setBackGround(energyResoursesChecked.solarChecked);
+  const ConditionDetailParamButtonSolarOutputControl = setBackGround(energyResoursesChecked.solarOutputControlChecked);
+  const ConditionDetailParamButtonWind = setBackGround(energyResoursesChecked.windChecked);
+  const ConditionDetailParamButtonWindOutputControl = setBackGround(energyResoursesChecked.windOutputControlChecked);
+  const ConditionDetailParamButtonPumping = setBackGround(energyResoursesChecked.pumpingChecked);
+  const ConditionDetailParamButtonInterconnection = setBackGround(energyResoursesChecked.interconnectionChecked);
+
   return (
     <div>
       <ConditionDetailArea3>
         <ConditionDetailParamArea1>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleDemandChange(!energyResoursesChecked.demandChecked)}>
+            <ConditionDetailParamButtonDemand>
               <ConditionDetailParamLabel>
                 <p>{dict.demand}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonDemand>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleNuclearChange(!energyResoursesChecked.nuclearChecked)}>
+            <ConditionDetailParamButtonNuclear>
               <ConditionDetailParamLabel>
                 <p>{dict.nuclear}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonNuclear>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleThermalChange(!energyResoursesChecked.thermalChecked)}>
+            <ConditionDetailParamButtonThermal>
               <ConditionDetailParamLabel>
                 <p>{dict.thermal}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonThermal>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleHydroChange(!energyResoursesChecked.hydroChecked)}>
+            <ConditionDetailParamButtonHydro>
               <ConditionDetailParamLabel>
                 <p>{dict.hydro}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonHydro>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleGeothermalChange(!energyResoursesChecked.geothermalChecked)}>
+            <ConditionDetailParamButtonGeothermal>
               <ConditionDetailParamLabel>
                 <p>{dict.geothermal}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonGeothermal>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleBiomassChange(!energyResoursesChecked.biomassChecked)}>
+            <ConditionDetailParamButtonBiomass>
               <ConditionDetailParamLabel>
                 <p>{dict.biomass}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonBiomass>
           </ConditionDetailParam>
         </ConditionDetailParamArea1>
         <ConditionDetailParamArea2>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleSolarChange(!energyResoursesChecked.solarChecked)}>
+            <ConditionDetailParamButtonSolar>
               <ConditionDetailParamLabel>
                 <p>{dict.solar}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonSolar>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleSolarOutputControlChange(!energyResoursesChecked.solarOutputControlChecked)}>
+            <ConditionDetailParamButtonSolarOutputControl>
               <ConditionDetailParamLabel>
                 <p>{dict.solar_output_control}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonSolarOutputControl>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleWindChange(!energyResoursesChecked.windChecked)}>
+            <ConditionDetailParamButtonWind>
               <ConditionDetailParamLabel>
                 <p>{dict.wind}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonWind>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleWindOutputControlChange(!energyResoursesChecked.windOutputControlChecked)}>
+            <ConditionDetailParamButtonWindOutputControl>
               <ConditionDetailParamLabel>
                 <p>{dict.wind_output_control}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonWindOutputControl>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handlePumpingChange(!energyResoursesChecked.pumpingChecked)}>
+            <ConditionDetailParamButtonPumping>
               <ConditionDetailParamLabel>
                 <p>{dict.pumping}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonPumping>
           </ConditionDetailParam>
-          <ConditionDetailParam>
-            <ConditionDetailParamButton>
+          <ConditionDetailParam onClick={() => handleEnergyResoursesChange.handleInterconnectionChange(!energyResoursesChecked.interconnectionChecked)}>
+            <ConditionDetailParamButtonInterconnection>
               <ConditionDetailParamLabel>
                 <p>{dict.interconnection}</p>
               </ConditionDetailParamLabel>
-            </ConditionDetailParamButton>
+            </ConditionDetailParamButtonInterconnection>
           </ConditionDetailParam>
         </ConditionDetailParamArea2>
       </ConditionDetailArea3>

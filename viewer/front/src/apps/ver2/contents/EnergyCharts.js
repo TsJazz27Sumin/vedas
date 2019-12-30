@@ -28,16 +28,7 @@ const EnergyCharts = (props) => {
   const qs = queryParamPerserService.execute(props.qs, lang);
 
   //電力データをCallするためのパラメータや処理
-  const electoric_power_data = electoricPowerDataHook.useElectoricPowerData(qs.electoric_power_data_initialize_params)
-  // const is_loading = electoric_power_data_hook.is_loading;
-  // const year_and_month = electoric_power_data_hook.year_and_month;
-  // const data = electoric_power_data_hook.data;
-  // const unit = electoric_power_data_hook.unit;
-  // const handleTermChange = electoric_power_data_hook.handleTermChange;
-  // const range_slider = electoric_power_data_hook.range_slider;
-  // const is_range_slider_open = electoric_power_data_hook.is_range_slider_open;
-  // const setData = electoric_power_data_hook.setData;
-  // const setIsLoading = electoric_power_data_hook.setIsLoading;
+  const electoric_power_data = electoricPowerDataHook.useElectoricPowerData(qs.electoric_power_data_initialize_params);
 
   //言語選択
   let dict = wordDictionaryService.getV2(lang);
@@ -51,15 +42,9 @@ const EnergyCharts = (props) => {
 
   //電力会社の選択
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(qs.energy_power_company_initialize_params);
-  // const allChecked = electoric_power_company.allChecked;
-  // const handleAllChange = electoric_power_company.handleAllChange;
-  // const electricPowersChecked = electoric_power_company.Checked;
-  // const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
-  // const energyResoursesChecked = electoric_power_resource.Checked;
-  // const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
   const AnalyzeArea = styled.div`
     height: 2000%;
@@ -138,24 +123,28 @@ const EnergyCharts = (props) => {
         />
       <Content>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text4}</p></ConditionDetailTitle>
-        <RangeSelectArea>
-          <AppProvider>
-            <RangeSelect
-              range_slider={electoric_power_data.range_slider}
-              unit={electoric_power_data.unit}
-              year_and_month={electoric_power_data.year_and_month}
-            />
-          </AppProvider>
-        </RangeSelectArea>
-        <DateSelectArea>
-          <AppProvider>
-            <DateSelect
-              dict={dict}
-              unit={electoric_power_data.unit}
-              date_select={date_select}
-            />
-          </AppProvider>
-        </DateSelectArea>
+        {electoric_power_data.is_range_slider_open ? (
+          <RangeSelectArea>
+            <AppProvider>
+              <RangeSelect
+                range_slider={electoric_power_data.range_slider}
+                unit={electoric_power_data.unit}
+                year_and_month={electoric_power_data.year_and_month}
+              />
+            </AppProvider>
+          </RangeSelectArea>
+        ):(
+          <DateSelectArea>
+            <AppProvider>
+              <DateSelect
+                dict={dict}
+                unit={electoric_power_data.unit}
+                date_select={date_select}
+              />
+            </AppProvider>
+          </DateSelectArea>
+        )
+        }
         <AppProvider>
         {
           electoric_power_data.is_loading ?

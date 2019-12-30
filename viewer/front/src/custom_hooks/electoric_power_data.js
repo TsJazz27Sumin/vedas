@@ -93,7 +93,7 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     const [rangeValue, setRangeValue] = useState(initialValue);
 
     const debouncedHandleChange = debounce(
-        (unit, from, to) => {
+        (unit, from, to, value) => {
             setIsLoading(true);
             if (unit === "y" || unit === "ym" || unit === "ymd") {
                 japanEnergyService
@@ -102,15 +102,16 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
                         setData(initialData);
                         setIsLoading(false);
                     });
+
+                setRangeValue(value);
+                setIntermediateTextFieldValue(value);
             }
         },
         500
     );
 
     const handleRangeSliderChange = useCallback((value, unit, from, to) => {
-        setRangeValue(value);
-        setIntermediateTextFieldValue(value);
-        debouncedHandleChange(unit, from, to);
+        debouncedHandleChange(unit, from, to, value);
         // eslint-disable-next-line
     }, []);
 
@@ -146,4 +147,4 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     }
 };
 
-export default { useElectoricPowerData }
+export default { useElectoricPowerData }    
