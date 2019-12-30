@@ -117,6 +117,20 @@ const About = (props) => {
     color: #000;
   `;
 
+  let Text5 = styled.div`
+    position: absolute;
+    top: 62.63%;
+    padding-left:4%;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 32px;
+
+    color: #000;
+  `;
+
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
@@ -143,42 +157,60 @@ const About = (props) => {
   `;
 
   if(isMobile){
-    ContentArea = styled(ContentArea)`
+
+    if (lang === "en"){
+      ContentArea = styled(ContentArea)`
       width: 92%;
-      height: 1300%;
+      height: 700%;
       left: 4%;
     `;
+    } else {
+      ContentArea = styled(ContentArea)`
+      width: 92%;
+      height: 600%;
+      left: 4%;
+    `;
+    }
+
     ContentTitle = styled(ContentTitle)`
       top: 2%;
       left: 30%;
     `;
 
     Content = styled(Content)`
-      height: 85%;
-      top: 7%;
+      height: 78%;
+      top: 12%;
       left: 3%;
     `;
 
     Text1 = styled(Text1)`
       top: 3%;
-      left: 2%;
+      left: 1%;
+      right: 1%;
       font-size: 28px;
     `;
 
     Text2 = styled(Text2)`
-      top: 17.63%;
-      left: 2%;
+      top: 35.63%;
+      left: 1%;
+      right: 1%;
     `;
 
     Text3 = styled(Text3)`
-      top: 25.63%;
-      left: 2%;
+      top: 56.63%;
+      left: 1%;
+      right: 1%;
       font-size: 28px;
     `;
 
     Text4 = styled(Text4)`
-      top: 34.63%;
-      left: 2%;
+      top: 81.63%;
+      left: 1.5%;
+      right: 1%;
+    `;
+
+    Text5 = styled(Text4)`
+      display: none;
     `;
 
     LogoArea = styled(LogoArea)`
@@ -204,6 +236,8 @@ const About = (props) => {
           <p>{dict.about_text4}</p>
           <br/>
           <br/>
+        </Text4>
+        <Text5>
           <p>{dict.about_text5}</p>
           <p>{dict.about_text6}</p>
           <br/>
@@ -213,7 +247,7 @@ const About = (props) => {
           <br/>
           <br/>
           <p>{dict.about_text9}</p>
-        </Text4>
+        </Text5>
       </Content>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}

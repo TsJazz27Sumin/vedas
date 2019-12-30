@@ -129,14 +129,13 @@ const Contact = (props) => {
     height: 10%;
     left: 5%;
     top: 5%;
-    line-height: 22px;
     color: #000;
 
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 32px;
   `;
 
   let InformationP = styled.p`
@@ -251,7 +250,7 @@ const Contact = (props) => {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 32px;
   `;
 
   let PrivacyAccept = styled.button`
@@ -305,6 +304,7 @@ const Contact = (props) => {
   );
 
   if (isMobile){
+
     ContentArea = styled(ContentArea)`
       height: 1000%;
       width: 91%;
@@ -320,6 +320,7 @@ const Contact = (props) => {
 
     ContentTitle = styled(ContentTitle)`
       top: 2%;
+      padding-left: 23%;
     `;
 
     Content = styled(Content)`
@@ -334,51 +335,55 @@ const Contact = (props) => {
       border-radius: 16px;
     `;
 
+    Information = styled(Information)`
+      line-height: 32px;
+    `;
+
     FullNameLabel = styled(FullNameLabel)`
       height: 4%;
-      top: 28%;
+      top: 34%;
     `;
 
     FullNameInput = styled(FullNameInput)`
       height: 4%;
-      top: 32%;
+      top: 38%;
     `;
 
     EmailLabel = styled(EmailLabel)`
       height: 4%;
-      top: 28%;
+      top: 34%;
     `;
 
     EmailInput = styled(EmailInput)`
       height: 4%;
-      top: 32%;
+      top: 38%;
     `;
 
     ContactInformationLabel = styled(ContactInformationLabel)`
       height: 10%;
-      top: 42%;
+      top: 45%;
     `;
 
     ContactInformationTextArea = styled(ContactInformationTextArea)`
       height: 10%;
-      top: 45%;
+      top: 48%;
     `;
 
     Privacy = styled(Privacy)`
       height: 10%;
-      top: 60%;
+      top: 63%;
     `;
 
     PrivacyAccept = styled(PrivacyAccept)`
       width: 60%;
       height: 7%;
       left: 20%;
-      top: 80%;
+      top: 86%;
     `;
 
     LogoArea = styled(LogoArea)`
       height: 10%;
-      top: 75%;
+      top: 77%;
     `;
   }
 

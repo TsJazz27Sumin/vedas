@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { isMobile } from "react-device-detect";
 
 const SolarSampleImages = () => {
 
@@ -37,11 +38,17 @@ const SolarSampleImages = () => {
 `;
 
   let SolarSampleImagePageing = styled.div`
-  padding-left: 43%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  width: 50%;
-`;
+    padding-left: 43%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 50%;
+  `;
+
+  if(isMobile){
+    SolarSampleImagePageing = styled(SolarSampleImagePageing)`
+      display: none;
+    `;
+  }
 
   return (
     <div>

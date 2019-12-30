@@ -100,8 +100,8 @@ const Usage = (props) => {
 
   let UsageAreaOneSvg = styled.div`
     position: absolute;
-    padding-left: 3.8%;
-    padding-top: 5%;
+    padding-top: 5.5%;
+    width: 10%;
   `;
 
   let UsageAreaOneTextArea1 = styled.div`
@@ -114,14 +114,14 @@ const Usage = (props) => {
   let UsageAreaOneTextArea2 = styled.div`
     position: absolute;
     padding-left: 6.8%;
-    padding-top: 13%;
+    padding-top: 12.7%;
     width: 80%;
   `;
 
   let UsageAreaOneTextArea3 = styled.div`
     position: absolute;
     padding-left: 6.8%;
-    padding-top: 25%;
+    padding-top: 24.75%;
     width: 80%;
   `;
 
@@ -195,8 +195,59 @@ const Usage = (props) => {
   );
 
   if (isMobile) {
+    if (lang === "en"){
+      ContentArea = styled(ContentArea)`
+      height: 2800px;
+    `;
+    } else {
+      ContentArea = styled(ContentArea)`
+      height: 2500px;
+    `;
+    }
+
     ContentTitle = styled(ContentTitle)`
-      top: 2%;
+      top: 1%;
+      padding-left: 32%;
+      padding-bottom: 2%;
+      padding-top: 7%;
+    `;
+
+    Content1 = styled(Content1)`
+      height: 10%;
+    `;
+
+    Content2 = styled(Content2)`
+      height: 80%;
+    `;
+
+    Text1 = styled(Text1)`
+      font-size: 19px;
+    `;
+
+    Text2 = styled(Text2)`
+      display: none;
+    `;
+
+    UsageAreaOneTextArea1 = styled(UsageAreaOneTextArea1)`
+      display: none;
+    `;
+
+    UsageAreaOneTextArea2 = styled(UsageAreaOneTextArea2)`
+      display: none;
+    `;
+
+    UsageAreaOneTextArea3 = styled(UsageAreaOneTextArea3)`
+      display: none;
+    `;
+
+    UsageAreaOneSvg = styled(UsageAreaOneSvg)`
+      display: none;
+    `;
+
+    LetsFind = styled(LetsFind)`
+      padding-top: 27%;
+      padding-left: 9%;
+      font-size: 35px;
     `;
   }
 
@@ -207,7 +258,7 @@ const Usage = (props) => {
         <Text1><p>{dict.how_to_use_text1}</p></Text1>
         <Text1><p>{dict.how_to_use_text2}</p></Text1>
         <UsageAreaOneSvg>
-          <svg width="33" height="354" viewBox="0 0 33 354" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" height="354" viewBox="0 0 33 354" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M16.5 10C15.6716 10 15 10.6716 15 11.5L15 340.5C15 341.328 15.6716 342 16.5 342C17.3284 342 18 341.328 18 340.5L18 11.5C18 10.6716 17.3284 10 16.5 10Z" fill="#6DDCFF" />
             <path fillRule="evenodd" clipRule="evenodd" d="M31 16.5C31 8.49187 24.5081 2 16.5 2C8.49187 2 2 8.49187 2 16.5C2 24.5081 8.49187 31 16.5 31C24.5081 31 31 24.5081 31 16.5Z" fill="white" stroke="#6DDCFF" strokeWidth="3" />
             <path fillRule="evenodd" clipRule="evenodd" d="M31 165.5C31 157.492 24.5081 151 16.5 151C8.49187 151 2 157.492 2 165.5C2 173.508 8.49187 180 16.5 180C24.5081 180 31 173.508 31 165.5Z" fill="white" stroke="#6DDCFF" strokeWidth="3" />
