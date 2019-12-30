@@ -1,5 +1,9 @@
 const get = () => {
     const word_dictionary = {
+        "analyze_condtion_text1": "1. 期間を選択してください。",
+        "analyze_condtion_text2": "2. 電力事業者を選択してください。",
+        "analyze_condtion_text3": "3. 調べたい発電の種類を選択してください。",
+        "analyze_condtion_text4": "表示期間",
         "sample_news2": "(sample) １月分のデータを更新しました。",
         "sample_news1": "(sample) あけましておめでとうございます。Vedasをリリースしました。",
         "contact_place_folder1": "パネイル　太郎",

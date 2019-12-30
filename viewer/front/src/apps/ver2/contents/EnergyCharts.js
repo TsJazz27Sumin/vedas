@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import wordDictionaryService from '../../../services/word_dictionary'
 import styled from 'styled-components';
 
 const EnergyCharts = (props) => {
 
   const lang = props.lang;
+  const dict = wordDictionaryService.getV2(lang);
   const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
@@ -14,11 +16,23 @@ const EnergyCharts = (props) => {
     ReactGA.pageview(pathname);
   });
 
+  // const Content = styled.div`
+  //   position: absolute;
+  //   width: 92%;
+  //   height: 50%;
+  //   left: 4%;
+  //   top: 5%;
+
+  //   background: #fff;
+  //   border: 1px solid #fff;
+  //   box-sizing: border-box;
+  //   border-radius: 16px;
+  // `;
+
   const AnalyzeArea = styled.div`
     height: 200%;
     width: 91%;
     position: absolute;
-    padding-top: 10%;
     left: 4.1%;
     right: 4.1%;
     top: 140%;
@@ -27,18 +41,44 @@ const EnergyCharts = (props) => {
     border-radius: 54px;
 ` ;
 
-  const Content = styled.div`
-    position: absolute;
-    width: 56%;
-    height: 50%;
-    left: 23%;
-    top: 20%;
-
+  const ConditionArea = styled.div`
+    height: 86%;
+    width: 95%;
     background: #fff;
-    border: 1px solid #fff;
-    box-sizing: border-box;
-    border-radius: 16px;
-  `;
+` ;
+
+  const ConditionDetailArea1 = styled.div`
+    height: 15%;
+    margin-left: 5%;
+    background: #efefef;
+  ` ;
+
+  const ConditionDetailArea2 = styled.div`
+    height: 20%;
+    margin-left: 5%;
+    background: #efefef;
+  ` ;
+
+  const ConditionDetailArea3 = styled.div`
+    height: 20%;
+    margin-left: 5%;
+    background: #efefef;
+  ` ;
+
+  const ConditionDetailTitle = styled.div`
+    height: 4%;
+    margin-top: 3%;
+    margin-left: 5%;
+    background: #aaa;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: #000;
+  ` ;
 
   let LogoArea = styled.div`
     position: absolute;
@@ -67,9 +107,34 @@ const EnergyCharts = (props) => {
 
   return (
     <AnalyzeArea>
-      <Content>
+      <ConditionArea>
+        <ConditionDetailTitle><p>{dict.analyze_condtion_text1}</p></ConditionDetailTitle>
+        <ConditionDetailArea1>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </ConditionDetailArea1>
+        <ConditionDetailTitle><p>{dict.analyze_condtion_text2}</p></ConditionDetailTitle>
+        <ConditionDetailArea2>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </ConditionDetailArea2>
+        <ConditionDetailTitle><p>{dict.analyze_condtion_text3}</p></ConditionDetailTitle>
+        <ConditionDetailArea3>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </ConditionDetailArea3>
+      </ConditionArea>
+      {/* <Content>
         <p>contact</p>
-      </Content>
+      </Content> */}
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
         LogoArea={LogoArea}

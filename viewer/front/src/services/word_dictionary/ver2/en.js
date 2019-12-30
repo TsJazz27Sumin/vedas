@@ -1,5 +1,9 @@
 const get = () => {
     const word_dictionary = {
+        "analyze_condtion_text1": "1. Please select a time period.",
+        "analyze_condtion_text2": "2. Please select a power provider.",
+        "analyze_condtion_text3": "3. Select the type of power generation you want to check.",
+        "analyze_condtion_text4": "Display period",
         "sample_news2": "(sample) January data has been updated.",
         "sample_news1": "(sample) Happy New Year. Vedas has been released.",
         "contact_place_folder1": "Panair Taro",

@@ -33,6 +33,12 @@ const Usage = (props) => {
     border-radius: 54px;
   `;
 
+  if (lang === "en"){
+    ContentArea = styled(ContentArea)`
+    height: 4400px;
+  `;
+  }
+
   let ContentTitle = styled.div`
     padding-left: 1.5%;
     padding-bottom: 0.5%;
