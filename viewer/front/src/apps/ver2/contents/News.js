@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import ShareButtons from '../../../components/ver2/ShareButtons'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
@@ -18,7 +19,7 @@ const News = (props) => {
   });
 
   let ContentArea = styled.div`
-    height: 700px;
+    height: 900px;
     width: 91%;
     padding-left: 4%;
     padding-top: 2%;
@@ -48,6 +49,12 @@ const News = (props) => {
   border-radius: 16px;
   padding-bottom: 5%;
   border-radius: 16px;
+`;
+
+let ShareButtonArea = styled.div`
+  padding-top: 3%;
+  padding-left: 4%;
+  padding-bottom: 3%;
 `;
 
   let Text1 = styled.div`
@@ -123,7 +130,11 @@ const News = (props) => {
       margin-top: 4%;
     `;
     Text1 = styled(Text1)`
-      font-size: 26px;
+      font-size: 22px;
+    `;
+
+    Text2 = styled(Text2)`
+      font-size: 18px;
     `;
   }
 
@@ -133,8 +144,14 @@ const News = (props) => {
       <Content>
         <Text1><p>2020/02/01</p></Text1>
         <Text2><p>{dict.sample_news2}</p></Text2>
+        <ShareButtonArea>
+          <ShareButtons/>
+        </ShareButtonArea>
         <Text1><p>2020/01/19</p></Text1>
         <Text2><p>{dict.sample_news1}</p></Text2>
+        <ShareButtonArea>
+          <ShareButtons/>
+        </ShareButtonArea>
       </Content>
       <FooterLogoArea
         handleMenuChange={handleMenuChange}
