@@ -2,8 +2,9 @@ import { useState, useCallback } from 'react';
 
 const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
 
-    //checkbox
-    const [allChecked, setAllChecked] = useState(false);
+    const intialize = energy_power_company_initialize_params;
+
+    const [allChecked, setAllChecked] = useState(intialize.allChecked_initialize);
 
     const handleAllChange = useCallback((newChecked) => {
         setAllChecked(newChecked);
@@ -19,8 +20,6 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         setOkidenChecked(newChecked);
         setJapanChecked(newChecked);
     }, []);
-
-    const intialize = energy_power_company_initialize_params;
 
     const [hepcoChecked, setHepcoChecked] = useState(intialize.hepcoChecked_initialize);
     const handleHepcoChange = useCallback((newChecked) => {

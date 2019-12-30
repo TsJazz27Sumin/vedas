@@ -33,6 +33,8 @@ const execute = (query_param, language) => {
   
   //電力会社
   const energy_power_company_initialize_params = {
+    allChecked_initialize: (qs.allChecked_initialize === undefined) ? false : toBoolean(qs.allChecked_initialize),
+    // xxx
     hepcoChecked_initialize: (qs.hepcoChecked_initialize === undefined) ? false : toBoolean(qs.hepcoChecked_initialize),
     //8 1=true 2=false
     tohokuepcoChecked_initialize: (qs.tohokuepcoChecked_initialize === undefined) ? false : toBoolean(qs.tohokuepcoChecked_initialize),

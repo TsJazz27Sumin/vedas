@@ -6,6 +6,7 @@ const convert_params = (qs) => {
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
           qs.range_from_value_initialize = "0";
+          qs.allChecked_initialize = "true";
           qs.hepcoChecked_initialize = "true";
           qs.tohokuepcoChecked_initialize = "true";
           qs.rikudenChecked_initialize = "true";
@@ -17,7 +18,9 @@ const convert_params = (qs) => {
           qs.kyudenChecked_initialize = "true";
           qs.okidenChecked_initialize = "true";
           qs.demandChecked_initialize = "false";
+          qs.thermalChecked_initialize = "false";
           qs.solarChecked_initialize = "true";
+          window.scrollTo(0, 1400);
           break;
         //北海道、東京、沖縄で電力のピーク傾向が違う。
         case "2":
@@ -28,6 +31,8 @@ const convert_params = (qs) => {
           qs.tepcoChecked_initialize = "true";
           qs.okidenChecked_initialize = "true";
           qs.demandChecked_initialize = "true";
+          qs.thermalChecked_initialize = "false";
+          window.scrollTo(0, 1400);
           break;
         //九州電力管内では、太陽光で昼間の総需要の大半を補う日が出てきている。
         case "3":
@@ -36,16 +41,19 @@ const convert_params = (qs) => {
           qs.tepcoChecked_initialize = "false";
           qs.kyudenChecked_initialize = "true";
           qs.demandChecked_initialize = "true";
+          qs.thermalChecked_initialize = "false";
           qs.solarChecked_initialize = "true";
           qs.year_initialize = "2019";
           qs.month_initialize = "5";
           qs.date_initialize = "3";
+          window.scrollTo(0, 1400);
           break;
         //日本は、総需要の大半を火力依存でカバーしている。
         case "4":
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
           qs.range_from_value_initialize = "0";
+          qs.allChecked_initialize = "true";
           qs.hepcoChecked_initialize = "true";
           qs.tohokuepcoChecked_initialize = "true";
           qs.rikudenChecked_initialize = "true";
@@ -58,12 +66,14 @@ const convert_params = (qs) => {
           qs.okidenChecked_initialize = "true";
           qs.demandChecked_initialize = "true";
           qs.thermalChecked_initialize = "true";
+          window.scrollTo(0, 1400);
           break;
         //日本のグリーン電力（水力、地熱、バイオマス、太陽光、風力）の中では、水力と太陽光が強い。
         case "5":
           qs.unit_initialize = "ym";
           qs.is_range_slider_open = "true";
           qs.range_from_value_initialize = "0";
+          qs.allChecked_initialize = "true";
           qs.hepcoChecked_initialize = "true";
           qs.tohokuepcoChecked_initialize = "true";
           qs.rikudenChecked_initialize = "true";
@@ -75,11 +85,13 @@ const convert_params = (qs) => {
           qs.kyudenChecked_initialize = "true";
           qs.okidenChecked_initialize = "true";
           qs.demandChecked_initialize = "false";
+          qs.thermalChecked_initialize = "false";
           qs.hydroChecked_initialize = "true";
           qs.geothermalChecked_initialize = "true";
           qs.biomassChecked_initialize = "true";
           qs.solarChecked_initialize = "true";
           qs.windChecked_initialize = "true";
+          window.scrollTo(0, 1400);
           break;
         default:
         //nothing

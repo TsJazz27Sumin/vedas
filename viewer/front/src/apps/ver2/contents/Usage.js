@@ -172,8 +172,8 @@ const Usage = (props) => {
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 11%;
-    top: 79%;
+    height: 0%;
+    top: 97%;
   `;
 
   let VedasLogo = styled.div`
