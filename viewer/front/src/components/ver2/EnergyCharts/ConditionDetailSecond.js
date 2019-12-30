@@ -9,7 +9,7 @@ const ConditionDetailSecond = (props) => {
   const allChecked = electoric_power_company.allChecked;
   const handleAllChange = electoric_power_company.handleAllChange;
   const electricPowersChecked = electoric_power_company.Checked;
-  // const handleElectricPowersChange = electoric_power_company.handleValueChange;
+  const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   const ConditionDetailArea2 = styled.div`
     height: 14%;
@@ -89,7 +89,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('japan')}
+            onClick={()=> handleElectricPowersChange.handleJapanChange(true)}
           >
             <ConditionDetailParamButtonJapan />
             <ConditionDetailParamLabel>
@@ -97,7 +97,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('hepco')}
+            onClick={()=> handleElectricPowersChange.handleHepcoChange(true)}
           >
             <ConditionDetailParamButtonHepco />
             <ConditionDetailParamLabel>
@@ -105,7 +105,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('tohokuepco')}
+            onClick={()=> handleElectricPowersChange.handleTohokuepcoChange(true)}
           >
             <ConditionDetailParamButtonTohokuepco />
             <ConditionDetailParamLabel>
@@ -113,7 +113,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('rikuden')}
+            onClick={()=> handleElectricPowersChange.handleRikudenChange(true)}
           >
             <ConditionDetailParamButtonRikuden />
             <ConditionDetailParamLabel>
@@ -121,7 +121,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('tepco')}
+            onClick={()=> handleElectricPowersChange.handleTepcoChange(true)}
           >
             <ConditionDetailParamButtonTepco />
             <ConditionDetailParamLabel>
@@ -131,7 +131,7 @@ const ConditionDetailSecond = (props) => {
         </ConditionDetailParamArea1>
         <ConditionDetailParamArea2>
           <ConditionDetailParam
-            onClick={()=> console.log('chuden')}
+            onClick={()=> handleElectricPowersChange.handleChudenChange(true)}
           >
             <ConditionDetailParamButtonChuden />
             <ConditionDetailParamLabel>
@@ -139,7 +139,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('kepco')}
+            onClick={()=> handleElectricPowersChange.handleKepcoChange(true)}
           >
             <ConditionDetailParamButtonKepco />
             <ConditionDetailParamLabel>
@@ -147,7 +147,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('energia')}
+            onClick={()=> handleElectricPowersChange.handleEnergiaChange(true)}
           >
             <ConditionDetailParamButtonEnergia />
             <ConditionDetailParamLabel>
@@ -155,7 +155,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('yonden')}
+            onClick={()=> handleElectricPowersChange.handleYondenChange(true)}
           >
             <ConditionDetailParamButtonYonden/>
             <ConditionDetailParamLabel>
@@ -163,7 +163,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('kyuden')}
+            onClick={()=> handleElectricPowersChange.handleKyudenChange(true)}
           >
             <ConditionDetailParamButtonKyuden />
             <ConditionDetailParamLabel>
@@ -171,7 +171,7 @@ const ConditionDetailSecond = (props) => {
             </ConditionDetailParamLabel>
           </ConditionDetailParam>
           <ConditionDetailParam
-            onClick={()=> console.log('okiden')}
+            onClick={()=> handleElectricPowersChange.handleOkidenChange(true)}
           >
             <ConditionDetailParamButtonOkiden />
             <ConditionDetailParamLabel>
