@@ -16,11 +16,6 @@ const Home = (props) => {
   let initial_lang = props.lang;
   const qs = props.qs;
 
-  //TODO:中国語、スペイン語対応。
-  if (initial_lang === "ch" || initial_lang === "es"){
-    initial_lang = "en";
-  }
-
   const [menu, setMenu] = useState('home');
   const handleMenuChange = useCallback((newValue) => {
     setMenu(newValue);

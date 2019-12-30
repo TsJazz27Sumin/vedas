@@ -12,7 +12,7 @@ import queryParamPerserService from '../../../services/query_param_perser'
 import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_resourse'
 import electoricPowerCompanyHook from '../../../custom_hooks/electoric_power_company'
 import dateSelectHook from '../../../custom_hooks/date_select'
-import rangeSliderHook from '../../../custom_hooks/electoric_power_data'
+import electoricPowerDataHook from '../../../custom_hooks/electoric_power_data'
 
 const EnergyCharts = (props) => {
 
@@ -26,13 +26,9 @@ const EnergyCharts = (props) => {
 
   //クエリパラメータ
   const qs = queryParamPerserService.execute(props.qs, lang);
-  const language_initialize = qs.lang;
-  const electoric_power_data_initialize_params = qs.electoric_power_data_initialize_params;
-  const energy_power_company_initialize_params = qs.energy_power_company_initialize_params;
-  const electoric_power_resourse_initialize_params = qs.electoric_power_resourse_initialize_params;
 
   //電力データをCallするためのパラメータや処理
-  const electoric_power_data_hook = rangeSliderHook.useElectoricPowerData(electoric_power_data_initialize_params)
+  const electoric_power_data = electoricPowerDataHook.useElectoricPowerData(qs.electoric_power_data_initialize_params)
   // const is_loading = electoric_power_data_hook.is_loading;
   // const year_and_month = electoric_power_data_hook.year_and_month;
   // const data = electoric_power_data_hook.data;
@@ -44,24 +40,24 @@ const EnergyCharts = (props) => {
   // const setIsLoading = electoric_power_data_hook.setIsLoading;
 
   //言語選択
-  let dict = wordDictionaryService.getV2(language_initialize);
+  let dict = wordDictionaryService.getV2(lang);
 
   //30分値指定の期間
   const date_select = dateSelectHook.useDateSelect(
-    electoric_power_data_initialize_params, 
-    electoric_power_data_hook.setData, 
-    electoric_power_data_hook.setIsLoading
+    qs.electoric_power_data_initialize_params, 
+    electoric_power_data.setData, 
+    electoric_power_data.setIsLoading
   );
 
   //電力会社の選択
-  const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(energy_power_company_initialize_params);
+  const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(qs.energy_power_company_initialize_params);
   // const allChecked = electoric_power_company.allChecked;
   // const handleAllChange = electoric_power_company.handleAllChange;
   // const electricPowersChecked = electoric_power_company.Checked;
   // const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   //エネルギーリソースの選択
-  const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(electoric_power_resourse_initialize_params);
+  const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
   // const energyResoursesChecked = electoric_power_resource.Checked;
   // const handleEnergyResoursesChange = electoric_power_resource.handleValueChange;
 
@@ -134,15 +130,20 @@ const EnergyCharts = (props) => {
 
   return (
     <AnalyzeArea>
-      <Condition dict={dict}/>
+      <Condition 
+        dict={dict}
+        electoric_power_data={electoric_power_data}
+        electoric_power_company={electoric_power_company}
+        electoric_power_resource={electoric_power_resource}
+        />
       <Content>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text4}</p></ConditionDetailTitle>
         <RangeSelectArea>
           <AppProvider>
             <RangeSelect
-              range_slider={electoric_power_data_hook.range_slider}
-              unit={electoric_power_data_hook.unit}
-              year_and_month={electoric_power_data_hook.year_and_month}
+              range_slider={electoric_power_data.range_slider}
+              unit={electoric_power_data.unit}
+              year_and_month={electoric_power_data.year_and_month}
             />
           </AppProvider>
         </RangeSelectArea>
@@ -150,14 +151,14 @@ const EnergyCharts = (props) => {
           <AppProvider>
             <DateSelect
               dict={dict}
-              unit={electoric_power_data_hook.unit}
+              unit={electoric_power_data.unit}
               date_select={date_select}
             />
           </AppProvider>
         </DateSelectArea>
         <AppProvider>
         {
-          electoric_power_data_hook.is_loading ?
+          electoric_power_data.is_loading ?
             (
               <ul>
                 <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
@@ -166,7 +167,7 @@ const EnergyCharts = (props) => {
             :
             (<ul>
               <CompanyEnergyCharts
-                data={electoric_power_data_hook.data}
+                data={electoric_power_data.data}
                 dict={dict}
                 electricPowersChecked={electoric_power_company.Checked}
                 energyResoursesChecked={electoric_power_resource.Checked}
