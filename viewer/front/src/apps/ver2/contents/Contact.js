@@ -85,7 +85,7 @@ const Contact = (props) => {
   }, []);
 
   let ContentArea = styled.div`
-    height: 1100px;
+    height: 1400px;
     width: 91%;
     position: absolute;
     padding-top: 10%;
@@ -112,7 +112,7 @@ const Contact = (props) => {
   let Content = styled.div`
     position: absolute;
     width: 92%;
-    height: 800px;
+    height: 1000px;
     left: 4%;
     top: 9%;
 
@@ -134,7 +134,7 @@ const Contact = (props) => {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 42px;
   `;
 
   let InformationP = styled.p`
@@ -150,7 +150,7 @@ const Contact = (props) => {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
     color: #464646;
   `; 
@@ -168,7 +168,7 @@ const Contact = (props) => {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     padding: 0 0 0 2%;
   `;
 
@@ -181,7 +181,7 @@ const Contact = (props) => {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
     color: #464646;
   `; 
@@ -199,7 +199,7 @@ const Contact = (props) => {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     padding: 2% 2% 2% 2%;
   `;
 
@@ -208,11 +208,11 @@ const Contact = (props) => {
     width: 40%;
     height: 10%;
     left: 5%;
-    top: 34%;
+    top: 36%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
     color: #464646;
   `;
@@ -222,11 +222,11 @@ const Contact = (props) => {
     width: 89%;
     height: 20%;
     left: 5%;
-    top: 39%;
+    top: 41%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18x;
     line-height: 20px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.34);
@@ -241,7 +241,7 @@ const Contact = (props) => {
     width: 90%;
     height: 10%;
     left: 5%;
-    top: 63%
+    top: 65%
     line-height: 22px;
     color: #000;
 
@@ -266,7 +266,7 @@ const Contact = (props) => {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 22px;
     color: #fff;
   `;
