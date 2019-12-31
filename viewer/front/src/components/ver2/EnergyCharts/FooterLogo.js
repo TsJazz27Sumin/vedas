@@ -7,9 +7,9 @@ const FooterLogo = (props) => {
   const handleMenuChange = props.handleMenuChange;
 
   let LogoArea = styled.div`
+    margin-top: 70px
     position: absolute;
     width: 60%;
-    top: 97%;
   `;
 
   let VedasLogo = styled.div`

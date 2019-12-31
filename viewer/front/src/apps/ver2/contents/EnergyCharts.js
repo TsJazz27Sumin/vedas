@@ -43,11 +43,11 @@ const EnergyCharts = (props) => {
 
   //電力会社の選択
   const electoric_power_company = electoricPowerCompanyHook.useElectoricPowerCompany(qs.energy_power_company_initialize_params);
-
+  const checkedCount = electoric_power_company.CheckedCount;
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
 
-  const AnalyzeArea = styled.div`
+  let AnalyzeArea = styled.div`
     height: 5300px
     width: 91%;
     position: absolute;
@@ -59,9 +59,8 @@ const EnergyCharts = (props) => {
     border-radius: 54px;
 ` ;
 
-  const Content = styled.div`
+  let Content = styled.div`
     position: absolute;
-    height: 4200px;
     width: 90%;
     left: 5%;
 
@@ -114,13 +113,27 @@ const EnergyCharts = (props) => {
     border-radius: 12px;
   `;
 
+  let DateSelectAreaHelp = styled.div`
+    margin-top: -3%;
+    margin-left: 45%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    display: flex;
+
+    color: rgba(0, 0, 0, 0.34);
+    `;
+
   let ShareButtonArea = styled.div`
     margin-top: 5%;
     margin-left: 37%;
   `;
 
   let WatchoutArea = styled.div`
-    margin-top: 4300px;
     margin-left: 6%;
   `;
 
@@ -145,6 +158,10 @@ const EnergyCharts = (props) => {
 
     color: #000;
   `;
+
+  AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (350 * checkedCount)}px`;
+  Content = styled(Content)`height: ${350 + (350 * checkedCount)}px`;
+  WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
 
   return (
     <AnalyzeArea>
@@ -174,6 +191,9 @@ const EnergyCharts = (props) => {
                 unit={electoric_power_data.unit}
                 date_select={date_select}
               />
+              <DateSelectAreaHelp>
+                <p>{dict.analyze_condtion_text5}</p>
+              </DateSelectAreaHelp>
             </AppProvider>
           </DateSelectArea>
         )
