@@ -91,7 +91,7 @@ const get = () => {
         "yonden": "Shikoku",
         "kyuden": "Kyushu",
         "okiden": "Okinawa",
-        "japan": "All Japan"
+        "japan": "Japan(Sum)"
     };
 
     return word_dictionary;

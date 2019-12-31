@@ -91,7 +91,7 @@ const get = () => {
         "yonden": "四国電力",
         "kyuden": "九州電力",
         "okiden": "沖縄電力",
-        "japan": "日本全国"
+        "japan": "日本（合算）"
     };
 
     return word_dictionary;
