@@ -17,6 +17,19 @@ const Condition = (props) => {
     width: 95%;
 ` ;
 
+  let ConditionDetailMobileCaution = styled.div`
+    height: 0%;
+    margin-top: 5%;
+    margin-left: 9%;
+    padding-bottom: 12%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 26px;
+  ` ;
+
   let ConditionDetailTitle = styled.div`
     height: 0%;
     margin-top: 3%;
@@ -47,6 +60,7 @@ const Condition = (props) => {
   
   return (
     <ConditionArea>
+      {isMobile ? <ConditionDetailMobileCaution><p>{dict.analyze_condtion_mobile_caution}</p></ConditionDetailMobileCaution> : null}
       <ConditionDetailTitle><p>{dict.analyze_condtion_text1}</p></ConditionDetailTitle>
       <ConditionDetailFirst dict={dict} electoric_power_data={electoric_power_data}/>
       <ConditionDetailTitle><p>{dict.analyze_condtion_text2}</p></ConditionDetailTitle>

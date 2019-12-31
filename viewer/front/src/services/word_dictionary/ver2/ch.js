@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "analyze_condtion_mobile_caution": "*我们建议使用台式机或笔记本电脑。 移动版本的功能有限",
         "analyze_condtion_text1": "1. 请选择一个时间段",
         "analyze_condtion_text2": "2. 请选择电源供应商",
         "analyze_condtion_text3": "3. 选择要检查的发电类型",

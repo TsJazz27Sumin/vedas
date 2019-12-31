@@ -93,12 +93,17 @@ const Content2 = (props) => {
       <EnergyPeakSampleImage>
         <img width="100%" src={peak_sample} alt="peak sample" />
       </EnergyPeakSampleImage>
-      <OtherSample>
-        <Text1><p>{dict.how_to_use_text18}</p></Text1>
-        <Text1><SampleCaseATag id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
-        <Text1><SampleCaseATag id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
-        <Text1><SampleCaseATag id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
-      </OtherSample>
+
+      {
+        isMobile ? null :(
+        <OtherSample>
+          <Text1><p>{dict.how_to_use_text18}</p></Text1>
+          <Text1><SampleCaseATag id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
+        </OtherSample>
+        )
+      }
       <LetsFind>
         <p>{dict.how_to_use_text22}</p>
       </LetsFind>

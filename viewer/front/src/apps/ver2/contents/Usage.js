@@ -72,7 +72,7 @@ const Usage = (props) => {
   if (isMobile) {
     if (lang === "en"){
       ContentArea = styled(ContentArea)`
-      height: 2600px;
+      height: 2100px;
       width: 100%;
       background: none;
       padding-left: 1%;
@@ -80,7 +80,7 @@ const Usage = (props) => {
     `;
     } else {
       ContentArea = styled(ContentArea)`
-      height: 2300px;
+      height: 1800px;
       width: 100%;
       background: none;
       padding-left: 1%;
@@ -97,7 +97,7 @@ const Usage = (props) => {
     `;
 
     LogoArea = styled(LogoArea)`
-    margin-top: 42px;
+    margin-top: 0px;
     margin-left: -3%;
   `;
   }

@@ -119,8 +119,8 @@ const ConditionDetailSecond = (props) => {
       return checked ? styled(ConditionDetailParam)` background: #6DDCFF;` : styled(ConditionDetailParam)` background: #efefef;`
     };
       
-    ConditionDetailParamAll = setBackGround(allChecked);
-    ConditionDetailParamJapan = setBackGround(electricPowersChecked.japanChecked);
+    ConditionDetailParamAll = styled(ConditionDetailParam)` display:none;`
+    ConditionDetailParamJapan = styled(ConditionDetailParam)` display:none;`
     ConditionDetailParamHepco = setBackGround(electricPowersChecked.hepcoChecked);
     ConditionDetailParamTohokuepco = setBackGround(electricPowersChecked.tohokuepcoChecked);
     ConditionDetailParamRikuden = setBackGround(electricPowersChecked.rikudenChecked);
