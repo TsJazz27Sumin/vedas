@@ -85,7 +85,7 @@ const Contact = (props) => {
   }, []);
 
   let ContentArea = styled.div`
-    height: 344%;
+    height: 1100px;
     width: 91%;
     position: absolute;
     padding-top: 10%;
@@ -112,7 +112,7 @@ const Contact = (props) => {
   let Content = styled.div`
     position: absolute;
     width: 92%;
-    height: 73%;
+    height: 800px;
     left: 4%;
     top: 9%;
 
