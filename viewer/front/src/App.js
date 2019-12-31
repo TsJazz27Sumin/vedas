@@ -1,5 +1,5 @@
 import React from 'react'
-import JapanEnergyChartDummy from './apps/Browzer/JapanEnergyChartDummy'
+import Home from './apps/ver2/Home'
 import JapanEnergyChart from './apps/ver1/JapanEnergyChart'
 import News from './apps/ver1/News'
 import About from './apps/ver1/About'
@@ -46,7 +46,7 @@ const App = (props) => {
           break;
     }
   } else {
-    content = (<JapanEnergyChartDummy lang={lang} location={props.location} query_param={props.qs} />);
+    content = (<Home lang={lang} location={props.location} qs={props.qs} />);
   }
  
   return (

@@ -25,6 +25,7 @@
     text-decoration: none;
   }
 
+  /* ver1のデザイン用 */
   .Polaris-TopBar-UserMenu__Name {
     color: #212B36;
   }
@@ -53,41 +54,16 @@
     box-shadow: none;
   }
 
-  @media (max-width:480px) {
-    p {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-
-    img {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-
-    .Polaris-FormLayout__Item {
-      margin-left: 3rem;
-      margin-right: 2rem;
-    }
-  }
-
-  /* hari */
-
-  .out-line{
-    /* Desktop - 1 */
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    background: #fff;
-  }
-  .st1{
+  /* ver2のデザイン用：desined by hari */
+  /* SVGアニメーション用 */
+  .st1 {
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
     -webkit-animation: st1_anime 2s ease-in 0s;
     animation: st1_anime 2s ease-in 0s;
   }
 
-  .st2{
+  .st2 {
     stroke-dasharray: 2000;
     stroke-dashoffset: 0;
     -webkit-animation: st2_anime 2s ease-in 0s;
@@ -124,80 +100,67 @@
     }
   }
 
-  .vedas-logo{
-    width:100%;
-    padding-left: 35%;
-    padding-right: 35%;
-    opacity: 0;
-    animation: appeare 1s ease 4s 1 normal forwards running;
-    text-align: center;
-    top: 93.7%;
-    position:absolute;
-  }
-
-  .main-title{
-    width:100%;
-    padding-left: 25%;
-    padding-right: 25%;
-    opacity: 0;
-    animation: appeare 1s ease 2s 1 normal forwards running;
-    text-align: center;
-    top: 54.3%;
-    position:absolute;
-  }
-
-  @media (max-width:480px) {
-    .vedas-logo{
-      width:100%;
-      padding-left: 30%;
-      padding-right: 40%;
-      opacity: 0;
-      animation: appeare 1s ease 4s 1 normal forwards running;
-      text-align: center;
-      top: 18.7%;
-      position:absolute;
-    }
-    .main-title{
-      width:100%;
-      padding-left: 30%;
-      padding-right: 40%;
-      opacity: 0;
-      animation: appeare 1s ease 2s 1 normal forwards running;
-      text-align: center;
-      top: 15.3%;
-      position:absolute;
-    } 
-  }
-
   @keyframes appeare {
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
-
-  .analyze-area{
-    /* Rectangle 2 */
-    position: absolute;
-    left: 4.1%;
-    right: 4.1%;
-    top: 15.79%;
-    bottom: 10.65%;
-    background: #D8D8D8; 
-    opacity: 0.4;
-    border-radius: 54px;
+  
+  .slideContents section {
+    animation: autoPaging 30s infinite;
   }
-  .step1-text{
-    /* 1. 期間を選択してください。 */
-    position: absolute;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 26px;
-    /* identical to box height */
-    color: #000000;
+
+  .slideContents #slide1 { animation-delay: 0; }
+  .slideContents #slide2 { animation-delay: -24s; }
+  .slideContents #slide3 { animation-delay: -18s; }
+  .slideContents #slide4 { animation-delay: -12s; }
+  .slideContents #slide5 { animation-delay: -6s; }
+
+  @keyframes autoPaging {
+    0%{ opacity: 0;}
+    8%{ opacity: 1;}
+    12%{ opacity: 1;}
+    35%{ opacity: 0;}
+    100%{ opacity: 0;}
+  }
+
+  .slidePagings section {
+    animation: autoPaging 30s infinite;
+  }
+
+  .slidePagings #page1 { animation-delay: 0; }
+  .slidePagings #page2 { animation-delay: -24s; }
+  .slidePagings #page3 { animation-delay: -18s; }
+  .slidePagings #page4 { animation-delay: -12s; }
+  .slidePagings #page5 { animation-delay: -6s; }
+
+  .display-block {
+    display: block;
+  }
+
+  .Polaris-Select {
+    position: relative;
+    width: 140px;
+    height: 51px;
+    padding-top: 6%;
+    padding-left: 8%;
+  }
+
+  .Polaris-Select__Content {
+    font-size: 1.8rem;
+  }
+
+  .Polaris-Select__Backdrop{
+    border:none;
+    background-color:#fff;
+    border-radius: 10px;
+  }
+
+  .Polaris-Select__Backdrop::after{
+    border-radius: 10px;
   }
 </style>

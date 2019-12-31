@@ -31,3 +31,4 @@ yarn-error.log*
 
 viewer/front/node_modules/*
 vedas/*
+viewer/front/styled-components-app/*

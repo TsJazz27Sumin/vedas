@@ -2,8 +2,9 @@ import { useState, useCallback } from 'react';
 
 const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
 
-    //checkbox
-    const [allChecked, setAllChecked] = useState(false);
+    const intialize = energy_power_company_initialize_params;
+
+    const [allChecked, setAllChecked] = useState(intialize.allChecked_initialize);
 
     const handleAllChange = useCallback((newChecked) => {
         setAllChecked(newChecked);
@@ -20,82 +21,80 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         setJapanChecked(newChecked);
     }, []);
 
-    const intialize = energy_power_company_initialize_params;
-
     const [hepcoChecked, setHepcoChecked] = useState(intialize.hepcoChecked_initialize);
     const handleHepcoChange = useCallback((newChecked) => {
         setHepcoChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [tohokuepcoChecked, setTohokuepcoChecked] = useState(intialize.tohokuepcoChecked_initialize);
     const handleTohokuepcoChange = useCallback((newChecked) => {
         setTohokuepcoChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [rikudenChecked, setRikudenChecked] = useState(intialize.rikudenChecked_initialize);
     const handleRikudenChange = useCallback((newChecked) => {
         setRikudenChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [tepcoChecked, setTepcoChecked] = useState(intialize.tepcoChecked_initialize);
     const handleTepcoChange = useCallback((newChecked) => {
         setTepcoChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [chudenChecked, setChudenChecked] = useState(intialize.chudenChecked_initialize);
     const handleChudenChange = useCallback((newChecked) => {
         setChudenChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [kepcoChecked, setKepcoChecked] = useState(intialize.kepcoChecked_initialize);
     const handleKepcoChange = useCallback((newChecked) => {
         setKepcoChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [energiaChecked, setEnergiaChecked] = useState(intialize.energiaChecked_initialize);
     const handleEnergiaChange = useCallback((newChecked) => {
         setEnergiaChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [yondenChecked, setYondenChecked] = useState(intialize.yondenChecked_initialize);
     const handleYondenChange = useCallback((newChecked) => {
         setYondenChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [kyudenChecked, setKyudenChecked] = useState(intialize.kyudenChecked_initialize);
     const handleKyudenChange = useCallback((newChecked) => {
         setKyudenChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [okidenChecked, setOkidenChecked] = useState(intialize.okidenChecked_initialize);
     const handleOkidenChange = useCallback((newChecked) => {
         setOkidenChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
     const [japanChecked, setJapanChecked] = useState(intialize.japanChecked_initialize);
     const handleJapanChange = useCallback((newChecked) => {
         setJapanChecked(newChecked);
-        if (!newChecked){
+        if (!newChecked) {
             setAllChecked(newChecked);
         }
     }, []);
@@ -112,7 +111,25 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         kyudenChecked: kyudenChecked,
         okidenChecked: okidenChecked,
         japanChecked: japanChecked
-    }
+    };
+
+    const toDigit = (value) => value ? 1 : 0;
+    const CheckedCount = (
+        allChecked ? 11 : (
+            toDigit(hepcoChecked) +
+            toDigit(tohokuepcoChecked) +
+            toDigit(rikudenChecked) +
+            toDigit(tepcoChecked) +
+            toDigit(chudenChecked) +
+            toDigit(kepcoChecked) +
+            toDigit(energiaChecked) +
+            toDigit(yondenChecked) +
+            toDigit(kyudenChecked) +
+            toDigit(okidenChecked) +
+            toDigit(japanChecked)
+            )
+        );
+
 
     const handleValueChange = {
         handleHepcoChange: handleHepcoChange,
@@ -126,9 +143,9 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
         handleKyudenChange: handleKyudenChange,
         handleOkidenChange: handleOkidenChange,
         handleJapanChange: handleJapanChange
-    }
+    };
 
-    return { allChecked, handleAllChange, Checked, handleValueChange }
+    return { allChecked, handleAllChange, Checked, CheckedCount, handleValueChange };
 };
 
 export default { useElectoricPowerCompany }
