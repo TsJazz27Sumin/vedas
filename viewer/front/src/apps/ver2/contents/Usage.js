@@ -93,7 +93,7 @@ const Usage = (props) => {
     <ContentArea>
       <Title/>
       <Content1 dict={dict} Text1={Text1} Text2={Text2}/>
-      <Content2 dict={dict} Text1={Text1}/>
+      <Content2 dict={dict} lang={lang} Text1={Text1}/>
       <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
