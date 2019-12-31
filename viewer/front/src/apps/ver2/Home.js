@@ -9,7 +9,6 @@ import Contact from './contents/Contact'
 import News from './contents/News'
 import Usage from './contents/Usage'
 import { isMobile } from "react-device-detect";
-//import queryParamPerserService from '../../services/query_param_perser'
 
 const Home = (props) => {
 
@@ -54,9 +53,6 @@ const Home = (props) => {
         content = (<EnergyCharts lang={lang} qs={qs} handleMenuChange={handleMenuChange}/>);
         break;
   }
-
-  //クエリパラメータ
-  //const qs = queryParamPerserService.execute(props.query_param, lang);
 
   let OutLine = styled.div`
     position: relative;
