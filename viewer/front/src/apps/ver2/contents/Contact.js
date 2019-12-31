@@ -244,17 +244,15 @@ const Contact = (props) => {
     height: 20%;
     left: 5%;
     top: 41%;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18x;
+    font-family: inherit;
+    font-size   : 100%;
     line-height: 20px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.34);
     box-sizing: border-box;
     border-radius: 4px;
     resize: none;
-    padding: 2% 2% 2% 2%;
+    padding: 1% 1% 1% 1%;
   `;
 
   let Privacy = styled(FontFamilyRobotoDiv)`
@@ -274,9 +272,9 @@ const Contact = (props) => {
 
   let PrivacyAccept = styled.button`
     position: absolute;
-    width: 36%;
+    width: 24%;
     height: 9%;
-    left: 32%;
+    left: 38%;
     top: 85%;
     background: #0084FF;
     border-radius: 4px;

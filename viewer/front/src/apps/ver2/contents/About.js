@@ -54,80 +54,50 @@ const About = (props) => {
     border-radius: 16px;
   `;
 
-  let Text1 = styled.div`
+  let Text = styled.div`
     position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+  `;
+
+  let Text1 = styled(Text)`
     top: 7.63%;
     padding-left:3%;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 42px;
-    line-height: 49px;
-    
-    color: #000;
-    
+    line-height: 49px;    
     border: 8px solid #fff;
   `;
 
-  let Text2 = styled.div`
-    position: absolute;
+  let Text2 = styled(Text)`
     top: 17.63%;
     padding-left:3.2%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 26px;
-    
-    color: #000;
-    
     border: 8px solid #fff;
   `;
 
-  let Text3 = styled.div`
-    position: absolute;
+  let Text3 = styled(Text)`
     top: 32.63%;
     padding-left:3.1%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 48px;
     line-height: 56px;
-    
-    color: #000;
-    
     border: 8px solid #fff;
   `;
 
-  let Text4 = styled.div`
-    position: absolute;
+  let Text4 = styled(Text)`
     top: 50.63%;
     padding-left:4%;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 32px;
-
-    color: #000;
   `;
 
-  let Text5 = styled.div`
-    position: absolute;
+  let Text5 = styled(Text)`
     top: 62.63%;
     padding-left:4%;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 32px;
-
-    color: #000;
   `;
 
   let LogoArea = styled.div`
