@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import FooterLogo from '../../../components/ver2/FooterLogo'
 import SolarSampleImages from '../../../components/ver2/SolarSampleImages'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
@@ -12,7 +12,6 @@ const Usage = (props) => {
 
   const lang = props.lang;
   const dict = wordDictionaryService.getV2(lang);
-  const handleMenuChange = props.handleMenuChange;
 
   const public_url = process.env.PUBLIC_URL;
   const peak_sample = public_url + '/usage/peak_sample/peak_sample.png';
@@ -172,26 +171,8 @@ const Usage = (props) => {
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 0%;
-    top: 97%;
-  `;
-
-  let VedasLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 28%;
-    cursor: pointer;
-  `;
-
-  let PanairLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 74%;
-    cursor: pointer;
+    margin-top: 70px;
+    margin-left: -7%;
   `;
 
   const Title = (
@@ -312,12 +293,7 @@ const Usage = (props) => {
           <p>{dict.how_to_use_text22}</p>
         </LetsFind>
       </Content2>
-      <FooterLogoArea
-        handleMenuChange={handleMenuChange}
-        LogoArea={LogoArea}
-        VedasLogo={VedasLogo}
-        PanairLogo={PanairLogo}
-      />
+      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

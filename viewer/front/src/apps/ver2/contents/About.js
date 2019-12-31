@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import FooterLogo from '../../../components/ver2/FooterLogo'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
@@ -9,7 +9,6 @@ const About = (props) => {
 
   const lang = props.lang;
   const dict = wordDictionaryService.getV2(lang);
-  const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
     const pathname = '/' + lang + '/about';
@@ -18,7 +17,7 @@ const About = (props) => {
   });
 
   let ContentArea = styled.div`
-    height: 450%;
+    height: 1300px;
     width: 91%;
     position: absolute;
     padding-top: 10%;
@@ -134,26 +133,7 @@ const About = (props) => {
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 11%;
-    top: 73%;
-  `;
-
-  let VedasLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 48%;
-    cursor: pointer;
-  `;
-
-  let PanairLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 92%;
-    cursor: pointer;
+    top: 91%;
   `;
 
   if(isMobile){
@@ -249,12 +229,7 @@ const About = (props) => {
           <p>{dict.about_text9}</p>
         </Text5>
       </Content>
-      <FooterLogoArea
-        handleMenuChange={handleMenuChange}
-        LogoArea={LogoArea}
-        VedasLogo={VedasLogo}
-        PanairLogo={PanairLogo}
-      />
+      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

@@ -1,16 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
-import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import FooterLogoArea from './FooterLogoArea'
 
 const FooterLogo = (props) => {
 
+  const LogoArea = props.LogoArea;
   const handleMenuChange = props.handleMenuChange;
-
-  let LogoArea = styled.div`
-    margin-top: 70px
-    position: absolute;
-    width: 60%;
-  `;
 
   let VedasLogo = styled.div`
     position: absolute;

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { AppProvider, Spinner } from '@shopify/polaris';
 import styled from 'styled-components';
-import FooterLogo from '../../../components/ver2/EnergyCharts/FooterLogo'
+import FooterLogo from '../../../components/ver2/FooterLogo'
 import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
 import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
@@ -159,6 +159,12 @@ const EnergyCharts = (props) => {
     color: #000;
   `;
 
+  let LogoArea = styled.div`
+    margin-top: 70px
+    position: absolute;
+    width: 60%;
+  `;
+
   AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (350 * checkedCount)}px`;
   Content = styled(Content)`height: ${350 + (350 * checkedCount)}px`;
   WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
@@ -233,7 +239,7 @@ const EnergyCharts = (props) => {
           <p>{dict.watchout_info5}</p>
         </WatchoutTexts>
       </WatchoutArea>
-      <FooterLogo handleMenuChange={props.handleMenuChange}/>
+      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </AnalyzeArea>
   )
 }

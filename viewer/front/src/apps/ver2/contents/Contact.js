@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import axios from 'axios'
-import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import FooterLogo from '../../../components/ver2/FooterLogo'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
@@ -10,7 +10,6 @@ import { isMobile } from "react-device-detect";
 const Contact = (props) => {
 
   const lang = props.lang;
-  const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
     const pathname = '/' + lang + '/contact';
@@ -275,26 +274,7 @@ const Contact = (props) => {
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 11%;
-    top: 70%;
-  `;
-
-  let VedasLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 48%;
-    cursor: pointer;
-  `;
-
-  let PanairLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 92%;
-    cursor: pointer;
+    top: 88%;
   `;
 
   const Title = (
@@ -476,12 +456,7 @@ const Contact = (props) => {
               </div>
             )}
       </Content>
-      <FooterLogoArea
-        handleMenuChange={handleMenuChange}
-        LogoArea={LogoArea}
-        VedasLogo={VedasLogo}
-        PanairLogo={PanairLogo}
-      />
+      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

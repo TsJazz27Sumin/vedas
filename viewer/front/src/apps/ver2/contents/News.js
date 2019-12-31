@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogoArea from '../../../components/ver2/FooterLogoArea'
+import FooterLogo from '../../../components/ver2/FooterLogo'
 import ShareButtons from '../../../components/ver2/ShareButtons'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
@@ -10,7 +10,6 @@ const News = (props) => {
 
   const lang = props.lang;
   const dict = wordDictionaryService.getV2(lang);
-  const handleMenuChange = props.handleMenuChange;
 
   useEffect(() => {
     const pathname = '/' + lang + '/news';
@@ -90,26 +89,7 @@ let ShareButtonArea = styled.div`
   let LogoArea = styled.div`
     position: absolute;
     width: 50%;
-    height: 11%;
-    top: 70%;
-  `;
-
-  let VedasLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 48%;
-    cursor: pointer;
-  `;
-
-  let PanairLogo = styled.div`
-    position: absolute;
-    display: inline-block;
-    width: 30%;
-    top: 160%;
-    left: 92%;
-    cursor: pointer;
+    top: 88%;
   `;
 
   const Title = (
@@ -153,12 +133,7 @@ let ShareButtonArea = styled.div`
           <ShareButtons type={"small"}/>
         </ShareButtonArea>
       </Content>
-      <FooterLogoArea
-        handleMenuChange={handleMenuChange}
-        LogoArea={LogoArea}
-        VedasLogo={VedasLogo}
-        PanairLogo={PanairLogo}
-      />
+      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }
