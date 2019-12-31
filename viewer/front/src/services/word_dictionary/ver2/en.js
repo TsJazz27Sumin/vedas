@@ -55,7 +55,7 @@ const get = () => {
         "jurisdiction": "Jurisdiction",
         "watchout": "Things to watch out for",
         "watchout_info1": "The Company shall not be liable for any life, physical or property loss or damage incurred by the user of this application",
-        "watchout_info2": "due to actions that depend on this application or rely on the information of this application.",
+        "watchout_info2": "Due to actions that depend on this application or rely on the information of this application.",
         "watchout_info3": "The data used are the actual supply and demand results announced by general power transmission and distribution companies ",
         "watchout_info4": "based on the “System Information Disclosure Concept” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry.",
         "watchout_info5": "Please check the homepage of each general power transmission and distribution company for data considerations.",

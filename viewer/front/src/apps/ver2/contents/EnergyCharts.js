@@ -7,6 +7,7 @@ import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
 import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
 import CompanyEnergyCharts from '../../../components/ver2/EnergyCharts/CompanyEnergyCharts'
+import ShareButtons from '../../../components/ver2/ShareButtons'
 import wordDictionaryService from '../../../services/word_dictionary'
 import queryParamPerserService from '../../../services/query_param_perser'
 import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_resourse'
@@ -47,7 +48,7 @@ const EnergyCharts = (props) => {
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
 
   const AnalyzeArea = styled.div`
-    height: 2000%;
+    height: 5300px
     width: 91%;
     position: absolute;
     left: 4.1%;
@@ -60,8 +61,8 @@ const EnergyCharts = (props) => {
 
   const Content = styled.div`
     position: absolute;
+    height: 4200px;
     width: 90%;
-    height: 50%;
     left: 5%;
 
     background: #fff;
@@ -86,7 +87,7 @@ const EnergyCharts = (props) => {
   ` ;
 
   let RangeSelectArea = styled.div`
-    height: 2%;
+    height: 100px;
     width: 94%;
     margin-top: 0%;
     margin-left: 2%;
@@ -100,7 +101,7 @@ const EnergyCharts = (props) => {
   `;
 
   let DateSelectArea = styled.div`
-    height: 2%;
+    height: 100px;
     width: 94%;
     margin-top: 0%;
     margin-left: 2%;
@@ -111,6 +112,38 @@ const EnergyCharts = (props) => {
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 12px;
+  `;
+
+  let ShareButtonArea = styled.div`
+    margin-top: 5%;
+    margin-left: 37%;
+  `;
+
+  let WatchoutArea = styled.div`
+    margin-top: 4300px;
+    margin-left: 6%;
+  `;
+
+  let WatchoutTitle = styled.div`
+    margin-top: 10%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 21px;
+
+    color: #000;
+  `;
+
+  let WatchoutTexts = styled.div`
+    margin-top: 5%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 36px;
+
+    color: #000;
   `;
 
   return (
@@ -165,7 +198,21 @@ const EnergyCharts = (props) => {
             )
         }
         </AppProvider>
+        <ShareButtonArea>
+          <ShareButtons type="big"/>
+        </ShareButtonArea>
       </Content>
+      <WatchoutArea>
+        <WatchoutTitle>
+          <p>{dict.watchout}</p>
+        </WatchoutTitle>
+        <WatchoutTexts>
+          <p>{dict.watchout_info2}</p>
+          <p>{dict.watchout_info3}</p>
+          <p>{dict.watchout_info4}</p>
+          <p>{dict.watchout_info5}</p>
+        </WatchoutTexts>
+      </WatchoutArea>
       <FooterLogo handleMenuChange={props.handleMenuChange}/>
     </AnalyzeArea>
   )

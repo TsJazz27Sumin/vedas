@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components';
 
 const CompanyName = ({ company_name, jurisdiction }) => {
+
+  let CompanyNameArea = styled.div`
+    margin-top: 5%;
+  `;
+
   return (
-    <div>
+    <CompanyNameArea>
       {company_name} {jurisdiction} (MWh)
-    </div>
+    </CompanyNameArea>
   )
 }
 

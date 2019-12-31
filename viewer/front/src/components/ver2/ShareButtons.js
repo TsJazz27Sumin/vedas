@@ -13,11 +13,14 @@ import {
 } from 'react-share';
 import axios from 'axios'
 
-const ShareButtons = () => {
+const ShareButtons = (props) => {
 
+  const type = props.type;
   const current_url = window.location.href;
   const public_url = process.env.PUBLIC_URL;
-  const weibo_icon = public_url + '/sns/weibo_32x32.png';
+
+  const size = type === "small" ? 32 : 64;
+  const weibo_icon = type === "small" ? public_url + '/sns/weibo_32x32.png' : public_url + '/sns/weibo_64x64.png';
 
   const share_button_click = (type, current_url) => {
     const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
@@ -35,7 +38,7 @@ const ShareButtons = () => {
         url={current_url}
         beforeOnClick={() => share_button_click('Facebook', current_url)}
       >
-        <FacebookIcon size={32} round />
+        <FacebookIcon size={size} round />
       </FacebookShareButton>
 
       <TwitterShareButton
@@ -43,14 +46,14 @@ const ShareButtons = () => {
         beforeOnClick={() => share_button_click('Twitter', current_url)}
         hashtags={["パネイル", "Panair", "Vedas", "電力見える化"]}
       >
-        <TwitterIcon size={32} round />
+        <TwitterIcon size={size} round />
       </TwitterShareButton>
 
       <LineShareButton
         url={current_url}
         beforeOnClick={() => share_button_click('Line', current_url)}
       >
-        <LineIcon size={32} round />
+        <LineIcon size={size} round />
       </LineShareButton>
 
       <WeiboShareButton

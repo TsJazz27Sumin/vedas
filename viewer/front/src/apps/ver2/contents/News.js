@@ -145,12 +145,12 @@ let ShareButtonArea = styled.div`
         <Text1><p>2020/02/01</p></Text1>
         <Text2><p>{dict.sample_news2}</p></Text2>
         <ShareButtonArea>
-          <ShareButtons/>
+          <ShareButtons type={"small"}/>
         </ShareButtonArea>
         <Text1><p>2020/01/19</p></Text1>
         <Text2><p>{dict.sample_news1}</p></Text2>
         <ShareButtonArea>
-          <ShareButtons/>
+          <ShareButtons type={"small"}/>
         </ShareButtonArea>
       </Content>
       <FooterLogoArea

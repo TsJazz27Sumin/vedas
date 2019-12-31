@@ -9,8 +9,7 @@ const FooterLogo = (props) => {
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
-    height: 11%;
-    top: 73%;
+    top: 97%;
   `;
 
   let VedasLogo = styled.div`
