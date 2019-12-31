@@ -72,8 +72,8 @@ const Content2 = (props) => {
     `;
 
     LetsFind = styled(LetsFind)`
-      padding-top: 27%;
-      padding-left: 9%;
+      padding-top: 20%;
+      padding-left: 15%;
       font-size: 35px;
     `;
   }

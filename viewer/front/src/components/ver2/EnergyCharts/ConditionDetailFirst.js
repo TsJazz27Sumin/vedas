@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { isMobile } from "react-device-detect";
 
 const ConditionDetailFirst = (props) => {
 
@@ -10,17 +11,17 @@ const ConditionDetailFirst = (props) => {
   const upperTextFieldValue = props.electoric_power_data.range_slider.upperTextFieldValue;
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
-  const ConditionDetailArea1 = styled.div`
+  let ConditionDetailArea1 = styled.div`
   height: 5%;
   margin-left: 5%;
   background: #efefef;
 ` ;
 
-  const ConditionDetailParamArea = styled.div`
+  let ConditionDetailParamArea = styled.div`
   height: 100%;
 ` ;
 
-  const ConditionDetailParamArea1 = styled.div`
+  let ConditionDetailParamAreaY = styled.div`
   display: inline-block;
   padding-bottom: 1%;
   height: 100%;
@@ -30,11 +31,19 @@ const ConditionDetailFirst = (props) => {
   cursor: pointer;
 ` ;
 
-  const ConditionDetailParamArea2 = styled(ConditionDetailParamArea1)`
-  margin-left: 2%;
+  let ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaY)`
+    margin-left: 2%;
 ` ;
 
-  const ConditionDetailParamLabel = styled.div`
+  let ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaY)`
+    margin-left: 2%;
+` ;
+
+  let ConditionDetailParamArea1H = styled(ConditionDetailParamAreaY)`
+    margin-left: 2%;
+` ;
+
+  let ConditionDetailParamLabel = styled.div`
   display: inline-block;
 
   margin-top: 4%;
@@ -61,20 +70,67 @@ const ConditionDetailFirst = (props) => {
   cursor: pointer;
 ` ;
 
-  const setBackGround = (is_target) => { 
+  const setBackGround = (isMobile, is_target) => { 
+    if(isMobile){
+      return styled(ConditionDetailParamButton)` display:none;`;
+    }
     return is_target ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
   };
 
-  const ConditionDetailParamButtonY = setBackGround(unit === "y");
-  const ConditionDetailParamButtonYM = setBackGround(unit === "ym");
-  const ConditionDetailParamButtonYMD = setBackGround(unit === "ymd");
-  const ConditionDetailParamButton1H = setBackGround(unit === "1H");
+  const ConditionDetailParamButtonY = setBackGround(isMobile, unit === "y");
+  const ConditionDetailParamButtonYM = setBackGround(isMobile, unit === "ym");
+  const ConditionDetailParamButtonYMD = setBackGround(isMobile, unit === "ymd");
+  const ConditionDetailParamButton1H = setBackGround(isMobile, unit === "1H");
+
+  if (isMobile) {
+    ConditionDetailParamAreaY = styled(ConditionDetailParamAreaY)`
+      display: block;
+      padding-bottom: 5%;
+      width: 100%;
+    `;
+    ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaYM)`
+      display: block;
+      padding-bottom: 5%;
+      width: 100%;
+      margin-top: 2%;
+      margin-left: 0%;
+    `;
+
+    ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaYMD)`
+      display: block;
+      padding-bottom: 5%;
+      width: 100%;
+      margin-top: 2%;
+      margin-left: 0%;
+    `;
+
+    ConditionDetailParamArea1H = styled(ConditionDetailParamArea1H)`
+      display: block;
+      padding-bottom: 5%;
+      width: 100%;
+      margin-top: 2%;
+      margin-left: 0%;
+    `;
+
+    ConditionDetailParamButtonDiv = styled(ConditionDetailParamButtonDiv)`
+      display: none;
+    `;
+
+    const setBackGround = (is_target, Component) => { 
+      return is_target ? styled(Component)` background: #6DDCFF;` : styled(Component)` background: #fff;`
+    };
+  
+    ConditionDetailParamAreaY = setBackGround(unit === "y", ConditionDetailParamAreaY);
+    ConditionDetailParamAreaYM = setBackGround(unit === "ym", ConditionDetailParamAreaYM);
+    ConditionDetailParamAreaYMD = setBackGround(unit === "ymd", ConditionDetailParamAreaYMD);
+    ConditionDetailParamArea1H = setBackGround(unit === "1H", ConditionDetailParamArea1H);
+  }
 
   return (
     <div>
       <ConditionDetailArea1>
         <ConditionDetailParamArea>
-          <ConditionDetailParamArea1 
+          <ConditionDetailParamAreaY 
             onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
             <ConditionDetailParamLabel>
@@ -83,8 +139,8 @@ const ConditionDetailFirst = (props) => {
             <ConditionDetailParamButtonDiv>
               <ConditionDetailParamButtonY />
             </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamArea1>
-          <ConditionDetailParamArea2 
+          </ConditionDetailParamAreaY>
+          <ConditionDetailParamAreaYM 
             onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
             <ConditionDetailParamLabel>
@@ -93,8 +149,8 @@ const ConditionDetailFirst = (props) => {
             <ConditionDetailParamButtonDiv>
               <ConditionDetailParamButtonYM />
             </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamArea2>
-          <ConditionDetailParamArea2 
+          </ConditionDetailParamAreaYM>
+          <ConditionDetailParamAreaYMD 
             onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
             <ConditionDetailParamLabel>
@@ -103,8 +159,8 @@ const ConditionDetailFirst = (props) => {
             <ConditionDetailParamButtonDiv>
               <ConditionDetailParamButtonYMD />
             </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamArea2>
-          <ConditionDetailParamArea2 
+          </ConditionDetailParamAreaYMD>
+          <ConditionDetailParamArea1H 
             onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
             <ConditionDetailParamLabel>
@@ -113,7 +169,7 @@ const ConditionDetailFirst = (props) => {
             <ConditionDetailParamButtonDiv>
               <ConditionDetailParamButton1H />
             </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamArea2>
+          </ConditionDetailParamArea1H>
         </ConditionDetailParamArea>
       </ConditionDetailArea1>
     </div>

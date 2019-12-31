@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { AppProvider, Spinner } from '@shopify/polaris';
 import styled from 'styled-components';
+import { isMobile } from "react-device-detect";
 import FooterLogo from '../../../components/ver2/FooterLogo'
 import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
@@ -142,6 +143,11 @@ const EnergyCharts = (props) => {
 
   AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (350 * checkedCount)}px`;
   Content = styled(Content)`height: ${350 + (350 * checkedCount)}px`;
+
+  if(isMobile){
+    AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (400 * checkedCount)}px`;
+    Content = styled(Content)`height: ${350 + (400 * checkedCount)}px`;
+  }
 
   return (
     <AnalyzeArea>

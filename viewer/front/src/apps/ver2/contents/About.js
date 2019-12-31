@@ -110,27 +110,35 @@ const About = (props) => {
 
     if (lang === "en"){
       ContentArea = styled(ContentArea)`
-      width: 92%;
       height: 700%;
-      left: 4%;
+      width: 100%;
+      padding-left: 0.1%;
+      margin-left: 0.1%;
+      background: none;
+      left: 0%;
+      right: 0%;
     `;
     } else {
       ContentArea = styled(ContentArea)`
-      width: 92%;
       height: 600%;
-      left: 4%;
+      width: 100%;
+      padding-left: 0.1%;
+      margin-left: 0.1%;
+      background: none;
+      left: 0%;
+      right: 0%;
     `;
     }
 
     ContentTitle = styled(ContentTitle)`
       top: 2%;
-      left: 30%;
+      left: 34%;
     `;
 
     Content = styled(Content)`
       height: 78%;
       top: 12%;
-      left: 3%;
+      left: 2%;
     `;
 
     Text1 = styled(Text1)`

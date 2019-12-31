@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ConditionDetailFirst from './ConditionDetailFirst'
 import ConditionDetailSecond from './ConditionDetailSecond'
 import ConditionDetailThird from './ConditionDetailThird'
+import { isMobile } from "react-device-detect";
 
 const Condition = (props) => {
 
@@ -11,12 +12,12 @@ const Condition = (props) => {
   const electoric_power_company = props.electoric_power_company;
   const electoric_power_resource = props.electoric_power_resource;
 
-  const ConditionArea = styled.div`
+  let ConditionArea = styled.div`
     height: 500px;
     width: 95%;
 ` ;
 
-  const ConditionDetailTitle = styled.div`
+  let ConditionDetailTitle = styled.div`
     height: 0%;
     margin-top: 3%;
     padding-bottom: 3%;
@@ -30,6 +31,18 @@ const Condition = (props) => {
 
     color: #000;
   ` ;
+
+  if (isMobile) {
+    ConditionArea = styled(ConditionArea)`
+      height: 1500px;
+    `;
+
+    ConditionDetailTitle = styled(ConditionDetailTitle)`
+      margin-left: 9%;
+      padding-bottom: 12%;
+      font-size: 16px;
+    `;
+  }
   
   return (
     <div>

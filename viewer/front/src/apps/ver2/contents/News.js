@@ -101,9 +101,13 @@ let ShareButtonArea = styled.div`
   if (isMobile) {
     ContentArea = styled(ContentArea)`
     height: 609px;
+    width: 100%;
+    padding-left: 0.1%;
+    margin-left: 0.1%;
+    background: none;
     `;
     ContentTitle = styled(ContentTitle)`
-      padding-left: 33%;
+      padding-left: 37%;
       margin-top: 3%;
     `;
     Content = styled(Content)`
@@ -115,6 +119,16 @@ let ShareButtonArea = styled.div`
 
     Text2 = styled(Text2)`
       font-size: 18px;
+    `;
+
+    ShareButtonArea = styled(ShareButtonArea)`
+      padding-left: 50%;
+    `;
+
+    LogoArea = styled(LogoArea)`
+      width: 62%;
+      top: 93%;
+      margin-left: -2%;
     `;
   }
 
