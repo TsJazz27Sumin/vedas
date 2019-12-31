@@ -84,6 +84,7 @@ const TopBar = (props) => {
       display: none;
     `;
     MobileDropbtn = styled(MobileDropbtn)`
+      display: block;
       padding-top: 30%;
       padding-bottom: 20%;
       padding-right: 30%;

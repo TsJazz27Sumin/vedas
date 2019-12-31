@@ -365,6 +365,7 @@ const Contact = (props) => {
     ContactInformationLabel = styled(ContactInformationLabel)`
       height: 10%;
       top: 45%;
+      width: 50%;
       font-size: 16px;
     `;
 
