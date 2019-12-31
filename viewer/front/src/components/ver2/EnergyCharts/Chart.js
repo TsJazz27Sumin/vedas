@@ -48,7 +48,7 @@ const Chart = (props) => {
   }
 
   return (
-    <ResponsiveContainer width='95%' aspect={aspect}>
+    <ResponsiveContainer width={isMobile ? '100%' : '95%'} aspect={aspect}>
       <LineChart data={props.energy_data}
         margin={{ top: 30, right: 30, left: 30, bottom: 5 }}>
         <XAxis dataKey="name" />

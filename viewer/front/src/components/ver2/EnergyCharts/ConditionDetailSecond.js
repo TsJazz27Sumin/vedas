@@ -92,7 +92,6 @@ const ConditionDetailSecond = (props) => {
 
   if (isMobile) {
     ConditionDetailArea2 = styled(ConditionDetailArea2)`
-      height: 600px;
       background: none;
     `;
     ConditionDetailParamButtonAll = styled(ConditionDetailParamButtonAll)`display:none`;
@@ -110,13 +109,14 @@ const ConditionDetailSecond = (props) => {
 
     ConditionDetailParam = styled(ConditionDetailParam)`
       width: 100%;
-      margin-top:1%;
-      margin-bottom:1%;
+      margin-top:2%;
+      margin-bottom:2%;
       padding-bottom: 4%;
+      border-radius: 10px;
     `;
 
     const setBackGround = (checked) => {
-      return checked ? styled(ConditionDetailParam)` background: #6DDCFF;` : styled(ConditionDetailParam)` background: #fff;`
+      return checked ? styled(ConditionDetailParam)` background: #6DDCFF;` : styled(ConditionDetailParam)` background: #efefef;`
     };
       
     ConditionDetailParamAll = setBackGround(allChecked);

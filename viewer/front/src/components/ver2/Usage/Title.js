@@ -18,9 +18,9 @@ const Title = () => {
   if (isMobile) {
     ContentTitle = styled(ContentTitle)`
       top: 1%;
-      padding-left: 32%;
+      padding-left: 35%;
       padding-bottom: 2%;
-      padding-top: 7%;
+      padding-top: 3%;
     `;
   }
 

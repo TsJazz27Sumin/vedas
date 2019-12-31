@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-
+import { isMobile } from "react-device-detect";
 
 const ConditionDetailThird = (props) => {
 
@@ -15,7 +15,7 @@ const ConditionDetailThird = (props) => {
     border-radius: 16px;
   ` ;
 
-  const ConditionDetailParam = styled.div`
+  let ConditionDetailParam = styled.div`
   display: inline-block;
   padding: 1%;
   width: 16.5%;
@@ -36,7 +36,7 @@ const ConditionDetailThird = (props) => {
   color: #000;
 ` ;
 
-  const ConditionDetailParamButton = styled.button`
+  let ConditionDetailParamButton = styled.button`
   background: #6DDCFF;
   width: 100%;
   padding-top: 3%;
@@ -55,23 +55,38 @@ const ConditionDetailThird = (props) => {
   border-radius: 12px;
 ` ;
 
-  const setBackGround = (checked) => { 
+  const setBackGround = (isMobile, checked) => {
+    if (isMobile){
+      ConditionDetailParamButton = styled(ConditionDetailParamButton)`
+        text-align: left;
+        padding-left: 5%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+      `;
+    } 
     return checked ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
   };
 
-  const ConditionDetailParamButtonDemand = setBackGround(energyResoursesChecked.demandChecked);
-  const ConditionDetailParamButtonNuclear = setBackGround(energyResoursesChecked.nuclearChecked);
-  const ConditionDetailParamButtonThermal = setBackGround(energyResoursesChecked.thermalChecked);
-  const ConditionDetailParamButtonHydro = setBackGround(energyResoursesChecked.hydroChecked);
-  const ConditionDetailParamButtonGeothermal = setBackGround(energyResoursesChecked.geothermalChecked);
-  const ConditionDetailParamButtonBiomass = setBackGround(energyResoursesChecked.biomassChecked);
-  const ConditionDetailParamButtonSolar = setBackGround(energyResoursesChecked.solarChecked);
-  const ConditionDetailParamButtonSolarOutputControl = setBackGround(energyResoursesChecked.solarOutputControlChecked);
-  const ConditionDetailParamButtonWind = setBackGround(energyResoursesChecked.windChecked);
-  const ConditionDetailParamButtonWindOutputControl = setBackGround(energyResoursesChecked.windOutputControlChecked);
-  const ConditionDetailParamButtonPumping = setBackGround(energyResoursesChecked.pumpingChecked);
-  const ConditionDetailParamButtonInterconnection = setBackGround(energyResoursesChecked.interconnectionChecked);
+  const ConditionDetailParamButtonDemand = setBackGround(isMobile, energyResoursesChecked.demandChecked);
+  const ConditionDetailParamButtonNuclear = setBackGround(isMobile, energyResoursesChecked.nuclearChecked);
+  const ConditionDetailParamButtonThermal = setBackGround(isMobile, energyResoursesChecked.thermalChecked);
+  const ConditionDetailParamButtonHydro = setBackGround(isMobile, energyResoursesChecked.hydroChecked);
+  const ConditionDetailParamButtonGeothermal = setBackGround(isMobile, energyResoursesChecked.geothermalChecked);
+  const ConditionDetailParamButtonBiomass = setBackGround(isMobile, energyResoursesChecked.biomassChecked);
+  const ConditionDetailParamButtonSolar = setBackGround(isMobile, energyResoursesChecked.solarChecked);
+  const ConditionDetailParamButtonSolarOutputControl = setBackGround(isMobile, energyResoursesChecked.solarOutputControlChecked);
+  const ConditionDetailParamButtonWind = setBackGround(isMobile, energyResoursesChecked.windChecked);
+  const ConditionDetailParamButtonWindOutputControl = setBackGround(isMobile, energyResoursesChecked.windOutputControlChecked);
+  const ConditionDetailParamButtonPumping = setBackGround(isMobile, energyResoursesChecked.pumpingChecked);
+  const ConditionDetailParamButtonInterconnection = setBackGround(isMobile, energyResoursesChecked.interconnectionChecked);
 
+  if (isMobile){
+    ConditionDetailParam = styled(ConditionDetailParam)`
+      display:block;
+      width: 100%;
+      border-radius: 10px;
+    `;
+  }
   return (
     <div>
       <ConditionDetailArea3>

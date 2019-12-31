@@ -107,7 +107,7 @@ let ShareButtonArea = styled.div`
     background: none;
     `;
     ContentTitle = styled(ContentTitle)`
-      padding-left: 37%;
+      padding-left: 38%;
       margin-top: 3%;
     `;
     Content = styled(Content)`

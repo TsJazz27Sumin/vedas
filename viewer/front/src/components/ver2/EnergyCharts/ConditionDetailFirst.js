@@ -83,6 +83,10 @@ const ConditionDetailFirst = (props) => {
   const ConditionDetailParamButton1H = setBackGround(isMobile, unit === "1H");
 
   if (isMobile) {
+    ConditionDetailArea1 = styled(ConditionDetailArea1)`
+      background:none;
+    `;
+
     ConditionDetailParamAreaY = styled(ConditionDetailParamAreaY)`
       display: block;
       padding-bottom: 5%;
@@ -110,6 +114,7 @@ const ConditionDetailFirst = (props) => {
       width: 100%;
       margin-top: 2%;
       margin-left: 0%;
+      display: none;
     `;
 
     ConditionDetailParamButtonDiv = styled(ConditionDetailParamButtonDiv)`
@@ -117,7 +122,7 @@ const ConditionDetailFirst = (props) => {
     `;
 
     const setBackGround = (is_target, Component) => { 
-      return is_target ? styled(Component)` background: #6DDCFF;` : styled(Component)` background: #fff;`
+      return is_target ? styled(Component)` background: #6DDCFF;` : styled(Component)` background: #efefef;`
     };
   
     ConditionDetailParamAreaY = setBackGround(unit === "y", ConditionDetailParamAreaY);

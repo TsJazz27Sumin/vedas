@@ -72,7 +72,7 @@ const EnergyCharts = (props) => {
     border-radius: 16px;
   `;
 
-  const ConditionDetailTitle = styled.div`
+  let ConditionDetailTitle = styled.div`
     height: 0%;
     margin-top: 3%;
     padding-bottom: 3%;
@@ -130,6 +130,9 @@ const EnergyCharts = (props) => {
     color: rgba(0, 0, 0, 0.34);
     `;
 
+  let ChartsAreaUl = styled.ul`
+  `;
+
   let ShareButtonArea = styled.div`
     margin-top: 5%;
     margin-left: 37%;
@@ -145,8 +148,42 @@ const EnergyCharts = (props) => {
   Content = styled(Content)`height: ${350 + (350 * checkedCount)}px`;
 
   if(isMobile){
-    AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (400 * checkedCount)}px`;
-    Content = styled(Content)`height: ${350 + (400 * checkedCount)}px`;
+    AnalyzeArea = styled(AnalyzeArea)`
+      background:none;
+      width: 100%;
+      left: 0%;
+      right: 0%;
+    `;
+    AnalyzeArea = styled(AnalyzeArea)`height: ${2450 + (400 * checkedCount)}px`;
+    Content = styled(Content)`
+      background:none;
+    `;
+    Content = styled(Content)`height: ${1350 + (400 * checkedCount)}px`;
+
+    ConditionDetailTitle = styled(ConditionDetailTitle)`
+      margin-top: 0%;
+      padding-bottom: 12%;
+    `;
+
+    RangeSelectArea = styled(RangeSelectArea)`
+      width: 100%;
+      margin-left: 0%;
+      padding-top: 6%;
+    `;
+
+    DateSelectArea = styled(DateSelectArea)`
+      width: 100%;
+      margin-left: 0%;
+    `;
+
+    ChartsAreaUl = styled(ChartsAreaUl)`
+      margin-left: -10%;
+    `;
+
+    ShareButtonArea = styled(ShareButtonArea)`
+      margin-top: 10%;
+      margin-left: 9%;
+    `;
   }
 
   return (
@@ -194,14 +231,14 @@ const EnergyCharts = (props) => {
               </ul>
             )
             :
-            (<ul>
+            (<ChartsAreaUl>
               <CompanyEnergyCharts
                 data={electoric_power_data.data}
                 dict={dict}
                 electricPowersChecked={electoric_power_company.Checked}
                 energyResoursesChecked={electoric_power_resource.Checked}
               />
-            </ul>
+            </ChartsAreaUl>
             )
         }
         </AppProvider>

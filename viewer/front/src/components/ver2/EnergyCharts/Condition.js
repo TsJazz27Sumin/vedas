@@ -34,10 +34,11 @@ const Condition = (props) => {
 
   if (isMobile) {
     ConditionArea = styled(ConditionArea)`
-      height: 1500px;
+      height: 1860px;
     `;
 
     ConditionDetailTitle = styled(ConditionDetailTitle)`
+      margin-top: 5%;
       margin-left: 9%;
       padding-bottom: 12%;
       font-size: 16px;
@@ -45,16 +46,14 @@ const Condition = (props) => {
   }
   
   return (
-    <div>
-      <ConditionArea>
-        <ConditionDetailTitle><p>{dict.analyze_condtion_text1}</p></ConditionDetailTitle>
-        <ConditionDetailFirst dict={dict} electoric_power_data={electoric_power_data}/>
-        <ConditionDetailTitle><p>{dict.analyze_condtion_text2}</p></ConditionDetailTitle>
-        <ConditionDetailSecond dict={dict} electoric_power_company={electoric_power_company}/>
-        <ConditionDetailTitle><p>{dict.analyze_condtion_text3}</p></ConditionDetailTitle>
-        <ConditionDetailThird dict={dict} electoric_power_resource={electoric_power_resource}/>
-      </ConditionArea>
-    </div>
+    <ConditionArea>
+      <ConditionDetailTitle><p>{dict.analyze_condtion_text1}</p></ConditionDetailTitle>
+      <ConditionDetailFirst dict={dict} electoric_power_data={electoric_power_data}/>
+      <ConditionDetailTitle><p>{dict.analyze_condtion_text2}</p></ConditionDetailTitle>
+      <ConditionDetailSecond dict={dict} electoric_power_company={electoric_power_company}/>
+      <ConditionDetailTitle><p>{dict.analyze_condtion_text3}</p></ConditionDetailTitle>
+      <ConditionDetailThird dict={dict} electoric_power_resource={electoric_power_resource}/>
+    </ConditionArea>
   )
 }
 
