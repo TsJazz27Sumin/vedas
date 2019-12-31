@@ -194,7 +194,7 @@ const About = (props) => {
     `;
 
     LogoArea = styled(LogoArea)`
-      top: 78.63%;
+      top: 93.63%;
     `;
     
   } 

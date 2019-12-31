@@ -84,7 +84,31 @@ const Contact = (props) => {
     window.scrollTo(0, 0);
   }, []);
 
-  let ContentArea = styled.div`
+  const VedasGrayBackgroundDiv = styled.div`
+    background: #efefef;
+  `;
+
+  const VedasWhiteBackgroundDiv = styled.div`
+    background: #fff;
+  `;
+
+  const FontFamilyRobotoDiv = styled.div`
+  font-family: Roboto;
+  `;
+
+  const FontFamilyMontserratDiv = styled.div`
+  font-family: Montserrat;
+  `;
+
+  const FontFamilyMontserratLabel = styled.label`
+  font-family: Montserrat;
+  `;
+
+  const FontFamilyMontserratInput = styled.input`
+  font-family: Montserrat;
+  `;
+
+  let ContentArea = styled(VedasGrayBackgroundDiv)`
     height: 1400px;
     width: 91%;
     position: absolute;
@@ -93,15 +117,14 @@ const Contact = (props) => {
     right: 4.1%;
     top: 100%;
     bottom: 10.65%;
-    background: #EFEFEF;
     border-radius: 54px;
   `;
 
-  let ContentTitle = styled.div`
+  let ContentTitle = styled(FontFamilyMontserratDiv)`
     position: absolute;
     left: 5%;
     top: 3%;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 600;
     font-size: 200%;
@@ -109,20 +132,19 @@ const Contact = (props) => {
     color: #25282B;
   `;
 
-  let Content = styled.div`
+  let Content = styled(VedasWhiteBackgroundDiv)`
     position: absolute;
     width: 92%;
     height: 1000px;
     left: 4%;
     top: 9%;
 
-    background: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 16px;
   `;
 
-  let Information = styled.div`
+  let Information = styled(FontFamilyRobotoDiv)`
     position: absolute;
     width: 90%;
     height: 10%;
@@ -130,7 +152,6 @@ const Contact = (props) => {
     top: 5%;
     color: #000;
 
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -141,13 +162,13 @@ const Contact = (props) => {
     color: #4e4e4e;
   `;
 
-  let FullNameLabel = styled.label`
+  let FullNameLabel = styled(FontFamilyMontserratLabel)`
     position: absolute;
     width: 40%;
     height: 10%;
     left: 5%;
     top: 21%;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -155,7 +176,7 @@ const Contact = (props) => {
     color: #464646;
   `; 
 
-  let FullNameInput = styled.input`
+  let FullNameInput = styled(FontFamilyMontserratInput)`
     position: absolute;
     width: 40%;
     height: 7%;
@@ -165,20 +186,20 @@ const Contact = (props) => {
     border: 1px solid rgba(0,0,0,0.34);
     box-sizing: border-box;
     border-radius: 4px;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     padding: 0 0 0 2%;
   `;
 
-  let EmailLabel = styled.label`
+  let EmailLabel = styled(FontFamilyMontserratLabel)`
     position: absolute;
     width: 40%;
     height: 10%;
     left: 54%;
     top: 21%;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -186,7 +207,7 @@ const Contact = (props) => {
     color: #464646;
   `; 
 
-  let EmailInput = styled.input`
+  let EmailInput = styled(FontFamilyMontserratInput)`
     position: absolute;
     width: 40%;
     height: 7%;
@@ -196,20 +217,20 @@ const Contact = (props) => {
     border: 1px solid rgba(0,0,0,0.34);
     box-sizing: border-box;
     border-radius: 4px;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     padding: 2% 2% 2% 2%;
   `;
 
-  let ContactInformationLabel = styled.label`
+  let ContactInformationLabel = styled(FontFamilyMontserratLabel)`
     position: absolute;
     width: 40%;
     height: 10%;
     left: 5%;
     top: 36%;
-    font-family: Montserrat;
+
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -236,7 +257,7 @@ const Contact = (props) => {
     padding: 2% 2% 2% 2%;
   `;
 
-  let Privacy = styled.div`
+  let Privacy = styled(FontFamilyRobotoDiv)`
     position: absolute;
     width: 90%;
     height: 10%;
@@ -245,7 +266,6 @@ const Contact = (props) => {
     line-height: 22px;
     color: #000;
 
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -317,41 +337,49 @@ const Contact = (props) => {
 
     Information = styled(Information)`
       line-height: 32px;
+      font-size: 16px;
     `;
 
     FullNameLabel = styled(FullNameLabel)`
       height: 4%;
       top: 34%;
+      font-size: 16px;
     `;
 
     FullNameInput = styled(FullNameInput)`
       height: 4%;
       top: 38%;
+      font-size: 16px;
     `;
 
     EmailLabel = styled(EmailLabel)`
       height: 4%;
       top: 34%;
+      font-size: 16px;
     `;
 
     EmailInput = styled(EmailInput)`
       height: 4%;
       top: 38%;
+      font-size: 16px;
     `;
 
     ContactInformationLabel = styled(ContactInformationLabel)`
       height: 10%;
       top: 45%;
+      font-size: 16px;
     `;
 
     ContactInformationTextArea = styled(ContactInformationTextArea)`
       height: 10%;
       top: 48%;
+      font-size: 16px;
     `;
 
     Privacy = styled(Privacy)`
       height: 10%;
       top: 63%;
+      font-size: 16px;
     `;
 
     PrivacyAccept = styled(PrivacyAccept)`
@@ -359,6 +387,7 @@ const Contact = (props) => {
       height: 7%;
       left: 20%;
       top: 86%;
+      font-size: 16px;
     `;
 
     LogoArea = styled(LogoArea)`

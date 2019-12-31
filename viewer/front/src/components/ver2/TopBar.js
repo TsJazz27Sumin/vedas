@@ -32,13 +32,16 @@ const TopBar = (props) => {
 
   if (isMobile){
     TopBarArea = styled(TopBarArea)`
-      width:100%;
+      width:420px;
+      border-radius: 12px;
+      background: #efefef;
+      opacity: 0.8;
     `;
     VedasLogoTopBar = styled(VedasLogoTopBar)`
       display: none;
     `;
     MobileDropbtn = styled(MobileDropbtn)`
-      padding-top: 20%;
+      padding-top: 30%;
       padding-bottom: 20%;
       padding-right: 30%;
       padding-left: 30%;
@@ -49,7 +52,6 @@ const TopBar = (props) => {
       font-weight: normal;
       font-size: 110%;
       background: #fff;
-      border: 2px solid #efefef;
     `;
     MobileDropdown = styled(MobileDropdown)`
       margin: 1%;
@@ -78,7 +80,7 @@ const TopBar = (props) => {
     MenuArea = styled(MenuArea)`
       position: absolute;
       width: 47%;
-      margin-left: 53%;
+      margin-left: 64%;
       padding-left: 0%;
       padding-right: 0%;
       top: 0%;
@@ -90,9 +92,10 @@ const TopBar = (props) => {
       display: none;
     `;
     MenuItemDropdownWrapper = styled(MenuItemDropdownWrapper)`
-      width: 100%;
-      padding-top: 2.5%;
-      padding-left: 18%;
+      width: 160px;
+      margin-top: 1%;
+      padding-top: 0%;
+      padding-left: 0%;
       padding-right: 0%;
       display: inline-block;
     `;
