@@ -7,6 +7,7 @@ import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
 import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
 import CompanyEnergyCharts from '../../../components/ver2/EnergyCharts/CompanyEnergyCharts'
+import WatchoutArea from '../../../components/ver2/EnergyCharts/WatchoutArea'
 import ShareButtons from '../../../components/ver2/ShareButtons'
 import wordDictionaryService from '../../../services/word_dictionary'
 import queryParamPerserService from '../../../services/query_param_perser'
@@ -133,32 +134,6 @@ const EnergyCharts = (props) => {
     margin-left: 37%;
   `;
 
-  let WatchoutArea = styled.div`
-    margin-left: 6%;
-  `;
-
-  let WatchoutTitle = styled.div`
-    margin-top: 10%;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 21px;
-
-    color: #000;
-  `;
-
-  let WatchoutTexts = styled.div`
-    margin-top: 5%;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 36px;
-
-    color: #000;
-  `;
-
   let LogoArea = styled.div`
     margin-top: 70px
     position: absolute;
@@ -167,7 +142,6 @@ const EnergyCharts = (props) => {
 
   AnalyzeArea = styled(AnalyzeArea)`height: ${1450 + (350 * checkedCount)}px`;
   Content = styled(Content)`height: ${350 + (350 * checkedCount)}px`;
-  WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
 
   return (
     <AnalyzeArea>
@@ -179,7 +153,8 @@ const EnergyCharts = (props) => {
         />
       <Content>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text4}</p></ConditionDetailTitle>
-        {electoric_power_data.is_range_slider_open ? (
+        {
+          electoric_power_data.is_range_slider_open ? (
           <RangeSelectArea>
             <AppProvider>
               <RangeSelect
@@ -228,17 +203,7 @@ const EnergyCharts = (props) => {
           <ShareButtons type="big"/>
         </ShareButtonArea>
       </Content>
-      <WatchoutArea>
-        <WatchoutTitle>
-          <p>{dict.watchout}</p>
-        </WatchoutTitle>
-        <WatchoutTexts>
-          <p>{dict.watchout_info2}</p>
-          <p>{dict.watchout_info3}</p>
-          <p>{dict.watchout_info4}</p>
-          <p>{dict.watchout_info5}</p>
-        </WatchoutTexts>
-      </WatchoutArea>
+      <WatchoutArea dict={dict} checkedCount={checkedCount}/>
       <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </AnalyzeArea>
   )

@@ -20,17 +20,60 @@ const TopBar = (props) => {
     width: 1440px;
     z-index: 999;
   `;
+  let VedasLogoTopBar = styled.div`
+      padding-top: 1.5%;
+      padding-left: 3%;
+      padding-bottom: 3%;
+      width: 245px;
+  `;
+  let MobileDropbtn = styled.button`
+      display: none;
+    `;
+  let MobileDropdown = styled.div`
+      display: none;
+    `;
+  let MobileDropdownContent = styled.div`
+      display: none;
+    `;
+  let MobileDropdownP = styled.p`
+      display: none;
+    `;
+  let MenuArea = styled.div`
+      position: absolute;
+      width: 53%;
+      margin-left: 45%;
+      padding-left: 3%;
+      padding-right: 2%;
+      height: 56%;
+      top: 17%;
 
-  let VedasLogoTopBar = styled.div``;
-  let MobileDropbtn = styled.button``;
-  let MobileDropdown = styled.div``;
-  let MobileDropdownContent = styled.div``;
-  let MobileDropdownP = styled.p``;
-  let MenuArea = styled.div``;
-  let MenuItem = styled.div``;
-  let MenuItemDropdownWrapper = styled.div``;
+      background: #EFEFEF;
+      border: 1px solid #fff;
+      box-sizing: border-box;
+      border-radius: 12px;
+    `;
+  let MenuItem = styled.div`
+      padding-left: 3%;
+      padding-right: 3%;
+      display: inline-block;
+      vertical-align: middle;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 140%;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      color: #4E4E4E;
+    `;
+  let MenuItemDropdownWrapper = styled.div`
+      width: 28%;
+      padding-top: 2.5%;
+      padding-left: 7%;
+      padding-right: 2%;
+      display: inline-block;
+    `;
 
-  if (isMobile){
+  if (isMobile) {
     TopBarArea = styled(TopBarArea)`
       width:420px;
       border-radius: 12px;
@@ -99,71 +142,17 @@ const TopBar = (props) => {
       padding-right: 0%;
       display: inline-block;
     `;
-  } else {
-    VedasLogoTopBar = styled(VedasLogoTopBar)`
-      padding-top: 1.5%;
-      padding-left: 3%;
-      padding-right: 83%;
-      padding-bottom: 3%;
-      cursor: pointer;
-    `;
-    MobileDropbtn = styled(MobileDropbtn)`
-      display: none;
-    `;
-    MobileDropdown = styled(MobileDropdown)`
-      display: none;
-    `;
-    MobileDropdownContent = styled(MobileDropdownContent)`
-      display: none;
-    `;
-    MobileDropdownP = styled(MobileDropdownP)`
-      display: none;
-    `;
-    MenuArea = styled(MenuArea)`
-      position: absolute;
-      width: 53%;
-      margin-left: 45%;
-      padding-left: 3%;
-      padding-right: 2%;
-      height: 56%;
-      top: 17%;
-
-      background: #EFEFEF;
-      border: 1px solid #fff;
-      box-sizing: border-box;
-      border-radius: 12px;
-    `;
-    MenuItem = styled(MenuItem)`
-      padding-left: 3%;
-      padding-right: 3%;
-      display: inline-block;
-      vertical-align: middle;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 140%;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      color: #4E4E4E;
-    `;
-    MenuItemDropdownWrapper = styled(MenuItemDropdownWrapper)`
-      width: 28%;
-      padding-top: 2.5%;
-      padding-left: 7%;
-      padding-right: 2%;
-      display: inline-block;
-    `;
   }
 
   const toggle_mobile_menu = () => {
     let element = document.getElementById('id-mobile-dropdown-content');
     element.classList.toggle("display-block");
   };
-  
+
   return (
     <TopBarArea>
       <VedasLogoTopBar>
-        <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo"/></a>
+        <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo" /></a>
       </VedasLogoTopBar>
       <MobileDropdown>
         <MobileDropbtn onClick={() => toggle_mobile_menu()} >Menu</MobileDropbtn>
@@ -190,12 +179,12 @@ const TopBar = (props) => {
         </MenuItem>
         <MenuItemDropdownWrapper>
           <AppProvider>
-          <Select
-            key="id-menu-item-dropdown"
-            options={[{value:"jp", label:"japanese"}, {value:"en", label:"english"}]}
-            onChange={(value) => handleLangChange(value)}
-            value={lang}
-          />
+            <Select
+              key="id-menu-item-dropdown"
+              options={[{ value: "jp", label: "japanese" }, { value: "en", label: "english" }]}
+              onChange={(value) => handleLangChange(value)}
+              value={lang}
+            />
           </AppProvider>
         </MenuItemDropdownWrapper>
       </MenuArea>
