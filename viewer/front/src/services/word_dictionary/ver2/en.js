@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "analyze_condtion_mobile_caution": "* We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
         "analyze_condtion_text1": "1. Please select a time period.",
         "analyze_condtion_text2": "2. Please select a power provider.",
         "analyze_condtion_text3": "3. Select the type of power generation you want to check.",

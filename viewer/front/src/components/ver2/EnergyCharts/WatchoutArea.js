@@ -34,10 +34,12 @@ const WatchoutArea = (props) => {
 `;
 
   if (isMobile) {
-    //nothing
+    WatchoutArea = styled(WatchoutArea)`margin-top: ${325 + (315 * checkedCount)}px; width: 89%;`;
+  } else {
+    WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
   }
 
-  WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
+  
 
   return (
     <WatchoutArea>

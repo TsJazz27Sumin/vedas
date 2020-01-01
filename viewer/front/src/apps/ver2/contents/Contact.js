@@ -244,17 +244,15 @@ const Contact = (props) => {
     height: 20%;
     left: 5%;
     top: 41%;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18x;
+    font-family: inherit;
+    font-size   : 100%;
     line-height: 20px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.34);
     box-sizing: border-box;
     border-radius: 4px;
     resize: none;
-    padding: 2% 2% 2% 2%;
+    padding: 1% 1% 1% 1%;
   `;
 
   let Privacy = styled(FontFamilyRobotoDiv)`
@@ -274,9 +272,9 @@ const Contact = (props) => {
 
   let PrivacyAccept = styled.button`
     position: absolute;
-    width: 36%;
+    width: 24%;
     height: 9%;
-    left: 32%;
+    left: 38%;
     top: 85%;
     background: #0084FF;
     border-radius: 4px;
@@ -307,27 +305,27 @@ const Contact = (props) => {
 
     ContentArea = styled(ContentArea)`
       height: 1000%;
-      width: 91%;
+      width: 95%;
       position: absolute;
       padding-top: 0%;
-      left: 4.1%;
-      right: 4.1%;
+      left: 0.1%;
+      right: 0.1%;
       top: 100%;
       bottom: 10.65%;
-      background: #EFEFEF;
+      background: none;
       border-radius: 54px;
     `;
 
     ContentTitle = styled(ContentTitle)`
       top: 2%;
-      padding-left: 23%;
+      padding-left: 26%;
     `;
 
     Content = styled(Content)`
       position: absolute;
-      width: 93%;
+      width: 100%;
       height: 89%;
-      left: 14px;
+      left: 2.4%;
       top: 8%;
       background: #fff;
       border: 1px solid #fff;
@@ -367,6 +365,7 @@ const Contact = (props) => {
     ContactInformationLabel = styled(ContactInformationLabel)`
       height: 10%;
       top: 45%;
+      width: 50%;
       font-size: 16px;
     `;
 
@@ -391,8 +390,9 @@ const Contact = (props) => {
     `;
 
     LogoArea = styled(LogoArea)`
-      height: 10%;
-      top: 77%;
+      width: 62%;
+      top: 94%;
+      padding-left: 1%;
     `;
   }
 

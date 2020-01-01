@@ -72,11 +72,19 @@ const Usage = (props) => {
   if (isMobile) {
     if (lang === "en"){
       ContentArea = styled(ContentArea)`
-      height: 2800px;
+      height: 2100px;
+      width: 100%;
+      background: none;
+      padding-left: 1%;
+      margin-left: 1%;
     `;
     } else {
       ContentArea = styled(ContentArea)`
-      height: 2500px;
+      height: 1800px;
+      width: 100%;
+      background: none;
+      padding-left: 1%;
+      margin-left: 1%;
     `;
     }
 
@@ -87,13 +95,18 @@ const Usage = (props) => {
     Text2 = styled(Text2)`
       display: none;
     `;
+
+    LogoArea = styled(LogoArea)`
+    margin-top: 0px;
+    margin-left: -3%;
+  `;
   }
 
   return (
     <ContentArea>
       <Title/>
       <Content1 dict={dict} Text1={Text1} Text2={Text2}/>
-      <Content2 dict={dict} Text1={Text1}/>
+      <Content2 dict={dict} lang={lang} Text1={Text1}/>
       <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )

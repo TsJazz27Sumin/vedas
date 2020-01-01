@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "analyze_condtion_mobile_caution": "※デスクトップPC、もしくはノートPCでのご利用をオススメします。モバイル版では機能の制限を行っています。",
         "analyze_condtion_text1": "1. 期間を選択してください。",
         "analyze_condtion_text2": "2. 電力事業者を選択してください。",
         "analyze_condtion_text3": "3. 調べたい発電の種類を選択してください。",
