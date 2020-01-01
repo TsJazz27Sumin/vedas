@@ -1,0 +1,43 @@
+body {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.display-block {
+  display: block;
+}
+
+@keyframes appeare {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.Polaris-Select {
+  position: relative !important;
+  width: 140px !important;
+  height: 51px !important;
+  padding-top: 6% !important;
+  padding-left: 8% !important;
+}
+
+.Polaris-Select__Content {
+  font-size: 1.8rem !important;
+}
+
+.Polaris-Select__Backdrop{
+  border:none !important;
+  background-color:#fff !important;
+  border-radius: 10px !important;
+}
+
+.Polaris-Select__Backdrop::after{
+  border-radius: 10px !important;
+}

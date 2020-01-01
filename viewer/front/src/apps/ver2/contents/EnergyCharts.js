@@ -16,6 +16,7 @@ import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_re
 import electoricPowerCompanyHook from '../../../custom_hooks/electoric_power_company'
 import dateSelectHook from '../../../custom_hooks/date_select'
 import electoricPowerDataHook from '../../../custom_hooks/electoric_power_data'
+import '../../../css/EnergyCharts.css';
 
 const EnergyCharts = (props) => {
 

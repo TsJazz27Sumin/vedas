@@ -16,6 +16,7 @@ import electoricPowerResourseHook from '../../custom_hooks/electoric_power_resou
 import electoricPowerCompanyHook from '../../custom_hooks/electoric_power_company'
 import dateSelectHook from '../../custom_hooks/date_select'
 import rangeSliderHook from '../../custom_hooks/electoric_power_data'
+import '../../css/Common_ver1.css';
 
 //memo:
 //cd ../supply-and-demand-viewer/viewer/front/

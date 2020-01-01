@@ -9,6 +9,7 @@ import Contact from './contents/Contact'
 import News from './contents/News'
 import Usage from './contents/Usage'
 import { isMobile } from "react-device-detect";
+import '../../css/Common.css';
 
 const Home = (props) => {
 

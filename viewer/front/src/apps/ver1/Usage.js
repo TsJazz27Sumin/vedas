@@ -5,6 +5,7 @@ import { AppProvider, Page, Layout, Frame, TextContainer, Link } from '@shopify/
 import '@shopify/polaris/styles.css';
 import VedasTopBar from '../../components/ver1/VedasTopBar'
 import wordDictionaryService from '../../services/word_dictionary'
+import '../../css/Common_ver1.css';
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Select, Stack } from '@shopify/polaris';
+import '../../..//css/EnergyCharts.css';
 import dateSelectContentsService from '../../../services/date_select_contents'
 
 const DateSelect = (props) => {

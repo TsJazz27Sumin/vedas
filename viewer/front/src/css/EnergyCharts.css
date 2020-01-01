@@ -1,0 +1,44 @@
+  /* SVGアニメーション用 */
+  .st1 {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    -webkit-animation: st1_anime 2s ease-in 0s;
+    animation: st1_anime 2s ease-in 0s;
+  }
+
+  .st2 {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    -webkit-animation: st2_anime 2s ease-in 0s;
+    animation: st2_anime 2s ease-in 0s;
+  }
+
+  @keyframes st1_anime {
+    0% {
+      stroke-dashoffset: 2000;
+      fill: transparent
+    }
+
+    50% {
+      fill: transparent;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes st2_anime {
+    0% {
+      stroke-dashoffset: 2000;
+      fill: transparent
+    }
+
+    50% {
+      fill: transparent;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }

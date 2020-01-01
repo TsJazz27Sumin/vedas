@@ -7,6 +7,7 @@ import Content2 from '../../../components/ver2/Usage/Content2'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
+import '../../../css/Usage.css';
 
 const Usage = (props) => {
 

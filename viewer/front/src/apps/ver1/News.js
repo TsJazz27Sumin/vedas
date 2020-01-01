@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { AppProvider, Page, Layout, Frame, Card } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import VedasTopBar from '../../components/ver1/VedasTopBar'
+import '../../css/Common_ver1.css';
 
 const News = (props) => {
 

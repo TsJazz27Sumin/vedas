@@ -6,6 +6,7 @@ import FooterLogoArea from '../../../components/ver2/News/FooterLogoArea'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
+import '../../../css/News.css';
 
 const News = (props) => {
 

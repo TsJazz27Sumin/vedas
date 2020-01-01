@@ -6,6 +6,7 @@ import '@shopify/polaris/styles.css';
 import axios from 'axios'
 import VedasTopBar from '../../components/ver1/VedasTopBar'
 import wordDictionaryService from '../../services/word_dictionary'
+import '../../css/Common_ver1.css';
 
 const Contact = (props) => {
 

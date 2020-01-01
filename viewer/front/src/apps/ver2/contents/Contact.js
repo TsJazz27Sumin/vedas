@@ -8,6 +8,7 @@ import FooterLogoArea from '../../../components/ver2/Contact/FooterLogoArea'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
+import '../../../css/Contact.css';
 
 const Contact = (props) => {
 
@@ -88,7 +89,7 @@ const Contact = (props) => {
       "contact_information": inputContactInformationNameRef.current.value
     };
     console.log(data);
-    axios.post(baseUrl + 'contact', data);
+    // axios.post(baseUrl + 'contact', data);
     setComplete(true);
     setEditItem('');
     window.scrollTo(0, 0);
