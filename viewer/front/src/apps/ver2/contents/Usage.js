@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogo from '../../../components/ver2/FooterLogo'
+import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import Title from '../../../components/ver2/Usage/Title'
 import Content1 from '../../../components/ver2/Usage/Content1'
 import Content2 from '../../../components/ver2/Usage/Content2'

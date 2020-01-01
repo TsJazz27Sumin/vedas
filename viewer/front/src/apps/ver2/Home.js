@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import HeroHeader from '../../components/ver2/HeroHeader'
-import HeroWithoutTitle from '../../components/ver2/HeroWithoutTitle'
-import TopBar from '../../components/ver2/TopBar'
+import HeroHeader from '../../components/ver2/Common/HeroHeader'
+import HeroWithoutTitle from '../../components/ver2/Common/HeroWithoutTitle'
+import TopBar from '../../components/ver2/Common/TopBar'
 import EnergyCharts from './contents/EnergyCharts'
 import About from './contents/About'
 import Contact from './contents/Contact'

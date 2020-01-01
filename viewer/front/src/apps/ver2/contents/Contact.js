@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import axios from 'axios'
-import FooterLogo from '../../../components/ver2/FooterLogo'
+import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";

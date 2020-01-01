@@ -3,13 +3,13 @@ import ReactGA from 'react-ga';
 import { AppProvider, Spinner } from '@shopify/polaris';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import FooterLogo from '../../../components/ver2/FooterLogo'
+import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
 import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
 import CompanyEnergyCharts from '../../../components/ver2/EnergyCharts/CompanyEnergyCharts'
 import WatchoutArea from '../../../components/ver2/EnergyCharts/WatchoutArea'
-import ShareButtons from '../../../components/ver2/ShareButtons'
+import ShareButtons from '../../../components/ver2/Common/ShareButtons'
 import wordDictionaryService from '../../../services/word_dictionary'
 import queryParamPerserService from '../../../services/query_param_perser'
 import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_resourse'

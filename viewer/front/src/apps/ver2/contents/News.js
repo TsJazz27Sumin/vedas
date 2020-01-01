@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogo from '../../../components/ver2/FooterLogo'
-import ShareButtons from '../../../components/ver2/ShareButtons'
+import FooterLogo from '../../../components/ver2/Common/FooterLogo'
+import ShareButtons from '../../../components/ver2/Common/ShareButtons'
 import styled from 'styled-components';
 import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
