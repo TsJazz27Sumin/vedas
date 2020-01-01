@@ -12,7 +12,7 @@ import { isMobile } from "react-device-detect";
 
 const Home = (props) => {
 
-  let initial_lang = props.lang;
+  const initial_lang = props.lang;
   const qs = props.qs;
 
   const [menu, setMenu] = useState('home');
