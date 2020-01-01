@@ -39,14 +39,10 @@ const Usage = (props) => {
     padding-top: 3%;
     padding-left: 3%;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 26px;
     line-height: 40px;
     border-radius: 54px;
-    
     color: #000;
-    
     border: 8px solid #fff;
   `;
 
@@ -54,11 +50,8 @@ const Usage = (props) => {
     padding-left: 3.8%;
     padding-top: 1%;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-
     color: #8C8C8C;
   `;
 

@@ -112,24 +112,15 @@ const Contact = (props) => {
     height: 1400px;
     width: 91%;
     position: absolute;
-    padding-top: 10%;
     left: 4.1%;
-    right: 4.1%;
     top: 100%;
-    bottom: 10.65%;
     border-radius: 54px;
   `;
 
   let ContentTitle = styled(FontFamilyMontserratDiv)`
     position: absolute;
     left: 5%;
-    top: 3%;
-
-    font-style: normal;
-    font-weight: 600;
-    font-size: 200%;
-    line-height: 54px;
-    color: #25282B;
+    top: 4%;
   `;
 
   let Content = styled(VedasWhiteBackgroundDiv)`
@@ -137,10 +128,8 @@ const Contact = (props) => {
     width: 92%;
     height: 1000px;
     left: 4%;
-    top: 9%;
-
+    top: 8%;
     border: 1px solid #fff;
-    box-sizing: border-box;
     border-radius: 16px;
   `;
 
@@ -150,10 +139,6 @@ const Contact = (props) => {
     height: 10%;
     left: 5%;
     top: 5%;
-    color: #000;
-
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 42px;
   `;
@@ -168,9 +153,6 @@ const Contact = (props) => {
     height: 10%;
     left: 5%;
     top: 21%;
-
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     color: #464646;
@@ -182,13 +164,8 @@ const Contact = (props) => {
     height: 7%;
     left: 5%;
     top: 25%;
-    background: #fff;
     border: 1px solid rgba(0,0,0,0.34);
-    box-sizing: border-box;
     border-radius: 4px;
-
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     padding: 0 0 0 2%;
   `;
@@ -199,9 +176,6 @@ const Contact = (props) => {
     height: 10%;
     left: 54%;
     top: 21%;
-
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     color: #464646;
@@ -213,13 +187,8 @@ const Contact = (props) => {
     height: 7%;
     left: 54%;
     top: 25%;
-    background: #fff;
     border: 1px solid rgba(0,0,0,0.34);
-    box-sizing: border-box;
     border-radius: 4px;
-
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     padding: 2% 2% 2% 2%;
   `;
@@ -230,9 +199,6 @@ const Contact = (props) => {
     height: 10%;
     left: 5%;
     top: 36%;
-
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     color: #464646;
@@ -247,9 +213,7 @@ const Contact = (props) => {
     font-family: inherit;
     font-size   : 100%;
     line-height: 20px;
-    background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.34);
-    box-sizing: border-box;
     border-radius: 4px;
     resize: none;
     padding: 1% 1% 1% 1%;
@@ -261,11 +225,7 @@ const Contact = (props) => {
     height: 10%;
     left: 5%;
     top: 65%
-    line-height: 22px;
     color: #000;
-
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 32px;
   `;
@@ -282,7 +242,6 @@ const Contact = (props) => {
 
   let PrivacyAcceptP = styled.p`
     font-family: Roboto;
-    font-style: normal;
     font-weight: bold;
     font-size: 20px;
     line-height: 22px;

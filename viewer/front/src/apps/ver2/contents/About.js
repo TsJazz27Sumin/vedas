@@ -22,9 +22,7 @@ const About = (props) => {
     position: absolute;
     padding-top: 10%;
     left: 4.1%;
-    right: 4.1%;
     top: 100%;
-    bottom: 10.65%;
     background: #EFEFEF;
     border-radius: 54px;
   `;
@@ -32,12 +30,8 @@ const About = (props) => {
   let ContentTitle = styled.div`
     position: absolute;
     left: 5%;
-    top: 2%;
+    top: 4%;
     font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 200%;
-    line-height: 54px;
     color: #25282B;
   `;
 
@@ -46,19 +40,16 @@ const About = (props) => {
     width: 92%;
     height: 80%;
     left: 4%;
-    top: 7%;
+    top: 8%;
 
     background: #fff;
     border: 1px solid #fff;
-    box-sizing: border-box;
     border-radius: 16px;
   `;
 
   let Text = styled.div`
     position: absolute;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     color: #000;
   `;
 

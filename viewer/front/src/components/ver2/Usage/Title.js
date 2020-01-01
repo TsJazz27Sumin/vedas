@@ -6,12 +6,9 @@ const Title = () => {
 
   let ContentTitle = styled.div`
     padding-left: 1.5%;
-    padding-bottom: 0.5%;
+    padding-top 2%;
+    padding-bottom: 2%;
     font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 200%;
-    line-height: 54px;
     color: #25282B;
   `;
 

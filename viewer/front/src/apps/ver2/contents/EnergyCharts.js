@@ -54,9 +54,7 @@ const EnergyCharts = (props) => {
     width: 91%;
     position: absolute;
     left: 4.1%;
-    right: 4.1%;
     top: 140%;
-    bottom: 10.65%;
     background: #EFEFEF;
     border-radius: 54px;
 ` ;
@@ -65,10 +63,8 @@ const EnergyCharts = (props) => {
     position: absolute;
     width: 90%;
     left: 5%;
-
     background: #fff;
     border: 1px solid #fff;
-    box-sizing: border-box;
     border-radius: 16px;
   `;
 
@@ -77,13 +73,9 @@ const EnergyCharts = (props) => {
     margin-top: 3%;
     padding-bottom: 3%;
     margin-left: 4%;
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 26px;
-
     color: #000;
   ` ;
 
@@ -97,7 +89,6 @@ const EnergyCharts = (props) => {
     padding-right: 2%;
     background: #F0F0F0;
     border: 1px solid #fff;
-    box-sizing: border-box;
     border-radius: 12px;
   `;
 
@@ -111,22 +102,14 @@ const EnergyCharts = (props) => {
     padding-right: 2%;
     background: #F0F0F0;
     border: 1px solid #fff;
-    box-sizing: border-box;
     border-radius: 12px;
   `;
 
   let DateSelectAreaHelp = styled.div`
-    margin-top: -3%;
+    margin-top: -3.5%;
     margin-left: 45%;
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-
     display: flex;
-
     color: rgba(0, 0, 0, 0.34);
     `;
 

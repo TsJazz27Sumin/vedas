@@ -28,14 +28,10 @@ const News = (props) => {
   `;
 
   let ContentTitle = styled.div`
-  padding-left: 1.5%;
-  padding-bottom: 0.5%;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 200%;
-  line-height: 54px;
-  color: #25282B;
+    padding-left: 1.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: #25282B;
 `;
 
   let Content = styled.div`
@@ -44,8 +40,6 @@ const News = (props) => {
 
   background: #fff;
   border: 1px solid #fff;
-  box-sizing: border-box;
-  border-radius: 16px;
   padding-bottom: 5%;
   border-radius: 16px;
 `;
@@ -61,28 +55,20 @@ let ShareButtonArea = styled.div`
   padding-left: 3%;
   padding-bottom: 3%;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 36px;
   line-height: 30px;
   border-radius: 54px;
-  
   color: #000;
-  
   border: 8px solid #fff;
 `;
 
   let Text2 = styled.div`
   padding-left: 3%;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 22px;
   line-height: 26px;
   border-radius: 54px;
-  
   color: #000;
-  
   border: 8px solid #fff;
 `;
 

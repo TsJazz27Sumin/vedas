@@ -14,22 +14,16 @@ const WatchoutArea = (props) => {
   let WatchoutTitle = styled.div`
   margin-top: 10%;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 28px;
   line-height: 21px;
-
   color: #000;
 `;
 
   let WatchoutTexts = styled.div`
   margin-top: 5%;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 36px;
-
   color: #000;
 `;
 

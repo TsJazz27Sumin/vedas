@@ -19,7 +19,6 @@ const Content2 = (props) => {
   height: 72%;
   left: 4%;
   margin-top: 7%;
-
   background: #fff;
   border: 1px solid #fff;
   box-sizing: border-box;
@@ -56,13 +55,9 @@ const Content2 = (props) => {
     padding-top: 5%;
     padding-left: 22%;
     width: 95%;
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 42px;
     line-height: 49px;
-
     color: #000;
   `;
 

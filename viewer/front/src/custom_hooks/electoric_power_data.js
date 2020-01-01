@@ -20,7 +20,7 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     ) ? parseInt(initialize.year_initialize) : today.getFullYear();
     const month_initialize = (
         initialize.month_initialize !== undefined
-    ) ? parseInt(initialize.month_initialize) : today.getMonth();
+    ) ? parseInt(initialize.month_initialize) : today.getMonth() + 1;
     const date_initialize = (
         initialize.date_initialize !== undefined
     ) ? parseInt(initialize.date_initialize) : 1;

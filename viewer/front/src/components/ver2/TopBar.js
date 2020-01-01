@@ -50,8 +50,6 @@ const TopBar = (props) => {
       display: inline-block;
       vertical-align: middle;
       font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
       font-size: 140%;
       letter-spacing: 0.03em;
       cursor: pointer;
