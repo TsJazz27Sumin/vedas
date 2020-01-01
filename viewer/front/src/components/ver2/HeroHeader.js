@@ -31,14 +31,24 @@ const HeroHeader = (props) => {
   const public_url = process.env.PUBLIC_URL;
 
   if (isMobile) {
-    Hero = styled(Hero)`
-      padding-top: 15%;
-    `;
-
-    MainTitle = styled(MainTitle)`
-      padding-left: 15%;
-      padding-right: 15%;
-    `;
+    if(lang === "ch"){
+      Hero = styled(Hero)`
+        padding-top: 15%;
+      `;
+      MainTitle = styled(MainTitle)`
+        padding-right: 24%;
+        padding-left: 24%;
+        margin-left: -8%;
+      `;
+    } else {
+      Hero = styled(Hero)`
+        padding-top: 15%;
+      `;
+      MainTitle = styled(MainTitle)`
+        padding-left: 15%;
+        padding-right: 15%;
+      `;
+    }
 
     VedasLogo = styled(VedasLogo)`
       padding-left: 30%;

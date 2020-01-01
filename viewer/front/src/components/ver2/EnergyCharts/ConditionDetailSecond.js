@@ -120,7 +120,7 @@ const ConditionDetailSecond = (props) => {
     };
       
     ConditionDetailParamAll = styled(ConditionDetailParam)` display:none;`
-    ConditionDetailParamJapan = styled(ConditionDetailParam)` display:none;`
+    ConditionDetailParamJapan = setBackGround(electricPowersChecked.japanChecked);
     ConditionDetailParamHepco = setBackGround(electricPowersChecked.hepcoChecked);
     ConditionDetailParamTohokuepco = setBackGround(electricPowersChecked.tohokuepcoChecked);
     ConditionDetailParamRikuden = setBackGround(electricPowersChecked.rikudenChecked);

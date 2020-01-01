@@ -154,11 +154,11 @@ const EnergyCharts = (props) => {
       left: 0%;
       right: 0%;
     `;
-    AnalyzeArea = styled(AnalyzeArea)`height: ${2450 + (400 * checkedCount)}px`;
+    AnalyzeArea = styled(AnalyzeArea)`height: ${2000 + (300 * checkedCount)}px`;
     Content = styled(Content)`
       background:none;
     `;
-    Content = styled(Content)`height: ${1350 + (400 * checkedCount)}px`;
+    Content = styled(Content)`height: ${800 + (300 * checkedCount)}px`;
 
     ConditionDetailTitle = styled(ConditionDetailTitle)`
       margin-top: 0%;
@@ -183,6 +183,11 @@ const EnergyCharts = (props) => {
     ShareButtonArea = styled(ShareButtonArea)`
       margin-top: 10%;
       margin-left: 9%;
+    `;
+
+    LogoArea = styled(LogoArea)`
+      margin-top: 50px;
+      margin-bottom: 50px;
     `;
   }
 

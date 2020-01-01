@@ -47,7 +47,7 @@ const Condition = (props) => {
 
   if (isMobile) {
     ConditionArea = styled(ConditionArea)`
-      height: 1860px;
+      height: 1500px;
     `;
 
     ConditionDetailTitle = styled(ConditionDetailTitle)`
