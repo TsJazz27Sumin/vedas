@@ -8,6 +8,7 @@ const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 const TopBar = (props) => {
 
   const lang = props.lang;
+  const menu = props.menu;
   const handleMenuChange = props.handleMenuChange;
   const handleLangChange = props.handleLangChange;
   const public_url = process.env.PUBLIC_URL;
@@ -26,16 +27,7 @@ const TopBar = (props) => {
       padding-bottom: 3%;
       width: 245px;
   `;
-  let MobileDropbtn = styled.button`
-      display: none;
-    `;
   let MobileDropdown = styled.div`
-      display: none;
-    `;
-  let MobileDropdownContent = styled.div`
-      display: none;
-    `;
-  let MobileDropdownP = styled.p`
       display: none;
     `;
   let MenuArea = styled.div`
@@ -75,58 +67,28 @@ const TopBar = (props) => {
 
   if (isMobile) {
     TopBarArea = styled(TopBarArea)`
-      width:420px;
+      width:100%;
+      height: 8%;
       border-radius: 12px;
       background: #efefef;
-      opacity: 0.8;
+      opacity: 0.7;
     `;
     VedasLogoTopBar = styled(VedasLogoTopBar)`
       display: none;
-    `;
-    MobileDropbtn = styled(MobileDropbtn)`
-      display: block;
-      padding-top: 30%;
-      padding-bottom: 20%;
-      padding-right: 30%;
-      padding-left: 30%;
-      border: none;
-      border-radius: 12px;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 110%;
-      background: #fff;
     `;
     MobileDropdown = styled(MobileDropdown)`
       margin: 1%;
       position: relative;
       display: inline-block;
     `;
-    MobileDropdownContent = styled(MobileDropdownContent)`
-      display: none;
-      position: absolute;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      border-radius: 12px;
-      background: #fff;
-    `;
-    MobileDropdownP = styled(MobileDropdownP)`
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 110%;
-      cursor: pointer;
-    `;
     MenuArea = styled(MenuArea)`
       position: absolute;
-      width: 47%;
-      margin-left: 64%;
+      height: 0%;
+      width: 100%;
+      margin-left: 0%;
       padding-left: 0%;
       padding-right: 0%;
+      margin-right: 10%;
       top: 0%;
       border: 1px solid #fff;
       box-sizing: border-box;
@@ -138,6 +100,7 @@ const TopBar = (props) => {
     MenuItemDropdownWrapper = styled(MenuItemDropdownWrapper)`
       width: 160px;
       margin-top: 1%;
+      margin-right: 25%;
       padding-top: 0%;
       padding-left: 0%;
       padding-right: 0%;
@@ -145,26 +108,11 @@ const TopBar = (props) => {
     `;
   }
 
-  const toggle_mobile_menu = () => {
-    let element = document.getElementById('id-mobile-dropdown-content');
-    element.classList.toggle("display-block");
-  };
-
   return (
     <TopBarArea>
       <VedasLogoTopBar>
         <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo" /></a>
       </VedasLogoTopBar>
-      <MobileDropdown>
-        <MobileDropbtn onClick={() => toggle_mobile_menu()} >Menu</MobileDropbtn>
-        <MobileDropdownContent id="id-mobile-dropdown-content">
-          <MobileDropdownP onTouchStart={() => handleMenuChange('home')}>Home</MobileDropdownP>
-          <MobileDropdownP onTouchStart={() => handleMenuChange('usage')}>Usage</MobileDropdownP>
-          <MobileDropdownP onTouchStart={() => handleMenuChange('about')}>About</MobileDropdownP>
-          <MobileDropdownP onTouchStart={() => handleMenuChange('news')}>News</MobileDropdownP>
-          <MobileDropdownP onTouchStart={() => handleMenuChange('contact')}>Contact</MobileDropdownP>
-        </MobileDropdownContent>
-      </MobileDropdown>
       <MenuArea>
         <MenuItem>
           <p onClick={() => handleMenuChange('usage')}>Usage</p>
@@ -181,7 +129,7 @@ const TopBar = (props) => {
         <MenuItemDropdownWrapper>
           <AppProvider>
             <Select
-              key="id-menu-item-dropdown"
+              key="id-lang-item-dropdown"
               options={[
                 { value: "jp", label: "japanese" }, 
                 { value: "en", label: "english" }, 
@@ -192,6 +140,22 @@ const TopBar = (props) => {
             />
           </AppProvider>
         </MenuItemDropdownWrapper>
+              <MobileDropdown>
+        <AppProvider>
+          <Select
+            key="id-menu-item-dropdown"
+            options={[
+              { value: "home", label: "home" }, 
+              { value: "usage", label: "usage" }, 
+              { value: "about", label: "about" },
+              { value: "news", label: "news" },
+              { value: "contact", label: "contact" },
+            ]}
+            onChange={(value) => handleMenuChange(value)}
+            value={menu}
+          />
+        </AppProvider>
+      </MobileDropdown>
       </MenuArea>
     </TopBarArea>
   )

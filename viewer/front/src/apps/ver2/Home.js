@@ -70,7 +70,7 @@ const Home = (props) => {
 
   return (
     <OutLine>
-      <TopBar lang={lang} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
+      <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
       {hero}
       {content}
     </OutLine>
