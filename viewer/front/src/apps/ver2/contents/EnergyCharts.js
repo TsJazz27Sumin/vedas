@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import { AppProvider, Spinner } from '@shopify/polaris';
 import styled from 'styled-components';
@@ -23,6 +23,7 @@ const EnergyCharts = (props) => {
   const lang = props.lang;
 
   useEffect(() => {
+    //TODO:毎回呼ばれる。
     const pathname = '/' + lang + '/home';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
@@ -49,6 +50,13 @@ const EnergyCharts = (props) => {
   const checkedCount = electoric_power_company.CheckedCount;
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
+
+  useEffect(() => {
+    console.log('useEffect');
+    const pathname = '/' + lang + '/home';
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
+  });
 
   let AnalyzeArea = styled.div`
     height: 5300px
