@@ -1,5 +1,7 @@
 const get = () => {
     const word_dictionary = {
+        "error_message1": "Required input.",
+        "error_message2": "Invalid email address.",
         "analyze_condtion_mobile_caution": "* We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
         "analyze_condtion_text1": "1. Please select a time period.",
         "analyze_condtion_text2": "2. Please select a power provider.",
@@ -13,9 +15,9 @@ const get = () => {
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",
         "contact_text2": "Please note that your reply may take time or may not be possible depending on the content.",
         "contact_note": "※ Japanese is also available. ",
-        "contact_item_name": "Full name",
-        "contact_item_mail": "Mail address",
-        "contact_item_input": "Content of inquiry",
+        "contact_item_name": "*Full name",
+        "contact_item_mail": "*Mail address",
+        "contact_item_input": "*Content of inquiry",
         "contact_text3": "Collection and use of personal information",
         "contact_text4": "Please confirm our ",
         "contact_text5": "privacy policy",

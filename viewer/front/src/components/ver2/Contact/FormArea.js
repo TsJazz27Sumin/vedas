@@ -1,89 +1,81 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import Privacy from './Privacy'
+import Information from './Information'
 import axios from 'axios'
 
 const FormArea = (props) => {
 
   const dict = props.dict;
-  const setComplete = props.setComplete;
-
-  const [editItem, setEditItem] = useState('fullname');
-  const [is_compositioned, setIsCompositioned] = useState(true);
-
-  useEffect(() => {
-    switch(editItem){
-      case "email":
-        inputEmailNameRef.current.focus();
-        break;
-
-      case "contactInformation":
-        inputContactInformationNameRef.current.focus();
-        break;
-
-      default:
-        //nothing
-    }
-  });
+  const [complete, setComplete] = useState(false);
 
   const [fullName, setFullName] = useState('');
   const handleFullNameChange = useCallback((event) => {
     setFullName(event.target.value);
-    setEditItem('fullName');
-    console.log(event.target.value);
   }, []);
 
   const [email, setEmail] = useState('');
-  const inputEmailNameRef = useRef(null);
   const handleEmailChange = useCallback((event) => {
     setEmail(event.target.value);
-    setEditItem('email');
-    console.log('email');
   }, []);
 
   const [contactInformation, setContactInformation] = useState('');
-  const inputContactInformationNameRef = useRef(null);
   const handleContactInformationChange = useCallback((event) => {
     setContactInformation(event.target.value);
-    setEditItem('contactInformation');
   }, []);
 
-  const reset = () => {
-    setEditItem('');
-    setIsCompositioned(false);
+  const addError = (target, msg) => {
+    let el = document.getElementById(target)
+    el.classList.add("error");
+    el.value = msg;
   };
 
-  const moveCaretEnd = (e) => {
-    const temp_value = e.target.value;
-    e.target.value = '';
-    e.target.value = temp_value;
+  const removeError = (target) => {
+    let el = document.getElementById(target)
+    el.classList.remove("error");
+    el.value = "";
   };
 
-  const handleSubmit = useCallback((fullName) => {
+  const validateEmail = (email) => {
+    // eslint-disable-next-line
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const handleSubmit = useCallback((dict, fullName, email, contactInformation) => {
     const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
 
-    const data = {
-      "full_name": fullName,
-      "email": inputEmailNameRef.current.value,
-      "contact_information": inputContactInformationNameRef.current.value
-    };
-    console.log(data);
-    // axios.post(baseUrl + 'contact', data);
-    setComplete(true);
-    setEditItem('');
-    window.scrollTo(0, 0);
+    let errCount = 0;
+    if (fullName === ""){
+      errCount += 1;
+      addError("id_full_name", dict.error_message1);
+    }
+
+    if (!validateEmail(email)){
+      errCount += 1;
+      addError("id_email", dict.error_message2);
+    }
+
+    if (contactInformation === ""){
+      errCount += 1;
+      addError("id_contact_information", dict.error_message1);
+    }
+
+    if (errCount === 0){
+      const data = {
+        "full_name": fullName,
+        "email": email,
+        "contact_information": contactInformation
+      };
+      axios.post(baseUrl + 'contact', data);
+      setComplete(true);
+      window.scrollTo(0, 0);
+    }
   }, []);
 
-  const FontFamilyMontserratLabel = styled.label`
-  font-family: Montserrat;
-  `;
-
-  const FontFamilyMontserratInput = styled.input`
-  font-family: Montserrat;
-  `;
-
-  let FullNameLabel = styled(FontFamilyMontserratLabel)`
+  let FullNameLabel = styled.label`
+    font-family: Montserrat;
     position: absolute;
     width: 40%;
     height: 10%;
@@ -92,9 +84,10 @@ const FormArea = (props) => {
     font-size: 18px;
     line-height: 20px;
     color: #464646;
-  `; 
+  `;
 
-  let EmailLabel = styled(FontFamilyMontserratLabel)`
+  let EmailLabel = styled.label`
+    font-family: Montserrat;
     position: absolute;
     width: 40%;
     height: 10%;
@@ -103,21 +96,10 @@ const FormArea = (props) => {
     font-size: 18px;
     line-height: 20px;
     color: #464646;
-  `; 
-
-  let EmailInput = styled(FontFamilyMontserratInput)`
-    position: absolute;
-    width: 40%;
-    height: 7%;
-    left: 54%;
-    top: 25%;
-    border: 1px solid rgba(0,0,0,0.34);
-    border-radius: 4px;
-    font-size: 18px;
-    padding: 2% 2% 2% 2%;
   `;
 
-  let ContactInformationLabel = styled(FontFamilyMontserratLabel)`
+  let ContactInformationLabel = styled.label`
+    font-family: Montserrat;
     position: absolute;
     width: 40%;
     height: 10%;
@@ -128,19 +110,12 @@ const FormArea = (props) => {
     color: #464646;
   `;
 
-  let ContactInformationTextArea = styled.textarea`
-    position: absolute;
-    width: 89%;
-    height: 20%;
-    left: 5%;
-    top: 41%;
-    font-family: inherit;
-    font-size   : 100%;
-    line-height: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.34);
-    border-radius: 4px;
-    resize: none;
-    padding: 1% 1% 1% 1%;
+  let ThankYou = styled.div`
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: Montserrat;
+    font-size: 32px;
+    color: #464646;
   `;
 
   if (isMobile) {
@@ -157,78 +132,84 @@ const FormArea = (props) => {
       font-size: 16px;
     `;
 
-    EmailInput = styled(EmailInput)`
-      height: 4%;
-      top: 38%;
-      font-size: 16px;
-    `;
-
     ContactInformationLabel = styled(ContactInformationLabel)`
       height: 10%;
       top: 45%;
       width: 50%;
       font-size: 16px;
     `;
-
-    ContactInformationTextArea = styled(ContactInformationTextArea)`
-      height: 10%;
-      top: 48%;
-      font-size: 16px;
-    `;
   }
 
   return (
     <div>
-      <FullNameLabel>{dict.contact_item_name}</FullNameLabel>
-      <input
-        key="key_full_name"
-        id="id_full_name" 
-        className={isMobile ? "full-name-input-mobile" : "full-name-input" }
-        type="text" 
-        minLength="1"
-        maxLength="100"
-        placeholder={dict.contact_place_folder1}
-        onChange={(event) => { handleFullNameChange(event) }}
-      />
-      <input
-        key="key_full_name_hidden"
-        id="id_full_name_hidden"
-        type="hidden"
-        defaultValue={fullName}
-      />
-      <EmailLabel>{dict.contact_item_mail}</EmailLabel>
-      <EmailInput
-        key="key_email"
-        id="id_email"
-        defaultValue={email}
-        onCompositionStart={() => setIsCompositioned(true)}
-        onCompositionEnd={(event) => handleEmailChange(event)}
-        onChange={(event) => { if (!is_compositioned) { handleEmailChange(event) } }}
-        onBlur={() => { reset() }}
-        type="email"
-        minLength="1"
-        maxLength="254"
-        placeholder={dict.contact_place_folder2}
-        ref={inputEmailNameRef}
-      />
-      <br />
-      <ContactInformationLabel>{dict.contact_item_input}</ContactInformationLabel>
-      <ContactInformationTextArea
-        key="key_contact_information"
-        id="id_contact_information"
-        defaultValue={contactInformation}
-        onCompositionStart={() => setIsCompositioned(true)}
-        onCompositionEnd={(event) => handleContactInformationChange(event)}
-        onChange={(event) => { if (!is_compositioned) { handleContactInformationChange(event) } }}
-        onBlur={() => { reset() }}
-        onFocus={(e) => { moveCaretEnd(e) }}
-        minLength="1"
-        maxLength="1000"
-        cols="100"
-        rows="10"
-        ref={inputContactInformationNameRef}
-      />
-      <Privacy dict={dict} handleSubmit={() => handleSubmit(fullName)} />
+      {
+        complete ? (
+          <ThankYou><p>{dict.contact_complete}</p></ThankYou>
+        ) : (
+            <div>
+              <Information dict={dict} />
+              <br />
+              <FullNameLabel>{dict.contact_item_name}</FullNameLabel>
+              <input
+                key="key_full_name"
+                id="id_full_name"
+                className={isMobile ? "full-name-input-mobile" : "full-name-input"}
+                type="text"
+                minLength="1"
+                maxLength="100"
+                placeholder={dict.contact_place_folder1}
+                onFocus={() => removeError("id_full_name")}
+                onChange={(event) => { handleFullNameChange(event) }}
+                required
+              />
+              {/* hiddenで持たせないとonchangeのたびにinputがrenderingされちゃう。 */}
+              <input
+                key="key_full_name_hidden"
+                id="id_full_name_hidden"
+                type="hidden"
+                defaultValue={fullName}
+              />
+              <EmailLabel>{dict.contact_item_mail}</EmailLabel>
+              <input
+                key="key_email"
+                id="id_email"
+                className={isMobile ? "email-input-mobile" : "email-input"}
+                type="email"
+                minLength="1"
+                maxLength="254"
+                placeholder={dict.contact_place_folder2}
+                onFocus={() => removeError("id_email")}
+                onChange={(event) => { handleEmailChange(event) }}
+              />
+              <input
+                key="key_email_hidden"
+                id="id_email_hidden"
+                type="hidden"
+                defaultValue={email}
+              />
+              <br />
+              <ContactInformationLabel>{dict.contact_item_input}</ContactInformationLabel>
+              <textarea
+                key="key_contact_information"
+                id="id_contact_information"
+                className={isMobile ? "inquiry-input-mobile" : "inquiry-input"}
+                type="text"
+                minLength="1"
+                maxLength="1000"
+                cols="100"
+                rows="10"
+                onFocus={() => removeError("id_contact_information")}
+                onChange={(event) => { handleContactInformationChange(event) }}
+              />
+              <input
+                key="key_contact_information_hidden"
+                id="id_contact_information_hidden"
+                type="hidden"
+                defaultValue={contactInformation}
+              />
+              <Privacy dict={dict} handleSubmit={() => handleSubmit(dict, fullName, email, contactInformation)} />
+            </div>
+          )}
     </div>
   )
 }

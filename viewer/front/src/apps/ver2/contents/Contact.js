@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import ContentTitle from '../../../components/ver2/Contact/ContentTitle'
-import Information from '../../../components/ver2/Contact/Information'
 import FormArea from '../../../components/ver2/Contact/FormArea'
 import FooterLogoArea from '../../../components/ver2/Contact/FooterLogoArea'
 import styled from 'styled-components';
@@ -20,7 +19,6 @@ const Contact = (props) => {
   });
 
   const dict = wordDictionaryService.getV2(lang);
-  const [complete, setComplete] = useState(false);
 
   const VedasGrayBackgroundDiv = styled.div`
     background: #efefef;
@@ -81,16 +79,7 @@ const Contact = (props) => {
     <ContentArea>
       <ContentTitle/>
       <Content>
-        {
-          complete ? (
-            <p>{dict.contact_complete}</p>
-          ) : (
-              <div>
-                <Information dict={dict}/>
-                <br/>
-                <FormArea dict={dict} setComplete={setComplete}/>
-              </div>
-            )}
+        <FormArea dict={dict} />
       </Content>
       <FooterLogoArea handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
