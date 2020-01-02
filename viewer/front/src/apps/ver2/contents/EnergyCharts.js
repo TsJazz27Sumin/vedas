@@ -10,7 +10,6 @@ const EnergyCharts = (props) => {
   const pathname = props.pathname;
 
   useEffect(() => {
-    console.log(pathname);
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
