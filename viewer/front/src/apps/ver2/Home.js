@@ -46,19 +46,19 @@ const Home = (props) => {
 
   switch(menu){
     case "about":
-        content = (<About lang={lang} qs={qs} dict={dict} pathname={pathname} handleMenuChange={handleMenuChange}/>);
+        content = (<About lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
         break;
     case "news":
-        content = (<News lang={lang} qs={qs} dict={dict} pathname={pathname} handleMenuChange={handleMenuChange}/>);
+        content = (<News lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
         break;
     case "contact":
-        content = (<Contact lang={lang} qs={qs} dict={dict} pathname={pathname} handleMenuChange={handleMenuChange}/>);
+        content = (<Contact lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
         break;
     case "usage":
-        content = (<Usage lang={lang} qs={qs} dict={dict} pathname={pathname} handleMenuChange={handleMenuChange}/>);
+        content = (<Usage lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
         break;
     default:
-        content = (<EnergyCharts lang={lang} qs={qs} dict={dict} pathname={pathname} handleMenuChange={handleMenuChange}/>);
+        content = (<EnergyCharts lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
         break;
   }
 

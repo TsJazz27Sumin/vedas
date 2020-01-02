@@ -58,7 +58,7 @@ const About = (props) => {
     <ContentArea>
       <ContentTitle/>
       <Content dict={dict}/>
-      <FooterLogoArea handleMenuChange={props.handleMenuChange}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

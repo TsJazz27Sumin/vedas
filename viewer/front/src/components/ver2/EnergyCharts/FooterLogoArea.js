@@ -19,7 +19,7 @@ const FooterLogoArea = (props) => {
   }
 
   return (
-    <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
+    <FooterLogo LogoArea={LogoArea} menu={props.menu} handleMenuChange={props.handleMenuChange}/>
   )
 }
 

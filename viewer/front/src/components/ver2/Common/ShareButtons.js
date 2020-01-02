@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import { Stack } from '@shopify/polaris';
 import {
   FacebookShareButton,
@@ -22,8 +23,16 @@ const ShareButtons = (props) => {
   const size = type === "small" ? 32 : 64;
   const weibo_icon = type === "small" ? public_url + '/sns/weibo_32x32.png' : public_url + '/sns/weibo_64x64.png';
 
-  const share_button_click = (type, current_url) => {
-    const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+  const share_button_click = (type, current_url, pathname) => {
+    
+    const action = 'Share by ' + type + " at " + pathname;
+
+    ReactGA.event({
+      category: 'SNS Share',
+      action: action,
+    });
+
+    const baseUrl = process.env.REACT_APP_API_BASE_URL + 'viewer/analyzer/'
     const data = { 
       "type" : type, 
       "url" : current_url,
@@ -36,14 +45,14 @@ const ShareButtons = (props) => {
       {/* TODO:実際にシェアできるか調整をする。https://github.com/nygardk/react-share */}
       <FacebookShareButton
         url={current_url}
-        beforeOnClick={() => share_button_click('Facebook', current_url)}
+        beforeOnClick={() => share_button_click('Facebook', current_url, props.pathname)}
       >
         <FacebookIcon size={size} round />
       </FacebookShareButton>
 
       <TwitterShareButton
         url={current_url}
-        beforeOnClick={() => share_button_click('Twitter', current_url)}
+        beforeOnClick={() => share_button_click('Twitter', current_url, props.pathname)}
         hashtags={["パネイル", "Panair", "Vedas", "電力見える化"]}
       >
         <TwitterIcon size={size} round />
@@ -51,14 +60,14 @@ const ShareButtons = (props) => {
 
       <LineShareButton
         url={current_url}
-        beforeOnClick={() => share_button_click('Line', current_url)}
+        beforeOnClick={() => share_button_click('Line', current_url, props.pathname)}
       >
         <LineIcon size={size} round />
       </LineShareButton>
 
       <WeiboShareButton
         url={current_url}
-        beforeOnClick={() => share_button_click('Weibo', current_url)}
+        beforeOnClick={() => share_button_click('Weibo', current_url, props.pathname)}
       >
         <img width='100%' src={weibo_icon} alt="weibo_icon"/>
       </WeiboShareButton>

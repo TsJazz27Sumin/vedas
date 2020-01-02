@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import SolarSampleImages from './SolarSampleImages'
@@ -6,6 +7,13 @@ import SolarSampleImages from './SolarSampleImages'
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
 const Content2 = (props) => {
+
+  const track = (sample_pattern) => {
+    ReactGA.event({
+      category: 'Usage sample case',
+      action: sample_pattern
+    });
+  };
 
   const dict = props.dict;
   const lang = props.lang;
@@ -78,11 +86,11 @@ const Content2 = (props) => {
       <Text1><p>{dict.how_to_use_text13}</p></Text1>
       <br/>
       <br/>
-      <Text1><SampleCaseATag id="case1" href={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</SampleCaseATag></Text1>
+      <Text1><SampleCaseATag onClick={()=> track("Click case1")} onTouchStart={()=> track("Click case1")} id="case1" href={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</SampleCaseATag></Text1>
       <Text1><p>{dict.how_to_use_text15}</p></Text1>
       <SolarSampleImages />
       <EnergyPeakSample>
-        <Text1><SampleCaseATag id="case2" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
+        <Text1><SampleCaseATag onClick={()=> track("Click case2")} onTouchStart={()=> track("Click case2")} id="case2" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
         <Text1><p>{dict.how_to_use_text17}</p></Text1>
       </EnergyPeakSample>
       <EnergyPeakSampleImage>
@@ -93,9 +101,9 @@ const Content2 = (props) => {
         isMobile ? null :(
         <OtherSample>
           <Text1><p>{dict.how_to_use_text18}</p></Text1>
-          <Text1><SampleCaseATag id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case3")} onTouchStart={()=> track("Click case3")} id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case4")} onTouchStart={()=> track("Click case4")} id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case5")} onTouchStart={()=> track("Click case5")} id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
         </OtherSample>
         )
       }

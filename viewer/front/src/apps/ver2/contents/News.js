@@ -40,8 +40,8 @@ const News = (props) => {
   return (
     <ContentArea>
       <ContentTitle/>
-      <Content dict={dict}/>
-      <FooterLogoArea handleMenuChange={props.handleMenuChange}/>
+      <Content dict={dict} pathname={pathname}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

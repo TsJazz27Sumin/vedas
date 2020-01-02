@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import ShareButtons from '../Common/ShareButtons'
 
-const ShareButtonArea = () => {
+const ShareButtonArea = (props) => {
 
   let ShareButtonArea = styled.div`
     margin-top: 5%;
@@ -19,7 +19,7 @@ const ShareButtonArea = () => {
 
   return (
     <ShareButtonArea>
-      <ShareButtons type="big"/>
+      <ShareButtons type="big" pathname={props.pathname}/>
     </ShareButtonArea>
   )
 }

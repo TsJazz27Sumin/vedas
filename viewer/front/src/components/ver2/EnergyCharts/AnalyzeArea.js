@@ -123,10 +123,10 @@ const AnalyzeArea = (props) => {
             )
         }
         </AppProvider>
-        <ShareButtonArea/>
+        <ShareButtonArea pathname={props.pathname}/>
       </Content>
       <WatchoutArea dict={dict} checkedCount={checkedCount}/>
-      <FooterLogoArea handleMenuChange={props.handleMenuChange}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
     </AnalyzeArea>
   )
 }

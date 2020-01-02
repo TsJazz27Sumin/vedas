@@ -4,7 +4,7 @@ import { isMobile } from "react-device-detect";
 import FooterLogo from '../Common/FooterLogo'
 
 const FooterLogoArea = (props) => {
-
+  
   let LogoArea = styled.div`
     position: absolute;
     width: 60%;
@@ -18,7 +18,7 @@ const FooterLogoArea = (props) => {
   }
 
   return (
-    <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
+    <FooterLogo LogoArea={LogoArea} menu={props.menu} handleMenuChange={props.handleMenuChange}/>
   )
 }
 

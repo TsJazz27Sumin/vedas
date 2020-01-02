@@ -72,7 +72,7 @@ const Content = (props) => {
       <Text1><p>2020/01/18</p></Text1>
       <Text2><p>{dict.sample_news1}</p></Text2>
       <ShareButtonArea>
-        <ShareButtons type={"small"} />
+        <ShareButtons type={"small"} pathname={props.pathname}/>
       </ShareButtonArea>
     </Content>
   )

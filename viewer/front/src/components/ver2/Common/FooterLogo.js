@@ -5,7 +5,6 @@ import FooterLogoArea from './FooterLogoArea'
 const FooterLogo = (props) => {
 
   const LogoArea = props.LogoArea;
-  const handleMenuChange = props.handleMenuChange;
 
   let VedasLogo = styled.div`
     position: absolute;
@@ -28,7 +27,8 @@ const FooterLogo = (props) => {
   return (
     <div>
       <FooterLogoArea
-        handleMenuChange={handleMenuChange}
+        menu={props.menu}
+        handleMenuChange={props.handleMenuChange}
         LogoArea={LogoArea}
         VedasLogo={VedasLogo}
         PanairLogo={PanairLogo}

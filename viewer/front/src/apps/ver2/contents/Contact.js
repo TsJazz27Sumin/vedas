@@ -72,7 +72,7 @@ const Contact = (props) => {
       <Content>
         <FormArea dict={dict} />
       </Content>
-      <FooterLogoArea handleMenuChange={props.handleMenuChange}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

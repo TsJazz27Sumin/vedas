@@ -3,8 +3,7 @@ import FooterVedasLogo from './FooterVedasLogo'
 import FooterPanairLogo from './FooterPanairLogo'
 
 const FooterLogoArea = (props) => {
-
-  const handleMenuChange = props.handleMenuChange;
+  
   const LogoArea = props.LogoArea;
   const VedasLogo = props.VedasLogo;
   const PanairLogo = props.PanairLogo;
@@ -12,10 +11,10 @@ const FooterLogoArea = (props) => {
   return (
     <LogoArea>
       <VedasLogo>
-        <FooterVedasLogo handleMenuChange={handleMenuChange} />
+        <FooterVedasLogo handleMenuChange={props.handleMenuChange} />
       </VedasLogo>
       <PanairLogo>
-        <FooterPanairLogo />
+        <FooterPanairLogo menu={props.menu}/>
       </PanairLogo>
     </LogoArea>
   )
