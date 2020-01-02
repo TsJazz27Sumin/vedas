@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import Condition from '../../../components/ver2/EnergyCharts/Condition'
-import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
+import RangeSelectArea from '../../../components/ver2/EnergyCharts/RangeSelectArea'
 import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
 import CompanyEnergyCharts from '../../../components/ver2/EnergyCharts/CompanyEnergyCharts'
 import WatchoutArea from '../../../components/ver2/EnergyCharts/WatchoutArea'
@@ -25,6 +25,7 @@ const EnergyCharts = (props) => {
   useEffect(() => {
     //TODO:毎回呼ばれる。
     const pathname = '/' + lang + '/home';
+    console.log(pathname);
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
@@ -50,13 +51,6 @@ const EnergyCharts = (props) => {
   const checkedCount = electoric_power_company.CheckedCount;
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
-
-  useEffect(() => {
-    console.log('useEffect');
-    const pathname = '/' + lang + '/home';
-    ReactGA.set({ page: pathname });
-    ReactGA.pageview(pathname);
-  });
 
   let AnalyzeArea = styled.div`
     height: 5300px
@@ -87,19 +81,6 @@ const EnergyCharts = (props) => {
     line-height: 26px;
     color: #000;
   ` ;
-
-  let RangeSelectArea = styled.div`
-    height: 100px;
-    width: 94%;
-    margin-top: 0%;
-    margin-left: 2%;
-    padding-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    background: #F0F0F0;
-    border: 1px solid #fff;
-    border-radius: 12px;
-  `;
 
   let DateSelectArea = styled.div`
     height: 100px;
@@ -157,12 +138,6 @@ const EnergyCharts = (props) => {
       padding-bottom: 12%;
     `;
 
-    RangeSelectArea = styled(RangeSelectArea)`
-      width: 100%;
-      margin-left: 0%;
-      padding-top: 6%;
-    `;
-
     DateSelectArea = styled(DateSelectArea)`
       width: 100%;
       margin-left: 0%;
@@ -194,16 +169,13 @@ const EnergyCharts = (props) => {
       <Content>
         <ConditionDetailTitle><p>{dict.analyze_condtion_text4}</p></ConditionDetailTitle>
         {
-          electoric_power_data.is_range_slider_open ? (
-          <RangeSelectArea>
-            <AppProvider>
-              <RangeSelect
-                range_slider={electoric_power_data.range_slider}
-                unit={electoric_power_data.unit}
-                year_and_month={electoric_power_data.year_and_month}
-              />
-            </AppProvider>
-          </RangeSelectArea>
+          electoric_power_data.is_range_slider_open ? 
+        (
+          <RangeSelectArea
+            range_slider={electoric_power_data.range_slider}
+            unit={electoric_power_data.unit}
+            year_and_month={electoric_power_data.year_and_month}
+          />
         ):(
           <DateSelectArea>
             <AppProvider>

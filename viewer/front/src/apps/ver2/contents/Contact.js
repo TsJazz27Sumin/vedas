@@ -20,15 +20,8 @@ const Contact = (props) => {
 
   const dict = wordDictionaryService.getV2(lang);
 
-  const VedasGrayBackgroundDiv = styled.div`
+  let ContentArea = styled.div`
     background: #efefef;
-  `;
-
-  const VedasWhiteBackgroundDiv = styled.div`
-    background: #fff;
-  `;
-
-  let ContentArea = styled(VedasGrayBackgroundDiv)`
     height: 1400px;
     width: 91%;
     position: absolute;
@@ -37,7 +30,8 @@ const Contact = (props) => {
     border-radius: 54px;
   `;
 
-  let Content = styled(VedasWhiteBackgroundDiv)`
+  let Content = styled.div`
+    background: #fff;
     position: absolute;
     width: 92%;
     height: 1000px;

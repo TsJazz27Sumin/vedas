@@ -50,22 +50,22 @@ const FormArea = (props) => {
     const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
 
     let errCount = 0;
-    if (fullName === ""){
+    if (fullName === "") {
       errCount += 1;
       addError("id_full_name", dict.error_message1);
     }
 
-    if (!validateEmail(email)){
+    if (!validateEmail(email)) {
       errCount += 1;
       addError("id_email", dict.error_message2);
     }
 
-    if (inquiry === ""){
+    if (inquiry === "") {
       errCount += 1;
       addError("id_inquiry", dict.error_message1);
     }
 
-    if (errCount === 0){
+    if (errCount === 0) {
       const data = {
         "full_name": fullName,
         "email": email,
