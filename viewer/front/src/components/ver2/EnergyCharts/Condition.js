@@ -4,6 +4,7 @@ import ConditionDetailFirst from './ConditionDetailFirst'
 import ConditionDetailSecond from './ConditionDetailSecond'
 import ConditionDetailThird from './ConditionDetailThird'
 import { isMobile } from "react-device-detect";
+import WindowSizeService from '../../../services/window_size'
 
 const Condition = (props) => {
 
@@ -17,13 +18,25 @@ const Condition = (props) => {
     width: 95%;
 ` ;
 
+  const window_width = WindowSizeService.getWindowWidthSize();
+
+  let conditionDetailMobileCautionFontSize = 0;
+
+  if (window_width > 400){
+    conditionDetailMobileCautionFontSize = 13;
+  } else if (window_width > 350){
+    conditionDetailMobileCautionFontSize = 12;
+  } else if (window_width > 300){
+    conditionDetailMobileCautionFontSize = 10;
+  }
+
   let ConditionDetailMobileCaution = styled.div`
     height: 0%;
     margin-top: 5%;
     margin-left: 9%;
     padding-bottom: 12%;
     font-family: Roboto;
-    font-size: 13px;
+    font-size: ${conditionDetailMobileCautionFontSize}px;
     line-height: 26px;
   ` ;
 

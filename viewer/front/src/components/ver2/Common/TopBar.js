@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { AppProvider, Select } from '@shopify/polaris';
 import { isMobile } from "react-device-detect";
+import WindowSizeService from '../../../services/window_size'
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
@@ -65,7 +66,7 @@ const TopBar = (props) => {
 
   if (isMobile) {
     TopBarArea = styled(TopBarArea)`
-      width:100%;
+      width:${WindowSizeService.getWindowWidthSize() + 60}px;
       height: 8%;
       border-radius: 12px;
       background: #efefef;

@@ -5,7 +5,6 @@ import { AppProvider, Modal, TextContainer } from '@shopify/polaris';
 const TabletMessage = () => {
   
   useEffect(() => {
-    console.log('/tablet');
     ReactGA.set({ page: '/tablet' });
     ReactGA.pageview('/tablet');
   });
