@@ -6,7 +6,7 @@ import { isMobile } from "react-device-detect";
 import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import Condition from '../../../components/ver2/EnergyCharts/Condition'
 import RangeSelectArea from '../../../components/ver2/EnergyCharts/RangeSelectArea'
-import DateSelect from '../../../components/ver2/EnergyCharts/DateSelect'
+import DateSelectArea from '../../../components/ver2/EnergyCharts/DateSelectArea'
 import CompanyEnergyCharts from '../../../components/ver2/EnergyCharts/CompanyEnergyCharts'
 import WatchoutArea from '../../../components/ver2/EnergyCharts/WatchoutArea'
 import ShareButtons from '../../../components/ver2/Common/ShareButtons'
@@ -82,27 +82,6 @@ const EnergyCharts = (props) => {
     color: #000;
   ` ;
 
-  let DateSelectArea = styled.div`
-    height: 100px;
-    width: 94%;
-    margin-top: 0%;
-    margin-left: 2%;
-    padding-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    background: #F0F0F0;
-    border: 1px solid #fff;
-    border-radius: 12px;
-  `;
-
-  let DateSelectAreaHelp = styled.div`
-    margin-top: -3.5%;
-    margin-left: 45%;
-    font-family: Roboto;
-    display: flex;
-    color: rgba(0, 0, 0, 0.34);
-    `;
-
   let ChartsAreaUl = styled.ul`
   `;
 
@@ -136,11 +115,6 @@ const EnergyCharts = (props) => {
     ConditionDetailTitle = styled(ConditionDetailTitle)`
       margin-top: 0%;
       padding-bottom: 12%;
-    `;
-
-    DateSelectArea = styled(DateSelectArea)`
-      width: 100%;
-      margin-left: 0%;
     `;
 
     ChartsAreaUl = styled(ChartsAreaUl)`
@@ -177,18 +151,11 @@ const EnergyCharts = (props) => {
             year_and_month={electoric_power_data.year_and_month}
           />
         ):(
-          <DateSelectArea>
-            <AppProvider>
-              <DateSelect
-                dict={dict}
-                unit={electoric_power_data.unit}
-                date_select={date_select}
-              />
-              <DateSelectAreaHelp>
-                <p>{dict.analyze_condtion_text5}</p>
-              </DateSelectAreaHelp>
-            </AppProvider>
-          </DateSelectArea>
+          <DateSelectArea
+            dict={dict}
+            unit={electoric_power_data.unit}
+            date_select={date_select} 
+          />
         )
         }
         <AppProvider>
