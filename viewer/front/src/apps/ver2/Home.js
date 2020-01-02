@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { isMobile, isTablet, deviceType } from "react-device-detect";
+import { isMobile, isTablet, osName, browserName, deviceType } from "react-device-detect";
 import HeroHeader from '../../components/ver2/Common/HeroHeader'
 import HeroWithoutTitle from '../../components/ver2/Common/HeroWithoutTitle'
 import TopBar from '../../components/ver2/Common/TopBar'
@@ -41,7 +41,8 @@ const Home = (props) => {
 
   let content = null;
 
-  const pathname = deviceType + '/' + lang + '/' + menu;
+  let pathname = deviceType + '/' + osName + '/' + browserName + '/' + lang + '/' + menu;
+  pathname = pathname.replace(' ', '');
 
   switch(menu){
     case "about":
