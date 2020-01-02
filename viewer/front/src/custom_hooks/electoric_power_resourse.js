@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import ReactGA from 'react-ga';
 
 const useElectoricPowerResourse = (electoric_power_resourse_initialize_params) => {
 
@@ -58,6 +59,26 @@ const useElectoricPowerResourse = (electoric_power_resourse_initialize_params) =
         handlePumpingChange: handlePumpingChange,
         handleInterconnectionChange: handleInterconnectionChange,
     };
+
+    const toTrackValue = (value, resouce) => value ? ' ' + resouce : '';
+    const ActiveResources = (
+        toTrackValue(demandChecked, 'demand') +
+        toTrackValue(nuclearChecked, 'nuclear') +
+        toTrackValue(thermalChecked, 'thermal') +
+        toTrackValue(hydroChecked, 'hydro') +
+        toTrackValue(geothermalChecked, 'geothermal') +
+        toTrackValue(biomassChecked, 'biomass') +
+        toTrackValue(solarOutputControlChecked, 'solarOutputControl') +
+        toTrackValue(windOutputControlChecked, 'windOutputControl') +
+        toTrackValue(pumpingChecked, 'pumping') +
+        toTrackValue(interconnectionChecked, 'interconnection')
+        );
+
+    const action = 'Select' + ActiveResources;
+    ReactGA.event({
+        category: 'Power Resource',
+        action: action
+        });
 
     return { Checked, handleValueChange }
 };

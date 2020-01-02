@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import ReactGA from 'react-ga';
 
 const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
 
@@ -130,6 +131,28 @@ const useElectoricPowerCompany = (energy_power_company_initialize_params) => {
             )
         );
 
+    const toTrackValue = (value, company) => value ? ' ' + company : '';
+    const ActiveCompanies = (
+        allChecked ? ' All' : (
+            toTrackValue(hepcoChecked, 'hepco') +
+            toTrackValue(tohokuepcoChecked, 'tohokuepco') +
+            toTrackValue(rikudenChecked, 'rikuden') +
+            toTrackValue(tepcoChecked, 'tepco') +
+            toTrackValue(chudenChecked, 'chuden') +
+            toTrackValue(kepcoChecked, 'kepco') +
+            toTrackValue(energiaChecked, 'energia') +
+            toTrackValue(yondenChecked, 'yonden') +
+            toTrackValue(kyudenChecked, 'kyuden') +
+            toTrackValue(okidenChecked, 'okiden') +
+            toTrackValue(japanChecked, 'japan')
+            )
+        );
+
+    const action = 'Select' + ActiveCompanies;
+    ReactGA.event({
+        category: 'Power Company',
+        action: action
+        });
 
     const handleValueChange = {
         handleHepcoChange: handleHepcoChange,
