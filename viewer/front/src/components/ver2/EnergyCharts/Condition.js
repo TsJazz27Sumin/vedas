@@ -52,8 +52,19 @@ const Condition = (props) => {
   ` ;
 
   if (isMobile) {
+    const window_height = WindowSizeService.getWindowHeightSize();
+    
+    let conditionAreaHeight = 0;
+
+    if (window_height > 800){
+      conditionAreaHeight = 1400;
+    } else if (window_height > 700){
+      conditionAreaHeight = 1500;
+    } else if (window_height > 600){
+      conditionAreaHeight = 1400;
+    }
     ConditionArea = styled(ConditionArea)`
-      height: 1500px;
+      height: ${conditionAreaHeight}px;
     `;
 
     ConditionDetailTitle = styled(ConditionDetailTitle)`

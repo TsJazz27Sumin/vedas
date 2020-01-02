@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import WindowSizeService from '../../../services/window_size'
 
 const WatchoutArea = (props) => {
 
@@ -8,6 +9,7 @@ const WatchoutArea = (props) => {
   const checkedCount = props.checkedCount;
 
   let WatchoutArea = styled.div`
+  margin-top: ${450 + (350 * checkedCount)}px;
   margin-left: 6%;
 `;
 
@@ -28,12 +30,20 @@ const WatchoutArea = (props) => {
 `;
 
   if (isMobile) {
-    WatchoutArea = styled(WatchoutArea)`margin-top: ${325 + (315 * checkedCount)}px; width: 89%;`;
-  } else {
-    WatchoutArea = styled(WatchoutArea)`margin-top: ${450 + (350 * checkedCount)}px`;
-  }
+    const window_height = WindowSizeService.getWindowHeightSize();
+    
+    let intervalHeight = 0;
 
-  
+    if (window_height > 800){
+      intervalHeight = 280;
+    } else if (window_height > 700){
+      intervalHeight = 315;
+    } else if (window_height > 600){
+      intervalHeight = 280;
+    }
+
+    WatchoutArea = styled(WatchoutArea)`margin-top: ${325 + (intervalHeight * checkedCount)}px; width: 89%;`;
+  }
 
   return (
     <WatchoutArea>

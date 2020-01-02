@@ -14,6 +14,7 @@ import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_re
 import electoricPowerCompanyHook from '../../../custom_hooks/electoric_power_company'
 import dateSelectHook from '../../../custom_hooks/date_select'
 import electoricPowerDataHook from '../../../custom_hooks/electoric_power_data'
+import WindowSizeService from '../../../services/window_size'
 
 const AnalyzeArea = (props) => {
 
@@ -60,16 +61,28 @@ const AnalyzeArea = (props) => {
   `;
 
   if (isMobile) {
+    const window_height = WindowSizeService.getWindowHeightSize();
+    
+    let intervalHeight = 0;
+
+    if (window_height > 800){
+      intervalHeight = 200;
+    } else if (window_height > 700){
+      intervalHeight = 300;
+    } else if (window_height > 600){
+      intervalHeight = 300;
+    }
+
     AnalyzeArea = styled(AnalyzeArea)`
       background:none;
       width: 100%;
       left: 0%;
       right: 0%;
-      height: ${2000 + (300 * checkedCount)}px;
+      height: ${2000 + (intervalHeight * checkedCount)}px;
     `;
     Content = styled(Content)`
       background:none;
-      height: ${800 + (300 * checkedCount)}px;
+      height: ${800 + (intervalHeight * checkedCount)}px;
     `;
 
     ChartsAreaUl = styled(ChartsAreaUl)`
