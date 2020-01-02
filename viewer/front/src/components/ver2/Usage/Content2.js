@@ -60,9 +60,9 @@ const Content2 = (props) => {
   `;
 
   let LetsFind = styled.div`
-    padding-top: 5%;
-    padding-left: 22%;
-    width: 95%;
+    padding-top: ${lang === "ch" ? 10 : 5}%;
+    padding-left: ${lang === "ch" ? 31 : lang === "en" ? 25 : 22}%;
+    width: ${lang === "ch" ? 100 : 95}%;%;
     font-family: Roboto;
     font-size: 42px;
     line-height: 49px;
