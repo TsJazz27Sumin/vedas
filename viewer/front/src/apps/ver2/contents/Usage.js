@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import FooterLogo from '../../../components/ver2/FooterLogo'
+import FooterLogo from '../../../components/ver2/Common/FooterLogo'
 import Title from '../../../components/ver2/Usage/Title'
 import Content1 from '../../../components/ver2/Usage/Content1'
 import Content2 from '../../../components/ver2/Usage/Content2'
 import styled from 'styled-components';
-import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
+import '../../../css/Usage.css';
 
 const Usage = (props) => {
 
   const lang = props.lang;
-  const dict = wordDictionaryService.getV2(lang);
+  const dict = props.dict;
+  const pathname = props.pathname;
 
   useEffect(() => {
-    const pathname = '/' + lang + '/usage';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
@@ -39,14 +39,10 @@ const Usage = (props) => {
     padding-top: 3%;
     padding-left: 3%;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 26px;
     line-height: 40px;
     border-radius: 54px;
-    
     color: #000;
-    
     border: 8px solid #fff;
   `;
 
@@ -54,11 +50,8 @@ const Usage = (props) => {
     padding-left: 3.8%;
     padding-top: 1%;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-
     color: #8C8C8C;
   `;
 
@@ -107,7 +100,7 @@ const Usage = (props) => {
       <Title/>
       <Content1 dict={dict} Text1={Text1} Text2={Text2}/>
       <Content2 dict={dict} lang={lang} Text1={Text1}/>
-      <FooterLogo LogoArea={LogoArea} handleMenuChange={props.handleMenuChange}/>
+      <FooterLogo LogoArea={LogoArea} menu={props.menu} handleMenuChange={props.handleMenuChange}/>
     </ContentArea>
   )
 }

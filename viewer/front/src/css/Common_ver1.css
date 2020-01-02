@@ -1,0 +1,36 @@
+body {
+  background-color: #fff !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* ver1のデザイン用 */
+.Polaris-TopBar-UserMenu__Name {
+  color: #212B36 !important;
+}
+
+.Polaris-TopBar-UserMenu__Detail {
+  color: #212B36 !important;
+}
+
+.Polaris-Frame__Main {
+  background-color: #fff !important;
+}
+
+.Polaris-Button {
+  min-width: 6.6rem !important;
+}
+
+.Polaris-TopBar {
+  height: 10rem !important;
+}
+
+.Polaris-Card__Section+.Polaris-Card__Section {
+  border: none !important;
+}
+
+.Polaris-Card {
+  box-shadow: none !important;
+}

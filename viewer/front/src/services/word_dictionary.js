@@ -1,10 +1,10 @@
-import Jp from './word_dictionary/ver1/jp'
-import En from './word_dictionary/ver1/en'
-import Ch from './word_dictionary/ver1/ch'
-import Es from './word_dictionary/ver1/es'
-import JpV2 from './word_dictionary/ver2/jp'
-import EnV2 from './word_dictionary/ver2/en'
-import ChV2 from './word_dictionary/ver2/ch'
+import Jp from './language_files/ver1/jp'
+import En from './language_files/ver1/en'
+import Ch from './language_files/ver1/ch'
+import Es from './language_files/ver1/es'
+import JpV2 from './language_files/ver2/jp'
+import EnV2 from './language_files/ver2/en'
+import ChV2 from './language_files/ver2/ch'
 
 const get = (lang) => {
     let dict = {};

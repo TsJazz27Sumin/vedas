@@ -1,5 +1,8 @@
 const get = () => {
     const word_dictionary = {
+        "table_message": "But currently not available on tablet devices. We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
+        "error_message1": "必須入力です。",
+        "error_message2": "不正なメールアドレスです。",
         "analyze_condtion_mobile_caution": "※デスクトップPC、もしくはノートPCでのご利用をオススメします。モバイル版では機能の制限を行っています。",
         "analyze_condtion_text1": "1. 期間を選択してください。",
         "analyze_condtion_text2": "2. 電力事業者を選択してください。",
@@ -13,9 +16,9 @@ const get = () => {
         "contact_text1": "Vedasについてお問い合わせなどがございましたら、必要な情報をご記入の上、お問い合わせください。",
         "contact_text2": "お返事につきましては、内容により時間がかかったり、お返事しかねる場合がありますことを予めご了承ください。",
         "contact_note": "※ English is also available. ",
-        "contact_item_name": "名前",
-        "contact_item_mail": "メールアドレス",
-        "contact_item_input": "お問い合わせ内容",
+        "contact_item_name": "*名前",
+        "contact_item_mail": "*メールアドレス",
+        "contact_item_input": "*お問い合わせ内容",
         "contact_text3": "個人情報の収集及び利用目的について",
         "contact_text4": "当社の",
         "contact_text5": "個人情報のお取り扱い方針",

@@ -22,10 +22,7 @@ const Condition = (props) => {
     margin-top: 5%;
     margin-left: 9%;
     padding-bottom: 12%;
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 13px;
     line-height: 26px;
   ` ;
@@ -35,13 +32,9 @@ const Condition = (props) => {
     margin-top: 3%;
     padding-bottom: 3%;
     margin-left: 5%;
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 26px;
-
     color: #000;
   ` ;
 

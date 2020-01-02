@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { debounce } from "lodash";
 import japanEnergyService from '../services/japan_energy'
 import yearAndMonthService from '../services/year_and_month'
@@ -20,7 +21,7 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
     ) ? parseInt(initialize.year_initialize) : today.getFullYear();
     const month_initialize = (
         initialize.month_initialize !== undefined
-    ) ? parseInt(initialize.month_initialize) : today.getMonth();
+    ) ? parseInt(initialize.month_initialize) : today.getMonth() + 1;
     const date_initialize = (
         initialize.date_initialize !== undefined
     ) ? parseInt(initialize.date_initialize) : 1;
@@ -57,6 +58,12 @@ const useElectoricPowerData = (electoric_power_data_initialize_params) => {
 
     const handleTermChange = useCallback((newUnit, from, to) => {
         setUnit(newUnit);
+
+        const action = 'Chage to ' + newUnit;
+        ReactGA.event({
+            category: 'Term',
+            action: action
+          });
 
         if (newUnit === "y" || newUnit === "ym" || newUnit === "ymd") {
             setIsRangeSliderOpen(true);

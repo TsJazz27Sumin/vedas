@@ -45,13 +45,9 @@ const ConditionDetailFirst = (props) => {
 
   let ConditionDetailParamLabel = styled.div`
   display: inline-block;
-
   margin-top: 4%;
   margin-left: 5%;
-
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 22px;
 

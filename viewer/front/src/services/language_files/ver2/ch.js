@@ -1,5 +1,8 @@
 const get = () => {
     const word_dictionary = {
+        "table_message": "Currently not available on tablet devices. We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
+        "error_message1": "必填项",
+        "error_message2": "无效的电子邮件地址",
         "analyze_condtion_mobile_caution": "*我们建议使用台式机或笔记本电脑。 移动版本的功能有限",
         "analyze_condtion_text1": "1. 请选择一个时间段",
         "analyze_condtion_text2": "2. 请选择电源供应商",
@@ -13,9 +16,9 @@ const get = () => {
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",
         "contact_text2": "Please note that your reply may take time or may not be possible depending on the content.",
         "contact_note": "※ Japanese is also available. ",
-        "contact_item_name": "Full name",
-        "contact_item_mail": "Mail address",
-        "contact_item_input": "Content of inquiry",
+        "contact_item_name": "*Full name",
+        "contact_item_mail": "*Mail address",
+        "contact_item_input": "*Content of inquiry",
         "contact_text3": "Collection and use of personal information",
         "contact_text4": "Please confirm our ",
         "contact_text5": "privacy policy",
