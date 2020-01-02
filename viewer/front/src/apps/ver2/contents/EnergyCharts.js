@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
 import AnalyzeArea from '../../../components/ver2/EnergyCharts/AnalyzeArea'
-import wordDictionaryService from '../../../services/word_dictionary'
 import queryParamPerserService from '../../../services/query_param_perser'
 import '../../../css/EnergyCharts.css';
 
 const EnergyCharts = (props) => {
 
   const lang = props.lang;
+  const pathname = props.pathname;
 
   useEffect(() => {
-    const pathname = '/' + lang + '/home';
+    console.log(pathname);
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
@@ -18,11 +18,8 @@ const EnergyCharts = (props) => {
   //クエリパラメータ
   const qs = queryParamPerserService.execute(props.qs, lang);
 
-  //言語選択
-  let dict = wordDictionaryService.getV2(lang);
-
   return (
-    <AnalyzeArea qs={qs} dict={dict} />
+    <AnalyzeArea qs={qs} dict={props.dict} />
   )
 }
 

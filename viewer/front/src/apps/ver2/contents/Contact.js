@@ -4,21 +4,18 @@ import ContentTitle from '../../../components/ver2/Contact/ContentTitle'
 import FormArea from '../../../components/ver2/Contact/FormArea'
 import FooterLogoArea from '../../../components/ver2/Contact/FooterLogoArea'
 import styled from 'styled-components';
-import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 import '../../../css/Contact.css';
 
 const Contact = (props) => {
 
-  const lang = props.lang;
+  const dict = props.dict;
+  const pathname = props.pathname;
 
   useEffect(() => {
-    const pathname = '/' + lang + '/contact';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
-
-  const dict = wordDictionaryService.getV2(lang);
 
   let ContentArea = styled.div`
     background: #efefef;

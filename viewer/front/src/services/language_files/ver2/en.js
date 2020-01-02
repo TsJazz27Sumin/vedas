@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "table_message": "Currently not available on tablet devices. We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
         "error_message1": "Required input.",
         "error_message2": "Invalid email address.",
         "analyze_condtion_mobile_caution": "* We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",

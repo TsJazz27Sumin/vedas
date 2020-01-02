@@ -5,17 +5,16 @@ import Title from '../../../components/ver2/Usage/Title'
 import Content1 from '../../../components/ver2/Usage/Content1'
 import Content2 from '../../../components/ver2/Usage/Content2'
 import styled from 'styled-components';
-import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 import '../../../css/Usage.css';
 
 const Usage = (props) => {
 
   const lang = props.lang;
-  const dict = wordDictionaryService.getV2(lang);
+  const dict = props.dict;
+  const pathname = props.pathname;
 
   useEffect(() => {
-    const pathname = '/' + lang + '/usage';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });

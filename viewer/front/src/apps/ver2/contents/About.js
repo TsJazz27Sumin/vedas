@@ -4,17 +4,16 @@ import ContentTitle from '../../../components/ver2/About/ContentTitle'
 import Content from '../../../components/ver2/About/Content'
 import FooterLogoArea from '../../../components/ver2/About/FooterLogoArea'
 import styled from 'styled-components';
-import wordDictionaryService from '../../../services/word_dictionary'
 import { isMobile } from "react-device-detect";
 import '../../../css/About.css';
 
 const About = (props) => {
 
   const lang = props.lang;
-  const dict = wordDictionaryService.getV2(lang);
+  const dict = props.dict;
+  const pathname = props.pathname;
 
   useEffect(() => {
-    const pathname = '/' + lang + '/about';
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);
   });
