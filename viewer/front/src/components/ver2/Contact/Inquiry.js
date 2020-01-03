@@ -9,6 +9,12 @@ const Inquiry = (props) => {
   const handleInquiryChange = props.handleInquiryChange;
   const removeError = props.removeError;
 
+  let Inquiry = styled.div`
+  font-family: Montserrat;
+  font-size: 18px;
+  color: #464646;
+  `;
+
   let InquiryLabel = styled.label`
   font-family: Montserrat;
   font-size: 18px;
@@ -36,27 +42,27 @@ const Inquiry = (props) => {
   }
 
   return (
-    <div>
+    <Inquiry>
       <InquiryLabel>{dict.contact_item_input}</InquiryLabel>
       <textarea
-        key="key_inquiry_information"
-        id="id_inquiry_information"
+        key="key_inquiry"
+        id="id_inquiry"
         className={isMobile ? "inquiry-input-mobile" : "inquiry-input"}
         type="text"
         minLength="1"
         maxLength="1000"
         cols="100"
         rows="10"
-        onFocus={() => removeError("id_inquiry_information")}
+        onFocus={() => removeError("id_inquiry")}
         onChange={(event) => { handleInquiryChange(event) }}
       />
       <input
-        key="key_inquiry_information_hidden"
-        id="id_inquiry_information_hidden"
+        key="key_inquir_hidden"
+        id="id_inquiry_hidden"
         type="hidden"
         defaultValue={inquiry}
       />
-    </div>
+    </Inquiry>
   )
 }
 
