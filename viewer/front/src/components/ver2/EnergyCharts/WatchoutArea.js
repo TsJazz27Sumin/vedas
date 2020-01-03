@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color';
 
 const WatchoutArea = (props) => {
 
@@ -16,7 +17,7 @@ const WatchoutArea = (props) => {
   let WatchoutTitle = styled.div`
   font-family: Roboto;
   font-size: 28px;
-  color: #000;
+  color: ${Color.black};
 
   padding: 0% 0% 0% 0%;
   margin:  10% 0% 0% 0%;
@@ -27,7 +28,7 @@ const WatchoutArea = (props) => {
   let WatchoutTexts = styled.div`
   font-family: Roboto;
   font-size: 16px;
-  color: #000;
+  color: ${Color.black};
 
   padding: 0% 0% 0% 0%;
   margin:  5% 0% 0% 0%;

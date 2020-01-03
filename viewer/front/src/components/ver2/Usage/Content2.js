@@ -2,7 +2,8 @@ import React from 'react'
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import SolarSampleImages from './SolarSampleImages'
+import SolarSampleImages from './SolarSampleImages';
+import Color from '../../../services/color';
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
@@ -23,10 +24,10 @@ const Content2 = (props) => {
   const peak_sample = public_url + '/usage/peak_sample/peak_sample.png';
 
   let Content2 = styled.div`
-  background: #fff;
+  background: ${Color.white};
   
   border-radius: 16px;
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
 
   height: 72%;
   width: 96%;
@@ -41,7 +42,7 @@ const Content2 = (props) => {
 
   let SampleCaseATag = styled.a`
   font-weight: bold;
-  color: #0084FF;
+  color: ${Color.primaryBlue};
   `;
 
   let EnergyPeakSample = styled.div`
@@ -67,7 +68,7 @@ const Content2 = (props) => {
   let LetsFind = styled.div`
   font-family: Roboto;
   font-size: 42px;
-  color: #000;
+  color: ${Color.black};
 
   height: auto;
   width: ${lang === "ch" ? 100 : 95}%;

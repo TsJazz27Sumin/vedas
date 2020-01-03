@@ -5,6 +5,7 @@ import FormArea from '../../../components/ver2/Contact/FormArea'
 import FooterLogoArea from '../../../components/ver2/Contact/FooterLogoArea'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 import '../../../css/Contact.css';
 
 const Contact = (props) => {
@@ -19,7 +20,7 @@ const Contact = (props) => {
 
   let ContentArea = styled.div`
   border-radius: 54px;
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 1400px;
   width: 91%;
@@ -36,9 +37,9 @@ const Contact = (props) => {
   `;
 
   let Content = styled.div`
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
   border-radius: 16px;
-  background: #fff;
+  background: ${Color.white};
 
   height: 1000px;
   width: 92%;
@@ -74,10 +75,10 @@ const Contact = (props) => {
     `;
 
     Content = styled(Content)`
-    border: 1px solid #fff;
+    border: 1px solid ${Color.white};
     border-radius: 16px;
 
-    background: #fff;
+    background: ${Color.white};
 
     height: 89%;
     width: 100%;

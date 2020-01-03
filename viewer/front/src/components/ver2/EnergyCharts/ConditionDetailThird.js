@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const ConditionDetailThird = (props) => {
 
@@ -9,7 +10,7 @@ const ConditionDetailThird = (props) => {
   const handleEnergyResoursesChange = props.electoric_power_resource.handleValueChange;
 
   const ConditionDetailArea3 = styled.div`
-  background: #fff;
+  background: ${Color.white};
   border-radius: 16px;
 
   height: 14%;
@@ -20,7 +21,7 @@ const ConditionDetailThird = (props) => {
   ` ;
 
   let ConditionDetailParam = styled.div`  
-  background: #fff;
+  background: ${Color.white};
   border-radius: 16px;
 
   height: auto;
@@ -51,7 +52,7 @@ const ConditionDetailThird = (props) => {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  color: #000;
+  color: ${Color.black};
   
   display: inline-block;
 
@@ -59,7 +60,7 @@ const ConditionDetailThird = (props) => {
 ` ;
 
   let ConditionDetailParamButton = styled.button`
-  background: #6DDCFF;
+  background: ${Color.lightGray};
   border-radius: 5px;
 
   height: auto;

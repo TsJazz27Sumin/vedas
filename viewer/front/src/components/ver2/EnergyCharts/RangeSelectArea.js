@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import { AppProvider } from '@shopify/polaris';
 import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
+import Color from '../../../services/color';
 
 const RangeSelectArea = (props) => {
 
   let RangeSelectArea = styled.div`
-  background: #F0F0F0;
+  background: ${Color.snowWhite};
   
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
   border-radius: 12px;
 
   height: 100px;

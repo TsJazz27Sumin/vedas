@@ -5,6 +5,7 @@ import Content from '../../../components/ver2/News/Content'
 import FooterLogoArea from '../../../components/ver2/News/FooterLogoArea'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 import '../../../css/News.css';
 
 const News = (props) => {
@@ -20,7 +21,7 @@ const News = (props) => {
   let ContentArea = styled.div`
   border-radius: 54px;
 
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 900px;
   width: 91%;

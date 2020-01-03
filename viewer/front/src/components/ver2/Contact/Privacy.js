@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'styled-components';
-import { isMobile } from "react-device-detect";
+import styled from 'styled-components'
+import { isMobile } from "react-device-detect"
+import Color from '../../../services/color'
 
 const Privacy = (props) => {
 
@@ -10,7 +11,7 @@ const Privacy = (props) => {
   let Privacy = styled.div`
   font-family: Roboto;
   font-size: 18px;
-  color: #000;
+  color: ${Color.black};
 
   width: 90%;
   height: 10%;
@@ -30,7 +31,7 @@ const Privacy = (props) => {
   let PrivacyAccept = styled.button`
   border-radius: 4px;
 
-  background: #0084FF;
+  background: ${Color.primaryBlue};
   
   height: 9%;
   width: 24%;
@@ -49,7 +50,7 @@ const Privacy = (props) => {
   font-family: Roboto;
   font-weight: bold;
   font-size: 20px;
-  color: #fff;
+  color: ${Color.white};
 
   line-height: 22px;
 `;

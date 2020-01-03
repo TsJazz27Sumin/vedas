@@ -15,6 +15,7 @@ import electoricPowerCompanyHook from '../../../custom_hooks/electoric_power_com
 import dateSelectHook from '../../../custom_hooks/date_select'
 import electoricPowerDataHook from '../../../custom_hooks/electoric_power_data'
 import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color'
 
 const AnalyzeArea = (props) => {
 
@@ -39,7 +40,7 @@ const AnalyzeArea = (props) => {
 
   let AnalyzeArea = styled.div`
   border-radius: 54px;
-  background: #efefef;
+  background: ${Color.gray};
 
   height: ${1450 + (350 * checkedCount)}px;
   width: 91%;
@@ -55,10 +56,10 @@ const AnalyzeArea = (props) => {
 ` ;
 
   let Content = styled.div`
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
   border-radius: 16px;
 
-  background: #fff;
+  background: ${Color.white};
   
   height: ${350 + (350 * checkedCount)}px;
   width: 90%;

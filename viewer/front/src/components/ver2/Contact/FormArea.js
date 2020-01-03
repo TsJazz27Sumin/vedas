@@ -7,6 +7,7 @@ import FullName from './FullName'
 import Email from './Email'
 import axios from 'axios'
 import Inquiry from './Inquiry';
+import Color from '../../../services/color';
 
 const FormArea = (props) => {
 
@@ -80,7 +81,7 @@ const FormArea = (props) => {
   let ThankYou = styled.div`
   font-family: Montserrat;
   font-size: 32px;
-  color: #464646;
+  color: ${Color.darkGray};
 
   padding: 0% 0% 0% 0%;
   margin:  5% 0% 0% 5%;

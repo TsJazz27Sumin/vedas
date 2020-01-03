@@ -5,8 +5,6 @@ import { isMobile } from "react-device-detect";
 const ContentTitle = () => {
 
   let ContentTitle = styled.div`
-  color: #25282B;
-
   padding: 2% 0% 2% 1.5%;
   margin:  0% 0% 0% 0%;
   `;

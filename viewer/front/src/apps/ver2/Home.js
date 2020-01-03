@@ -11,6 +11,7 @@ import Contact from './contents/Contact'
 import News from './contents/News'
 import Usage from './contents/Usage'
 import wordDictionaryService from '../../services/word_dictionary'
+import Color from '../../services/color';
 import '../../css/Common.css';
 
 const Home = (props) => {
@@ -63,7 +64,7 @@ const Home = (props) => {
   }
 
   let OutLine = styled.div`
-  background: #fff;
+  background: ${Color.white};
 
   height: 100%;
   width: 1440px;

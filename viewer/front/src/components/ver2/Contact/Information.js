@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const Information = (props) => {
 
@@ -26,7 +27,7 @@ const Information = (props) => {
   `;
 
   let InformationP = styled.p`
-  color: #4e4e4e;
+  color: ${Color.lightGray};
   `;
 
   if (isMobile) {

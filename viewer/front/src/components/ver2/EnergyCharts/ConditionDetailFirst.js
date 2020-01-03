@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect"
+import Color from '../../../services/color'
 
 const ConditionDetailFirst = (props) => {
 
@@ -12,7 +13,7 @@ const ConditionDetailFirst = (props) => {
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
   let ConditionDetailArea1 = styled.div`
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 5%;
   width: auto;
@@ -30,7 +31,7 @@ const ConditionDetailFirst = (props) => {
 ` ;
 
   let ConditionDetailParamAreaY = styled.div`
-  background: #fff;
+  background: ${Color.white};
 
   border-radius: 10px;
 
@@ -60,7 +61,7 @@ const ConditionDetailFirst = (props) => {
   let ConditionDetailParamLabel = styled.div`
   font-family: Roboto;
   font-size: 16px;
-  color: #000;
+  color: ${Color.black};
   
   padding: 0% 0% 0% 0%;
   margin:  4% 0% 0% 5%;

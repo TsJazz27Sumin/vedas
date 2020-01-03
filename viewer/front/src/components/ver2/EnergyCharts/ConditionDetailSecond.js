@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const ConditionDetailSecond = (props) => {
 
@@ -12,7 +13,7 @@ const ConditionDetailSecond = (props) => {
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   let ConditionDetailArea2 = styled.div`
-  background: #fff;
+  background: ${Color.white};
   border-radius: 16px;
 
   height: 14%;
@@ -25,7 +26,7 @@ const ConditionDetailSecond = (props) => {
   ` ;
 
   let ConditionDetailParam = styled.div`
-  background: #fff;
+  background: ${Color.white};
   border-radius: 16px;
 
   height: auto;

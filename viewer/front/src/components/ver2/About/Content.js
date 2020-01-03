@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const Content = (props) => {
 
   const dict = props.dict;
 
   let Content = styled.div`
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
   border-radius: 16px;
 
-  background: #fff;
+  background: ${Color.white};
 
   height: 80%;
   width: 92%;
@@ -28,9 +29,9 @@ const Content = (props) => {
   let Text1 = styled.div`
   font-family: Roboto;
   font-size: 42px;
-  color: #000;
+  color: ${Color.black};
 
-  border: 8px solid #fff;
+  border: 8px solid ${Color.white};
 
   padding: 0% 0% 0% 3%;
   margin:  0% 0% 0% 0%;
@@ -47,9 +48,9 @@ const Content = (props) => {
   let Text2 = styled.div`
   font-family: Roboto;
   font-size: 22px;
-  color: #000;
+  color: ${Color.black};
 
-  border: 8px solid #fff;
+  border: 8px solid ${Color.white};
 
   padding: 0% 0% 0% 3.2%;
   margin:  0% 0% 0% 0%;
@@ -66,9 +67,9 @@ const Content = (props) => {
   let Text3 = styled.div`
   font-family: Roboto;
   font-size: 48px;
-  color: #000;
+  color: ${Color.black};
 
-  border: 8px solid #fff;
+  border: 8px solid ${Color.white};
 
   padding: 0% 0% 0% 3.1%;
   margin:  0% 0% 0% 0%;
@@ -85,7 +86,7 @@ const Content = (props) => {
   let Text4 = styled.div`
   font-family: Roboto;
   font-size: 22px;
-  color: #000;
+  color: ${Color.black};
 
   padding: 0% 0% 0% 4%;
   margin:  0% 0% 0% 0%;
@@ -102,7 +103,7 @@ const Content = (props) => {
   let Text5 = styled.div`
   font-family: Roboto;
   font-size: 22px;
-  color: #000;
+  color: ${Color.black};
 
   padding: 0% 0% 0% 4%;
   margin:  0% 0% 0% 0%;

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const Email = (props) => {
 
@@ -12,7 +13,7 @@ const Email = (props) => {
   let EmailLabel = styled.label`
   font-family: Montserrat;
   font-size: 18px;
-  color: #464646;
+  color: ${Color.darkGray};
 
   height: 10%;
   width: 40%;

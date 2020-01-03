@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import UsageAreaOneSvg from './UsageAreaOneSvg'
+import Color from '../../../services/color';
 
 const Content1 = (props) => {
 
@@ -10,8 +11,8 @@ const Content1 = (props) => {
   const Text2 = props.Text2;
 
   let Content1 = styled.div`
-  background: #fff;
-  border: 1px solid #fff;
+  background: ${Color.white};
+  border: 1px solid ${Color.white};
   border-radius: 16px;
 
   height: 19%;

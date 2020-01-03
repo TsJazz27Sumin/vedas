@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const SolarSampleImages = () => {
 
@@ -30,7 +31,7 @@ const SolarSampleImages = () => {
 `;
 
   let SolarSampleImage = styled.div`
-  background: #F9F9F9;
+  background: ${Color.snowWhite};
   border-radius: 20px;
 
   height: auto;

@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 
 const ConditionDetailTitle = (props) => {
 
   let ConditionDetailTitle = styled.div`
   font-family: Roboto;
   font-size: 22px;
-  color: #000;
+  color: ${Color.black};
 
   height: 0%;
   width: auto;

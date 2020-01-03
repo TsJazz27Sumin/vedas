@@ -5,9 +5,6 @@ import { isMobile } from "react-device-detect";
 const ContentTitle = () => {
 
   let ContentTitle = styled.div`
-  font-family: Montserrat;
-  color: #25282B;
-
   padding: 0% 0% 0% 0%;
   margin:  0% 0% 0% 0%;
 

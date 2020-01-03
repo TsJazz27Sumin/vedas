@@ -6,6 +6,7 @@ import Content1 from '../../../components/ver2/Usage/Content1'
 import Content2 from '../../../components/ver2/Usage/Content2'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
+import Color from '../../../services/color';
 import '../../../css/Usage.css';
 
 const Usage = (props) => {
@@ -22,7 +23,7 @@ const Usage = (props) => {
   let ContentArea = styled.div`
   border-radius: 54px;
 
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 4300px;
   width: 91%;
@@ -40,10 +41,10 @@ const Usage = (props) => {
   let Text1 = styled.div`
   font-family: Roboto;
   font-size: 26px;
-  color: #000;
+  color: ${Color.black};
 
   border-radius: 54px;
-  border: 8px solid #fff;
+  border: 8px solid ${Color.white};
 
   padding: 3% 0% 0% 3%;
   margin:  0% 0% 0% 0%;
@@ -54,7 +55,7 @@ const Usage = (props) => {
   let Text2 = styled.div`
   font-family: Roboto;
   font-size: 16px;
-  color: #8c8c8c;
+  color: ${Color.ashGray};
 
   padding: 1% 0% 0% 3.8%;
   margin:  0% 0% 0% 0%;

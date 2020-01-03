@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { AppProvider, Select } from '@shopify/polaris';
 import { isMobile } from "react-device-detect";
 import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color';
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 
@@ -40,10 +41,10 @@ const TopBar = (props) => {
   `;
 
   let MenuArea = styled.div`
-  border: 1px solid #fff;
+  border: 1px solid ${Color.white};
   border-radius: 12px;
 
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 56%;
   width: 53%;
@@ -61,7 +62,7 @@ const TopBar = (props) => {
   let MenuItem = styled.div`
   font-family: Roboto;
   font-size: 20px;
-  color: #4e4e4e;
+  color: ${Color.lightGray};
 
   padding: 4.8% 3% 4% 3%;
   margin:  0% 0% 0% 0%;
@@ -87,7 +88,7 @@ const TopBar = (props) => {
     TopBarArea = styled(TopBarArea)`
     border-radius: 12px;
 
-    background: #efefef;
+    background: ${Color.gray};
 
     height: 8%;
     width:${WindowSizeService.getWindowWidthSize() + 60}px;

@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import { AppProvider } from '@shopify/polaris';
 import DateSelect from './DateSelect'
+import Color from '../../../services/color';
 
 const DateSelectArea = (props) => {
 
   let DateSelectArea = styled.div`
-  background: #F0F0F0;
-  border: 1px solid #fff;
+  background: ${Color.snowWhite};
+  border: 1px solid ${Color.white};
   border-radius: 12px;
 
   height: 100px;
@@ -21,7 +22,7 @@ const DateSelectArea = (props) => {
   let DateSelectAreaHelp = styled.div`
   font-family: Roboto;
 
-  color: rgba(0, 0, 0, 0.34);
+  color: ${Color.rgbaGray};
 
   padding: 0% 0% 0% 0%;
   margin:  -3.5% 0% 0% 45%;

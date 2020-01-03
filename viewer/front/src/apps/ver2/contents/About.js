@@ -3,6 +3,7 @@ import ReactGA from 'react-ga';
 import ContentTitle from '../../../components/ver2/About/ContentTitle'
 import Content from '../../../components/ver2/About/Content'
 import FooterLogoArea from '../../../components/ver2/About/FooterLogoArea'
+import Color from '../../../services/color';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import '../../../css/About.css';
@@ -20,7 +21,7 @@ const About = (props) => {
 
   let ContentArea = styled.div`
   border-radius: 54px;
-  background: #efefef;
+  background: ${Color.gray};
 
   height: 1300px;
   width: 91%;
