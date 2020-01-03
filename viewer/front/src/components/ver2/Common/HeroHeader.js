@@ -5,34 +5,29 @@ import { isMobile } from "react-device-detect";
 const HeroHeader = (props) => {
 
   let Hero = styled.div`
-  padding-top: 10%;
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   `;
 
   let MainTitle = styled.div`
-  padding-left: 25%;
-  padding-right: 25%;
-
-  text-align: center;
+  padding: 0% 25% 0% 25%;
+  margin:  0% 0% 0% 0%;
 
   opacity: 0;
 
   position: absolute;
 
   animation: appeare 1s ease 2s 1 normal forwards running;
-  
-  
   `;
 
   let VedasLogo = styled.div`
-  padding-left: 35%;
-  padding-right: 35%;
-
-  text-align: center;
+  padding: 0% 35% 0% 35%;
+  margin:  0% 0% 0% 0%;
 
   opacity: 0;
 
   position: absolute;
-  top: 93.7%;
+  top: 94%;
 
   animation: appeare 1s ease 4s 1 normal forwards running;
   `;

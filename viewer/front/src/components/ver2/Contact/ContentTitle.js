@@ -6,10 +6,15 @@ const ContentTitle = () => {
 
   let ContentTitle = styled.div`
   font-family: Montserrat;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 4%;
   left: 5%;
+  right: 0%;
+  bottom: 0%;
   `;
 
   if (isMobile) {

@@ -25,9 +25,8 @@ const News = (props) => {
   height: 900px;
   width: 91%;
 
-  padding-top: 2%;
-  padding-left: 4%;
-  margin-left: 4%;
+  padding: 2% 0% 0% 4%;
+  margin:  0% 0% 0% 4%;
   `;
 
   if (isMobile) {

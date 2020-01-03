@@ -82,8 +82,8 @@ const FormArea = (props) => {
   font-size: 32px;
   color: #464646;
 
-  margin-top: 5%;
-  margin-left: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 5%;
   `;
 
   if (isMobile) {

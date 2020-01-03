@@ -27,9 +27,8 @@ const Usage = (props) => {
   height: 4300px;
   width: 91%;
 
-  padding-top: 2%;
-  padding-left: 4%;
-  margin-left: 4%;
+  padding: 2% 0% 0% 4%;
+  margin:  0% 0% 0% 4%;
   `;
 
   if (lang === "en"){
@@ -46,8 +45,8 @@ const Usage = (props) => {
   border-radius: 54px;
   border: 8px solid #fff;
 
-  padding-top: 3%;
-  padding-left: 3%;
+  padding: 3% 0% 0% 3%;
+  margin:  0% 0% 0% 0%;
 
   line-height: 40px;
   `;
@@ -57,8 +56,8 @@ const Usage = (props) => {
   font-size: 16px;
   color: #8c8c8c;
 
-  padding-left: 3.8%;
-  padding-top: 1%;
+  padding: 1% 0% 0% 3.8%;
+  margin:  0% 0% 0% 0%;
 
   line-height: 19px;
   `;
@@ -66,9 +65,10 @@ const Usage = (props) => {
   let LogoArea = styled.div`
   width: 60%;
 
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% -7%;
+
   position: absolute;
-  margin-top: 70px;
-  margin-left: -7%;
   `;
 
   if (isMobile) {

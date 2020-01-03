@@ -14,13 +14,17 @@ const Email = (props) => {
   font-size: 18px;
   color: #464646;
 
-  width: 40%;
   height: 10%;
+  width: 40%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
-  
   top: 21%;
   left: 54%;
+  right: 0%;
+  bottom: 0%;
   
   line-height: 20px;
   `;

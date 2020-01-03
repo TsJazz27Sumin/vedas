@@ -9,12 +9,6 @@ const Inquiry = (props) => {
   const handleInquiryChange = props.handleInquiryChange;
   const removeError = props.removeError;
 
-  let Inquiry = styled.div`
-  font-family: Montserrat;
-  font-size: 18px;
-  color: #464646;
-  `;
-
   let InquiryLabel = styled.label`
   font-family: Montserrat;
   font-size: 18px;
@@ -22,10 +16,15 @@ const Inquiry = (props) => {
 
   width: 40%;
   height: 10%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 36%;
   left: 5%;
+  right: 0%;
+  bottom: 0%;
   
   line-height: 20px;
   `;
@@ -42,7 +41,7 @@ const Inquiry = (props) => {
   }
 
   return (
-    <Inquiry>
+    <div className="inquiry">
       <InquiryLabel>{dict.contact_item_input}</InquiryLabel>
       <textarea
         key="key_inquiry"
@@ -57,12 +56,12 @@ const Inquiry = (props) => {
         onChange={(event) => { handleInquiryChange(event) }}
       />
       <input
-        key="key_inquir_hidden"
+        key="key_inquiry_hidden"
         id="id_inquiry_hidden"
         type="hidden"
         defaultValue={inquiry}
       />
-    </Inquiry>
+    </div>
   )
 }
 

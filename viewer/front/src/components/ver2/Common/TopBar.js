@@ -16,21 +16,23 @@ const TopBar = (props) => {
   const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
 
   let TopBarArea = styled.div`
+  height: auto;
   width: 1440px;
 
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: fixed;
-  top: 0;
-  left: 0;
   
   z-index: 999;
   `;
 
   let VedasLogoTopBar = styled.div`
+  height: auto;
   width: 245px;
 
-  padding-top: 1.5%;
-  padding-left: 3%;
-  padding-bottom: 3%;
+  padding: 1.5% 0% 3% 3%;
+  margin:  0% 0% 0% 0%;
   `;
   
   let MobileDropdown = styled.div`
@@ -46,26 +48,24 @@ const TopBar = (props) => {
   height: 56%;
   width: 53%;
 
-  margin-left: 45%;
-  padding-left: 3%;
-  padding-right: 2%;
-
-  top: 17%;
+  padding: 0% 0% 0% 4%;
+  margin:  0% 0% 0% 45%;
 
   position: absolute;
-  
-  box-sizing: border-box;
+  top: 17%;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
   `;
 
   let MenuItem = styled.div`
   font-family: Roboto;
-  font-size: 140%;
+  font-size: 20px;
   color: #4e4e4e;
 
-  padding-left: 3%;
-  padding-right: 3%;
+  padding: 4.8% 3% 4% 3%;
+  margin:  0% 0% 0% 0%;
 
-  vertical-align: middle;
   letter-spacing: 0.03em;
 
   display: inline-block;
@@ -74,11 +74,11 @@ const TopBar = (props) => {
   `;
   
   let MenuItemDropdownWrapper = styled.div`
+  height: auto;
   width: 28%;
-  
-  padding-top: 2.5%;
-  padding-left: 7%;
-  padding-right: 2%;
+
+  padding: 2.5% 2% 2% 2%;
+  margin:  0% 0% 0% 6%;
   
   display: inline-block;
     `;

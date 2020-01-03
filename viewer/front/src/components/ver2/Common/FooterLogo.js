@@ -7,25 +7,37 @@ const FooterLogo = (props) => {
   const LogoArea = props.LogoArea;
 
   let VedasLogo = styled.div`
+  height: 0%;
   width: 30%;
 
-  display: inline-block;
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
   top: 160%;
   left: 48%;
+  right: 0%;
+  bottom: 0%;
+
+  display: inline-block;
 
   cursor: pointer;
   `;
 
   let PanairLogo = styled.div`
+  height: 0%;
   width: 30%;
 
-  display: inline-block;
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
   top: 160%;
   left: 92%;
+  right: 0%;
+  bottom: 0%;
+
+  display: inline-block;
 
   cursor: pointer;
   `;

@@ -15,72 +15,105 @@ const Content = (props) => {
   height: 80%;
   width: 92%;
 
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: absolute;
   top: 8%;
   left: 4%;
+  right: 0%;
+  bottom: 0%;
   `;
 
-  let Text = styled.div`
+  let Text1 = styled.div`
   font-family: Roboto;
+  font-size: 42px;
   color: #000;
 
-  position: absolute;
-  `;
-
-  let Text1 = styled(Text)`
-  font-size: 42px;
-
   border: 8px solid #fff;
 
-  padding-left:3%;
+  padding: 0% 0% 0% 3%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
+  top: 7.63%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
 
   line-height: 49px;   
-
-  top: 7.63%;
   `;
 
-  let Text2 = styled(Text)`
+  let Text2 = styled.div`
+  font-family: Roboto;
   font-size: 22px;
+  color: #000;
 
   border: 8px solid #fff;
 
-  padding-left:3.2%;
+  padding: 0% 0% 0% 3.2%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
+  top: 17.63%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
 
   line-height: 26px;
-
-  top: 17.63%;
   `;
 
-  let Text3 = styled(Text)`
+  let Text3 = styled.div`
+  font-family: Roboto;
   font-size: 48px;
+  color: #000;
 
   border: 8px solid #fff;
 
-  padding-left:3.1%;
+  padding: 0% 0% 0% 3.1%;
+  margin:  0% 0% 0% 0%;
 
-  line-height: 56px;
-
+  position: absolute;
   top: 32.63%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  
+  line-height: 56px;
   `;
 
-  let Text4 = styled(Text)`
+  let Text4 = styled.div`
+  font-family: Roboto;
   font-size: 22px;
+  color: #000;
 
-  padding-left:4%;
+  padding: 0% 0% 0% 4%;
+  margin:  0% 0% 0% 0%;
 
-  line-height: 32px;
-
+  position: absolute;
   top: 50.63%;
-  `;
-
-  let Text5 = styled(Text)`
-  font-size: 22px;
-
-  padding-left:4%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
 
   line-height: 32px;
+  `;
 
+  let Text5 = styled.div`
+  font-family: Roboto;
+  font-size: 22px;
+  color: #000;
+
+  padding: 0% 0% 0% 4%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
   top: 62.63%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+
+  line-height: 32px;
   `;
 
   if (isMobile) {

@@ -4,15 +4,14 @@ import { isMobile } from "react-device-detect";
 
 const HeroWithoutTitle = () => {
 
-  let Hero = styled.div``;
+  let Hero = styled.div`
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+  `;
 
   if (isMobile) {
     Hero = styled(Hero)`
     padding-top: 15%;
-  `;
-  } else {
-    Hero = styled(Hero)`
-    padding-top: 10%;
   `;
   }
 

@@ -75,6 +75,12 @@
     left: 54%;
 }
 
+.inquiry{
+    font-family: Montserrat;
+    font-size: 18px;
+    color: #464646;
+}
+
 .inquiry-input{
     font-family: inherit;
     font-size   : 100%;

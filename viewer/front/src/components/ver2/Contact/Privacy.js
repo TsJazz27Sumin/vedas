@@ -14,10 +14,15 @@ const Privacy = (props) => {
 
   width: 90%;
   height: 10%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 65%
   left: 5%;
+  right: 0%;
+  bottom: 0%;
   
   line-height: 32px;
 `;
@@ -30,9 +35,14 @@ const Privacy = (props) => {
   height: 9%;
   width: 24%;
   
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+  
   position: absolute;
   top: 85%;
   left: 38%;
+  right: 0%;
+  bottom: 0%;
 `;
 
   let PrivacyAcceptP = styled.p`

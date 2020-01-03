@@ -19,17 +19,23 @@ const TabletMessage = () => {
   const ny_image = public_url + '/tablet/ny' + (getRandomInt(2) + 1) + '.JPG';
 
   const ImageStyled = styled.img`
-  width:100%;
+  height: 100%;
+  width: 100%;
 
-  margin-top:10%;  
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   `;
 
   const ModalDiv = styled.div`
-  height: 500px;
+  height: 200px;
+  width: 100%;
   `;
 
   const BackGroundDiv = styled.div`
   background: #000;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
   `;
 
   return (

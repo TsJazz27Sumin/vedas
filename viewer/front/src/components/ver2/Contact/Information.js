@@ -12,10 +12,15 @@ const Information = (props) => {
   
   width: 90%;
   height: 10%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 5%;
   left: 5%;
+  right: 0%;
+  bottom: 0%;
   
   line-height: 42px;
   `;

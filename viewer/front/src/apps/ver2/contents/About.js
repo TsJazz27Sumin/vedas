@@ -20,17 +20,19 @@ const About = (props) => {
 
   let ContentArea = styled.div`
   border-radius: 54px;
-
   background: #efefef;
 
   height: 1300px;
   width: 91%;
   
-  padding-top: 10%;
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
   top: 100%;
   left: 4.1%;
+  right: 0%
+  bottom: 0%;
 
   `;
 

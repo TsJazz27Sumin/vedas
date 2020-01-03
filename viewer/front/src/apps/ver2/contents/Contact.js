@@ -19,28 +19,38 @@ const Contact = (props) => {
 
   let ContentArea = styled.div`
   border-radius: 54px;
-
   background: #efefef;
 
   height: 1400px;
   width: 91%;
 
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: absolute;
-  left: 4.1%;
   top: 100%;
+  left: 4.1%;
+  right: 0%
+  bottom: 0%;
+  
   `;
 
   let Content = styled.div`
   border: 1px solid #fff;
   border-radius: 16px;
-
   background: #fff;
+
   height: 1000px;
   width: 92%;
 
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: absolute;
   top: 8%;
-  left: 4%; 
+  left: 4%;
+  right: 0%
+  bottom: 0%;
   `;
 
   if (isMobile){

@@ -16,10 +16,15 @@ const FullName = (props) => {
 
   width: 40%;
   height: 10%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 21%;
   left: 5%;
+  right: 0%;
+  bottom: 0%;
   
   line-height: 20px;
   `;
