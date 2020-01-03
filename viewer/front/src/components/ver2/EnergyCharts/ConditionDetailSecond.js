@@ -13,22 +13,26 @@ const ConditionDetailSecond = (props) => {
 
   let ConditionDetailArea2 = styled.div`
   background: #fff;
-  
   border-radius: 16px;
 
   height: 14%;
+  width: auto;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   margin-left: 5%;
   ` ;
 
   let ConditionDetailParam = styled.div`
+  background: #fff;
   border-radius: 16px;
 
-  background: #fff;
-
+  height: auto;
   width: 16.5%;
 
-  padding: 1%;
+  padding: 1% 1% 1% 1%;
+  margin:  0% 0% 0% 0%;
 
   cursor: pointer;
 ` ;
@@ -51,8 +55,8 @@ const ConditionDetailSecond = (props) => {
   font-size: 16px;
   color: #000;
   
-  margin-top: 4%;
-  margin-left: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  4% 0% 0% 5%;
   
   display: inline-block;
 
@@ -62,9 +66,11 @@ const ConditionDetailSecond = (props) => {
   let ConditionDetailParamButton = styled.button`
   border-radius: 2px;
 
+  height: auto;
   width: 13%;
 
-  padding-top: 10%;
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   cursor: pointer;
 ` ;
@@ -90,13 +96,21 @@ const ConditionDetailSecond = (props) => {
   let ConditionDetailParamButtonOkiden = setBackGround(isMobile, electricPowersChecked.okidenChecked);
 
   let ConditionDetailParamArea1 = styled.div`
+  height: auto;
   width: 100%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   let ConditionDetailParamArea2 = styled.div`
   border-radius: 12px;
   
+  height: auto;
   width: 100%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   if (isMobile) {

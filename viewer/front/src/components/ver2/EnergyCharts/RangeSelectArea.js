@@ -15,11 +15,8 @@ const RangeSelectArea = (props) => {
   height: 100px;
   width: 94%;
   
-  margin-top: 0%;
-  margin-left: 2%;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 2% 2% 0% 2%;
+  margin:  0% 0% 0% 2%;
   `;
 
   if (isMobile) {

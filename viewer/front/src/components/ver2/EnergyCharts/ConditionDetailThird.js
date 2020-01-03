@@ -10,22 +10,24 @@ const ConditionDetailThird = (props) => {
 
   const ConditionDetailArea3 = styled.div`
   background: #fff;
-  
   border-radius: 16px;
 
   height: 14%;
-  
-  margin-left: 5%;
+  width: auto;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 5%;
   ` ;
 
   let ConditionDetailParam = styled.div`  
   background: #fff;
-
   border-radius: 16px;
 
+  height: auto;
   width: 16.5%;
 
-  padding: 1%;
+  padding: 1% 1% 1% 1%;
+  margin:  0% 0% 0% 0%;
   
   cursor: pointer;
 ` ;
@@ -58,13 +60,13 @@ const ConditionDetailThird = (props) => {
 
   let ConditionDetailParamButton = styled.button`
   background: #6DDCFF;
-
   border-radius: 5px;
 
+  height: auto;
   width: 100%;
   
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding: 3% 0% 3% 0%;
+  margin:  0% 0% 0% 0%;
   
   cursor: pointer;
 ` ;
@@ -72,13 +74,21 @@ const ConditionDetailThird = (props) => {
   const ConditionDetailParamArea1 = styled.div`
   border-radius: 12px;
 
+  height: auto;
   width: 100%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   const ConditionDetailParamArea2 = styled.div`
   border-radius: 12px;
 
+  height: auto;
   width: 100%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   const setBackGround = (isMobile, checked) => {

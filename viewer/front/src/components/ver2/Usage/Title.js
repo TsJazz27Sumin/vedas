@@ -8,9 +8,8 @@ const Title = () => {
   font-family: Montserrat;
   color: #25282B;
 
-  padding-top 2%;
-  padding-left: 1.5%;
-  padding-bottom: 2%;
+  padding: 2% 0% 2% 1.5%;
+  margin:  0% 0% 0% 0%;
   `;
 
   if (isMobile) {

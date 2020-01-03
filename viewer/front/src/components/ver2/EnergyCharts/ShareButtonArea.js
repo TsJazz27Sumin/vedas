@@ -6,8 +6,8 @@ import ShareButtons from '../Common/ShareButtons'
 const ShareButtonArea = (props) => {
 
   let ShareButtonArea = styled.div`
-  margin-top: 5%;
-  margin-left: 37%;
+  padding: 0% 0% 0% 0%;
+  margin:  4% 0% 0% 37%;
   `;
 
   if (isMobile) {

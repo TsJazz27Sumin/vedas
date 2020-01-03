@@ -11,43 +11,42 @@ const Content1 = (props) => {
 
   let Content1 = styled.div`
   background: #fff;
-  
   border: 1px solid #fff;
   border-radius: 16px;
 
   height: 19%;
   width: 96%;
-  
-  padding-bottom: 5%;
 
-  left: 4%;
-  
-  box-sizing: border-box;
+  padding: 0% 0% 5% 0%;
+  margin:  0% 0% 0% 0%;
   `;
 
   let UsageAreaOneTextArea1 = styled.div`
+  height: auto;
   width: 80%;
   
-  padding-left: 6.8%;
-  padding-top: 2.5%;
+  padding: 2.5% 0% 0% 6.8%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   `;
 
   let UsageAreaOneTextArea2 = styled.div`
+  height: auto;
   width: 80%;
 
-  padding-left: 6.8%;
-  padding-top: 12.7%;
+  padding: 12.7% 0% 0% 6.8%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
   `;
 
   let UsageAreaOneTextArea3 = styled.div`
+  height: auto;
   width: 80%;
 
-  padding-left: 6.8%;
-  padding-top: 24.75%;
+  padding: 24.75% 0% 0% 6.8%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   `;

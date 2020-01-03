@@ -8,7 +8,12 @@ const FooterLogoArea = (props) => {
   let LogoArea = styled.div`
   width: 50%;
   
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: absolute;
+
+  //このままじゃないと位置が決まらない。
   top: 88%;
   `;
   

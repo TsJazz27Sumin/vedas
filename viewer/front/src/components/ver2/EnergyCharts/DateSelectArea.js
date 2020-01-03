@@ -14,11 +14,8 @@ const DateSelectArea = (props) => {
   height: 100px;
   width: 94%;
 
-  margin-top: 0%;
-  margin-left: 2%;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 2% 0% 2% 2%;
+  margin:  0% 0% 0% 2%;
   `;
 
   let DateSelectAreaHelp = styled.div`
@@ -26,9 +23,9 @@ const DateSelectArea = (props) => {
 
   color: rgba(0, 0, 0, 0.34);
 
-  margin-top: -3.5%;
-  margin-left: 45%;
-  
+  padding: 0% 0% 0% 0%;
+  margin:  -3.5% 0% 0% 45%;
+
   display: flex;
   `;
 

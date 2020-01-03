@@ -6,9 +6,11 @@ import FooterLogo from '../Common/FooterLogo'
 const FooterLogoArea = (props) => {
 
   let LogoArea = styled.div`
+  height: auto;
   width: 60%;
 
-  margin-top: 70px
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 0%;
   
   position: absolute;  
   `;

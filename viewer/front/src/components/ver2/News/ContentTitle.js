@@ -7,9 +7,8 @@ const ContentTitle = () => {
   let ContentTitle = styled.div`
   color: #25282B;
 
-  padding-left: 1.5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding: 2% 0% 2% 1.5%;
+  margin:  0% 0% 0% 0%;
   `;
 
   if (isMobile) {

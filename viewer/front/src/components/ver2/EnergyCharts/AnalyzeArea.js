@@ -39,15 +39,19 @@ const AnalyzeArea = (props) => {
 
   let AnalyzeArea = styled.div`
   border-radius: 54px;
-
   background: #efefef;
 
   height: ${1450 + (350 * checkedCount)}px;
   width: 91%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
   top: 140%;
   left: 4.1%;
+  right: 0%;
+  bottom: 0%;
 ` ;
 
   let Content = styled.div`
@@ -58,9 +62,15 @@ const AnalyzeArea = (props) => {
   
   height: ${350 + (350 * checkedCount)}px;
   width: 90%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
   
   position: absolute;
+  top: auto;
   left: 5%;
+  right: 0%;
+  bottom: auto;
   `;
 
   let ChartsAreaUl = styled.ul`

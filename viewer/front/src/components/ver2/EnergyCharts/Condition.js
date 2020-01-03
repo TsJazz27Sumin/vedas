@@ -16,6 +16,9 @@ const Condition = (props) => {
   let ConditionArea = styled.div`
   height: 500px;
   width: 95%;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   const window_width = WindowSizeService.getWindowWidthSize();
@@ -35,11 +38,11 @@ const Condition = (props) => {
   font-size: ${conditionDetailMobileCautionFontSize}px;
   
   height: 0%;
+  width: auto;
   
-  margin-top: 5%;
-  margin-left: 9%;
-  padding-bottom: 12%;
-  
+  padding: 0% 0% 12% 0%;
+  margin:  5% 0% 0% 9%;
+
   line-height: 26px;
   ` ;
 
@@ -49,10 +52,10 @@ const Condition = (props) => {
   color: #000;
 
   height: 0%;
+  width: auto;
   
-  margin-top: 3%;
-  margin-left: 5%;
-  padding-bottom: 3%;
+  padding: 0% 0% 3% 0%;
+  margin:  3% 0% 0% 5%;
 
   line-height: 26px;
   ` ;

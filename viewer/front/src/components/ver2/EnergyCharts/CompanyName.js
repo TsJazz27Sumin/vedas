@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const CompanyName = ({ company_name, jurisdiction }) => {
 
   let CompanyNameArea = styled.div`
-  margin-top: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 0%;
   `;
 
   return (

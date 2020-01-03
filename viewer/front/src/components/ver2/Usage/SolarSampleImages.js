@@ -12,16 +12,18 @@ const SolarSampleImages = () => {
   const solar_sample5 = public_url + '/usage/solar_sample/solar_sample5.png';
 
   let SolarSampleSection = styled.section`
-  padding-right: 9%;
-  padding-top: 5%;
+  padding: 5% 9% 0% 0%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
 `;
 
   let SolarSamplePagingSection = styled.section`
+  height: auto;
   width: 91%;
 
-  padding-right: 9%;
+  padding: 0% 9% 0% 0%;
+  margin:  0% 0% 0% 0%;
 
   position: absolute;
   top: 50%;
@@ -29,28 +31,23 @@ const SolarSampleImages = () => {
 
   let SolarSampleImage = styled.div`
   background: #F9F9F9;
-
   border-radius: 20px;
 
+  height: auto;
   width: 90%;
 
-  padding-left: 8%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  
-  margin-left: 5%;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  
+  padding: 3% 0% 3% 8%;
+  margin:  3% 0% 3% 5%;
+
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 `;
 
   let SolarSampleImagePageing = styled.div`
+  height: auto;
   width: 50%;
   
-  padding-top: 3%;
-  padding-left: 43%;
-  padding-bottom: 3%;
+  padding: 3% 0% 3% 43%;
+  margin:  0% 0% 0% 0%;
   `;
 
   if(isMobile){

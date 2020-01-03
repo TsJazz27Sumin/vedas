@@ -114,8 +114,7 @@ const TopBar = (props) => {
     height: 0%;
     width: 100%;
 
-    padding-left: 0%;
-    padding-right: 0%;
+    padding: 0% 0% 0% 0%;
     margin-left: 0%;
     margin-right: 10%;
 
@@ -132,11 +131,8 @@ const TopBar = (props) => {
     MenuItemDropdownWrapper = styled(MenuItemDropdownWrapper)`
     width: 160px;
     
-    margin-top: 1%;
-    margin-right: 25%;
-    padding-top: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 25% 0% 0%;
     
     display: inline-block;
     `;

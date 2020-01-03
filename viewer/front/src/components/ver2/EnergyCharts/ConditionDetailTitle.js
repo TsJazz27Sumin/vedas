@@ -10,18 +10,18 @@ const ConditionDetailTitle = (props) => {
   color: #000;
 
   height: 0%;
+  width: auto;
   
-  margin-top: 3%;
-  margin-left: 4%;
-  padding-bottom: 3%;
+  padding: 0% 0% 5% 0%;
+  margin:  3% 0% 0% 4%;
 
   line-height: 26px;
   ` ;
 
   if (isMobile) {
     ConditionDetailTitle = styled(ConditionDetailTitle)`
-    margin-top: 0%;
-    padding-bottom: 12%;
+    padding: 0% 0% 12% 0%;
+    margin:  0% 0% 0% 4%;
     `;
   }
 

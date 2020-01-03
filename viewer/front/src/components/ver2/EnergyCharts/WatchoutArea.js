@@ -9,8 +9,8 @@ const WatchoutArea = (props) => {
   const checkedCount = props.checkedCount;
 
   let WatchoutArea = styled.div`
-  margin-top: ${450 + (350 * checkedCount)}px;
-  margin-left: 6%;
+  padding: 0% 0% 0% 0%;
+  margin:  ${450 + (350 * checkedCount)}px 0% 0% 6%;
 `;
 
   let WatchoutTitle = styled.div`
@@ -18,7 +18,8 @@ const WatchoutArea = (props) => {
   font-size: 28px;
   color: #000;
 
-  margin-top: 10%;
+  padding: 0% 0% 0% 0%;
+  margin:  10% 0% 0% 0%;
   
   line-height: 21px;
 `;
@@ -28,7 +29,8 @@ const WatchoutArea = (props) => {
   font-size: 16px;
   color: #000;
 
-  margin-top: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 0%;
   
   line-height: 36px;
 `;

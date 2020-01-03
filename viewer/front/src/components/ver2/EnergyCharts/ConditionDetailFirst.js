@@ -15,12 +15,18 @@ const ConditionDetailFirst = (props) => {
   background: #efefef;
 
   height: 5%;
+  width: auto;
 
-  margin-left: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 5%;
 ` ;
 
   let ConditionDetailParamArea = styled.div`
   height: 100%;
+  width: auto;
+
+  padding: 0% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
 ` ;
 
   let ConditionDetailParamAreaY = styled.div`
@@ -31,7 +37,8 @@ const ConditionDetailFirst = (props) => {
   height: 100%;
   width: 23%;
 
-  padding-bottom: 1%;
+  padding: 0% 0% 1% 0%;
+  margin:  0% 0% 0% 0%;
 
   display: inline-block;
 
@@ -55,8 +62,8 @@ const ConditionDetailFirst = (props) => {
   font-size: 16px;
   color: #000;
   
-  margin-top: 4%;
-  margin-left: 5%;
+  padding: 0% 0% 0% 0%;
+  margin:  4% 0% 0% 5%;
   
   line-height: 22px;
 
@@ -64,7 +71,7 @@ const ConditionDetailFirst = (props) => {
 ` ;
 
   let ConditionDetailParamButtonDiv = styled.div`
-  margin-left:60%;
+  padding: 0% 0% 0% 60%;
 
   display: inline-block;
 ` ;
@@ -72,8 +79,10 @@ const ConditionDetailFirst = (props) => {
   let ConditionDetailParamButton = styled.button`
   border-radius: 2px;
 
+  height: 100%;
   width: 140%;
 
+  // ここは、このままじゃないときれいに出ない。
   padding-top: 100%;
   
   cursor: pointer;

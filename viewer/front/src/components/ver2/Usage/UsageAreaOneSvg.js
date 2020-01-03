@@ -7,8 +7,9 @@ const UsageAreaOneSvg = () => {
   let UsageAreaOneSvg = styled.div`
   width: 10%;
 
-  padding-top: 5.5%;
-  
+  padding: 5.5% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
   position: absolute;
   `;
 

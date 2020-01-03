@@ -13,18 +13,18 @@ const Content = (props) => {
   border: 1px solid #fff;
   border-radius: 16px;
 
+  height: auto;
   width: 96%;
 
-  padding-bottom: 5%;
+  padding: 0% 0% 5% 0%;
+  margin:  0% 0% 0% 0%;
   
   left: 4%;
-`;
+  `;
 
   let ShareButtonArea = styled.div`
-  padding-top: 3%;
-  padding-left: 4%;
-  padding-bottom: 3%;
-`;
+  padding: 3% 0% 3% 4%;
+  `;
 
   let Text1 = styled.div`
   border-radius: 54px;
@@ -34,9 +34,8 @@ const Content = (props) => {
   font-size: 36px;
   color: #000;
 
-  padding-top: 3%;
-  padding-left: 3%;
-  padding-bottom: 3%;
+  padding: 3% 0% 3% 3%;
+  margin:  0% 0% 0% 0%;
   
   line-height: 30px;
 `;
@@ -49,7 +48,8 @@ const Content = (props) => {
   font-size: 22px;
   color: #000;
 
-  padding-left: 3%;
+  padding: 0% 0% 0% 3%;
+  margin:  0% 0% 0% 0%;
 
   line-height: 26px;
 `;

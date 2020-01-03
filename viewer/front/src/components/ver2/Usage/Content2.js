@@ -31,8 +31,8 @@ const Content2 = (props) => {
   height: 72%;
   width: 96%;
   
-  margin-top: 7%;
-  padding-bottom: 5%;
+  padding: 0% 0% 5% 0%;
+  margin:  7% 0% 0% 0%;
   
   left: 4%;
 
@@ -47,23 +47,21 @@ const Content2 = (props) => {
   let EnergyPeakSample = styled.div`
   width: 95%;
 
-  padding-top: 68%;
-  padding-bottom: 3%;
+  padding: 68% 0% 3% 0%;
+  margin:  0% 0% 0% 0%;
   `;
 
   let EnergyPeakSampleImage = styled.div`
-  padding-top: 5%;
-  padding-left: 4%;
-  padding-right: 4%;
-  
-  padding-bottom: 3%;
+  padding: 5% 4% 3% 4%;
+  margin:  0% 0% 0% 0%;
   `;
 
   let OtherSample = styled.div`
+  height: auto;
   width: 95%;
 
-  padding-top: 4%;
-  padding-bottom: 3%;  
+  padding: 4% 0% 3% 0%;
+  margin:  0% 0% 0% 0%;
   `;
 
   let LetsFind = styled.div`
@@ -71,7 +69,8 @@ const Content2 = (props) => {
   font-size: 42px;
   color: #000;
 
-  width: ${lang === "ch" ? 100 : 95}%;%;
+  height: auto;
+  width: ${lang === "ch" ? 100 : 95}%;
 
   padding-top: ${lang === "ch" ? 10 : 5}%;
   padding-left: ${lang === "ch" ? 31 : lang === "en" ? 25 : 22}%;
