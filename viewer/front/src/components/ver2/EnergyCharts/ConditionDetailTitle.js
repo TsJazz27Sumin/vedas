@@ -5,6 +5,18 @@ import { isMobile } from "react-device-detect";
 const ConditionDetailTitle = (props) => {
 
   let ConditionDetailTitle = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     height: 0%;
     margin-top: 3%;
     padding-bottom: 3%;
@@ -17,6 +29,18 @@ const ConditionDetailTitle = (props) => {
 
   if (isMobile) {
     ConditionDetailTitle = styled(ConditionDetailTitle)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       margin-top: 0%;
       padding-bottom: 12%;
     `;

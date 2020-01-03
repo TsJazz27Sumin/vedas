@@ -5,6 +5,18 @@ import { isMobile } from "react-device-detect";
 const UsageAreaOneSvg = () => {
 
   let UsageAreaOneSvg = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     position: absolute;
     padding-top: 5.5%;
     width: 10%;
@@ -12,6 +24,18 @@ const UsageAreaOneSvg = () => {
 
   if (isMobile) {
     UsageAreaOneSvg = styled(UsageAreaOneSvg)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       display: none;
     `;
   }

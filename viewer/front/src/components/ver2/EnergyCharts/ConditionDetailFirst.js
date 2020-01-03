@@ -12,16 +12,52 @@ const ConditionDetailFirst = (props) => {
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
   let ConditionDetailArea1 = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   height: 5%;
   margin-left: 5%;
   background: #efefef;
 ` ;
 
   let ConditionDetailParamArea = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   height: 100%;
 ` ;
 
   let ConditionDetailParamAreaY = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+  
   display: inline-block;
   padding-bottom: 1%;
   height: 100%;
@@ -32,18 +68,66 @@ const ConditionDetailFirst = (props) => {
 ` ;
 
   let ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaY)`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     margin-left: 2%;
 ` ;
 
   let ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaY)`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     margin-left: 2%;
 ` ;
 
   let ConditionDetailParamArea1H = styled(ConditionDetailParamAreaY)`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     margin-left: 2%;
 ` ;
 
   let ConditionDetailParamLabel = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   display: inline-block;
   margin-top: 4%;
   margin-left: 5%;
@@ -55,11 +139,35 @@ const ConditionDetailFirst = (props) => {
 ` ;
 
   let ConditionDetailParamButtonDiv = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   display: inline-block;
   margin-left:60%;
 ` ;
 
   let ConditionDetailParamButton = styled.button`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   width: 140%;
   padding-top: 100%;
   border-radius: 2px;
@@ -80,15 +188,51 @@ const ConditionDetailFirst = (props) => {
 
   if (isMobile) {
     ConditionDetailArea1 = styled(ConditionDetailArea1)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       background:none;
     `;
 
     ConditionDetailParamAreaY = styled(ConditionDetailParamAreaY)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display: block;
       padding-bottom: 5%;
       width: 100%;
     `;
     ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaYM)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display: block;
       padding-bottom: 5%;
       width: 100%;
@@ -97,6 +241,18 @@ const ConditionDetailFirst = (props) => {
     `;
 
     ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaYMD)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display: block;
       padding-bottom: 5%;
       width: 100%;
@@ -105,6 +261,18 @@ const ConditionDetailFirst = (props) => {
     `;
 
     ConditionDetailParamArea1H = styled(ConditionDetailParamArea1H)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display: block;
       padding-bottom: 5%;
       width: 100%;
@@ -114,6 +282,18 @@ const ConditionDetailFirst = (props) => {
     `;
 
     ConditionDetailParamButtonDiv = styled(ConditionDetailParamButtonDiv)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       display: none;
     `;
 

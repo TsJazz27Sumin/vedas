@@ -9,6 +9,18 @@ const ConditionDetailThird = (props) => {
   const handleEnergyResoursesChange = props.electoric_power_resource.handleValueChange;
 
   const ConditionDetailArea3 = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     height: 14%;
     margin-left: 5%;
     background: #fff;
@@ -16,6 +28,18 @@ const ConditionDetailThird = (props) => {
   ` ;
 
   let ConditionDetailParam = styled.div`  
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   padding: 1%;
   width: 16.5%;
   background: #fff;
@@ -38,6 +62,18 @@ const ConditionDetailThird = (props) => {
 
 
   const ConditionDetailParamLabel = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   display: inline-block;
 
   font-family: Roboto;
@@ -50,6 +86,18 @@ const ConditionDetailThird = (props) => {
 ` ;
 
   let ConditionDetailParamButton = styled.button`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   background: #6DDCFF;
   width: 100%;
   padding-top: 3%;
@@ -59,11 +107,35 @@ const ConditionDetailThird = (props) => {
 ` ;
 
   const ConditionDetailParamArea1 = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   width: 100%;
   border-radius: 12px;
 ` ;
 
   const ConditionDetailParamArea2 = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   width: 100%;
   border-radius: 12px;
 ` ;
@@ -71,6 +143,18 @@ const ConditionDetailThird = (props) => {
   const setBackGround = (isMobile, checked) => {
     if (isMobile){
       ConditionDetailParamButton = styled(ConditionDetailParamButton)`
+      // 文字に関するスタイル
+      // 枠線に関するスタイル
+      // 背景に関するスタイル
+      // 横幅と高さに関するスタイル
+      // 余白に関するスタイル
+      // ボックスサイズの算出方法を指定
+      // テキストに関するスタイル
+      // 表示に関するスタイル
+      // 位置に関するスタイル
+      // 横並び(浮動)に関するスタイル
+      // 影に関するスタイル
+
         text-align: left;
         padding-left: 5%;
         padding-top: 4%;
@@ -95,21 +179,69 @@ const ConditionDetailThird = (props) => {
 
   if (isMobile){
     ConditionDetailParamDemand = styled(ConditionDetailParamDemand)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display:block;
       width: 100%;
       border-radius: 10px;
     `;
     ConditionDetailParamNuclear = styled(ConditionDetailParamNuclear)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display:block;
       width: 100%;
       border-radius: 10px;
     `;
     ConditionDetailParamThermal = styled(ConditionDetailParamThermal)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display:block;
       width: 100%;
       border-radius: 10px;
     `;
     ConditionDetailParamHydro = styled(ConditionDetailParamHydro)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display:block;
       width: 100%;
       border-radius: 10px;
@@ -117,12 +249,36 @@ const ConditionDetailThird = (props) => {
     ConditionDetailParamGeothermal = styled(ConditionDetailParamGeothermal)`display:none;`;
     ConditionDetailParamBiomass = styled(ConditionDetailParamBiomass)`display:none;`;
     ConditionDetailParamSolar = styled(ConditionDetailParamSolar)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+
       display:block;
       width: 100%;
       border-radius: 10px;
     `;
     ConditionDetailParamSolarOutputControl = styled(ConditionDetailParamSolarOutputControl)`display:none;`;
     ConditionDetailParamWind = styled(ConditionDetailParamWind)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       display:block;
       width: 100%;
       border-radius: 10px;

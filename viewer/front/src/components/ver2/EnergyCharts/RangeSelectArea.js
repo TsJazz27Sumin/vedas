@@ -7,6 +7,18 @@ import RangeSelect from '../../../components/ver2/EnergyCharts/RangeSelect'
 const RangeSelectArea = (props) => {
 
   let RangeSelectArea = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     height: 100px;
     width: 94%;
     margin-top: 0%;
@@ -21,6 +33,18 @@ const RangeSelectArea = (props) => {
 
   if (isMobile) {
     RangeSelectArea = styled(RangeSelectArea)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       width: 100%;
       margin-left: 0%;
       padding-top: 6%;

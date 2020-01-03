@@ -10,6 +10,18 @@ const Email = (props) => {
   const removeError = props.removeError;
 
   let EmailLabel = styled.label`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     font-family: Montserrat;
     position: absolute;
     width: 40%;
@@ -23,6 +35,18 @@ const Email = (props) => {
 
   if (isMobile) {
     EmailLabel = styled(EmailLabel)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       height: 4%;
       top: 34%;
       font-size: 16px;

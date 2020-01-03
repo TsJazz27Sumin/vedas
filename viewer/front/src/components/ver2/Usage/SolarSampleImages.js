@@ -12,12 +12,36 @@ const SolarSampleImages = () => {
   const solar_sample5 = public_url + '/usage/solar_sample/solar_sample5.png';
 
   let SolarSampleSection = styled.section`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   position: absolute;
   padding-right: 9%;
   padding-top: 5%;
 `;
 
   let SolarSamplePagingSection = styled.section`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   position: absolute;
   padding-right: 9%;
   top: 50%;
@@ -25,6 +49,18 @@ const SolarSampleImages = () => {
 `;
 
   let SolarSampleImage = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
   padding-left: 8%;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -38,6 +74,18 @@ const SolarSampleImages = () => {
 `;
 
   let SolarSampleImagePageing = styled.div`
+  // 文字に関するスタイル
+  // 枠線に関するスタイル
+  // 背景に関するスタイル
+  // 横幅と高さに関するスタイル
+  // 余白に関するスタイル
+  // ボックスサイズの算出方法を指定
+  // テキストに関するスタイル
+  // 表示に関するスタイル
+  // 位置に関するスタイル
+  // 横並び(浮動)に関するスタイル
+  // 影に関するスタイル
+
     padding-left: 43%;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -46,6 +94,18 @@ const SolarSampleImages = () => {
 
   if(isMobile){
     SolarSampleImagePageing = styled(SolarSampleImagePageing)`
+    // 文字に関するスタイル
+    // 枠線に関するスタイル
+    // 背景に関するスタイル
+    // 横幅と高さに関するスタイル
+    // 余白に関するスタイル
+    // ボックスサイズの算出方法を指定
+    // テキストに関するスタイル
+    // 表示に関するスタイル
+    // 位置に関するスタイル
+    // 横並び(浮動)に関するスタイル
+    // 影に関するスタイル
+    
       display: none;
     `;
   }
