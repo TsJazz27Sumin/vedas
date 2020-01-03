@@ -18,99 +18,65 @@ const Contact = (props) => {
   });
 
   let ContentArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
 
-    background: #efefef;
-    height: 1400px;
-    width: 91%;
-    position: absolute;
-    left: 4.1%;
-    top: 100%;
-    border-radius: 54px;
+  background: #efefef;
+
+  height: 1400px;
+  width: 91%;
+
+  position: absolute;
+  left: 4.1%;
+  top: 100%;
   `;
 
   let Content = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border: 1px solid #fff;
+  border-radius: 16px;
 
-    background: #fff;
-    position: absolute;
-    width: 92%;
-    height: 1000px;
-    left: 4%;
-    top: 8%;
-    border: 1px solid #fff;
-    border-radius: 16px;
+  background: #fff;
+  height: 1000px;
+  width: 92%;
+
+  position: absolute;
+  top: 8%;
+  left: 4%; 
   `;
 
   if (isMobile){
 
     ContentArea = styled(ContentArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    border-radius: 54px;
 
-      height: 1000%;
-      width: 95%;
-      position: absolute;
-      padding-top: 0%;
-      left: 0.1%;
-      right: 0.1%;
-      top: 100%;
-      bottom: 10.65%;
-      background: none;
-      border-radius: 54px;
+    background: none;
+
+    height: 1000%;
+    width: 95%;
+
+    padding-top: 0%;
+
+    top: 100%;
+    left: 0.1%;
+    right: 0.1%;
+    bottom: 10.65%;
+
+    position: absolute;
     `;
 
     Content = styled(Content)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      position: absolute;
-      width: 100%;
-      height: 89%;
-      left: 2.4%;
-      top: 8%;
-      background: #fff;
-      border: 1px solid #fff;
-      box-sizing: border-box;
-      border-radius: 16px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+
+    background: #fff;
+
+    height: 89%;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 8%;
+    left: 2.4%;
     `;
   }
 

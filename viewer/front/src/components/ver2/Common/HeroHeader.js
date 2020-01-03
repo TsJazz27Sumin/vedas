@@ -5,62 +5,36 @@ import { isMobile } from "react-device-detect";
 const HeroHeader = (props) => {
 
   let Hero = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    padding-top: 10%;
+  padding-top: 10%;
   `;
 
   let MainTitle = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  padding-left: 25%;
+  padding-right: 25%;
 
-    padding-left: 25%;
-    padding-right: 25%;
-    opacity: 0;
-    animation: appeare 1s ease 2s 1 normal forwards running;
-    text-align: center;
-    position: absolute;
+  text-align: center;
+
+  opacity: 0;
+
+  position: absolute;
+
+  animation: appeare 1s ease 2s 1 normal forwards running;
+  
+  
   `;
 
   let VedasLogo = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  padding-left: 35%;
+  padding-right: 35%;
 
-    padding-left: 35%;
-    padding-right: 35%;
-    opacity: 0;
-    animation: appeare 1s ease 4s 1 normal forwards running;
-    text-align: center;
-    top: 93.7%;
-    position: absolute;
+  text-align: center;
+
+  opacity: 0;
+
+  position: absolute;
+  top: 93.7%;
+
+  animation: appeare 1s ease 4s 1 normal forwards running;
   `;
 
   const lang = props.lang;
@@ -69,86 +43,27 @@ const HeroHeader = (props) => {
   if (isMobile) {
     if(lang === "ch"){
       Hero = styled(Hero)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
-
-        padding-top: 15%;
+      padding-top: 15%;
       `;
-      MainTitle = styled(MainTitle)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
 
-        padding-right: 24%;
-        padding-left: 24%;
-        margin-left: -8%;
+      MainTitle = styled(MainTitle)`
+      padding-right: 24%;
+      padding-left: 24%;
+      margin-left: -8%;
       `;
     } else {
       Hero = styled(Hero)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
-
-        padding-top: 15%;
+      padding-top: 15%;
       `;
       MainTitle = styled(MainTitle)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
-
-        padding-left: 15%;
-        padding-right: 15%;
+      padding-left: 15%;
+      padding-right: 15%;
       `;
     }
 
     VedasLogo = styled(VedasLogo)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      padding-left: 30%;
-      padding-right: 30%;
+    padding-left: 30%;
+    padding-right: 30%;
     `;
   }
 
@@ -156,18 +71,18 @@ const HeroHeader = (props) => {
   if (lang === "jp") {
     main_title_image = public_url + '/hero/main-title.png';
     MainTitle = styled(MainTitle)`
-      top: 56.3%;
+    top: 56.3%;
     `;
   } else if (lang === "ch") {
     main_title_image = public_url + '/hero/main-title-ch.png';
     MainTitle = styled(MainTitle)`
-      padding-left: 34%;
-      top: 57.3%;
+    padding-left: 34%;
+    top: 57.3%;
     `;
   } else {
     main_title_image = public_url + '/hero/main-title-en.png';
     MainTitle = styled(MainTitle)`
-      top: 57.3%;
+    top: 57.3%;
     `;
   }
   const vedas_logo_image = public_url + '/vedas.png';

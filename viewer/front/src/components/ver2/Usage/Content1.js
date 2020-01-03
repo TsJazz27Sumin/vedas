@@ -10,150 +10,63 @@ const Content1 = (props) => {
   const Text2 = props.Text2;
 
   let Content1 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  background: #fff;
+  
+  border: 1px solid #fff;
+  border-radius: 16px;
 
-    width: 96%;
-    height: 19%;
-    left: 4%;
+  height: 19%;
+  width: 96%;
+  
+  padding-bottom: 5%;
 
-    background: #fff;
-    border: 1px solid #fff;
-    box-sizing: border-box;
-    border-radius: 16px;
-    padding-bottom: 5%;
-    border-radius: 16px;
+  left: 4%;
+  
+  box-sizing: border-box;
   `;
 
   let UsageAreaOneTextArea1 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    position: absolute;
-    padding-left: 6.8%;
-    padding-top: 2.5%;
-    width: 80%;
+  width: 80%;
+  
+  padding-left: 6.8%;
+  padding-top: 2.5%;
+  
+  position: absolute;
   `;
 
   let UsageAreaOneTextArea2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 80%;
 
-    position: absolute;
-    padding-left: 6.8%;
-    padding-top: 12.7%;
-    width: 80%;
+  padding-left: 6.8%;
+  padding-top: 12.7%;
+
+  position: absolute;
   `;
 
   let UsageAreaOneTextArea3 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 80%;
 
-    position: absolute;
-    padding-left: 6.8%;
-    padding-top: 24.75%;
-    width: 80%;
+  padding-left: 6.8%;
+  padding-top: 24.75%;
+  
+  position: absolute;
   `;
 
   if (isMobile) {
     Content1 = styled(Content1)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
-      height: 10%;
+    height: 10%;
     `;
 
     UsageAreaOneTextArea1 = styled(UsageAreaOneTextArea1)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
-      display: none;
+    display: none;
     `;
 
     UsageAreaOneTextArea2 = styled(UsageAreaOneTextArea2)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
-      display: none;
+    display: none;
     `;
 
     UsageAreaOneTextArea3 = styled(UsageAreaOneTextArea3)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      display: none;
+    display: none;
     `;
   }
 

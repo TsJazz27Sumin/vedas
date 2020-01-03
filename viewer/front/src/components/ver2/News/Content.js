@@ -8,152 +8,65 @@ const Content = (props) => {
   const dict = props.dict;
 
   let Content = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  background: #fff;
+  
+  border: 1px solid #fff;
+  border-radius: 16px;
 
   width: 96%;
-  left: 4%;
 
-  background: #fff;
-  border: 1px solid #fff;
   padding-bottom: 5%;
-  border-radius: 16px;
+  
+  left: 4%;
 `;
 
   let ShareButtonArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
   padding-top: 3%;
   padding-left: 4%;
   padding-bottom: 3%;
 `;
 
   let Text1 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
+  border: 8px solid #fff;
+
+  font-family: Roboto;
+  font-size: 36px;
+  color: #000;
 
   padding-top: 3%;
   padding-left: 3%;
   padding-bottom: 3%;
-  font-family: Roboto;
-  font-size: 36px;
+  
   line-height: 30px;
-  border-radius: 54px;
-  color: #000;
-  border: 8px solid #fff;
 `;
 
   let Text2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  padding-left: 3%;
+  border-radius: 54px;
+  border: 8px solid #fff;
+  
   font-family: Roboto;
   font-size: 22px;
-  line-height: 26px;
-  border-radius: 54px;
   color: #000;
-  border: 8px solid #fff;
+
+  padding-left: 3%;
+
+  line-height: 26px;
 `;
 
   if (isMobile) {
     Content = styled(Content)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
     margin-top: 4%;
   `;
     Text1 = styled(Text1)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
     font-size: 22px;
   `;
 
     Text2 = styled(Text2)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
     font-size: 18px;
   `;
 
     ShareButtonArea = styled(ShareButtonArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
     padding-left: 50%;
   `;
   }

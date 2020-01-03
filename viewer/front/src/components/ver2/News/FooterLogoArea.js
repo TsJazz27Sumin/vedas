@@ -6,40 +6,19 @@ import FooterLogo from '../Common/FooterLogo'
 const FooterLogoArea = (props) => {
 
   let LogoArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    position: absolute;
-    width: 50%;
-    top: 88%;
+  width: 50%;
+  
+  position: absolute;
+  top: 88%;
   `;
   
   if (isMobile) {
     LogoArea = styled(LogoArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    width: 62%;
     
-      width: 62%;
-      top: 93%;
-      margin-left: -2%;
+    margin-left: -2%;
+    
+    top: 93%;
     `;
   }
 

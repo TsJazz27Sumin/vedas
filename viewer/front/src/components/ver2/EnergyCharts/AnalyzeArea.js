@@ -38,47 +38,29 @@ const AnalyzeArea = (props) => {
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
 
   let AnalyzeArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
 
-    height: ${1450 + (350 * checkedCount)}px;
-    width: 91%;
-    position: absolute;
-    left: 4.1%;
-    top: 140%;
-    background: #EFEFEF;
-    border-radius: 54px;
+  background: #efefef;
+
+  height: ${1450 + (350 * checkedCount)}px;
+  width: 91%;
+  
+  position: absolute;
+  top: 140%;
+  left: 4.1%;
 ` ;
 
   let Content = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border: 1px solid #fff;
+  border-radius: 16px;
 
-    position: absolute;
-    height: ${350 + (350 * checkedCount)}px;
-    width: 90%;
-    left: 5%;
-    background: #fff;
-    border: 1px solid #fff;
-    border-radius: 16px;
+  background: #fff;
+  
+  height: ${350 + (350 * checkedCount)}px;
+  width: 90%;
+  
+  position: absolute;
+  left: 5%;
   `;
 
   let ChartsAreaUl = styled.ul`
@@ -98,55 +80,23 @@ const AnalyzeArea = (props) => {
     }
 
     AnalyzeArea = styled(AnalyzeArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    background:none;
 
-      background:none;
-      width: 100%;
-      left: 0%;
-      right: 0%;
-      height: ${2000 + (intervalHeight * checkedCount)}px;
+    height: ${2000 + (intervalHeight * checkedCount)}px;
+    width: 100%;
+    
+    left: 0%;
+    right: 0%;
     `;
-    Content = styled(Content)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
 
-      background:none;
-      height: ${800 + (intervalHeight * checkedCount)}px;
+    Content = styled(Content)`
+    background:none;
+    
+    height: ${800 + (intervalHeight * checkedCount)}px;
     `;
 
     ChartsAreaUl = styled(ChartsAreaUl)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      margin-left: -10%;
+    margin-left: -10%;
     `;
   }
 

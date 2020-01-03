@@ -19,71 +19,46 @@ const About = (props) => {
   });
 
   let ContentArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
 
-    height: 1300px;
-    width: 91%;
-    position: absolute;
-    padding-top: 10%;
-    left: 4.1%;
-    top: 100%;
-    background: #EFEFEF;
-    border-radius: 54px;
+  background: #efefef;
+
+  height: 1300px;
+  width: 91%;
+  
+  padding-top: 10%;
+
+  position: absolute;
+  top: 100%;
+  left: 4.1%;
+
   `;
 
   if(isMobile){
 
     if (lang === "en"){
       ContentArea = styled(ContentArea)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
+      background: none;
 
       height: 700%;
       width: 100%;
+
       padding-left: 0.1%;
       margin-left: 0.1%;
-      background: none;
+
       left: 0%;
       right: 0%;
     `;
     } else {
       ContentArea = styled(ContentArea)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
-      
+      background: none;
+
       height: 600%;
       width: 100%;
+
       padding-left: 0.1%;
       margin-left: 0.1%;
-      background: none;
+
       left: 0%;
       right: 0%;
     `;

@@ -78,41 +78,18 @@ const FormArea = (props) => {
   }, []);
 
   let ThankYou = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Montserrat;
+  font-size: 32px;
+  color: #464646;
 
-    margin-top: 5%;
-    margin-left: 5%;
-    font-family: Montserrat;
-    font-size: 32px;
-    color: #464646;
+  margin-top: 5%;
+  margin-left: 5%;
   `;
 
   if (isMobile) {
 
     ThankYou = styled(ThankYou)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      line-height: 48px;
+    line-height: 48px;
     `;
   }
 

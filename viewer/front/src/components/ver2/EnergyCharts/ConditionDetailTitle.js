@@ -5,44 +5,23 @@ import { isMobile } from "react-device-detect";
 const ConditionDetailTitle = (props) => {
 
   let ConditionDetailTitle = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Roboto;
+  font-size: 22px;
+  color: #000;
 
-    height: 0%;
-    margin-top: 3%;
-    padding-bottom: 3%;
-    margin-left: 4%;
-    font-family: Roboto;
-    font-size: 22px;
-    line-height: 26px;
-    color: #000;
+  height: 0%;
+  
+  margin-top: 3%;
+  margin-left: 4%;
+  padding-bottom: 3%;
+
+  line-height: 26px;
   ` ;
 
   if (isMobile) {
     ConditionDetailTitle = styled(ConditionDetailTitle)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      margin-top: 0%;
-      padding-bottom: 12%;
+    margin-top: 0%;
+    padding-bottom: 12%;
     `;
   }
 

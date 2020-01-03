@@ -5,40 +5,17 @@ import { isMobile } from "react-device-detect";
 const ContentTitle = () => {
 
   let ContentTitle = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  color: #25282B;
 
-    padding-left: 1.5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    color: #25282B;
+  padding-left: 1.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   `;
 
   if (isMobile) {
     ContentTitle = styled(ContentTitle)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      padding-left: 38%;
-      margin-top: 3%;
+    padding-left: 38%;
+    margin-top: 3%;
     `;
   }
 

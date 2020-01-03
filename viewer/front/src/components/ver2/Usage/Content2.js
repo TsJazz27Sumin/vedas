@@ -23,157 +23,72 @@ const Content2 = (props) => {
   const peak_sample = public_url + '/usage/peak_sample/peak_sample.png';
 
   let Content2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  width: 96%;
-  height: 72%;
-  left: 4%;
-  margin-top: 7%;
   background: #fff;
+  
+  border-radius: 16px;
   border: 1px solid #fff;
-  box-sizing: border-box;
-  border-radius: 16px;
+
+  height: 72%;
+  width: 96%;
+  
+  margin-top: 7%;
   padding-bottom: 5%;
-  border-radius: 16px;
+  
+  left: 4%;
+
+  box-sizing: border-box;
 `;
 
   let SampleCaseATag = styled.a`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    font-weight: bold;
-    color: #0084FF;
+  font-weight: bold;
+  color: #0084FF;
   `;
 
   let EnergyPeakSample = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 95%;
 
-    padding-top: 68%;
-    padding-bottom: 3%;
-    width: 95%;
+  padding-top: 68%;
+  padding-bottom: 3%;
   `;
 
   let EnergyPeakSampleImage = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 5%;
-    padding-bottom: 3%;
+  padding-top: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
+  
+  padding-bottom: 3%;
   `;
 
   let OtherSample = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 95%;
 
-    padding-top: 4%;
-    padding-bottom: 3%;
-    width: 95%;
+  padding-top: 4%;
+  padding-bottom: 3%;  
   `;
 
   let LetsFind = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Roboto;
+  font-size: 42px;
+  color: #000;
 
-    padding-top: ${lang === "ch" ? 10 : 5}%;
-    padding-left: ${lang === "ch" ? 31 : lang === "en" ? 25 : 22}%;
-    width: ${lang === "ch" ? 100 : 95}%;%;
-    font-family: Roboto;
-    font-size: 42px;
-    line-height: 49px;
-    color: #000;
+  width: ${lang === "ch" ? 100 : 95}%;%;
+
+  padding-top: ${lang === "ch" ? 10 : 5}%;
+  padding-left: ${lang === "ch" ? 31 : lang === "en" ? 25 : 22}%;
+
+  line-height: 49px;
   `;
 
   if (isMobile) {
     Content2 = styled(Content2)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
-      height: 80%;
+    height: 80%;
     `;
 
     LetsFind = styled(LetsFind)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    font-size: 35px;
     
-      padding-top: 20%;
-      padding-left: 15%;
-      font-size: 35px;
+    padding-top: 20%;
+    padding-left: 15%;  
     `;
   }
 

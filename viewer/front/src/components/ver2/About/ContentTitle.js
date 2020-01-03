@@ -5,41 +5,18 @@ import { isMobile } from "react-device-detect";
 const ContentTitle = () => {
 
   let ContentTitle = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Montserrat;
+  color: #25282B;
 
-    position: absolute;
-    left: 5%;
-    top: 4%;
-    font-family: Montserrat;
-    color: #25282B;
+  position: absolute;
+  top: 4%;
+  left: 5%;
   `;
 
   if (isMobile) {
     ContentTitle = styled(ContentTitle)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      top: 2%;
-      left: 34%;
+    top: 2%;
+    left: 34%;
     `;
   }
 

@@ -10,47 +10,28 @@ const Inquiry = (props) => {
   const removeError = props.removeError;
 
   let InquiryLabel = styled.label`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Montserrat;
+  font-size: 18px;
+  color: #464646;
 
-    font-family: Montserrat;
-    position: absolute;
-    width: 40%;
-    height: 10%;
-    left: 5%;
-    top: 36%;
-    font-size: 18px;
-    line-height: 20px;
-    color: #464646;
+  width: 40%;
+  height: 10%;
+  
+  position: absolute;
+  top: 36%;
+  left: 5%;
+  
+  line-height: 20px;
   `;
 
   if (isMobile) {
     InquiryLabel = styled(InquiryLabel)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      height: 10%;
-      top: 45%;
-      width: 50%;
-      font-size: 16px;
+    font-size: 16px;
+
+    height: 10%;
+    width: 50%;
+
+    top: 45%;
     `;
   }
 

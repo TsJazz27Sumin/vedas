@@ -18,46 +18,27 @@ const News = (props) => {
   });
 
   let ContentArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
 
-    height: 900px;
-    width: 91%;
-    padding-left: 4%;
-    padding-top: 2%;
-    margin-left: 4%;
-    background: #EFEFEF;
-    border-radius: 54px;
+  background: #efefef;
+
+  height: 900px;
+  width: 91%;
+
+  padding-top: 2%;
+  padding-left: 4%;
+  margin-left: 4%;
   `;
 
   if (isMobile) {
     ContentArea = styled(ContentArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
+    background: none;
+
     height: 609px;
     width: 100%;
+
     padding-left: 0.1%;
     margin-left: 0.1%;
-    background: none;
     `;
   }
 

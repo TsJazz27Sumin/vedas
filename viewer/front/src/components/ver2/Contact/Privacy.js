@@ -8,108 +8,59 @@ const Privacy = (props) => {
   const handleSubmit = props.handleSubmit;
 
   let Privacy = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
   font-family: Roboto;
-  position: absolute;
+  font-size: 18px;
+  color: #000;
+
   width: 90%;
   height: 10%;
-  left: 5%;
+  
+  position: absolute;
   top: 65%
-  color: #000;
-  font-size: 18px;
+  left: 5%;
+  
   line-height: 32px;
 `;
 
   let PrivacyAccept = styled.button`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  position: absolute;
-  width: 24%;
-  height: 9%;
-  left: 38%;
-  top: 85%;
-  background: #0084FF;
   border-radius: 4px;
+
+  background: #0084FF;
+  
+  height: 9%;
+  width: 24%;
+  
+  position: absolute;
+  top: 85%;
+  left: 38%;
 `;
 
   let PrivacyAcceptP = styled.p`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
   font-family: Roboto;
   font-weight: bold;
   font-size: 20px;
-  line-height: 22px;
   color: #fff;
+
+  line-height: 22px;
 `;
 
   if (isMobile) {
     Privacy = styled(Privacy)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    font-size: 16px;
 
     height: 10%;
+    
     top: 63%;
-    font-size: 16px;
   `;
 
     PrivacyAccept = styled(PrivacyAccept)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-    width: 60%;
-    height: 7%;
-    left: 20%;
-    top: 86%;
     font-size: 16px;
+
+    height: 7%;
+    width: 60%;
+    
+    top: 86%;
+    left: 20%;
   `;
   }
 

@@ -20,196 +20,89 @@ const Usage = (props) => {
   });
 
   let ContentArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 54px;
 
-    height: 4300px;
-    width: 91%;
-    padding-left: 4%;
-    padding-top: 2%;
-    margin-left: 4%;
-    background: #EFEFEF;
-    border-radius: 54px;
+  background: #efefef;
+
+  height: 4300px;
+  width: 91%;
+
+  padding-top: 2%;
+  padding-left: 4%;
+  margin-left: 4%;
   `;
 
   if (lang === "en"){
     ContentArea = styled(ContentArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
     height: 4400px;
   `;
   }
 
   let Text1 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Roboto;
+  font-size: 26px;
+  color: #000;
 
-    padding-top: 3%;
-    padding-left: 3%;
-    font-family: Roboto;
-    font-size: 26px;
-    line-height: 40px;
-    border-radius: 54px;
-    color: #000;
-    border: 8px solid #fff;
+  border-radius: 54px;
+  border: 8px solid #fff;
+
+  padding-top: 3%;
+  padding-left: 3%;
+
+  line-height: 40px;
   `;
 
   let Text2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  font-family: Roboto;
+  font-size: 16px;
+  color: #8c8c8c;
 
-    padding-left: 3.8%;
-    padding-top: 1%;
-    font-family: Roboto;
-    font-size: 16px;
-    line-height: 19px;
-    color: #8C8C8C;
+  padding-left: 3.8%;
+  padding-top: 1%;
+
+  line-height: 19px;
   `;
 
   let LogoArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 60%;
 
-    position: absolute;
-    width: 60%;
-    margin-top: 70px;
-    margin-left: -7%;
+  position: absolute;
+  margin-top: 70px;
+  margin-left: -7%;
   `;
 
   if (isMobile) {
     if (lang === "en"){
       ContentArea = styled(ContentArea)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
+      background: none;
 
       height: 2100px;
       width: 100%;
-      background: none;
+
       padding-left: 1%;
       margin-left: 1%;
     `;
     } else {
       ContentArea = styled(ContentArea)`
-      // 文字に関するスタイル
-      // 枠線に関するスタイル
-      // 背景に関するスタイル
-      // 横幅と高さに関するスタイル
-      // 余白に関するスタイル
-      // ボックスサイズの算出方法を指定
-      // テキストに関するスタイル
-      // 表示に関するスタイル
-      // 位置に関するスタイル
-      // 横並び(浮動)に関するスタイル
-      // 影に関するスタイル
+      background: none;
 
       height: 1800px;
       width: 100%;
-      background: none;
+
       padding-left: 1%;
       margin-left: 1%;
     `;
     }
 
     Text1 = styled(Text1)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
       font-size: 19px;
     `;
 
     Text2 = styled(Text2)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-
       display: none;
     `;
 
     LogoArea = styled(LogoArea)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
     margin-top: 0px;
     margin-left: -3%;
   `;

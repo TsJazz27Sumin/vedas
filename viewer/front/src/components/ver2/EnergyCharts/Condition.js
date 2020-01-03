@@ -14,20 +14,8 @@ const Condition = (props) => {
   const electoric_power_resource = props.electoric_power_resource;
 
   let ConditionArea = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-  
-    height: 500px;
-    width: 95%;
+  height: 500px;
+  width: 95%;
 ` ;
 
   const window_width = WindowSizeService.getWindowWidthSize();
@@ -43,24 +31,30 @@ const Condition = (props) => {
   }
 
   let ConditionDetailMobileCaution = styled.div`
-    height: 0%;
-    margin-top: 5%;
-    margin-left: 9%;
-    padding-bottom: 12%;
-    font-family: Roboto;
-    font-size: ${conditionDetailMobileCautionFontSize}px;
-    line-height: 26px;
+  font-family: Roboto;
+  font-size: ${conditionDetailMobileCautionFontSize}px;
+  
+  height: 0%;
+  
+  margin-top: 5%;
+  margin-left: 9%;
+  padding-bottom: 12%;
+  
+  line-height: 26px;
   ` ;
 
   let ConditionDetailTitle = styled.div`
-    height: 0%;
-    margin-top: 3%;
-    padding-bottom: 3%;
-    margin-left: 5%;
-    font-family: Roboto;
-    font-size: 22px;
-    line-height: 26px;
-    color: #000;
+  font-family: Roboto;
+  font-size: 22px;
+  color: #000;
+
+  height: 0%;
+  
+  margin-top: 3%;
+  margin-left: 5%;
+  padding-bottom: 3%;
+
+  line-height: 26px;
   ` ;
 
   if (isMobile) {
@@ -76,14 +70,15 @@ const Condition = (props) => {
       conditionAreaHeight = 1400;
     }
     ConditionArea = styled(ConditionArea)`
-      height: ${conditionAreaHeight}px;
+    height: ${conditionAreaHeight}px;
     `;
 
     ConditionDetailTitle = styled(ConditionDetailTitle)`
-      margin-top: 5%;
-      margin-left: 9%;
-      padding-bottom: 12%;
-      font-size: 16px;
+    font-size: 16px;
+    
+    margin-top: 5%;
+    margin-left: 9%;
+    padding-bottom: 12%;
     `;
   }
   

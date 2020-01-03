@@ -12,42 +12,25 @@ const ConditionDetailSecond = (props) => {
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
   let ConditionDetailArea2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  background: #fff;
+  
+  border-radius: 16px;
 
-    height: 14%;
-    margin-left: 5%;
-    background: #fff;
-    border-radius: 16px;
+  height: 14%;
+  
+  margin-left: 5%;
   ` ;
 
   let ConditionDetailParam = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 16px;
+
+  background: #fff;
+
+  width: 16.5%;
 
   padding: 1%;
-  width: 16.5%;
-  background: #fff;
+
   cursor: pointer;
-  border-radius: 16px;
 ` ;
 
   let ConditionDetailParamAll = styled(ConditionDetailParam)`display: inline-block;`;
@@ -64,43 +47,25 @@ const ConditionDetailSecond = (props) => {
   let ConditionDetailParamOkiden = styled(ConditionDetailParam)`display: inline-block;`;
 
   let ConditionDetailParamLabel = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  display: inline-block;
-  margin-top: 4%;
-  margin-left: 5%;
   font-family: Roboto;
   font-size: 16px;
-  line-height: 22px;
   color: #000;
+  
+  margin-top: 4%;
+  margin-left: 5%;
+  
+  display: inline-block;
+
+  line-height: 22px;
 ` ;
 
   let ConditionDetailParamButton = styled.button`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  border-radius: 2px;
 
   width: 13%;
+
   padding-top: 10%;
-  border-radius: 2px;
+  
   cursor: pointer;
 ` ;
 
@@ -125,36 +90,13 @@ const ConditionDetailSecond = (props) => {
   let ConditionDetailParamButtonOkiden = setBackGround(isMobile, electricPowersChecked.okidenChecked);
 
   let ConditionDetailParamArea1 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
   width: 100%;
 ` ;
 
   let ConditionDetailParamArea2 = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  width: 100%;
   border-radius: 12px;
+  
+  width: 100%;
 ` ;
 
   if (isMobile) {
@@ -175,23 +117,13 @@ const ConditionDetailSecond = (props) => {
     ConditionDetailParamButtonOkiden = styled(ConditionDetailParamButtonOkiden)`display:none`;
 
     ConditionDetailParam = styled(ConditionDetailParam)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
+    border-radius: 10px;
+
+    width: 100%;
     
-      width: 100%;
-      margin-top:2%;
-      margin-bottom:2%;
-      padding-bottom: 4%;
-      border-radius: 10px;
+    margin-top:2%;
+    margin-bottom:2%;
+    padding-bottom: 4%;
     `;
 
     const setBackGround = (checked) => {
@@ -210,7 +142,6 @@ const ConditionDetailSecond = (props) => {
     ConditionDetailParamYonden = setBackGround(electricPowersChecked.yondenChecked);
     ConditionDetailParamKyuden = setBackGround(electricPowersChecked.kyudenChecked);
     ConditionDetailParamOkiden = setBackGround(electricPowersChecked.okidenChecked);
-      
   }
 
   return (

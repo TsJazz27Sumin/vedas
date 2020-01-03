@@ -12,101 +12,50 @@ const SolarSampleImages = () => {
   const solar_sample5 = public_url + '/usage/solar_sample/solar_sample5.png';
 
   let SolarSampleSection = styled.section`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-  position: absolute;
   padding-right: 9%;
   padding-top: 5%;
+
+  position: absolute;
 `;
 
   let SolarSamplePagingSection = styled.section`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  width: 91%;
+
+  padding-right: 9%;
 
   position: absolute;
-  padding-right: 9%;
   top: 50%;
-  width: 91%;
 `;
 
   let SolarSampleImage = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
+  background: #F9F9F9;
+
+  border-radius: 20px;
+
+  width: 90%;
 
   padding-left: 8%;
   padding-top: 3%;
   padding-bottom: 3%;
-  width: 90%;
+  
   margin-left: 5%;
   margin-top: 3%;
   margin-bottom: 3%;
-  background: #F9F9F9;
+  
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
 `;
 
   let SolarSampleImagePageing = styled.div`
-  // 文字に関するスタイル
-  // 枠線に関するスタイル
-  // 背景に関するスタイル
-  // 横幅と高さに関するスタイル
-  // 余白に関するスタイル
-  // ボックスサイズの算出方法を指定
-  // テキストに関するスタイル
-  // 表示に関するスタイル
-  // 位置に関するスタイル
-  // 横並び(浮動)に関するスタイル
-  // 影に関するスタイル
-
-    padding-left: 43%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    width: 50%;
+  width: 50%;
+  
+  padding-top: 3%;
+  padding-left: 43%;
+  padding-bottom: 3%;
   `;
 
   if(isMobile){
     SolarSampleImagePageing = styled(SolarSampleImagePageing)`
-    // 文字に関するスタイル
-    // 枠線に関するスタイル
-    // 背景に関するスタイル
-    // 横幅と高さに関するスタイル
-    // 余白に関するスタイル
-    // ボックスサイズの算出方法を指定
-    // テキストに関するスタイル
-    // 表示に関するスタイル
-    // 位置に関するスタイル
-    // 横並び(浮動)に関するスタイル
-    // 影に関するスタイル
-    
-      display: none;
+    display: none;
     `;
   }
 
