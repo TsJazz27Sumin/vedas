@@ -1,35 +1,18 @@
-import Jp from './language_files/ver1/jp'
-import En from './language_files/ver1/en'
-import Ch from './language_files/ver1/ch'
-import Es from './language_files/ver1/es'
-import JpV2 from './language_files/ver2/jp'
-import EnV2 from './language_files/ver2/en'
-import ChV2 from './language_files/ver2/ch'
+import JpV2 from './language_files/jp'
+import EnV2 from './language_files/en'
+import ChV2 from './language_files/ch'
 
-const get = (lang) => {
-    let dict = {};
-    if (lang === 'en'){
-        dict = En.get();
-    } else if (lang === 'jp'){
-        dict = Jp.get();
-    } else if (lang === 'ch'){
-        dict = Ch.get();
-    } else if (lang === 'es'){
-        dict = Es.get();
-    }
-    return dict;
-  }
 
-  const getV2 = (lang) => {
+const getV2 = (lang) => {
     let dict = {};
-    if (lang === 'en'){
+    if (lang === 'en') {
         dict = EnV2.get();
-    } else if (lang === 'jp'){
+    } else if (lang === 'jp') {
         dict = JpV2.get();
-    } else if (lang === 'ch'){
+    } else if (lang === 'ch') {
         dict = ChV2.get();
     }
     return dict;
-  }
-  
-  export default { get, getV2 }
+}
+
+export default { getV2 }
