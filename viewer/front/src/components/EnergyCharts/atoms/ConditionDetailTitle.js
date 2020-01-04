@@ -33,4 +33,12 @@ const ConditionDetailTitle = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default ConditionDetailTitle

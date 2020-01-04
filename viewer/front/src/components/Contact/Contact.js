@@ -102,4 +102,12 @@ const Contact = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default Contact

@@ -30,4 +30,12 @@ const HeroWithoutTitle = () => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default HeroWithoutTitle

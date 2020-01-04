@@ -39,4 +39,12 @@ const Text4 = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default Text4

@@ -66,4 +66,12 @@ const Inquiry = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default Inquiry

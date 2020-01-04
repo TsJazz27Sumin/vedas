@@ -45,4 +45,12 @@ const Text5 = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default Text5

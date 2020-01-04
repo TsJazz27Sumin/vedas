@@ -33,4 +33,12 @@ const UsageAreaOneSvg = () => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default UsageAreaOneSvg

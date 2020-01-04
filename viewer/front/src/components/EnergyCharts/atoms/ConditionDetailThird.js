@@ -268,4 +268,12 @@ const ConditionDetailThird = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default ConditionDetailThird

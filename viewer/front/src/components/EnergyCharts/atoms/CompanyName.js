@@ -15,4 +15,12 @@ const CompanyName = ({ company_name, jurisdiction }) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default CompanyName

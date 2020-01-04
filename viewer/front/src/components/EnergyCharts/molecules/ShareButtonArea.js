@@ -24,4 +24,12 @@ const ShareButtonArea = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default ShareButtonArea

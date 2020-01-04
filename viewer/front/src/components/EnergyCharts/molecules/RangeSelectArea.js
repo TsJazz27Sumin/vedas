@@ -44,4 +44,12 @@ const RangeSelectArea = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default RangeSelectArea

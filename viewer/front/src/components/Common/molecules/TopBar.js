@@ -192,4 +192,12 @@ const TopBar = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default TopBar

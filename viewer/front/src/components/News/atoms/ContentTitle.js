@@ -27,4 +27,12 @@ const ContentTitle = () => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default ContentTitle

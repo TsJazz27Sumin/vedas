@@ -67,4 +67,12 @@ const WatchoutArea = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default WatchoutArea

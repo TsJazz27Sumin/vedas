@@ -165,4 +165,12 @@ const AnalyzeArea = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default AnalyzeArea

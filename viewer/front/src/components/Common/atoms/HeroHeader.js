@@ -106,4 +106,12 @@ const HeroHeader = (props) => {
   )
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default HeroHeader

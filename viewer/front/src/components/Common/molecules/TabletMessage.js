@@ -74,4 +74,12 @@ const TabletMessage = () => {
   );
 }
 
+const getStyledComponents = (lang) => {
+
+
+  return {
+    xxx :xxx
+  };
+}
+
 export default TabletMessage
