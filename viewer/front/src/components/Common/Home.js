@@ -33,37 +33,8 @@ const Home = (props) => {
 
   let dict = wordDictionaryService.getV2(lang);
 
-  let hero = null;
-
-  if (menu === "home"){
-    hero = (<HeroHeader lang={lang}/>);
-  } else {
-    hero = (<HeroWithoutTitle/>);
-  }
-
-  let content = null;
-
-  let pathname = deviceType + '/' + osName + '/' + browserName + '/' + lang + '/' + menu;
-  pathname = pathname.replace(' ', '');
-
-  switch(menu){
-    case "about":
-        content = (<About lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
-        break;
-    case "news":
-        content = (<News lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
-        break;
-    case "contact":
-        content = (<Contact lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
-        break;
-    case "usage":
-        content = (<Usage lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
-        break;
-    default:
-        content = (<EnergyCharts lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
-        break;
-  }
-
+  const hero = getHero(menu, lang);
+  const content = getContent(lang, qs, dict, menu, handleMenuChange);
   const StyledComponents = getStyledComponents();
   const OutLine = StyledComponents.OutLine;
 
@@ -99,6 +70,41 @@ const getStyledComponents = () => {
   return {
     OutLine : OutLine
   };
+}
+
+const getHero = (menu, lang) => {
+  if (menu === "home"){
+    return <HeroHeader lang={lang}/>;
+  }
+
+  return <HeroWithoutTitle/>;
+}
+
+const getContent = (lang, qs, dict, menu, handleMenuChange) => {
+  let pathname = deviceType + '/' + osName + '/' + browserName + '/' + lang + '/' + menu;
+  pathname = pathname.replace(' ', '');
+
+  let content = null;
+  
+  switch(menu){
+    case "about":
+        content = (<About lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
+        break;
+    case "news":
+        content = (<News lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
+        break;
+    case "contact":
+        content = (<Contact lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
+        break;
+    case "usage":
+        content = (<Usage lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
+        break;
+    default:
+        content = (<EnergyCharts lang={lang} qs={qs} dict={dict} pathname={pathname} menu={menu} handleMenuChange={handleMenuChange}/>);
+        break;
+  }
+
+  return content;
 }
 
 export default Home 
