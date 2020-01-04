@@ -1,21 +1,21 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import { AppProvider, Spinner } from '../../../node_modules/@shopify/polaris';
+import { AppProvider, Spinner } from '@shopify/polaris';
 import FooterLogoArea from './FooterLogoArea'
 import Condition from './Condition'
-import ConditionDetailTitle from './ConditionDetailTitle'
+import ConditionDetailTitle from '../atoms/ConditionDetailTitle'
 import RangeSelectArea from './RangeSelectArea'
 import DateSelectArea from './DateSelectArea'
 import CompanyEnergyCharts from './CompanyEnergyCharts'
 import ShareButtonArea from './ShareButtonArea'
-import WatchoutArea from './WatchoutArea'
-import electoricPowerResourseHook from '../../custom_hooks/electoric_power_resourse'
-import electoricPowerCompanyHook from '../../custom_hooks/electoric_power_company'
-import dateSelectHook from '../../custom_hooks/date_select'
-import electoricPowerDataHook from '../../custom_hooks/electoric_power_data'
-import WindowSizeService from '../../services/window_size'
-import Color from '../../services/color'
+import WatchoutArea from '../atoms/WatchoutArea'
+import electoricPowerResourseHook from '../../../custom_hooks/electoric_power_resourse'
+import electoricPowerCompanyHook from '../../../custom_hooks/electoric_power_company'
+import dateSelectHook from '../../../custom_hooks/date_select'
+import electoricPowerDataHook from '../../../custom_hooks/electoric_power_data'
+import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color'
 
 const AnalyzeArea = (props) => {
 

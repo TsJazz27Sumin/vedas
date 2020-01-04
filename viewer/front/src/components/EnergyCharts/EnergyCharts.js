@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import ReactGA from 'react-ga';
-import AnalyzeArea from './AnalyzeArea'
+import AnalyzeArea from './molecules/AnalyzeArea'
 import queryParamPerserService from '../../services/query_param_perser'
 import '../../css/EnergyCharts.css';
 

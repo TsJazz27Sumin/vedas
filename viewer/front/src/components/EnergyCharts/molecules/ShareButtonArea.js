@@ -1,7 +1,7 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import ShareButtons from '../common/molecules/ShareButtons'
+import ShareButtons from '../../common/molecules/ShareButtons'
 
 const ShareButtonArea = (props) => {
 

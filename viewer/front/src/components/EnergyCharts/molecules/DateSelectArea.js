@@ -1,9 +1,9 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import { AppProvider } from '../../../node_modules/@shopify/polaris';
-import DateSelect from './DateSelect'
-import Color from '../../services/color';
+import { AppProvider } from '@shopify/polaris';
+import DateSelect from '../atoms/DateSelect'
+import Color from '../../../services/color';
 
 const DateSelectArea = (props) => {
 

@@ -1,5 +1,5 @@
-import React from '../../../node_modules/react'
-import { AppProvider, RangeSlider, DisplayText, Stack } from '../../../node_modules/@shopify/polaris';
+import React from 'react'
+import { AppProvider, RangeSlider, DisplayText, Stack } from '@shopify/polaris';
 
 const RangeSelect = (props) => {
 

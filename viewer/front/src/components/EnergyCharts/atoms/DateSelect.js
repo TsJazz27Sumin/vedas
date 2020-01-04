@@ -1,7 +1,6 @@
-import React from '../../../node_modules/react'
-import { Select, Stack } from '../../../node_modules/@shopify/polaris';
-import '../../css/EnergyCharts.css';
-import dateSelectContentsService from '../../services/date_select_contents'
+import React from 'react'
+import { Select, Stack } from '@shopify/polaris';
+import dateSelectContentsService from '../../../services/date_select_contents'
 
 const DateSelect = (props) => {
 

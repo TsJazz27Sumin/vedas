@@ -1,8 +1,8 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import WindowSizeService from '../../services/window_size'
-import Color from '../../services/color';
+import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color';
 
 const WatchoutArea = (props) => {
 

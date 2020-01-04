@@ -1,10 +1,10 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
-import ConditionDetailFirst from './ConditionDetailFirst'
-import ConditionDetailSecond from './ConditionDetailSecond'
-import ConditionDetailThird from './ConditionDetailThird'
+import React from 'react'
+import styled from 'styled-components';
+import ConditionDetailFirst from '../atoms/ConditionDetailFirst'
+import ConditionDetailSecond from '../atoms/ConditionDetailSecond'
+import ConditionDetailThird from '../atoms/ConditionDetailThird'
 import { isMobile } from "react-device-detect";
-import WindowSizeService from '../../services/window_size'
+import WindowSizeService from '../../../services/window_size'
 
 const Condition = (props) => {
 
