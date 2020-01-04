@@ -1,13 +1,13 @@
-import React, { useState, useCallback } from '../../../node_modules/react';
-import styled from '../../../node_modules/styled-components';
+import React, { useState, useCallback } from 'react';
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import Privacy from './Privacy'
-import Information from './Information'
+import Information from '../atoms/Information'
 import FullName from './FullName'
 import Email from './Email'
-import axios from '../../../node_modules/axios'
+import axios from 'axios'
 import Inquiry from './Inquiry';
-import Color from '../../services/color';
+import Color from '../../../services/color';
 
 const FormArea = (props) => {
 
