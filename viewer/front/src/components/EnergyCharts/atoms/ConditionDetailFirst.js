@@ -16,7 +16,7 @@ const ConditionDetailFirst = (props) => {
   const Area = StyledComponents.Area;
   const ParamArea = StyledComponents.ParamArea;
   const ParamAreaY = StyledComponents.ParamAreaY;
-  const ParamAreaYM = StyledComponents.xxParamAreaYMx;
+  const ParamAreaYM = StyledComponents.ParamAreaYM;
   const ParamAreaYMD = StyledComponents.ParamAreaYMD;
   const ParamArea1H = StyledComponents.ParamArea1H;
   const ParamLabel = StyledComponents.ParamLabel;
