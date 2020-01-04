@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import ShareButtons from '../common/molecules/ShareButtons'
-import Color from '../../services/color';
+import ShareButtons from '../../common/molecules/ShareButtons'
+import Color from '../../../services/color';
 
 const Content = (props) => {
 
