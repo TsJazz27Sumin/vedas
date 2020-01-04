@@ -10,6 +10,36 @@ const Inquiry = (props) => {
   const handleInquiryChange = props.handleInquiryChange;
   const removeError = props.removeError;
 
+  const StyledComponents = getStyledComponents();
+  const InquiryLabel = StyledComponents.InquiryLabel;
+
+  return (
+    <div className="inquiry">
+      <InquiryLabel>{dict.contact_item_input}</InquiryLabel>
+      <textarea
+        key="key_inquiry"
+        id="id_inquiry"
+        className={isMobile ? "inquiry-input-mobile" : "inquiry-input"}
+        type="text"
+        minLength="1"
+        maxLength="1000"
+        cols="100"
+        rows="10"
+        onFocus={() => removeError("id_inquiry")}
+        onChange={(event) => { handleInquiryChange(event) }}
+      />
+      <input
+        key="key_inquiry_hidden"
+        id="id_inquiry_hidden"
+        type="hidden"
+        defaultValue={inquiry}
+      />
+    </div>
+  )
+}
+
+const getStyledComponents = () => {
+
   let InquiryLabel = styled.label`
   font-family: Montserrat;
   font-size: 18px;
@@ -41,36 +71,8 @@ const Inquiry = (props) => {
     `;
   }
 
-  return (
-    <div className="inquiry">
-      <InquiryLabel>{dict.contact_item_input}</InquiryLabel>
-      <textarea
-        key="key_inquiry"
-        id="id_inquiry"
-        className={isMobile ? "inquiry-input-mobile" : "inquiry-input"}
-        type="text"
-        minLength="1"
-        maxLength="1000"
-        cols="100"
-        rows="10"
-        onFocus={() => removeError("id_inquiry")}
-        onChange={(event) => { handleInquiryChange(event) }}
-      />
-      <input
-        key="key_inquiry_hidden"
-        id="id_inquiry_hidden"
-        type="hidden"
-        defaultValue={inquiry}
-      />
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    InquiryLabel : InquiryLabel
   };
 }
 

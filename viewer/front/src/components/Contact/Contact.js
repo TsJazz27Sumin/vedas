@@ -18,6 +18,23 @@ const Contact = (props) => {
     ReactGA.pageview(pathname);
   });
 
+  const StyledComponents = getStyledComponents();
+  const ContentArea = StyledComponents.ContentArea;
+  const Content = StyledComponents.Content;
+
+  return (
+    <ContentArea>
+      <ContentTitle/>
+      <Content>
+        <FormArea dict={dict} />
+      </Content>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
+    </ContentArea>
+  )
+}
+
+const getStyledComponents = () => {
+
   let ContentArea = styled.div`
   border-radius: 54px;
   background: ${Color.gray};
@@ -33,7 +50,6 @@ const Contact = (props) => {
   left: 4.1%;
   right: 0%
   bottom: 0%;
-  
   `;
 
   let Content = styled.div`
@@ -91,22 +107,9 @@ const Contact = (props) => {
     `;
   }
 
-  return (
-    <ContentArea>
-      <ContentTitle/>
-      <Content>
-        <FormArea dict={dict} />
-      </Content>
-      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
-    </ContentArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    ContentArea : ContentArea,
+    Content : Content
   };
 }
 

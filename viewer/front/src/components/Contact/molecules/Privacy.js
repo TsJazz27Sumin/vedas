@@ -7,6 +7,45 @@ const Privacy = (props) => {
 
   const dict = props.dict;
   const handleSubmit = props.handleSubmit;
+  const StyledComponents = getStyledComponents();
+  const Privacy = StyledComponents.Privacy;
+  const PrivacyAccept = StyledComponents.PrivacyAccept;
+  const PrivacyAcceptP = StyledComponents.PrivacyAcceptP;
+
+  return (
+    <div>
+      <Privacy>
+        <p>
+          {dict.contact_text3}
+        </p>
+        <br />
+        <p>
+          {dict.contact_text4}
+          <a
+            href="https://corp.panair.jp/privacy_short"
+            external="true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {dict.contact_text5}
+          </a>
+          {dict.contact_text6}
+        </p>
+        <p>
+          {dict.contact_text7}
+        </p>
+      </Privacy>
+      <br />
+      <PrivacyAccept
+        onClick={handleSubmit}>
+        <PrivacyAcceptP>{dict.contact_submit}</PrivacyAcceptP>
+      </PrivacyAccept>
+      <br />
+    </div>
+  )
+}
+
+const getStyledComponents = () => {
 
   let Privacy = styled.div`
   font-family: Roboto;
@@ -75,45 +114,10 @@ const Privacy = (props) => {
   `;
   }
 
-
-  return (
-    <div>
-      <Privacy>
-        <p>
-          {dict.contact_text3}
-        </p>
-        <br />
-        <p>
-          {dict.contact_text4}
-          <a
-            href="https://corp.panair.jp/privacy_short"
-            external="true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {dict.contact_text5}
-          </a>
-          {dict.contact_text6}
-        </p>
-        <p>
-          {dict.contact_text7}
-        </p>
-      </Privacy>
-      <br />
-      <PrivacyAccept
-        onClick={handleSubmit}>
-        <PrivacyAcceptP>{dict.contact_submit}</PrivacyAcceptP>
-      </PrivacyAccept>
-      <br />
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Privacy : Privacy,
+    PrivacyAccept : PrivacyAccept,
+    PrivacyAcceptP : PrivacyAcceptP
   };
 }
 

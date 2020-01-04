@@ -9,6 +9,34 @@ const Email = (props) => {
   const email = props.email;
   const handleEmailChange = props.handleEmailChange;
   const removeError = props.removeError;
+  const StyledComponents = getStyledComponents();
+  const EmailLabel = StyledComponents.EmailLabel;
+
+  return (
+    <div>
+      <EmailLabel>{dict.contact_item_mail}</EmailLabel>
+      <input
+        key="key_email"
+        id="id_email"
+        className={isMobile ? "email-input-mobile" : "email-input"}
+        type="email"
+        minLength="1"
+        maxLength="254"
+        placeholder={dict.contact_place_folder2}
+        onFocus={() => removeError("id_email")}
+        onChange={(event) => { handleEmailChange(event) }}
+      />
+      <input
+        key="key_email_hidden"
+        id="id_email_hidden"
+        type="hidden"
+        defaultValue={email}
+      />
+    </div>
+  )
+}
+
+const getStyledComponents = () => {
 
   let EmailLabel = styled.label`
   font-family: Montserrat;
@@ -40,35 +68,8 @@ const Email = (props) => {
     `;
   }
 
-  return (
-    <div>
-      <EmailLabel>{dict.contact_item_mail}</EmailLabel>
-      <input
-        key="key_email"
-        id="id_email"
-        className={isMobile ? "email-input-mobile" : "email-input"}
-        type="email"
-        minLength="1"
-        maxLength="254"
-        placeholder={dict.contact_place_folder2}
-        onFocus={() => removeError("id_email")}
-        onChange={(event) => { handleEmailChange(event) }}
-      />
-      <input
-        key="key_email_hidden"
-        id="id_email_hidden"
-        type="hidden"
-        defaultValue={email}
-      />
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    EmailLabel : EmailLabel
   };
 }
 

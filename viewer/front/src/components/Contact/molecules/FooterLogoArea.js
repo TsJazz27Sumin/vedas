@@ -5,6 +5,16 @@ import FooterLogo from '../../common/molecules/FooterLogo'
 
 const FooterLogoArea = (props) => {
 
+  const StyledComponents = getStyledComponents();
+  const LogoArea = StyledComponents.LogoArea;
+
+  return (
+    <FooterLogo LogoArea={LogoArea} menu={props.menu} handleMenuChange={props.handleMenuChange}/>
+  )
+}
+
+const getStyledComponents = () => {
+
   let LogoArea = styled.div`
   height: 0%;
   width: 60%;
@@ -29,16 +39,8 @@ const FooterLogoArea = (props) => {
     `;
   }
 
-  return (
-    <FooterLogo LogoArea={LogoArea} menu={props.menu} handleMenuChange={props.handleMenuChange}/>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    LogoArea : LogoArea
   };
 }
 

@@ -78,21 +78,8 @@ const FormArea = (props) => {
     }
   }, []);
 
-  let ThankYou = styled.div`
-  font-family: Montserrat;
-  font-size: 32px;
-  color: ${Color.darkGray};
-
-  padding: 0% 0% 0% 0%;
-  margin:  5% 0% 0% 5%;
-  `;
-
-  if (isMobile) {
-
-    ThankYou = styled(ThankYou)`
-    line-height: 48px;
-    `;
-  }
+  const StyledComponents = getStyledComponents();
+  const ThankYou = StyledComponents.ThankYou;
 
   return (
     <div>
@@ -129,11 +116,26 @@ const FormArea = (props) => {
   )
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  let ThankYou = styled.div`
+  font-family: Montserrat;
+  font-size: 32px;
+  color: ${Color.darkGray};
+
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 5%;
+  `;
+
+  if (isMobile) {
+
+    ThankYou = styled(ThankYou)`
+    line-height: 48px;
+    `;
+  }
 
   return {
-    xxx :xxx
+    ThankYou : ThankYou
   };
 }
 
