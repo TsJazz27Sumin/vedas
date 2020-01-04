@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "sorry_message": "ごめんなさい！ そのケースには対応していないようです。。（⸝⸝⸝ᵒ̴̶̷̥́⌑ᵒ̴̶̷̣̥̀⸝⸝⸝）直すので、数日後に試してください！ （⸝⸝•ᴗ•⸝⸝）੭⁾⁾",
         "table_message": "But currently not available on tablet devices. We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
         "error_message1": "必須入力です。",
         "error_message2": "不正なメールアドレスです。",

@@ -61,6 +61,8 @@ const JapanEnergyCharts = props => {
 
     if(props.data === undefined || props.data.length === 0){
       return <AppProvider><Spinner accessibilityLabel="Spinner example" size="large" color="teal" /></AppProvider>;
+    } else if (props.data === "err"){
+      return <AppProvider><DisplayText key="something_wrong" size="big">{dict.sorry_message}</DisplayText></AppProvider>;
     }
 
     let list = []

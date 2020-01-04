@@ -1,5 +1,6 @@
 const get = () => {
     const word_dictionary = {
+        "sorry_message": "发生错误！（⸝⸝⸝ᵒ̴̶̷̥́⌑ᵒ̴̶̷̣̥̀⸝⸝⸝）我会解决的。 因此，请几天后尝试！ （⸝⸝•ᴗ•⸝⸝）੭⁾⁾ ",
         "table_message": "Currently not available on tablet devices. We recommend using a desktop PC or notebook PC. The mobile version has limited functionality.",
         "error_message1": "必填项",
         "error_message2": "无效的电子邮件地址",
