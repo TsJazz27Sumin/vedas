@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import '@shopify/polaris/styles.css';
 import styled from 'styled-components';
 import { isMobile, isTablet, osName, browserName, deviceType } from "react-device-detect";
@@ -20,6 +20,12 @@ const Home = (props) => {
   const initial_lang = props.lang;
   const qs = props.qs;
 
+  useEffect(() => {
+    if (qs.case !== undefined){
+      window.scrollTo(0, 1300);
+    }
+  }, [])
+
   const [menu, setMenu] = useState('home');
   const handleMenuChange = useCallback((newValue) => {
     setMenu(newValue);
@@ -33,7 +39,7 @@ const Home = (props) => {
 
   let dict = wordDictionaryService.getV2(lang);
 
-  const hero = getHero(menu, lang);
+  const hero = getHero(menu, lang, true);
   const content = getContent(lang, qs, dict, menu, handleMenuChange);
   const StyledComponents = getStyledComponents();
   const OutLine = StyledComponents.OutLine;
@@ -54,7 +60,7 @@ const getStyledComponents = () => {
   let OutLine = styled.div`
   background: ${Color.white};
 
-  height: 100%;
+  // height: 100%;
   width: 1440px;
 
   position: relative;
@@ -72,9 +78,9 @@ const getStyledComponents = () => {
   };
 }
 
-const getHero = (menu, lang) => {
+const getHero = (menu, lang, with_animation) => {
   if (menu === "home"){
-    return <HeroHeader lang={lang}/>;
+    return <HeroHeader lang={lang} with_animation={with_animation}/>;
   }
 
   return <HeroWithoutTitle/>;

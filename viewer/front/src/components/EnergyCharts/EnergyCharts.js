@@ -8,7 +8,7 @@ const EnergyCharts = (props) => {
 
   const lang = props.lang;
   const pathname = props.pathname;
-
+  
   useEffect(() => {
     ReactGA.set({ page: pathname });
     ReactGA.pageview(pathname);

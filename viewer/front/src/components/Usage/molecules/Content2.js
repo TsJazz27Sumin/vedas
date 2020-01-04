@@ -31,16 +31,34 @@ const Content2 = (props) => {
   const OtherSample = StyledComponents.OtherSample;
   const LetsFind = StyledComponents.LetsFind;
 
+  const getSampleCaseATag = (numberstring, how_to_use_text) => {
+    
+    const trackMethod = () => {
+      track("Click case" + numberstring);
+    };
+    const id = "case" + numberstring;
+    const url = baseUrl + '?lang=' + lang + '&case=' + numberstring;
+
+    return (
+      <SampleCaseATag 
+        onClick={()=> trackMethod()} 
+        onTouchStart={()=> trackMethod()} 
+        id={id} 
+        href={url}>
+        {how_to_use_text}
+      </SampleCaseATag>);
+  };
+
   return (
     <Content2>
       <Text1><p>{dict.how_to_use_text13}</p></Text1>
       <br/>
       <br/>
-      <Text1><SampleCaseATag onClick={()=> track("Click case1")} onTouchStart={()=> track("Click case1")} id="case1" href={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</SampleCaseATag></Text1>
+      <Text1>{getSampleCaseATag("1", dict.how_to_use_text14)}</Text1>
       <Text1><p>{dict.how_to_use_text15}</p></Text1>
       <SolarSampleImages />
       <EnergyPeakSample>
-        <Text1><SampleCaseATag onClick={()=> track("Click case2")} onTouchStart={()=> track("Click case2")} id="case2" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
+        <Text1>{getSampleCaseATag("2", dict.how_to_use_text16)}</Text1>
         <Text1><p>{dict.how_to_use_text17}</p></Text1>
       </EnergyPeakSample>
       <EnergyPeakSampleImage>
@@ -51,9 +69,9 @@ const Content2 = (props) => {
         isMobile ? null :(
         <OtherSample>
           <Text1><p>{dict.how_to_use_text18}</p></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case3")} onTouchStart={()=> track("Click case3")} id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case4")} onTouchStart={()=> track("Click case4")} id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case5")} onTouchStart={()=> track("Click case5")} id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
+          <Text1>{getSampleCaseATag("3", dict.how_to_use_text19)}</Text1>
+          <Text1>{getSampleCaseATag("4", dict.how_to_use_text20)}</Text1>
+          <Text1>{getSampleCaseATag("5", dict.how_to_use_text21)}</Text1>
         </OtherSample>
         )
       }

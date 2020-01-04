@@ -23,7 +23,7 @@ const AnalyzeArea = (props) => {
   const qs = props.qs;
 
   //電力データをCallするためのパラメータや処理
-  const electoric_power_data = electoricPowerDataHook.useElectoricPowerData(qs.electoric_power_data_initialize_params);
+  const electoric_power_data = electoricPowerDataHook.useElectoricPowerData(qs.electoric_power_data_initialize_params, props.is_sample_case);
   
   //30分値指定の期間
   const date_select = dateSelectHook.useDateSelect(
