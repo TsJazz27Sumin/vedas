@@ -86,12 +86,4 @@ const getStyledComponents = (lang) => {
   };
 }
 
-const getStyledComponents = (lang) => {
-
-
-  return {
-    xxx :xxx
-  };
-}
-
 export default About

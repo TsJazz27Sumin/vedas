@@ -11,6 +11,21 @@ import Text5 from '../atoms/Text5';
 const Content = (props) => {
 
   const dict = props.dict;
+  const StyledComponents = getStyledComponents();
+  const Content = StyledComponents.Content;
+
+  return (
+    <Content>
+      <Text1 dict={dict}/>
+      <Text2 dict={dict}/>
+      <Text3 dict={dict}/>
+      <Text4 dict={dict}/>
+      <Text5 dict={dict}/>
+    </Content>
+  )
+}
+
+const getStyledComponents = () => {
 
   let Content = styled.div`
   border: 1px solid ${Color.white};
@@ -40,22 +55,8 @@ const Content = (props) => {
     `;
   }
 
-  return (
-    <Content>
-      <Text1 dict={dict}/>
-      <Text2 dict={dict}/>
-      <Text3 dict={dict}/>
-      <Text4 dict={dict}/>
-      <Text5 dict={dict}/>
-    </Content>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Content : Content
   };
 }
 

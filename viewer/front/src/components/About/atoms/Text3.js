@@ -5,6 +5,16 @@ import Color from '../../../services/color';
 
 const Text3 = (props) => {
   
+  const StyledComponents = getStyledComponents();
+  const Text3 = StyledComponents.Text3;
+
+  return (
+    <Text3><p>{props.dict.about_text3}</p></Text3>
+  )
+}
+
+const getStyledComponents = () => {
+
   let Text3 = styled.div`
   font-family: Roboto;
   font-size: 48px;
@@ -34,16 +44,8 @@ const Text3 = (props) => {
     `;
   }
 
-  return (
-    <Text3><p>{props.dict.about_text3}</p></Text3>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Text3 : Text3
   };
 }
 
