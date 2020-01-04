@@ -5,6 +5,18 @@ import ShareButtons from '../../common/molecules/ShareButtons'
 
 const ShareButtonArea = (props) => {
 
+  const StyledComponents = getStyledComponents();
+  const ShareButtonArea = StyledComponents.ShareButtonArea;
+
+  return (
+    <ShareButtonArea>
+      <ShareButtons type="big" pathname={props.pathname}/>
+    </ShareButtonArea>
+  )
+}
+
+const getStyledComponents = () => {
+
   let ShareButtonArea = styled.div`
   padding: 0% 0% 0% 0%;
   margin:  4% 0% 0% 37%;
@@ -17,18 +29,8 @@ const ShareButtonArea = (props) => {
     `;
   }
 
-  return (
-    <ShareButtonArea>
-      <ShareButtons type="big" pathname={props.pathname}/>
-    </ShareButtonArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    ShareButtonArea : ShareButtonArea
   };
 }
 

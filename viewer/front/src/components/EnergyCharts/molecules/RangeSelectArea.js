@@ -7,6 +7,26 @@ import Color from '../../../services/color';
 
 const RangeSelectArea = (props) => {
 
+  const StyledComponents = getStyledComponents();
+  const RangeSelectArea = StyledComponents.RangeSelectArea;
+
+  return (
+    <div>
+      <RangeSelectArea>
+        <AppProvider>
+          <RangeSelect
+            range_slider={props.range_slider}
+            unit={props.unit}
+            year_and_month={props.year_and_month}
+          />
+        </AppProvider>
+      </RangeSelectArea>
+    </div>
+  )
+}
+
+const getStyledComponents = () => {
+
   let RangeSelectArea = styled.div`
   background: ${Color.snowWhite};
   
@@ -29,26 +49,9 @@ const RangeSelectArea = (props) => {
     `;
   }
 
-  return (
-    <div>
-      <RangeSelectArea>
-        <AppProvider>
-          <RangeSelect
-            range_slider={props.range_slider}
-            unit={props.unit}
-            year_and_month={props.year_and_month}
-          />
-        </AppProvider>
-      </RangeSelectArea>
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
 
   return {
-    xxx :xxx
+    RangeSelectArea : RangeSelectArea
   };
 }
 

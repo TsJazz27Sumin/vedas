@@ -12,6 +12,72 @@ const ConditionDetailFirst = (props) => {
   const upperTextFieldValue = props.electoric_power_data.range_slider.upperTextFieldValue;
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
+  const StyledComponents = getStyledComponents(unit);
+  const Area = StyledComponents.Area;
+  const ParamArea = StyledComponents.ParamArea;
+  const ParamAreaY = StyledComponents.ParamAreaY;
+  const ParamAreaYM = StyledComponents.xxParamAreaYMx;
+  const ParamAreaYMD = StyledComponents.ParamAreaYMD;
+  const ParamArea1H = StyledComponents.ParamArea1H;
+  const ParamLabel = StyledComponents.ParamLabel;
+  const ParamButtonDiv = StyledComponents.ParamButtonDiv;
+  const ParamButtonY = StyledComponents.ParamButtonY;
+  const ParamButtonYM = StyledComponents.ParamButtonYM;
+  const ParamButtonYMD = StyledComponents.ParamButtonYMD;
+  const ParamButton1H = StyledComponents.ParamButton1H;
+
+  return (
+    <div>
+      <Area>
+        <ParamArea>
+          <ParamAreaY 
+            onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
+            <ParamLabel>
+              <p>{dict.unit_y}</p>
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonY />
+            </ParamButtonDiv>
+          </ParamAreaY>
+          <ParamAreaYM 
+            onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
+            <ParamLabel>
+              <p>{dict.unit_ym}</p>
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonYM />
+            </ParamButtonDiv>
+          </ParamAreaYM>
+          <ParamAreaYMD 
+            onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
+            <ParamLabel>
+              <p>{dict.unit_ymd}</p>
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonYMD />
+            </ParamButtonDiv>
+          </ParamAreaYMD>
+          <ParamArea1H 
+            onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
+          >
+            <ParamLabel>
+              <p>{dict.unit_1h}</p>
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButton1H />
+            </ParamButtonDiv>
+          </ParamArea1H>
+        </ParamArea>
+      </Area>
+    </div>
+  )
+}
+
+const getStyledComponents = (unit) => {
+
   let Area = styled.div`
   background: ${Color.gray};
 
@@ -158,61 +224,19 @@ const ConditionDetailFirst = (props) => {
     ParamArea1H = setBackGround(unit === "1H", ParamArea1H);
   }
 
-  return (
-    <div>
-      <Area>
-        <ParamArea>
-          <ParamAreaY 
-            onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
-            <ParamLabel>
-              <p>{dict.unit_y}</p>
-            </ParamLabel>
-            <ParamButtonDiv>
-              <ParamButtonY />
-            </ParamButtonDiv>
-          </ParamAreaY>
-          <ParamAreaYM 
-            onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
-            <ParamLabel>
-              <p>{dict.unit_ym}</p>
-            </ParamLabel>
-            <ParamButtonDiv>
-              <ParamButtonYM />
-            </ParamButtonDiv>
-          </ParamAreaYM>
-          <ParamAreaYMD 
-            onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
-            <ParamLabel>
-              <p>{dict.unit_ymd}</p>
-            </ParamLabel>
-            <ParamButtonDiv>
-              <ParamButtonYMD />
-            </ParamButtonDiv>
-          </ParamAreaYMD>
-          <ParamArea1H 
-            onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
-            <ParamLabel>
-              <p>{dict.unit_1h}</p>
-            </ParamLabel>
-            <ParamButtonDiv>
-              <ParamButton1H />
-            </ParamButtonDiv>
-          </ParamArea1H>
-        </ParamArea>
-      </Area>
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Area : Area,
+    ParamArea : ParamArea,
+    ParamAreaY : ParamAreaY,
+    ParamAreaYM : ParamAreaYM,
+    ParamAreaYMD : ParamAreaYMD,
+    ParamArea1H : ParamArea1H,
+    ParamLabel : ParamLabel,
+    ParamButtonDiv : ParamButtonDiv,
+    ParamButtonY : ParamButtonY,
+    ParamButtonYM : ParamButtonYM,
+    ParamButtonYMD : ParamButtonYMD,
+    ParamButton1H : ParamButton1H,
   };
 }
 

@@ -38,6 +38,67 @@ const AnalyzeArea = (props) => {
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
 
+  const StyledComponents = getStyledComponents(checkedCount);
+  const AnalyzeArea = StyledComponents.AnalyzeArea;
+  const Content = StyledComponents.Content;
+  const ChartsAreaUl = StyledComponents.ChartsAreaUl;
+
+  return (
+    <AnalyzeArea>
+      <Condition 
+        dict={dict}
+        electoric_power_data={electoric_power_data}
+        electoric_power_company={electoric_power_company}
+        electoric_power_resource={electoric_power_resource}
+        />
+      <Content>
+        <ConditionDetailTitle dict={dict}/>
+        {
+            electoric_power_data.is_range_slider_open ? 
+          (
+            <RangeSelectArea
+              range_slider={electoric_power_data.range_slider}
+              unit={electoric_power_data.unit}
+              year_and_month={electoric_power_data.year_and_month}
+            />
+          ):(
+            <DateSelectArea
+              dict={dict}
+              unit={electoric_power_data.unit}
+              date_select={date_select} 
+            />
+          )
+        }
+        <AppProvider>
+        {
+          electoric_power_data.is_loading ?
+            (
+              <ul>
+                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
+              </ul>
+            )
+            :
+            (<ChartsAreaUl>
+              <CompanyEnergyCharts
+                data={electoric_power_data.data}
+                dict={dict}
+                electricPowersChecked={electoric_power_company.Checked}
+                energyResoursesChecked={electoric_power_resource.Checked}
+              />
+            </ChartsAreaUl>
+            )
+        }
+        </AppProvider>
+        <ShareButtonArea pathname={props.pathname}/>
+      </Content>
+      <WatchoutArea dict={dict} checkedCount={checkedCount}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
+    </AnalyzeArea>
+  )
+}
+
+const getStyledComponents = (checkedCount) => {
+
   let AnalyzeArea = styled.div`
   border-radius: 54px;
   background: ${Color.gray};
@@ -111,65 +172,10 @@ const AnalyzeArea = (props) => {
     `;
   }
 
-  return (
-    <AnalyzeArea>
-      <Condition 
-        dict={dict}
-        electoric_power_data={electoric_power_data}
-        electoric_power_company={electoric_power_company}
-        electoric_power_resource={electoric_power_resource}
-        />
-      <Content>
-        <ConditionDetailTitle dict={dict}/>
-        {
-            electoric_power_data.is_range_slider_open ? 
-          (
-            <RangeSelectArea
-              range_slider={electoric_power_data.range_slider}
-              unit={electoric_power_data.unit}
-              year_and_month={electoric_power_data.year_and_month}
-            />
-          ):(
-            <DateSelectArea
-              dict={dict}
-              unit={electoric_power_data.unit}
-              date_select={date_select} 
-            />
-          )
-        }
-        <AppProvider>
-        {
-          electoric_power_data.is_loading ?
-            (
-              <ul>
-                <Spinner accessibilityLabel="Spinner example" size="large" color="teal" />
-              </ul>
-            )
-            :
-            (<ChartsAreaUl>
-              <CompanyEnergyCharts
-                data={electoric_power_data.data}
-                dict={dict}
-                electricPowersChecked={electoric_power_company.Checked}
-                energyResoursesChecked={electoric_power_resource.Checked}
-              />
-            </ChartsAreaUl>
-            )
-        }
-        </AppProvider>
-        <ShareButtonArea pathname={props.pathname}/>
-      </Content>
-      <WatchoutArea dict={dict} checkedCount={checkedCount}/>
-      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
-    </AnalyzeArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    AnalyzeArea : AnalyzeArea,
+    Content : Content,
+    ChartsAreaUl : ChartsAreaUl
   };
 }
 

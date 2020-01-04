@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 const CompanyName = ({ company_name, jurisdiction }) => {
 
-  let CompanyNameArea = styled.div`
-  padding: 0% 0% 0% 0%;
-  margin:  5% 0% 0% 0%;
-  `;
+  const StyledComponents = getStyledComponents();
+  const CompanyNameArea = StyledComponents.CompanyNameArea; 
 
   return (
     <CompanyNameArea>
@@ -15,11 +13,15 @@ const CompanyName = ({ company_name, jurisdiction }) => {
   )
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  let CompanyNameArea = styled.div`
+  padding: 0% 0% 0% 0%;
+  margin:  5% 0% 0% 0%;
+  `;
 
   return {
-    xxx :xxx
+    CompanyNameArea : CompanyNameArea
   };
 }
 

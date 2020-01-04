@@ -9,6 +9,28 @@ const WatchoutArea = (props) => {
   const dict = props.dict;
   const checkedCount = props.checkedCount;
 
+  const StyledComponents = getStyledComponents(checkedCount);
+  const WatchoutArea = StyledComponents.WatchoutArea;
+  const WatchoutTitle = StyledComponents.WatchoutTitle;
+  const WatchoutTexts = StyledComponents.WatchoutTexts;
+
+  return (
+    <WatchoutArea>
+      <WatchoutTitle>
+        <p>{dict.watchout}</p>
+      </WatchoutTitle>
+      <WatchoutTexts>
+        <p>{dict.watchout_info2}</p>
+        <p>{dict.watchout_info3}</p>
+        <p>{dict.watchout_info4}</p>
+        <p>{dict.watchout_info5}</p>
+      </WatchoutTexts>
+    </WatchoutArea>
+  )
+}
+
+const getStyledComponents = (checkedCount) => {
+
   let WatchoutArea = styled.div`
   padding: 0% 0% 0% 0%;
   margin:  ${450 + (350 * checkedCount)}px 0% 0% 6%;
@@ -52,26 +74,10 @@ const WatchoutArea = (props) => {
     WatchoutArea = styled(WatchoutArea)`margin-top: ${325 + (intervalHeight * checkedCount)}px; width: 89%;`;
   }
 
-  return (
-    <WatchoutArea>
-      <WatchoutTitle>
-        <p>{dict.watchout}</p>
-      </WatchoutTitle>
-      <WatchoutTexts>
-        <p>{dict.watchout_info2}</p>
-        <p>{dict.watchout_info3}</p>
-        <p>{dict.watchout_info4}</p>
-        <p>{dict.watchout_info5}</p>
-      </WatchoutTexts>
-    </WatchoutArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    WatchoutArea : WatchoutArea,
+    WatchoutTitle : WatchoutTitle,
+    WatchoutTexts : WatchoutTexts
   };
 }
 

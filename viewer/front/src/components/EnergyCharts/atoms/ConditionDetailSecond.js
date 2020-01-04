@@ -12,6 +12,146 @@ const ConditionDetailSecond = (props) => {
   const electricPowersChecked = electoric_power_company.Checked;
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
+  const StyledComponents = getStyledComponents(allChecked, electricPowersChecked);
+  const Area = StyledComponents.Area;
+  const ParamAll = StyledComponents.ParamAll;
+  const ParamJapan = StyledComponents.ParamJapan;
+  const ParamHepco = StyledComponents.ParamHepco;
+  const ParamTohokuepco = StyledComponents.ParamTohokuepco;
+  const ParamRikuden = StyledComponents.ParamRikuden;
+  const ParamTepco = StyledComponents.ParamTepco;
+  const ParamChuden = StyledComponents.ParamChuden;
+  const ParamKepco = StyledComponents.ParamKepco;
+  const ParamEnergia = StyledComponents.ParamEnergia;
+  const ParamYonden = StyledComponents.ParamYonden;
+  const ParamKyuden = StyledComponents.ParamKyuden;
+  const ParamOkiden = StyledComponents.ParamOkiden;
+  const ParamLabel = StyledComponents.ParamLabel;
+  const ParamButtonAll = StyledComponents.ParamButtonAll;
+  const ParamButtonJapan = StyledComponents.ParamButtonJapan;
+  const ParamButtonHepco = StyledComponents.ParamButtonHepco;
+  const ParamButtonTohokuepco = StyledComponents.ParamButtonTohokuepco;
+  const ParamButtonRikuden = StyledComponents.ParamButtonRikuden;
+  const ParamButtonTepco = StyledComponents.ParamButtonTepco;
+  const ParamButtonChuden = StyledComponents.ParamButtonChuden;
+  const ParamButtonKepco = StyledComponents.ParamButtonKepco;
+  const ParamButtonEnergia = StyledComponents.ParamButtonEnergia;
+  const ParamButtonYonden = StyledComponents.ParamButtonYonden;
+  const ParamButtonKyuden = StyledComponents.ParamButtonKyuden;
+  const ParamButtonOkiden = StyledComponents.ParamButtonOkiden;
+  const ParamArea1 = StyledComponents.ParamArea1;
+  const ParamArea2 = StyledComponents.ParamArea2;  
+
+  return (
+    <div>
+      <Area>
+        <ParamArea1>
+          <ParamAll
+            onClick={() => handleAllChange(!allChecked)}
+          >
+            <ParamButtonAll />
+            <ParamLabel>
+              <p>{dict.all}</p>
+            </ParamLabel>
+          </ParamAll>
+          <ParamJapan
+            onClick={() => handleElectricPowersChange.handleJapanChange(!electricPowersChecked.japanChecked)}
+          >
+            <ParamButtonJapan />
+            <ParamLabel>
+              <p>{dict.japan}</p>
+            </ParamLabel>
+          </ParamJapan>
+          <ParamHepco
+            onClick={() => handleElectricPowersChange.handleHepcoChange(!electricPowersChecked.hepcoChecked)}
+          >
+            <ParamButtonHepco />
+            <ParamLabel>
+              <p>{dict.hepco}</p>
+            </ParamLabel>
+          </ParamHepco>
+          <ParamTohokuepco
+            onClick={() => handleElectricPowersChange.handleTohokuepcoChange(!electricPowersChecked.tohokuepcoChecked)}
+          >
+            <ParamButtonTohokuepco />
+            <ParamLabel>
+              <p>{dict.tohokuepco}</p>
+            </ParamLabel>
+          </ParamTohokuepco>
+          <ParamRikuden
+            onClick={() => handleElectricPowersChange.handleRikudenChange(!electricPowersChecked.rikudenChecked)}
+          >
+            <ParamButtonRikuden />
+            <ParamLabel>
+              <p>{dict.rikuden}</p>
+            </ParamLabel>
+          </ParamRikuden>
+          <ParamTepco
+            onClick={() => handleElectricPowersChange.handleTepcoChange(!electricPowersChecked.tepcoChecked)}
+          >
+            <ParamButtonTepco />
+            <ParamLabel>
+              <p>{dict.tepco}</p>
+            </ParamLabel>
+          </ParamTepco>
+        </ParamArea1>
+        <ParamArea2>
+          <ParamChuden
+            onClick={() => handleElectricPowersChange.handleChudenChange(!electricPowersChecked.chudenChecked)}
+          >
+            <ParamButtonChuden />
+            <ParamLabel>
+              <p>{dict.chuden}</p>
+            </ParamLabel>
+          </ParamChuden>
+          <ParamKepco
+            onClick={() => handleElectricPowersChange.handleKepcoChange(!electricPowersChecked.kepcoChecked)}
+          >
+            <ParamButtonKepco />
+            <ParamLabel>
+              <p>{dict.kepco}</p>
+            </ParamLabel>
+          </ParamKepco>
+          <ParamEnergia
+            onClick={() => handleElectricPowersChange.handleEnergiaChange(!electricPowersChecked.energiaChecked)}
+          >
+            <ParamButtonEnergia />
+            <ParamLabel>
+              <p>{dict.energia}</p>
+            </ParamLabel>
+          </ParamEnergia>
+          <ParamYonden
+            onClick={() => handleElectricPowersChange.handleYondenChange(!electricPowersChecked.yondenChecked)}
+          >
+            <ParamButtonYonden />
+            <ParamLabel>
+              <p>{dict.yonden}</p>
+            </ParamLabel>
+          </ParamYonden>
+          <ParamKyuden
+            onClick={() => handleElectricPowersChange.handleKyudenChange(!electricPowersChecked.kyudenChecked)}
+          >
+            <ParamButtonKyuden />
+            <ParamLabel>
+              <p>{dict.kyuden}</p>
+            </ParamLabel>
+          </ParamKyuden>
+          <ParamOkiden
+            onClick={() => handleElectricPowersChange.handleOkidenChange(!electricPowersChecked.okidenChecked)}
+          >
+            <ParamButtonOkiden />
+            <ParamLabel>
+              <p>{dict.okiden}</p>
+            </ParamLabel>
+          </ParamOkiden>
+        </ParamArea2>
+      </Area>
+    </div>
+  )
+}
+
+const getStyledComponents = (allChecked, electricPowersChecked) => {
+
   let Area = styled.div`
   background: ${Color.white};
   border-radius: 16px;
@@ -159,119 +299,35 @@ const ConditionDetailSecond = (props) => {
     ParamOkiden = setBackGround(electricPowersChecked.okidenChecked);
   }
 
-  return (
-    <div>
-      <Area>
-        <ParamArea1>
-          <ParamAll
-            onClick={() => handleAllChange(!allChecked)}
-          >
-            <ParamButtonAll />
-            <ParamLabel>
-              <p>{dict.all}</p>
-            </ParamLabel>
-          </ParamAll>
-          <ParamJapan
-            onClick={() => handleElectricPowersChange.handleJapanChange(!electricPowersChecked.japanChecked)}
-          >
-            <ParamButtonJapan />
-            <ParamLabel>
-              <p>{dict.japan}</p>
-            </ParamLabel>
-          </ParamJapan>
-          <ParamHepco
-            onClick={() => handleElectricPowersChange.handleHepcoChange(!electricPowersChecked.hepcoChecked)}
-          >
-            <ParamButtonHepco />
-            <ParamLabel>
-              <p>{dict.hepco}</p>
-            </ParamLabel>
-          </ParamHepco>
-          <ParamTohokuepco
-            onClick={() => handleElectricPowersChange.handleTohokuepcoChange(!electricPowersChecked.tohokuepcoChecked)}
-          >
-            <ParamButtonTohokuepco />
-            <ParamLabel>
-              <p>{dict.tohokuepco}</p>
-            </ParamLabel>
-          </ParamTohokuepco>
-          <ParamRikuden
-            onClick={() => handleElectricPowersChange.handleRikudenChange(!electricPowersChecked.rikudenChecked)}
-          >
-            <ParamButtonRikuden />
-            <ParamLabel>
-              <p>{dict.rikuden}</p>
-            </ParamLabel>
-          </ParamRikuden>
-          <ParamTepco
-            onClick={() => handleElectricPowersChange.handleTepcoChange(!electricPowersChecked.tepcoChecked)}
-          >
-            <ParamButtonTepco />
-            <ParamLabel>
-              <p>{dict.tepco}</p>
-            </ParamLabel>
-          </ParamTepco>
-        </ParamArea1>
-        <ParamArea2>
-          <ParamChuden
-            onClick={() => handleElectricPowersChange.handleChudenChange(!electricPowersChecked.chudenChecked)}
-          >
-            <ParamButtonChuden />
-            <ParamLabel>
-              <p>{dict.chuden}</p>
-            </ParamLabel>
-          </ParamChuden>
-          <ParamKepco
-            onClick={() => handleElectricPowersChange.handleKepcoChange(!electricPowersChecked.kepcoChecked)}
-          >
-            <ParamButtonKepco />
-            <ParamLabel>
-              <p>{dict.kepco}</p>
-            </ParamLabel>
-          </ParamKepco>
-          <ParamEnergia
-            onClick={() => handleElectricPowersChange.handleEnergiaChange(!electricPowersChecked.energiaChecked)}
-          >
-            <ParamButtonEnergia />
-            <ParamLabel>
-              <p>{dict.energia}</p>
-            </ParamLabel>
-          </ParamEnergia>
-          <ParamYonden
-            onClick={() => handleElectricPowersChange.handleYondenChange(!electricPowersChecked.yondenChecked)}
-          >
-            <ParamButtonYonden />
-            <ParamLabel>
-              <p>{dict.yonden}</p>
-            </ParamLabel>
-          </ParamYonden>
-          <ParamKyuden
-            onClick={() => handleElectricPowersChange.handleKyudenChange(!electricPowersChecked.kyudenChecked)}
-          >
-            <ParamButtonKyuden />
-            <ParamLabel>
-              <p>{dict.kyuden}</p>
-            </ParamLabel>
-          </ParamKyuden>
-          <ParamOkiden
-            onClick={() => handleElectricPowersChange.handleOkidenChange(!electricPowersChecked.okidenChecked)}
-          >
-            <ParamButtonOkiden />
-            <ParamLabel>
-              <p>{dict.okiden}</p>
-            </ParamLabel>
-          </ParamOkiden>
-        </ParamArea2>
-      </Area>
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Area : Area,
+    ParamAll : ParamAll,
+    ParamJapan : ParamJapan,
+    ParamHepco : ParamHepco,
+    ParamTohokuepco : ParamTohokuepco,
+    ParamRikuden : ParamRikuden,
+    ParamTepco : ParamTepco,
+    ParamChuden : ParamChuden,
+    ParamKepco : ParamKepco,
+    ParamEnergia : ParamEnergia,
+    ParamYonden : ParamYonden,
+    ParamKyuden : ParamKyuden,
+    ParamOkiden : ParamOkiden,
+    ParamLabel : ParamLabel,
+    ParamButtonAll : ParamButtonAll,
+    ParamButtonJapan : ParamButtonJapan,
+    ParamButtonHepco : ParamButtonHepco,
+    ParamButtonTohokuepco : ParamButtonTohokuepco,
+    ParamButtonRikuden : ParamButtonRikuden,
+    ParamButtonTepco : ParamButtonTepco,
+    ParamButtonChuden : ParamButtonChuden,
+    ParamButtonKepco : ParamButtonKepco,
+    ParamButtonEnergia : ParamButtonEnergia,
+    ParamButtonYonden : ParamButtonYonden,
+    ParamButtonKyuden : ParamButtonKyuden,
+    ParamButtonOkiden : ParamButtonOkiden,
+    ParamArea1 : ParamArea1,
+    ParamArea2 : ParamArea2
   };
 }
 

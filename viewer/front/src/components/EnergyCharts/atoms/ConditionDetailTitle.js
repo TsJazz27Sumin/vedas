@@ -5,6 +5,18 @@ import Color from '../../../services/color';
 
 const ConditionDetailTitle = (props) => {
 
+  const StyledComponents = getStyledComponents();
+  const ConditionDetailTitle = StyledComponents.ConditionDetailTitle;
+
+  return (
+    <ConditionDetailTitle>
+      <p>{props.dict.analyze_condtion_text4}</p>
+    </ConditionDetailTitle>
+  )
+}
+
+const getStyledComponents = () => {
+
   let ConditionDetailTitle = styled.div`
   font-family: Roboto;
   font-size: 22px;
@@ -26,18 +38,8 @@ const ConditionDetailTitle = (props) => {
     `;
   }
 
-  return (
-    <ConditionDetailTitle>
-      <p>{props.dict.analyze_condtion_text4}</p>
-    </ConditionDetailTitle>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    ConditionDetailTitle : ConditionDetailTitle
   };
 }
 

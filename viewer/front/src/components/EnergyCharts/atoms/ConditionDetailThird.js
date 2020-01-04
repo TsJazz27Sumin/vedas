@@ -9,6 +9,134 @@ const ConditionDetailThird = (props) => {
   const energyResoursesChecked = props.electoric_power_resource.Checked;
   const handleEnergyResoursesChange = props.electoric_power_resource.handleValueChange;
 
+  const StyledComponents = getStyledComponents(energyResoursesChecked);
+  const Area = StyledComponents.Area;
+  const ParamDemand = StyledComponents.ParamDemand;
+  const ParamNuclear = StyledComponents.ParamNuclear;
+  const ParamThermal = StyledComponents.ParamThermal;
+  const ParamHydro = StyledComponents.ParamHydro;
+  const ParamGeothermal = StyledComponents.ParamGeothermal;
+  const ParamBiomass = StyledComponents.ParamBiomass;
+  const ParamSolar = StyledComponents.ParamSolar;
+  const ParamSolarOutputControl = StyledComponents.ParamSolarOutputControl;
+  const ParamWind = StyledComponents.ParamWind;
+  const ParamWindOutputControl = StyledComponents.ParamWindOutputControl;
+  const ParamPumping = StyledComponents.ParamPumping;
+  const ParamInterconnection = StyledComponents.ParamInterconnection;
+  const ParamLabel = StyledComponents.ParamLabel;
+  const ParamArea1 = StyledComponents.ParamArea1;
+  const ParamArea2 = StyledComponents.ParamArea2;
+  const ParamButtonDemand = StyledComponents.ParamButtonDemand;
+  const ParamButtonNuclear = StyledComponents.ParamButtonNuclear;
+  const ParamButtonThermal = StyledComponents.ParamButtonThermal;
+  const ParamButtonHydro = StyledComponents.ParamButtonHydro;
+  const ParamButtonGeothermal = StyledComponents.ParamButtonGeothermal;
+  const ParamButtonBiomass = StyledComponents.ParamButtonBiomass;
+  const ParamButtonSolar = StyledComponents.ParamButtonSolar;
+  const ParamButtonSolarOutputControl = StyledComponents.ParamButtonSolarOutputControl;
+  const ParamButtonWind = StyledComponents.ParamButtonWind;
+  const ParamButtonWindOutputControl = StyledComponents.ParamButtonWindOutputControl;
+  const ParamButtonPumping = StyledComponents.ParamButtonPumping;
+  const ParamButtonInterconnection = StyledComponents.ParamButtonInterconnection;
+  
+  return (
+    <div>
+      <Area>
+        <ParamArea1>
+          <ParamDemand onClick={() => handleEnergyResoursesChange.handleDemandChange(!energyResoursesChecked.demandChecked)}>
+            <ParamButtonDemand>
+              <ParamLabel>
+                <p>{dict.demand}</p>
+              </ParamLabel>
+            </ParamButtonDemand>
+          </ParamDemand>
+          <ParamNuclear onClick={() => handleEnergyResoursesChange.handleNuclearChange(!energyResoursesChecked.nuclearChecked)}>
+            <ParamButtonNuclear>
+              <ParamLabel>
+                <p>{dict.nuclear}</p>
+              </ParamLabel>
+            </ParamButtonNuclear>
+          </ParamNuclear>
+          <ParamThermal onClick={() => handleEnergyResoursesChange.handleThermalChange(!energyResoursesChecked.thermalChecked)}>
+            <ParamButtonThermal>
+              <ParamLabel>
+                <p>{dict.thermal}</p>
+              </ParamLabel>
+            </ParamButtonThermal>
+          </ParamThermal>
+          <ParamHydro onClick={() => handleEnergyResoursesChange.handleHydroChange(!energyResoursesChecked.hydroChecked)}>
+            <ParamButtonHydro>
+              <ParamLabel>
+                <p>{dict.hydro}</p>
+              </ParamLabel>
+            </ParamButtonHydro>
+          </ParamHydro>
+          <ParamGeothermal onClick={() => handleEnergyResoursesChange.handleGeothermalChange(!energyResoursesChecked.geothermalChecked)}>
+            <ParamButtonGeothermal>
+              <ParamLabel>
+                <p>{dict.geothermal}</p>
+              </ParamLabel>
+            </ParamButtonGeothermal>
+          </ParamGeothermal>
+          <ParamBiomass onClick={() => handleEnergyResoursesChange.handleBiomassChange(!energyResoursesChecked.biomassChecked)}>
+            <ParamButtonBiomass>
+              <ParamLabel>
+                <p>{dict.biomass}</p>
+              </ParamLabel>
+            </ParamButtonBiomass>
+          </ParamBiomass>
+        </ParamArea1>
+        <ParamArea2>
+          <ParamSolar onClick={() => handleEnergyResoursesChange.handleSolarChange(!energyResoursesChecked.solarChecked)}>
+            <ParamButtonSolar>
+              <ParamLabel>
+                <p>{dict.solar}</p>
+              </ParamLabel>
+            </ParamButtonSolar>
+          </ParamSolar>
+          <ParamSolarOutputControl onClick={() => handleEnergyResoursesChange.handleSolarOutputControlChange(!energyResoursesChecked.solarOutputControlChecked)}>
+            <ParamButtonSolarOutputControl>
+              <ParamLabel>
+                <p>{dict.solar_output_control}</p>
+              </ParamLabel>
+            </ParamButtonSolarOutputControl>
+          </ParamSolarOutputControl>
+          <ParamWind onClick={() => handleEnergyResoursesChange.handleWindChange(!energyResoursesChecked.windChecked)}>
+            <ParamButtonWind>
+              <ParamLabel>
+                <p>{dict.wind}</p>
+              </ParamLabel>
+            </ParamButtonWind>
+          </ParamWind>
+          <ParamWindOutputControl onClick={() => handleEnergyResoursesChange.handleWindOutputControlChange(!energyResoursesChecked.windOutputControlChecked)}>
+            <ParamButtonWindOutputControl>
+              <ParamLabel>
+                <p>{dict.wind_output_control}</p>
+              </ParamLabel>
+            </ParamButtonWindOutputControl>
+          </ParamWindOutputControl>
+          <ParamPumping onClick={() => handleEnergyResoursesChange.handlePumpingChange(!energyResoursesChecked.pumpingChecked)}>
+            <ParamButtonPumping>
+              <ParamLabel>
+                <p>{dict.pumping}</p>
+              </ParamLabel>
+            </ParamButtonPumping>
+          </ParamPumping>
+          <ParamInterconnection onClick={() => handleEnergyResoursesChange.handleInterconnectionChange(!energyResoursesChecked.interconnectionChecked)}>
+            <ParamButtonInterconnection>
+              <ParamLabel>
+                <p>{dict.interconnection}</p>
+              </ParamLabel>
+            </ParamButtonInterconnection>
+          </ParamInterconnection>
+        </ParamArea2>
+      </Area>
+    </div>
+  )
+}
+
+const getStyledComponents = (energyResoursesChecked) => {
+
   const Area = styled.div`
   background: ${Color.white};
   border-radius: 16px;
@@ -45,7 +173,6 @@ const ConditionDetailThird = (props) => {
   let ParamWindOutputControl = styled(Param)`display: inline-block;`;
   let ParamPumping = styled(Param)`display: inline-block;`;
   let ParamInterconnection = styled(Param)`display: inline-block;`;
-
 
   const ParamLabel = styled.div`
   font-family: Roboto;
@@ -172,107 +299,36 @@ const ConditionDetailThird = (props) => {
     ParamPumping = styled(ParamPumping)`display:none;`;
     ParamInterconnection = styled(ParamInterconnection)`display:none;`;
   }
-  return (
-    <div>
-      <Area>
-        <ParamArea1>
-          <ParamDemand onClick={() => handleEnergyResoursesChange.handleDemandChange(!energyResoursesChecked.demandChecked)}>
-            <ParamButtonDemand>
-              <ParamLabel>
-                <p>{dict.demand}</p>
-              </ParamLabel>
-            </ParamButtonDemand>
-          </ParamDemand>
-          <ParamNuclear onClick={() => handleEnergyResoursesChange.handleNuclearChange(!energyResoursesChecked.nuclearChecked)}>
-            <ParamButtonNuclear>
-              <ParamLabel>
-                <p>{dict.nuclear}</p>
-              </ParamLabel>
-            </ParamButtonNuclear>
-          </ParamNuclear>
-          <ParamThermal onClick={() => handleEnergyResoursesChange.handleThermalChange(!energyResoursesChecked.thermalChecked)}>
-            <ParamButtonThermal>
-              <ParamLabel>
-                <p>{dict.thermal}</p>
-              </ParamLabel>
-            </ParamButtonThermal>
-          </ParamThermal>
-          <ParamHydro onClick={() => handleEnergyResoursesChange.handleHydroChange(!energyResoursesChecked.hydroChecked)}>
-            <ParamButtonHydro>
-              <ParamLabel>
-                <p>{dict.hydro}</p>
-              </ParamLabel>
-            </ParamButtonHydro>
-          </ParamHydro>
-          <ParamGeothermal onClick={() => handleEnergyResoursesChange.handleGeothermalChange(!energyResoursesChecked.geothermalChecked)}>
-            <ParamButtonGeothermal>
-              <ParamLabel>
-                <p>{dict.geothermal}</p>
-              </ParamLabel>
-            </ParamButtonGeothermal>
-          </ParamGeothermal>
-          <ParamBiomass onClick={() => handleEnergyResoursesChange.handleBiomassChange(!energyResoursesChecked.biomassChecked)}>
-            <ParamButtonBiomass>
-              <ParamLabel>
-                <p>{dict.biomass}</p>
-              </ParamLabel>
-            </ParamButtonBiomass>
-          </ParamBiomass>
-        </ParamArea1>
-        <ParamArea2>
-          <ParamSolar onClick={() => handleEnergyResoursesChange.handleSolarChange(!energyResoursesChecked.solarChecked)}>
-            <ParamButtonSolar>
-              <ParamLabel>
-                <p>{dict.solar}</p>
-              </ParamLabel>
-            </ParamButtonSolar>
-          </ParamSolar>
-          <ParamSolarOutputControl onClick={() => handleEnergyResoursesChange.handleSolarOutputControlChange(!energyResoursesChecked.solarOutputControlChecked)}>
-            <ParamButtonSolarOutputControl>
-              <ParamLabel>
-                <p>{dict.solar_output_control}</p>
-              </ParamLabel>
-            </ParamButtonSolarOutputControl>
-          </ParamSolarOutputControl>
-          <ParamWind onClick={() => handleEnergyResoursesChange.handleWindChange(!energyResoursesChecked.windChecked)}>
-            <ParamButtonWind>
-              <ParamLabel>
-                <p>{dict.wind}</p>
-              </ParamLabel>
-            </ParamButtonWind>
-          </ParamWind>
-          <ParamWindOutputControl onClick={() => handleEnergyResoursesChange.handleWindOutputControlChange(!energyResoursesChecked.windOutputControlChecked)}>
-            <ParamButtonWindOutputControl>
-              <ParamLabel>
-                <p>{dict.wind_output_control}</p>
-              </ParamLabel>
-            </ParamButtonWindOutputControl>
-          </ParamWindOutputControl>
-          <ParamPumping onClick={() => handleEnergyResoursesChange.handlePumpingChange(!energyResoursesChecked.pumpingChecked)}>
-            <ParamButtonPumping>
-              <ParamLabel>
-                <p>{dict.pumping}</p>
-              </ParamLabel>
-            </ParamButtonPumping>
-          </ParamPumping>
-          <ParamInterconnection onClick={() => handleEnergyResoursesChange.handleInterconnectionChange(!energyResoursesChecked.interconnectionChecked)}>
-            <ParamButtonInterconnection>
-              <ParamLabel>
-                <p>{dict.interconnection}</p>
-              </ParamLabel>
-            </ParamButtonInterconnection>
-          </ParamInterconnection>
-        </ParamArea2>
-      </Area>
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
 
   return {
-    xxx :xxx
+    Area : Area,
+    ParamDemand : ParamDemand,
+    ParamNuclear : ParamNuclear,
+    ParamThermal : ParamThermal,
+    ParamHydro : ParamHydro,
+    ParamGeothermal : ParamGeothermal,
+    ParamBiomass : ParamBiomass,
+    ParamSolar : ParamSolar,
+    ParamSolarOutputControl : ParamSolarOutputControl,
+    ParamWind : ParamWind,
+    ParamWindOutputControl : ParamWindOutputControl,
+    ParamPumping : ParamPumping,
+    ParamInterconnection : ParamInterconnection,
+    ParamLabel : ParamLabel,
+    ParamArea1 : ParamArea1,
+    ParamArea2 : ParamArea2,
+    ParamButtonDemand : ParamButtonDemand,
+    ParamButtonNuclear : ParamButtonNuclear,
+    ParamButtonThermal : ParamButtonThermal,
+    ParamButtonHydro : ParamButtonHydro,
+    ParamButtonGeothermal : ParamButtonGeothermal,
+    ParamButtonBiomass : ParamButtonBiomass,
+    ParamButtonSolar : ParamButtonSolar,
+    ParamButtonSolarOutputControl : ParamButtonSolarOutputControl,
+    ParamButtonWind : ParamButtonWind,
+    ParamButtonWindOutputControl : ParamButtonWindOutputControl,
+    ParamButtonPumping : ParamButtonPumping,
+    ParamButtonInterconnection : ParamButtonInterconnection
   };
 }
 
