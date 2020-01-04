@@ -24,7 +24,8 @@ const Home = (props) => {
     if (qs.case !== undefined){
       window.scrollTo(0, 1300);
     }
-  }, [])
+  },// eslint-disable-next-line 
+  [])
 
   const [menu, setMenu] = useState('home');
   const handleMenuChange = useCallback((newValue) => {
