@@ -80,7 +80,7 @@ const HeroHeader = (props) => {
     top: 57.3%;
     `;
   }
-  const vedas_logo_image = public_url + '/vedas.png';
+  const vedas_logo_image = public_url + '/common/logo/vedas.png';
 
   return (
     <Hero>

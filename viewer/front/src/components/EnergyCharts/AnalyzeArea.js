@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from '../../../node_modules/react'
+import styled from '../../../node_modules/styled-components';
 import { isMobile } from "react-device-detect";
-import { AppProvider, Spinner } from '@shopify/polaris';
+import { AppProvider, Spinner } from '../../../node_modules/@shopify/polaris';
 import FooterLogoArea from './FooterLogoArea'
 import Condition from './Condition'
 import ConditionDetailTitle from './ConditionDetailTitle'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from '../../../node_modules/react'
 import FooterVedasLogo from './FooterVedasLogo'
 import FooterPanairLogo from './FooterPanairLogo'
 

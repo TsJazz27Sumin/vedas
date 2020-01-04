@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from '../../../node_modules/react'
+import styled from '../../../node_modules/styled-components';
 import { isMobile } from "react-device-detect";
-import { AppProvider } from '@shopify/polaris';
-import RangeSelect from '../../components/EnergyCharts/RangeSelect'
+import { AppProvider } from '../../../node_modules/@shopify/polaris';
+import RangeSelect from './RangeSelect'
 import Color from '../../services/color';
 
 const RangeSelectArea = (props) => {

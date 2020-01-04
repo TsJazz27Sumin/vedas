@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from '../../../node_modules/react'
+import styled from '../../../node_modules/styled-components';
 import ConditionDetailFirst from './ConditionDetailFirst'
 import ConditionDetailSecond from './ConditionDetailSecond'
 import ConditionDetailThird from './ConditionDetailThird'

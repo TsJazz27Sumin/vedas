@@ -1,5 +1,5 @@
-import React from 'react'
-import { DisplayText, Spinner, AppProvider } from '@shopify/polaris';
+import React from '../../../node_modules/react'
+import { DisplayText, Spinner, AppProvider } from '../../../node_modules/@shopify/polaris';
 import CompanyName from './CompanyName'
 import Chart from './Chart'
 

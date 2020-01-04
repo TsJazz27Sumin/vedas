@@ -1,5 +1,5 @@
-import React from 'react'
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import React from '../../../node_modules/react'
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from '../../../node_modules/recharts'
 import { isMobile } from "react-device-detect";
 
 const Chart = (props) => {

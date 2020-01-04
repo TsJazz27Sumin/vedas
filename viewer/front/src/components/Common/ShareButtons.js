@@ -1,18 +1,18 @@
-import React from 'react'
-import ReactGA from 'react-ga';
-import { Stack } from '@shopify/polaris';
+import React from '../../../node_modules/react'
+import ReactGA from '../../../node_modules/react-ga';
+import { Stack } from '../../../node_modules/@shopify/polaris';
 import {
   FacebookShareButton,
   TwitterShareButton,
   LineShareButton,
   WeiboShareButton,
-} from 'react-share';
+} from '../../../node_modules/react-share';
 import {
   FacebookIcon,
   TwitterIcon,
   LineIcon,
-} from 'react-share';
-import axios from 'axios'
+} from '../../../node_modules/react-share';
+import axios from '../../../node_modules/axios'
 
 const ShareButtons = (props) => {
 
