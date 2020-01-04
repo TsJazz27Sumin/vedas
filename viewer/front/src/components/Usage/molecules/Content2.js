@@ -1,9 +1,9 @@
-import React from '../../../node_modules/react'
-import ReactGA from '../../../node_modules/react-ga';
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import ReactGA from 'react-ga';
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import SolarSampleImages from './SolarSampleImages';
-import Color from '../../services/color';
+import SolarSampleImages from '../atoms/SolarSampleImages';
+import Color from '../../../services/color';
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 

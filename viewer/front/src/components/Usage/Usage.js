@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import FooterLogo from '../common/molecules/FooterLogo'
-import Title from './Title'
-import Content1 from './Content1'
-import Content2 from './Content2'
+import Title from './atoms/Title'
+import Content1 from './molecules/Content1'
+import Content2 from './molecules/Content2'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 import Color from '../../services/color';

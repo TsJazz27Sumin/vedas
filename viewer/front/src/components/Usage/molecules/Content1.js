@@ -1,8 +1,8 @@
-import React from '../../../node_modules/react'
-import styled from '../../../node_modules/styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import UsageAreaOneSvg from './UsageAreaOneSvg'
-import Color from '../../services/color';
+import UsageAreaOneSvg from '../atoms/UsageAreaOneSvg'
+import Color from '../../../services/color';
 
 const Content1 = (props) => {
 
