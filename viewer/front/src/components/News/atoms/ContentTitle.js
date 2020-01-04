@@ -4,17 +4,8 @@ import { isMobile } from "react-device-detect";
 
 const ContentTitle = () => {
 
-  let ContentTitle = styled.div`
-  padding: 2% 0% 2% 1.5%;
-  margin:  0% 0% 0% 0%;
-  `;
-
-  if (isMobile) {
-    ContentTitle = styled(ContentTitle)`
-    padding-left: 38%;
-    margin-top: 3%;
-    `;
-  }
+  const StyledComponents = getStyledComponents();
+  const ContentTitle = StyledComponents.ContentTitle;
 
   const Title = (
     <svg width="100" height="24" viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,11 +18,22 @@ const ContentTitle = () => {
   )
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  let ContentTitle = styled.div`
+  padding: 2% 0% 2% 1.5%;
+  margin:  0% 0% 0% 0%;
+  `;
+
+  if (isMobile) {
+    ContentTitle = styled(ContentTitle)`
+    padding-left: 38%;
+    margin-top: 3%;
+    `;
+  }
 
   return {
-    xxx :xxx
+    ContentTitle : ContentTitle
   };
 }
 

@@ -8,6 +8,30 @@ const Content = (props) => {
 
   const dict = props.dict;
 
+  const StyledComponents = getStyledComponents();
+  const Content = StyledComponents.Content;
+  const ShareButtonArea = StyledComponents.ShareButtonArea;
+  const Text1 = StyledComponents.Text1;
+  const Text2 = StyledComponents.Text2;
+
+  return (
+    <Content>
+      <Text1><p>2020/02/01</p></Text1>
+      <Text2><p>{dict.sample_news2}</p></Text2>
+      <ShareButtonArea>
+        <ShareButtons type={"small"} />
+      </ShareButtonArea>
+      <Text1><p>2020/01/18</p></Text1>
+      <Text2><p>{dict.sample_news1}</p></Text2>
+      <ShareButtonArea>
+        <ShareButtons type={"small"} pathname={props.pathname}/>
+      </ShareButtonArea>
+    </Content>
+  )
+}
+
+const getStyledComponents = () => {
+
   let Content = styled.div`
   background: ${Color.white};
   
@@ -72,27 +96,11 @@ const Content = (props) => {
   `;
   }
 
-  return (
-    <Content>
-      <Text1><p>2020/02/01</p></Text1>
-      <Text2><p>{dict.sample_news2}</p></Text2>
-      <ShareButtonArea>
-        <ShareButtons type={"small"} />
-      </ShareButtonArea>
-      <Text1><p>2020/01/18</p></Text1>
-      <Text2><p>{dict.sample_news1}</p></Text2>
-      <ShareButtonArea>
-        <ShareButtons type={"small"} pathname={props.pathname}/>
-      </ShareButtonArea>
-    </Content>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Content : Content,
+    ShareButtonArea : ShareButtonArea,
+    Text1 : Text1,
+    Text2 : Text2
   };
 }
 

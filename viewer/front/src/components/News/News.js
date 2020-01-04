@@ -18,6 +18,20 @@ const News = (props) => {
     ReactGA.pageview(pathname);
   });
 
+  const StyledComponents = getStyledComponents();
+  const ContentArea = StyledComponents.ContentArea;
+
+  return (
+    <ContentArea>
+      <ContentTitle/>
+      <Content dict={dict} pathname={pathname}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
+    </ContentArea>
+  )
+}
+
+const getStyledComponents = () => {
+
   let ContentArea = styled.div`
   border-radius: 54px;
 
@@ -42,20 +56,8 @@ const News = (props) => {
     `;
   }
 
-  return (
-    <ContentArea>
-      <ContentTitle/>
-      <Content dict={dict} pathname={pathname}/>
-      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
-    </ContentArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    ContentArea : ContentArea
   };
 }
 
