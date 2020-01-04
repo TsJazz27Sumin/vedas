@@ -2,10 +2,10 @@ import React, { useState, useCallback } from 'react';
 import '@shopify/polaris/styles.css';
 import styled from 'styled-components';
 import { isMobile, isTablet, osName, browserName, deviceType } from "react-device-detect";
-import HeroHeader from './HeroHeader'
-import HeroWithoutTitle from './HeroWithoutTitle'
-import TopBar from './TopBar'
-import TabletMessage from './TabletMessage'
+import HeroHeader from './atoms/HeroHeader'
+import HeroWithoutTitle from './atoms/HeroWithoutTitle'
+import TopBar from './molecules/TopBar'
+import TabletMessage from './molecules/TabletMessage'
 import EnergyCharts from '../energycharts/EnergyCharts'
 import About from '../about/About'
 import Contact from '../contact/Contact'

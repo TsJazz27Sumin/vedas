@@ -1,6 +1,6 @@
-import React from '../../../node_modules/react'
-import FooterVedasLogo from './FooterVedasLogo'
-import FooterPanairLogo from './FooterPanairLogo'
+import React from 'react'
+import FooterVedasLogo from '../atoms/FooterVedasLogo'
+import FooterPanairLogo from '../atoms/FooterPanairLogo'
 
 const FooterLogoArea = (props) => {
   

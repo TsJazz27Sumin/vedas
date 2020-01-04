@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import { AppProvider, Select } from '@shopify/polaris';
 import { isMobile } from "react-device-detect";
-import WindowSizeService from '../../services/window_size'
-import Color from '../../services/color';
+import WindowSizeService from '../../../services/window_size'
+import Color from '../../../services/color';
 
 const baseUrl = process.env.REACT_APP_FRONT_BASE_URL + '/';
 

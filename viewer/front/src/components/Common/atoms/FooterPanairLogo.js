@@ -1,5 +1,5 @@
-import React from '../../../node_modules/react'
-import ReactGA from '../../../node_modules/react-ga';
+import React from 'react'
+import ReactGA from 'react-ga';
 
 const FooterPanairLogo = (props) => {
 
