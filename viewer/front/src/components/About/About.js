@@ -19,6 +19,19 @@ const About = (props) => {
     ReactGA.pageview(pathname);
   });
 
+  const StyledComponents = getStyledComponents(lang);
+  const ContentArea = StyledComponents.ContentArea;
+
+  return (
+    <ContentArea>
+      <ContentTitle/>
+      <Content dict={dict}/>
+      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
+    </ContentArea>
+  )
+}
+
+const getStyledComponents = (lang) => {
   let ContentArea = styled.div`
   border-radius: 54px;
   background: ${Color.gray};
@@ -66,15 +79,11 @@ const About = (props) => {
       right: 0%;
     `;
     }
-  } 
+  }
 
-  return (
-    <ContentArea>
-      <ContentTitle/>
-      <Content dict={dict}/>
-      <FooterLogoArea menu={props.menu} handleMenuChange={props.handleMenuChange}/>
-    </ContentArea>
-  )
+  return {
+    ContentArea : ContentArea
+  };
 }
 
 export default About
