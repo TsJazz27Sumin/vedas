@@ -46,7 +46,7 @@ const TabletMessage = () => {
           <Modal
             open={true}
             onClose={action}
-            title="Thank you for coming this site! (^^)"
+            title="（⸝⸝⸝ᵒ̴̶̷̥́⌑ᵒ̴̶̷̣̥̀⸝⸝⸝）Thank you for coming this site!（⸝⸝•ᴗ•⸝⸝）੭⁾⁾ "
             primaryAction={{
               content: 'Back',
               onAction: action,
@@ -55,7 +55,7 @@ const TabletMessage = () => {
             <Modal.Section>
               <TextContainer>
                 <p>
-                  現在タブレットデバイスでは使用できません。 デスクトップPCまたはノートブックPCの使用をお勧めします。 モバイル版の機能は制限されています。
+                  現在タブレットデバイスでは使用できません。 デスクトップPCまたはノートブックPCの使用をお勧めします。モバイル版の機能は制限されています。
                 </p>
                 <br/>
                 <p>
