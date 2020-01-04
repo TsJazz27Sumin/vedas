@@ -16,6 +16,69 @@ const TopBar = (props) => {
   const public_url = process.env.PUBLIC_URL;
   const vedas_logo_top_bar_image = public_url + '/common/logo/vedas_v1.png';
 
+  const StyledComponents = getStyledComponents();
+  const TopBarArea = StyledComponents.TopBarArea;
+  const VedasLogoTopBar = StyledComponents.VedasLogoTopBar;
+  const MobileDropdown = StyledComponents.MobileDropdown;
+  const MenuArea = StyledComponents.MenuArea;
+  const MenuItem = StyledComponents.MenuItem;
+  const MenuItemDropdownWrapper = StyledComponents.MenuItemDropdownWrapper;
+  
+  return (
+    <TopBarArea>
+      <VedasLogoTopBar>
+        <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo" /></a>
+      </VedasLogoTopBar>
+      <MenuArea>
+        <MenuItem>
+          <p onClick={() => handleMenuChange('usage')}>Usage</p>
+        </MenuItem>
+        <MenuItem>
+          <p onClick={() => handleMenuChange('about')}>About</p>
+        </MenuItem>
+        <MenuItem>
+          <p onClick={() => handleMenuChange('news')}>News</p>
+        </MenuItem>
+        <MenuItem>
+          <p onClick={() => handleMenuChange('contact')}>Contact</p>
+        </MenuItem>
+        <MenuItemDropdownWrapper>
+          <AppProvider>
+            <Select
+              key="id-lang-item-dropdown"
+              options={[
+                { value: "jp", label: "japanese" },
+                { value: "en", label: "english" },
+                { value: "ch", label: "china" }
+              ]}
+              onChange={(value) => handleLangChange(value)}
+              value={lang}
+            />
+          </AppProvider>
+        </MenuItemDropdownWrapper>
+        <MobileDropdown>
+          <AppProvider>
+            <Select
+              key="id-menu-item-dropdown"
+              options={[
+                { value: "home", label: "home" },
+                { value: "usage", label: "usage" },
+                { value: "about", label: "about" },
+                { value: "news", label: "news" },
+                { value: "contact", label: "contact" },
+              ]}
+              onChange={(value) => handleMenuChange(value)}
+              value={menu}
+            />
+          </AppProvider>
+        </MobileDropdown>
+      </MenuArea>
+    </TopBarArea>
+  )
+}
+
+const getStyledComponents = () => {
+
   let TopBarArea = styled.div`
   height: auto;
   width: 1440px;
@@ -139,64 +202,13 @@ const TopBar = (props) => {
     `;
   }
 
-  return (
-    <TopBarArea>
-      <VedasLogoTopBar>
-        <a href={baseUrl + '?lang=' + lang}><img width="100%" src={vedas_logo_top_bar_image} alt="top bar logo" /></a>
-      </VedasLogoTopBar>
-      <MenuArea>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('usage')}>Usage</p>
-        </MenuItem>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('about')}>About</p>
-        </MenuItem>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('news')}>News</p>
-        </MenuItem>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('contact')}>Contact</p>
-        </MenuItem>
-        <MenuItemDropdownWrapper>
-          <AppProvider>
-            <Select
-              key="id-lang-item-dropdown"
-              options={[
-                { value: "jp", label: "japanese" },
-                { value: "en", label: "english" },
-                { value: "ch", label: "china" }
-              ]}
-              onChange={(value) => handleLangChange(value)}
-              value={lang}
-            />
-          </AppProvider>
-        </MenuItemDropdownWrapper>
-        <MobileDropdown>
-          <AppProvider>
-            <Select
-              key="id-menu-item-dropdown"
-              options={[
-                { value: "home", label: "home" },
-                { value: "usage", label: "usage" },
-                { value: "about", label: "about" },
-                { value: "news", label: "news" },
-                { value: "contact", label: "contact" },
-              ]}
-              onChange={(value) => handleMenuChange(value)}
-              value={menu}
-            />
-          </AppProvider>
-        </MobileDropdown>
-      </MenuArea>
-    </TopBarArea>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    TopBarArea : TopBarArea, 
+    VedasLogoTopBar : VedasLogoTopBar,
+    MobileDropdown : MobileDropdown,
+    MenuArea : MenuArea,
+    MenuItem : MenuItem,
+    MenuItemDropdownWrapper : MenuItemDropdownWrapper
   };
 }
 

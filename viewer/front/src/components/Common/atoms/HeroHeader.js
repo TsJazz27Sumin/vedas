@@ -4,82 +4,24 @@ import { isMobile } from "react-device-detect";
 
 const HeroHeader = (props) => {
 
-  let Hero = styled.div`
-  padding: 10% 0% 0% 0%;
-  margin:  0% 0% 0% 0%;
-  `;
-
-  let MainTitle = styled.div`
-  padding: 0% 25% 0% 25%;
-  margin:  0% 0% 0% 0%;
-
-  opacity: 0;
-
-  position: absolute;
-
-  animation: appeare 1s ease 2s 1 normal forwards running;
-  `;
-
-  let VedasLogo = styled.div`
-  padding: 0% 35% 0% 35%;
-  margin:  0% 0% 0% 0%;
-
-  opacity: 0;
-
-  position: absolute;
-  top: 94%;
-
-  animation: appeare 1s ease 4s 1 normal forwards running;
-  `;
-
   const lang = props.lang;
+
+  const StyledComponents = getStyledComponents(lang);
+  const Hero = StyledComponents.Hero;
+  const MainTitle = StyledComponents.MainTitle;
+  const VedasLogo = StyledComponents.VedasLogo;
+
   const public_url = process.env.PUBLIC_URL;
-
-  if (isMobile) {
-    if(lang === "ch"){
-      Hero = styled(Hero)`
-      padding-top: 15%;
-      `;
-
-      MainTitle = styled(MainTitle)`
-      padding-right: 24%;
-      padding-left: 24%;
-      margin-left: -8%;
-      `;
-    } else {
-      Hero = styled(Hero)`
-      padding-top: 15%;
-      `;
-      MainTitle = styled(MainTitle)`
-      padding-left: 15%;
-      padding-right: 15%;
-      `;
-    }
-
-    VedasLogo = styled(VedasLogo)`
-    padding-left: 30%;
-    padding-right: 30%;
-    `;
-  }
 
   let main_title_image = null
   if (lang === "jp") {
     main_title_image = public_url + '/common/hero/main-title.png';
-    MainTitle = styled(MainTitle)`
-    top: 56.3%;
-    `;
   } else if (lang === "ch") {
     main_title_image = public_url + '/common/hero/main-title-ch.png';
-    MainTitle = styled(MainTitle)`
-    padding-left: 34%;
-    top: 57.3%;
-    `;
   } else {
     main_title_image = public_url + '/common/hero/main-title-en.png';
-    MainTitle = styled(MainTitle)`
-    top: 57.3%;
-    `;
   }
+  
   const vedas_logo_image = public_url + '/common/logo/vedas.png';
 
   return (
@@ -108,9 +50,80 @@ const HeroHeader = (props) => {
 
 const getStyledComponents = (lang) => {
 
+  let Hero = styled.div`
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+  `;
+
+  let MainTitle = styled.div`
+  padding: 0% 25% 0% 25%;
+  margin:  0% 0% 0% 0%;
+
+  opacity: 0;
+
+  position: absolute;
+
+  animation: appeare 1s ease 2s 1 normal forwards running;
+  `;
+
+  let VedasLogo = styled.div`
+  padding: 0% 35% 0% 35%;
+  margin:  0% 0% 0% 0%;
+
+  opacity: 0;
+
+  position: absolute;
+  top: 94%;
+
+  animation: appeare 1s ease 4s 1 normal forwards running;
+  `;
+
+  if (lang === "jp") {
+    MainTitle = styled(MainTitle)`
+    top: 56.3%;
+    `;
+  } else if (lang === "ch") {
+    MainTitle = styled(MainTitle)`
+    padding-left: 34%;
+    top: 57.3%;
+    `;
+  } else {
+    MainTitle = styled(MainTitle)`
+    top: 57.3%;
+    `;
+  }
+
+  if (isMobile) {
+    if(lang === "ch"){
+      Hero = styled(Hero)`
+      padding-top: 15%;
+      `;
+
+      MainTitle = styled(MainTitle)`
+      padding-right: 24%;
+      padding-left: 24%;
+      margin-left: -8%;
+      `;
+    } else {
+      Hero = styled(Hero)`
+      padding-top: 15%;
+      `;
+      MainTitle = styled(MainTitle)`
+      padding-left: 15%;
+      padding-right: 15%;
+      `;
+    }
+
+    VedasLogo = styled(VedasLogo)`
+    padding-left: 30%;
+    padding-right: 30%;
+    `;
+  }
 
   return {
-    xxx :xxx
+    Hero : Hero,
+    MainTitle : MainTitle,
+    VedasLogo : VedasLogo
   };
 }
 

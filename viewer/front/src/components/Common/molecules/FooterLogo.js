@@ -5,6 +5,24 @@ import FooterLogoArea from './FooterLogoArea'
 const FooterLogo = (props) => {
 
   const LogoArea = props.LogoArea;
+  const StyledComponents = getStyledComponents();
+  const VedasLogo = StyledComponents.VedasLogo;
+  const PanairLogo = StyledComponents.PanairLogo;
+  
+  return (
+    <div>
+      <FooterLogoArea
+        menu={props.menu}
+        handleMenuChange={props.handleMenuChange}
+        LogoArea={LogoArea}
+        VedasLogo={VedasLogo}
+        PanairLogo={PanairLogo}
+      />
+    </div>
+  )
+}
+
+const getStyledComponents = () => {
 
   let VedasLogo = styled.div`
   height: 0%;
@@ -42,24 +60,9 @@ const FooterLogo = (props) => {
   cursor: pointer;
   `;
 
-  return (
-    <div>
-      <FooterLogoArea
-        menu={props.menu}
-        handleMenuChange={props.handleMenuChange}
-        LogoArea={LogoArea}
-        VedasLogo={VedasLogo}
-        PanairLogo={PanairLogo}
-      />
-    </div>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    VedasLogo : VedasLogo,
+    PanairLogo : PanairLogo
   };
 }
 

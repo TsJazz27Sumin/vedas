@@ -64,6 +64,22 @@ const Home = (props) => {
         break;
   }
 
+  const StyledComponents = getStyledComponents();
+  const OutLine = StyledComponents.OutLine;
+
+  return (
+      isTablet ? (<TabletMessage/>):(
+      <OutLine>
+        <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
+        {hero}
+        {content}
+      </OutLine>
+    )
+  )
+}
+
+const getStyledComponents = () => {
+
   let OutLine = styled.div`
   background: ${Color.white};
 
@@ -80,22 +96,8 @@ const Home = (props) => {
     `;
   }
 
-  return (
-      isTablet ? (<TabletMessage/>):(
-      <OutLine>
-        <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
-        {hero}
-        {content}
-      </OutLine>
-    )
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    OutLine : OutLine
   };
 }
 

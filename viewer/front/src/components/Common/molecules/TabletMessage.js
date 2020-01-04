@@ -18,25 +18,10 @@ const TabletMessage = () => {
   const public_url = process.env.PUBLIC_URL;
   const ny_image = public_url + '/common/tablet/ny' + (getRandomInt(2) + 1) + '.JPG';
 
-  const ImageStyled = styled.img`
-  height: 100%;
-  width: 100%;
-
-  padding: 10% 0% 0% 0%;
-  margin:  0% 0% 0% 0%;
-  `;
-
-  const ModalDiv = styled.div`
-  height: 200px;
-  width: 100%;
-  `;
-
-  const BackGroundDiv = styled.div`
-  background: #000;
-  height: 100%;
-  width: 100%;
-  opacity: 0.7;
-  `;
+  const StyledComponents = getStyledComponents();
+  const ImageStyled = StyledComponents.ImageStyled;
+  const ModalDiv = StyledComponents.ModalDiv;
+  const BackGroundDiv = StyledComponents.BackGroundDiv;
 
   return (
     <BackGroundDiv>
@@ -74,11 +59,32 @@ const TabletMessage = () => {
   );
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  const ImageStyled = styled.img`
+  height: 100%;
+  width: 100%;
+
+  padding: 10% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+  `;
+
+  const ModalDiv = styled.div`
+  height: 200px;
+  width: 100%;
+  `;
+
+  const BackGroundDiv = styled.div`
+  background: #000;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  `;
 
   return {
-    xxx :xxx
+    ImageStyled : ImageStyled,
+    ModalDiv : ModalDiv,
+    BackGroundDiv : BackGroundDiv
   };
 }
 
