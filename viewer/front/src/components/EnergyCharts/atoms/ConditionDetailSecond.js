@@ -12,7 +12,7 @@ const ConditionDetailSecond = (props) => {
   const electricPowersChecked = electoric_power_company.Checked;
   const handleElectricPowersChange = electoric_power_company.handleValueChange;
 
-  let ConditionDetailArea2 = styled.div`
+  let Area = styled.div`
   background: ${Color.white};
   border-radius: 16px;
 
@@ -25,7 +25,7 @@ const ConditionDetailSecond = (props) => {
   margin-left: 5%;
   ` ;
 
-  let ConditionDetailParam = styled.div`
+  let Param = styled.div`
   background: ${Color.white};
   border-radius: 16px;
 
@@ -38,20 +38,20 @@ const ConditionDetailSecond = (props) => {
   cursor: pointer;
 ` ;
 
-  let ConditionDetailParamAll = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamJapan = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamHepco = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamTohokuepco = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamRikuden = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamTepco = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamChuden = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamKepco = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamEnergia = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamYonden = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamKyuden = styled(ConditionDetailParam)`display: inline-block;`;
-  let ConditionDetailParamOkiden = styled(ConditionDetailParam)`display: inline-block;`;
+  let ParamAll = styled(Param)`display: inline-block;`;
+  let ParamJapan = styled(Param)`display: inline-block;`;
+  let ParamHepco = styled(Param)`display: inline-block;`;
+  let ParamTohokuepco = styled(Param)`display: inline-block;`;
+  let ParamRikuden = styled(Param)`display: inline-block;`;
+  let ParamTepco = styled(Param)`display: inline-block;`;
+  let ParamChuden = styled(Param)`display: inline-block;`;
+  let ParamKepco = styled(Param)`display: inline-block;`;
+  let ParamEnergia = styled(Param)`display: inline-block;`;
+  let ParamYonden = styled(Param)`display: inline-block;`;
+  let ParamKyuden = styled(Param)`display: inline-block;`;
+  let ParamOkiden = styled(Param)`display: inline-block;`;
 
-  let ConditionDetailParamLabel = styled.div`
+  let ParamLabel = styled.div`
   font-family: Roboto;
   font-size: 16px;
   color: #000;
@@ -64,7 +64,7 @@ const ConditionDetailSecond = (props) => {
   line-height: 22px;
 ` ;
 
-  let ConditionDetailParamButton = styled.button`
+  let ParamButton = styled.button`
   border-radius: 2px;
 
   height: auto;
@@ -78,25 +78,25 @@ const ConditionDetailSecond = (props) => {
 
   const setBackGround = (isMobile, checked) => {
     if (isMobile){
-      return styled(ConditionDetailParamButton)` display: none;`;
+      return styled(ParamButton)` display: none;`;
     }
-    return checked ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
+    return checked ? styled(ParamButton)` background: #6DDCFF;` : styled(ParamButton)` background: #D8D8D8;`
   };
 
-  let ConditionDetailParamButtonAll = setBackGround(isMobile, allChecked);
-  let ConditionDetailParamButtonJapan = setBackGround(isMobile, electricPowersChecked.japanChecked);
-  let ConditionDetailParamButtonHepco = setBackGround(isMobile, electricPowersChecked.hepcoChecked);
-  let ConditionDetailParamButtonTohokuepco = setBackGround(isMobile, electricPowersChecked.tohokuepcoChecked);
-  let ConditionDetailParamButtonRikuden = setBackGround(isMobile, electricPowersChecked.rikudenChecked);
-  let ConditionDetailParamButtonTepco = setBackGround(isMobile, electricPowersChecked.tepcoChecked);
-  let ConditionDetailParamButtonChuden = setBackGround(isMobile, electricPowersChecked.chudenChecked);
-  let ConditionDetailParamButtonKepco = setBackGround(isMobile, electricPowersChecked.kepcoChecked);
-  let ConditionDetailParamButtonEnergia = setBackGround(isMobile, electricPowersChecked.energiaChecked);
-  let ConditionDetailParamButtonYonden = setBackGround(isMobile, electricPowersChecked.yondenChecked);
-  let ConditionDetailParamButtonKyuden = setBackGround(isMobile, electricPowersChecked.kyudenChecked);
-  let ConditionDetailParamButtonOkiden = setBackGround(isMobile, electricPowersChecked.okidenChecked);
+  let ParamButtonAll = setBackGround(isMobile, allChecked);
+  let ParamButtonJapan = setBackGround(isMobile, electricPowersChecked.japanChecked);
+  let ParamButtonHepco = setBackGround(isMobile, electricPowersChecked.hepcoChecked);
+  let ParamButtonTohokuepco = setBackGround(isMobile, electricPowersChecked.tohokuepcoChecked);
+  let ParamButtonRikuden = setBackGround(isMobile, electricPowersChecked.rikudenChecked);
+  let ParamButtonTepco = setBackGround(isMobile, electricPowersChecked.tepcoChecked);
+  let ParamButtonChuden = setBackGround(isMobile, electricPowersChecked.chudenChecked);
+  let ParamButtonKepco = setBackGround(isMobile, electricPowersChecked.kepcoChecked);
+  let ParamButtonEnergia = setBackGround(isMobile, electricPowersChecked.energiaChecked);
+  let ParamButtonYonden = setBackGround(isMobile, electricPowersChecked.yondenChecked);
+  let ParamButtonKyuden = setBackGround(isMobile, electricPowersChecked.kyudenChecked);
+  let ParamButtonOkiden = setBackGround(isMobile, electricPowersChecked.okidenChecked);
 
-  let ConditionDetailParamArea1 = styled.div`
+  let ParamArea1 = styled.div`
   height: auto;
   width: 100%;
 
@@ -104,7 +104,7 @@ const ConditionDetailSecond = (props) => {
   margin:  0% 0% 0% 0%;
 ` ;
 
-  let ConditionDetailParamArea2 = styled.div`
+  let ParamArea2 = styled.div`
   border-radius: 12px;
   
   height: auto;
@@ -115,23 +115,23 @@ const ConditionDetailSecond = (props) => {
 ` ;
 
   if (isMobile) {
-    ConditionDetailArea2 = styled(ConditionDetailArea2)`
+    Area = styled(Area)`
       background: none;
     `;
-    ConditionDetailParamButtonAll = styled(ConditionDetailParamButtonAll)`display:none`;
-    ConditionDetailParamButtonJapan = styled(ConditionDetailParamButtonJapan)`display:none`;
-    ConditionDetailParamButtonHepco = styled(ConditionDetailParamButtonHepco)`display:none`;
-    ConditionDetailParamButtonTohokuepco = styled(ConditionDetailParamButtonTohokuepco)`display:none`;
-    ConditionDetailParamButtonRikuden = styled(ConditionDetailParamButtonRikuden)`display:none`;
-    ConditionDetailParamButtonTepco = styled(ConditionDetailParamButtonTepco)`display:none`;
-    ConditionDetailParamButtonChuden = styled(ConditionDetailParamButtonChuden)`display:none`;
-    ConditionDetailParamButtonKepco = styled(ConditionDetailParamButtonKepco)`display:none`;
-    ConditionDetailParamButtonEnergia = styled(ConditionDetailParamButtonEnergia)`display:none`;
-    ConditionDetailParamButtonYonden = styled(ConditionDetailParamButtonYonden)`display:none`;
-    ConditionDetailParamButtonKyuden = styled(ConditionDetailParamButtonKyuden)`display:none`;
-    ConditionDetailParamButtonOkiden = styled(ConditionDetailParamButtonOkiden)`display:none`;
+    ParamButtonAll = styled(ParamButtonAll)`display:none`;
+    ParamButtonJapan = styled(ParamButtonJapan)`display:none`;
+    ParamButtonHepco = styled(ParamButtonHepco)`display:none`;
+    ParamButtonTohokuepco = styled(ParamButtonTohokuepco)`display:none`;
+    ParamButtonRikuden = styled(ParamButtonRikuden)`display:none`;
+    ParamButtonTepco = styled(ParamButtonTepco)`display:none`;
+    ParamButtonChuden = styled(ParamButtonChuden)`display:none`;
+    ParamButtonKepco = styled(ParamButtonKepco)`display:none`;
+    ParamButtonEnergia = styled(ParamButtonEnergia)`display:none`;
+    ParamButtonYonden = styled(ParamButtonYonden)`display:none`;
+    ParamButtonKyuden = styled(ParamButtonKyuden)`display:none`;
+    ParamButtonOkiden = styled(ParamButtonOkiden)`display:none`;
 
-    ConditionDetailParam = styled(ConditionDetailParam)`
+    Param = styled(Param)`
     border-radius: 10px;
 
     width: 100%;
@@ -142,127 +142,127 @@ const ConditionDetailSecond = (props) => {
     `;
 
     const setBackGround = (checked) => {
-      return checked ? styled(ConditionDetailParam)` background: #6DDCFF;` : styled(ConditionDetailParam)` background: #efefef;`
+      return checked ? styled(Param)` background: #6DDCFF;` : styled(Param)` background: #efefef;`
     };
       
-    ConditionDetailParamAll = styled(ConditionDetailParam)` display:none;`
-    ConditionDetailParamJapan = setBackGround(electricPowersChecked.japanChecked);
-    ConditionDetailParamHepco = setBackGround(electricPowersChecked.hepcoChecked);
-    ConditionDetailParamTohokuepco = setBackGround(electricPowersChecked.tohokuepcoChecked);
-    ConditionDetailParamRikuden = setBackGround(electricPowersChecked.rikudenChecked);
-    ConditionDetailParamTepco = setBackGround(electricPowersChecked.tepcoChecked);
-    ConditionDetailParamChuden = setBackGround(electricPowersChecked.chudenChecked);
-    ConditionDetailParamKepco = setBackGround(electricPowersChecked.kepcoChecked);
-    ConditionDetailParamEnergia = setBackGround(electricPowersChecked.energiaChecked);
-    ConditionDetailParamYonden = setBackGround(electricPowersChecked.yondenChecked);
-    ConditionDetailParamKyuden = setBackGround(electricPowersChecked.kyudenChecked);
-    ConditionDetailParamOkiden = setBackGround(electricPowersChecked.okidenChecked);
+    ParamAll = styled(Param)` display:none;`
+    ParamJapan = setBackGround(electricPowersChecked.japanChecked);
+    ParamHepco = setBackGround(electricPowersChecked.hepcoChecked);
+    ParamTohokuepco = setBackGround(electricPowersChecked.tohokuepcoChecked);
+    ParamRikuden = setBackGround(electricPowersChecked.rikudenChecked);
+    ParamTepco = setBackGround(electricPowersChecked.tepcoChecked);
+    ParamChuden = setBackGround(electricPowersChecked.chudenChecked);
+    ParamKepco = setBackGround(electricPowersChecked.kepcoChecked);
+    ParamEnergia = setBackGround(electricPowersChecked.energiaChecked);
+    ParamYonden = setBackGround(electricPowersChecked.yondenChecked);
+    ParamKyuden = setBackGround(electricPowersChecked.kyudenChecked);
+    ParamOkiden = setBackGround(electricPowersChecked.okidenChecked);
   }
 
   return (
     <div>
-      <ConditionDetailArea2>
-        <ConditionDetailParamArea1>
-          <ConditionDetailParamAll
+      <Area>
+        <ParamArea1>
+          <ParamAll
             onClick={() => handleAllChange(!allChecked)}
           >
-            <ConditionDetailParamButtonAll />
-            <ConditionDetailParamLabel>
+            <ParamButtonAll />
+            <ParamLabel>
               <p>{dict.all}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamAll>
-          <ConditionDetailParamJapan
+            </ParamLabel>
+          </ParamAll>
+          <ParamJapan
             onClick={() => handleElectricPowersChange.handleJapanChange(!electricPowersChecked.japanChecked)}
           >
-            <ConditionDetailParamButtonJapan />
-            <ConditionDetailParamLabel>
+            <ParamButtonJapan />
+            <ParamLabel>
               <p>{dict.japan}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamJapan>
-          <ConditionDetailParamHepco
+            </ParamLabel>
+          </ParamJapan>
+          <ParamHepco
             onClick={() => handleElectricPowersChange.handleHepcoChange(!electricPowersChecked.hepcoChecked)}
           >
-            <ConditionDetailParamButtonHepco />
-            <ConditionDetailParamLabel>
+            <ParamButtonHepco />
+            <ParamLabel>
               <p>{dict.hepco}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamHepco>
-          <ConditionDetailParamTohokuepco
+            </ParamLabel>
+          </ParamHepco>
+          <ParamTohokuepco
             onClick={() => handleElectricPowersChange.handleTohokuepcoChange(!electricPowersChecked.tohokuepcoChecked)}
           >
-            <ConditionDetailParamButtonTohokuepco />
-            <ConditionDetailParamLabel>
+            <ParamButtonTohokuepco />
+            <ParamLabel>
               <p>{dict.tohokuepco}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamTohokuepco>
-          <ConditionDetailParamRikuden
+            </ParamLabel>
+          </ParamTohokuepco>
+          <ParamRikuden
             onClick={() => handleElectricPowersChange.handleRikudenChange(!electricPowersChecked.rikudenChecked)}
           >
-            <ConditionDetailParamButtonRikuden />
-            <ConditionDetailParamLabel>
+            <ParamButtonRikuden />
+            <ParamLabel>
               <p>{dict.rikuden}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamRikuden>
-          <ConditionDetailParamTepco
+            </ParamLabel>
+          </ParamRikuden>
+          <ParamTepco
             onClick={() => handleElectricPowersChange.handleTepcoChange(!electricPowersChecked.tepcoChecked)}
           >
-            <ConditionDetailParamButtonTepco />
-            <ConditionDetailParamLabel>
+            <ParamButtonTepco />
+            <ParamLabel>
               <p>{dict.tepco}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamTepco>
-        </ConditionDetailParamArea1>
-        <ConditionDetailParamArea2>
-          <ConditionDetailParamChuden
+            </ParamLabel>
+          </ParamTepco>
+        </ParamArea1>
+        <ParamArea2>
+          <ParamChuden
             onClick={() => handleElectricPowersChange.handleChudenChange(!electricPowersChecked.chudenChecked)}
           >
-            <ConditionDetailParamButtonChuden />
-            <ConditionDetailParamLabel>
+            <ParamButtonChuden />
+            <ParamLabel>
               <p>{dict.chuden}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamChuden>
-          <ConditionDetailParamKepco
+            </ParamLabel>
+          </ParamChuden>
+          <ParamKepco
             onClick={() => handleElectricPowersChange.handleKepcoChange(!electricPowersChecked.kepcoChecked)}
           >
-            <ConditionDetailParamButtonKepco />
-            <ConditionDetailParamLabel>
+            <ParamButtonKepco />
+            <ParamLabel>
               <p>{dict.kepco}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamKepco>
-          <ConditionDetailParamEnergia
+            </ParamLabel>
+          </ParamKepco>
+          <ParamEnergia
             onClick={() => handleElectricPowersChange.handleEnergiaChange(!electricPowersChecked.energiaChecked)}
           >
-            <ConditionDetailParamButtonEnergia />
-            <ConditionDetailParamLabel>
+            <ParamButtonEnergia />
+            <ParamLabel>
               <p>{dict.energia}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamEnergia>
-          <ConditionDetailParamYonden
+            </ParamLabel>
+          </ParamEnergia>
+          <ParamYonden
             onClick={() => handleElectricPowersChange.handleYondenChange(!electricPowersChecked.yondenChecked)}
           >
-            <ConditionDetailParamButtonYonden />
-            <ConditionDetailParamLabel>
+            <ParamButtonYonden />
+            <ParamLabel>
               <p>{dict.yonden}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamYonden>
-          <ConditionDetailParamKyuden
+            </ParamLabel>
+          </ParamYonden>
+          <ParamKyuden
             onClick={() => handleElectricPowersChange.handleKyudenChange(!electricPowersChecked.kyudenChecked)}
           >
-            <ConditionDetailParamButtonKyuden />
-            <ConditionDetailParamLabel>
+            <ParamButtonKyuden />
+            <ParamLabel>
               <p>{dict.kyuden}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamKyuden>
-          <ConditionDetailParamOkiden
+            </ParamLabel>
+          </ParamKyuden>
+          <ParamOkiden
             onClick={() => handleElectricPowersChange.handleOkidenChange(!electricPowersChecked.okidenChecked)}
           >
-            <ConditionDetailParamButtonOkiden />
-            <ConditionDetailParamLabel>
+            <ParamButtonOkiden />
+            <ParamLabel>
               <p>{dict.okiden}</p>
-            </ConditionDetailParamLabel>
-          </ConditionDetailParamOkiden>
-        </ConditionDetailParamArea2>
-      </ConditionDetailArea2>
+            </ParamLabel>
+          </ParamOkiden>
+        </ParamArea2>
+      </Area>
     </div>
   )
 }

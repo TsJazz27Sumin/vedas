@@ -12,7 +12,7 @@ const ConditionDetailFirst = (props) => {
   const upperTextFieldValue = props.electoric_power_data.range_slider.upperTextFieldValue;
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
-  let ConditionDetailArea1 = styled.div`
+  let Area = styled.div`
   background: ${Color.gray};
 
   height: 5%;
@@ -22,7 +22,7 @@ const ConditionDetailFirst = (props) => {
   margin:  0% 0% 0% 5%;
 ` ;
 
-  let ConditionDetailParamArea = styled.div`
+  let ParamArea = styled.div`
   height: 100%;
   width: auto;
 
@@ -30,7 +30,7 @@ const ConditionDetailFirst = (props) => {
   margin:  0% 0% 0% 0%;
 ` ;
 
-  let ConditionDetailParamAreaY = styled.div`
+  let ParamAreaY = styled.div`
   background: ${Color.white};
 
   border-radius: 10px;
@@ -46,19 +46,19 @@ const ConditionDetailFirst = (props) => {
   cursor: pointer;
 ` ;
 
-  let ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaY)`
+  let ParamAreaYM = styled(ParamAreaY)`
   margin-left: 2%;
 ` ;
 
-  let ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaY)`
+  let ParamAreaYMD = styled(ParamAreaY)`
   margin-left: 2%;
 ` ;
 
-  let ConditionDetailParamArea1H = styled(ConditionDetailParamAreaY)`
+  let ParamArea1H = styled(ParamAreaY)`
   margin-left: 2%;
 ` ;
 
-  let ConditionDetailParamLabel = styled.div`
+  let ParamLabel = styled.div`
   font-family: Roboto;
   font-size: 16px;
   color: ${Color.black};
@@ -71,13 +71,13 @@ const ConditionDetailFirst = (props) => {
   display: inline-block;
 ` ;
 
-  let ConditionDetailParamButtonDiv = styled.div`
+  let ParamButtonDiv = styled.div`
   padding: 0% 0% 0% 60%;
 
   display: inline-block;
 ` ;
 
-  let ConditionDetailParamButton = styled.button`
+  let ParamButton = styled.button`
   border-radius: 2px;
 
   height: 100%;
@@ -91,22 +91,22 @@ const ConditionDetailFirst = (props) => {
 
   const setBackGround = (isMobile, is_target) => { 
     if(isMobile){
-      return styled(ConditionDetailParamButton)` display:none;`;
+      return styled(ParamButton)` display:none;`;
     }
-    return is_target ? styled(ConditionDetailParamButton)` background: #6DDCFF;` : styled(ConditionDetailParamButton)` background: #D8D8D8;`
+    return is_target ? styled(ParamButton)` background: #6DDCFF;` : styled(ParamButton)` background: #D8D8D8;`
   };
 
-  const ConditionDetailParamButtonY = setBackGround(isMobile, unit === "y");
-  const ConditionDetailParamButtonYM = setBackGround(isMobile, unit === "ym");
-  const ConditionDetailParamButtonYMD = setBackGround(isMobile, unit === "ymd");
-  const ConditionDetailParamButton1H = setBackGround(isMobile, unit === "1H");
+  const ParamButtonY = setBackGround(isMobile, unit === "y");
+  const ParamButtonYM = setBackGround(isMobile, unit === "ym");
+  const ParamButtonYMD = setBackGround(isMobile, unit === "ymd");
+  const ParamButton1H = setBackGround(isMobile, unit === "1H");
 
   if (isMobile) {
-    ConditionDetailArea1 = styled(ConditionDetailArea1)`
+    Area = styled(Area)`
     background:none;
     `;
 
-    ConditionDetailParamAreaY = styled(ConditionDetailParamAreaY)`
+    ParamAreaY = styled(ParamAreaY)`
     width: 100%;
 
     padding-bottom: 5%;
@@ -114,17 +114,7 @@ const ConditionDetailFirst = (props) => {
     display: block;
     `;
 
-    ConditionDetailParamAreaYM = styled(ConditionDetailParamAreaYM)`
-    width: 100%;
-
-    padding-bottom: 5%;
-    margin-top: 2%;
-    margin-left: 0%;
-
-    display: block;
-    `;
-
-    ConditionDetailParamAreaYMD = styled(ConditionDetailParamAreaYMD)`
+    ParamAreaYM = styled(ParamAreaYM)`
     width: 100%;
 
     padding-bottom: 5%;
@@ -134,7 +124,17 @@ const ConditionDetailFirst = (props) => {
     display: block;
     `;
 
-    ConditionDetailParamArea1H = styled(ConditionDetailParamArea1H)`
+    ParamAreaYMD = styled(ParamAreaYMD)`
+    width: 100%;
+
+    padding-bottom: 5%;
+    margin-top: 2%;
+    margin-left: 0%;
+
+    display: block;
+    `;
+
+    ParamArea1H = styled(ParamArea1H)`
     width: 100%;
 
     padding-bottom: 5%;
@@ -144,7 +144,7 @@ const ConditionDetailFirst = (props) => {
     display: none;
     `;
 
-    ConditionDetailParamButtonDiv = styled(ConditionDetailParamButtonDiv)`
+    ParamButtonDiv = styled(ParamButtonDiv)`
     display: none;
     `;
 
@@ -152,58 +152,58 @@ const ConditionDetailFirst = (props) => {
       return is_target ? styled(Component)` background: #6DDCFF;` : styled(Component)` background: #efefef;`
     };
   
-    ConditionDetailParamAreaY = setBackGround(unit === "y", ConditionDetailParamAreaY);
-    ConditionDetailParamAreaYM = setBackGround(unit === "ym", ConditionDetailParamAreaYM);
-    ConditionDetailParamAreaYMD = setBackGround(unit === "ymd", ConditionDetailParamAreaYMD);
-    ConditionDetailParamArea1H = setBackGround(unit === "1H", ConditionDetailParamArea1H);
+    ParamAreaY = setBackGround(unit === "y", ParamAreaY);
+    ParamAreaYM = setBackGround(unit === "ym", ParamAreaYM);
+    ParamAreaYMD = setBackGround(unit === "ymd", ParamAreaYMD);
+    ParamArea1H = setBackGround(unit === "1H", ParamArea1H);
   }
 
   return (
     <div>
-      <ConditionDetailArea1>
-        <ConditionDetailParamArea>
-          <ConditionDetailParamAreaY 
+      <Area>
+        <ParamArea>
+          <ParamAreaY 
             onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
-            <ConditionDetailParamLabel>
+            <ParamLabel>
               <p>{dict.unit_y}</p>
-            </ConditionDetailParamLabel>
-            <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButtonY />
-            </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamAreaY>
-          <ConditionDetailParamAreaYM 
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonY />
+            </ParamButtonDiv>
+          </ParamAreaY>
+          <ParamAreaYM 
             onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
-            <ConditionDetailParamLabel>
+            <ParamLabel>
               <p>{dict.unit_ym}</p>
-            </ConditionDetailParamLabel>
-            <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButtonYM />
-            </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamAreaYM>
-          <ConditionDetailParamAreaYMD 
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonYM />
+            </ParamButtonDiv>
+          </ParamAreaYM>
+          <ParamAreaYMD 
             onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
-            <ConditionDetailParamLabel>
+            <ParamLabel>
               <p>{dict.unit_ymd}</p>
-            </ConditionDetailParamLabel>
-            <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButtonYMD />
-            </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamAreaYMD>
-          <ConditionDetailParamArea1H 
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButtonYMD />
+            </ParamButtonDiv>
+          </ParamAreaYMD>
+          <ParamArea1H 
             onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
           >
-            <ConditionDetailParamLabel>
+            <ParamLabel>
               <p>{dict.unit_1h}</p>
-            </ConditionDetailParamLabel>
-            <ConditionDetailParamButtonDiv>
-              <ConditionDetailParamButton1H />
-            </ConditionDetailParamButtonDiv>
-          </ConditionDetailParamArea1H>
-        </ConditionDetailParamArea>
-      </ConditionDetailArea1>
+            </ParamLabel>
+            <ParamButtonDiv>
+              <ParamButton1H />
+            </ParamButtonDiv>
+          </ParamArea1H>
+        </ParamArea>
+      </Area>
     </div>
   )
 }
