@@ -64,18 +64,18 @@ const HeroHeader = (props) => {
 
   let main_title_image = null
   if (lang === "jp") {
-    main_title_image = public_url + '/hero/main-title.png';
+    main_title_image = public_url + '/common/hero/main-title.png';
     MainTitle = styled(MainTitle)`
     top: 56.3%;
     `;
   } else if (lang === "ch") {
-    main_title_image = public_url + '/hero/main-title-ch.png';
+    main_title_image = public_url + '/common/hero/main-title-ch.png';
     MainTitle = styled(MainTitle)`
     padding-left: 34%;
     top: 57.3%;
     `;
   } else {
-    main_title_image = public_url + '/hero/main-title-en.png';
+    main_title_image = public_url + '/common/hero/main-title-en.png';
     MainTitle = styled(MainTitle)`
     top: 57.3%;
     `;

@@ -14,7 +14,7 @@ const FooterPanairLogo = (props) => {
   };
 
   const public_url = process.env.PUBLIC_URL;
-  const panair_logo_image = public_url + '/panair-logo_big.png';
+  const panair_logo_image = public_url + '/common/logo/panair-logo_big.png';
   
   return (
     <div>

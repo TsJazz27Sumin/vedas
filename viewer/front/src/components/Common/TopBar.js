@@ -14,7 +14,7 @@ const TopBar = (props) => {
   const handleMenuChange = props.handleMenuChange;
   const handleLangChange = props.handleLangChange;
   const public_url = process.env.PUBLIC_URL;
-  const vedas_logo_top_bar_image = public_url + '/vedas_v1.png';
+  const vedas_logo_top_bar_image = public_url + '/common/logo/vedas_v1.png';
 
   let TopBarArea = styled.div`
   height: auto;

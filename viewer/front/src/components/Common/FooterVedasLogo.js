@@ -3,7 +3,7 @@ import React from 'react'
 const FooterVedasLogo = ({handleMenuChange}) => {
 
   const public_url = process.env.PUBLIC_URL;
-  const vedas_logo_image = public_url + '/vedas.png';
+  const vedas_logo_image = public_url + '/common/logo/vedas.png';
   
   return (
     <div>

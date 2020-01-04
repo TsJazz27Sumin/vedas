@@ -21,7 +21,7 @@ const ShareButtons = (props) => {
   const public_url = process.env.PUBLIC_URL;
 
   const size = type === "small" ? 32 : 64;
-  const weibo_icon = type === "small" ? public_url + '/sns/weibo_32x32.png' : public_url + '/sns/weibo_64x64.png';
+  const weibo_icon = type === "small" ? public_url + '/common/sns/weibo_32x32.png' : public_url + '/common/sns/weibo_64x64.png';
 
   const share_button_click = (type, current_url, pathname) => {
     

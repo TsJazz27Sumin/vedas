@@ -16,7 +16,7 @@ const TabletMessage = () => {
     return Math.floor(Math.random() * Math.floor(max));
   };
   const public_url = process.env.PUBLIC_URL;
-  const ny_image = public_url + '/tablet/ny' + (getRandomInt(2) + 1) + '.JPG';
+  const ny_image = public_url + '/common/tablet/ny' + (getRandomInt(2) + 1) + '.JPG';
 
   const ImageStyled = styled.img`
   height: 100%;
