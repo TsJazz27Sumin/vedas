@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import ShareButtons from '../../common/molecules/ShareButtons'
+import Article from '../atoms/Article'
 import Color from '../../../services/color';
 
 const Content = (props) => {
@@ -10,22 +10,11 @@ const Content = (props) => {
 
   const StyledComponents = getStyledComponents();
   const Content = StyledComponents.Content;
-  const ShareButtonArea = StyledComponents.ShareButtonArea;
-  const Text1 = StyledComponents.Text1;
-  const Text2 = StyledComponents.Text2;
 
   return (
     <Content>
-      <Text1><p>2020/02/01</p></Text1>
-      <Text2><p>{dict.sample_news2}</p></Text2>
-      <ShareButtonArea>
-        <ShareButtons type={"small"} />
-      </ShareButtonArea>
-      <Text1><p>2020/01/18</p></Text1>
-      <Text2><p>{dict.sample_news1}</p></Text2>
-      <ShareButtonArea>
-        <ShareButtons type={"small"} pathname={props.pathname}/>
-      </ShareButtonArea>
+      <Article key="20200201" date="2020/02/01" text={dict.sample_news2} pathname={props.pathname}/>
+      <Article key="20200118" date="2020/01/18" text={dict.sample_news1} pathname={props.pathname}/>
     </Content>
   )
 }
@@ -47,60 +36,14 @@ const getStyledComponents = () => {
   left: 4%;
   `;
 
-  let ShareButtonArea = styled.div`
-  padding: 3% 0% 3% 4%;
-  `;
-
-  let Text1 = styled.div`
-  border-radius: 54px;
-  border: 8px solid ${Color.white};
-
-  font-family: Roboto;
-  font-size: 36px;
-  color: ${Color.black};
-
-  padding: 3% 0% 3% 3%;
-  margin:  0% 0% 0% 0%;
-  
-  line-height: 30px;
-`;
-
-  let Text2 = styled.div`
-  border-radius: 54px;
-  border: 8px solid ${Color.white};
-  
-  font-family: Roboto;
-  font-size: 22px;
-  color: ${Color.black};
-
-  padding: 0% 0% 0% 3%;
-  margin:  0% 0% 0% 0%;
-
-  line-height: 26px;
-`;
-
   if (isMobile) {
     Content = styled(Content)`
     margin-top: 4%;
   `;
-    Text1 = styled(Text1)`
-    font-size: 22px;
-  `;
-
-    Text2 = styled(Text2)`
-    font-size: 18px;
-  `;
-
-    ShareButtonArea = styled(ShareButtonArea)`
-    padding-left: 50%;
-  `;
   }
 
   return {
-    Content : Content,
-    ShareButtonArea : ShareButtonArea,
-    Text1 : Text1,
-    Text2 : Text2
+    Content : Content
   };
 }
 

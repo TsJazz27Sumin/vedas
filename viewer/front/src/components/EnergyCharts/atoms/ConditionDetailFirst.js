@@ -10,6 +10,8 @@ const ConditionDetailFirst = (props) => {
   const year_and_month = props.electoric_power_data.year_and_month;
   const lowerTextFieldValue = props.electoric_power_data.range_slider.lowerTextFieldValue;
   const upperTextFieldValue = props.electoric_power_data.range_slider.upperTextFieldValue;
+  const from = year_and_month[lowerTextFieldValue];
+  const to = year_and_month[upperTextFieldValue];
   const handleTermChange = props.electoric_power_data.handleTermChange;
 
   const StyledComponents = getStyledComponents(unit);
@@ -30,9 +32,7 @@ const ConditionDetailFirst = (props) => {
     <div>
       <Area>
         <ParamArea>
-          <ParamAreaY 
-            onClick={() => handleTermChange("y", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
+          <ParamAreaY onClick={() => handleTermChange("y", from, to)}>
             <ParamLabel>
               <p>{dict.unit_y}</p>
             </ParamLabel>
@@ -40,9 +40,7 @@ const ConditionDetailFirst = (props) => {
               <ParamButtonY />
             </ParamButtonDiv>
           </ParamAreaY>
-          <ParamAreaYM 
-            onClick={() => handleTermChange("ym", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
+          <ParamAreaYM onClick={() => handleTermChange("ym", from, to)}>
             <ParamLabel>
               <p>{dict.unit_ym}</p>
             </ParamLabel>
@@ -50,9 +48,7 @@ const ConditionDetailFirst = (props) => {
               <ParamButtonYM />
             </ParamButtonDiv>
           </ParamAreaYM>
-          <ParamAreaYMD 
-            onClick={() => handleTermChange("ymd", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
+          <ParamAreaYMD onClick={() => handleTermChange("ymd", from, to)}>
             <ParamLabel>
               <p>{dict.unit_ymd}</p>
             </ParamLabel>
@@ -60,9 +56,7 @@ const ConditionDetailFirst = (props) => {
               <ParamButtonYMD />
             </ParamButtonDiv>
           </ParamAreaYMD>
-          <ParamArea1H 
-            onClick={() => handleTermChange("1H", year_and_month[lowerTextFieldValue], year_and_month[upperTextFieldValue])}
-          >
+          <ParamArea1H onClick={() => handleTermChange("1H", from, to)}>
             <ParamLabel>
               <p>{dict.unit_1h}</p>
             </ParamLabel>
