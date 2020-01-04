@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
-import Color from '../../services/color';
-import Text1 from './Text1';
-import Text2 from './Text2';
-import Text3 from './Text3';
-import Text4 from './Text4';
-import Text5 from './Text5';
+import Color from '../../../services/color';
+import Text1 from '../atoms/Text1';
+import Text2 from '../atoms/Text2';
+import Text3 from '../atoms/Text3';
+import Text4 from '../atoms/Text4';
+import Text5 from '../atoms/Text5';
 
 const Content = (props) => {
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import ContentTitle from './ContentTitle'
-import Content from './Content'
-import FooterLogoArea from './FooterLogoArea'
+import ContentTitle from './atoms/ContentTitle'
+import Content from './molecules/Content'
+import FooterLogoArea from './molecules/FooterLogoArea'
 import Color from '../../services/color';
 import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
