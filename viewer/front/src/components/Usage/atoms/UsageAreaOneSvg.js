@@ -4,20 +4,8 @@ import { isMobile } from "react-device-detect";
 
 const UsageAreaOneSvg = () => {
 
-  let UsageAreaOneSvg = styled.div`
-  width: 10%;
-
-  padding: 5.5% 0% 0% 0%;
-  margin:  0% 0% 0% 0%;
-
-  position: absolute;
-  `;
-
-  if (isMobile) {
-    UsageAreaOneSvg = styled(UsageAreaOneSvg)`
-    display: none;
-    `;
-  }
+  const StyledComponents = getStyledComponents();
+  const UsageAreaOneSvg = StyledComponents.UsageAreaOneSvg;
 
   return (
     <div>
@@ -33,11 +21,25 @@ const UsageAreaOneSvg = () => {
   )
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  let UsageAreaOneSvg = styled.div`
+  width: 10%;
+
+  padding: 5.5% 0% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
+  `;
+
+  if (isMobile) {
+    UsageAreaOneSvg = styled(UsageAreaOneSvg)`
+    display: none;
+    `;
+  }
 
   return {
-    xxx :xxx
+    UsageAreaOneSvg : UsageAreaOneSvg
   };
 }
 

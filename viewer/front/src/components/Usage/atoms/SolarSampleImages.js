@@ -5,57 +5,18 @@ import Color from '../../../services/color';
 
 const SolarSampleImages = () => {
 
-  const public_url = process.env.PUBLIC_URL;
-  const solar_sample1 = public_url + '/usage/solar_sample/solar_sample1.png';
-  const solar_sample2 = public_url + '/usage/solar_sample/solar_sample2.png';
-  const solar_sample3 = public_url + '/usage/solar_sample/solar_sample3.png';
-  const solar_sample4 = public_url + '/usage/solar_sample/solar_sample4.png';
-  const solar_sample5 = public_url + '/usage/solar_sample/solar_sample5.png';
+  const base_url = process.env.PUBLIC_URL + '/usage/solar_sample/';
+  const solar_sample1 = base_url + 'solar_sample1.png';
+  const solar_sample2 = base_url + 'solar_sample2.png';
+  const solar_sample3 = base_url + 'solar_sample3.png';
+  const solar_sample4 = base_url + 'solar_sample4.png';
+  const solar_sample5 = base_url + 'solar_sample5.png';
 
-  let SolarSampleSection = styled.section`
-  padding: 5% 9% 0% 0%;
-  margin:  0% 0% 0% 0%;
-
-  position: absolute;
-`;
-
-  let SolarSamplePagingSection = styled.section`
-  height: auto;
-  width: 91%;
-
-  padding: 0% 9% 0% 0%;
-  margin:  0% 0% 0% 0%;
-
-  position: absolute;
-  top: 50%;
-`;
-
-  let SolarSampleImage = styled.div`
-  background: ${Color.snowWhite};
-  border-radius: 20px;
-
-  height: auto;
-  width: 90%;
-
-  padding: 3% 0% 3% 8%;
-  margin:  3% 0% 3% 5%;
-
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-`;
-
-  let SolarSampleImagePageing = styled.div`
-  height: auto;
-  width: 50%;
-  
-  padding: 3% 0% 3% 43%;
-  margin:  0% 0% 0% 0%;
-  `;
-
-  if(isMobile){
-    SolarSampleImagePageing = styled(SolarSampleImagePageing)`
-    display: none;
-    `;
-  }
+  const StyledComponents = getStyledComponents();
+  const SolarSampleSection = StyledComponents.SolarSampleSection;
+  const SolarSamplePagingSection = StyledComponents.SolarSamplePagingSection;
+  const SolarSampleImage = StyledComponents.SolarSampleImage;
+  const SolarSampleImagePageing = StyledComponents.SolarSampleImagePageing;
 
   return (
     <div>
@@ -147,11 +108,58 @@ const SolarSampleImages = () => {
   )
 }
 
-const getStyledComponents = (lang) => {
+const getStyledComponents = () => {
 
+  let SolarSampleSection = styled.section`
+  padding: 5% 9% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
+`;
+
+  let SolarSamplePagingSection = styled.section`
+  height: auto;
+  width: 91%;
+
+  padding: 0% 9% 0% 0%;
+  margin:  0% 0% 0% 0%;
+
+  position: absolute;
+  top: 50%;
+`;
+
+  let SolarSampleImage = styled.div`
+  background: ${Color.snowWhite};
+  border-radius: 20px;
+
+  height: auto;
+  width: 90%;
+
+  padding: 3% 0% 3% 8%;
+  margin:  3% 0% 3% 5%;
+
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+`;
+
+  let SolarSampleImagePageing = styled.div`
+  height: auto;
+  width: 50%;
+  
+  padding: 3% 0% 3% 43%;
+  margin:  0% 0% 0% 0%;
+  `;
+
+  if(isMobile){
+    SolarSampleImagePageing = styled(SolarSampleImagePageing)`
+    display: none;
+    `;
+  }
 
   return {
-    xxx :xxx
+    SolarSampleSection : SolarSampleSection,
+    SolarSamplePagingSection : SolarSamplePagingSection,
+    SolarSampleImage : SolarSampleImage,
+    SolarSampleImagePageing : SolarSampleImagePageing
   };
 }
 

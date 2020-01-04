@@ -10,6 +10,39 @@ const Content1 = (props) => {
   const Text1 = props.Text1;
   const Text2 = props.Text2;
 
+  const StyledComponents = getStyledComponents();
+  const Content1 = StyledComponents.Content1;
+  const UsageAreaOneTextArea1 = StyledComponents.UsageAreaOneTextArea1;
+  const UsageAreaOneTextArea2 = StyledComponents.UsageAreaOneTextArea2;
+  const UsageAreaOneTextArea3 = StyledComponents.UsageAreaOneTextArea3;
+
+  return (
+    <Content1>
+        <Text1><p>{dict.how_to_use_text1}</p></Text1>
+        <Text1><p>{dict.how_to_use_text2}</p></Text1>
+        <UsageAreaOneSvg/>
+        <UsageAreaOneTextArea1>
+          <Text1><p>{dict.how_to_use_text3}</p></Text1>
+          <Text2><p>{dict.how_to_use_text4}</p></Text2>
+        </UsageAreaOneTextArea1>
+        <UsageAreaOneTextArea2>
+          <Text1><p>{dict.how_to_use_text5}</p></Text1>
+          <Text2><p>{dict.how_to_use_text6}</p></Text2>
+          <Text2><p>{dict.how_to_use_text7}</p></Text2>
+          <Text2><p>{dict.how_to_use_text8}</p></Text2>
+        </UsageAreaOneTextArea2>
+        <UsageAreaOneTextArea3>
+          <Text1><p>{dict.how_to_use_text9}</p></Text1>
+          <Text2><p>{dict.how_to_use_text10}</p></Text2>
+          <Text2><p>{dict.how_to_use_text11}</p></Text2>
+          <Text2><p>{dict.how_to_use_text12}</p></Text2>
+        </UsageAreaOneTextArea3>
+      </Content1>
+  )
+}
+
+const getStyledComponents = () => {
+
   let Content1 = styled.div`
   background: ${Color.white};
   border: 1px solid ${Color.white};
@@ -70,36 +103,11 @@ const Content1 = (props) => {
     `;
   }
 
-  return (
-    <Content1>
-        <Text1><p>{dict.how_to_use_text1}</p></Text1>
-        <Text1><p>{dict.how_to_use_text2}</p></Text1>
-        <UsageAreaOneSvg/>
-        <UsageAreaOneTextArea1>
-          <Text1><p>{dict.how_to_use_text3}</p></Text1>
-          <Text2><p>{dict.how_to_use_text4}</p></Text2>
-        </UsageAreaOneTextArea1>
-        <UsageAreaOneTextArea2>
-          <Text1><p>{dict.how_to_use_text5}</p></Text1>
-          <Text2><p>{dict.how_to_use_text6}</p></Text2>
-          <Text2><p>{dict.how_to_use_text7}</p></Text2>
-          <Text2><p>{dict.how_to_use_text8}</p></Text2>
-        </UsageAreaOneTextArea2>
-        <UsageAreaOneTextArea3>
-          <Text1><p>{dict.how_to_use_text9}</p></Text1>
-          <Text2><p>{dict.how_to_use_text10}</p></Text2>
-          <Text2><p>{dict.how_to_use_text11}</p></Text2>
-          <Text2><p>{dict.how_to_use_text12}</p></Text2>
-        </UsageAreaOneTextArea3>
-      </Content1>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Content1 : Content1,
+    UsageAreaOneTextArea1 : UsageAreaOneTextArea1,
+    UsageAreaOneTextArea2 : UsageAreaOneTextArea2,
+    UsageAreaOneTextArea3 : UsageAreaOneTextArea3
   };
 }
 

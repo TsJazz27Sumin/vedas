@@ -23,6 +23,49 @@ const Content2 = (props) => {
   const public_url = process.env.PUBLIC_URL;
   const peak_sample = public_url + '/usage/peak_sample/peak_sample.png';
 
+  const StyledComponents = getStyledComponents();
+  const Content2 = StyledComponents.Content2;
+  const SampleCaseATag = StyledComponents.SampleCaseATag;
+  const EnergyPeakSample = StyledComponents.EnergyPeakSample;
+  const EnergyPeakSampleImage = StyledComponents.EnergyPeakSampleImage;
+  const OtherSample = StyledComponents.OtherSample;
+  const LetsFind = StyledComponents.LetsFind;
+
+  return (
+    <Content2>
+      <Text1><p>{dict.how_to_use_text13}</p></Text1>
+      <br/>
+      <br/>
+      <Text1><SampleCaseATag onClick={()=> track("Click case1")} onTouchStart={()=> track("Click case1")} id="case1" href={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</SampleCaseATag></Text1>
+      <Text1><p>{dict.how_to_use_text15}</p></Text1>
+      <SolarSampleImages />
+      <EnergyPeakSample>
+        <Text1><SampleCaseATag onClick={()=> track("Click case2")} onTouchStart={()=> track("Click case2")} id="case2" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
+        <Text1><p>{dict.how_to_use_text17}</p></Text1>
+      </EnergyPeakSample>
+      <EnergyPeakSampleImage>
+        <img width="100%" src={peak_sample} alt="peak sample" />
+      </EnergyPeakSampleImage>
+
+      {
+        isMobile ? null :(
+        <OtherSample>
+          <Text1><p>{dict.how_to_use_text18}</p></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case3")} onTouchStart={()=> track("Click case3")} id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case4")} onTouchStart={()=> track("Click case4")} id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
+          <Text1><SampleCaseATag onClick={()=> track("Click case5")} onTouchStart={()=> track("Click case5")} id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
+        </OtherSample>
+        )
+      }
+      <LetsFind>
+        <p>{dict.how_to_use_text22}</p>
+      </LetsFind>
+    </Content2>
+  )
+}
+
+const getStyledComponents = (lang) => {
+
   let Content2 = styled.div`
   background: ${Color.white};
   
@@ -92,44 +135,13 @@ const Content2 = (props) => {
     `;
   }
 
-  return (
-    <Content2>
-      <Text1><p>{dict.how_to_use_text13}</p></Text1>
-      <br/>
-      <br/>
-      <Text1><SampleCaseATag onClick={()=> track("Click case1")} onTouchStart={()=> track("Click case1")} id="case1" href={baseUrl + '?lang=' + lang + '&case=1'}>{dict.how_to_use_text14}</SampleCaseATag></Text1>
-      <Text1><p>{dict.how_to_use_text15}</p></Text1>
-      <SolarSampleImages />
-      <EnergyPeakSample>
-        <Text1><SampleCaseATag onClick={()=> track("Click case2")} onTouchStart={()=> track("Click case2")} id="case2" href={baseUrl + '?lang=' + lang + '&case=2'}>{dict.how_to_use_text16}</SampleCaseATag></Text1>
-        <Text1><p>{dict.how_to_use_text17}</p></Text1>
-      </EnergyPeakSample>
-      <EnergyPeakSampleImage>
-        <img width="100%" src={peak_sample} alt="peak sample" />
-      </EnergyPeakSampleImage>
-
-      {
-        isMobile ? null :(
-        <OtherSample>
-          <Text1><p>{dict.how_to_use_text18}</p></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case3")} onTouchStart={()=> track("Click case3")} id="case3" href={baseUrl + '?lang=' + lang + '&case=3'}>{dict.how_to_use_text19}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case4")} onTouchStart={()=> track("Click case4")} id="case4" href={baseUrl + '?lang=' + lang + '&case=4'}>{dict.how_to_use_text20}</SampleCaseATag></Text1>
-          <Text1><SampleCaseATag onClick={()=> track("Click case5")} onTouchStart={()=> track("Click case5")} id="case5" href={baseUrl + '?lang=' + lang + '&case=5'}>{dict.how_to_use_text21}</SampleCaseATag></Text1>
-        </OtherSample>
-        )
-      }
-      <LetsFind>
-        <p>{dict.how_to_use_text22}</p>
-      </LetsFind>
-    </Content2>
-  )
-}
-
-const getStyledComponents = (lang) => {
-
-
   return {
-    xxx :xxx
+    Content2 : Content2,
+    SampleCaseATag : SampleCaseATag,
+    EnergyPeakSample : EnergyPeakSample,
+    EnergyPeakSampleImage : EnergyPeakSampleImage,
+    OtherSample : OtherSample,
+    LetsFind : LetsFind
   };
 }
 
