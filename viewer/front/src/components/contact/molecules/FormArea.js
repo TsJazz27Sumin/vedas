@@ -37,8 +37,10 @@ const FormArea = (props) => {
 
   const removeError = (target) => {
     let element = document.getElementById(target)
-    element.classList.remove("error");
-    element.value = "";
+    if (element.classList.contains("error")){
+      element.classList.remove("error");
+      element.value = "";
+    }
   };
 
   const validateEmail = (email) => {
