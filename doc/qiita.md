@@ -240,8 +240,34 @@ GoogleのAnaliticsをReactで使うために導入しています。
 
 useEffectと組み合わせて特定のcomponent読み込み時に実行しています。
 
-### react-router-dom: 5.1.2
-### react-share: 3.0.1
+### [react-share: 3.0.1](https://www.npmjs.com/package/react-share)
+
+SNS用のシェアボタンを配置するのに使用しています。
+今回のアプリケーションでは、facebook, twitter, line, weiboを対象としました。
+
+```js
+    <FacebookShareButton url={current_url}>
+        <FacebookIcon size={size} round />
+      </FacebookShareButton>
+
+      <TwitterShareButton url={current_url}
+        hashtags={["パネイル", "Panair", "Vedas", "電力見える化"]}>
+        <TwitterIcon size={size} round />
+      </TwitterShareButton>
+
+      <LineShareButton url={current_url}>
+        <LineIcon size={size} round />
+      </LineShareButton>
+
+      <WeiboShareButton url={current_url}>
+        <img width='100%' src={weibo_icon} alt="weibo_icon"/>
+      </WeiboShareButton>
+```
+
+こういった形で基本的にシェアされたいURLと、twitterとかであればハッシュタグなどオプションを指定するだけです。今回、使用できたバージョンだとweiboのアイコンがなかったので画像指定をしています。
+
+これだけの記述でSNSをシェアアイコンがサクッと並びます。
+
 ### recharts: 1.8.5
 ### styled-components: 4.4.1
 ## Atomic Design
