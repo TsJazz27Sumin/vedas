@@ -71,20 +71,23 @@ const useDateSelect = (electoric_power_data_initialize_params, setData, setIsLoa
     const [yearSelected, setYearSelected] = useState(year_initialize);
     const handleYearSelectChange = useCallback((unit, value, monthSelected, dateSelected) => {
 
-        const date = new Date(parseInt(value), parseInt(monthSelected - 1), parseInt(dateSelected));
+        const date = new Date(parseInt(value), parseInt(monthSelected), parseInt(dateSelected));
         const month = date.getMonth() + 1;
 
         let target_date = dateSelected;
+        let target_month = monthSelected;
+
         if (monthSelected !== month) {
             date.setDate(1);
             date.setDate(date.getDate() - 1);
             setDateSelected(date.getDate());
             target_date = date.getDate();
+            target_month = target_month + 1;
         }
 
         setYearSelected(parseInt(value));
         japanEnergyService
-            .get_daily_data(unit, value, monthSelected, target_date)
+            .get_daily_data(unit, value, target_month, target_date)
             .then(initialData => {
                 setData(initialData);
                 setIsLoading(false);

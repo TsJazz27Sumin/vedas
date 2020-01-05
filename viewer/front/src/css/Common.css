@@ -22,8 +22,10 @@ a {
 
 .Polaris-Select {
   position: relative !important;
-  width: 140px !important;
+
   height: 51px !important;
+  width: 140px !important;
+  
   padding-top: 6% !important;
   padding-left: 8% !important;
 }
@@ -33,8 +35,8 @@ a {
 }
 
 .Polaris-Select__Backdrop{
-  border:none !important;
   background-color:#fff !important;
+  border:none !important;
   border-radius: 10px !important;
 }
 

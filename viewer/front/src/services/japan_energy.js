@@ -5,6 +5,7 @@ const get = (unit, from, to) => {
   const request = axios.get(baseUrl + 'get?unit=' + unit + '&from=' + from + '&to=' + to)
   return request.then(response => response.data).catch((err) => {
     console.error(err);
+    return "err";
   });
 }
 
@@ -12,6 +13,7 @@ const get_daily_data = (unit, year, month, date) => {
   const request = axios.get(baseUrl + 'get_daily_data?unit=' + unit + '&year=' + year + '&month=' + month + '&date=' + date)
   return request.then(response => response.data).catch((err) => {
     console.error(err);
+    return "err";
   });
 }
 

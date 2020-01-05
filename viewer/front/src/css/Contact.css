@@ -1,82 +1,126 @@
 .full-name-input{
-    position: absolute;
-    width: 40%;
-    height: 7%;
-    left: 5%;
-    top: 25%;
+    font-size: 18px;
+
     border: 1px solid rgba(0,0,0,0.34);
     border-radius: 4px;
-    font-size: 18px;
+
+    height: 7%;
+    width: 40%;
+
     padding: 0 0 0 2%;
+
+    position: absolute;
+    top: 25%;
+    left: 5%;
 }
 
 .full-name-input-mobile{
-    position: absolute;
-    width: 40%;
-    height: 4%;
-    top: 38%;
-    left: 5%;
+    font-size: 16px;
+
     border: 1px solid rgba(0,0,0,0.34);
     border-radius: 4px;
-    font-size: 16px;
+    
+    height: 4%;
+    width: 40%;
+    
     padding: 0 0 0 2%;
+
+    position: absolute;
+    top: 38%;
+    left: 5%;
 }
 
 .email-input{
+    /* 文字に関するスタイル */
+    /* 枠線に関するスタイル */
+    /* 背景に関するスタイル */
+    /* 横幅と高さに関するスタイル */
+    /* 余白に関するスタイル */
+    /* ボックスサイズの算出方法を指定 */
+    /* テキストに関するスタイル */
+    /* 表示に関するスタイル */
+    /* 位置に関するスタイル */
+    /* 横並び(浮動)に関するスタイル */
+    /* 影に関するスタイル */
     font-family: Montserrat;
-    position: absolute;
-    width: 40%;
-    height: 7%;
-    left: 54%;
-    top: 25%;
+    font-size: 18px;
+
     border: 1px solid rgba(0,0,0,0.34);
     border-radius: 4px;
-    font-size: 18px;
+    
+    width: 40%;
+    height: 7%;
+    
     padding: 2% 2% 2% 2%;
+
+    position: absolute;
+    top: 25%;
+    left: 54%;
 }
 
 .email-input-mobile{
     font-family: Montserrat;
-    position: absolute;
-    width: 40%;
-    height: 4%;
-    top: 38%;
-    left: 54%;
+    font-size: 16px;
+
     border: 1px solid rgba(0,0,0,0.34);
     border-radius: 4px;
-    font-size: 16px;
+
+    width: 40%;
+    height: 4%;
+    
     padding: 2% 2% 2% 2%;
+
+    position: absolute;
+    top: 38%;
+    left: 54%;
+}
+
+.inquiry{
+    font-family: Montserrat;
+    font-size: 18px;
+    color: #464646;
 }
 
 .inquiry-input{
-    position: absolute;
-    width: 89%;
-    height: 20%;
-    left: 5%;
-    top: 41%;
     font-family: inherit;
     font-size   : 100%;
-    line-height: 20px;
+    
     border: 1px solid rgba(0, 0, 0, 0.34);
     border-radius: 4px;
-    resize: none;
+    
+    height: 20%;
+    width: 89%;
+    
     padding: 2% 2% 2% 2%;
+
+    position: absolute;
+    top: 41%;
+    left: 5%;
+    
+    line-height: 20px;
+    
+    resize: none;
 }
 
 .inquiry-input-mobile{
-    position: absolute;
-    width: 89%;
-    height: 20%;
-    height: 10%;
-    top: 48%;
-    left: 5%;
     font-family: inherit;
     font-size: 16px;
-    line-height: 20px;
+    
     border: 1px solid rgba(0, 0, 0, 0.34);
     border-radius: 4px;
-    resize: none;
+
+    height: 10%;
+    width: 89%;
+    
     padding: 1% 1% 1% 1%;
+    
+    position: absolute;
+    top: 48%;
+    left: 5%;
+    
+    line-height: 20px;
+    
+    resize: none;
 }
 
 .error{

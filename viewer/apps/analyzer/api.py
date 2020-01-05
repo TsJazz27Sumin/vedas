@@ -1,4 +1,5 @@
 import json
+import traceback
 
 import slackweb
 from django.http import JsonResponse, Http404
@@ -97,26 +98,31 @@ def get(request):
     root_path = os.getcwd()
     start = time.time()
 
-    if unit == "y" or unit == "ym" or unit == "ymd":
-        data = {
-            "message": "Success",
-            "hepco": HepcoController.get(root_path, unit, from_value, to_value),
-            "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),
-            "rikuden": RikudenController.get(root_path, unit, from_value, to_value),
-            "tepco": TepcoController.get(root_path, unit, from_value, to_value),
-            "chuden": ChudenController.get(root_path, unit, from_value, to_value),
-            "kepco": KepcoController.get(root_path, unit, from_value, to_value),
-            "energia": EnergiaController.get(root_path, unit, from_value, to_value),
-            "yonden": YondenController.get(root_path, unit, from_value, to_value),
-            "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
-            "okiden": OkidenController.get(root_path, unit, from_value, to_value),
-            "japan": JapanController.get(root_path, unit, from_value, to_value),
-        }
-        print(f'elapsed_time:{time.time() - start}[sec]')
+    try:
+        if unit == "y" or unit == "ym" or unit == "ymd":
+            data = {
+                "message": "Success",
+                "hepco": HepcoController.get(root_path, unit, from_value, to_value),
+                "tohokuepco": TohokuEpcoController.get(root_path, unit, from_value, to_value),
+                "rikuden": RikudenController.get(root_path, unit, from_value, to_value),
+                "tepco": TepcoController.get(root_path, unit, from_value, to_value),
+                "chuden": ChudenController.get(root_path, unit, from_value, to_value),
+                "kepco": KepcoController.get(root_path, unit, from_value, to_value),
+                "energia": EnergiaController.get(root_path, unit, from_value, to_value),
+                "yonden": YondenController.get(root_path, unit, from_value, to_value),
+                "kyuden": KyudenController.get(root_path, unit, from_value, to_value),
+                "okiden": OkidenController.get(root_path, unit, from_value, to_value),
+                "japan": JapanController.get(root_path, unit, from_value, to_value),
+            }
+            print(f'elapsed_time:{time.time() - start}[sec]')
 
-        return JsonResponse(data)
-
-    raise Http404()
+            return JsonResponse(data)
+    except Exception:
+        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+        slack.notify(
+            text=f"unit:{unit} from_value:{from_value} to_value:{to_value} message:{traceback.format_exc()}"
+        )
+        raise Http404()
 
 # http://127.0.0.1:8000/viewer/analyzer/get_daily_data
 @authenticate()
@@ -128,26 +134,31 @@ def get_daily_data(request):
     root_path = os.getcwd()
     start = time.time()
 
-    if unit == "1H":
-        data = {
-            "message": "Success",
-            "hepco": HepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "tohokuepco": TohokuEpcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "rikuden": RikudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "tepco": TepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "chuden": ChudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "kepco": KepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "energia": EnergiaController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "yonden": YondenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "kyuden": KyudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "okiden": OkidenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-            "japan": JapanController.get_daily_data(root_path, unit, year_value, month_value, date_value),
-        }
-        print(f'elapsed_time:{time.time() - start}[sec]')
+    try:
+        if unit == "1H":
+            data = {
+                "message": "Success",
+                "hepco": HepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "tohokuepco": TohokuEpcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "rikuden": RikudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "tepco": TepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "chuden": ChudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "kepco": KepcoController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "energia": EnergiaController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "yonden": YondenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "kyuden": KyudenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "okiden": OkidenController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+                "japan": JapanController.get_daily_data(root_path, unit, year_value, month_value, date_value),
+            }
+            print(f'elapsed_time:{time.time() - start}[sec]')
 
-        return JsonResponse(data)
-
-    raise Http404()
+            return JsonResponse(data)
+    except Exception:
+        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+        slack.notify(
+            text=f"unit:{unit} year_value:{year_value} month_value:{month_value} date_value:{date_value} message:{traceback.format_exc()}"
+        )
+        raise Http404()
 
 # http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page

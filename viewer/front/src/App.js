@@ -1,57 +1,13 @@
 import React from 'react'
-import Home from './apps/ver2/Home'
-import JapanEnergyChart from './apps/ver1/JapanEnergyChart'
-import News from './apps/ver1/News'
-import About from './apps/ver1/About'
-import Usage from './apps/ver1/Usage'
-import Contact from './apps/ver1/Contact'
-import LanguageSetting from './apps/ver1/LanguageSetting'
+import Home from './components/common/Home'
 
 const App = (props) => {
 
-  const menu = props.qs.menu === undefined ? 'home' : props.qs.menu;
   const lang = props.qs.lang === undefined ? 'jp' : props.qs.lang;
-  const version = props.qs.version === undefined ? '2' : props.qs.version;
-
-  let content = null;
-
-  if (version === "1"){
-    switch(menu){
-      case "home":
-          content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-  
-      case "news":
-          content = (<News lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-      
-      case "about":
-          content = (<About lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-      
-      case "usage":
-          content = (<Usage lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-      
-      case "contact":
-          content = (<Contact lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-  
-      case "language_setting":
-          content = (<LanguageSetting lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-      
-      default:
-          content = (<JapanEnergyChart lang={lang} location={props.location} query_param={props.qs} />);
-          break;
-    }
-  } else {
-    content = (<Home lang={lang} location={props.location} qs={props.qs} />);
-  }
  
   return (
     <div>
-      {content}
+      <Home lang={lang} location={props.location} qs={props.qs} />
     </div >
   )
 }
