@@ -18,6 +18,8 @@
 
 そんな折、一般送配電事業者が需給実績データをオープンデータとして公開していることを知り、「おっ、PythonのPandasとか使って大量データさばくのおもしろそう」「Reactとか使ってグリグリ動くデータ分析ツールにするとおもしろそう」ってことで作りました。
 
+ReactもPythonも多くのライブラリが世界中の人たちによって作られており、いろいろと組み合わせながら実装するのは、非常に楽しかったです。この記事が少しでも皆様のお役に立てば幸いです。
+
 # 技術構成
 ## フロントエンド
  - Framework : React 16.11.0
@@ -210,6 +212,21 @@ index.jsでこんな感じでparseを呼び出しているだけです。
 あとは、受け取ったcomponent側で`qs.lang`や`qs.case`といった形でパラメーターを参照する形です。
 
 ### react-device-detect: 1.11.14
+ライブラリのネーミング通りdeviceのタイプを判定するのに使っています。今回のアプリケーションの具体例でいうと、モバイル用にCSSの付け替えをしているので、componentの読み込み時にモバイルかどうか見ています。
+
+```js
+import { isMobile } from "react-device-detect";
+
+if (isMobile) {
+    
+}
+```
+
+importでisMobileを宣言してそのまま使うだけで分かりやすいです。
+isMoblie以外にもosName, browserName, deviceTypeなどUserAgentから拾えるものは、一通り揃っています。
+
+UserAgentのパース処理なども自前で書く必要もないので便利なライブラリです。
+
 ### react-dom: 16.8.6
 ### react-ga: 2.7.0
 ### react-router-dom: 5.1.2
@@ -217,6 +234,7 @@ index.jsでこんな感じでparseを呼び出しているだけです。
 ### react-share: 3.0.1
 ### recharts: 1.8.5
 ### styled-components: 4.4.1
+## Atomic Design
 
 # Django
 ## はじめに
