@@ -193,7 +193,7 @@ def contact(request):
     datas = json.loads(request.body)
     full_name = datas['full_name']
     email = datas['email']
-    contact_information = datas['contact_information']
+    contact_information = datas['inquiry']
     slack = slackweb.Slack(url=SLACK_URL_CONTACT)
 
     text = f'full_name = {full_name} \nemail = {email} \ncontact_information = {contact_information}'
