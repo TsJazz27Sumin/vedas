@@ -188,6 +188,27 @@ const debouncedHandleChange = debounce(
 上の例では、lodashのdebounceで対象の処理を囲んで一定の間隔（500）で待つようにしています。この間隔の範囲で次のリクエストが来たら処理は実行されず間引かれます。
 
 ### query-string: 6.9.0
+クエリーパラメーターを受け取るのに使用しています。今回のアプリケーションの具体例でいうと、`xxx/?lang=jp`とかUsageのサンプルから遷移する際の`case=1`とかです。
+
+```js
+import queryString from 'query-string';
+import App from './App'
+
+ReactDOM.render(
+  <Router>
+    <Route render={ (props) => 
+      <App 
+          qs={queryString.parse(props.location.search)}
+      />
+    }/>
+  </Router>, 
+  document.getElementById("root")
+);
+```
+
+index.jsでこんな感じでparseを呼び出しているだけです。
+あとは、受け取ったcomponent側で`qs.lang`や`qs.case`といった形でパラメーターを参照する形です。
+
 ### react-device-detect: 1.11.14
 ### react-dom: 16.8.6
 ### react-ga: 2.7.0
