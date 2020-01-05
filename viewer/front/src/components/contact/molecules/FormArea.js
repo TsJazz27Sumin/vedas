@@ -48,7 +48,7 @@ const FormArea = (props) => {
   };
 
   const handleSubmit = useCallback((dict, fullName, email, inquiry) => {
-    const baseUrl = process.env.REACT_APP_BASE_URL + 'viewer/analyzer/'
+    const baseUrl = process.env.REACT_APP_API_BASE_URL + 'viewer/analyzer/'
 
     let errCount = 0;
     if (fullName === "") {
