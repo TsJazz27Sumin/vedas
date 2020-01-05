@@ -227,10 +227,8 @@ isMoblie以外にもosName, browserName, deviceTypeなどUserAgentから拾え�
 
 UserAgentのパース処理なども自前で書く必要もないので便利なライブラリです。
 
-### react-dom: 16.8.6
 ### react-ga: 2.7.0
 ### react-router-dom: 5.1.2
-### react-scripts: 3.3.0
 ### react-share: 3.0.1
 ### recharts: 1.8.5
 ### styled-components: 4.4.1
