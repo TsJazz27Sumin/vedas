@@ -118,10 +118,34 @@ useEffect自体は、対象のcomponentが読み込まれた時に実行した�
  2. 電力エリア 10
  3. 電力リソース 10
 
-の合計22ぐらいのuseState, useCallbackのセットが並んでいたので、実装しながらやや混乱していました。。。最初は、custom hooksも知らなかったので、存在を知ったときは救世主感がありました。
+の合計22ぐらいのuseState, useCallbackのセットが並んでいたので。。。最初は、custom hooksを知らなかったので、存在を知ったときは救世主感がありました。
 
 ## 使用しているライブラリ
 ### @shopify/polaris: 4.8.0
+[ShopifyのPolaris](https://polaris.shopify.com/)からReact Componentを一部使用しています。Shopifyは、カナダ発のEC関連企業で、Polarisというのは、彼らのデザインシステムのプロダクト名です。
+
+今回、公開版を作る前のversion1としてPolarisのComponentを組み合わせて作ってみましたが、Componentの充実ぶりに感動しました。Polarisのサイトでは、Component利用のexampleも分かりやすく記述されており、とても参考になります。
+
+また、[design guideline](https://polaris.shopify.com/design/colors)も充実しており、UI設計の考え方も非常に参考にさせていただきました。今回、公開版については、弊社のデザイナーに考えてもらったので、Polaris色は薄くなってしまったのですが、サクッといい感じに作りたいときはオススメです。
+
+ただ、一歩踏み込んで独自色を出そうとすると、PolarisのComponentのCSSを上書きしたり、ちょっと無理してる感が出てしまうので課題感はあります。
+
+一例としてSelect Boxは、公開版もPolarisのComponentを利用していますが、こんな感じで上書きしています。
+
+```css
+.Polaris-Select {
+  position: relative !important;
+
+  height: 51px !important;
+  width: 140px !important;
+  
+  padding-top: 6% !important;
+  padding-left: 8% !important;
+}
+```
+
+`!important`で上書きはあまりやりたくないのですが、構造的にはPolarisのComponentを使いたく、しかしデザインは合わない、ということで苦肉の策で実装しています。
+
 ### axios: 0.19.0,
 ### lodash: 4.17.15,
 ### query-string: 6.9.0,
