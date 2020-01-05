@@ -170,7 +170,6 @@ const get = (unit, from, to) => {
 ```js
 const debouncedHandleChange = debounce(
     (unit, from, to, value) => {
-        setIsLoading(true);
         if (unit === "y" || unit === "ym" || unit === "ymd") {
             japanEnergyService
                 .get(unit, from, to)
@@ -178,9 +177,6 @@ const debouncedHandleChange = debounce(
                     setData(initialData);
                     setIsLoading(false);
                 });
-
-            setRangeValue(value);
-            setIntermediateTextFieldValue(value);
         }
     },
     500
