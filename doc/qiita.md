@@ -165,6 +165,32 @@ const get = (unit, from, to) => {
 ```
 
 ### lodash: 4.17.15
+イベントを間引くために使用しています。今回のアプリケーションの具体例でいうと、スライダーで期間を指定する部分で使っています。
+
+```js
+const debouncedHandleChange = debounce(
+    (unit, from, to, value) => {
+        setIsLoading(true);
+        if (unit === "y" || unit === "ym" || unit === "ymd") {
+            japanEnergyService
+                .get(unit, from, to)
+                .then(initialData => {
+                    setData(initialData);
+                    setIsLoading(false);
+                });
+
+            setRangeValue(value);
+            setIntermediateTextFieldValue(value);
+        }
+    },
+    500
+);
+```
+
+スライダーでグリグリ動かして、何にもケアしていないとイベントが連続的に発生します。今回、期間を変えたらデータを取りに行くようにしていたので、イベントの発生と共にサーバーへのアクセスも発生して、処理が重くなっていたので間引きました。
+
+上の例では、lodashのdebounceで対象の処理を囲んで一定の間隔（500）で待つようにしています。この間隔の範囲で次のリクエストが来たら処理は実行されず間引かれます。
+
 ### query-string: 6.9.0
 ### react-device-detect: 1.11.14
 ### react-dom: 16.8.6
