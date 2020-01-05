@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './components/common/Home'
+import Home from 'components/common/Home'
 
 const App = (props) => {
 
