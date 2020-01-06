@@ -33,7 +33,7 @@ class CheckerFunction(object):
                 tofile=prev_html_path):
 
             diff_line = diff_line.replace(" ", "").replace("　", "")
-            if len(diff_line):
+            if len(diff_line) == 0:
                 continue
 
             omit_result = False
@@ -46,7 +46,6 @@ class CheckerFunction(object):
                 diff_lines.append(diff_line)
 
         if len(diff_lines) > 0:
-            # TODO:Slackでアラート飛ばすとかにしたい。
             for diff_line in diff_lines:
                 print(company)
                 print(diff_line)
