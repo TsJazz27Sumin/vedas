@@ -18,7 +18,7 @@ const EnergyCharts = (props) => {
   const qs = queryParamPerserService.execute(props.qs, lang);
 
   return (
-    <AnalyzeArea qs={qs} dict={props.dict} menu={props.menu} pathname={pathname}/>
+    <AnalyzeArea qs={qs} dict={props.dict} menu={props.menu} pathname={pathname} lang={lang}/>
   )
 }
 

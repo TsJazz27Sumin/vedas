@@ -38,7 +38,7 @@ const AnalyzeArea = (props) => {
   //エネルギーリソースの選択
   const electoric_power_resource = electoricPowerResourseHook.useElectoricPowerResourse(qs.electoric_power_resourse_initialize_params);
 
-  const StyledComponents = getStyledComponents(checkedCount);
+  const StyledComponents = getStyledComponents(checkedCount, props.lang);
   const AnalyzeArea = StyledComponents.AnalyzeArea;
   const Content = StyledComponents.Content;
   const ChartsAreaUl = StyledComponents.ChartsAreaUl;
@@ -97,13 +97,13 @@ const AnalyzeArea = (props) => {
   )
 }
 
-const getStyledComponents = (checkedCount) => {
+const getStyledComponents = (checkedCount, lang) => {
 
   let AnalyzeArea = styled.div`
   border-radius: 54px;
   background: ${Color.gray};
 
-  height: ${1450 + (350 * checkedCount)}px;
+  height: ${(lang === "en" ? 1550 : 1450) + (350 * checkedCount)}px;
   width: 91%;
 
   padding: 0% 0% 0% 0%;

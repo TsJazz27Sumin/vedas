@@ -54,7 +54,7 @@ const getStyledComponents = (checkedCount) => {
   color: ${Color.black};
 
   padding: 0% 0% 0% 0%;
-  margin:  5% 0% 0% 0%;
+  margin:  5% 5% 0% 0%;
   
   line-height: 36px;
 `;
