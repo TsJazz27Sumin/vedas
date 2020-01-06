@@ -15,8 +15,8 @@
 <script type="text/javascript" src="/prototype.js"></script>
 <script type="text/javascript">
 <!--
-		var MenuInputButton_1586096 = Class.create();
-		MenuInputButton_1586096.prototype = {
+		var MenuInputButton_1597007 = Class.create();
+		MenuInputButton_1597007.prototype = {
 			initialize: function(className, cmd, parentElement) {
 				var elements = document.getElementsByClassName(className, parentElement);
 				for (var i = 0, len = elements.length; i < len; i++) {
@@ -26,16 +26,16 @@
 			},
 			btnClickEvent: function(event, cmd) {
 				var element = Event.element(event);
-				jsDoMenuBtn1586096(cmd);
+				jsDoMenuBtn1597007(cmd);
 				Event.stop(event);
 			}
 		};
 
 		Event.observe(window, 'load', function () {
-			new MenuInputButton_1586096('pbSmartViewAllButtonText', 'viewAll');
+			new MenuInputButton_1597007('pbSmartViewAllButtonText', 'viewAll');
 		});
 
-		function jsDoMenuBtn1586096(cmd) {
+		function jsDoMenuBtn1597007(cmd) {
 			switch (cmd) {
 				case 'viewAll':
 					location.href="/wheeling_disclosure?viewAll=1";
@@ -144,7 +144,7 @@ jQuery.noConflict();
 </script>
 <script type="text/javascript" charset="UTF-8" src="http://search.kyuden.co.jp/common/js/sa/i_search_assist.js"></script>
 <script type="text/javascript" charset="UTF-8" src="http://search.kyuden.co.jp/common/js/search_tool.js"></script>
-<!--date=20191209-->
+<!--date=20191226-->
 	</head>
 <body>
 <noscript><p>このページではjavascriptを使用しています。</p></noscript>
@@ -629,6 +629,7 @@ jQuery.noConflict();
 <li class="nav_parent"><a href="/effort_renewable-energy_torikumi.html" class="link-pc-4-3">再生可能エネルギー</a></li>
 <li><a href="/effort_renewable-energy_application.html" class="link-pc-4-3-1">九州本土の再生可能エネルギーの接続状況</a></li>
 <li><a href="/effort_renewable-energy_ritou.html" class="link-pc-4-3-2">離島の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_specification.html" class="link-pc-4-3-11">技術仕様書・伝送仕様書の公開</a></li>
 <li><a href="/effort_renewable-energy_geothermal.html" class="link-pc-4-3-3">地熱発電</a></li>
 <li><a href="/effort_renewable-energy_photovoltaic.html" class="link-pc-4-3-4">太陽光発電</a></li>
 <li><a href="/effort_renewable-energy_wind.html" class="link-pc-4-3-5">風力発電</a></li>
@@ -688,7 +689,6 @@ jQuery.noConflict();
 取引価格等の公表</a></li>
 <li><a href="/wheeling_sohaidenbumon-shushi.html" class="link-pc-5-2-12">送配電部門収支の算定結果</a></li>
 <li><a href="/wheeling_dbprocess.html" class="link-pc-5-2-13">電源接続案件募集プロセスの実施状況</a></li>
-<li><a href="/wheeling_callcenter.html" class="link-pc-5-2-14">送配電コールセンターのご案内</a></li>
 </ul>
 </li>
 <li><a href="/b-root-service_index.html" class="link-pc-5-3">スマートメーターのご案内</a>
@@ -708,6 +708,7 @@ jQuery.noConflict();
 <li class="nav_parent"><a href="/supply_adjusting-power_index.html" class="link-pc-5-4">調整力の募集等のご案内</a></li>
 <li><a href="/wheeling_adjusting-power.html" class="link-pc-5-4-1">調整力電源の募集について</a></li>
 <li><a href="/wheeling_demand-supply.html" class="link-pc-5-4-2">需給調整市場について</a></li>
+<li><a href="/wheeling_black-start.html" class="link-pc-5-4-3">ブラックスタート機能の募集について</a></li>
 </ul>
 </li>
 </ul>
@@ -1120,6 +1121,7 @@ jQuery.noConflict();
 <li class="nav_parent"><a href="/effort_renewable-energy_torikumi.html" class="link-tab-4-3">再生可能エネルギー&nbsp;トップ</a></li>
 <li><a href="/effort_renewable-energy_application.html" class="link-tab-4-3-1">九州本土の再生可能エネルギーの接続状況</a></li>
 <li><a href="/effort_renewable-energy_ritou.html" class="link-tab-4-3-2">離島の再生可能エネルギーの接続状況</a></li>
+<li><a href="/effort_renewable-energy_specification.html" class="link-tab-4-3-11">技術仕様書・伝送仕様書の公開</a></li>
 <li><a href="/effort_renewable-energy_geothermal.html" class="link-tab-4-3-3">地熱発電</a></li>
 <li><a href="/effort_renewable-energy_photovoltaic.html" class="link-tab-4-3-4">太陽光発電</a></li>
 <li><a href="/effort_renewable-energy_wind.html" class="link-tab-4-3-5">風力発電</a></li>
@@ -1173,7 +1175,6 @@ jQuery.noConflict();
 取引価格等の公表</a></li>
 <li><a href="/wheeling_sohaidenbumon-shushi.html" class="link-tab-5-2-12">送配電部門収支の算定結果</a></li>
 <li><a href="/wheeling_dbprocess.html" class="link-tab-5-2-13">電源接続案件募集プロセスの実施状況</a></li>
-<li><a href="/wheeling_callcenter.html" class="link-tab-5-2-14">送配電コールセンターのご案内</a></li>
 </ul>
 </li>
 <li><a href="/b-root-service_index.html" class="link-tab-5-3">スマートメーターのご案内</a>
@@ -1191,6 +1192,7 @@ jQuery.noConflict();
 <li class="nav_parent"><a href="/supply_adjusting-power_index.html" class="link-tab-5-4">調整力の募集等のご案内&nbsp;トップ</a></li>
 <li><a href="/wheeling_adjusting-power.html" class="link-tab-5-4-1">調整力電源の募集について</a></li>
 <li><a href="/wheeling_demand-supply.html" class="link-tab-5-4-2">需給調整市場について</a></li>
+<li><a href="/wheeling_black-start.html" class="link-tab-5-4-3">ブラックスタート機能の募集について</a></li>
 </ul>
 </li>
 </ul>
@@ -1327,12 +1329,12 @@ jQuery.noConflict();
 詳細については、別途、接続検討の申込みによる詳細検討（有料）が必要となります。</li>
 <li>社会的に影響を与えることが懸念される重要施設への供給系統に関する情報や、電力供給が特定できるような第三者情報などについては、公開しておりません。</li>
 </ul>
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/library/pdf/company/liberal/map/renkeimap_191209.pdf" target="_blank">九州電力管内における発電機連系制約マップ</a></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（574KB）</td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（2019年12月９日更新）</td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/library/pdf/company/liberal/map/renkeimap_191220.pdf" target="_blank">九州電力管内における発電機連系制約マップ</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（592KB）</td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（2019年12月20日更新）</td>
 </tr>
 </table>
 <div class="n_block">
@@ -1387,15 +1389,15 @@ jQuery.noConflict();
 </div>
 <div class="box1" style="margin-bottom: 25px;">【参考】<br />
 風力または太陽光を九州電力管内66kV、110kVの特別高圧系統へ連系する場合に、電圧変動対策（SVC装置等）が必要となる可能性が高い地域はそれぞれ下記のとおりです。
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-top: 10px;" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-top: 10px;" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2110/wind_h2910.pdf">風力連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7688/wind_h2910.pdf">風力連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" nowrap="nowrap" align="left">（118KB）（2017年10月23日更新）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2111/solar_h2910.pdf">太陽光連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7689/solar_h2910.pdf">太陽光連系時に電圧変動対策が必要となる可能性が高い地域（66kV、110kV系統への連系）</a><br /></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 10px 2px 2px;" nowrap="nowrap" align="left">（119KB）（2017年10月23日更新）</td>
 </tr>
 </table>
@@ -1405,10 +1407,10 @@ jQuery.noConflict();
 <li>「地内基幹送電線」とは最上位電圧から２階級（500、220kV）の送電線です。</li>
 <li>社会的に影響を与えることが懸念される重要施設への供給系統に関する情報や、電力供給が特定できるような第三者情報などについては、公開しておりません。</li>
 </ul>
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2112/koukai_jouhou190401.pdf">地内基幹送電線に関する公開情報</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7690/koukai_jouhou190401.pdf">地内基幹送電線に関する公開情報</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（226KB）（2019年４月１日時点）</td>
 </tr>
 </table>
@@ -1422,71 +1424,71 @@ jQuery.noConflict();
 <div class="n_block">
 <ul>
 <li>地点別需要・系統潮流実績<br />
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2113/z757d0ba.pdf">系統構成（実績）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7691/z757d0ba.pdf">系統構成（実績）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（331KB）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img src="/library/file-type/excel.gif" alt="Excelファイル" style="border-width: 0px; border-style: solid;" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2114/io3y1jqo.xls">潮流実績（送電線）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7692/io3y1jqo.xls">潮流実績（送電線）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（10,615KB）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img src="/library/file-type/excel.gif" alt="Excelファイル" style="border-width: 0px; border-style: solid;" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2115/p2sfzoe8.xls">潮流実績（変圧器）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7693/p2sfzoe8.xls">潮流実績（変圧器）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（8,425KB）</td>
 </tr>
 </table>
 </li>
 <li>系統構成、予想潮流（１年度目、５年度目）<br />
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2116/8jsg6e7o.pdf">系統構成</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7694/8jsg6e7o.pdf">系統構成</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（434KB）（2019年６月３日更新）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2117/bt9g9cr0.pdf">予想潮流</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7695/bt9g9cr0.pdf">予想潮流</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（152KB）（2019年６月３日更新）</td>
 </tr>
 </table>
 </li>
 <li>送変電設備のインピーダンス<br />
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2118/2qby3vhw.pdf">送変電設備のインピーダンス</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7696/2qby3vhw.pdf">送変電設備のインピーダンス</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（124KB）（2019年６月３日更新）</td>
 </tr>
 </table>
 </li>
 <li>送変電設備の投資・廃止計画<br />
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2119/j3h11x08.pdf">送変電設備の投資・廃止計画</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7697/j3h11x08.pdf">送変電設備の投資・廃止計画</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（363KB）（2019年６月３日更新）</td>
 </tr>
 </table>
 </li>
 <li>送変電設備の作業停止計画<br />
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px;" class="ml10 mb15" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2120/j6qx27sd.pdf">送変電設備の作業停止計画（2018年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7698/j6qx27sd.pdf">送変電設備の作業停止計画（2018年度）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（146KB）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2121/nk5oeza7.pdf">送変電設備の作業停止計画（2019年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7699/nk5oeza7.pdf">送変電設備の作業停止計画（2019年度）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（138KB）</td>
 </tr>
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2122/g3v1v525.pdf">送変電設備の作業停止計画（2020年度）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7700/g3v1v525.pdf">送変電設備の作業停止計画（2020年度）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（129KB）</td>
 </tr>
 </table>
@@ -1494,16 +1496,16 @@ jQuery.noConflict();
 </ul>
 </div>
 <h2>流通設備建設計画</h2>
-<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" border="0" background="" cellspacing="0" cellpadding="2">
+<table style="border-color: currentcolor; border-style: solid; border-width: 0px; margin-left: 1em;" cellspacing="0" cellpadding="2" border="0" background="">
 <tr>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
-<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0231/2123/a9yi68gc.pdf">主要送変電設備の整備計画（2019年度供給計画）</a></td>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left"><a class="pbOpenNewWindow" href="/var/rev0/0233/7701/a9yi68gc.pdf">主要送変電設備の整備計画（2019年度供給計画）</a></td>
 <td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" align="left">（97KB）</td>
 </tr>
 </table>
 <h2>需給関連情報</h2>
 <p style="margin-bottom: 0px;">＜エリア需給実績＞</p>
-<p style="margin-bottom: 0px; text-align: right;">（2019年11月30日更新）</p>
+<p style="margin-bottom: 0px; text-align: right;">（2019年12月27日更新）</p>
 <table class="csvtbl">
 <tbody>
 <tr>
@@ -1515,45 +1517,45 @@ jQuery.noConflict();
 </tr>
 <tr>
 <td align="center">2016年度</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2124/area_jyukyu_jisseki_H28_1Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7702/area_jyukyu_jisseki_H28_1Q.csv">csvファイル</a><br />
 （134KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2125/area_jyukyu_jisseki_H28_2Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7703/area_jyukyu_jisseki_H28_2Q.csv">csvファイル</a><br />
 （136KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2126/area_jyukyu_jisseki_H28_3Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7704/area_jyukyu_jisseki_H28_3Q.csv">csvファイル</a><br />
 （135KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2127/area_jyukyu_jisseki_H28_4Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7705/area_jyukyu_jisseki_H28_4Q.csv">csvファイル</a><br />
 （132KB）</td>
 </tr>
 <tr>
 <td align="center">2017年度</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2128/area_jyukyu_jisseki_H29_1Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7706/area_jyukyu_jisseki_H29_1Q.csv">csvファイル</a><br />
 （134KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2129/area_jyukyu_jisseki_H29_2Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7707/area_jyukyu_jisseki_H29_2Q.csv">csvファイル</a><br />
 （136KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2130/area_jyukyu_jisseki_H29_3Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7708/area_jyukyu_jisseki_H29_3Q.csv">csvファイル</a><br />
 （136KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2131/area_jyukyu_jisseki_H29_4Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7709/area_jyukyu_jisseki_H29_4Q.csv">csvファイル</a><br />
 （134KB）</td>
 </tr>
 <tr>
 <td align="center">2018年度</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2132/area_jyukyu_jisseki_H30_1Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7710/area_jyukyu_jisseki_H30_1Q.csv">csvファイル</a><br />
 （133KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2133/area_jyukyu_jisseki_H30_2Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7711/area_jyukyu_jisseki_H30_2Q.csv">csvファイル</a><br />
 （137KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2134/area_jyukyu_jisseki_H30_3Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7712/area_jyukyu_jisseki_H30_3Q.csv">csvファイル</a><br />
 （141KB）</td>
-<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0231/2135/area_jyukyu_jisseki_H30_4Q.csv">csvファイル</a><br />
+<td align="center"><a class="pbOpenNewWindow" href="/var/rev0/0233/7713/area_jyukyu_jisseki_H30_4Q.csv">csvファイル</a><br />
 （142KB）</td>
 </tr>
 <tr>
 <td align="center">2019年度</td>
-<td align="center"><a href="/var/rev0/0231/2136/area_jyukyu_jisseki_2019_1Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
+<td align="center"><a href="/var/rev0/0233/7714/area_jyukyu_jisseki_2019_1Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
 （138KB）</td>
-<td align="center"><a href="/var/rev0/0231/2137/area_jyukyu_jisseki_2019_2Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
+<td align="center"><a href="/var/rev0/0233/7715/area_jyukyu_jisseki_2019_2Q.csv" class="pbOpenNewWindow">csvファイル</a><br />
 （141KB）</td>
-<td align="center"><a href="/var/rev0/0231/2138/area_jyukyu_jisseki_2019_10.csv" class="pbOpenNewWindow">csvファイル</a><br />
-（68KB）</td>
+<td align="center"><a href="/var/rev0/0233/7716/area_jyukyu_jisseki_2019_10_11.csv" class="pbOpenNewWindow">csvファイル</a><br />
+（94KB）</td>
 <td align="center">―</td>
 </tr>
 </tbody>
@@ -1574,10 +1576,85 @@ jQuery.noConflict();
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap">（注）</td>
-<td valign="top" nowrap="nowrap"><a class="pbOpenNewWindow" href="/var/rev0/0231/2139/20191216jukyu.pdf">エリア需給実績（速報）</a></td>
+<td valign="top" nowrap="nowrap"><a class="pbOpenNewWindow" href="/var/rev0/0233/7717/20191216jukyu.pdf">エリア需給実績（速報）</a></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+
+			</div>
+			<div class="pbNested pbNestedWrapper" id="pbBlock1593656">
+<div class="pbBlock pbBlockBase">
+<div>
+<div class="n_keepbox">
+<div id="main-contents">
+<h2>電源情報の開示手続き（2020年１月24日手続き開始）</h2>
+<p>資源エネルギー庁が定める「系統情報の公表の考え方」（2019年４月改定）に基づき、発電設備設置者より提供を受けた電源に関する情報については、当社と秘密保持契約を結ぶこと等により、利用者・利用目的を限定したうえで開示します。</p>
+<h3>電源情報の開示手続き業務フロー</h3>
+<div><img src="/var/rev0/0233/7722/119122015441.png" alt="電源情報の開示手続き業務フロー" style="border-width: 0px; border-style: solid;" /></div>
+<table style="margin-left: 10px; margin-top: 2px;">
+<tbody>
+<tr>
+<td valign="top" nowrap="nowrap">（注１）</td>
+<td valign="top">開示請求者は、接続検討申込済の系統連系希望者（既連系の発電設備等を保有している事業者を含む。）となります。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注２）</td>
+<td valign="top">開示請求は、運転開始前１回、運転開始後毎年度１回とします。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注３）</td>
+<td valign="top">秘密保持契約書を締結済みの事業者については、再度の締結は不要です。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注４）</td>
+<td valign="top">開示手数料は、開示の都度、１万円＋消費税等相当額が必要です。</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap">（注５）</td>
+<td valign="top">秘密保持契約に基づき、開示された情報を開示請求者及び当社以外の第三へ情報開示する場合は、「電源情報の第三者への開示に関する宣誓書」を当社窓口に郵送にて提出ください。</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-bottom: 0px;">（申込書等）</p>
+<table style="margin-left: 10px; margin-top: 2px;">
+<tbody>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="WORDファイル" src="/library/file-type/word.gif" width="20" height="17" /></td>
+<td valign="top"><a class="pbOpenNewWindow" href="/var/rev0/0233/7718/119122010124.docx">電源情報開示申込書</a>（32KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="PDFファイル" src="/library/file-type/pdf.gif" width="20" height="17" /></td>
+<td valign="top"><a class="pbOpenNewWindow" href="/var/rev0/0233/7719/1191226153844.pdf">秘密保持契約書</a>(296KB）</td>
+</tr>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="WORDファイル" src="/library/file-type/word.gif" width="20" height="17" /></td>
+<td valign="top"><a class="pbOpenNewWindow" href="/var/rev0/0233/7720/1191220101244.docx">電源情報の第三者への開示に関する宣誓書</a>（29KB）</td>
+</tr>
+</tbody>
+</table>
+<h3>電源情報を提供した発電設備設置者さまへ</h3>
+<p>電源情報を提供した発電設備設置者さまが、情報漏えいをしている（おそれがある）ことを確認した場合は、電源情報の開示請求者に関わる情報を入手することが可能となります。</p>
+<p>電源情報の開示請求者に関わる情報が必要な場合は「電源情報の開示請求者に関わる情報開示要請書 兼 秘密保持誓約書」を当社窓口に郵送にて提出願います。</p>
+<p style="margin-bottom: 0px;">（申込書等）</p>
+<table style="margin-left: 10px; margin-top: 2px;">
+<tbody>
+<tr>
+<td style="border-color: currentcolor; border-style: solid; border-width: 0px; padding: 2px;" valign="top" align="left"><img alt="WORDファイル" src="/library/file-type/word.gif" width="20" height="17" /></td>
+<td valign="top"><a class="pbOpenNewWindow" href="/var/rev0/0233/7721/119122010158.docx">電源情報の開示請求者に関わる情報開示要請書 兼 秘密保持誓約書</a>（27KB）</td>
+</tr>
+</tbody>
+</table>
+<h3>当社窓口</h3>
+<p>九州電力株式会社 送配電カンパニー<br />
+配電本部 ネットワークサービスセンター 系統アクセスグループ<br />
+電話番号（代表）：092-761-3031　[営業時間　平日９時～17時]<br />
+メールアドレス：<a href="mailto:DJK@kyuden.co.jp">DJK@kyuden.co.jp</a><br />
+住所：福岡県福岡市中央区渡辺通二丁目１番８２号<br />
+（注）お電話がつながりにくくなることも想定されますので、お問合わせにつきましては、電子メールもご活用ください。</p>
 </div>
 </div>
 </div>
@@ -1687,4 +1764,4 @@ jQuery.noConflict();
 </body>
 </html>
 
-<!-- static作成日時 2019/12/17 22:49:05 ,staticファイル名 wheeling_disclosure.html (from:php) --> 
+<!-- static作成日時 2020/01/07 00:08:00 ,staticファイル名 wheeling_disclosure.html (from:php) --> 
