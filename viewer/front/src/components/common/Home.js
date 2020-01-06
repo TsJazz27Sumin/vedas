@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import '@shopify/polaris/styles.css';
 import styled from 'styled-components';
+import { debounce } from "lodash";
 import { isMobile, isTablet, osName, browserName, deviceType } from "react-device-detect";
 import HeroHeader from 'components/common/atoms/HeroHeader'
 import HeroWithoutTitle from 'components/common/atoms/HeroWithoutTitle'
@@ -13,7 +14,10 @@ import News from 'components/news/News'
 import Usage from 'components/usage/Usage'
 import wordDictionaryService from 'services/word_dictionary'
 import Color from 'services/color';
+import WindowSizeService from 'services/window_size';
 import 'css/Common.css';
+
+const initial_width = WindowSizeService.getWindowWidthSize();
 
 const Home = (props) => {
 
@@ -38,11 +42,25 @@ const Home = (props) => {
     setLang(newValue);
   }, []);
 
+  const [broserWidth, setBroserWidth] = useState(initial_width);
+  const debouncedHandleChange = debounce(
+      () => {
+        setBroserWidth(WindowSizeService.getWindowWidthSize());
+        console.log(WindowSizeService.getWindowWidthSize());
+      },
+      500
+  );
+  const handleBroserWidthChange = useCallback(() => {
+    debouncedHandleChange();
+    // eslint-disable-next-line
+  }, []);
+  window.addEventListener('resize', handleBroserWidthChange);
+
   let dict = wordDictionaryService.getV2(lang);
 
   const hero = getHero(menu, lang, true);
   const content = getContent(lang, qs, dict, menu, handleMenuChange);
-  const StyledComponents = getStyledComponents();
+  const StyledComponents = getStyledComponents(broserWidth);
   const OutLine = StyledComponents.OutLine;
 
   return (
@@ -56,13 +74,15 @@ const Home = (props) => {
   )
 }
 
-const getStyledComponents = () => {
+const getStyledComponents = (broserWidth) => {
+
+  const default_width = 1440;
 
   let OutLine = styled.div`
   background: ${Color.white};
 
-  // height: 100%;
-  width: 1440px;
+  width: ${default_width}px;
+  margin-left: ${(broserWidth - default_width) / 2}px;
 
   position: relative;
   `;

@@ -58,7 +58,7 @@
 
 ### server
 
- - Framework : Django ※あとでバージョン書く。
+ - Framework : Django 3.0
  - Language : Python 3.8.0
 
 ## 構成図

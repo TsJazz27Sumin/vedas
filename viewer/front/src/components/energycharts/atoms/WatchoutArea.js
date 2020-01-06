@@ -20,6 +20,7 @@ const WatchoutArea = (props) => {
         <p>{dict.watchout}</p>
       </WatchoutTitle>
       <WatchoutTexts>
+        <p>{dict.watchout_info1}</p>
         <p>{dict.watchout_info2}</p>
         <p>{dict.watchout_info3}</p>
         <p>{dict.watchout_info4}</p>
@@ -53,7 +54,7 @@ const getStyledComponents = (checkedCount) => {
   color: ${Color.black};
 
   padding: 0% 0% 0% 0%;
-  margin:  5% 0% 0% 0%;
+  margin:  5% 5% 0% 0%;
   
   line-height: 36px;
 `;
