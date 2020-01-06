@@ -20,6 +20,7 @@ const WatchoutArea = (props) => {
         <p>{dict.watchout}</p>
       </WatchoutTitle>
       <WatchoutTexts>
+        <p>{dict.watchout_info1}</p>
         <p>{dict.watchout_info2}</p>
         <p>{dict.watchout_info3}</p>
         <p>{dict.watchout_info4}</p>
