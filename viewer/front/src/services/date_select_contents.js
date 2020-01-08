@@ -7,7 +7,7 @@ const get = () => {
   const japanStandardTime = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
   const today = new Date(japanStandardTime);
   const this_year = today.getFullYear();
-  const prev_month = today.getMonth();
+  const this_month = today.getMonth();
   let year_map = [];
   let month_map = [];
   let date_map = [];
@@ -22,7 +22,7 @@ const get = () => {
     date_map.push({ label: zeroPadding(date.toString(), 2), value: date });
   }
 
-  return {year_map, month_map, date_map, prev_month, this_year}
+  return {year_map, month_map, date_map, this_month, this_year}
 }
 
 const get_date_map = (year, month) => {

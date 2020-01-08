@@ -13,7 +13,7 @@ const useDateSelect = (electoric_power_data_initialize_params, setData, setIsLoa
 
     const month_initialize = (
         initialize.month_initialize !== undefined
-    ) ? parseInt(initialize.month_initialize) : dateSelectContents.prev_month;
+    ) ? parseInt(initialize.month_initialize) : dateSelectContents.this_month;
 
     const date_initialize = (
         initialize.date_initialize !== undefined
@@ -21,7 +21,6 @@ const useDateSelect = (electoric_power_data_initialize_params, setData, setIsLoa
 
     const [dateSelected, setDateSelected] = useState(date_initialize);
     const handleDateSelectChange = useCallback((unit, yearSelected, monthSelected, value) => {
-
         const date = new Date(parseInt(yearSelected), parseInt(monthSelected - 1), parseInt(value));
         const month = date.getMonth() + 1;
 

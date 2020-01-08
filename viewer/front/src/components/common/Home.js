@@ -25,6 +25,7 @@ const Home = (props) => {
   const qs = props.qs;
 
   useEffect(() => {
+    document.getElementById("scroll-up").classList.add("display-none");
     if (qs.case !== undefined){
       window.scrollTo(0, 1300);
     }
@@ -46,7 +47,6 @@ const Home = (props) => {
   const debouncedHandleChange = debounce(
       () => {
         setBroserWidth(WindowSizeService.getWindowWidthSize());
-        console.log(WindowSizeService.getWindowWidthSize());
       },
       500
   );
@@ -62,12 +62,46 @@ const Home = (props) => {
   const content = getContent(lang, qs, dict, menu, handleMenuChange);
   const StyledComponents = getStyledComponents(broserWidth);
   const OutLine = StyledComponents.OutLine;
+  const ScrollDown = StyledComponents.ScrollDown;
+  const ScrollDownP = StyledComponents.ScrollDownP;
+  const ScrollUp = StyledComponents.ScrollUp;
+  const ScrollUpP = StyledComponents.ScrollUpP;
+
+  const handleScrollChange = useCallback(() => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = WindowSizeService.getWindowHeightSize()
+    let scrollDown = document.getElementById("scroll-down");
+    let scrollUp = document.getElementById("scroll-up");
+
+    if(scrollTop === 0){
+      scrollUp.classList.add("display-none");
+      scrollDown.classList.remove("display-none");
+    } else if (scrollTop > height){
+      scrollDown.classList.add("display-none");
+    } else if (scrollTop < height){
+      scrollDown.classList.remove("display-none");
+    }
+
+    if(scrollTop > 0){
+      if (scrollUp.classList.contains("display-none")){
+        scrollUp.classList.remove("display-none");
+      }
+    }
+    // eslint-disable-next-line
+  }, []);
+  window.addEventListener('scroll', handleScrollChange);
 
   return (
       isTablet ? (<TabletMessage/>):(
       <OutLine>
         <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
         {hero}
+        <ScrollDown id="scroll-down">
+          <ScrollDownP>SCROLL→</ScrollDownP>
+        </ScrollDown>
+        <ScrollUp id="scroll-up" onClick={() => window.scrollTo(0, 0)}>
+          <ScrollUpP>←BACK TO TOP</ScrollUpP>
+        </ScrollUp>
         {content}
       </OutLine>
     )
@@ -87,6 +121,53 @@ const getStyledComponents = (broserWidth) => {
   position: relative;
   `;
 
+  let ScrollDown = styled.div`
+  position: fixed;
+  top: calc(100% - 118px);
+  height: 98px;
+  width: 12px;
+  left: 20px;
+  z-index: 3;
+  `;
+
+  let ScrollDownP = styled.p`
+  width: 60px;
+  font-family: aktiv-grotesk,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 2px;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate3d(12px,0,0) rotate(90deg);
+  transform: translate3d(12px,0,0) rotate(90deg);
+  `;
+
+  let ScrollUp = styled.div`
+  position: fixed;
+  top: calc(100% - 158px);
+  height: 98px;
+  width: 12px;
+  right: 20px;
+  z-index: 3;
+  cursor: pointer;
+  `;
+
+  let ScrollUpP = styled.p`
+  width: 122px;
+  font-family: aktiv-grotesk,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 2px;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate3d(12px,0,0) rotate(90deg);
+  transform: translate3d(12px,0,0) rotate(90deg);
+  `;
+
   if (isMobile){
     OutLine = styled(OutLine)`
     height: 100%;
@@ -95,7 +176,11 @@ const getStyledComponents = (broserWidth) => {
   }
 
   return {
-    OutLine : OutLine
+    OutLine : OutLine,
+    ScrollDown : ScrollDown,
+    ScrollDownP : ScrollDownP,
+    ScrollUp : ScrollUp,
+    ScrollUpP : ScrollUpP
   };
 }
 
