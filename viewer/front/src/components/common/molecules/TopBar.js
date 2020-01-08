@@ -86,7 +86,7 @@ const getStyledComponents = () => {
   padding: 0% 0% 0% 0%;
   margin:  0% 0% 0% 0%;
 
-  position: fixed;
+  position: absolute;
   
   z-index: 999;
   `;
