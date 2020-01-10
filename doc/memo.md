@@ -46,7 +46,7 @@
  - ssh -i ~/.ssh/Vedas.pem ec2-user@52.196.187.98
  - ssh -i ~/.ssh/Vedas.pem app-user@52.196.187.98
  - sudo su app-user
- - sh init.sh
+   - sh init.sh
  - redis-server
  - Redis キーの削除
    - https://www.yuulinux.tokyo/2959/
