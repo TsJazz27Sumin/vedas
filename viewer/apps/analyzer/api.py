@@ -32,6 +32,7 @@ from viewer.apps.analyzer.decorator.auth import authenticate
 SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
 SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
+
 @authenticate()
 def correct_data(request, reflesh=True):
     # TODO:IPでアクセス制限するだけなので、どこかで認証を手厚くすることを検討。
