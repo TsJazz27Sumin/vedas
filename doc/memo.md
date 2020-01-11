@@ -22,13 +22,15 @@
           4. source ~/.bashrc
  9.  Djangoアプリケーションのデプロイ
      1.  [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
-     2.  [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
+     2.  python3 -m "venv" venv
+     3.  . venv/bin/activate
+     4.  [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
          1.  nginx
              1.  sudo amazon-linux-extras install nginx1.12
              2.  [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
                  1.  systemctl enable nginx
          2.  gunicon
-     3.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
+     5.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. Reactのdeploy
      1.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
      2.  [CloudFrontのキャッシュをすぐにクリアする方法](https://www.aruse.net/entry/2018/10/08/090631)
