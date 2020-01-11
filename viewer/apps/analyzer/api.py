@@ -20,14 +20,7 @@ from viewer.apps.analyzer.controller.tohokuepco import TohokuEpcoController
 from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import authenticate
 
-# http://d190d5rjx2yi3y.cloudfront.net/
-# http://d190d5rjx2yi3y.cloudfront.net/?case=1
-# http://d190d5rjx2yi3y.cloudfront.net/?case=2
-# http://d190d5rjx2yi3y.cloudfront.net/?case=3
-# http://d190d5rjx2yi3y.cloudfront.net/?case=4
-# http://d190d5rjx2yi3y.cloudfront.net/?case=5
 # http://18.176.42.188:8000/viewer/analyzer/correct_data
-# http://52.196.187.98:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
 
 SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
@@ -37,9 +30,6 @@ SLACK_URL_CONTACT = 'https://hooks.slack.com/services/T055X1TTC/BRYHE264C/v1QBBU
 @authenticate()
 def correct_data(request, reflesh=True):
     # TODO:IPでアクセス制限するだけなので、どこかで認証を手厚くすることを検討。
-    # redisのインストールは、こちらを参考に。
-    # redis-server
-    # https://qiita.com/sawa-@github/items/1f303626bdc219ea8fa1
     root_path = os.getcwd()
     start = time.time()
 
@@ -163,7 +153,6 @@ def get_daily_data(request):
         raise Http404()
 
 # http://18.176.42.188:8000/viewer/analyzer/check_download_page
-# http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page
 @authenticate()
 def check_download_page(request):

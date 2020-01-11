@@ -33,7 +33,7 @@
          2.  gunicon
              1.  pip3 install git+https://github.com/benoitc/gunicorn.git
              2.  https://stackoverflow.com/questions/29679963/why-gunicorn-command-not-found-with-gunicorn-installed
-             3.  gunicorn viewer.wsgi --bind=0.0.0.0:8000
+             3.  gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
      5.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. Reactのdeploy
      1.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
@@ -53,8 +53,6 @@
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
  - source ~/.bashrc
- - ssh -i ~/.ssh/Vedas.pem ec2-user@52.196.187.98
- - ssh -i ~/.ssh/Vedas.pem app-user@52.196.187.98
  - ssh -i ~/.ssh/vedas_production.pem ec2-user@18.176.42.188
  - ssh -i ~/.ssh/vedas_production.pem app-user@18.176.42.188
  - sudo su app-user
