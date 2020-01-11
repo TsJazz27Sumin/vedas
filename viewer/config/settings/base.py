@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'vedas.cloud',
     '18.176.42.188',
     '153.156.90.23',
     '114.160.237.81',
@@ -142,5 +143,6 @@ sys.path.append(os.path.join(PROJECT_ROOT, "apps"))
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://d3pjh7u912sdgb.cloudfront.net'
+    'http://d3pjh7u912sdgb.cloudfront.net',
+    'https://vedas.cloud'
 )

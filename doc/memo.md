@@ -36,19 +36,24 @@
              3.  gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
      5.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. Reactのdeploy
-     1.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
-     2.  [CloudFrontのキャッシュをすぐにクリアする方法](https://www.aruse.net/entry/2018/10/08/090631)
-     3.  [React.jsとcreate-react-appを使ってタダでAWS S3にイケてる動的サイトをサクッと作る方法（環境構築編）](https://goleiro.hatenablog.com/entry/2017/03/20/030018)
-     4.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
-     5.  [CodeBuildでStandard2.0のイメージを使用したらエラー出たときの対処](https://qiita.com/maruware/items/c3a6f6741220ef3e61f7)
-     6.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
-     7.  [【AWS】CloudFront→S3の構成においてサブディレクトリへのアクセスでもindex.htmlの補完を有効化する方法](https://gadgeterkun.hatenablog.com/entry/20191120/1574211600)
-     8.  [できた！S3 オリジンへの直接アクセス制限と、インデックスドキュメント機能を共存させる方法](https://dev.classmethod.jp/cloud/aws/directory-indexes-in-s3-origin-backed-cloudfront/)
+     1.  [Amazon CloudFrontとは](https://hacknote.jp/archives/41668/)
+     2.  [DDoS攻撃とCDNの関係について考える](https://www.orangeitems.com/entry/2018/10/31/062000)
+     3.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
+     4.  [CloudFrontのキャッシュをすぐにクリアする方法](https://www.aruse.net/entry/2018/10/08/090631)
+     5.  [React.jsとcreate-react-appを使ってタダでAWS S3にイケてる動的サイトをサクッと作る方法（環境構築編）](https://goleiro.hatenablog.com/entry/2017/03/20/030018)
+     6.  [How to deploy your React App with AWS S3](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081)
+     7.  [CodeBuildでStandard2.0のイメージを使用したらエラー出たときの対処](https://qiita.com/maruware/items/c3a6f6741220ef3e61f7)
+     8.  [節約のために CodePipeline をやめて CodeBuild に全部任せてみた](https://michimani.net/post/aws-use-only-codebuild/)
+     9.  [【AWS】CloudFront→S3の構成においてサブディレクトリへのアクセスでもindex.htmlの補完を有効化する方法](https://gadgeterkun.hatenablog.com/entry/20191120/1574211600)
+     10. [できた！S3 オリジンへの直接アクセス制限と、インデックスドキュメント機能を共存させる方法](https://dev.classmethod.jp/cloud/aws/directory-indexes-in-s3-origin-backed-cloudfront/)
  11. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
      2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
  12. SSL
      1.  [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
+     2.  [CloudFront で S3 静的ウェブサイトホスティングを SSL/TLS に対応させる](https://dev.classmethod.jp/cloud/aws/tls-for-s3-web-hosting-with-cloudfront/)
+     3.  Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
+     4.  [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
