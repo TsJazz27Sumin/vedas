@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'vedas.cloud',
     '18.176.42.188',
+    'vedas-api.com',
     '153.156.90.23',
     '114.160.237.81',
     '153.142.78.90',
