@@ -20,7 +20,7 @@ from viewer.apps.analyzer.controller.tohokuepco import TohokuEpcoController
 from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import authenticate
 
-# http://18.176.42.188:8000/viewer/analyzer/correct_data
+# http://vedas-api.com:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
 
 SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
@@ -152,7 +152,7 @@ def get_daily_data(request):
         )
         raise Http404()
 
-# http://18.176.42.188:8000/viewer/analyzer/check_download_page
+# http://vedas-api.com:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page
 @authenticate()
 def check_download_page(request):
@@ -178,6 +178,11 @@ def check_download_page(request):
     slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
     return JsonResponse(data)
+
+
+# http://127.0.0.1:8000/viewer/analyzer/health_check
+def health_check(request):
+    return JsonResponse({"message": "success"})
 
 
 # TODO:Reactからのリクエストしか受けないことを確認する。
