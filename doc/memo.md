@@ -15,6 +15,7 @@
     1. [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
     2. 必要なモジュールを追加してpythonの再インストールもしている。
        1. [Python3.7入れる時に `No module named '_ctypes'` エラー](http://saruhei1989.hatenablog.com/entry/2019/04/06/090000)
+          1. これやってからPython install!!!
        2. パスが通ってないだけだった。
           1. echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
           2. echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
@@ -30,6 +31,9 @@
              2.  [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
                  1.  systemctl enable nginx
          2.  gunicon
+             1.  pip3 install git+https://github.com/benoitc/gunicorn.git
+             2.  https://stackoverflow.com/questions/29679963/why-gunicorn-command-not-found-with-gunicorn-installed
+             3.  gunicorn viewer.wsgi --bind=0.0.0.0:8000
      5.  [【python】Django起動・停止](https://tokyo-engineer.com/python_django_start_stop/)
  10. Reactのdeploy
      1.  [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
@@ -43,6 +47,7 @@
  11. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
      2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
+ 12. [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
@@ -50,6 +55,7 @@
  - ssh -i ~/.ssh/Vedas.pem ec2-user@52.196.187.98
  - ssh -i ~/.ssh/Vedas.pem app-user@52.196.187.98
  - ssh -i ~/.ssh/vedas_production.pem ec2-user@18.176.42.188
+ - ssh -i ~/.ssh/vedas_production.pem app-user@18.176.42.188
  - sudo su app-user
    - sh init.sh
  - redis-server

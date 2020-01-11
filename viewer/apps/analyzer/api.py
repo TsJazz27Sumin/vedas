@@ -26,6 +26,7 @@ from viewer.apps.analyzer.decorator.auth import authenticate
 # http://d190d5rjx2yi3y.cloudfront.net/?case=3
 # http://d190d5rjx2yi3y.cloudfront.net/?case=4
 # http://d190d5rjx2yi3y.cloudfront.net/?case=5
+# http://18.176.42.188:8000/viewer/analyzer/correct_data
 # http://52.196.187.98:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
 
@@ -161,6 +162,7 @@ def get_daily_data(request):
         )
         raise Http404()
 
+# http://18.176.42.188:8000/viewer/analyzer/check_download_page
 # http://52.196.187.98:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page
 @authenticate()
