@@ -47,7 +47,8 @@
  11. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
      2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
- 12. [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
+ 12. SSL
+     1.  [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer

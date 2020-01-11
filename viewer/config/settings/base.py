@@ -134,5 +134,5 @@ sys.path.append(os.path.join(PROJECT_ROOT, "apps"))
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://d190d5rjx2yi3y.cloudfront.net'
+    'http://d3pjh7u912sdgb.cloudfront.net'
 )
