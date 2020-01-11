@@ -10,8 +10,8 @@ from viewer.apps.analyzer.service.service import Service
 class KyudenService(Service):
 
     COMPANY_NAME = 'kyuden'
-    ROOT_URL = 'http://www.kyuden.co.jp/var/rev0/0233/'
-    KEY_NUMBER = 7702
+    ROOT_URL = 'http://www.kyuden.co.jp/var/rev0/0234/'
+    KEY_NUMBER = 3015
 
     @classmethod
     def correct_data(cls, urls, root_path, reflesh):

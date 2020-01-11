@@ -1,9 +1,6 @@
 import json
 import pathlib
-import pickle
 import os
-
-import redis
 
 from viewer.apps.analyzer.function.request import RequestFunction
 
@@ -80,12 +77,5 @@ class FileFunction(object):
 
     @classmethod
     def get_decoded_data(cls, url):
-        redis_connection = redis.Redis(host='localhost', port=6379, db=0)
-        if redis_connection.exists(url):
-            decoded_data = pickle.loads(redis_connection.get(url))
-        else:
-            # CSV、もしくはExcelの元ネタを再読み込みする場合に、HPにアクセスしなくて済むようにRedisに格納している。
-            decoded_data = RequestFunction.get_decoded_data(url)
-            dumped = pickle.dumps(decoded_data, protocol=2)
-            redis_connection.set(url, dumped)
+        decoded_data = RequestFunction.get_decoded_data(url)
         return decoded_data
