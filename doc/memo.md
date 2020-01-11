@@ -61,7 +61,7 @@
  - Redis キーの削除
    - https://www.yuulinux.tokyo/2959/
  - python3 manage.py runserver 0:8000
- - gunicorn your_project.wsgi --bind=0.0.0.0:8000 -D
+ - gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
    - -Dがデーモン化
  - git reset --hard origin/master
 - chmod 600 ~/.ssh/config
