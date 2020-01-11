@@ -30,6 +30,8 @@
              1.  sudo amazon-linux-extras install nginx1.12
              2.  [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
                  1.  systemctl enable nginx
+             3.  [nginx起動、再起動](https://qiita.com/Kaisyou/items/dadf6fe9ee93fb69e76c)
+             4.  [他のプロセスがポートを占有してnginxを再起動できない](https://qiita.com/Yu-s/items/64c54def20e5fa64edd1)
          2.  gunicon
              1.  pip3 install git+https://github.com/benoitc/gunicorn.git
              2.  https://stackoverflow.com/questions/29679963/why-gunicorn-command-not-found-with-gunicorn-installed
@@ -54,6 +56,7 @@
      2.  [CloudFront で S3 静的ウェブサイトホスティングを SSL/TLS に対応させる](https://dev.classmethod.jp/cloud/aws/tls-for-s3-web-hosting-with-cloudfront/)
      3.  Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
      4.  [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
+     5.  [AWSのロードバランサーはセキュリティグループに自分のグループIDが追加されてないと504 Gatewaytimeoutになる](https://yoshinorin.net/2018/06/16/aws-loadbalancer-504-gatewaytimeout/)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
