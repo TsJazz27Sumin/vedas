@@ -1,6 +1,7 @@
 import json
 import traceback
 
+import subprocess
 import slackweb
 from django.http import JsonResponse, Http404
 import os
@@ -180,8 +181,13 @@ def check_download_page(request):
     return JsonResponse(data)
 
 
+# https://vedas-api.com/viewer/analyzer/health_check
+# http://18.176.42.188:8000/viewer/analyzer/health_check
 # http://127.0.0.1:8000/viewer/analyzer/health_check
 def health_check(request):
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+    slack.notify(text='health_check ok')
+
     return JsonResponse({"message": "success"})
 
 

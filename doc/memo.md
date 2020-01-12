@@ -51,12 +51,22 @@
  11. WAFの設定
      1.  [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
      2.  IP setを設定して社内限定リリース版は、アクセス制限をかけている。
- 12. SSL
+ 12. SSL & NLB
      1.  [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
      2.  [CloudFront で S3 静的ウェブサイトホスティングを SSL/TLS に対応させる](https://dev.classmethod.jp/cloud/aws/tls-for-s3-web-hosting-with-cloudfront/)
      3.  Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
      4.  [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
-     5.  [AWSのロードバランサーはセキュリティグループに自分のグループIDが追加されてないと504 Gatewaytimeoutになる](https://yoshinorin.net/2018/06/16/aws-loadbalancer-504-gatewaytimeout/)
+     5.  [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
+     6.  [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
+     7.  cloudfrontに合わせて、API側もドメイン取得＋
+     8.  VPCをデフォルトではなく専用で作って、パブリックサブネットで設定して、その中にEC2を配置している。
+     9.  ロードバランサーは、Network Load Balancerを使っている。
+     10. 最後にRoute53にロードバランサーを登録、HTTPS⇒HTTPに変換でAPIアクセス。
+     11. HTTPSの終端は、ロードバランサー。
+ 13. ボトルネック調査
+     1.  [curlでボトルネック調査をする](http://akuwano.hatenablog.jp/entry/20120503/1335994486)
+ 14. Loggin
+     1.  
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
@@ -81,6 +91,11 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 ### ワンライナーで簡単にDjangoを停止させる方法
 ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
+
+### ネットワーク調査
+curl  -o /dev/null http://vedas-api.com:8000/viewer/analyzer/health_check -w @/Users/hasumiyouhei/Desktop/curl_env.txt -s
+curl  -o /dev/null https://vedas-api.com/viewer/analyzer/health_check -w @/Users/hasumiyouhei/Desktop/curl_env.txt -s
+curl  -o /dev/null http://vedas-api.com:8000/viewer/analyzer/check_download_page -w @/Users/hasumiyouhei/Desktop/curl_env.txt -s
 
 http://www.nendo.jp/
 https://www.moma.org/
