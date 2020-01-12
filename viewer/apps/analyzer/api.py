@@ -1,7 +1,6 @@
 import json
 import traceback
 
-import subprocess
 import slackweb
 from django.http import JsonResponse, Http404
 import os
@@ -19,7 +18,7 @@ from viewer.apps.analyzer.controller.tepco import TepcoController
 
 from viewer.apps.analyzer.controller.tohokuepco import TohokuEpcoController
 from viewer.apps.analyzer.controller.yonden import YondenController
-from viewer.apps.analyzer.decorator.auth import authenticate
+from viewer.apps.analyzer.decorator.auth import localhost_only
 
 # http://vedas-api.com:8000/viewer/analyzer/correct_data
 # http://127.0.0.1:8000/viewer/analyzer/correct_data
@@ -28,9 +27,8 @@ SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/T055X1TTC/BRYJBSQMA/JUQCe8r
 SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
 
-@authenticate()
+@localhost_only()
 def correct_data(request, reflesh=True):
-    # TODO:IPでアクセス制限するだけなので、どこかで認証を手厚くすることを検討。
     root_path = os.getcwd()
     start = time.time()
 
@@ -82,8 +80,9 @@ def correct_data(request, reflesh=True):
 
     return JsonResponse(data)
 
+
 # http://127.0.0.1:8000/viewer/analyzer/get
-@authenticate()
+# TODO:Reactからのリクエストしか受けないことを確認する。
 def get(request):
     unit = request.GET.get(key="unit", default="ym")
     from_value = request.GET.get(key="from", default="2016/04")
@@ -117,8 +116,9 @@ def get(request):
         )
         raise Http404()
 
+
 # http://127.0.0.1:8000/viewer/analyzer/get_daily_data
-@authenticate()
+# TODO:Reactからのリクエストしか受けないことを確認する。
 def get_daily_data(request):
     unit = request.GET.get(key="unit", default="ym")
     year_value = request.GET.get(key="year", default="2019")
@@ -155,7 +155,7 @@ def get_daily_data(request):
 
 # http://vedas-api.com:8000/viewer/analyzer/check_download_page
 # http://127.0.0.1:8000/viewer/analyzer/check_download_page
-@authenticate()
+@localhost_only()
 def check_download_page(request):
     root_path = os.getcwd()
     start = time.time()
@@ -184,6 +184,7 @@ def check_download_page(request):
 # https://vedas-api.com/viewer/analyzer/health_check
 # http://18.176.42.188:8000/viewer/analyzer/health_check
 # http://127.0.0.1:8000/viewer/analyzer/health_check
+@localhost_only()
 def health_check(request):
     slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
     slack.notify(text='health_check ok')
