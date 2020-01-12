@@ -20,13 +20,12 @@ from viewer.apps.analyzer.controller.tohokuepco import TohokuEpcoController
 from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import localhost_only
 
-# http://vedas-api.com:8000/viewer/analyzer/correct_data
-# http://127.0.0.1:8000/viewer/analyzer/correct_data
 
 SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
 SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
 
+# curl http://127.0.0.1:8000/viewer/analyzer/correct_data
 @localhost_only()
 def correct_data(request, reflesh=True):
     root_path = os.getcwd()
@@ -153,8 +152,8 @@ def get_daily_data(request):
         )
         raise Http404()
 
-# http://vedas-api.com:8000/viewer/analyzer/check_download_page
-# http://127.0.0.1:8000/viewer/analyzer/check_download_page
+
+# curl http://127.0.0.1:8000/viewer/analyzer/check_download_page
 @localhost_only()
 def check_download_page(request):
     root_path = os.getcwd()
@@ -181,9 +180,7 @@ def check_download_page(request):
     return JsonResponse(data)
 
 
-# https://vedas-api.com/viewer/analyzer/health_check
-# http://18.176.42.188:8000/viewer/analyzer/health_check
-# http://127.0.0.1:8000/viewer/analyzer/health_check
+# curl http://127.0.0.1:8000/viewer/analyzer/health_check
 @localhost_only()
 def health_check(request):
     slack = slackweb.Slack(url=SLACK_URL_NOTIFY)

@@ -10,6 +10,8 @@ def localhost_only():
 
             if remote_addr == '127.0.0.1' or remote_addr == 'localhost':
                 return function(*args, **kwargs)
+            else:
+                raise Http404('Not Found')
 
         return wrapper
     return __decorator
