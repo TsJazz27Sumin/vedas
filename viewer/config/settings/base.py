@@ -24,14 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'yo6)8xw^0a+khvz6ed+q+k^7+7&!-e2!0c#-qe9wixkhterk)h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'vedas.cloud',
-    '18.176.42.188',
-    'vedas-api.com',
     '153.156.90.23',
     '114.160.237.81',
     '153.142.78.90',
@@ -144,6 +142,5 @@ sys.path.append(os.path.join(PROJECT_ROOT, "apps"))
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://d3pjh7u912sdgb.cloudfront.net',
     'https://vedas.cloud'
 )
