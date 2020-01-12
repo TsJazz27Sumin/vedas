@@ -80,8 +80,7 @@ def correct_data(request, reflesh=True):
     return JsonResponse(data)
 
 
-# http://127.0.0.1:8000/viewer/analyzer/get
-# TODO:Reactからのリクエストしか受けないことを確認する。
+# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def get(request):
     unit = request.GET.get(key="unit", default="ym")
     from_value = request.GET.get(key="from", default="2016/04")
@@ -116,8 +115,7 @@ def get(request):
         raise Http404()
 
 
-# http://127.0.0.1:8000/viewer/analyzer/get_daily_data
-# TODO:Reactからのリクエストしか受けないことを確認する。
+# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def get_daily_data(request):
     unit = request.GET.get(key="unit", default="ym")
     year_value = request.GET.get(key="year", default="2019")
@@ -189,7 +187,7 @@ def health_check(request):
     return JsonResponse({"message": "success"})
 
 
-# TODO:Reactからのリクエストしか受けないことを確認する。
+# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def contact(request):
     datas = json.loads(request.body)
     full_name = datas['full_name']
@@ -203,7 +201,7 @@ def contact(request):
     return JsonResponse({"message": "success"})
 
 
-# TODO:Reactからのリクエストしか受けないことを確認する。
+# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def share(request):
     datas = json.loads(request.body)
     type = datas['type']
