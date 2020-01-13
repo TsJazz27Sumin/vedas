@@ -151,10 +151,8 @@ const getStyledComponents = () => {
     TopBarArea = styled(TopBarArea)`
     border-radius: 12px;
 
-    background: ${Color.gray};
-
     height: 8%;
-    width:${WindowSizeService.getWindowWidthSize() + 60}px;
+    width:${WindowSizeService.getWindowWidthSize()}px;
 
     opacity: 0.7;
     `;
@@ -193,7 +191,7 @@ const getStyledComponents = () => {
     `;
 
     MenuItemDropdownWrapper = styled(MenuItemDropdownWrapper)`
-    width: 160px;
+    width:${WindowSizeService.getWindowWidthSize() - 255}px;
     
     padding: 0% 0% 0% 0%;
     margin: 1% 25% 0% 0%;
