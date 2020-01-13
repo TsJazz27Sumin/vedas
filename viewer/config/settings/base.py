@@ -27,7 +27,7 @@ SECRET_KEY = 'yo6)8xw^0a+khvz6ed+q+k^7+7&!-e2!0c#-qe9wixkhterk)h'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '172.20.10.3',
+    # '192.168.0.16', スマホ実機テスト用 runserver 192.168.0.21:8000 しないとReactと組み合わせて使えない。
     '127.0.0.1',
     'localhost',
     'vedas.cloud',
@@ -40,7 +40,7 @@ ALLOWED_HOSTS = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://172.20.10.2:3000',
+    # 'http://192.168.0.21:3000',　スマホ実機テスト用
     'http://localhost:3000',
     'http://localhost:8000',
     'https://vedas.cloud'

@@ -65,11 +65,11 @@ const getStyledComponents = (checkedCount) => {
     let intervalHeight = 0;
 
     if (window_height > 800){
-      intervalHeight = 280;
+      intervalHeight = 320;
     } else if (window_height > 700){
-      intervalHeight = 315;
+      intervalHeight = 355;
     } else if (window_height > 600){
-      intervalHeight = 280;
+      intervalHeight = 320;
     }
 
     WatchoutArea = styled(WatchoutArea)`margin-top: ${525 + (intervalHeight * checkedCount)}px; width: 89%;`;
