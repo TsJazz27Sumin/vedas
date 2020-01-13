@@ -126,7 +126,7 @@ const getStyledComponents = (checkedCount, lang) => {
   width: 90%;
 
   padding: 0% 0% 0% 0%;
-  margin:  0% 0% 0% 0%;
+  margin:  30% 0% 0% 0%;
   
   position: absolute;
   top: auto;

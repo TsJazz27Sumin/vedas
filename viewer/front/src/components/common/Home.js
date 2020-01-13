@@ -174,6 +174,14 @@ const getStyledComponents = (broserWidth) => {
     width: 100%;
     margin-left: 0;
     `;
+
+    ScrollDown = styled(ScrollDown)`
+      display: none;
+    `;
+
+    ScrollDownP = styled(ScrollDownP)`
+      display: none;
+    `;
   }
 
   return {

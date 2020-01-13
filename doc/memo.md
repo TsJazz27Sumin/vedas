@@ -65,8 +65,11 @@
      11. HTTPSの終端は、ロードバランサー。
  13. ボトルネック調査
      1.  [curlでボトルネック調査をする](http://akuwano.hatenablog.jp/entry/20120503/1335994486)
- 14. Loggin
-     1.  
+ 14. Logging
+     1.  [Nginxログローテートの設定の実例](https://qiita.com/koudaiii/items/23322bf7037c6a7b1cea)
+     2.  [Gunicornでのログローテーション](http://ja.voidcc.com/question/p-cibwnwth-dk.html)
+ 15. mac実機確認
+     1.  [MacのlocalhostにiPhoneで接続する方法](https://qiita.com/sabineko/items/c4725c649c57a0432104)
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer

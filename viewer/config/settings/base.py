@@ -38,6 +38,11 @@ ALLOWED_HOSTS = [
     '114.160.244.66'
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'https://vedas.cloud'
+)
 
 # Application definition
 
@@ -121,9 +126,3 @@ PROJECT_ROOT = os.path.dirname(DJANGO_ROOT)
 
 # Add apps/ to the Python path
 sys.path.append(os.path.join(PROJECT_ROOT, "apps"))
-
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-    'http://localhost:8000',
-    'https://vedas.cloud'
-)
