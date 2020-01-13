@@ -15,7 +15,7 @@ const Article = (props) => {
 
   let TextList = []
   for(let i = 0; i < text_list.length; i++){
-    TextList.push(<Text2><p>{text_list[i]}</p></Text2>);
+    TextList.push(<Text2 key={props.name + i}><p>{text_list[i]}</p></Text2>);
   }
 
   return (

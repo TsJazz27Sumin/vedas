@@ -69,7 +69,7 @@ const Home = (props) => {
 
   const handleScrollChange = useCallback(() => {
     const scrollTop = document.documentElement.scrollTop;
-    const height = WindowSizeService.getWindowHeightSize()
+    const height = WindowSizeService.getWindowHeightSize() / 3;
     let scrollDown = document.getElementById("scroll-down");
     let scrollUp = document.getElementById("scroll-up");
 

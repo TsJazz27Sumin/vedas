@@ -13,7 +13,7 @@ const Content = (props) => {
 
   return (
     <Content>
-      <Article key="20200118" date="2020/01/18" texts={dict.news1_1 + ',' + dict.news1_2} pathname={props.pathname}/>
+      <Article key="20200118" date="2020/01/18" name="20200118_" texts={dict.news1_1 + ',' + dict.news1_2} pathname={props.pathname}/>
     </Content>
   )
 }
