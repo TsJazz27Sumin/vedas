@@ -11,10 +11,17 @@ const Article = (props) => {
   const Text1 = StyledComponents.Text1;
   const Text2 = StyledComponents.Text2;
 
+  const text_list = props.texts.split(',');
+
+  let TextList = []
+  for(let i = 0; i < text_list.length; i++){
+    TextList.push(<Text2><p>{text_list[i]}</p></Text2>);
+  }
+
   return (
     <div>
       <Text1><p>{props.date}</p></Text1>
-      <Text2><p>{props.text}</p></Text2>
+      {TextList}
       <ShareButtonArea>
         <ShareButtons type={"small"} pathname={props.pathname}/>
       </ShareButtonArea>

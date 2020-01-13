@@ -12,6 +12,8 @@ const get = () => {
         "analyze_condtion_text5": "* Please select the day you want to check.",
         "sample_news2": "(sample) January data has been updated.",
         "sample_news1": "(sample) Happy New Year. Vedas has been released.",
+        "news1_2": "We will update the data from time to time. Have fun!",
+        "news1_1": "Happy New Year. Vedas has been released.",
         "contact_place_folder1": "Panair Taro",
         "contact_place_folder2": "contact@vedas.jp",
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",

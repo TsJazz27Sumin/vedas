@@ -12,6 +12,8 @@ const get = () => {
         "analyze_condtion_text5": "※ 请选择您要检查的日期",
         "sample_news2": "(sample) January data has been updated.",
         "sample_news1": "(sample) Happy New Year. Vedas has been released.",
+        "news1_2": "我们会不时更新数据，玩得开心！",
+        "news1_1": "新年快乐，吠陀经已发布",
         "contact_place_folder1": "Panair Taro",
         "contact_place_folder2": "contact@vedas.jp",
         "contact_text1": "If you have any questions about Vedas, please fill in the required information and contact us.",

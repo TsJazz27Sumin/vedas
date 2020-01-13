@@ -72,7 +72,7 @@ const getStyledComponents = (checkedCount) => {
       intervalHeight = 280;
     }
 
-    WatchoutArea = styled(WatchoutArea)`margin-top: ${425 + (intervalHeight * checkedCount)}px; width: 89%;`;
+    WatchoutArea = styled(WatchoutArea)`margin-top: ${525 + (intervalHeight * checkedCount)}px; width: 89%;`;
   }
 
   return {

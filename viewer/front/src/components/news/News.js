@@ -37,7 +37,7 @@ const getStyledComponents = () => {
 
   background: ${Color.gray};
 
-  height: 900px;
+  height: 600px;
   width: 91%;
 
   padding: 2% 0% 0% 4%;
