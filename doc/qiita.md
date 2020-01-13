@@ -10,7 +10,7 @@
 今回は、転職してからほぼ趣味で作ったWebアプリケーションが会社公認コンテンツとして公開されることになったので、その技術的なまとめ記事になります。
 
 アプリケーション自体のリンクは、こちらです。
-！TODO：リンク！
+https://vedas.cloud/
 
 # きっかけ
 
@@ -268,9 +268,62 @@ SNS用のシェアボタンを配置するのに使用しています。
 
 これだけの記述でSNSのシェアアイコンがサクッと並びます。
 
-### recharts: 1.8.5
-### styled-components: 4.4.1
-## Atomic Design
+### [recharts: 1.8.5](http://recharts.org/en-US)
+
+需給実績のチャートを出すために使っています。今回は、シンプルな[LineChart](http://recharts.org/en-US/examples/SimpleLineChart)だけですが、他にも[AreaChart](http://recharts.org/en-US/examples/SimpleAreaChart)・[BarChart](http://recharts.org/en-US/examples/SimpleBarChart)・[PieChart](http://recharts.org/en-US/examples/TwoLevelPieChart)など多彩なチャートコンポーネントが用意されています。
+
+```js
+<ResponsiveContainer width={isMobile ? '100%' : '95%'} aspect={aspect}>
+      <LineChart data={props.energy_data}
+        margin={{ top: 30, right: 30, left: 30, bottom: 5 }}>
+        <XAxis dataKey="name" />
+        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Tooltip />
+        <Legend />
+        <Line unit={unit_word} type="monotone" name={dict.solar} key="solar" dataKey="solar" stroke="#F49342" />
+      </LineChart>
+    </ResponsiveContainer>
+```
+
+`data={props.energy_data}`でコンポーネントが要求しているJSON形式のデータを渡しています。レスポンシブにするために`ResponsiveContainer`で囲っていますが、ほぼrechartsのサイトにあるサンプルコードに近いです。
+
+### [styled-components: 4.4.1](https://www.styled-components.com/)
+
+今回、CSSをそのまま書くことはせず、9割はstyled-componentsを使って各コンポーネントに閉じる形でStyleを定義しました。残りの1割は、SVGアニメーションの記述だったり、styled-componentsを使うとフォーム部品の挙動が微妙になるので局所的にCSSを定義して使っています。
+
+```js
+const getStyledComponents = () => {
+
+  let ContentTitle = styled.div`
+  padding: 2% 0% 2% 1.5%;
+  margin:  0% 0% 0% 0%;
+  `;
+
+  if (isMobile) {
+    ContentTitle = styled(ContentTitle)`
+    padding-left: 38%;
+    margin-top: 3%;
+    `;
+  }
+
+  return {
+    ContentTitle : ContentTitle
+  };
+}
+```
+
+一例です。きれいにPCとモバイルのStyleを分けてしまうかは、今回悩んだのですが、PCを基本にモバイルの差分だけ記述して上書きにしています。paddingとmarginがスタイリングされたDivタグをコンポーネントとして返すメソッドになります。
+
+styled-componentsの良いところは、なんと言ってもCSSの定義がコンポーネントの中に閉じられるところだと感じました。普通にCSSを書いていくと、グローバルに一意なNameをつけてBEMなり意識して書いていかざるをえず、なかなか管理がつらい部分がありました。
+
+Sass、LESS、StylusなどのCSSプリプロセッサを使用するのも一案だと思うのですが、Reactのコンポーネント単位で画面の部品を管理していく世界とは、どうも合わない気がして、今回、styled-componentsを導入してみました。
+
+AtomicDesignとか意識して、どの粒度のコンポーネントでどういった種類のStyleを定義すべきか、を整理して実装するまでに今回至っていません。そのためstyled-componentsがReactのStylingのベストなのか、正直判断がつかない段階です。
+
+ただ、１つ言えるのは普通にズラズラCSSを書いていくよりは、コンポーネント単位でまとまっているので、コードの見通しは良くなった実感がありました。
+
+## フォルダ構成
 
 # Django
 ## はじめに
