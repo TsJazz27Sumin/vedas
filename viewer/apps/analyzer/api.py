@@ -25,6 +25,42 @@ SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/T055X1TTC/BRYJBSQMA/JUQCe8r
 SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
 
+# curl http://127.0.0.1:8000/viewer/analyzer/health_check
+@localhost_only()
+def health_check(request):
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+    slack.notify(text='health_check ok')
+
+    return JsonResponse({"message": "success"})
+
+
+# curl http://127.0.0.1:8000/viewer/analyzer/check_download_page
+@localhost_only()
+def check_download_page(request):
+    root_path = os.getcwd()
+    start = time.time()
+
+    data = {
+        "01. hepco_result": HepcoController.check_download_page(root_path),
+        "02. tohokuepco_result": TohokuEpcoController.check_download_page(root_path),
+        "03. rikuden_result": RikudenController.check_download_page(root_path),
+        "04. tepco_result": TepcoController.check_download_page(root_path),
+        "05. chuden_result": ChudenController.check_download_page(root_path),
+        "06. kepco_result": KepcoController.check_download_page(root_path),
+        "07. energia_result": EnergiaController.check_download_page(root_path),
+        "08. yonden_result": YondenController.check_download_page(root_path),
+        "09. kyuden_result": KyudenController.check_download_page(root_path),
+        "10. okiden_result": OkidenController.check_download_page(root_path),
+    }
+    print(f'elapsed_time:{time.time() - start}[sec]')
+
+    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+    json_data = json.dumps(data)
+    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+
+    return JsonResponse(data)
+
+
 # curl http://127.0.0.1:8000/viewer/analyzer/correct_data
 @localhost_only()
 def correct_data(request, reflesh=True):
@@ -80,7 +116,7 @@ def correct_data(request, reflesh=True):
     return JsonResponse(data)
 
 
-# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
+# http://127.0.0.1:8000/viewer/analyzer/get
 def get(request):
     unit = request.GET.get(key="unit", default="ym")
     from_value = request.GET.get(key="from", default="2016/04")
@@ -115,7 +151,7 @@ def get(request):
         raise Http404()
 
 
-# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
+# http://127.0.0.1:8000/viewer/analyzer/get_daily_data
 def get_daily_data(request):
     unit = request.GET.get(key="unit", default="ym")
     year_value = request.GET.get(key="year", default="2019")
@@ -151,43 +187,6 @@ def get_daily_data(request):
         raise Http404()
 
 
-# curl http://127.0.0.1:8000/viewer/analyzer/check_download_page
-@localhost_only()
-def check_download_page(request):
-    root_path = os.getcwd()
-    start = time.time()
-
-    data = {
-        "01. hepco_result": HepcoController.check_download_page(root_path),
-        "02. tohokuepco_result": TohokuEpcoController.check_download_page(root_path),
-        "03. rikuden_result": RikudenController.check_download_page(root_path),
-        "04. tepco_result": TepcoController.check_download_page(root_path),
-        "05. chuden_result": ChudenController.check_download_page(root_path),
-        "06. kepco_result": KepcoController.check_download_page(root_path),
-        "07. energia_result": EnergiaController.check_download_page(root_path),
-        "08. yonden_result": YondenController.check_download_page(root_path),
-        "09. kyuden_result": KyudenController.check_download_page(root_path),
-        "10. okiden_result": OkidenController.check_download_page(root_path),
-    }
-    print(f'elapsed_time:{time.time() - start}[sec]')
-
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-    json_data = json.dumps(data)
-    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
-
-    return JsonResponse(data)
-
-
-# curl http://127.0.0.1:8000/viewer/analyzer/health_check
-@localhost_only()
-def health_check(request):
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-    slack.notify(text='health_check ok')
-
-    return JsonResponse({"message": "success"})
-
-
-# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def contact(request):
     datas = json.loads(request.body)
     full_name = datas['full_name']
@@ -201,7 +200,6 @@ def contact(request):
     return JsonResponse({"message": "success"})
 
 
-# 認証のないシステムかつ画面操作で発生したリクエストか判定できないので特にチェックはしない。
 def share(request):
     datas = json.loads(request.body)
     type = datas['type']
