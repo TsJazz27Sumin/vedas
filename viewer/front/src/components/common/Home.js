@@ -7,6 +7,7 @@ import HeroHeader from 'components/common/atoms/HeroHeader'
 import HeroWithoutTitle from 'components/common/atoms/HeroWithoutTitle'
 import TopBar from 'components/common/molecules/TopBar'
 import TabletMessage from 'components/common/molecules/TabletMessage'
+import MobileHorizontalMessage from 'components/common/molecules/MobileHorizontalMessage'
 import EnergyCharts from 'components/energycharts/EnergyCharts'
 import About from 'components/about/About'
 import Contact from 'components/contact/Contact'
@@ -25,6 +26,9 @@ const Home = (props) => {
   const qs = props.qs;
 
   useEffect(() => {
+    if (isTablet){
+      return;
+    }
     document.getElementById("scroll-up").classList.add("display-none");
     if (qs.case !== undefined){
       window.scrollTo(0, 1300);
@@ -43,10 +47,20 @@ const Home = (props) => {
     setLang(newValue);
   }, []);
 
+  const [mobile_horizontal, setMobileHorizontal] = useState(false);
+
   const [broserWidth, setBroserWidth] = useState(initial_width);
   const debouncedHandleChange = debounce(
       () => {
         setBroserWidth(WindowSizeService.getWindowWidthSize());
+
+        if (isMobile){
+          if (WindowSizeService.getWindowWidthSize() > WindowSizeService.getWindowHeightSize()){
+            setMobileHorizontal(true);
+          } else {
+            setMobileHorizontal(false);
+          }
+        }
       },
       500
   );
@@ -92,18 +106,20 @@ const Home = (props) => {
   window.addEventListener('scroll', handleScrollChange);
 
   return (
-      isTablet ? (<TabletMessage/>):(
-      <OutLine>
-        <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
-        {hero}
-        <ScrollDown id="scroll-down">
-          <ScrollDownP>SCROLL→</ScrollDownP>
-        </ScrollDown>
-        <ScrollUp id="scroll-up" onClick={() => window.scrollTo(0, 0)}>
-          <ScrollUpP>←BACK TO TOP</ScrollUpP>
-        </ScrollUp>
-        {content}
-      </OutLine>
+      mobile_horizontal ? (<MobileHorizontalMessage/>) : (
+        isTablet ? (<TabletMessage/>):(
+        <OutLine>
+          <TopBar lang={lang} menu={menu} handleMenuChange={handleMenuChange} handleLangChange={handleLangChange}/>
+          {hero}
+          <ScrollDown id="scroll-down">
+            <ScrollDownP>SCROLL→</ScrollDownP>
+          </ScrollDown>
+          <ScrollUp id="scroll-up" onClick={() => window.scrollTo(0, 0)}>
+            <ScrollUpP>←BACK TO TOP</ScrollUpP>
+          </ScrollUp>
+          {content}
+        </OutLine>
+      )
     )
   )
 }

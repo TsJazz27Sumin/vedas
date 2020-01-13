@@ -70,6 +70,8 @@
      2.  [Gunicornでのログローテーション](http://ja.voidcc.com/question/p-cibwnwth-dk.html)
  15. mac実機確認
      1.  [MacのlocalhostにiPhoneで接続する方法](https://qiita.com/sabineko/items/c4725c649c57a0432104)
+     2.  [djangoの開発サーバを外部からアクセスするために](https://blog.masasuzu.net/entry/20100731/1280588504)
+         1.  結局、ReactからDjangoのAPIを叩きに行くのでIPを127.0.0.1以外で固定して、アクセスさせる。
 
 # よく使うコマンド
  - cd /home/app-user/supply-and-demand-viewer
