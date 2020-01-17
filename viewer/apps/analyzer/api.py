@@ -118,7 +118,7 @@ def correct_data(request, reflesh=True):
     except Exception:
         slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
         slack.notify(
-            text=f"unit:{unit} from_value:{from_value} to_value:{to_value} message:{traceback.format_exc()}"
+            text=f"message:{traceback.format_exc()}"
         )
         raise Http404()
 
