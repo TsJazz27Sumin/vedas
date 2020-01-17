@@ -61,59 +61,66 @@ def check_download_page(request):
     return JsonResponse(data)
 
 
-# curl http://127.0.0.1:8000/viewer/analyzer/correct_data
+# curl http://localhost:8000/viewer/analyzer/correct_data
 @localhost_only()
 def correct_data(request, reflesh=True):
     root_path = os.getcwd()
     start = time.time()
 
-    hepco_count, hepco_merged_pkl_path = HepcoController.correct_data(root_path, reflesh)
-    tohokuepco_count, tohokuepco_merged_pkl_path = TohokuEpcoController.correct_data(root_path, reflesh)
-    rikuden_count, rikuden_merged_pkl_path = RikudenController.correct_data(root_path, reflesh)
-    tepco_count, tepco_merged_pkl_path = TepcoController.correct_data(root_path, reflesh)
-    chuden_count, chuden_merged_pkl_path = ChudenController.correct_data(root_path, reflesh)
-    kepco_count, kepco_merged_pkl_path = KepcoController.correct_data(root_path, reflesh)
-    energia_count, energia_merged_pkl_path = EnergiaController.correct_data(root_path, reflesh)
-    yonden_count, yonden_merged_pkl_path = YondenController.correct_data(root_path, reflesh)
-    kyuden_count, kyuden_merged_pkl_path = KyudenController.correct_data(root_path, reflesh)
-    okiden_count, okiden_merged_pkl_path = OkidenController.correct_data(root_path, reflesh)
+    try:
+        hepco_count, hepco_merged_pkl_path = HepcoController.correct_data(root_path, reflesh)
+        tohokuepco_count, tohokuepco_merged_pkl_path = TohokuEpcoController.correct_data(root_path, reflesh)
+        rikuden_count, rikuden_merged_pkl_path = RikudenController.correct_data(root_path, reflesh)
+        tepco_count, tepco_merged_pkl_path = TepcoController.correct_data(root_path, reflesh)
+        chuden_count, chuden_merged_pkl_path = ChudenController.correct_data(root_path, reflesh)
+        kepco_count, kepco_merged_pkl_path = KepcoController.correct_data(root_path, reflesh)
+        energia_count, energia_merged_pkl_path = EnergiaController.correct_data(root_path, reflesh)
+        yonden_count, yonden_merged_pkl_path = YondenController.correct_data(root_path, reflesh)
+        kyuden_count, kyuden_merged_pkl_path = KyudenController.correct_data(root_path, reflesh)
+        okiden_count, okiden_merged_pkl_path = OkidenController.correct_data(root_path, reflesh)
 
-    path_list = [
-        hepco_merged_pkl_path,
-        tohokuepco_merged_pkl_path,
-        rikuden_merged_pkl_path,
-        tepco_merged_pkl_path,
-        chuden_merged_pkl_path,
-        kepco_merged_pkl_path,
-        energia_merged_pkl_path,
-        yonden_merged_pkl_path,
-        kyuden_merged_pkl_path,
-        okiden_merged_pkl_path
-    ]
+        path_list = [
+            hepco_merged_pkl_path,
+            tohokuepco_merged_pkl_path,
+            rikuden_merged_pkl_path,
+            tepco_merged_pkl_path,
+            chuden_merged_pkl_path,
+            kepco_merged_pkl_path,
+            energia_merged_pkl_path,
+            yonden_merged_pkl_path,
+            kyuden_merged_pkl_path,
+            okiden_merged_pkl_path
+        ]
 
-    japan_count = JapanController.correct_data(root_path, path_list) if None not in path_list else 0
+        japan_count = JapanController.correct_data(root_path, path_list) if None not in path_list else 0
 
-    data = {
-        "message": "Success",
-        "01. hepco_count": hepco_count,
-        "02. tohokuepco_count": tohokuepco_count,
-        "03. rikuden_count": rikuden_count,
-        "04. tepco_count": tepco_count,
-        "05. chuden_count": chuden_count,
-        "06. kepco_count": kepco_count,
-        "07. energia_count": energia_count,
-        "08. yonden_count": yonden_count,
-        "09. kyuden_count": kyuden_count,
-        "10. okiden_count": okiden_count,
-        "11. japan_count": japan_count,
-    }
-    print(f'elapsed_time:{time.time() - start}[sec]')
+        data = {
+            "message": "Success",
+            "01. hepco_count": hepco_count,
+            "02. tohokuepco_count": tohokuepco_count,
+            "03. rikuden_count": rikuden_count,
+            "04. tepco_count": tepco_count,
+            "05. chuden_count": chuden_count,
+            "06. kepco_count": kepco_count,
+            "07. energia_count": energia_count,
+            "08. yonden_count": yonden_count,
+            "09. kyuden_count": kyuden_count,
+            "10. okiden_count": okiden_count,
+            "11. japan_count": japan_count,
+        }
+        print(f'elapsed_time:{time.time() - start}[sec]')
 
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-    json_data = json.dumps(data)
-    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+        json_data = json.dumps(data)
+        slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
-    return JsonResponse(data)
+        return JsonResponse(data)
+    except Exception:
+        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
+        slack.notify(
+            text=f"unit:{unit} from_value:{from_value} to_value:{to_value} message:{traceback.format_exc()}"
+        )
+        raise Http404()
 
 
 # http://127.0.0.1:8000/viewer/analyzer/get
