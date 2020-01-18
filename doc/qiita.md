@@ -31,14 +31,16 @@ ReactもPythonも多くのライブラリが世界中の人たちによって作
 
 ## デプロイ環境
  - AWS
+   - WAF
    - CloudFront
    - S3
+   - Network Load Balancer
    - EC2
      - NGINX
      - Gunicorn
 
 # React
-## はじめに
+## Full Stack Open 2019
 すでに日本でも紹介されている記事を見かけますが、The University of Helsinkiの[Full Stack Open 2019](https://fullstackopen.com/en/)、これはほんと分かりやすいです。特にhooksの使い方は、簡単な課題をいくつか解いていく中で身についた感じです。
 
 ちと実用レベルなことをやりだすと、ここにある内容だけでは十分ではなかった感じですが、基礎的なところを学ぶにはオススメです。
@@ -323,10 +325,165 @@ AtomicDesignとか意識して、どの粒度のコンポーネントでどう�
 
 ただ、１つ言えるのは普通にズラズラCSSを書いていくよりは、コンポーネント単位でまとまっているので、コードの見通しは良くなった実感がありました。
 
-## フォルダ構成
-
 # Django
-## はじめに
+## [pandas==0.25.3](https://pypi.org/project/pandas/)
+
+[こちらのブログ](https://note.nkmk.me/pandas/)を大変参考にさせていただきました。今回のアプリケーションでは、Pandasを使って需給実績のデータを読み込み・加工・出力しています。
+
+各送配電事業者が公表しているデータは、CSV or EXCELですが、pandasを使うと簡単に読み込み・加工・出力ができるので今回初めて使ってみて驚きました。特にdataframeの形式でデータを扱えるので、集計処理をさせるのにもいちいち細かいロジックを書かずに済む点も魅力です。
+
+```python
+    def sum_group_by_year_and_month(cls, data_frame):
+        df_ym = data_frame.set_index([data_frame.index.year, data_frame.index.month])
+        df_ym.index.names = ['year', 'month']
+        df_ym.sort_index(inplace=True)
+
+        try:
+            result = df_ym.sum(
+                level=['year', 'month']
+            )[
+                [
+                    'demand',
+                    'nuclear',
+                    'thermal',
+                    'hydro',
+                    'geothermal',
+                    'biomass',
+                    'solar',
+                    'solar_output_control',
+                    'wind',
+                    'wind_output_control',
+                    'pumping',
+                    'interconnection',
+                    'total_supply_capacity'
+                ]
+            ]
+        except Exception as e:
+            raise e
+        return DataFrameFunction.to_float_and_round(result).to_json()
+```
+
+上記は一例ですが、年月単位で合計値を集計させている部分です。手続き的にforで足し合わせていくのではなく、宣言的に集計軸と使う項目を指定すればいいので、見た感じも分かりやすく直感的に使える良いライブラリだなと、今回実装して感じました。C#だとlinqがsql likeにデータを扱えるので割と近いかもしれません。
+
+今回、処理フロー的には、大きく２つ分かれます。
+
+【事前のデータ準備】
+
+1. 各送配電事業のデータ（csv, excel）をダウンロード。
+2. ダウンロードしたデータをdata frame形式に変換。（Pandas）
+3. 集計処理がしやすいようにデータを加工。（Pandas）
+4. 加工後のデータをPickle形式で保存。（Pandas）
+
+
+【Web UIからのデータ利用】
+1. Reactのフロントエンドアプリケーションからデータをリクエスト。
+2. Pickle形式で保存されたデータをdata frame形式に変換。（Pandas）
+3. 集計処理を実行。（Pandas）
+4. data frame形式からjson形式に変換。（Pandas）
+5. json形式でフロントエンドにreturnして、画面描画。
+
+このようにほぼサーバーサイドの処理はpandasを使って構築している感じです。
+Pythonでロジックらしいロジックを書いている部分は、各送配電事業からのデータダウンロードぐらいです。
+
+そのせいかPythonのコードよりもReactのフロントエンド部分のコード量が圧倒的に多く、VedasはGithubのリポジトリ上、HTMLで構成されたアプリケーションと認識されているようです。
+
+現在、HTML：76.1%, JavaScript：15.9%, Python：7.3%、Other：0.7%となっています。こんなにPythonの構成比が低いのは、フロントエンドを凝った作りにしているということもあると思いますが、メインのデータ分析処理をpandasで作ったからだと考えています。
+
+## DB周り
+
+今回、データベースは使用していません。理由はいくつかありますが、
+
+1. 認証不要なオープンなアプリケーションのためユーザ管理などデータがいらない。
+2. 分析・加工対象のデータは、pandasで扱いやすいようにPickle形式で保存している。
+3. その他、多少のパラメータ群はわざわざRDBで管理せずともjson形式のファイルで管理すれば十分。
+
+ということでNo RDBの構成にしています。
+
+結果的にAWS上でRDSとか使わずに住んでいるのでランニングコストもその分お得です。
+
+## [django-cors-headers==3.2.0](https://pypi.org/project/django-cors-headers/)
+
+今回、Djangoで作ったAPIをReactのフロントエンドアプリケーションからリクエストさせるため、開発中にcorsが発生しました。その対策としてdjango-cors-headersを導入しています。
+
+```py
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'https://vedas.cloud'
+)
+```
+
+こんな感じでsettings.pyとかに記載してあげると、CORSになっても許可してくれます。
+
+## [requests==2.22.0](https://pypi.org/project/requests/2.2.0/)
+
+需給実績のファイルを取得する部分で使っています。
+
+```py
+    def get_decoded_data(cls, url):
+        response = urllib.request.urlopen(url)
+        if response.getcode() == 200:
+            response.close()
+            content = requests.get(url).content
+            return content.decode('sjis')
+        else:
+            response.close()
+            raise Exception(f'{url} is not found.')
+```
+
+URLをgetで指定して取得できたcontent＝ファイルという感じです。
+
 # AWS
-## はじめに
+## 構成
+ - AWS
+   - WAF
+   - CloudFront
+   - S3
+   - Network Load Balancer
+   - EC2
+     - NGINX
+     - Gunicorn
+
+Reactのフロントエンドアプリケーションは、S3にデプロイしてCloudFrontでキャッシュさせています。Djangoのサーバーサイドアプリケーションは、EC2上にデプロイしてAPIとして利用させる形です。
+
+## 通信
+Vedasにアクセスしていただくと分かりますが、HTTPSで公開しています。最近、割とGoogleがHTTPS以外のサイトを認めないという風潮なので乗っかりました。
+
+HTTPSのフロントエンドアプリケーションからサーバーサイドのAPIを叩きにいくと、こちらもHTTPSをじゃないとMixed Contentということで怒られます。具体的には、axiosでhttpでコールした際にエラーが出ます。
+
+対応策としては、API側もHTTPS化するのですが、今回選択肢が３つありました
+1. NGINXでHTTPSの設定を行う。
+2. DjangoでHTTPSの設定を行う。
+3. Load BalancerでHTTPSの設定を行う。
+
+この中で３を選んだのは、
+
+1. 証明書の管理をAWSにまとめたかった。
+2. AWSでLBをかませておいた方がスケールアウトしやすい。
+
+というところです。
+
+## AWS環境構築にあたってお世話になったサイト
+
+ - [AWS EC2作成からSSH接続](https://qiita.com/gurensouen/items/7382c2d14763436466d2)
+ - [ssh-add で Could not open a connection to your authentication agent が出るときの対処法](https://qiita.com/ytheta/items/cbbd0b833c19784dfa1e)
+ - [AES EC2上でsshを使ってgit clone を成功させるまでの手順](https://qiita.com/konuma1022/items/986eb58d4b94bef0c0a5)
+ - [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
+ - [Python3.7入れる時に `No module named '_ctypes'` エラー](http://saruhei1989.hatenablog.com/entry/2019/04/06/090000)
+ - [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
+ - [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
+ - [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
+ - [nginx起動、再起動](https://qiita.com/Kaisyou/items/dadf6fe9ee93fb69e76c)
+ - [他のプロセスがポートを占有してnginxを再起動できない](https://qiita.com/Yu-s/items/64c54def20e5fa64edd1)
+ - [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
+ - [CloudFrontのキャッシュをすぐにクリアする方法](https://www.aruse.net/entry/2018/10/08/090631)
+ - [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
+ - [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
+ - [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
+
 # 最後に
+
+実際にアプリケーションを作ることで、アウトプットしながらインプットして、さらにインプットをそのままアウトプットするというサイクルを今回、かなり高速に回すことになりました。
+
+やっぱり勉強のためにコードを書くのではなく、誰かの役に立ちそうなアプリケーションを作るでは、圧倒的な違いがあると今回感じました。React x Djangoで今回アプリケーションを構築しましたが、今までの自分がJavaやC#で作ってきたWebアプリケーションと違う世界で非常に刺激があり、毎日コードを書くのが楽しみでした。
+
+世界中の優秀なエンジニアが作り上げてきた技術を使って、何かを作るということは、こんなにおもしろいものかと改めて感じた年末年始でした。
