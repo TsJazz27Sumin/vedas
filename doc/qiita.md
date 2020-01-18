@@ -38,7 +38,7 @@ ReactもPythonも多くのライブラリが世界中の人たちによって作
      - Gunicorn
 
 # React
-## はじめに
+## Full Stack Open 2019
 すでに日本でも紹介されている記事を見かけますが、The University of Helsinkiの[Full Stack Open 2019](https://fullstackopen.com/en/)、これはほんと分かりやすいです。特にhooksの使い方は、簡単な課題をいくつか解いていく中で身についた感じです。
 
 ちと実用レベルなことをやりだすと、ここにある内容だけでは十分ではなかった感じですが、基礎的なところを学ぶにはオススメです。
@@ -323,10 +323,113 @@ AtomicDesignとか意識して、どの粒度のコンポーネントでどう�
 
 ただ、１つ言えるのは普通にズラズラCSSを書いていくよりは、コンポーネント単位でまとまっているので、コードの見通しは良くなった実感がありました。
 
-## フォルダ構成
-
 # Django
-## はじめに
+## [pandas==0.25.3](https://pypi.org/project/pandas/)
+
+[こちらのブログ](https://note.nkmk.me/pandas/)を大変参考にさせていただきました。今回のアプリケーションでは、Pandasを使って需給実績のデータを読み込み・加工・出力しています。
+
+各送配電事業者が公表しているデータは、CSV or EXCELですが、pandasを使うと簡単に読み込み・加工・出力ができるので今回初めて使ってみて驚きました。特にdataframeの形式でデータを扱えるので、集計処理をさせるのにもいちいち細かいロジックを書かずに済む点も魅力です。
+
+```python
+    def sum_group_by_year_and_month(cls, data_frame):
+        df_ym = data_frame.set_index([data_frame.index.year, data_frame.index.month])
+        df_ym.index.names = ['year', 'month']
+        df_ym.sort_index(inplace=True)
+
+        try:
+            result = df_ym.sum(
+                level=['year', 'month']
+            )[
+                [
+                    'demand',
+                    'nuclear',
+                    'thermal',
+                    'hydro',
+                    'geothermal',
+                    'biomass',
+                    'solar',
+                    'solar_output_control',
+                    'wind',
+                    'wind_output_control',
+                    'pumping',
+                    'interconnection',
+                    'total_supply_capacity'
+                ]
+            ]
+        except Exception as e:
+            raise e
+        return DataFrameFunction.to_float_and_round(result).to_json()
+```
+
+上記は一例ですが、年月単位で合計値を集計させている部分です。手続き的にforで足し合わせていくのではなく、宣言的に集計軸と使う項目を指定すればいいので、見た感じも分かりやすく直感的に使える良いライブラリだなと、今回実装して感じました。C#だとlinqがsql likeにデータを扱えるので割と近いかもしれません。
+
+今回、処理フロー的には、大きく２つ分かれます。
+
+【事前のデータ準備】
+
+1. 各送配電事業のデータ（csv, excel）をダウンロード。
+2. ダウンロードしたデータをdata frame形式に変換。（Pandas）
+3. 集計処理がしやすいようにデータを加工。（Pandas）
+4. 加工後のデータをPickle形式で保存。（Pandas）
+
+
+【Web UIからのデータ利用】
+1. Reactのフロントエンドアプリケーションからデータをリクエスト。
+2. Pickle形式で保存されたデータをdata frame形式に変換。（Pandas）
+3. 集計処理を実行。（Pandas）
+4. data frame形式からjson形式に変換。（Pandas）
+5. json形式でフロントエンドにreturnして、画面描画。
+
+このようにほぼサーバーサイドの処理はpandasを使って構築している感じです。
+Pythonでロジックらしいロジックを書いている部分は、各送配電事業からのデータダウンロードぐらいです。
+
+そのせいかPythonのコードよりもReactのフロントエンド部分のコード量が圧倒的に多く、VedasはGithubのリポジトリ上、HTMLで構成されたアプリケーションと認識されているようです。
+
+現在、HTML：76.1%, JavaScript：15.9%, Python：7.3%、Other：0.7%となっています。こんなにPythonの構成比が低いのは、フロントエンドを凝った作りにしているということもあると思いますが、メインのデータ分析処理をpandasで作ったからだと考えています。
+
+## DB周り
+
+今回、データベースは使用していません。理由はいくつかありますが、
+
+1. 認証不要なオープンなアプリケーションのためユーザ管理などデータがいらない。
+2. 分析・加工対象のデータは、pandasで扱いやすいようにPickle形式で保存している。
+3. その他、多少のパラメータ群はわざわざRDBで管理せずともjson形式のファイルで管理すれば十分。
+
+ということでNo RDBの構成にしています。
+
+結果的にAWS上でRDSとか使わずに住んでいるのでランニングコストもその分お得です。
+
+## [django-cors-headers==3.2.0](https://pypi.org/project/django-cors-headers/)
+
+今回、Djangoで作ったAPIをReactのフロントエンドアプリケーションからリクエストさせるため、開発中にcorsが発生しました。その対策としてdjango-cors-headersを導入しています。
+
+```py
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'https://vedas.cloud'
+)
+```
+
+こんな感じでsettings.pyとかに記載してあげると、CORSになっても許可してくれます。
+
+## [requests==2.22.0](https://pypi.org/project/requests/2.2.0/)
+
+需給実績のファイルを取得する部分で使っています。
+
+```py
+    def get_decoded_data(cls, url):
+        response = urllib.request.urlopen(url)
+        if response.getcode() == 200:
+            response.close()
+            content = requests.get(url).content
+            return content.decode('sjis')
+        else:
+            response.close()
+            raise Exception(f'{url} is not found.')
+```
+
+URLをgetで指定して取得できたcontent＝ファイルという感じです。
+
 # AWS
 ## はじめに
 # 最後に
