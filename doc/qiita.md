@@ -31,8 +31,10 @@ ReactもPythonも多くのライブラリが世界中の人たちによって作
 
 ## デプロイ環境
  - AWS
+   - WAF
    - CloudFront
    - S3
+   - Network Load Balancer
    - EC2
      - NGINX
      - Gunicorn
@@ -431,5 +433,57 @@ CORS_ORIGIN_WHITELIST = (
 URLをgetで指定して取得できたcontent＝ファイルという感じです。
 
 # AWS
-## はじめに
+## 構成
+ - AWS
+   - WAF
+   - CloudFront
+   - S3
+   - Network Load Balancer
+   - EC2
+     - NGINX
+     - Gunicorn
+
+Reactのフロントエンドアプリケーションは、S3にデプロイしてCloudFrontでキャッシュさせています。Djangoのサーバーサイドアプリケーションは、EC2上にデプロイしてAPIとして利用させる形です。
+
+## 通信
+Vedasにアクセスしていただくと分かりますが、HTTPSで公開しています。最近、割とGoogleがHTTPS以外のサイトを認めないという風潮なので乗っかりました。
+
+HTTPSのフロントエンドアプリケーションからサーバーサイドのAPIを叩きにいくと、こちらもHTTPSをじゃないとMixed Contentということで怒られます。具体的には、axiosでhttpでコールした際にエラーが出ます。
+
+対応策としては、API側もHTTPS化するのですが、今回選択肢が３つありました
+1. NGINXでHTTPSの設定を行う。
+2. DjangoでHTTPSの設定を行う。
+3. Load BalancerでHTTPSの設定を行う。
+
+この中で３を選んだのは、
+
+1. 証明書の管理をAWSにまとめたかった。
+2. AWSでLBをかませておいた方がスケールアウトしやすい。
+
+というところです。
+
+## AWS環境構築にあたってお世話になったサイト
+
+ - [AWS EC2作成からSSH接続](https://qiita.com/gurensouen/items/7382c2d14763436466d2)
+ - [ssh-add で Could not open a connection to your authentication agent が出るときの対処法](https://qiita.com/ytheta/items/cbbd0b833c19784dfa1e)
+ - [AES EC2上でsshを使ってgit clone を成功させるまでの手順](https://qiita.com/konuma1022/items/986eb58d4b94bef0c0a5)
+ - [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
+ - [Python3.7入れる時に `No module named '_ctypes'` エラー](http://saruhei1989.hatenablog.com/entry/2019/04/06/090000)
+ - [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
+ - [Djangoの既存プロジェクトをec2にデプロイ](https://qiita.com/kur/items/fb75354ee53671c79614)
+ - [CentOS 7 の systemctl について](https://labs.precs.co.jp/2014/12/16/75/)
+ - [nginx起動、再起動](https://qiita.com/Kaisyou/items/dadf6fe9ee93fb69e76c)
+ - [他のプロセスがポートを占有してnginxを再起動できない](https://qiita.com/Yu-s/items/64c54def20e5fa64edd1)
+ - [Reactで作ったWebアプリをGitHubで管理してS3に自動デプロイする](https://s8a.jp/react-github-aws-s3-auto-deploy)
+ - [CloudFrontのキャッシュをすぐにクリアする方法](https://www.aruse.net/entry/2018/10/08/090631)
+ - [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
+ - [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
+ - [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
+
 # 最後に
+
+実際にアプリケーションを作ることで、アウトプットしながらインプットして、さらにインプットをそのままアウトプットするというサイクルを今回、かなり高速に回すことになりました。
+
+やっぱり勉強のためにコードを書くのではなく、誰かの役に立ちそうなアプリケーションを作るでは、圧倒的な違いがあると今回感じました。React x Djangoで今回アプリケーションを構築しましたが、今までの自分がJavaやC#で作ってきたWebアプリケーションと違う世界で非常に刺激があり、毎日コードを書くのが楽しみでした。
+
+世界中の優秀なエンジニアが作り上げてきた技術を使って、何かを作るということは、こんなにおもしろいものかと改めて感じた年末年始でした。
