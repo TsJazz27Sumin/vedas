@@ -62,7 +62,7 @@ const get = () => {
         "about_text9": "具有复数的含义，将s加起来就是吠陀经",
         "jurisdiction": "的管辖权",
         "watchout": "Things to watch out for",
-        "watchout_info1": "We shall not be liable for any life, physical injury or property loss or damages incurred by the user of this application.",
+        "watchout_info1": "In no event either party shall be liable for any life, physical injury or property loss or damages incurred by the user of this application.",
         "watchout_info2": "The data used for this application are the actual supply and demand results ",
         "watchout_info3": "announced by General Electricity Transmission and Distribution Utilities ",
         "watchout_info4": "based on the “系統情報の公表の考え方” of the Agency for Natural Resources and Energy, Ministry of Economy, Trade and Industry. ",
