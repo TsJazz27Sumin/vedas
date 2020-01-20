@@ -34,7 +34,7 @@ def health_check(request):
     return JsonResponse({"message": "success"})
 
 
-# curl http://127.0.0.1:8000/viewer/analyzer/check_download_page
+# curl http://localhost:8000/viewer/analyzer/check_download_page
 @localhost_only()
 def check_download_page(request):
     root_path = os.getcwd()

@@ -47,9 +47,9 @@ const TopBar = (props) => {
             <Select
               key="id-lang-item-dropdown"
               options={[
-                { value: "jp", label: "japanese" },
-                { value: "en", label: "english" },
-                { value: "ch", label: "china" }
+                { value: "jp", label: "Japanese" },
+                { value: "en", label: "English" },
+                { value: "ch", label: "China" }
               ]}
               onChange={(value) => handleLangChange(value)}
               value={lang}

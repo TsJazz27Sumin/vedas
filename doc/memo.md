@@ -97,6 +97,8 @@ source ~/.bashrc
 ### ワンライナーで簡単にDjangoを停止させる方法
 ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 
+gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
+
 ### ネットワーク調査
 curl  -o /dev/null http://vedas-api.com:8000/viewer/analyzer/health_check -w @/Users/hasumiyouhei/Desktop/curl_env.txt -s
 curl  -o /dev/null https://vedas-api.com/viewer/analyzer/health_check -w @/Users/hasumiyouhei/Desktop/curl_env.txt -s
