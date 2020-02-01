@@ -13,6 +13,7 @@ const Content = (props) => {
 
   return (
     <Content>
+      <Article key="20200201" date="2020/02/01" name="20200201_" texts={dict.news2_1 + ',' + dict.news2_2} pathname={props.pathname}/>
       <Article key="20200118" date="2020/01/18" name="20200118_" texts={dict.news1_1 + ',' + dict.news1_2} pathname={props.pathname}/>
     </Content>
   )
@@ -27,7 +28,7 @@ const getStyledComponents = () => {
   border-radius: 16px;
 
   height: auto;
-  width: 96%;
+  width: 98%;
 
   padding: 0% 0% 5% 0%;
   margin:  0% 0% 0% 0%;
