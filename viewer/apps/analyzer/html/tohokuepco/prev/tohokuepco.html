@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja"><!-- InstanceBegin template="/Templates/top.dwt" codeOutsideHTMLIsLocked="false" --> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>過去実績データのダウンロード | 東北電力</title>
+<meta name="description" content="東北電力，節電，計画停電"> 
+<meta name="keywords" content="東北電力,節電,計画停電"> 
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Style-Type" content="text/css"> 
+<meta http-equiv="Content-Script-Type" content="text/javascript"> 
+<link rel="shortcut icon" href="common/image/favicon.ico">
+<link rel="icon" href="common/image/favicon.ico" type="image/x-icon" />  
+<link rel="Shortcut Icon" type="image/x-icon" href="http://example.com/favicon.ico" />  
+<link rel="stylesheet" href="shared/css/content_import.css" type="text/css" media="all">
+<link rel="stylesheet" href="common/css/import.css" type="text/css" media="all">
+<script type="text/javascript" language="javascript" src="common/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="common/js/common.js"></script>
+
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<!-- InstanceParam name="パンくず表示" type="boolean" value="true" -->
+<!-- InstanceParam name="パンくず数" type="number" value="3" -->
+
+<style type="text/css">
+<!--
+  div.download .csvList03{
+    width:160px;
+    float:left;
+    margin:0 10px 10px 0;
+    border-right:1px dotted #666666;
+  }
+  .csvList03 dd{
+    background:url(../image/icon_csv.gif) no-repeat left 0px;
+    margin:0 0 5px 10px;
+    padding:2px 0 2px 0;
+  }
+-->
+</style>
+
+
+</head>
+
+<body id="pageTop">
+<div id="wrapper">
+
+<!-- ヘッダーエリア　ここから
+<div id="header">
+
+<div class="navigationSkip">
+<ul>
+	<li><a href="#skip">サイト共通メニューをスキップします。</a></li>
+</ul>
+</div>
+
+<h1><a href="../index.html"><img src="../common/image/logo.gif" alt="東北電力" width="133" height="46"></a></h1>
+<p class="btnHeader"><a href="../index.html"><img src="../common/image/btn_header_02.gif" alt="節電方法のご紹介サイトトップへ" width="204" height="17" class="margR05"></a><a href="https://www.tohoku-epco.co.jp/" target="_blank"><img src="../common/image/btn_header.gif" alt="東北電力サイトへ" width="121" height="17"></a></p>
+</div>
+ヘッダーエリア　ここまで //-->
+
+<!--▽▽▽ヘッダー▽▽▽-->
+
+<div id="contentHead">
+
+<!--contentHead-->
+
+<div id="contentHeadWidth">
+
+<div id="contentHeadInner">
+
+<div id="header">&nbsp;</div>
+
+<div class="accessibleNavi">
+
+<!--accessible navigaton-->
+
+<p><img src="/n_shared/images/shim.gif" width="1" height="1" alt="ここからサイト共通メニューです。"></p>
+
+<a href="#contentHeadBtm"><img src="/n_shared/images/shim.gif" width="1" height="1" alt="サイト共通メニューをスキップします。"></a>
+
+<!--/accessible navigaton-->
+
+</div>
+
+
+<p id="headTitle"><a href="https://www.tohoku-epco.co.jp/index.html"><img src="shared/image/head_logo.gif" alt="東北電力" width="127" height="36" border="0"></a></p>
+
+<ul id="headLink">
+
+<li><a href="https://www.tohoku-epco.co.jp/callcenter/index.html" title="コールセンター"><img src="https://www.tohoku-epco.co.jp/n_shared/images/head_link01.gif" width="102" height="17" alt="コールセンター"></a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/f47docs/f47htop.html"><img src="https://www.tohoku-epco.co.jp/n_shared/images/head_link02.gif" width="147" height="17" alt="インターネットお申込み"></a></li>
+
+</ul>
+
+<ul id="headSiteNavi">
+
+<li><a href="https://www.tohoku-epco.co.jp/toiawas/index.html">お問い合わせ</a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/sitemap/index.html" title="サイトマップ">サイトマップ</a></li>
+
+<li class="lastItem"><a href="https://www.tohoku-epco.co.jp/index-e.htm">English</a></li>
+
+</ul>
+
+<div id="headSiteSearch">
+
+<form action="https://www.tohoku-epco.co.jp/cgi-bin/namazu.cgi">
+
+<p>
+
+<label for="epcoquery"><img src="/n_shared/images/shim.gif" width="1" height="1" alt="検索"></label>
+
+<input name="query" id="epcoquery" type="text"><input name="Submit" type="image" id="epcosubmit" src="https://www.tohoku-epco.co.jp/n_shared/images/head_btn_search.gif" alt="検索" width="32" height="19">
+
+</p>
+
+</form>
+
+</div>
+
+<ul id="headGlobalNavi">
+
+<li id="globalNavi01"><a href="https://www.tohoku-epco.co.jp/second/electract/">電気料金・ご契約</a></li>
+
+<li id="globalNavi02"><a href="https://www.tohoku-epco.co.jp/second/eleclution/">省エネライフ・エネルギーソリューション</a></li>
+
+<li id="globalNavi03"><a href="https://www.tohoku-epco.co.jp/second/ircomp/">IR・会社情報</a></li>
+
+<li id="globalNavi04"><a href="https://www.tohoku-epco.co.jp/second/energy/">原子力・環境・エネルギー</a></li>
+
+<li id="globalNavi05"><a href="https://www.tohoku-epco.co.jp/second/antidisaster/">災害に備えて</a></li>
+
+<li id="globalNavi06"><a href="https://www.tohoku-epco.co.jp/second/withlocal/">地域とともに</a></li>
+
+<li id="globalNavi07"><a href="https://www.tohoku-epco.co.jp/second/publikids/">キッズ・広報誌</a></li>
+
+</ul>
+
+<div id="contentHeadBtm">&nbsp;</div>
+
+</div>
+
+</div>
+
+<!--/contentHead-->
+
+</div>
+
+
+
+<!--▲▲▲ヘッダー▲▲▲-->
+
+
+
+<div id="contents" class="clearFix">
+  
+  
+  
+  <div id="breadcrumbs">  
+  	<ul class="clearFix">
+    	<li><!-- InstanceBeginEditable name="breadNum1" --><a href="https://www.tohoku-epco.co.jp/">トップページ</a><!-- InstanceEndEditable --></li>
+    	
+			<li><!-- InstanceBeginEditable name="breadNum2" --><a href="graph.html">東北6県・新潟エリアでんき予報</a><!-- InstanceEndEditable --></li>
+			<li><!-- InstanceBeginEditable name="breadNum3" -->過去実績データのダウンロード<!-- InstanceEndEditable --></li>
+			
+     </ul>
+  </div>
+  
+  
+  <!-- トップタイトル //-->
+	<!-- InstanceBeginEditable name="topTitle" --><img src="common/image/ttl_contents_graph_02.gif" alt="東北6県・新潟エリアでんき予報" width="760" height="55"><!-- InstanceEndEditable -->
+	
+  <!-- コンテンツ内容　ここから //-->
+  <div id="contentsIn" class="clearFix">
+  <!-- InstanceBeginEditable name="contentsIn" -->
+	<h2 class="margB20"><img src="common/image/ttl_h2_graph_download.gif" alt="過去実績データのダウンロード" width="720" height="29"></h2>
+    
+    <!--<div class="download clearFix">
+    <dl class="csvList">   
+    <dt class="margB05"><strong>2008年</strong></dt>
+    <dd><a href="common/demand/juyo_2008_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <!--<dl class="csvList">
+    <dt class="margB05"><strong>2009年</strong></dt>
+    <dd><a href="common/demand/juyo_2009_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <dl class="csvList">
+    <dt class="margB05"><strong>2010年</strong></dt>
+    <dd><a href="common/demand/juyo_2010_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <dl class="csvList">
+    <dt class="margB05"><strong>2011年</strong></dt>
+    <dd><a href="common/demand/juyo_2011_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl> 
+    </div>-->
+
+    <!--<div class="download clearFix">
+    <dl class="csvList">
+    <dt class="margB05"><strong>2012年</strong></dt>
+    <dd><a href="common/demand/juyo_2012_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <dl class="csvList">
+    <dt class="margB05"><strong>2013年</strong></dt>
+    <dd><a href="common/demand/juyo_2013_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <dl class="csvList">
+    <dt class="margB05"><strong>2014年</strong></dt>
+    <dd><a href="common/demand/juyo_2014_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>
+    <dl class="csvList">
+    <dt class="margB05"><strong>2015年</strong></dt>
+    <dd><a href="common/demand/juyo_2015_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+    </dl>		
+    </div>-->
+    <div class="download clearFix">
+      <dl class="csvList03">
+        <dt class="margB05"><strong>2020年</strong></dt>
+        <dd><a href="common/demand/juyo_2020_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+      </dl>
+
+      <dl class="csvList03">
+        <dt class="margB05"><strong>2019年</strong></dt>
+        <dd><a href="common/demand/juyo_2019_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+      </dl>
+
+      <dl class="csvList03">
+        <dt class="margB05"><strong>2018年</strong></dt>
+        <dd><a href="common/demand/juyo_2018_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+      </dl>
+
+      <dl class="csvList03 noLine">
+        <dt class="margB05"><strong>2017年</strong></dt>
+        <dd><a href="common/demand/juyo_2017_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+      </dl>
+
+      <dl class="csvList03 noLine">
+        <dt class="margB05"><strong>2016年</strong></dt>
+        <dd><a href="common/demand/juyo_2016_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+      </dl>
+
+    </div>
+
+    <h2 class="margB20"><img src="common/image/ttl_h2_graph_area_download.gif" alt="エリア需給実績のダウンロード" width="720" height="29"></h2>
+    <!--<div class="download clearFix">-->
+    <div class="download clearFix">
+
+      <dl class="csvList03">
+        <dt class="margB05"><strong>2019年度</strong></dt>
+            <dd><a href="common/demand/juyo_2019_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd><br>
+            <dd><a href="common/demand/juyo_2019_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd><br>
+            <dd><a href="common/demand/juyo_2019_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd><br>
+      </dl>
+
+      <dl class="csvList03">
+        <dt class="margB05"><strong>2018年度</strong></dt>
+        <dd><a href="common/demand/juyo_2018_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2018_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2018_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2018_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd><br>
+      </dl>
+
+      <dl class="csvList03">
+          <dt class="margB05"><strong>2017年度</strong></dt>
+          <dd><a href="common/demand/juyo_2017_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd><br>
+          <dd><a href="common/demand/juyo_2017_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd><br>
+          <dd><a href="common/demand/juyo_2017_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd><br>
+          <dd><a href="common/demand/juyo_2017_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd><br>
+      </dl>
+
+      <dl class="csvList03 noLine">
+        <dt class="margB05"><strong>2016年度</strong></dt>
+        <dd><a href="common/demand/juyo_2016_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2016_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2016_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd><br>
+        <dd><a href="common/demand/juyo_2016_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd><br>
+      </dl>
+
+        <!--
+        <dl class="csvList02 noLine">
+        <dt class="margB05"><strong>20xx年度</strong></dt>
+        <dd><a href="common/demand/juyo_20xx_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd><br>
+            <dd><a href="common/demand/juyo_20xx_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd><br>
+            <dd><a href="common/demand/juyo_20xx_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd><br>
+            <dd><a href="common/demand/juyo_20xx_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd>
+        </dl>
+        -->
+    </div>
+
+   <dl class="carefulList margB00">
+    	<dt><img src="common/image/ttl_top_careful.gif" alt="ご注意いただきたいこと" width="720" height="25"></dt>
+<!--      <dd>・2020年の過去実績データについては、大変ご迷惑をおかけしますが、現在メンテナンス作業中のため2020年1月16日（木）午後よりダウンロード可能となります。</dd>-->
+      <dd>・実績は、過去にさかのぼり、修正させていただく場合があります。</dd>
+      <dd>・過去の実績を修正した場合、実績修正のお知らせ、修正前の実績の提供は致しませんので、予めご了承ください。</dd>
+      <dd>・エリア需給実績および太陽光発電実績には、太陽光発電の自家消費分は含みません。</dd>
+      <dd>　（自家消費分は需要の減少として表れています）</dd>
+     </dl>
+	<!-- InstanceEndEditable -->  </div>
+  <!-- コンテンツ内容　ここまで //-->
+	
+  
+<p class="pageTop"><a href="#pageTop">ページトップへ戻る</a></p>
+</div>
+ 
+<!-- フッターエリア　ここから
+<div id="footer">
+<p><img src="../common/image/copyright.gif" alt="&copy;Tohoku-Electric Power Co.,Inc. All Rights Reserved." width="288" height="10"></p>
+</div>
+フッターエリア　ここまで //-->
+
+<!-- ▽▽▽フッター▽▽▽ -->
+
+<div id="contentFoot">
+
+<!--contentFoot-->
+
+<div id="contentFootWidth">
+
+<div id="contentFootInner">
+
+<ul>
+
+<li class="fItem"><a href="https://www.tohoku-epco.co.jp/leagal/index.html" >ご利用にあたって</a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/privacy/security.html">情報セキュリティ基本方針</a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/privacy/index.html">個人情報保護</a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/link/index.html">リンク集</a></li>
+
+<li><a href="https://www.tohoku-epco.co.jp/mobile_info/index.html">携帯電話向けホームページのご案内</a></li>
+
+</ul>
+
+<p>(C)Tohoku-Electric Power Co.,Inc. All Rights Reserved. </p>
+
+
+
+</div>
+
+</div>
+
+<!--/contentFoot-->
+
+</div>
+
+
+
+<!-- ▲▲▲フッター▲▲▲ -->
+
+
+</div>
+
+<!-- Include SiteAnalytics Tag-->
+<!-- DO NOT ALTER ANYTHING BELLOW             -->
+<!-- Start SiteAnalyze 2011/05/18 defide inc.   -->
+<!-- SiteAnalytics for THD            -->
+<script SRC="/common/js/dcs_tag_DE.js" language="JavaScript" Type="text/javascript"></script>
+<NOSCRIPT>
+<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://sdc.siteanalytics.jp/dcs3oqk1r7fnvrvccf4guyotl_5q7v/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.3">
+</NOSCRIPT>
+<!-- End SiteAnalytics Tag-->
+</body>
+<!-- InstanceEnd --></html>
