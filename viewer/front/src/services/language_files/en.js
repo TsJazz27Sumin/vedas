@@ -12,6 +12,7 @@ const get = () => {
         "analyze_condtion_text5": "* Please select the day you want to check.",
         "sample_news2": "(sample) January data has been updated.",
         "sample_news1": "(sample) Happy New Year. Vedas has been released.",
+        "news3_2": "The data in all power jurisdictions has been updated until 01/2020.",
         "news2_2": "The data in all power jurisdictions has been updated until 12/2019.",
         "news2_1": "The data has been updated.",
         "news1_2": "We will update the data from time to time. Have fun!",

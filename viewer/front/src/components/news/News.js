@@ -37,7 +37,7 @@ const getStyledComponents = () => {
 
   background: ${Color.gray};
 
-  height: 900px;
+  height: 1300px;
   width: 91%;
 
   padding: 2% 0% 0% 4%;
@@ -48,7 +48,7 @@ const getStyledComponents = () => {
     ContentArea = styled(ContentArea)`
     background: none;
 
-    height: 659px;
+    height: 1009px;
     width: 100%;
 
     padding-left: 0.1%;
