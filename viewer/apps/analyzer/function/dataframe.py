@@ -121,14 +121,10 @@ class DataFrameFunction(object):
 
     @classmethod
     def create_date_and_time_from_datetime(cls, data_frame):
-        try:
-            data_frame["split"] = data_frame["date_time"].str.split(" ")
-            data_frame["date"] = data_frame["split"].str.get(0)
-            data_frame["time"] = data_frame["split"].str.get(1)
-            del data_frame["split"]
-        except Exception as e:
-            print(data_frame)
-            raise e
+        data_frame["split"] = data_frame["date_time"].str.split(" ")
+        data_frame["date"] = data_frame["split"].str.get(0)
+        data_frame["time"] = data_frame["split"].str.get(1)
+        del data_frame["split"]
 
     @classmethod
     def get_total_supply_capacity(cls, data_frame):
