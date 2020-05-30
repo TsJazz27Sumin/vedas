@@ -64,6 +64,10 @@ class TohokuEpcoService(Service):
     def __get_tohokuepco_csv(cls, decoded_data):
         processed_data_list = []
         for i, data in enumerate(decoded_data.splitlines()):
+
+            # juyo_2020_tohoku_1Qが末尾に不要な,があるので削除している。
+            if data[-1] == ",":
+                data = data[:-1]
             data = data.replace('  ', ' ')
             processed_data_list.append(data)
         tohokuepco_csv = '\r'.join(processed_data_list)

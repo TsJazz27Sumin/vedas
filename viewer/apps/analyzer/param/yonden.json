@@ -3,7 +3,8 @@
 		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2016.xlsx",
 		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2017.xlsx",
 		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2018.xlsx",
-		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2019.xlsx"
+		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2019.xlsx",
+		"https://www.yonden.co.jp/nw/assets/renewable_energy/data/supply_demand/jukyu2020.xlsx"
 	],
     "download_page_url": {
 		"url": "https://www.yonden.co.jp/nw/renewable_energy/data/supply_demand.html",
