@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
 CORS_ORIGIN_WHITELIST = (
     # 'http://192.168.0.21:3000',　スマホ実機テスト用
     'http://localhost:3000',
+    'https://localhost:3000',
     'http://localhost:8000',
     'https://vedas.cloud'
 )
