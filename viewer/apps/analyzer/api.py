@@ -61,7 +61,7 @@ def check_download_page(request):
     return JsonResponse(data)
 
 
-# curl http://localhost:8000/viewer/analyzer/correct_data
+# curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 900
 @localhost_only()
 def correct_data(request, reflesh=True):
     root_path = os.getcwd()
