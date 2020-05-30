@@ -12,6 +12,7 @@ const get = () => {
         "analyze_condtion_text5": "※ 请选择您要检查的日期",
         "sample_news2": "(sample) January data has been updated.",
         "sample_news1": "(sample) Happy New Year. Vedas has been released.",
+        "news4_2": "北陆电力的数据更新至2020/02年，电力服务区域内其他地区的数据更新至2020/04年",
         "news3_2": "所有电力辖区的数据已更新至2020年01月",
         "news2_2": "所有电力辖区的数据已更新至2019年12月",
         "news2_1": "数据已更新",

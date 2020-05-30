@@ -1,9 +1,9 @@
 {
 	"url": [
-		"http://www.energia.co.jp/retailer/eriajyukyu/sys/eria_jyukyu.csv"
+		"https://www.energia.co.jp/nw/service/retailer/eriajyukyu/sys/eria_jyukyu.csv"
 	],
 	"download_page_url": {
-		"url": "http://www.energia.co.jp/retailer/eria_jyukyu.html",
+		"url": "https://www.energia.co.jp/nw/service/retailer/data/area/",
 		"codec": "utf-8"
 	}
 }

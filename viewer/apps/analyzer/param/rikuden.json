@@ -25,7 +25,8 @@
 		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden201910.csv",
 		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden201911.csv",
 		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden201912.csv",
-		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden202001.csv"
+		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden202001.csv",
+		"http://www.rikuden.co.jp/rule/attach/area_jisseki_rikuden202002.csv"
 	],
 	"download_page_url": {
 		"url": "http://www.rikuden.co.jp/rule/area_jisseki.html",

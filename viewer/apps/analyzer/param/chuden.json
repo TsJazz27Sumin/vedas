@@ -1,9 +1,13 @@
 {
 	"url": [
-		"https://denki-yoho.chuden.jp/denki_yoho_content_data/areabalance_current_term.csv"
+		"https://powergrid.chuden.co.jp/denki_yoho_content_data/2020_areabalance_current_term.csv",
+		"https://powergrid.chuden.co.jp/denki_yoho_content_data/2019_areabalance_current_term.csv",
+		"https://powergrid.chuden.co.jp/denki_yoho_content_data/2018_areabalance_current_term.csv",
+		"https://powergrid.chuden.co.jp/denki_yoho_content_data/2017_areabalance_current_term.csv",
+		"https://powergrid.chuden.co.jp/denki_yoho_content_data/2016_areabalance_current_term.csv"
 	],
 	"download_page_url": {
-		"url": "https://denki-yoho.chuden.jp/",
+		"url": "https://powergrid.chuden.co.jp/denkiyoho/",
 		"codec": "utf-8"
 	}
 }

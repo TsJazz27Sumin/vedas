@@ -15,10 +15,11 @@
 		"area_jyukyu_jisseki_2019_1Q.csv",
 		"area_jyukyu_jisseki_2019_2Q.csv",
 		"area_jyukyu_jisseki_2019_3Q.csv",
-		"area_jyukyu_jisseki_2020_01.csv"
+		"area_jyukyu_jisseki_2019_4Q.csv",
+		"area_jyukyu_jisseki_2020_04.csv"
 	],
 	"download_page_url": {
-		"url": "http://www.kyuden.co.jp/wheeling_disclosure.html",
+		"url": "https://www.kyuden.co.jp/td_service_wheeling_rule-document_disclosure",
 		"codec": "utf-8"
 	}
 }

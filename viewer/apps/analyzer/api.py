@@ -116,6 +116,7 @@ def correct_data(request, reflesh=True):
 
         return JsonResponse(data)
     except Exception:
+        print(traceback.format_exc())
         slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
         slack.notify(
             text=f"message:{traceback.format_exc()}"
