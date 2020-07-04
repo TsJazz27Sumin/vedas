@@ -110,7 +110,11 @@ https://sansan-dsoc.com/
 
 ### データ更新時の手順メモ
 １．ローカルでデータを更新できることを確認する。
+https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/api.py#L66
 　　※ 送配電事業者によっては、実績ファイルが増えていたり、フォーマットが変わっていることがあります。
+　　※ 以下のナンバリングが変わるので要変更：2016年度：４月〜６月のファイルパスを見る。
+https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyuden.py#L13
+
 ２．更新できたら以下のVedasデータ更新表をアップデートしてください。
    https://docs.google.com/spreadsheets/d/1jZpzMSxHI1JtJtmb95KyElUthwJDOM_wR6sdDvJjF9k/edit#gid=0
 ３．News.js以下のComponentを修正して、アップデート内容を追加してください。縦はだいたい300pxの増加が目安です。
@@ -122,5 +126,9 @@ https://sansan-dsoc.com/
 　・ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 　・gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
 ７．以下でデータを更新します。
-　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 30000
+
+　・rm -rf viewer/apps/analyzer/html*/prev/*.html　
+　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
+
+　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 50000
 ８．twitterで更新をつぶやきます。
