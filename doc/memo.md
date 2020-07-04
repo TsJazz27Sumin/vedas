@@ -107,3 +107,20 @@ curl  -o /dev/null http://vedas-api.com:8000/viewer/analyzer/check_download_page
 http://www.nendo.jp/
 https://www.moma.org/
 https://sansan-dsoc.com/
+
+### データ更新時の手順メモ
+１．ローカルでデータを更新できることを確認する。
+　　※ 送配電事業者によっては、実績ファイルが増えていたり、フォーマットが変わっていることがあります。
+２．更新できたら以下のVedasデータ更新表をアップデートしてください。
+   https://docs.google.com/spreadsheets/d/1jZpzMSxHI1JtJtmb95KyElUthwJDOM_wR6sdDvJjF9k/edit#gid=0
+３．News.js以下のComponentを修正して、アップデート内容を追加してください。縦はだいたい300pxの増加が目安です。
+４．masterに修正内容を反映します。
+５．リモートにsshでつないでmasterを反映します。
+　・git fetch origin master
+　・git reset --hard origin/master
+６．一度、killしてから再起動します。
+　・ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
+　・gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
+７．以下でデータを更新します。
+　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 30000
+８．twitterで更新をつぶやきます。

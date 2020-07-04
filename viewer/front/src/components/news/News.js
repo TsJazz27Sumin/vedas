@@ -37,7 +37,8 @@ const getStyledComponents = () => {
 
   background: ${Color.gray};
 
-  height: 1600px;
+  // Newsを増やす時は、height:  + 300pxぐらい。
+  height: 1900px;
   width: 91%;
 
   padding: 2% 0% 0% 4%;
@@ -48,7 +49,8 @@ const getStyledComponents = () => {
     ContentArea = styled(ContentArea)`
     background: none;
 
-    height: 1309px;
+    // Newsを増やす時は、height:  + 150pxぐらい。
+    height: 1609px;
     width: 100%;
 
     padding-left: 0.1%;
