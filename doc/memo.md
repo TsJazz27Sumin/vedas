@@ -127,8 +127,9 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 　・gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
 ７．以下でデータを更新します。
 
-　・rm -rf viewer/apps/analyzer/html*/prev/*.html　
+　・rm -rf viewer/apps/analyzer/html/*/prev/*.html　
 　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
 
 　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 50000
-８．twitterで更新をつぶやきます。
+８．[CloudFrontでキャッシュ更新をしたい場合は、「/*」を使う。](https://www.aruse.net/entry/2018/10/08/090631)
+９．twitterで更新をつぶやきます。
