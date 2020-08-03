@@ -24,7 +24,7 @@ const getStyledComponents = () => {
   position: absolute;
 
   //このままじゃないと位置が決まらない。
-  top: 93%;
+  top: 95%;
   `;
   
   if (isMobile) {
@@ -33,7 +33,7 @@ const getStyledComponents = () => {
     
     margin-left: -2%;
     
-    top: 93%;
+    top: 95%;
     `;
   }
 
