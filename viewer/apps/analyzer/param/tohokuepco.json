@@ -16,7 +16,8 @@
         "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_2Q.csv",
         "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_3Q.csv",
         "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2019_tohoku_4Q.csv",
-        "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2020_tohoku_1Q.csv"
+        "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2020_tohoku_1Q.csv",
+        "https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_2020_tohoku_2Q.csv"
     ],
     "download_page_url": {
 		"url": "https://setsuden.nw.tohoku-epco.co.jp/download.html",

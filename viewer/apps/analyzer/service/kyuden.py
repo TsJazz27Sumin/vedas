@@ -10,8 +10,8 @@ from viewer.apps.analyzer.service.service import Service
 class KyudenService(Service):
 
     COMPANY_NAME = 'kyuden'
-    ROOT_URL = 'https://www.kyuden.co.jp/var/rev0/0252/'
-    KEY_NUMBER = 780
+    ROOT_URL = 'https://www.kyuden.co.jp/var/rev0/0254/'
+    KEY_NUMBER = 3833
 
     @classmethod
     def correct_data(cls, urls, root_path, reflesh):
@@ -20,7 +20,7 @@ class KyudenService(Service):
 
         for url in urls:
             try:
-                target_url = f'{cls.ROOT_URL}0{number}/{url}'
+                target_url = f'{cls.ROOT_URL}{number}/{url}'
                 pkl_file_name = FileFunction.get_pkl_file_name(target_url)
                 original_pkl_path = cls.__correct_ex_data(root_path, pkl_file_name, target_url, reflesh)
                 processed_pkl_path = cls.__process_ex_data(original_pkl_path, root_path, pkl_file_name)
