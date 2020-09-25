@@ -121,16 +121,17 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 ４．masterに修正内容を反映します。
 ５．リモートにsshでつないでmasterを反映します。
   - ssh -i ~/.ssh/vedas_production.pem app-user@18.176.42.188
-　- git fetch origin master
-　- git reset --hard origin/master
+  - cd vedas/
+  - git fetch origin master
+  - git reset --hard origin/master
 ６．一度、killしてから再起動します。
 　・ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 　・gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
 ７．以下でデータを更新します。
 
-　・rm -rf viewer/apps/analyzer/html/*/prev/*.html　
+　・rm -rf viewer/apps/analyzer/html/*/prev/*　
 　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
 
-　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 200000
+　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 300000
 ８．[CloudFrontでキャッシュ更新をしたい場合は、「/*」を使う。](https://www.aruse.net/entry/2018/10/08/090631)
 ９．twitterで更新をつぶやきます。

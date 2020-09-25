@@ -14,7 +14,7 @@ const TopBar = (props) => {
   const handleMenuChange = props.handleMenuChange;
   const handleLangChange = props.handleLangChange;
   const public_url = process.env.PUBLIC_URL;
-  const vedas_logo_top_bar_image = public_url + '/common/logo/vedas_v1.png';
+  const vedas_logo_top_bar_image = public_url + '/common/logo/vedas.png';
 
   const StyledComponents = getStyledComponents();
   const TopBarArea = StyledComponents.TopBarArea;
@@ -96,7 +96,7 @@ const getStyledComponents = () => {
   width: 245px;
 
   padding: 1.5% 0% 0% 3%;
-  margin:  0% 0% 0% 0%;
+  margin:  0% 0% 2% 0%;
   `;
 
   let MobileDropdown = styled.div`
