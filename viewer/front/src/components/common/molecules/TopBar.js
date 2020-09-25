@@ -14,7 +14,7 @@ const TopBar = (props) => {
   const handleMenuChange = props.handleMenuChange;
   const handleLangChange = props.handleLangChange;
   const public_url = process.env.PUBLIC_URL;
-  const vedas_logo_top_bar_image = public_url + '/common/logo/vedas_v1.png';
+  const vedas_logo_top_bar_image = public_url + '/common/logo/vedas.png';
 
   const StyledComponents = getStyledComponents();
   const TopBarArea = StyledComponents.TopBarArea;
@@ -38,9 +38,6 @@ const TopBar = (props) => {
         </MenuItem>
         <MenuItem>
           <p onClick={() => handleMenuChange('news')}>News</p>
-        </MenuItem>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('contact')}>Contact</p>
         </MenuItem>
         <MenuItemDropdownWrapper>
           <AppProvider>
@@ -96,7 +93,7 @@ const getStyledComponents = () => {
   width: 245px;
 
   padding: 1.5% 0% 0% 3%;
-  margin:  0% 0% 0% 0%;
+  margin:  0% 0% 2% 0%;
   `;
 
   let MobileDropdown = styled.div`
@@ -127,7 +124,7 @@ const getStyledComponents = () => {
   font-size: 20px;
   color: ${Color.lightGray};
 
-  padding: 4.8% 3% 4% 3%;
+  padding: 4.8% 6% 4% 6%;
   margin:  0% 0% 0% 0%;
 
   letter-spacing: 0.03em;

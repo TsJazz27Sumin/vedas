@@ -42,7 +42,6 @@ const ShareButtons = (props) => {
 
   return (
     <Stack>
-      {/* TODO:実際にシェアできるか調整をする。https://github.com/nygardk/react-share */}
       <FacebookShareButton
         url={current_url}
         beforeOnClick={() => share_button_click('Facebook', current_url, props.pathname)}
@@ -53,7 +52,7 @@ const ShareButtons = (props) => {
       <TwitterShareButton
         url={current_url}
         beforeOnClick={() => share_button_click('Twitter', current_url, props.pathname)}
-        hashtags={["パネイル", "Panair", "Vedas", "電力見える化"]}
+        hashtags={["Vedas", "電力見える化"]}
       >
         <TwitterIcon size={size} round />
       </TwitterShareButton>
