@@ -62,7 +62,7 @@
  - Language : Python 3.8.0
 
 ## 構成図
- - [デプロイ環境](https://docs.google.com/presentation/d/1NsvbSVAN5zPlpozWm5sniTXHF1_vsP_F5z76l43ERnU/edit#slide=id.p)
+<img src="https://github.com/panair-jp/supply-and-demand-viewer/blob/master/readme_img/screenshot_20200925.png" alt="ScreenShot">
 
 # Visuals
 
