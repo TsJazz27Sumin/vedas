@@ -39,9 +39,6 @@ const TopBar = (props) => {
         <MenuItem>
           <p onClick={() => handleMenuChange('news')}>News</p>
         </MenuItem>
-        <MenuItem>
-          <p onClick={() => handleMenuChange('contact')}>Contact</p>
-        </MenuItem>
         <MenuItemDropdownWrapper>
           <AppProvider>
             <Select
@@ -127,7 +124,7 @@ const getStyledComponents = () => {
   font-size: 20px;
   color: ${Color.lightGray};
 
-  padding: 4.8% 3% 4% 3%;
+  padding: 4.8% 6% 4% 6%;
   margin:  0% 0% 0% 0%;
 
   letter-spacing: 0.03em;

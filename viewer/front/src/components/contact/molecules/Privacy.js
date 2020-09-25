@@ -22,7 +22,7 @@ const Privacy = (props) => {
         <p>
           {dict.contact_text4}
           <a
-            href="https://corp.panair.jp/privacy_short"
+            href="https://xxx"
             external="true"
             target="_blank"
             rel="noopener noreferrer"
