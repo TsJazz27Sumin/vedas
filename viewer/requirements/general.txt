@@ -1,4 +1,4 @@
-Django==3.0
+Django==3.0.7
 requests==2.22.0
 pandas==0.25.3
 xlrd==1.2.0
