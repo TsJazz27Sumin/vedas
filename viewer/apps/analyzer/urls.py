@@ -9,6 +9,4 @@ urlpatterns = [
     path('analyzer/get_daily_data', api.get_daily_data, name='get_daily_data'),
     path('analyzer/check_download_page', api.check_download_page, name='check_download_page'),
     path('analyzer/health_check', api.health_check, name='health_check'),
-    path('analyzer/contact', csrf_exempt(api.contact), name='contact'),
-    path('analyzer/share', csrf_exempt(api.share), name='share'),
 ]
