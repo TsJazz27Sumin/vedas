@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import queryString from 'query-string';
 import App from './App'
 
-ReactGA.initialize('G-8LSYQBNCGL');
+ReactGA.initialize('UA-183726786-1');
 const history = require("history").createBrowserHistory();
 history.listen(({ pathname }) => {
   ReactGA.set({ page: pathname });
