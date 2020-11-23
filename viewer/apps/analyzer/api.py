@@ -21,16 +21,9 @@ from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import localhost_only
 
 
-SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
-SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
-
-
 # curl http://127.0.0.1:8000/viewer/analyzer/health_check
 @localhost_only()
 def health_check(request):
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-    slack.notify(text='health_check ok')
-
     return JsonResponse({"message": "success"})
 
 
@@ -53,10 +46,8 @@ def check_download_page(request):
         "10. okiden_result": OkidenController.check_download_page(root_path),
     }
     print(f'elapsed_time:{time.time() - start}[sec]')
-
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
     json_data = json.dumps(data)
-    slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+    print(json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
     return JsonResponse(data)
 
@@ -109,16 +100,13 @@ def correct_data(request, reflesh=True):
             "11. japan_count": japan_count,
         }
         print(f'elapsed_time:{time.time() - start}[sec]')
-
-        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
         json_data = json.dumps(data)
-        slack.notify(text=json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
+        print(json_data.replace('],', ']\n').replace('{', '').replace('}', ''))
 
         return JsonResponse(data)
     except Exception:
         print(traceback.format_exc())
-        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-        slack.notify(
+        print(
             text=f"message:{traceback.format_exc()}"
         )
         raise Http404()
@@ -152,8 +140,7 @@ def get(request):
 
             return JsonResponse(data)
     except Exception:
-        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-        slack.notify(
+        print(
             text=f"unit:{unit} from_value:{from_value} to_value:{to_value} message:{traceback.format_exc()}"
         )
         raise Http404()
@@ -188,33 +175,7 @@ def get_daily_data(request):
 
             return JsonResponse(data)
     except Exception:
-        slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-        slack.notify(
+        print(
             text=f"unit:{unit} year_value:{year_value} month_value:{month_value} date_value:{date_value} message:{traceback.format_exc()}"
         )
         raise Http404()
-
-
-def contact(request):
-    datas = json.loads(request.body)
-    full_name = datas['full_name']
-    email = datas['email']
-    contact_information = datas['inquiry']
-    slack = slackweb.Slack(url=SLACK_URL_CONTACT)
-
-    text = f'full_name = {full_name} \nemail = {email} \ncontact_information = {contact_information}'
-    slack.notify(text=text)
-
-    return JsonResponse({"message": "success"})
-
-
-def share(request):
-    datas = json.loads(request.body)
-    type = datas['type']
-    url = datas['url']
-    slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
-
-    text = f'share by {type} \nurl is  {url}'   
-    slack.notify(text=text)
-
-    return JsonResponse({"message": "success"})

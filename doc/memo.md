@@ -129,11 +129,11 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 ７．以下でデータを更新します。
 
 　・rm -rf viewer/apps/analyzer/html/*
-　・cd tools
+　・cd tool/
 　・sh create_html_folder.sh
 
 　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
 
-　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 300000
+　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 500000
 ８．[CloudFrontでキャッシュ更新をしたい場合は、「/*」を使う。](https://www.aruse.net/entry/2018/10/08/090631)
 ９．twitterで更新をつぶやきます。
