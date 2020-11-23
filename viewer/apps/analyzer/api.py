@@ -21,8 +21,8 @@ from viewer.apps.analyzer.controller.yonden import YondenController
 from viewer.apps.analyzer.decorator.auth import localhost_only
 
 
-SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
-SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
+SLACK_URL_NOTIFY = 'https://hooks.slack.com/services/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'
+SLACK_URL_CONTACT = 'https://hooks.slack.com/services/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'
 
 
 # curl http://127.0.0.1:8000/viewer/analyzer/health_check
@@ -214,7 +214,7 @@ def share(request):
     url = datas['url']
     slack = slackweb.Slack(url=SLACK_URL_NOTIFY)
 
-    text = f'share by {type} \nurl is  {url}'
+    text = f'share by {type} \nurl is  {url}'   
     slack.notify(text=text)
 
     return JsonResponse({"message": "success"})
