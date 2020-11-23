@@ -129,6 +129,7 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 ７．以下でデータを更新します。
 
 　・rm -rf viewer/apps/analyzer/html/*
+　・rm -rf viewer/apps/analyzer/html/
 　・cd tool/
 　・sh create_html_folder.sh
 
