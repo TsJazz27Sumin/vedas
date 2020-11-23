@@ -115,8 +115,7 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/api.py#L66
 　　※ 以下のナンバリングが変わるので要変更：2016年度：４月〜６月のファイルパスを見る。
 https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyuden.py#L13
 
-２．更新できたら以下のVedasデータ更新表をアップデートしてください。
-   https://docs.google.com/spreadsheets/d/1jZpzMSxHI1JtJtmb95KyElUthwJDOM_wR6sdDvJjF9k/edit#gid=0
+２．更新できたらVedasデータ更新表をアップデートしてください。
 ３．News.js以下のComponentを修正して、アップデート内容を追加してください。縦はだいたい300pxの増加が目安です。
 ４．masterに修正内容を反映します。
 ５．リモートにsshでつないでmasterを反映します。
@@ -129,7 +128,10 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 　・gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
 ７．以下でデータを更新します。
 
-　・rm -rf viewer/apps/analyzer/html/*/prev/*　
+　・rm -rf viewer/apps/analyzer/html/*
+　・cd tools
+　・sh create_html_folder.sh
+
 　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
 
 　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 300000
