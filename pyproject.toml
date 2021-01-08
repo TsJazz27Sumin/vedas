@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "vedas"
+version = "0.1.0"
+description = ""
+authors = ["nothing"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^3.0.7"
+requests = "^2.22.0"
+pandas = "^0.25.3"
+xlrd = "^1.2.0"
+redis = "^3.3.11"
+django-cors-headers = "^3.2.0"
+slackweb = "^1.0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
