@@ -1,3 +1,12 @@
+# Description
+## What is this?
+  - This is an application to visualize the data of supply-demand balance published by 10 Electric Power Company.
+## Description ## What is it?
+  - I made it because there seemed to be no site that makes it easy to see the ongoing supply-demand data that has been made public as open data.
+  - In Japan, [ISEP](https://isep-energychart.com/graphics/), a non-profit organization, publishes the data every quarter.
+  - In Germany, the following sites are available.
+    - Fraunhofer ISE](https://www.energy-charts.de/power.htm?source=solar-wind&year=2019&week=49)
+
 # Nickname=Vedas
 - The repository name is too long to read as is, so the first letter of the word is read backwards.
 - Supply-And-Demand-Energy-Viewer
@@ -5,15 +14,6 @@
 - Nickname=Vedas
 - Vdas was avoided by adding "Energy" because there seem to be systems in the world that use it as it is.
 - Veda means "knowledge" in Indian religious scriptures.
-
-# Description
-## What is it?
-  - This is an application to visualize the data of supply-demand balance published by 10Electric Power Company.
-## Description ## What is it?
-  - I made it because there seemed to be no site that makes it easy to see the ongoing supply-demand data that has been made public as open data.
-  - In Japan, [ISEP](https://isep-energychart.com/graphics/), a non-profit organization, publishes the data every quarter.
-  - In Germany, the following sites are available.
-    - Fraunhofer ISE](https://www.energy-charts.de/power.htm?source=solar-wind&year=2019&week=49)
 
 ## Supply and demand data
 ### Source.
