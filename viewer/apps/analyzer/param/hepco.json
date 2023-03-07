@@ -1,5 +1,13 @@
 {
 	"url": [
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2022_4q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2022_3q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2022_2q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2022_1q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2021_4q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2021_3q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2021_2q.csv",
+		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2021_1q.csv",
 		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2020_4q.csv",
 		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2020_3q.csv",
 		"https://www.hepco.co.jp/network/renewable_energy/fixedprice_purchase/csv/sup_dem_results_2020_2q.csv",

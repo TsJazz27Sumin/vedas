@@ -34,7 +34,10 @@ class KepcoService(Service):
 
         if reflesh or not os.path.exists(original_pkl_path):
             decoded_data = FileFunction.get_decoded_data(url)
-            data_frame = cls.__parse(decoded_data)
+            if "2021" in url: 
+                data_frame = cls.__parse(decoded_data, [0, 1, 2, 3])
+            else:
+                data_frame = cls.__parse(decoded_data, [0, 1])
             FileFunction.create_pkl_file(original_pkl_path, data_frame)
 
         return original_pkl_path
@@ -59,10 +62,10 @@ class KepcoService(Service):
         return processed_pkl_path
 
     @classmethod
-    def __parse(cls, content):
+    def __parse(cls, content, skiprows):
         return pandas.read_csv(io.StringIO(content),
                            header=None,
-                           skiprows=[0, 1],
+                           skiprows=skiprows,
                            na_values=[0],
                            names=[
                                'date_time',

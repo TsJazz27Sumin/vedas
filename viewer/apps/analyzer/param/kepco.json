@@ -4,7 +4,9 @@
 		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2017.csv",
 		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2018.csv",
 		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2019.csv",
-		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2020.csv"
+		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2020.csv",
+		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2021.csv",
+		"https://www.kansai-td.co.jp/denkiyoho/csv/area_jyukyu_jisseki_2022.csv"
 	],
 	"download_page_url": {
 		"url": "https://www.kansai-td.co.jp/denkiyoho/area-performance.html",

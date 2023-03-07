@@ -51,7 +51,7 @@
         }
 
         .csvList03 dd {
-            background: url(../image/icon_csv.gif) no-repeat left 0px;
+            /*background: url(../image/icon_csv.gif) no-repeat left 0px;*/
             margin: 0 0 5px 10px;
             padding: 2px 0 2px 0;
         }
@@ -92,10 +92,18 @@
             </h2>
             <div class="download clearFix">
                 <dl class="csvList03">
+                    <dt class="margB05"><strong>2023年</strong></dt>
+                    <dd><a href="common/demand/juyo_2023_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+                </dl>
+                <dl class="csvList03">
+                    <dt class="margB05"><strong>2022年</strong></dt>
+                    <dd><a href="common/demand/juyo_2022_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
+                </dl>
+                <dl class="csvList03">
                     <dt class="margB05"><strong>2021年</strong></dt>
                     <dd><a href="common/demand/juyo_2021_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
                 </dl>
-                <dl class="csvList03">
+                <dl class="csvList03 noLine">
                     <dt class="margB05"><strong>2020年</strong></dt>
                     <dd><a href="common/demand/juyo_2020_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
                 </dl>
@@ -103,7 +111,7 @@
                     <dt class="margB05"><strong>2019年</strong></dt>
                     <dd><a href="common/demand/juyo_2019_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
                 </dl>
-                <dl class="csvList03 noLine">
+                <dl class="csvList03">
                     <dt class="margB05"><strong>2018年</strong></dt>
                     <dd><a href="common/demand/juyo_2018_tohoku.csv" target="_blank">実績データ(CSV形式)</a></dd>
                 </dl>
@@ -122,6 +130,28 @@
             </h2>
             <div class="download clearFix">
                 <dl class="csvList03">
+                    <dt class="margB05"><strong>2022年度</strong></dt>
+                    <dd><a href="common/demand/juyo_2022_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2022_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2022_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2022_tohoku_4Q.csv" target="_blank">第4四半期（１月）</a></dd>
+                    <br>
+                </dl>
+                <dl class="csvList03">
+                    <dt class="margB05"><strong>2021年度</strong></dt>
+                    <dd><a href="common/demand/juyo_2021_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2021_tohoku_2Q.csv" target="_blank">第2四半期（７〜９月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2021_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd>
+                    <br>
+                    <dd><a href="common/demand/juyo_2021_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd>
+                    <br>
+                </dl>
+                <dl class="csvList03">
                     <dt class="margB05"><strong>2020年度</strong></dt>
                     <dd><a href="common/demand/juyo_2020_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd>
                     <br>
@@ -129,10 +159,10 @@
                     <br>
                     <dd><a href="common/demand/juyo_2020_tohoku_3Q.csv" target="_blank">第3四半期（１０〜１２月）</a></dd>
                     <br>
-                    <dd><a href="common/demand/juyo_2020_tohoku_4Q.csv" target="_blank">第4四半期（１月）</a></dd>
+                    <dd><a href="common/demand/juyo_2020_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd>
                     <br>
                 </dl>
-                <dl class="csvList03">
+                <dl class="csvList03 noLine">
                     <dt class="margB05"><strong>2019年度</strong></dt>
                     <dd><a href="common/demand/juyo_2019_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd>
                     <br>
@@ -154,7 +184,7 @@
                     <dd><a href="common/demand/juyo_2018_tohoku_4Q.csv" target="_blank">第4四半期（１〜３月）</a></dd>
                     <br>
                 </dl>
-                <dl class="csvList03 noLine">
+                <dl class="csvList03">
                     <dt class="margB05"><strong>2017年度</strong></dt>
                     <dd><a href="common/demand/juyo_2017_tohoku_1Q.csv" target="_blank">第1四半期（４〜６月）</a></dd>
                     <br>
@@ -192,6 +222,9 @@
                 <dd>・過去の実績を修正した場合、実績修正のお知らせ、修正前の実績の提供は致しませんので、予めご了承ください。</dd>
                 <dd>・エリア需給実績および太陽光発電実績には、太陽光発電の自家消費分は含みません。</dd>
                 <dd>　（自家消費分は需要の減少として表れています）</dd>
+                <dd>・エリア需給実績の揚水は、2021年度第3四半期分より、揚水発電と揚水動力の合計値となります。</dd>
+                <dd>　2021年度第2四半期分までは、揚水動力の値であり、揚水発電は水力に含んでおります。</dd>
+                <dd>・<img src="common/image/icon_pdf_mini.svg" class="pdfIconMini"><a href="common/demand/area_jukyu_j.pdf">エリア需給実績（速報）</a></dd>
             </dl>
             <!-- InstanceEndEditable -->
         </div>

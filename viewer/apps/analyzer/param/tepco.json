@@ -4,7 +4,9 @@
 		"https://www.tepco.co.jp/forecast/html/images/area-2017.csv",
 		"https://www.tepco.co.jp/forecast/html/images/area-2018.csv",
 		"https://www.tepco.co.jp/forecast/html/images/area-2019.csv",
-		"https://www.tepco.co.jp/forecast/html/images/area-2020.csv"
+		"https://www.tepco.co.jp/forecast/html/images/area-2020.csv",
+		"https://www.tepco.co.jp/forecast/html/images/area-2021.csv",
+		"https://www.tepco.co.jp/forecast/html/images/area-2022.csv"
 	],
 	"download_page_url": {
 		"url": "https://www.tepco.co.jp/forecast/html/area_data-j.html",

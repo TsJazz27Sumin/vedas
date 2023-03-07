@@ -1,6 +1,10 @@
 {
 	"url": [
-		"https://www.energia.co.jp/nw/service/retailer/eriajyukyu/sys/eria_jyukyu.csv"
+		"https://www.energia.co.jp/nw/service/retailer/eriajyukyu/sys/eria_jyukyu.csv",
+		"https://www.energia.co.jp/nw/service/retailer/data/area/csv/kako-2019.csv",
+		"https://www.energia.co.jp/nw/service/retailer/data/area/csv/kako-2018.csv",
+		"https://www.energia.co.jp/nw/service/retailer/data/area/csv/kako-2017.csv",
+		"https://www.energia.co.jp/nw/service/retailer/data/area/csv/kako-2016.csv"
 	],
 	"download_page_url": {
 		"url": "https://www.energia.co.jp/nw/service/retailer/data/area/",
