@@ -48,10 +48,11 @@ class OkidenService(Service):
         processed_data_list = []
         for i, data in enumerate(decoded_data.splitlines()):
             if i > 9:
-                data = data.replace(' ', '').replace(',,', ',')
+                data = data.replace(' ', '').replace(',,', ',').replace('*', '')
+                data_list = data.split(',')
                 processed_data_list.append(data[:-1])
-        hepco_csv = '\r'.join(processed_data_list)
-        return hepco_csv
+        okiden_csv = '\r'.join(processed_data_list)
+        return okiden_csv
 
     @classmethod
     def __process_ex_data(cls, original_pkl_path, root_path, pkl_file_name):

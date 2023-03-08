@@ -89,6 +89,14 @@ python-versions = ">=3.7"
 Django = ">=3.2"
 
 [[package]]
+name = "et-xmlfile"
+version = "1.1.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -133,6 +141,17 @@ description = "Fundamental package for array computing in Python"
 category = "main"
 optional = false
 python-versions = ">=3.8"
+
+[[package]]
+name = "openpyxl"
+version = "3.1.1"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+et-xmlfile = "*"
 
 [[package]]
 name = "pandas"
@@ -325,7 +344,7 @@ test = ["pytest", "pytest-cov"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "94d7868ee0d079fd3a96e5a42e9350b14cc887bf55e9a420afc60787fb03fa15"
+content-hash = "cd49e71944a48fa58b0e59f9985175a60fea88fa8360eb491d5b072691cebef3"
 
 [metadata.files]
 asgiref = []
@@ -336,11 +355,13 @@ colorama = []
 dill = []
 django = []
 django-cors-headers = []
+et-xmlfile = []
 idna = []
 isort = []
 lazy-object-proxy = []
 mccabe = []
 numpy = []
+openpyxl = []
 pandas = []
 platformdirs = []
 pylint = []

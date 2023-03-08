@@ -50,6 +50,10 @@ class KepcoService(Service):
         # Kepcoは、日時で持っているのでTepcoに合わせて分割する。
         DataFrameFunction.create_date_and_time_from_datetime(data_frame)
 
+        # thermalがエラーになるのでその対策。
+        data_frame['thermal'] = data_frame['thermal'].astype(str).str.replace(',', '')
+        data_frame['thermal'] = data_frame['thermal'].astype(float)
+
         # Date型に変換しておく。
         data_frame['date_time'] = pandas.to_datetime(data_frame['date_time'], format='%Y/%m/%d %H:%M')
 

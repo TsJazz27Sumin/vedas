@@ -13,6 +13,7 @@ xlrd = "^2.0.1"
 redis = "^3.3.11"
 django-cors-headers = "^3.2.0"
 slackweb = "^1.0.5"
+openpyxl = "^3.1.1"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.6.0"

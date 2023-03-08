@@ -3,7 +3,7 @@ import Home from 'components/common/Home'
 
 const App = (props) => {
 
-  const lang = props.qs.lang === undefined ? 'jp' : props.qs.lang;
+  const lang = props.qs.lang === undefined ? 'en' : props.qs.lang;
  
   return (
     <div>
