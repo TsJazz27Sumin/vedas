@@ -14,14 +14,9 @@
    1. [AES EC2上でsshを使ってgit clone を成功させるまでの手順](https://qiita.com/konuma1022/items/986eb58d4b94bef0c0a5)
 8. Pythonのインストール
    1. [EC2サーバにPython3環境構築](https://qiita.com/tisk_jdb/items/01bd6ef9209acc3a275f)
-   2. 必要なモジュールを追加してpythonの再インストールもしている。
-      1. [Python3.7入れる時に `No module named '_ctypes'` エラー](http://saruhei1989.hatenablog.com/entry/2019/04/06/090000)
-         1. これやってからPython install!!!
-      2. パスが通ってないだけだった。
-         1. echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-         2. echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-         3. echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-         4. source ~/.bashrc
+   2. Open SSL issue
+      1. https://blog.serverworks.co.jp/install-python3-with-openssl11#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99--OpenSSL-111-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+   3. sudo yum **install**-y xz-develも必要だった。
 9. Djangoアプリケーションのデプロイ
    1. [AWSにDjangoアプリケーションをデプロイ(Nginx, gunicorn, postgresql)](https://qiita.com/pokotsun/items/1272479e36c5146c6609)
    2. python3 -m "venv" venv
@@ -76,16 +71,11 @@
 
 # よく使うコマンド
 
-- cd /home/app-user/supply-and-demand-viewer
 - source ~/.bashrc
-- ssh -i ~/.ssh/vedas_production.pem ec2-user@18.176.42.188
-- ssh -i ~/.ssh/vedas_production.pem app-user@18.176.42.188
-- sudo su app-user
-  - sh init.sh
+- sudo service nginx restart
 - redis-server
 - Redis キーの削除
   - https://www.yuulinux.tokyo/2959/
-- python3 manage.py runserver 0:8000
 - poetry run python3 manage.py runserver 0:8000
 - gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
   - -Dがデーモン化
