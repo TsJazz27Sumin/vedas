@@ -9,6 +9,7 @@ phases:
       - cd ./viewer/front
       - if [ -e /tmp/node_modules.tar ]; then tar xf /tmp/node_modules.tar; fi
       - npm install
+      - npm install assert
   build:
     commands:
       - npm run build
