@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '10.0.12.131',
     '35.79.111.199',
+    '10.0.2.239',
     'vedas-frontend.com',
     'vedas-backend.com'
 ]
