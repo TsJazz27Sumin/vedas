@@ -30,10 +30,10 @@ ALLOWED_HOSTS = [
     # '192.168.0.16', スマホ実機テスト用 runserver 192.168.0.21:8000 しないとReactと組み合わせて使えない。
     '127.0.0.1',
     'localhost',
-    'vedas.cloud',
-    '18.176.42.188',
-    'vedas-api.com',
-    '35.79.111.199'
+    '10.0.12.131',
+    '35.79.111.199',
+    'vedas-frontend.com',
+    'vedas-backend.com'
 ]
 
 CORS_ORIGIN_WHITELIST = (
@@ -41,7 +41,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'https://localhost:3000',
     'http://localhost:8000',
-    'https://vedas.cloud'
+    'vedas-frontend.com'
 )
 
 # Application definition

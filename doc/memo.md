@@ -50,15 +50,22 @@
 12. SSL & NLB
     1. [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
     2. [CloudFront で S3 静的ウェブサイトホスティングを SSL/TLS に対応させる](https://dev.classmethod.jp/cloud/aws/tls-for-s3-web-hosting-with-cloudfront/)
-    3. Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
-    4. [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
-    5. [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
-    6. [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
-    7. cloudfrontに合わせて、API側もドメイン取得＋
-    8. VPCをデフォルトではなく専用で作って、パブリックサブネットで設定して、その中にEC2を配置している。
-    9. ロードバランサーは、Network Load Balancerを使っている。
-    10. 最後にRoute53にロードバランサーを登録、HTTPS⇒HTTPに変換でAPIアクセス。
-    11. HTTPSの終端は、ロードバランサー。
+    3. AWS EC2 Nginx環境でのELBヘルスチェック設定 unhealthy
+
+       1. https://sys-guard.com/post-11757/
+
+       ```
+       tail -f /var/log/nginx/access.log
+       ```
+    4. Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
+    5. [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
+    6. [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
+    7. [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
+    8. cloudfrontに合わせて、API側もドメイン取得＋
+    9. VPCをデフォルトではなく専用で作って、パブリックサブネットで設定して、その中にEC2を配置している。
+    10. ロードバランサーは、Network Load Balancerを使っている。
+    11. 最後にRoute53にロードバランサーを登録、HTTPS⇒HTTPに変換でAPIアクセス。
+    12. HTTPSの終端は、ロードバランサー。
 13. ボトルネック調査
     1. [curlでボトルネック調査をする](http://akuwano.hatenablog.jp/entry/20120503/1335994486)
 14. Logging
@@ -92,7 +99,7 @@
 
 ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 
-gunicorn viewer.wsgi --bind=0.0.0.0:8000 -D
+gunicorn viewer.wsgi --bind=0.0.0.0:8000 -t 300 -D
 
 ### ネットワーク調査
 
@@ -130,9 +137,27 @@ https://github.com/panair-jp/vedas/blob/master/viewer/apps/analyzer/service/kyud
 　・rm -rf viewer/apps/analyzer/html/
 　・cd tool/
 　・sh create_html_folder.sh
-
+   ・sh create_data_folder.sh
 　　※ローカルの場合：ダウンロードリンクのあるサイトのHTMLを差分比較しているので、データ更新をする際は消す。
 
-　・curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 500000
+curl http://127.0.0.1:8000/viewer/analyzer/correct_data -m 500000
+
+curl http://127.0.0.1:8000/viewer/analyzer/health_check
+
+curl http://35.79.111.199/viewer/analyzer/correct_data -m 500000
+
+curl http://35.79.111.199/viewer/analyzer/health_check
+
+sudo service nginx restart
+
+tail -f /var/log/nginx/access.log
+
+gunicorn viewer.wsgi --bind=0.0.0.0:8000 -t 300 -D
+
+vedas-backend.com
+vedas-frontend.com
+
+vedas-app
+
 ８．[CloudFrontでキャッシュ更新をしたい場合は、「/*」を使う。](https://www.aruse.net/entry/2018/10/08/090631)
 ９．twitterで更新をつぶやきます。
