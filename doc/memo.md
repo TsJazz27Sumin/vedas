@@ -158,6 +158,8 @@ sudo service nginx restart
 
 tail -f /var/log/nginx/access.log
 
+ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
+
 gunicorn viewer.wsgi --bind=0.0.0.0:8000 -t 300 -D
 
 vedas-backend.com
