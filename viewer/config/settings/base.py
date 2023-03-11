@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '10.0.12.131',
     '35.79.111.199',
-    '10.0.2.239',
+    '10.0.4.108',
     'vedas-frontend.com',
     'vedas-backend.com',
     'vedas-nlb-3759fd79f293d25d.elb.ap-northeast-1.amazonaws.com'
