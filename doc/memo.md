@@ -148,9 +148,11 @@ curl http://35.79.111.199/viewer/analyzer/correct_data -m 500000
 
 curl http://35.79.111.199/viewer/analyzer/health_check
 
-curl http://vedas-backend.com/viewer/analyzer/correct_data -m 500000
+curl https://vedas-backend.com/viewer/analyzer/correct_data -m 500000
 
-curl http://vedas-backend.com/viewer/analyzer/health_check
+curl https://vedas-backend.com/viewer/analyzer/health_check
+
+sudo vi /etc/nginx/nginx.conf
 
 sudo service nginx restart
 

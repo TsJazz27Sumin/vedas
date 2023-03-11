@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
     '35.79.111.199',
     '10.0.2.239',
     'vedas-frontend.com',
-    'vedas-backend.com'
+    'vedas-backend.com',
+    'vedas-nlb-3759fd79f293d25d.elb.ap-northeast-1.amazonaws.com'
 ]
 
 CORS_ORIGIN_WHITELIST = (
