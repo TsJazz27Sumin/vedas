@@ -154,7 +154,7 @@ curl https://vedas-backend.com/viewer/analyzer/health_check
 
 sudo vi /etc/nginx/nginx.conf
 
-sudo service nginx restart
+sudo service nginx restart 
 
 tail -f /var/log/nginx/access.log
 
