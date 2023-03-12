@@ -27,16 +27,14 @@ SECRET_KEY = 'yo6)8xw^0a+khvz6ed+q+k^7+7&!-e2!0c#-qe9wixkhterk)h'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = [
-#     # '192.168.0.16', スマホ実機テスト用 runserver 192.168.0.21:8000 しないとReactと組み合わせて使えない。
-#     '127.0.0.1',
-#     'localhost',
-#     '35.79.111.199',
-#     '10.0.19.193',
-#     '10.0.10.49',
-#     'vedas-frontend.com',
-#     'vedas-backend.com',
-# ]
+ALLOWED_HOSTS = [
+    # '192.168.0.16', スマホ実機テスト用 runserver 192.168.0.21:8000 しないとReactと組み合わせて使えない。
+    '127.0.0.1',
+    'localhost',
+    '10.0.12.131', # EC2 Private IP
+    'vedas-frontend.com',
+    'vedas-backend.com',
+]
 
 CORS_ORIGIN_WHITELIST = (
     # 'http://192.168.0.21:3000',　スマホ実機テスト用
