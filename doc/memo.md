@@ -47,25 +47,12 @@
 11. WAFの設定
     1. [AWS WAFを使って接続できるIPアドレスを制限してみた](https://dev.classmethod.jp/cloud/aws/aws-waf-ip-block/)
     2. IP setを設定して社内限定リリース版は、アクセス制限をかけている。
-12. SSL & NLB
+12. SSL & ALB
     1. [CloudFrontでS3のウェブサイトをSSL化する](https://qiita.com/jasbulilit/items/73d70a01a5d3b520450f)
     2. [CloudFront で S3 静的ウェブサイトホスティングを SSL/TLS に対応させる](https://dev.classmethod.jp/cloud/aws/tls-for-s3-web-hosting-with-cloudfront/)
-    3. AWS EC2 Nginx環境でのELBヘルスチェック設定 unhealthy
-
-       1. https://sys-guard.com/post-11757/
-
-       ```
-       tail -f /var/log/nginx/access.log
-       ```
-    4. Route53でドメインを取得して、cloudfrontに設定する時にどのみち合わせてSSLにせざるをない。
-    5. [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
-    6. [NLB (Network Load Balancer)の作成メモ](https://qiita.com/rubytomato@github/items/e15e0a508b9fbec526e0)
-    7. [ELB(https) + nginx でヘルスチェックがこける問題](https://qiita.com/ameyamashiro/items/63793a02d66b6c48ec09)
-    8. cloudfrontに合わせて、API側もドメイン取得＋
-    9. VPCをデフォルトではなく専用で作って、パブリックサブネットで設定して、その中にEC2を配置している。
-    10. ロードバランサーは、Network Load Balancerを使っている。
-    11. 最後にRoute53にロードバランサーを登録、HTTPS⇒HTTPに変換でAPIアクセス。
-    12. HTTPSの終端は、ロードバランサー。
+    3. Route53でドメインを取得して、HTTPS (CloudFront) > HTTPS (ALB) > HTTP (Backend)
+    4. [AWS CloudFrontにRoute 53で取得したドメインを設定する方法](https://tomokazu-kozuma.com/how-to-set-the-domain-acquired-by-route53-to-aws-cloudfront/)
+    5. VPCをデフォルトではなく専用で作って、パブリックサブネットで設定して、その中にEC2を配置している。
 13. ボトルネック調査
     1. [curlでボトルネック調査をする](http://akuwano.hatenablog.jp/entry/20120503/1335994486)
 14. Logging
