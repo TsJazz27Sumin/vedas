@@ -156,7 +156,7 @@ sudo vi /etc/nginx/nginx.conf
 
 sudo service nginx restart
 
-tail -f /var/log/nginx/access.log
+sudo tail -f /var/log/nginx/access.log
 
 ps -ef|awk 'BEGIN{}{if(match($8, /python/))system("kill -9 " $2)}END{}'
 
