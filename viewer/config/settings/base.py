@@ -41,7 +41,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'https://localhost:3000',
     'http://localhost:8000',
-    'vedas-frontend.com'
+    'https://vedas-frontend.com'
 )
 
 # Application definition
