@@ -154,7 +154,7 @@ curl https://vedas-backend.com/viewer/analyzer/health_check
 
 sudo vi /etc/nginx/nginx.conf
 
-sudo service nginx restart 
+sudo service nginx restart
 
 tail -f /var/log/nginx/access.log
 
@@ -164,6 +164,8 @@ gunicorn viewer.wsgi --bind=0.0.0.0:8000 -t 300 -D
 
 vedas-backend.com
 vedas-frontend.com
+
+poetry run python3 manage.py runserver 0:8000
 
 vedas-app
 
