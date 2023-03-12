@@ -32,8 +32,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '35.79.111.199',
     '10.0.4.108',
-    'https://vedas-frontend.com',
-    'https://vedas-backend.com',
+    'vedas-frontend.com',
+    'vedas-backend.com',
 ]
 
 CORS_ORIGIN_WHITELIST = (
