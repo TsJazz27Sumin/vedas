@@ -6,7 +6,7 @@ authors = ["nothing"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Django = "^3.0.7"
+Django = "^3.2.20"
 requests = "^2.22.0"
 pandas = "^1.5.3"
 xlrd = "^2.0.1"
